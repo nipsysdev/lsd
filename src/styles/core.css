@@ -70,6 +70,15 @@
 :root {
   --radius: 0.625rem;
 
+  /* LSD spacing scale */
+  --lsd-spacing-smallest: 0.25rem;
+  --lsd-spacing-smaller: 0.5rem;
+  --lsd-spacing-small: 0.75rem;
+  --lsd-spacing-base: 1rem;
+  --lsd-spacing-large: 1.25rem;
+  --lsd-spacing-larger: 1.5rem;
+  --lsd-spacing-largest: 1.875rem;
+
   /* LSD Design Tokens - Light Theme */
   --lsd-primary: #000000;
   --lsd-primary-foreground: #ffffff;
