@@ -1,4 +1,4 @@
-import { r as reactExports, g as getDefaultExportFromCjs, a as requireReactDom, R as React, b as React$1 } from "./index-BFuX6RyW.js";
+import { r as reactExports, g as getDefaultExportFromCjs, a as requireReactDom, R as React, b as React$1 } from "./index-B5zrIT0p.js";
 var jsxRuntime = { exports: {} };
 var reactJsxRuntime_production = {};
 var hasRequiredReactJsxRuntime_production;
@@ -8317,11 +8317,11 @@ function SelectScrollDownButton({
     {
       "data-slot": "select-scroll-down-button",
       className: cn$1(
-        "lsd:flex lsd:cursor-default lsd:items-center lsd:justify-center lsd:py-1 lsd:text-lsd-icon-primary",
+        "lsd:flex lsd:cursor-default lsd:items-center lsd:justify-center lsd:py-(--lsd-spacing-smallest) lsd:text-lsd-icon-primary",
         className
       ),
       ...props,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "lsd:size-4" })
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "lsd:size-(--lsd-spacing-base)" })
     }
   );
 }
@@ -8334,11 +8334,11 @@ function SelectScrollUpButton({
     {
       "data-slot": "select-scroll-up-button",
       className: cn$1(
-        "lsd:flex lsd:cursor-default lsd:items-center lsd:justify-center lsd:py-1 lsd:text-lsd-icon-primary",
+        "lsd:flex lsd:cursor-default lsd:items-center lsd:justify-center lsd:py-(--lsd-spacing-smallest) lsd:text-lsd-icon-primary",
         className
       ),
       ...props,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronUp, { className: "lsd:size-4" })
+      children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronUp, { className: "lsd:size-(--lsd-spacing-base)" })
     }
   );
 }
@@ -8367,8 +8367,8 @@ function SelectContent({
           Viewport$1,
           {
             className: cn$1(
-              "lsd:p-1",
-              position === "popper" && "lsd:h-[var(--radix-select-trigger-height)] lsd:w-full lsd:min-w-[var(--radix-select-trigger-width)] lsd:scroll-my-1"
+              "lsd:p-(--lsd-spacing-smallest)",
+              position === "popper" && "lsd:h-(--radix-select-trigger-height) lsd:w-full lsd:min-w-(--radix-select-trigger-width) lsd:scroll-my-(--lsd-spacing-smallest)"
             ),
             children
           }
@@ -8393,12 +8393,12 @@ function SelectItem({
     {
       "data-slot": "select-item",
       className: cn$1(
-        "lsd:focus:bg-lsd-surface lsd:focus:text-lsd-text-primary lsd:[&_svg:not([class*='text-'])]:text-lsd-icon-primary lsd:relative lsd:flex lsd:w-full lsd:cursor-pointer lsd:items-center lsd:gap-2 lsd:py-1.5 lsd:pr-8 lsd:pl-2 lsd:text-sm lsd:outline-hidden lsd:select-none lsd:data-[disabled]:pointer-events-none lsd:data-[disabled]:opacity-50 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4 lsd:*:[span]:last:flex lsd:*:[span]:last:items-center lsd:*:[span]:last:gap-2 lsd:hover:underline lsd:focus:underline lsd:data-highlighted:underline",
+        "lsd:focus:bg-lsd-surface lsd:focus:text-lsd-text-primary lsd:[&_svg:not([class*='text-'])]:text-lsd-icon-primary lsd:relative lsd:flex lsd:w-full lsd:cursor-pointer lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:py-(--lsd-spacing-smaller) lsd:pr-8 lsd:pl-(--lsd-spacing-smaller) lsd:text-sm lsd:outline-hidden lsd:select-none lsd:data-disabled:pointer-events-none lsd:data-disabled:opacity-50 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-(--lsd-spacing-base) lsd:*:[span]:last:flex lsd:*:[span]:last:items-center lsd:*:[span]:last:gap-(--lsd-spacing-smaller) lsd:hover:underline lsd:focus:underline lsd:data-highlighted:underline",
         className
       ),
       ...props,
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:absolute lsd:right-2 lsd:flex lsd:size-3.5 lsd:items-center lsd:justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ItemIndicator$1, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "lsd:size-4 lsd:text-lsd-icon-primary" }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:absolute lsd:right-(--lsd-spacing-smaller) lsd:flex lsd:size-(--lsd-spacing-base) lsd:items-center lsd:justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ItemIndicator$1, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "lsd:size-(--lsd-spacing-base) lsd:text-lsd-icon-primary" }) }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(ItemText, { children })
       ]
     }
@@ -8413,7 +8413,7 @@ function SelectLabel({
     {
       "data-slot": "select-label",
       className: cn$1(
-        "lsd:text-lsd-text-secondary lsd:px-2 lsd:py-1.5 lsd:text-xs",
+        "lsd:text-lsd-text-secondary lsd:px-(--lsd-spacing-smaller) lsd:py-(--lsd-spacing-smaller) lsd:text-xs",
         className
       ),
       ...props
@@ -8429,7 +8429,7 @@ function SelectSeparator({
     {
       "data-slot": "select-separator",
       className: cn$1(
-        "lsd:bg-lsd-border lsd:pointer-events-none lsd:-mx-1 lsd:my-1 lsd:h-px",
+        "lsd:bg-lsd-border lsd:pointer-events-none lsd:-mx-(--lsd-spacing-smallest) lsd:my-(--lsd-spacing-smallest) lsd:h-px",
         className
       ),
       ...props
@@ -8448,13 +8448,13 @@ function SelectTrigger({
       "data-slot": "select-trigger",
       "data-size": size2,
       className: cn$1(
-        "lsd:cursor-pointer lsd:border-lsd-border lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:data-[placeholder]:text-lsd-text-secondary lsd:[&_svg:not([class*='text-'])]:text-lsd-icon-primary lsd:focus-visible:border-lsd-border aria-invalid:lsd:ring-lsd-destructive/20 dark:aria-invalid:lsd:ring-lsd-destructive/40 aria-invalid:lsd:border-lsd-destructive dark:lsd:bg-lsd-surface/30 dark:lsd:hover:bg-lsd-surface/50 lsd:flex lsd:w-fit lsd:items-center lsd:justify-between lsd:gap-2 lsd:border lsd:px-3 lsd:py-2 lsd:text-sm lsd:whitespace-nowrap lsd:transition-[color,border] lsd:outline-none lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50 lsd:data-[size=default]:h-9 lsd:data-[size=sm]:h-8 *:lsd:data-[slot=select-value]:line-clamp-1 *:lsd:data-[slot=select-value]:flex *:lsd:data-[slot=select-value]:items-center *:lsd:data-[slot=select-value]:gap-2 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4",
+        "lsd:cursor-pointer lsd:border-lsd-border lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:data-placeholder:text-lsd-text-secondary lsd:[&_svg:not([class*='text-'])]:text-lsd-icon-primary lsd:focus-visible:border-lsd-border aria-invalid:lsd:ring-lsd-destructive/20 dark:aria-invalid:lsd:ring-lsd-destructive/40 aria-invalid:lsd:border-lsd-destructive dark:lsd:bg-lsd-surface/30 dark:lsd:hover:bg-lsd-surface/50 lsd:flex lsd:w-fit lsd:items-center lsd:justify-between lsd:gap-(--lsd-spacing-smaller) lsd:border lsd:px-(--lsd-spacing-small) lsd:py-(--lsd-spacing-smaller) lsd:text-sm lsd:whitespace-nowrap lsd:transition-[color,border] lsd:outline-none lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50 lsd:data-[size=default]:h-9 lsd:data-[size=sm]:h-8 *:lsd:data-[slot=select-value]:line-clamp-1 *:lsd:data-[slot=select-value]:flex *:lsd:data-[slot=select-value]:items-center *:lsd:data-[slot=select-value]:gap-[var(--lsd-spacing-smaller)] lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-(--lsd-spacing-base)",
         className
       ),
       ...props,
       children: [
         children,
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { asChild: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "lsd:size-4 lsd:text-lsd-icon-primary" }) })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { asChild: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "lsd:size-(--lsd-spacing-base) lsd:text-lsd-icon-primary" }) })
       ]
     }
   );
@@ -8923,9 +8923,9 @@ const toggleVariants = cva(
   {
     variants: {
       size: {
-        sm: "lsd:h-8 lsd:min-w-8 lsd:px-2 lsd:py-[6px] lsd:text-[0.75rem]",
-        md: "lsd:h-10 lsd:min-w-10 lsd:px-3 lsd:py-[6px]",
-        lg: "lsd:h-12 lsd:min-w-12 lsd:px-4 lsd:py-[10px] lsd:text-[0.875rem]"
+        sm: "lsd:h-8 lsd:min-w-8 lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-[0.75rem]",
+        md: "lsd:h-10 lsd:min-w-10 lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)]",
+        lg: "lsd:h-12 lsd:min-w-12 lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-small)] lsd:text-[0.875rem]"
       }
     },
     defaultVariants: {
@@ -8991,8 +8991,8 @@ function ThemeToggle() {
       onValueChange: toggleTheme,
       "aria-label": "Theme toggle",
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupItem, { value: "light", "aria-label": "Light theme", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sun, { className: "lsd:h-4 lsd:w-4" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupItem, { value: "dark", "aria-label": "Dark theme", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Moon, { className: "lsd:h-4 lsd:w-4" }) })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupItem, { value: "light", "aria-label": "Light theme", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sun, { className: "lsd:h-(--lsd-spacing-base) lsd:w-(--lsd-spacing-base)" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ToggleGroupItem, { value: "dark", "aria-label": "Dark theme", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Moon, { className: "lsd:h-(--lsd-spacing-base) lsd:w-(--lsd-spacing-base)" }) })
       ]
     }
   );
@@ -9702,11 +9702,11 @@ function AccordionContent({
   const getPaddingBottom = () => {
     switch (size2) {
       case "sm":
-        return "lsd:pb-2";
+        return "lsd:pb-[var(--lsd-spacing-smaller)]";
       case "lg":
-        return "lsd:pb-6";
+        return "lsd:pb-[var(--lsd-spacing-larger)]";
       default:
-        return "lsd:pb-4";
+        return "lsd:pb-[var(--lsd-spacing-base)]";
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -9774,7 +9774,7 @@ function CodeBlock({ className, code, ...props }) {
     "pre",
     {
       className: cn$1(
-        "lsd:overflow-x-auto lsd:rounded-md lsd:bg-lsd-surface lsd:p-4 lsd:text-sm lsd:text-lsd-text-primary",
+        "lsd:overflow-x-auto lsd:rounded-md lsd:bg-lsd-surface lsd:p-(--lsd-spacing-base) lsd:text-sm lsd:text-lsd-text-primary",
         className
       ),
       ...props,
@@ -9783,7 +9783,7 @@ function CodeBlock({ className, code, ...props }) {
   );
 }
 function CodeExample({ children, code }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:space-y-4", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:space-y-(--lsd-spacing-base)", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Accordion, { type: "single", collapsible: true, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(AccordionItem, { value: "code", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionTrigger, { children: "View Code" }),
@@ -10184,7 +10184,7 @@ function FontToggle() {
     root.classList.remove("font-mono", "font-sans", "font-serif");
     root.classList.add(`font-${font}`);
   }, [font]);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:flex lsd:items-center lsd:space-x-2", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:flex lsd:items-center lsd:space-x-(--lsd-spacing-smaller)", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:text-sm", children: "Font:" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       ToggleGroup,
@@ -10878,9 +10878,9 @@ const tabsTriggerVariants = cva(
   {
     variants: {
       size: {
-        sm: "lsd:px-3 lsd:py-1.5 lsd:text-sm lsd:[&>svg]:ml-2 lsd:[&>svg]:h-4 lsd:[&>svg]:w-4",
-        md: "lsd:px-4 lsd:py-2 lsd:text-base lsd:[&>svg]:ml-3 lsd:[&>svg]:h-5 lsd:[&>svg]:w-5",
-        lg: "lsd:px-5 lsd:py-2.5 lsd:text-lg lsd:[&>svg]:ml-3.5 lsd:[&>svg]:h-6 lsd:[&>svg]:w-6"
+        sm: "lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm lsd:[&>svg]:ml-[var(--lsd-spacing-smaller)] lsd:[&>svg]:h-[var(--lsd-spacing-base)] lsd:[&>svg]:w-[var(--lsd-spacing-base)]",
+        md: "lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-base lsd:[&>svg]:ml-[var(--lsd-spacing-small)] lsd:[&>svg]:h-[var(--lsd-spacing-large)] lsd:[&>svg]:w-[var(--lsd-spacing-large)]",
+        lg: "lsd:px-[var(--lsd-spacing-large)] lsd:py-[var(--lsd-spacing-small)] lsd:text-lg lsd:[&>svg]:ml-[var(--lsd-spacing-base)] lsd:[&>svg]:h-[var(--lsd-spacing-larger)] lsd:[&>svg]:w-[var(--lsd-spacing-larger)]"
       },
       fullWidth: {
         true: "lsd:flex-1",
@@ -11497,9 +11497,9 @@ const switchVariants = cva(
   {
     variants: {
       size: {
-        sm: "lsd:h-[14px] lsd:w-7",
-        md: "lsd:h-[18px] lsd:w-9",
-        lg: "lsd:h-[24px] lsd:w-12"
+        sm: "lsd:h-[var(--lsd-spacing-base)] lsd:w-[var(--lsd-spacing-largest)]",
+        md: "lsd:h-[var(--lsd-spacing-large)] lsd:w-9",
+        lg: "lsd:h-[var(--lsd-spacing-larger)] lsd:w-12"
       }
     },
     defaultVariants: {
@@ -11512,9 +11512,9 @@ const thumbVariants = cva(
   {
     variants: {
       size: {
-        sm: "lsd:size-3 lsd:data-[state=checked]:translate-x-[calc(100%-2px)]",
-        md: "lsd:size-5 lsd:data-[state=checked]:translate-x-[calc(100%-2px)]",
-        lg: "lsd:size-6 lsd:data-[state=checked]:translate-x-[calc(100%-2px)]"
+        sm: "lsd:size-[var(--lsd-spacing-small)] lsd:data-[state=checked]:translate-x-[calc(100%-2px)]",
+        md: "lsd:size-[var(--lsd-spacing-large)] lsd:data-[state=checked]:translate-x-[calc(100%-2px)]",
+        lg: "lsd:size-[var(--lsd-spacing-larger)] lsd:data-[state=checked]:translate-x-[calc(100%-2px)]"
       }
     },
     defaultVariants: {
@@ -12852,16 +12852,12 @@ const buttonVariants = cva(
         "success-icon": "lsd:bg-lsd-success lsd:text-white lsd:border-lsd-success lsd:rounded-full lsd:hover:bg-lsd-success/90"
       },
       size: {
-        xs: "lsd:h-7 lsd:px-2 lsd:py-1 lsd:text-xs",
-        sm: "lsd:h-8 lsd:px-3 lsd:py-[6px] lsd:text-sm",
-        md: "lsd:h-[34px] lsd:px-6 lsd:py-2 lsd:text-base",
-        lg: "lsd:h-12 lsd:px-8 lsd:py-[10px] lsd:text-lg",
-        xl: "lsd:h-14 lsd:px-10 lsd:py-3 lsd:text-xl",
-        "icon-xs": "lsd:w-6 lsd:h-6",
+        sm: "lsd:h-8 lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm",
+        md: "lsd:h-10 lsd:px-[var(--lsd-spacing-larger)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-base",
+        lg: "lsd:h-12 lsd:px-8 lsd:py-[var(--lsd-spacing-small)] lsd:text-lg",
         "icon-sm": "lsd:w-8 lsd:h-8",
         "icon-md": "lsd:w-10 lsd:h-10",
-        "icon-lg": "lsd:w-12 lsd:h-12",
-        "icon-xl": "lsd:w-16 lsd:h-16"
+        "icon-lg": "lsd:w-12 lsd:h-12"
       }
     },
     defaultVariants: {
@@ -12872,25 +12868,20 @@ const buttonVariants = cva(
 );
 const LoadingSpinner = ({ size: size2 }) => {
   const getSpinnerSize = () => {
+    const md = "lsd:w-[var(--lsd-spacing-large)] lsd:h-[var(--lsd-spacing-large)]";
     switch (size2) {
-      case "xs":
-      case "icon-xs":
-        return "lsd:w-3 lsd:h-3";
       case "icon-sm":
-        return "lsd:w-3 lsd:h-3";
+        return "lsd:w-[var(--lsd-spacing-small)] lsd:h-[var(--lsd-spacing-small)]";
       case "sm":
-        return "lsd:w-4 lsd:h-4";
+        return "lsd:w-[var(--lsd-spacing-base)] lsd:h-[var(--lsd-spacing-base)]";
       case "md":
       case "icon-md":
-        return "lsd:w-5 lsd:h-5";
+        return md;
       case "lg":
       case "icon-lg":
-        return "lsd:w-6 lsd:h-6";
-      case "xl":
-      case "icon-xl":
-        return "lsd:w-7 lsd:h-7";
+        return "lsd:w-[var(--lsd-spacing-larger)] lsd:h-[var(--lsd-spacing-larger)]";
       default:
-        return "lsd:w-5 lsd:h-5";
+        return md;
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -12951,7 +12942,7 @@ const Button = reactExports.forwardRef(
         ref,
         disabled: disabled || loading,
         ...props,
-        children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "lsd:flex lsd:items-center lsd:justify-center lsd:gap-2", children: [
+        children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "lsd:flex lsd:items-center lsd:justify-center lsd:gap-(--lsd-spacing-smaller)", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(LoadingSpinner, { size: size2 }),
           children && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:opacity-50", children })
         ] }) : children
@@ -13678,7 +13669,7 @@ function SheetContent({
       {
         "data-slot": "sheet-content",
         className: cn$1(
-          "lsd:bg-background lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:fixed lsd:z-50 lsd:flex lsd:flex-col lsd:gap-4 lsd:shadow-lg lsd:transition lsd:ease-in-out lsd:data-[state=closed]:duration-300 lsd:data-[state=open]:duration-500",
+          "lsd:bg-background lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:fixed lsd:z-50 lsd:flex lsd:flex-col lsd:gap-(--lsd-spacing-base) lsd:shadow-lg lsd:transition lsd:ease-in-out lsd:data-[state=closed]:duration-300 lsd:data-[state=open]:duration-500",
           side === "right" && "lsd:data-[state=closed]:slide-out-to-right lsd:data-[state=open]:slide-in-from-right lsd:inset-y-0 lsd:right-0 lsd:h-full lsd:w-3/4 lsd:border-l lsd:sm:max-w-sm",
           side === "left" && "lsd:data-[state=closed]:slide-out-to-left lsd:data-[state=open]:slide-in-from-left lsd:inset-y-0 lsd:left-0 lsd:h-full lsd:w-3/4 lsd:border-r lsd:sm:max-w-sm",
           side === "top" && "lsd:data-[state=closed]:slide-out-to-top lsd:data-[state=open]:slide-in-from-top lsd:inset-x-0 lsd:top-0 lsd:h-auto lsd:border-b",
@@ -13688,8 +13679,8 @@ function SheetContent({
         ...props,
         children: [
           children,
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(Close, { className: "lsd:data-[state=open]:bg-secondary lsd:absolute lsd:top-4 lsd:right-4 lsd:rounded-xs lsd:opacity-70 lsd:transition-opacity lsd:hover:opacity-100 lsd:p-2 lsd:cursor-pointer lsd:disabled:pointer-events-none", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { className: "lsd:size-4" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(Close, { className: "lsd:data-[state=open]:bg-secondary lsd:absolute lsd:top-(--lsd-spacing-base) lsd:right-(--lsd-spacing-base) lsd:rounded-xs lsd:opacity-70 lsd:transition-opacity lsd:hover:opacity-100 lsd:p-(--lsd-spacing-smaller) lsd:cursor-pointer lsd:disabled:pointer-events-none", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { className: "lsd:size-(--lsd-spacing-base)" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:sr-only", children: "Close" })
           ] })
         ]
@@ -13719,7 +13710,7 @@ function SheetFooter({
     {
       "data-slot": "sheet-footer",
       className: cn$1(
-        "lsd:mt-auto lsd:flex lsd:flex-col lsd:gap-2 lsd:p-4",
+        "lsd:mt-auto lsd:flex lsd:flex-col lsd:gap-(--lsd-spacing-smaller) lsd:p-(--lsd-spacing-base)",
         className
       ),
       ...props
@@ -13734,7 +13725,10 @@ function SheetHeader({
     "div",
     {
       "data-slot": "sheet-header",
-      className: cn$1("lsd:flex lsd:flex-col lsd:gap-1.5 lsd:p-4", className),
+      className: cn$1(
+        "lsd:flex lsd:flex-col lsd:gap-(--lsd-spacing-smaller) lsd:p-(--lsd-spacing-base)",
+        className
+      ),
       ...props
     }
   );
@@ -14296,7 +14290,7 @@ function useIsMobile() {
 const SIDEBAR_WIDTH_MOBILE = "18rem";
 const SIDEBAR_KEYBOARD_SHORTCUT = "b";
 const sidebarMenuButtonVariants = cva(
-  "peer/menu-button lsd:flex lsd:w-full lsd:items-center lsd:gap-2 lsd:overflow-hidden lsd:rounded-md lsd:p-2 lsd:text-left lsd:text-sm lsd:outline-hidden ring-sidebar-ring lsd:transition-[width,height,padding] lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground lsd:focus-visible:ring-2 lsd:active:bg-sidebar-accent lsd:active:text-sidebar-accent-foreground lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:bg-sidebar-accent lsd:data-[active=true]:font-medium lsd:data-[active=true]:text-sidebar-accent-foreground lsd:data-[state=open]:hover:bg-sidebar-accent lsd:data-[state=open]:hover:text-sidebar-accent-foreground lsd:group-data-[collapsible=icon]:size-8! lsd:group-data-[collapsible=icon]:p-2! lsd:[&>span:last-child]:truncate lsd:[&>svg]:size-4 lsd:[&>svg]:shrink-0 lsd:hover:underline lsd:focus:underline",
+  "peer/menu-button lsd:flex lsd:w-full lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:p-(--lsd-spacing-smaller) lsd:text-left lsd:text-sm lsd:outline-hidden ring-sidebar-ring lsd:transition-[width,height,padding] lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground lsd:focus-visible:ring-2 lsd:active:bg-sidebar-accent lsd:active:text-sidebar-accent-foreground lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:bg-sidebar-accent lsd:data-[active=true]:font-medium lsd:data-[active=true]:text-sidebar-accent-foreground lsd:data-[state=open]:hover:bg-sidebar-accent lsd:data-[state=open]:hover:text-sidebar-accent-foreground lsd:group-data-[collapsible=icon]:size-8! lsd:group-data-[collapsible=icon]:p-(--lsd-spacing-smaller)! lsd:[&>span:last-child]:truncate lsd:[&>svg]:size-(--lsd-spacing-base) lsd:[&>svg]:shrink-0 lsd:hover:underline lsd:focus:underline",
   {
     variants: {
       variant: {
@@ -14305,7 +14299,7 @@ const sidebarMenuButtonVariants = cva(
       },
       size: {
         default: "lsd:h-8 lsd:text-sm",
-        sm: "lsd:h-7 lsd:text-xs",
+        sm: "lsd:h-(--lsd-spacing-largest) lsd:text-xs",
         lg: "lsd:h-12 lsd:text-sm lsd:group-data-[collapsible=icon]:p-0!"
       }
     },
@@ -14468,7 +14462,7 @@ function Sidebar({
               "lsd:fixed lsd:inset-y-0 lsd:z-10 lsd:hidden lsd:h-svh lsd:w-(--sidebar-width) lsd:transition-[left,right,width] lsd:duration-200 lsd:ease-linear lsd:md:flex",
               side === "left" ? "lsd:left-0 lsd:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]" : "lsd:right-0 lsd:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
               // Adjust the padding for floating and inset variants.
-              variant === "floating" || variant === "inset" ? "lsd:p-2 lsd:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]" : "lsd:group-data-[collapsible=icon]:w-(--sidebar-width-icon) lsd:group-data-[side=left]:border-r lsd:group-data-[side=right]:border-l",
+              variant === "floating" || variant === "inset" ? "lsd:p-(--lsd-spacing-smaller) lsd:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]" : "lsd:group-data-[collapsible=icon]:w-(--sidebar-width-icon) lsd:group-data-[side=left]:border-r lsd:group-data-[side=right]:border-l",
               className
             ),
             ...props,
@@ -14504,19 +14498,20 @@ function getTextSizeClasses(size2) {
   }
 }
 function getVerticalPaddingClasses(size2) {
+  const md = "lsd:py-[var(--lsd-spacing-small)]";
   switch (size2) {
     case "xs":
-      return "lsd:py-1";
+      return "lsd:py-[var(--lsd-spacing-smallest)]";
     case "sm":
-      return "lsd:py-2";
+      return "lsd:py-[var(--lsd-spacing-smaller)]";
     case "md":
-      return "lsd:py-3";
+      return md;
     case "lg":
-      return "lsd:py-4";
+      return "lsd:py-[var(--lsd-spacing-base)]";
     case "xl":
-      return "lsd:py-5";
+      return "lsd:py-[var(--lsd-spacing-large)]";
     default:
-      return "lsd:py-3";
+      return md;
   }
 }
 function getLabelSizeClasses(size2) {
@@ -14574,7 +14569,7 @@ const Input = reactExports.forwardRef(
               id: finalId,
               className: cn$1(
                 "file:lsd:text-lsd-text-primary placeholder:lsd:text-lsd-text-primary placeholder:lsd:opacity-30 selection:lsd:bg-lsd-primary selection:lsd:text-lsd-surface lsd:border-none lsd:outline-none lsd:bg-transparent lsd:text-lsd-text-primary lsd:w-full lsd:h-full file:lsd:inline-flex file:lsd:h-7 file:lsd:border-0 file:lsd:bg-transparent file:lsd:font-medium lsd:disabled:pointer-events-none lsd:disabled:cursor-not-allowed lsd:disabled:opacity-34",
-                "focus-visible:lsd:outline-none lsd:px-4",
+                "focus-visible:lsd:outline-none lsd:px-(--lsd-spacing-base)",
                 getTextSizeClasses(size2),
                 getVerticalPaddingClasses(size2)
               ),
@@ -14583,7 +14578,7 @@ const Input = reactExports.forwardRef(
           )
         }
       ),
-      supportingText && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lsd:pt-1.5 lsd:w-fit", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      supportingText && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lsd:pt-(--lsd-spacing-smaller) lsd:w-fit", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "p",
         {
           className: cn$1(
@@ -14776,7 +14771,7 @@ function SidebarContent({ className, ...props }) {
       "data-slot": "sidebar-content",
       "data-sidebar": "content",
       className: cn$1(
-        "lsd:flex lsd:min-h-0 lsd:flex-1 lsd:flex-col lsd:gap-2 lsd:overflow-auto lsd:group-data-[collapsible=icon]:overflow-hidden",
+        "lsd:flex lsd:min-h-0 lsd:flex-1 lsd:flex-col lsd:gap-(--lsd-spacing-smaller) lsd:overflow-auto lsd:group-data-[collapsible=icon]:overflow-hidden",
         className
       ),
       ...props
@@ -14789,7 +14784,10 @@ function SidebarHeader({ className, ...props }) {
     {
       "data-slot": "sidebar-header",
       "data-sidebar": "header",
-      className: cn$1("lsd:flex lsd:flex-col lsd:gap-2 lsd:p-2", className),
+      className: cn$1(
+        "lsd:flex lsd:flex-col lsd:gap-(--lsd-spacing-smaller) lsd:p-(--lsd-spacing-smaller)",
+        className
+      ),
       ...props
     }
   );
@@ -14800,7 +14798,10 @@ function SidebarFooter({ className, ...props }) {
     {
       "data-slot": "sidebar-footer",
       "data-sidebar": "footer",
-      className: cn$1("lsd:flex lsd:flex-col lsd:gap-2 lsd:p-2", className),
+      className: cn$1(
+        "lsd:flex lsd:flex-col lsd:gap-(--lsd-spacing-smaller) lsd:p-(--lsd-spacing-smaller)",
+        className
+      ),
       ...props
     }
   );
@@ -14826,7 +14827,7 @@ function SidebarInset({ className, ...props }) {
       "data-slot": "sidebar-inset",
       className: cn$1(
         "lsd:bg-background lsd:relative lsd:flex lsd:w-full lsd:flex-1 lsd:flex-col",
-        "lsd:md:peer-data-[variant=inset]:m-2 lsd:md:peer-data-[variant=inset]:ml-0 lsd:md:peer-data-[variant=inset]:rounded-xl lsd:md:peer-data-[variant=inset]:shadow-sm lsd:md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2",
+        "lsd:md:peer-data-[variant=inset]:m-(--lsd-spacing-smaller) lsd:md:peer-data-[variant=inset]:ml-0 lsd:md:peer-data-[variant=inset]:rounded-xl lsd:md:peer-data-[variant=inset]:shadow-sm lsd:md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-(--lsd-spacing-smaller)",
         className
       ),
       ...props
@@ -14845,7 +14846,7 @@ function SidebarTrigger({
       "data-sidebar": "trigger",
       "data-slot": "sidebar-trigger",
       variant: "ghost",
-      size: "icon-xs",
+      size: "icon-sm",
       className,
       onClick: (event) => {
         onClick?.(event);
@@ -14853,7 +14854,7 @@ function SidebarTrigger({
       },
       ...props,
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(PanelLeft, { className: "lsd:size-full" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(PanelLeft, { className: "lsd:size-3/4" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:sr-only", children: "Toggle Sidebar" })
       ]
     }
@@ -14866,7 +14867,7 @@ function SidebarGroup({ className, ...props }) {
       "data-slot": "sidebar-group",
       "data-sidebar": "group",
       className: cn$1(
-        "lsd:relative lsd:flex lsd:w-full lsd:min-w-0 lsd:flex-col lsd:p-2",
+        "lsd:relative lsd:flex lsd:w-full lsd:min-w-0 lsd:flex-col lsd:p-(--lsd-spacing-smaller)",
         className
       ),
       ...props
@@ -14885,7 +14886,7 @@ function SidebarGroupLabel({
       "data-slot": "sidebar-group-label",
       "data-sidebar": "group-label",
       className: cn$1(
-        "lsd:text-sidebar-foreground/70 ring-sidebar-ring lsd:flex lsd:h-8 lsd:shrink-0 lsd:items-center lsd:rounded-md lsd:px-2 lsd:text-xs lsd:font-medium lsd:outline-hidden lsd:transition-[margin,opacity] lsd:duration-200 lsd:ease-linear lsd:focus-visible:ring-2 lsd:[&>svg]:size-4 lsd:[&>svg]:shrink-0",
+        "lsd:text-sidebar-foreground/70 ring-sidebar-ring lsd:flex lsd:h-8 lsd:shrink-0 lsd:items-center lsd:rounded-md lsd:px-(--lsd-spacing-smaller) lsd:text-xs lsd:font-medium lsd:outline-hidden lsd:transition-[margin,opacity] lsd:duration-200 lsd:ease-linear lsd:focus-visible:ring-2 lsd:[&>svg]:size-(--lsd-spacing-base) lsd:[&>svg]:shrink-0",
         "lsd:group-data-[collapsible=icon]:-mt-8 lsd:group-data-[collapsible=icon]:opacity-0",
         className
       ),
@@ -14914,7 +14915,7 @@ function SidebarMenu({ className, ...props }) {
       "data-slot": "sidebar-menu",
       "data-sidebar": "menu",
       className: cn$1(
-        "lsd:flex lsd:w-full lsd:min-w-0 lsd:flex-col lsd:gap-1",
+        "lsd:flex lsd:w-full lsd:min-w-0 lsd:flex-col lsd:gap-(--lsd-spacing-smallest)",
         className
       ),
       ...props
@@ -14982,7 +14983,7 @@ function SidebarMenuSub({ className, ...props }) {
       "data-slot": "sidebar-menu-sub",
       "data-sidebar": "menu-sub",
       className: cn$1(
-        "border-sidebar-border lsd:mx-3.5 lsd:flex lsd:min-w-0 lsd:translate-x-px lsd:flex-col lsd:gap-1 lsd:border-l lsd:px-2.5 lsd:py-0.5",
+        "border-sidebar-border lsd:mx-(--lsd-spacing-base) lsd:flex lsd:min-w-0 lsd:translate-x-px lsd:flex-col lsd:gap-(--lsd-spacing-smallest) lsd:border-l lsd:px-(--lsd-spacing-small) lsd:py-(--lsd-spacing-smallest)",
         "lsd:group-data-[collapsible=icon]:hidden",
         className
       ),
@@ -15020,7 +15021,7 @@ function SidebarMenuSubButton({
       "data-size": size2,
       "data-active": isActive,
       className: cn$1(
-        "lsd:text-sidebar-foreground ring-sidebar-ring lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground lsd:active:bg-sidebar-accent lsd:active:text-sidebar-accent-foreground lsd:[&>svg]:text-sidebar-accent-foreground lsd:flex lsd:h-7 lsd:min-w-0 lsd:-translate-x-px lsd:items-center lsd:gap-2 lsd:overflow-hidden lsd:rounded-md lsd:px-2 lsd:outline-hidden lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:bg-sidebar-accent lsd:data-[active=true]:text-sidebar-accent-foreground lsd:hover:underline lsd:focus:underline",
+        "lsd:text-sidebar-foreground ring-sidebar-ring lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground lsd:active:bg-sidebar-accent lsd:active:text-sidebar-accent-foreground lsd:[&>svg]:text-sidebar-accent-foreground lsd:flex lsd:h-(--lsd-spacing-largest) lsd:min-w-0 lsd:-translate-x-px lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:px-(--lsd-spacing-smaller) lsd:outline-hidden lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:bg-sidebar-accent lsd:data-[active=true]:text-sidebar-accent-foreground lsd:hover:underline lsd:focus:underline",
         size2 === "sm" && "lsd:text-xs",
         size2 === "md" && "lsd:text-sm",
         "lsd:group-data-[collapsible=icon]:hidden",
@@ -15228,7 +15229,7 @@ var Label$2 = reactExports.forwardRef((props, forwardedRef) => {
 Label$2.displayName = NAME;
 var Root$2 = Label$2;
 const labelVariants = cva(
-  "lsd:flex lsd:items-center lsd:gap-2 lsd:select-none lsd:group-data-[disabled=true]:pointer-events-none lsd:group-data-[disabled=true]:opacity-50 lsd:peer-disabled:cursor-not-allowed lsd:peer-disabled:opacity-50",
+  "lsd:flex lsd:items-center lsd:gap-[var(--lsd-spacing-smaller)] lsd:select-none lsd:group-data-[disabled=true]:pointer-events-none lsd:group-data-[disabled=true]:opacity-50 lsd:peer-disabled:cursor-not-allowed lsd:peer-disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -15598,7 +15599,10 @@ const CardContent = reactExports.forwardRef(({ className, ...props }, ref) => {
     {
       ref,
       "data-slot": "card-content",
-      className: cn$1("lsd:px-6 lsd:py-6", className),
+      className: cn$1(
+        "lsd:px-(--lsd-spacing-larger) lsd:py-(--lsd-spacing-larger)",
+        className
+      ),
       ...props
     }
   );
@@ -15623,7 +15627,7 @@ const CardFooter = reactExports.forwardRef(({ className, ...props }, ref) => {
       ref,
       "data-slot": "card-footer",
       className: cn$1(
-        "lsd:flex lsd:items-center lsd:px-6 lsd:py-6 lsd:border-t lsd:border-lsd-border lsd:pt-6",
+        "lsd:flex lsd:items-center lsd:px-(--lsd-spacing-larger) lsd:py-(--lsd-spacing-larger) lsd:border-t lsd:border-lsd-border lsd:pt-(--lsd-spacing-larger)",
         className
       ),
       ...props
@@ -15638,7 +15642,7 @@ const CardHeader = reactExports.forwardRef(({ className, ...props }, ref) => {
       ref,
       "data-slot": "card-header",
       className: cn$1(
-        "@container/card-header lsd:grid lsd:auto-rows-min lsd:grid-rows-[auto_auto] lsd:items-start lsd:gap-2 lsd:px-6 lsd:py-6 lsd:has-data-[slot=card-action]:grid-cols-[1fr_auto] lsd:border-b lsd:border-lsd-border lsd:pb-6",
+        "@container/card-header lsd:grid lsd:auto-rows-min lsd:grid-rows-[auto_auto] lsd:items-start lsd:gap-(--lsd-spacing-smaller) lsd:px-(--lsd-spacing-larger) lsd:py-(--lsd-spacing-larger) lsd:has-data-[slot=card-action]:grid-cols-[1fr_auto] lsd:border-b lsd:border-lsd-border lsd:pb-(--lsd-spacing-larger)",
         className
       ),
       ...props
@@ -16876,8 +16880,8 @@ function ScrollBar({
       orientation,
       className: cn$1(
         "lsd:flex lsd:touch-none lsd:p-px lsd:transition-colors lsd:select-none",
-        orientation === "vertical" && "lsd:h-full lsd:w-2.5 lsd:border-l lsd:border-l-transparent",
-        orientation === "horizontal" && "lsd:h-2.5 lsd:flex-col lsd:border-t lsd:border-t-transparent",
+        orientation === "vertical" && "lsd:h-full lsd:w-(--lsd-spacing-small) lsd:border-l lsd:border-l-transparent",
+        orientation === "horizontal" && "lsd:h-(--lsd-spacing-small) lsd:flex-col lsd:border-t lsd:border-t-transparent",
         className
       ),
       ...props,
@@ -17264,9 +17268,9 @@ const Progress = reactExports.forwardRef(
       destructive: "lsd:bg-lsd-destructive"
     };
     const sizeClasses = {
-      sm: "lsd:h-2",
-      md: "lsd:h-3",
-      lg: "lsd:h-4"
+      sm: "lsd:h-[var(--lsd-spacing-smaller)]",
+      md: "lsd:h-[var(--lsd-spacing-small)]",
+      lg: "lsd:h-[var(--lsd-spacing-base)]"
     };
     const indeterminateAnimationClasses = indeterminate ? cn$1(
       "lsd:w-1/3",
@@ -17277,7 +17281,7 @@ const Progress = reactExports.forwardRef(
     ) : "lsd:w-full";
     const labelText = showLabel ? `${value ?? 0}%` : null;
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:w-full", children: [
-      showLabel && labelText && labelPosition === "top" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lsd:mb-0.5 lsd:text-sm lsd:font-medium lsd:text-lsd-text-primary lsd:text-center", children: labelText }),
+      showLabel && labelText && labelPosition === "top" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lsd:mb-(--lsd-spacing-smallest) lsd:text-sm lsd:font-medium lsd:text-lsd-text-primary lsd:text-center", children: labelText }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         Root,
         {
@@ -17304,7 +17308,7 @@ const Progress = reactExports.forwardRef(
           )
         }
       ),
-      showLabel && labelText && labelPosition === "bottom" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lsd:mt-0.5 lsd:text-sm lsd:font-medium lsd:text-lsd-text-primary lsd:text-center", children: labelText })
+      showLabel && labelText && labelPosition === "bottom" && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lsd:mt-(--lsd-spacing-smallest) lsd:text-sm lsd:font-medium lsd:text-lsd-text-primary lsd:text-center", children: labelText })
     ] });
   }
 );
@@ -17937,7 +17941,7 @@ function PopoverContent({
       align,
       sideOffset,
       className: cn$1(
-        "lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2 lsd:z-50 lsd:w-72 origin-(--radix-popover-content-transform-origin) lsd:border lsd:border-lsd-border lsd:p-4 lsd:shadow-md lsd:outline-hidden",
+        "lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2 lsd:z-50 lsd:w-72 origin-(--radix-popover-content-transform-origin) lsd:border lsd:border-lsd-border lsd:p-(--lsd-spacing-base) lsd:shadow-md lsd:outline-hidden",
         className
       ),
       ...props
@@ -18183,11 +18187,9 @@ const badgeVariants = cva(
         dot: "lsd:rounded-full lsd:w-fit lsd:h-fit lsd:p-0"
       },
       size: {
-        xs: "lsd:h-[20px] lsd:px-[5px] lsd:py-[3px] lsd:gap-[4px] lsd:text-[0.625rem] [&>svg]:size-[10px]",
-        sm: "lsd:h-[24px] lsd:px-[7px] lsd:py-[3px] lsd:gap-[4px] lsd:text-[0.75rem] [&>svg]:size-3",
-        md: "lsd:h-[28px] lsd:px-[11px] lsd:py-[3px] lsd:gap-[6px] lsd:text-[0.875rem] [&>svg]:size-3",
-        lg: "lsd:h-[32px] lsd:px-[13px] lsd:py-[3px] lsd:gap-[8px] lsd:text-[1rem] [&>svg]:size-[14px]",
-        xl: "lsd:h-[36px] lsd:px-[15px] lsd:py-[3px] lsd:gap-[10px] lsd:text-[1.125rem] [&>svg]:size-[16px]"
+        sm: "lsd:h-[var(--lsd-spacing-larger)] lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smallest)] lsd:gap-[var(--lsd-spacing-smallest)] lsd:text-[0.75rem] [&>svg]:size-3",
+        md: "lsd:h-[var(--lsd-spacing-largest)] lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smallest)] lsd:gap-[var(--lsd-spacing-smaller)] lsd:text-[0.875rem] [&>svg]:size-3",
+        lg: "lsd:h-8 lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smallest)] lsd:gap-[var(--lsd-spacing-smaller)] lsd:text-[1rem] [&>svg]:size-[14px]"
       }
     },
     defaultVariants: {
@@ -18242,19 +18244,16 @@ function Badge({
     onDismiss?.();
   };
   const getDotSize = () => {
+    const md = "lsd:w-[var(--lsd-spacing-small)] lsd:h-[var(--lsd-spacing-small)]";
     switch (size2) {
-      case "xs":
-        return "lsd:w-[8px] lsd:h-[8px]";
       case "sm":
-        return "lsd:w-[10px] lsd:h-[10px]";
+        return "lsd:w-[var(--lsd-spacing-smaller)] lsd:h-[var(--lsd-spacing-smaller)]";
       case "md":
-        return "lsd:w-[12px] lsd:h-[12px]";
+        return md;
       case "lg":
-        return "lsd:w-[14px] lsd:h-[14px]";
-      case "xl":
-        return "lsd:w-[16px] lsd:h-[16px]";
+        return "lsd:w-[var(--lsd-spacing-base)] lsd:h-[var(--lsd-spacing-base)]";
       default:
-        return "lsd:w-[12px] lsd:h-[12px]";
+        return md;
     }
   };
   const dotClasses = isDot ? getDotSize() : "";
@@ -18558,7 +18557,7 @@ function Checkbox({
     {
       "data-slot": "checkbox",
       className: cn$1(
-        "peer lsd:border-lsd-border dark:lsd:bg-lsd-surface/30 lsd:data-[state=checked]:bg-lsd-primary lsd:data-[state=checked]:text-lsd-surface dark:lsd:data-[state=checked]:bg-lsd-primary lsd:data-[state=checked]:border-lsd-primary focus-visible:lsd:border-lsd-border focus-visible:lsd:ring-lsd-text/50 aria-invalid:lsd:ring-lsd-destructive/20 dark:aria-invalid:lsd:ring-lsd-destructive/40 aria-invalid:lsd:border-lsd-destructive lsd:size-5 lsd:shrink-0 lsd:border lsd:shadow-xs lsd:transition-shadow lsd:outline-none focus-visible:lsd:ring-[3px] lsd:cursor-pointer lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50",
+        "peer lsd:border-lsd-border dark:lsd:bg-lsd-surface/30 lsd:data-[state=checked]:bg-lsd-primary lsd:data-[state=checked]:text-lsd-surface dark:lsd:data-[state=checked]:bg-lsd-primary lsd:data-[state=checked]:border-lsd-primary focus-visible:lsd:border-lsd-border focus-visible:lsd:ring-lsd-text/50 aria-invalid:lsd:ring-lsd-destructive/20 dark:aria-invalid:lsd:ring-lsd-destructive/40 aria-invalid:lsd:border-lsd-destructive lsd:size-(--lsd-spacing-large) lsd:shrink-0 lsd:border lsd:shadow-xs lsd:transition-shadow lsd:outline-none focus-visible:lsd:ring-[3px] lsd:cursor-pointer lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50",
         className
       ),
       ...props,
@@ -18567,7 +18566,7 @@ function Checkbox({
         {
           "data-slot": "checkbox-indicator",
           className: "lsd:flex lsd:items-center lsd:justify-center lsd:text-current lsd:transition-none",
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "lsd:size-4" })
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "lsd:size-(--lsd-spacing-base)" })
         }
       )
     }
@@ -20100,13 +20099,13 @@ var Sub2 = MenubarSub$1;
 var SubTrigger2 = MenubarSubTrigger$1;
 var SubContent2 = MenubarSubContent$1;
 const menubarVariants = cva(
-  "lsd:flex lsd:h-9 lsd:items-center lsd:gap-1 lsd:border lsd:border-lsd-border lsd:bg-lsd-surface lsd:p-1 lsd:shadow-xs"
+  "lsd:flex lsd:h-9 lsd:items-center lsd:gap-[var(--lsd-spacing-smallest)] lsd:border lsd:border-lsd-border lsd:bg-lsd-surface lsd:p-[var(--lsd-spacing-smallest)] lsd:shadow-xs"
 );
 const menubarTriggerVariants = cva(
-  "lsd:cursor-pointer lsd:flex lsd:items-center lsd:px-2 lsd:py-1 lsd:text-sm lsd:font-medium lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:hover:underline lsd:focus:underline lsd:data-[state=open]:bg-lsd-surface-secondary lsd:data-[state=open]:text-lsd-text-primary lsd:transition-colors"
+  "lsd:cursor-pointer lsd:flex lsd:items-center lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smallest)] lsd:text-sm lsd:font-medium lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:hover:underline lsd:focus:underline lsd:data-[state=open]:bg-lsd-surface-secondary lsd:data-[state=open]:text-lsd-text-primary lsd:transition-colors"
 );
 const menubarItemVariants = cva(
-  "lsd:relative lsd:flex lsd:cursor-pointer lsd:items-center lsd:gap-2 lsd:px-2 lsd:py-1.5 lsd:text-sm lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:transition-colors lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4",
+  "lsd:relative lsd:flex lsd:cursor-pointer lsd:items-center lsd:gap-[var(--lsd-spacing-smaller)] lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:transition-colors lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
@@ -20124,10 +20123,10 @@ const menubarItemVariants = cva(
   }
 );
 const menubarSeparatorVariants = cva(
-  "lsd:bg-lsd-border lsd:-mx-1 lsd:my-1 lsd:h-px"
+  "lsd:bg-lsd-border lsd:-mx-[var(--lsd-spacing-smallest)] lsd:my-[var(--lsd-spacing-smallest)] lsd:h-px"
 );
 const menubarLabelVariants = cva(
-  "lsd:px-2 lsd:py-1.5 lsd:text-sm lsd:font-bold lsd:text-lsd-text-primary",
+  "lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm lsd:font-bold lsd:text-lsd-text-primary",
   {
     variants: {
       inset: {
@@ -20140,10 +20139,10 @@ const menubarLabelVariants = cva(
   }
 );
 const menubarContentVariants = cva(
-  "lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:z-50 lsd:min-w-[12rem] lsd:overflow-hidden lsd:border lsd:border-lsd-border lsd:p-1 lsd:shadow-lg lsd:data-[state=open]:animate-in lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2"
+  "lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:z-50 lsd:min-w-[12rem] lsd:overflow-hidden lsd:border lsd:border-lsd-border lsd:p-[var(--lsd-spacing-smallest)] lsd:shadow-lg lsd:data-[state=open]:animate-in lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2"
 );
 const menubarSubTriggerVariants = cva(
-  "lsd:flex lsd:cursor-pointer lsd:items-center lsd:px-2 lsd:py-1.5 lsd:text-sm lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:data-[state=open]:bg-lsd-surface-secondary lsd:data-[state=open]:text-lsd-text-primary lsd:transition-colors",
+  "lsd:flex lsd:cursor-pointer lsd:items-center lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:data-[state=open]:bg-lsd-surface-secondary lsd:data-[state=open]:text-lsd-text-primary lsd:transition-colors",
   {
     variants: {
       inset: {
@@ -20156,13 +20155,13 @@ const menubarSubTriggerVariants = cva(
   }
 );
 const menubarSubContentVariants = cva(
-  "lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:z-50 lsd:min-w-[8rem] lsd:overflow-hidden lsd:border lsd:border-lsd-border lsd:p-1 lsd:shadow-lg lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2"
+  "lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:z-50 lsd:min-w-[8rem] lsd:overflow-hidden lsd:border lsd:border-lsd-border lsd:p-[var(--lsd-spacing-smallest)] lsd:shadow-lg lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2"
 );
 const menubarCheckboxItemVariants = cva(
-  "lsd:relative lsd:flex lsd:cursor-pointer lsd:items-center lsd:gap-2 lsd:py-1.5 lsd:pr-2 lsd:pl-8 lsd:text-sm lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4"
+  "lsd:relative lsd:flex lsd:cursor-pointer lsd:items-center lsd:gap-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smaller)] lsd:pr-[var(--lsd-spacing-smaller)] lsd:pl-8 lsd:text-sm lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4"
 );
 const menubarRadioItemVariants = cva(
-  "lsd:relative lsd:flex lsd:cursor-pointer lsd:items-center lsd:gap-2 lsd:py-1.5 lsd:pr-2 lsd:pl-8 lsd:text-sm lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4"
+  "lsd:relative lsd:flex lsd:cursor-pointer lsd:items-center lsd:gap-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smaller)] lsd:pr-[var(--lsd-spacing-smaller)] lsd:pl-8 lsd:text-sm lsd:outline-none lsd:select-none lsd:text-lsd-text-primary lsd:bg-lsd-surface lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4"
 );
 function Menubar({ className, ...props }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20188,7 +20187,7 @@ function MenubarCheckboxItem({
       checked,
       ...props,
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:pointer-events-none lsd:absolute lsd:left-2 lsd:flex lsd:size-3.5 lsd:items-center lsd:justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ItemIndicator2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "lsd:size-4" }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:pointer-events-none lsd:absolute lsd:left-(--lsd-spacing-smaller) lsd:flex lsd:size-(--lsd-spacing-base) lsd:items-center lsd:justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ItemIndicator2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "lsd:size-(--lsd-spacing-base)" }) }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:group-hover:underline lsd:group-focus:underline", children })
       ]
     }
@@ -20283,7 +20282,7 @@ function MenubarRadioItem({
       className: cn$1(menubarRadioItemVariants(), "lsd:group", className),
       ...props,
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:pointer-events-none lsd:absolute lsd:left-2 lsd:flex lsd:size-3.5 lsd:items-center lsd:justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ItemIndicator2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Circle, { className: "lsd:size-2 lsd:fill-current" }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:pointer-events-none lsd:absolute lsd:left-(--lsd-spacing-smaller) lsd:flex lsd:size-(--lsd-spacing-base) lsd:items-center lsd:justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ItemIndicator2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Circle, { className: "lsd:size-(--lsd-spacing-smaller) lsd:fill-current" }) }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:group-hover:underline lsd:group-focus:underline", children })
       ]
     }
@@ -20333,7 +20332,7 @@ function MenubarSubTrigger({
       ...props,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:group-hover:underline lsd:group-focus:underline", children }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "lsd:ml-auto lsd:h-4 lsd:w-4" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "lsd:ml-auto lsd:h-(--lsd-spacing-base) lsd:w-(--lsd-spacing-base)" })
       ]
     }
   );
@@ -21205,7 +21204,7 @@ function DialogContent({
       {
         "data-slot": "dialog-content",
         className: cn$1(
-          "lsd:bg-lsd-surface lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:fixed lsd:top-[50%] lsd:left-[50%] lsd:z-50 lsd:grid lsd:w-full lsd:max-w-[calc(100%-2rem)] lsd:translate-x-[-50%] lsd:translate-y-[-50%] lsd:gap-4 lsd:border lsd:border-lsd-border lsd:p-6 lsd:shadow-lg lsd:duration-200 lsd:sm:max-w-lg",
+          "lsd:bg-lsd-surface lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:fixed lsd:top-[50%] lsd:left-[50%] lsd:z-50 lsd:grid lsd:w-full lsd:max-w-[calc(100%-2rem)] lsd:translate-x-[-50%] lsd:translate-y-[-50%] lsd:gap-(--lsd-spacing-base) lsd:border lsd:border-lsd-border lsd:p-(--lsd-spacing-larger) lsd:shadow-lg lsd:duration-200 lsd:sm:max-w-lg",
           className
         ),
         ...props,
@@ -21215,7 +21214,7 @@ function DialogContent({
             DialogClose,
             {
               "data-slot": "dialog-close",
-              className: "lsd:p-2 focus:lsd:outline-hidden lsd:data-[state=open]:bg-lsd-surface lsd:data-[state=open]:text-lsd-text-primary lsd:absolute lsd:top-4 lsd:right-4 lsd:rounded-xs lsd:opacity-70 lsd:transition-opacity lsd:hover:opacity-100 lsd:disabled:pointer-events-none lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4 lsd:cursor-pointer",
+              className: "lsd:p-(--lsd-spacing-smaller) focus:lsd:outline-hidden lsd:data-[state=open]:bg-lsd-surface lsd:data-[state=open]:text-lsd-text-primary lsd:absolute lsd:top-(--lsd-spacing-base) lsd:right-(--lsd-spacing-base) lsd:rounded-xs lsd:opacity-70 lsd:transition-opacity lsd:hover:opacity-100 lsd:disabled:pointer-events-none lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4 lsd:cursor-pointer",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, {}),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "lsd:sr-only", children: "Close" })
@@ -21246,7 +21245,7 @@ function DialogFooter({ className, ...props }) {
     {
       "data-slot": "dialog-footer",
       className: cn$1(
-        "lsd:flex lsd:flex-col-reverse lsd:gap-2 lsd:sm:flex-row lsd:sm:justify-end",
+        "lsd:flex lsd:flex-col-reverse lsd:gap-(--lsd-spacing-smaller) lsd:sm:flex-row lsd:sm:justify-end",
         className
       ),
       ...props
@@ -21259,7 +21258,7 @@ function DialogHeader({ className, ...props }) {
     {
       "data-slot": "dialog-header",
       className: cn$1(
-        "lsd:flex lsd:flex-col lsd:gap-2 lsd:text-center lsd:sm:text-left",
+        "lsd:flex lsd:flex-col lsd:gap-(--lsd-spacing-smaller) lsd:text-center lsd:sm:text-left",
         className
       ),
       ...props
@@ -21823,7 +21822,7 @@ function CommandDialog({
       {
         className: cn$1("lsd:overflow-hidden lsd:p-0", className),
         showCloseButton,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Command, { className: "lsd:[&_[cmdk-group-heading]]:text-lsd-text-primary lsd:[&_[cmdk-group-heading]]:px-2 lsd:[&_[cmdk-group-heading]]:font-medium lsd:[&_[cmdk-group]]:px-2 lsd:[&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 lsd:[&_[cmdk-input-wrapper]_svg]:h-5 lsd:[&_[cmdk-input-wrapper]_svg]:w-5 lsd:[&_[cmdk-input]]:h-12 lsd:[&_[cmdk-item]]:px-2 lsd:[&_[cmdk-item]]:py-3 lsd:[&_[cmdk-item]_svg]:h-5 lsd:[&_[cmdk-item]_svg]:w-5", children })
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Command, { className: "lsd:**:[[cmdk-group-heading]]:text-lsd-text-primary lsd:**:[[cmdk-group-heading]]:px-(--lsd-spacing-smaller) lsd:**:[[cmdk-group-heading]]:font-medium lsd:**:[[cmdk-group]]:px-(--lsd-spacing-smaller) lsd:[&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 lsd:[&_[cmdk-input-wrapper]_svg]:h-(--lsd-spacing-large) lsd:[&_[cmdk-input-wrapper]_svg]:w-(--lsd-spacing-large) lsd:**:[[cmdk-input]]:h-12 lsd:**:[[cmdk-item]]:px-(--lsd-spacing-smaller) lsd:**:[[cmdk-item]]:py-(--lsd-spacing-small) lsd:[&_[cmdk-item]_svg]:h-(--lsd-spacing-large) lsd:[&_[cmdk-item]_svg]:w-(--lsd-spacing-large)", children })
       }
     )
   ] });
@@ -21835,7 +21834,7 @@ function CommandEmpty({
     _e.Empty,
     {
       "data-slot": "command-empty",
-      className: "lsd:py-6 lsd:text-center lsd:text-sm",
+      className: "lsd:py-(--lsd-spacing-larger) lsd:text-center lsd:text-sm",
       ...props
     }
   );
@@ -21849,7 +21848,7 @@ function CommandGroup({
     {
       "data-slot": "command-group",
       className: cn$1(
-        "lsd:text-lsd-text-primary lsd:[&_[cmdk-group-heading]]:text-lsd-text-primary lsd:overflow-hidden lsd:p-1 lsd:[&_[cmdk-group-heading]]:px-2 lsd:[&_[cmdk-group-heading]]:py-1.5 lsd:[&_[cmdk-group-heading]]:text-xs lsd:[&_[cmdk-group-heading]]:font-medium",
+        "lsd:text-lsd-text-primary lsd:**:[[cmdk-group-heading]]:text-lsd-text-primary lsd:overflow-hidden lsd:p-(--lsd-spacing-smallest) lsd:**:[[cmdk-group-heading]]:px-(--lsd-spacing-smaller) lsd:**:[[cmdk-group-heading]]:py-(--lsd-spacing-smaller) lsd:**:[[cmdk-group-heading]]:text-xs lsd:**:[[cmdk-group-heading]]:font-medium",
         className
       ),
       ...props
@@ -21864,7 +21863,7 @@ function CommandInput({
     "div",
     {
       "data-slot": "command-input-wrapper",
-      className: "lsd:flex lsd:h-9 lsd:items-center lsd:gap-2 lsd:border-b lsd:border-lsd-border lsd:px-3",
+      className: "lsd:flex lsd:h-9 lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:border-b lsd:border-lsd-border lsd:px-(--lsd-spacing-small)",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "lsd:size-4 lsd:shrink-0 lsd:opacity-50" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21872,7 +21871,7 @@ function CommandInput({
           {
             "data-slot": "command-input",
             className: cn$1(
-              "placeholder:text-lsd-text/50 lsd:flex lsd:h-10 lsd:w-full lsd:bg-transparent lsd:py-3 lsd:text-sm lsd:outline-hidden lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50",
+              "placeholder:text-lsd-text/50 lsd:flex lsd:h-10 lsd:w-full lsd:bg-transparent lsd:py-(--lsd-spacing-small) lsd:text-sm lsd:outline-hidden lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50",
               className
             ),
             ...props
@@ -21891,7 +21890,7 @@ function CommandItem({
     {
       "data-slot": "command-item",
       className: cn$1(
-        "lsd:data-[selected=true]:bg-lsd-surface lsd:data-[selected=true]:text-lsd-text-primary lsd:[&_svg:not([class*='text-'])]:text-lsd-text-primary lsd:relative lsd:flex lsd:cursor-default lsd:items-center lsd:gap-2 lsd:px-2 lsd:py-1.5 lsd:text-sm lsd:outline-hidden lsd:select-none lsd:data-[disabled=true]:pointer-events-none lsd:data-[disabled=true]:opacity-50 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4",
+        "lsd:data-[selected=true]:bg-lsd-surface lsd:data-[selected=true]:text-lsd-text-primary lsd:[&_svg:not([class*='text-'])]:text-lsd-text-primary lsd:relative lsd:flex lsd:cursor-default lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:px-(--lsd-spacing-smaller) lsd:py-(--lsd-spacing-smaller) lsd:text-sm lsd:outline-hidden lsd:select-none lsd:data-[disabled=true]:pointer-events-none lsd:data-[disabled=true]:opacity-50 lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4",
         className
       ),
       ...props
@@ -21907,7 +21906,7 @@ function CommandList({
     {
       "data-slot": "command-list",
       className: cn$1(
-        "lsd:max-h-[300px] lsd:scroll-py-1 lsd:overflow-x-hidden lsd:overflow-y-auto",
+        "lsd:max-h-[300px] lsd:scroll-py-(--lsd-spacing-smallest) lsd:overflow-x-hidden lsd:overflow-y-auto",
         className
       ),
       ...props
@@ -21922,7 +21921,10 @@ function CommandSeparator({
     _e.Separator,
     {
       "data-slot": "command-separator",
-      className: cn$1("lsd:bg-lsd-border lsd:-mx-1 lsd:h-px", className),
+      className: cn$1(
+        "lsd:bg-lsd-border lsd:-mx-(--lsd-spacing-smallest) lsd:h-px",
+        className
+      ),
       ...props
     }
   );
@@ -22567,7 +22569,7 @@ const fixture20 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePro
   default: CardFixture
 }, Symbol.toStringTag, { value: "Module" }));
 const buttonGroupVariants = cva(
-  "lsd:flex lsd:w-fit lsd:items-stretch lsd:[&>*]:focus-visible:z-10 lsd:[&>*]:focus-visible:relative lsd:[&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit lsd:[&>input]:flex-1 has-[select[aria-hidden=true]:last-child]:lsd:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md has-[>[data-slot=button-group]]:lsd:gap-2",
+  "lsd:flex lsd:w-fit lsd:items-stretch lsd:[&>*]:focus-visible:z-10 lsd:[&>*]:focus-visible:relative lsd:[&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit lsd:[&>input]:flex-1 has-[select[aria-hidden=true]:last-child]:lsd:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md has-[>[data-slot=button-group]]:lsd:gap-[var(--lsd-spacing-smaller)]",
   {
     variants: {
       orientation: {
@@ -22619,7 +22621,7 @@ const ButtonGroupText = reactExports.forwardRef(
       {
         ref,
         className: cn$1(
-          "lsd:bg-secondary lsd:flex lsd:items-center lsd:gap-2 lsd:rounded-md lsd:border lsd:px-4 lsd:text-sm lsd:font-medium lsd:shadow-xs lsd:[&_svg]:pointer-events-none lsd:[&_svg:not([class*='size-'])]:size-4 lsd:disabled:cursor-not-allowed",
+          "lsd:bg-secondary lsd:flex lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:rounded-md lsd:border lsd:px-(--lsd-spacing-base) lsd:text-sm lsd:font-medium lsd:shadow-xs lsd:[&_svg]:pointer-events-none lsd:[&_svg:not([class*='size-'])]:size-4 lsd:disabled:cursor-not-allowed",
           className
         ),
         ...props
@@ -22816,8 +22818,8 @@ function ButtonFixture() {
         {
           title: "Icon Button Variants",
           code: `<div className="lsd:flex lsd:gap-4 lsd:items-center">
-  <Button variant="filled-icon" size="icon-xs" aria-label="Add">
-    <Plus size={12} />
+  <Button variant="filled-icon" size="icon-sm" aria-label="Add">
+    <Plus size={14} />
   </Button>
   <Button variant="filled-icon" size="icon-md" aria-label="Add">
     <Plus />
@@ -22830,7 +22832,7 @@ function ButtonFixture() {
   </Button>
 </div>`,
           children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:flex lsd:gap-4 lsd:items-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-xs", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 12 }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-sm", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 14 }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-md", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, {}) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "outlined-icon", size: "icon-md", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, {}) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "ghost-icon", size: "icon-md", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, {}) })
@@ -22845,9 +22847,6 @@ function ButtonFixture() {
         {
           title: "Icon Button Sizes",
           code: `<div className="lsd:flex lsd:gap-4 lsd:items-center">
-  <Button variant="filled-icon" size="icon-xs" aria-label="Add">
-    <Plus size={12} />
-  </Button>
   <Button variant="filled-icon" size="icon-sm" aria-label="Add">
     <Plus size={14} />
   </Button>
@@ -22857,16 +22856,11 @@ function ButtonFixture() {
   <Button variant="filled-icon" size="icon-lg" aria-label="Add">
     <Plus size={24} />
   </Button>
-  <Button variant="filled-icon" size="icon-xl" aria-label="Add">
-    <Plus size={32} />
-  </Button>
 </div>`,
           children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:flex lsd:gap-4 lsd:items-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-xs", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 12 }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-sm", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 14 }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-md", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, {}) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-lg", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 30 }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-xl", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 32 }) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { variant: "filled-icon", size: "icon-lg", "aria-label": "Add", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { size: 30 }) })
           ] })
         }
       )
@@ -23088,18 +23082,14 @@ function BadgeFixture() {
         {
           title: "Badge Sizes",
           code: `<div className="lsd:flex lsd:gap-4 lsd:items-center">
-  <Badge size="xs">Extra Small</Badge>
   <Badge size="sm">Small</Badge>
   <Badge size="md">Medium</Badge>
   <Badge size="lg">Large</Badge>
-  <Badge size="xl">Extra Large</Badge>
 </div>`,
           children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:flex lsd:gap-4 lsd:items-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { size: "xs", children: "Extra Small" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { size: "sm", children: "Small" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { size: "md", children: "Medium" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { size: "lg", children: "Large" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { size: "xl", children: "Extra Large" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { size: "lg", children: "Large" })
           ] })
         }
       )
@@ -23120,7 +23110,6 @@ function BadgeFixture() {
   <div className="lsd:flex lsd:gap-4 lsd:items-center">
     <Badge variant="warning" size="sm">Warning Small</Badge>
     <Badge variant="info" size="sm">Info Small</Badge>
-    <Badge variant="filled" size="xs">XS Filled</Badge>
     <Badge variant="outlined" size="lg">LG Outlined</Badge>
   </div>
 </div>`,
@@ -23134,7 +23123,6 @@ function BadgeFixture() {
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:flex lsd:gap-4 lsd:items-center", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "warning", size: "sm", children: "Warning Small" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "info", size: "sm", children: "Info Small" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "filled", size: "xs", children: "XS Filled" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "outlined", size: "lg", children: "LG Outlined" })
             ] })
           ] })
@@ -23243,18 +23231,14 @@ function BadgeFixture() {
         {
           title: "Dot Badges",
           code: `<div className="lsd:flex lsd:gap-4 lsd:items-center">
-  <Badge variant="dot" size="xs" />
   <Badge variant="dot" size="sm" />
   <Badge variant="dot" size="md" />
   <Badge variant="dot" size="lg" />
-  <Badge variant="dot" size="xl" />
 </div>`,
           children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lsd:flex lsd:gap-4 lsd:items-center", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "dot", size: "xs" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "dot", size: "sm" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "dot", size: "md" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "dot", size: "lg" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "dot", size: "xl" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "dot", size: "lg" })
           ] })
         }
       )
@@ -23431,38 +23415,38 @@ function AutocompleteContent({
 const AUTOCOMPLETE_SIZE_CLASSES = {
   xs: {
     container: "lsd:w-[140px]",
-    label: "lsd:mb-1.5 lsd:ml-[10px]",
-    inputContainer: "lsd:h-[24px]",
-    input: "lsd:px-[9px] lsd:py-[4px]",
-    icon: "lsd:px-[7px] lsd:py-[5px]"
+    label: "lsd:mb-[var(--lsd-spacing-smaller)] lsd:ml-[var(--lsd-spacing-small)]",
+    inputContainer: "lsd:h-[var(--lsd-spacing-larger)]",
+    input: "lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smallest)]",
+    icon: "lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smaller)]"
   },
   sm: {
     container: "lsd:w-[164px]",
-    label: "lsd:mb-1.5 lsd:ml-[12px]",
-    inputContainer: "lsd:h-[28px]",
-    input: "lsd:px-[11px] lsd:py-[5px]",
-    icon: "lsd:px-[9px] lsd:py-[6px]"
+    label: "lsd:mb-[var(--lsd-spacing-smaller)] lsd:ml-[var(--lsd-spacing-small)]",
+    inputContainer: "lsd:h-[var(--lsd-spacing-largest)]",
+    input: "lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)]",
+    icon: "lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smaller)]"
   },
   md: {
     container: "lsd:w-[188px]",
-    label: "lsd:mb-1.5 lsd:ml-[14px]",
-    inputContainer: "lsd:h-[32px]",
-    input: "lsd:px-[13px] lsd:py-[5px]",
-    icon: "lsd:px-[11px] lsd:py-[8px]"
+    label: "lsd:mb-[var(--lsd-spacing-smaller)] lsd:ml-[var(--lsd-spacing-base)]",
+    inputContainer: "lsd:h-8",
+    input: "lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-smaller)]",
+    icon: "lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)]"
   },
   lg: {
     container: "lsd:w-[208px]",
-    label: "lsd:mb-1.5 lsd:ml-[14px]",
-    inputContainer: "lsd:h-[40px]",
-    input: "lsd:px-[17px] lsd:py-[9px]",
-    icon: "lsd:px-[13px] lsd:py-[12px]"
+    label: "lsd:mb-[var(--lsd-spacing-smaller)] lsd:ml-[var(--lsd-spacing-base)]",
+    inputContainer: "lsd:h-10",
+    input: "lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-small)]",
+    icon: "lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-small)]"
   },
   xl: {
     container: "lsd:w-[240px]",
-    label: "lsd:mb-1.5 lsd:ml-[16px]",
-    inputContainer: "lsd:h-[48px]",
-    input: "lsd:px-[20px] lsd:py-[12px]",
-    icon: "lsd:px-[15px] lsd:py-[14px]"
+    label: "lsd:mb-[var(--lsd-spacing-smaller)] lsd:ml-[var(--lsd-spacing-base)]",
+    inputContainer: "lsd:h-12",
+    input: "lsd:px-[var(--lsd-spacing-large)] lsd:py-[var(--lsd-spacing-small)]",
+    icon: "lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-base)]"
   }
 };
 const AUTOCOMPLETE_DEBOUNCE_DELAY = 300;
@@ -24279,7 +24263,7 @@ function AlertDialogContent({
       {
         "data-slot": "alert-dialog-content",
         className: cn$1(
-          "lsd:bg-lsd-surface lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:fixed lsd:top-[50%] lsd:left-[50%] lsd:z-50 lsd:grid lsd:w-full lsd:max-w-[calc(100%-2rem)] lsd:translate-x-[-50%] lsd:translate-y-[-50%] lsd:gap-4 lsd:border lsd:border-lsd-border lsd:p-6 lsd:shadow-lg lsd:duration-200 lsd:sm:max-w-lg",
+          "lsd:bg-lsd-surface lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:fixed lsd:top-[50%] lsd:left-[50%] lsd:z-50 lsd:grid lsd:w-full lsd:max-w-[calc(100%-2rem)] lsd:translate-x-[-50%] lsd:translate-y-[-50%] lsd:gap-(--lsd-spacing-base) lsd:border lsd:border-lsd-border lsd:p-(--lsd-spacing-larger) lsd:shadow-lg lsd:duration-200 lsd:sm:max-w-lg",
           className
         ),
         ...props
@@ -24309,7 +24293,7 @@ function AlertDialogFooter({
     {
       "data-slot": "alert-dialog-footer",
       className: cn$1(
-        "lsd:flex lsd:flex-col-reverse lsd:gap-2 lsd:sm:flex-row lsd:sm:justify-end",
+        "lsd:flex lsd:flex-col-reverse lsd:gap-(--lsd-spacing-smaller) lsd:sm:flex-row lsd:sm:justify-end",
         className
       ),
       ...props
@@ -24325,7 +24309,7 @@ function AlertDialogHeader({
     {
       "data-slot": "alert-dialog-header",
       className: cn$1(
-        "lsd:flex lsd:flex-col lsd:gap-2 lsd:text-center lsd:sm:text-left",
+        "lsd:flex lsd:flex-col lsd:gap-(--lsd-spacing-smaller) lsd:text-center lsd:sm:text-left",
         className
       ),
       ...props
