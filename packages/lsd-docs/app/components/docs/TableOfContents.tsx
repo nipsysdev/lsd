@@ -1,19 +1,23 @@
-import { Typography } from '@nipsys/shadcn-lsd';
+'use client';
 
-interface TocItem {
-  id: string;
-  title: string;
-  level: number;
-}
+import { Typography } from '@nipsys/shadcn-lsd';
+import { useTableOfContents, TocItem } from './useTableOfContents';
 
 interface TableOfContentsProps {
   items: TocItem[];
 }
 
 export function TableOfContents({ items }: TableOfContentsProps) {
+  const { activeId, scrollToSection } = useTableOfContents();
+
   if (!items || items.length === 0) {
     return null;
   }
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    scrollToSection(id);
+  };
 
   return (
     <div className="flex flex-col gap-2">
@@ -21,17 +25,25 @@ export function TableOfContents({ items }: TableOfContentsProps) {
         On this page
       </Typography>
       <nav className="flex flex-col gap-1">
-        {items.map((item) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            className={`text-sm text-muted-foreground hover:text-foreground transition-colors ${
-              item.level === 3 ? 'pl-4' : ''
-            }`}
-          >
-            {item.title}
-          </a>
-        ))}
+        {items.map((item) => {
+          const isActive = activeId === item.id;
+          const paddingLeft = item.level === 3 ? 'pl-4' : item.level === 4 ? 'pl-8' : '';
+
+          return (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => handleClick(e, item.id)}
+              className={`text-sm transition-colors border-l-2 ${
+                isActive
+                  ? 'text-foreground border-foreground font-medium'
+                  : 'text-muted-foreground border-transparent hover:text-foreground hover:border-muted-foreground'
+              } ${paddingLeft}`}
+            >
+              {item.title}
+            </a>
+          );
+        })}
       </nav>
     </div>
   );

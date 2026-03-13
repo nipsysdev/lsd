@@ -11,7 +11,13 @@ import {
   Typography,
 } from '@nipsys/shadcn-lsd';
 import Link from 'next/link';
-import { DocsLayout, PageContent, PageHeader, PageNavigation } from '../../components/docs';
+import {
+  DocsLayout,
+  PageContent,
+  PageHeader,
+  PageNavigation,
+  PageSection,
+} from '../../components/docs';
 
 export default function InstallationPage() {
   return (
@@ -22,105 +28,92 @@ export default function InstallationPage() {
       />
 
       <PageContent>
-        <div className="space-y-8">
-          <section>
-            <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-              Prerequisites
-            </Typography>
-            <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-              Before installing LSD, make sure you have the following:
-            </Typography>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Node.js 18 or higher</li>
-              <li>A package manager (npm, pnpm, or yarn)</li>
-              <li>A React project with TypeScript</li>
-              <li>Tailwind CSS configured</li>
-            </ul>
-          </section>
+        <PageSection title="Prerequisites">
+          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
+            Before installing LSD, make sure you have the following:
+          </Typography>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            <li>Node.js 18 or higher</li>
+            <li>A package manager (npm, pnpm, or yarn)</li>
+            <li>A React project with TypeScript</li>
+            <li>Tailwind CSS configured</li>
+          </ul>
+        </PageSection>
 
-          <Separator />
+        <Separator />
 
-          <section>
-            <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-              Install the package
-            </Typography>
-            <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-              Install LSD using your preferred package manager:
-            </Typography>
+        <PageSection title="Install the package">
+          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
+            Install LSD using your preferred package manager:
+          </Typography>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>npm</CardTitle>
-                <CardDescription>Install using npm</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                  <code>npm install @nipsys/shadcn-lsd</code>
-                </div>
-              </CardContent>
-            </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>npm</CardTitle>
+              <CardDescription>Install using npm</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
+                <code>npm install @nipsys/shadcn-lsd</code>
+              </div>
+            </CardContent>
+          </Card>
 
-            <Card className="mt-(--lsd-spacing-base)">
-              <CardHeader>
-                <CardTitle>pnpm</CardTitle>
-                <CardDescription>Install using pnpm</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                  <code>pnpm add @nipsys/shadcn-lsd</code>
-                </div>
-              </CardContent>
-            </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>pnpm</CardTitle>
+              <CardDescription>Install using pnpm</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
+                <code>pnpm add @nipsys/shadcn-lsd</code>
+              </div>
+            </CardContent>
+          </Card>
 
-            <Card className="mt-(--lsd-spacing-base)">
-              <CardHeader>
-                <CardTitle>yarn</CardTitle>
-                <CardDescription>Install using yarn</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                  <code>yarn add @nipsys/shadcn-lsd</code>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>yarn</CardTitle>
+              <CardDescription>Install using yarn</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
+                <code>yarn add @nipsys/shadcn-lsd</code>
+              </div>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-          <Separator />
+        <Separator />
 
-          <section>
-            <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-              Import the CSS
-            </Typography>
-            <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-              Import the LSD styles in your main CSS file:
-            </Typography>
+        <PageSection title="Import the CSS">
+          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
+            Import the LSD styles in your main CSS file:
+          </Typography>
 
-            <Card>
-              <CardContent className="pt-(--lsd-spacing-large)">
-                <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                  <pre>
-                    <code>{`@import '@nipsys/shadcn-lsd/dist/style.css';`}</code>
-                  </pre>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
+          <Card>
+            <CardContent className="pt-(--lsd-spacing-large)">
+              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
+                <pre>
+                  <code>{`@import '@nipsys/shadcn-lsd/dist/style.css';`}</code>
+                </pre>
+              </div>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-          <Separator />
+        <Separator />
 
-          <section>
-            <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-              Configure Tailwind CSS
-            </Typography>
-            <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-              Add the LSD content path to your Tailwind configuration:
-            </Typography>
+        <PageSection title="Configure Tailwind CSS">
+          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
+            Add the LSD content path to your Tailwind configuration:
+          </Typography>
 
-            <Card>
-              <CardContent className="pt-(--lsd-spacing-large)">
-                <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                  <pre>
-                    <code>{`// tailwind.config.js
+          <Card>
+            <CardContent className="pt-(--lsd-spacing-large)">
+              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
+                <pre>
+                  <code>{`// tailwind.config.js
 module.exports = {
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
@@ -128,31 +121,27 @@ module.exports = {
   ],
   // ... rest of your config
 }`}</code>
-                  </pre>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
+                </pre>
+              </div>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-          <Separator />
+        <Separator />
 
-          <section>
-            <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-              Next Steps
-            </Typography>
-            <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-              Now that you've installed LSD, learn how to use the components:
-            </Typography>
-            <div className="flex gap-(--lsd-spacing-base)">
-              <Link href="/getting-started/usage">
-                <Button>Learn Usage</Button>
-              </Link>
-              <Link href="/getting-started/theming">
-                <Button variant="outlined">Explore Theming</Button>
-              </Link>
-            </div>
-          </section>
-        </div>
+        <PageSection title="Next Steps">
+          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
+            Now that you've installed LSD, learn how to use the components:
+          </Typography>
+          <div className="flex gap-(--lsd-spacing-base)">
+            <Link href="/getting-started/usage">
+              <Button>Learn Usage</Button>
+            </Link>
+            <Link href="/getting-started/theming">
+              <Button variant="outlined">Explore Theming</Button>
+            </Link>
+          </div>
+        </PageSection>
       </PageContent>
 
       <PageNavigation

@@ -2,7 +2,13 @@
 
 import { Card, CardContent, Button as LSDButton, Separator, Typography } from '@nipsys/shadcn-lsd';
 import { PlusIcon } from '@phosphor-icons/react';
-import { DocsLayout, PageContent, PageHeader, PageNavigation } from '../../components/docs';
+import {
+  DocsLayout,
+  PageContent,
+  PageHeader,
+  PageNavigation,
+  PageSection,
+} from '../../components/docs';
 import { CodeExample } from '../../components/docs/CodeExample';
 import { ComponentPreview } from '../../components/docs/ComponentPreview';
 
@@ -15,40 +21,28 @@ export default function ButtonPage() {
       />
 
       <PageContent>
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Installation
-          </Typography>
+        <PageSection title="Installation">
           <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Import
-          </Typography>
+        <PageSection title="Import">
           <CodeExample
             title="Import the component"
             code={`import { Button } from '@nipsys/shadcn-lsd';`}
           />
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Usage
-          </Typography>
+        <PageSection title="Usage">
           <CodeExample title="Basic button" code={'<Button>Click me</Button>'} />
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Variants
-          </Typography>
+        <PageSection title="Variants">
           <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
             Use the{' '}
             <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
@@ -73,14 +67,11 @@ export default function ButtonPage() {
               <LSDButton variant="link">Link</LSDButton>
             </div>
           </ComponentPreview>
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Sizes
-          </Typography>
+        <PageSection title="Sizes">
           <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
             Use the{' '}
             <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
@@ -103,14 +94,11 @@ export default function ButtonPage() {
               <LSDButton size="lg">Large</LSDButton>
             </div>
           </ComponentPreview>
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            States
-          </Typography>
+        <PageSection title="States">
           <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
             Buttons can be disabled or show a loading state.
           </Typography>
@@ -129,14 +117,11 @@ export default function ButtonPage() {
               <LSDButton loading>Loading</LSDButton>
             </div>
           </ComponentPreview>
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Icon Buttons
-          </Typography>
+        <PageSection title="Icon Buttons">
           <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
             Use icon variants for buttons that only contain an icon.
           </Typography>
@@ -167,14 +152,11 @@ export default function ButtonPage() {
               </LSDButton>
             </div>
           </ComponentPreview>
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Destructive & Success
-          </Typography>
+        <PageSection title="Destructive & Success">
           <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
             Use destructive variants for dangerous actions and success variants for positive
             actions.
@@ -204,14 +186,11 @@ export default function ButtonPage() {
               </LSDButton>
             </div>
           </ComponentPreview>
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            asChild
-          </Typography>
+        <PageSection title="asChild">
           <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
             Use the{' '}
             <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
@@ -242,14 +221,11 @@ export default function ButtonPage() {
               </LSDButton>
             </div>
           </ComponentPreview>
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Full Width
-          </Typography>
+        <PageSection title="Full Width">
           <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
             Use the{' '}
             <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
@@ -274,123 +250,117 @@ export default function ButtonPage() {
               </LSDButton>
             </div>
           </ComponentPreview>
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            API Reference
-          </Typography>
+        <PageSection title="API Reference">
           <Card>
             <CardContent className="p-(--lsd-spacing-large)">
-              <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-                Button Props
-              </Typography>
-              <div className="space-y-(--lsd-spacing-base)">
-                <div>
-                  <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                    variant
-                  </code>
-                  <Typography
-                    variant="body1"
-                    className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                  >
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                      "filled" | "outlined" | "ghost" | "link" | "filled-icon" | "outlined-icon" |
-                      "ghost-icon" | "destructive" | "success" | "destructive-icon" | "success-icon"
+              <PageSection title="Button Props" level={3}>
+                <div className="space-y-(--lsd-spacing-base)">
+                  <div>
+                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
+                      variant
                     </code>
-                    <br />
-                    Default:{' '}
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"filled"</code>
-                  </Typography>
-                </div>
-                <div>
-                  <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                    size
-                  </code>
-                  <Typography
-                    variant="body1"
-                    className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                  >
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                      "sm" | "md" | "lg" | "icon-sm" | "icon-md" | "icon-lg"
+                    <Typography
+                      variant="body1"
+                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                    >
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
+                        "filled" | "outlined" | "ghost" | "link" | "filled-icon" | "outlined-icon" |
+                        "ghost-icon" | "destructive" | "success" | "destructive-icon" |
+                        "success-icon"
+                      </code>
+                      <br />
+                      Default:{' '}
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"filled"</code>
+                    </Typography>
+                  </div>
+                  <div>
+                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
+                      size
                     </code>
-                    <br />
-                    Default:{' '}
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"md"</code>
-                  </Typography>
+                    <Typography
+                      variant="body1"
+                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                    >
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
+                        "sm" | "md" | "lg" | "icon-sm" | "icon-md" | "icon-lg"
+                      </code>
+                      <br />
+                      Default:{' '}
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"md"</code>
+                    </Typography>
+                  </div>
+                  <div>
+                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
+                      loading
+                    </code>
+                    <Typography
+                      variant="body1"
+                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                    >
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
+                      <br />
+                      Default:{' '}
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
+                    </Typography>
+                  </div>
+                  <div>
+                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
+                      fullWidth
+                    </code>
+                    <Typography
+                      variant="body1"
+                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                    >
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
+                      <br />
+                      Default:{' '}
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
+                    </Typography>
+                  </div>
+                  <div>
+                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
+                      disabled
+                    </code>
+                    <Typography
+                      variant="body1"
+                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                    >
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
+                      <br />
+                      Default:{' '}
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
+                    </Typography>
+                  </div>
+                  <div>
+                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
+                      asChild
+                    </code>
+                    <Typography
+                      variant="body1"
+                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                    >
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
+                      <br />
+                      Default:{' '}
+                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
+                      <br />
+                      When true, merges the button styles with the child element. Useful for
+                      rendering buttons as links or other elements.
+                    </Typography>
+                  </div>
                 </div>
-                <div>
-                  <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                    loading
-                  </code>
-                  <Typography
-                    variant="body1"
-                    className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                  >
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                    <br />
-                    Default:{' '}
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                  </Typography>
-                </div>
-                <div>
-                  <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                    fullWidth
-                  </code>
-                  <Typography
-                    variant="body1"
-                    className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                  >
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                    <br />
-                    Default:{' '}
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                  </Typography>
-                </div>
-                <div>
-                  <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                    disabled
-                  </code>
-                  <Typography
-                    variant="body1"
-                    className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                  >
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                    <br />
-                    Default:{' '}
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                  </Typography>
-                </div>
-                <div>
-                  <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                    asChild
-                  </code>
-                  <Typography
-                    variant="body1"
-                    className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                  >
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                    <br />
-                    Default:{' '}
-                    <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                    <br />
-                    When true, merges the button styles with the child element. Useful for rendering
-                    buttons as links or other elements.
-                  </Typography>
-                </div>
-              </div>
+              </PageSection>
             </CardContent>
           </Card>
-        </div>
+        </PageSection>
 
         <Separator className="mb-(--lsd-spacing-larger)" />
 
-        <div className="mb-(--lsd-spacing-larger)">
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Accessibility
-          </Typography>
+        <PageSection title="Accessibility">
           <Typography variant="body1" className="text-muted-foreground">
             Buttons follow WAI-ARIA guidelines and are fully accessible. When using icon buttons,
             always provide an{' '}
@@ -399,7 +369,7 @@ export default function ButtonPage() {
             </code>{' '}
             to describe the action.
           </Typography>
-        </div>
+        </PageSection>
       </PageContent>
 
       <PageNavigation
