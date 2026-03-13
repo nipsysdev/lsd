@@ -1,33 +1,69 @@
 [data-theme="teal"] {
-  --lsd-primary: #0d857c;
-  --lsd-primary-foreground: #ffffff;
-  --lsd-text-primary: #0a4b47;
-  --lsd-text-secondary: #536a69;
-  --lsd-surface: #f0fdfa;
-  --lsd-border: #8fc5c2;
-  --lsd-destructive: #e3454a;
-  --lsd-destructive-text: #ff2f2f;
-  --lsd-success: rgb(43, 186, 105);
-  --lsd-success-text: #2faa3f;
-  --lsd-warning: #fcb700;
-  --lsd-warning-text: #d6b136;
-  --lsd-info: #3f79ff;
-  --lsd-info-text: #3a66c5;
+  &,
+  &.light {
+    --lsd-primary: #006f69;
+    --lsd-text-primary: #023330;
+    --lsd-text-secondary: #274e4c;
+    --lsd-surface: #f5f9f9;
+    --lsd-border: #2f6e6c;
+    --lsd-destructive: #f21c44;
+    --lsd-destructive-text: #ff2f2f;
+    --lsd-success: #20a744;
+    --lsd-success-text: #2faa3f;
+    --lsd-warning: #e1c62a;
+    --lsd-warning-text: #d6b136;
+    --lsd-info: #3f79ff;
+    --lsd-info-text: #3a66c5;
+  }
 }
 
 [data-theme="teal"].dark {
   --lsd-primary: #0d9488;
-  --lsd-primary-foreground: #ffffff;
   --lsd-text-primary: #f6fffd;
-  --lsd-text-secondary: #8fc5c2;
-  --lsd-surface: #0a3a36;
-  --lsd-border: #09635c;
+  --lsd-text-secondary: #b5dfdd;
+  --lsd-surface: #06211e;
+  --lsd-border: #23938a;
   --lsd-destructive: #aa1d24;
   --lsd-destructive-text: #ff2f2f;
-  --lsd-success: #3f981f;
+  --lsd-success: #1f982f;
   --lsd-success-text: #4ac51d;
   --lsd-warning: #bea620;
-  --lsd-warning-text: #d3c32b;
+  --lsd-warning-text: #f1de35;
   --lsd-info: #00688e;
   --lsd-info-text: #0fa2d8;
+}
+
+[data-theme="nord"] {
+  &,
+  &.light {
+    --lsd-primary: #5e81ac;
+    --lsd-text-primary: #2e3440;
+    --lsd-text-secondary: #484c53;
+    --lsd-surface: #eceff4;
+    --lsd-border: #4c566a;
+    --lsd-destructive: #f43446;
+    --lsd-destructive-text: #cf2a3b;
+    --lsd-success: #11b981;
+    --lsd-success-text: #0f9166;
+    --lsd-warning: #e5b016;
+    --lsd-warning-text: #ca9c10;
+    --lsd-info: #0ca2eb;
+    --lsd-info-text: #0b89c8;
+  }
+}
+
+[data-theme="nord"].dark {
+  --lsd-primary: #94bff2;
+  --lsd-text-primary: #f2f5fc;
+  --lsd-text-secondary: #a8afbf;
+  --lsd-surface: #1a2532;
+  --lsd-border: #7c8bad;
+  --lsd-destructive: #f43446;
+  --lsd-destructive-text: #cf2a3b;
+  --lsd-success: #11b981;
+  --lsd-success-text: #0f9166;
+  --lsd-warning: #e5b016;
+  --lsd-warning-text: #ddae22;
+  --lsd-info: #0ca2eb;
+  --lsd-info-text: #0b89c8;
 }

@@ -84,17 +84,17 @@
   --lsd-primary: #000000;
   --lsd-primary-foreground: #ffffff;
   --lsd-text-primary: #000000;
-  --lsd-text-secondary: #808080;
+  --lsd-text-secondary: #4a4a4a;
   --lsd-border: #000000;
   --lsd-icon-primary: #000000;
   --lsd-icon-secondary: #ffffff;
   --lsd-surface: #ffffff;
-  --lsd-destructive: #b91c1c;
-  --lsd-destructive-text: #cb3939;
-  --lsd-success: #15803d;
-  --lsd-success-text: #168440;
+  --lsd-destructive: #da0000;
+  --lsd-destructive-text: #c92d2d;
+  --lsd-success: #17b021;
+  --lsd-success-text: #1c9618;
   --lsd-warning: #f59e0b;
-  --lsd-warning-text: #d68b09;
+  --lsd-warning-text: #c8ae00;
   --lsd-info: #2563eb;
   --lsd-info-text: #2563eb;
 
@@ -137,19 +137,19 @@
   --lsd-primary: #ffffff;
   --lsd-primary-foreground: #000000;
   --lsd-text-primary: #ffffff;
-  --lsd-text-secondary: #aaaaaa;
+  --lsd-text-secondary: #d2d2d2;
   --lsd-border: #ffffff;
   --lsd-icon-primary: #ffffff;
   --lsd-icon-secondary: #000000;
   --lsd-surface: #000000;
-  --lsd-destructive: #991b1b;
-  --lsd-destructive-text: #f87171;
-  --lsd-success: #14532d;
-  --lsd-success-text: #4ade80;
-  --lsd-warning: #d97706;
-  --lsd-warning-text: #d97706;
-  --lsd-info: #3b82f6;
-  --lsd-info-text: #3b82f6;
+  --lsd-destructive: #da1010;
+  --lsd-destructive-text: #ff4545;
+  --lsd-success: #10ad1b;
+  --lsd-success-text: #30c82a;
+  --lsd-warning: #f59e0b;
+  --lsd-warning-text: #ffe226;
+  --lsd-info: #2563eb;
+  --lsd-info-text: #2563eb;
 
   /* Shadcn variables using LSD values */
   --background: var(--lsd-surface);

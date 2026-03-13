@@ -10,17 +10,13 @@ import {
   Separator,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import {
-  DropIcon,
-  MoonIcon,
-  PaletteIcon,
-  SunIcon,
-} from '@phosphor-icons/react';
+import { DropIcon, PaletteIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
+import { ThemeDemoCard } from '../../components/ThemeDemoCard';
 
 export default function ThemingPage() {
   return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-4xl">
+    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
       <div className="mb-(--lsd-spacing-larger)">
         <Typography variant="h1" className="mb-(--lsd-spacing-base)">
           Theming
@@ -35,64 +31,44 @@ export default function ThemingPage() {
           <Typography variant="h2" className="mb-(--lsd-spacing-base)">
             Available Themes
           </Typography>
-          <Typography
-            variant="body1"
-            className="text-muted-foreground mb-(--lsd-spacing-base)"
-          >
-            LSD comes with three built-in themes:
+          <Typography variant="body1" className="text-muted-foreground">
+            LSD comes with a few built-in themes, each with light and dark
+            variants:
           </Typography>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-(--lsd-spacing-base)">
-            <Card className="light">
-              <CardHeader>
-                <CardTitle>
-                  <div className="flex items-center gap-(--lsd-spacing-small)">
-                    <SunIcon className="h-5 w-5" weight="duotone" />
-                    Light
-                  </div>
-                </CardTitle>
-                <CardDescription>Clean and bright</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="text-muted-foreground">
-                  The default light theme with high contrast and readability.
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="flex flex-col gap-(--lsd-spacing-large)">
+            <div>
+              <Typography variant="h3" className="mb-(--lsd-spacing-base)">
+                Monochrome
+              </Typography>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+                <ThemeDemoCard themeMode="light" themeAccent="monochrome" />
 
-            <Card className="dark">
-              <CardHeader>
-                <CardTitle>
-                  <div className="flex items-center gap-(--lsd-spacing-small)">
-                    <MoonIcon className="h-5 w-5" weight="duotone" />
-                    Dark
-                  </div>
-                </CardTitle>
-                <CardDescription>Easy on the eyes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="text-muted-foreground">
-                  A dark theme perfect for low-light environments.
-                </Typography>
-              </CardContent>
-            </Card>
+                <ThemeDemoCard themeMode="dark" themeAccent="monochrome" />
+              </div>
+            </div>
 
-            <Card data-theme="teal">
-              <CardHeader>
-                <CardTitle>
-                  <div className="flex items-center gap-(--lsd-spacing-small)">
-                    <DropIcon className="h-5 w-5" weight="duotone" />
-                    Teal
-                  </div>
-                </CardTitle>
-                <CardDescription>Modern and fresh</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="text-muted-foreground">
-                  A teal-themed variant with a unique color palette.
-                </Typography>
-              </CardContent>
-            </Card>
+            <div>
+              <Typography variant="h3" className="mb-(--lsd-spacing-base)">
+                Teal
+              </Typography>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+                <ThemeDemoCard themeMode="light" themeAccent="teal" />
+
+                <ThemeDemoCard themeMode="dark" themeAccent="teal" />
+              </div>
+            </div>
+
+            <div>
+              <Typography variant="h3" className="mb-(--lsd-spacing-base)">
+                Nord
+              </Typography>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+                <ThemeDemoCard themeMode="light" themeAccent="nord" />
+
+                <ThemeDemoCard themeMode="dark" themeAccent="nord" />
+              </div>
+            </div>
           </div>
         </section>
 

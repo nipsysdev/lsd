@@ -55,7 +55,7 @@ export function ThemeToggle() {
   );
 }
 
-const Themes = ['monochrome', 'teal'] as const;
+const Themes = ['monochrome', 'teal', 'nord'] as const;
 
 type Theme = (typeof Themes)[number];
 
