@@ -1,31 +1,19 @@
-import { useEffect, useState } from 'react';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
+  ToggleGroup,
+  ToggleGroupItem,
 } from '@nipsys/shadcn-lsd';
-import { ToggleGroup, ToggleGroupItem } from '@nipsys/shadcn-lsd';
 import { MoonIcon, SunIcon } from '@phosphor-icons/react';
+import { useCallback, useEffect, useState } from 'react';
 
 export function ThemeToggle() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
 
-  useEffect(() => {
-    const storedMode = localStorage.getItem('theme-mode') as 'light' | 'dark' | null;
-    
-    if (storedMode) {
-      handleModeChange(storedMode);
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      handleModeChange(prefersDark ? 'dark' : 'light');
-    }
-    
-    document.body.style.visibility = 'visible';
-  }, []);
-
-  const handleModeChange = (value: string | undefined) => {
+  const handleModeChange = useCallback((value: string | undefined) => {
     if (!value) return;
 
     if (value === 'dark') {
@@ -36,7 +24,20 @@ export function ThemeToggle() {
 
     localStorage.setItem('theme-mode', value);
     setMode(value as 'light' | 'dark');
-  };
+  }, []);
+
+  useEffect(() => {
+    const storedMode = localStorage.getItem('theme-mode') as 'light' | 'dark' | null;
+
+    if (storedMode) {
+      handleModeChange(storedMode);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      handleModeChange(prefersDark ? 'dark' : 'light');
+    }
+
+    document.body.style.visibility = 'visible';
+  }, [handleModeChange]);
 
   return (
     <ToggleGroup
@@ -62,27 +63,27 @@ type Theme = (typeof Themes)[number];
 export function ThemeAccentToggle() {
   const [theme, setTheme] = useState<Theme>('monochrome');
 
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme-accent') as Theme | null;
-
-    if (storedTheme && Themes.includes(storedTheme)) {
-      toggleAccentTheme(storedTheme)
-    }
-  }, []);
-
-  const toggleAccentTheme = (value: string) => {
+  const toggleAccentTheme = useCallback((value: string) => {
     for (const t of Themes) {
       if (t !== 'monochrome') {
-        document.documentElement.removeAttribute('data-theme')
+        document.documentElement.removeAttribute('data-theme');
       }
     }
     if (value !== 'monochrome') {
-      document.documentElement.setAttribute('data-theme', value)
+      document.documentElement.setAttribute('data-theme', value);
     }
 
     localStorage.setItem('theme-accent', value);
     setTheme(value as Theme);
-  };
+  }, []);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme-accent') as Theme | null;
+
+    if (storedTheme && Themes.includes(storedTheme)) {
+      toggleAccentTheme(storedTheme);
+    }
+  }, [toggleAccentTheme]);
 
   return (
     <Select value={theme} onValueChange={toggleAccentTheme}>
@@ -90,7 +91,7 @@ export function ThemeAccentToggle() {
         <SelectValue placeholder="Select theme" />
       </SelectTrigger>
       <SelectContent>
-        {Themes.map((t) => (
+        {Themes.map(t => (
           <SelectItem key={t} value={t}>
             {t.charAt(0).toUpperCase() + t.slice(1)}
           </SelectItem>

@@ -1,7 +1,7 @@
 'use client';
 
-import { Card, CardHeader, CardTitle, CardContent } from '@nipsys/shadcn-lsd';
-import { ClipboardIcon, CheckIcon } from '@phosphor-icons/react';
+import { Card, CardContent, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
+import { CheckIcon, ClipboardIcon } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 interface CodeExampleProps {
@@ -10,7 +10,7 @@ interface CodeExampleProps {
   language?: string;
 }
 
-export function CodeExample({ title = 'Code Example', code, language = 'tsx' }: CodeExampleProps) {
+export function CodeExample({ title = 'Code Example', code }: CodeExampleProps) {
   const [copied, setCopied] = useState(false);
 
   const copyCode = async () => {
@@ -25,29 +25,30 @@ export function CodeExample({ title = 'Code Example', code, language = 'tsx' }: 
 
   return (
     <Card>
-        {title && (
-          <CardHeader>
-            <CardTitle className="text-base">{title}</CardTitle>
-          </CardHeader>
-        )}
-        <CardContent>
-          <div className="relative group">
-            <pre className="overflow-x-auto text-sm">
-              <code>{code}</code>
-            </pre>
-            <button
-              onClick={copyCode}
-              className="absolute top-2 right-2 p-2 rounded-md bg-background border border-border opacity-0 group-hover:opacity-100 transition-opacity hover:bg-muted"
-              aria-label="Copy code"
-            >
-              {copied ? (
-                <CheckIcon className="h-4 w-4 text-green-600" />
-              ) : (
-                <ClipboardIcon className="h-4 w-4" />
-              )}
-            </button>
-          </div>
-        </CardContent>
-      </Card>
+      {title && (
+        <CardHeader>
+          <CardTitle className="text-base">{title}</CardTitle>
+        </CardHeader>
+      )}
+      <CardContent>
+        <div className="relative group">
+          <pre className="overflow-x-auto text-sm">
+            <code>{code}</code>
+          </pre>
+          <button
+            type="button"
+            onClick={copyCode}
+            className="absolute top-2 right-2 p-2 rounded-md bg-background border border-border opacity-0 group-hover:opacity-100 transition-opacity hover:bg-muted"
+            aria-label="Copy code"
+          >
+            {copied ? (
+              <CheckIcon className="h-4 w-4 text-green-600" />
+            ) : (
+              <ClipboardIcon className="h-4 w-4" />
+            )}
+          </button>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

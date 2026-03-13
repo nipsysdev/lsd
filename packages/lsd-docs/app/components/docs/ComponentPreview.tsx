@@ -1,9 +1,9 @@
 'use client';
 
 import { Card, CardContent } from '@nipsys/shadcn-lsd';
-import { CodeExample } from './CodeExample';
-import { ClientWrapper } from './ClientWrapper';
 import type { ReactNode } from 'react';
+import { ClientWrapper } from './ClientWrapper';
+import { CodeExample } from './CodeExample';
 
 interface ComponentPreviewProps {
   title?: string;
@@ -13,12 +13,12 @@ interface ComponentPreviewProps {
   children: ReactNode;
 }
 
-export function ComponentPreview({ 
-  title, 
-  code, 
-  language = 'tsx', 
-  clientOnly = false, 
-  children 
+export function ComponentPreview({
+  title,
+  code,
+  language = 'tsx',
+  clientOnly = false,
+  children,
 }: ComponentPreviewProps) {
   return (
     <div className="mb-6">
@@ -31,11 +31,7 @@ export function ComponentPreview({
         <CardContent className="p-0">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-6 flex items-center justify-center min-h-[200px] bg-muted/30">
-              {clientOnly ? (
-                <ClientWrapper>{children}</ClientWrapper>
-              ) : (
-                children
-              )}
+              {clientOnly ? <ClientWrapper>{children}</ClientWrapper> : children}
             </div>
             <div className="p-0">
               <CodeExample title={undefined} code={code} language={language} />

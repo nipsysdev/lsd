@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 interface PageContentProps {
   children: ReactNode;
@@ -6,8 +6,6 @@ interface PageContentProps {
 
 export function PageContent({ children }: PageContentProps) {
   return (
-    <div className="w-full flex-1 pb-16 *:data-[slot=alert]:first:mt-0 sm:pb-0">
-      {children}
-    </div>
+    <div className="w-full flex-1 pb-16 *:data-[slot=alert]:first:mt-0 sm:pb-0">{children}</div>
   );
 }

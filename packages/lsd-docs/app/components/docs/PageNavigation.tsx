@@ -1,6 +1,6 @@
 import { Button } from '@nipsys/shadcn-lsd';
-import Link from 'next/link';
 import { ArrowLeftIcon, ArrowRightIcon } from '@phosphor-icons/react';
+import Link from 'next/link';
 
 interface PageNavigationProps {
   previous?: {

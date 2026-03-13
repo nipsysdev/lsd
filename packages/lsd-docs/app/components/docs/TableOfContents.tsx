@@ -1,9 +1,8 @@
 'use client';
 
-import { Button, Typography } from '@nipsys/shadcn-lsd';
 import { useStore } from '@nanostores/react';
-import { $activeSection, scrollToSection } from '@/stores/toc-store';
-import { TocItem } from '@/stores/toc-store';
+import { Typography } from '@nipsys/shadcn-lsd';
+import { $activeSection, scrollToSection, type TocItem } from '@/stores/toc-store';
 
 interface TableOfContentsProps {
   items: TocItem[];
@@ -28,19 +27,19 @@ export function TableOfContents({ items }: TableOfContentsProps) {
       </Typography>
 
       <nav className="flex flex-col gap-(--lsd-spacing-small)">
-        {items.map((item) => {
+        {items.map(item => {
           const isActive = activeSection === item.title;
           const paddingLeft = item.isChild ? 'pl-(--lsd-spacing-base)' : '';
 
           return (
             <a
-                key={item.title}
-                href={`#${item.title}`}
-                onClick={(e) => handleClick(e, item.title)}
-                className={`text-sm transition-colors ${isActive ? 'underline' : 'not-hover:text-(--lsd-text-secondary)'} ${paddingLeft}`}
-              >
-                {item.title}
-              </a>
+              key={item.title}
+              href={`#${item.title}`}
+              onClick={e => handleClick(e, item.title)}
+              className={`text-sm transition-colors ${isActive ? 'underline' : 'not-hover:text-(--lsd-text-secondary)'} ${paddingLeft}`}
+            >
+              {item.title}
+            </a>
           );
         })}
       </nav>

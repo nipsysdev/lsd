@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, ReactNode } from 'react';
 import { Typography } from '@nipsys/shadcn-lsd';
+import { type ReactNode, useEffect } from 'react';
 import { registerSection, unregisterSection } from '@/stores/toc-store';
 
 interface PageSectionProps {
   title: string;
-  isChild?: boolean
+  isChild?: boolean;
   children: ReactNode;
 }
 
@@ -14,7 +14,7 @@ export function PageSection({ title, isChild = false, children }: PageSectionPro
   useEffect(() => {
     registerSection({
       title,
-      isChild
+      isChild,
     });
 
     return () => {
