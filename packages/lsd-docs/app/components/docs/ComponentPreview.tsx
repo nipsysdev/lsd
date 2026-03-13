@@ -29,7 +29,7 @@ export function ComponentPreview({
           </div>
         )}
         <CardContent className="p-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-6 flex items-center justify-center min-h-[200px] bg-muted/30">
               {clientOnly ? (
                 <ClientWrapper>{children}</ClientWrapper>

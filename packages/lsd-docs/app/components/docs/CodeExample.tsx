@@ -24,16 +24,15 @@ export function CodeExample({ title = 'Code Example', code, language = 'tsx' }: 
   };
 
   return (
-    <div className="mb-6">
-      <Card>
+    <Card>
         {title && (
           <CardHeader>
             <CardTitle className="text-base">{title}</CardTitle>
           </CardHeader>
         )}
-        <CardContent className="p-0">
+        <CardContent>
           <div className="relative group">
-            <pre className="overflow-x-auto p-4 bg-muted rounded-b-lg text-sm">
+            <pre className="overflow-x-auto text-sm">
               <code>{code}</code>
             </pre>
             <button
@@ -50,6 +49,5 @@ export function CodeExample({ title = 'Code Example', code, language = 'tsx' }: 
           </div>
         </CardContent>
       </Card>
-    </div>
   );
 }

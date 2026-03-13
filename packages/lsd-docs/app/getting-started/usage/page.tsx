@@ -18,7 +18,7 @@ import Link from 'next/link';
 
 export default function UsagePage() {
   return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-4xl">
+    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
       <div className="mb-(--lsd-spacing-larger)">
         <Typography variant="h1" className="mb-(--lsd-spacing-base)">
           Usage
