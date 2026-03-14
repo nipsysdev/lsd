@@ -9,6 +9,7 @@ import {
 } from '@nipsys/shadcn-lsd';
 import { MoonIcon, SunIcon } from '@phosphor-icons/react';
 import { useCallback, useEffect, useState } from 'react';
+import { type Theme, Themes } from '@/config/themes';
 
 export function ThemeToggle() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
@@ -55,10 +56,6 @@ export function ThemeToggle() {
     </ToggleGroup>
   );
 }
-
-const Themes = ['monochrome', 'teal', 'nord'] as const;
-
-type Theme = (typeof Themes)[number];
 
 export function ThemeAccentToggle() {
   const [theme, setTheme] = useState<Theme>('monochrome');

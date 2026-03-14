@@ -1,227 +1,218 @@
 'use client';
 
-import { Button, Card, CardContent, Separator, Typography } from '@nipsys/shadcn-lsd';
-import { PaletteIcon } from '@phosphor-icons/react';
-import Link from 'next/link';
+import {
+  Card,
+  CardContent,
+  Label,
+  Separator,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+  Typography,
+} from '@nipsys/shadcn-lsd';
+import { CodeExample } from '@/components/docs/CodeExample';
+import { DocsLayout } from '@/components/docs/DocsLayout';
+import { PageContent } from '@/components/docs/PageContent';
+import { PageHeader } from '@/components/docs/PageHeader';
+import { PageNavigation } from '@/components/docs/PageNavigation';
+import { PageSection } from '@/components/docs/PageSection';
+import { Themes } from '@/config/themes';
 import { ThemeDemoCard } from '../../components/ThemeDemoCard';
 
 export default function ThemingPage() {
   return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-base)">
-          Theming
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground text-lg">
-          Customize the look and feel of LSD components with themes.
-        </Typography>
-      </div>
+    <DocsLayout>
+      <PageHeader
+        title="Theming"
+        description="Customize the look and feel of LSD components with themes."
+      />
 
-      <div className="space-y-8">
-        <section>
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Available Themes
-          </Typography>
+      <PageContent>
+        <PageSection title="Built-in Themes">
           <Typography variant="body1" className="text-muted-foreground">
             LSD comes with a few built-in themes, each with light and dark variants:
           </Typography>
 
-          <div className="flex flex-col gap-(--lsd-spacing-large)">
-            <div>
-              <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-                Monochrome
-              </Typography>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
-                <ThemeDemoCard themeMode="light" themeAccent="monochrome" />
+          <div className="flex flex-col gap-(--lsd-spacing-large) mt-(--lsd-spacing-base)">
+            <Tabs defaultValue={Themes[0]} className="mt-(--lsd-spacing-base)" fullWidth bordered>
+              <TabsList>
+                {Themes.map(theme => (
+                  <TabsTrigger value={theme} key={theme} className="cap">
+                    {theme}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+              {Themes.map(theme => (
+                <TabsContent value={theme} key={theme}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+                    <div className="flex flex-col gap-y-(--lsd-spacing-smaller)">
+                      <Typography variant="subtitle2">Light mode</Typography>
+                      <ThemeDemoCard themeMode="light" themeAccent={theme} />
+                    </div>
 
-                <ThemeDemoCard themeMode="dark" themeAccent="monochrome" />
-              </div>
-            </div>
-
-            <div>
-              <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-                Teal
-              </Typography>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
-                <ThemeDemoCard themeMode="light" themeAccent="teal" />
-
-                <ThemeDemoCard themeMode="dark" themeAccent="teal" />
-              </div>
-            </div>
-
-            <div>
-              <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-                Nord
-              </Typography>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
-                <ThemeDemoCard themeMode="light" themeAccent="nord" />
-
-                <ThemeDemoCard themeMode="dark" themeAccent="nord" />
-              </div>
-            </div>
+                    <div className="flex flex-col gap-y-(--lsd-spacing-smaller)">
+                      <Typography variant="subtitle2">Dark mode</Typography>
+                      <ThemeDemoCard themeMode="dark" themeAccent={theme} />
+                    </div>
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
           </div>
-        </section>
+        </PageSection>
 
-        <Separator />
+        <PageSection title="Theme Control">
+          <div className="flex flex-col gap-y-(--lsd-spacing-base)">
+            <Typography variant="body1" className="block">
+              Themes support both light and dark modes.
+            </Typography>
+            <Typography variant="body1" className="block">
+              The theme mode is controlled by adding or removing the `dark` class on an element.
+              <br />
+              Light mode is used by default, thus using the `light` class is optional.
+            </Typography>
+            <Typography variant="body1" className="block">
+              Themes are set using the `data-theme` attribute.
+            </Typography>
+          </div>
 
-        <section>
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Theme Switching
-          </Typography>
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            LSD themes are controlled by adding CSS classes to your root element. Toggle between
-            light and dark mode by adding or removing the `dark` class:
-          </Typography>
+          <PageSection title="Setting Theme & Mode in HTML" isChild>
+            <Typography variant="body1" className="text-muted-foreground">
+              You can set the theme and mode directly in your HTML by adding classes and attributes
+              to any element:
+            </Typography>
 
-          <Card>
-            <CardContent className="pt-(--lsd-spacing-large)">
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <pre>
-                  <code>{`// Toggle dark mode
+            <Card className="mt-(--lsd-spacing-base)">
+              <CardContent>
+                <CodeExample
+                  code={`<!-- Dark mode with teal theme -->
+<html class="dark" data-theme="teal">
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>`}
+                />
+              </CardContent>
+            </Card>
+
+            <Typography variant="body1" className="block mt-(--lsd-spacing-base)">
+              Those attributes can be applied to any element in your application. Enabling mixing
+              modes and themes together.
+            </Typography>
+
+            <Card className="mt-(--lsd-spacing-base)">
+              <CardContent>
+                <CodeExample
+                  code={`<!-- Parent element with dark mode and teal theme -->
+<div class="dark" data-theme="teal">
+  <!-- Child elements inherit the parent's theme -->
+  <p>This text uses dark mode with teal theme</p>
+
+  <!-- Override to light mode with nord theme -->
+  <div class="light" data-theme="nord">
+    <p>This text uses light mode with nord theme</p>
+  </div>
+
+  <!-- Override mode only, keep parent's theme -->
+  <div class="light">
+    <p>This text uses light mode with teal theme</p>
+  </div>
+</div>`}
+                />
+              </CardContent>
+            </Card>
+          </PageSection>
+
+          <PageSection title="Setting Theme & Mode Dynamically with JavaScript" isChild>
+            <Typography variant="body1" className="text-muted-foreground">
+              You can dynamically switch themes and modes using JavaScript by manipulating an
+              element's class list and attributes:
+            </Typography>
+
+            <Card className="mt-(--lsd-spacing-base)">
+              <CardContent>
+                <CodeExample
+                  code={`// Toggle between light and dark mode
 document.documentElement.classList.toggle('dark');
 
-// Set specific theme
-document.documentElement.setAttribute('data-theme', 'teal');`}</code>
-                </pre>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+// Set specific mode
+document.documentElement.classList.add('dark');    // Enable dark mode
+document.documentElement.classList.remove('dark'); // Enable light mode
 
-        <Separator />
+// Set accent theme
+document.documentElement.setAttribute('data-theme', 'teal');
+document.documentElement.setAttribute('data-theme', 'nord');
+document.documentElement.removeAttribute('data-theme'); // Reset to monochrome
 
-        <section>
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            CSS Variables
-          </Typography>
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
+// Override theme on a specific element
+const card = document.querySelector('.card');
+card.classList.add('dark');
+card.setAttribute('data-theme', 'nord');`}
+                />
+              </CardContent>
+            </Card>
+          </PageSection>
+        </PageSection>
+
+        <PageSection title="Creating a custom theme">
+          <Typography variant="body1" className="text-muted-foreground">
             LSD uses CSS variables for theming. You can customize these variables to create your own
-            theme:
+            theme. Here's an example based on the built-in Nord theme:
           </Typography>
 
-          <Card>
-            <CardContent className="pt-(--lsd-spacing-large)">
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <pre>
-                  <code>{`:root {
-  /* Primary colors */
-  --lsd-primary: 222.2 47.4% 11.2%;
-  --lsd-primary-foreground: 210 40% 98%;
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`/* Light mode */
+[data-theme="nord"] {
+  --lsd-primary: #5e81ac;
+  --lsd-text-primary: #2e3440;
+  --lsd-text-secondary: #484c53;
+  --lsd-surface: #eceff4;
+  --lsd-border: #4c566a;
+  --lsd-destructive: #f43446;
+  --lsd-destructive-text: #cf2a3b;
+  --lsd-success: #11b981;
+  --lsd-success-text: #0f9166;
+  --lsd-warning: #e5b016;
+  --lsd-warning-text: #ca9c10;
+  --lsd-info: #0ca2eb;
+  --lsd-info-text: #0b89c8;
+}
 
-  /* Secondary colors */
-  --lsd-secondary: 210 40% 96.1%;
-  --lsd-secondary-foreground: 222.2 47.4% 11.2%;
-
-  /* Background colors */
-  --lsd-background: 0 0% 100%;
-  --lsd-foreground: 222.2 47.4% 11.2%;
-
-  /* Card colors */
-  --lsd-card: 0 0% 100%;
-  --lsd-card-foreground: 222.2 47.4% 11.2%;
-
-  /* Border colors */
-  --lsd-border: 214.3 31.8% 91.4%;
-  --lsd-input: 214.3 31.8% 91.4%;
-
-  /* Radius */
-  --lsd-radius: 0.5rem;
-}`}</code>
-                </pre>
-              </div>
+/* Dark mode */
+[data-theme="nord"].dark {
+  --lsd-primary: #94bff2;
+  --lsd-text-primary: #f2f5fc;
+  --lsd-text-secondary: #a8afbf;
+  --lsd-surface: #1a2532;
+  --lsd-border: #7c8bad;
+  --lsd-destructive: #f43446;
+  --lsd-destructive-text: #cf2a3b;
+  --lsd-success: #11b981;
+  --lsd-success-text: #0f9166;
+  --lsd-warning: #e5b016;
+  --lsd-warning-text: #ddae22;
+  --lsd-info: #0ca2eb;
+  --lsd-info-text: #0b89c8;
+}`}
+              />
             </CardContent>
           </Card>
-        </section>
+        </PageSection>
+      </PageContent>
 
-        <Separator />
-
-        <section>
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Dark Theme Variables
-          </Typography>
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Override variables for dark mode:
-          </Typography>
-
-          <Card>
-            <CardContent className="pt-(--lsd-spacing-large)">
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <pre>
-                  <code>{`.dark {
-  --lsd-primary: 210 40% 98%;
-  --lsd-primary-foreground: 222.2 47.4% 11.2%;
-
-  --lsd-secondary: 217.2 32.6% 17.5%;
-  --lsd-secondary-foreground: 210 40% 98%;
-
-  --lsd-background: 222.2 84% 4.9%;
-  --lsd-foreground: 210 40% 98%;
-
-  --lsd-card: 222.2 84% 4.9%;
-  --lsd-card-foreground: 210 40% 98%;
-
-  --lsd-border: 217.2 32.6% 17.5%;
-  --lsd-input: 217.2 32.6% 17.5%;
-}`}</code>
-                </pre>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        <Separator />
-
-        <section>
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Custom Themes
-          </Typography>
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Create your own theme by defining CSS variables:
-          </Typography>
-
-          <Card>
-            <CardContent className="pt-(--lsd-spacing-large)">
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <pre>
-                  <code>{`/* Custom purple theme */
-[data-theme="purple"] {
-  --lsd-primary: 270 60% 50%;
-  --lsd-primary-foreground: 0 0% 100%;
-
-  --lsd-secondary: 270 30% 90%;
-  --lsd-secondary-foreground: 270 60% 20%;
-
-  --lsd-background: 0 0% 100%;
-  --lsd-foreground: 270 60% 20%;
-}`}</code>
-                </pre>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        <Separator />
-
-        <section>
-          <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-            Next Steps
-          </Typography>
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Explore the design tokens to understand all available variables:
-          </Typography>
-          <div className="flex gap-(--lsd-spacing-base)">
-            <Link href="/design-tokens/colors">
-              <Button>
-                Explore Colors
-                <PaletteIcon className="ml-(--lsd-spacing-small) h-4 w-4" weight="duotone" />
-              </Button>
-            </Link>
-            <Link href="/design-tokens/typography">
-              <Button variant="outlined">View Typography</Button>
-            </Link>
-          </div>
-        </section>
-      </div>
-    </div>
+      <PageNavigation
+        previous={{
+          title: 'Installation',
+          href: '/getting-started/installation',
+        }}
+        next={{
+          title: 'Colors',
+          href: '/design-tokens/colors',
+        }}
+      />
+    </DocsLayout>
   );
 }

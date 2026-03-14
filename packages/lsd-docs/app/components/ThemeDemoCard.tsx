@@ -10,17 +10,20 @@ import {
   CardHeader,
   CardTitle,
   Input,
+  Label,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Separator,
   Switch,
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { UserIcon } from '@phosphor-icons/react';
 
 interface ThemeDemoCardProps {
+  key?: string;
   themeMode?: string;
   themeAccent?: string;
 }
@@ -28,149 +31,98 @@ interface ThemeDemoCardProps {
 export function ThemeDemoCard({
   themeMode = 'light',
   themeAccent = 'monochrome',
+  key = `${themeMode}-${themeAccent}`,
 }: ThemeDemoCardProps) {
   return (
     <div data-theme={themeAccent} className={themeMode}>
       <Card>
         <CardHeader>
-          <div className="flex items-start gap-4">
-            {/* Avatar placeholder */}
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted">
-              <UserIcon className="h-6 w-6" weight="duotone" />
+          <div className="flex items-start gap-(--lsd-spacing-small)">
+            <div className="flex items-center gap-x-(--lsd-spacing-base)">
+              <UserIcon className="size-6" weight="duotone" />
+
+              <div className="flex-1 space-y-(--lsd-spacing-smallest)">
+                <CardTitle>Account Settings</CardTitle>
+                <CardDescription>Manage your profile and preferences</CardDescription>
+              </div>
             </div>
-            <div className="flex-1 space-y-1">
-              <CardTitle>Account Settings</CardTitle>
-              <CardDescription>Manage your profile and preferences</CardDescription>
-            </div>
-            {/* Status badges */}
-            <div className="flex gap-2">
+            <div className="flex flex-col items-end gap-(--lsd-spacing-smaller)">
               <Badge variant="success">Verified</Badge>
               <Badge variant="info">Premium</Badge>
             </div>
           </div>
         </CardHeader>
 
-        <CardContent className="space-y-6">
-          {/* Profile Information */}
-          <div className="space-y-3">
-            <Typography variant="label1">Profile Information</Typography>
-            <div className="space-y-3">
-              <div className="space-y-1">
-                <label htmlFor="displayName" className="text-sm">
-                  Display Name
-                </label>
-                <Input id="displayName" placeholder="John Doe" />
-              </div>
-              <div className="space-y-1">
-                <label htmlFor="email" className="text-sm">
-                  Email Address
-                </label>
-                <Input id="email" type="email" placeholder="john@example.com" />
-              </div>
+        <CardContent className="space-y-(--lsd-spacing-base)">
+          <Input id="displayName" label="Display Name" placeholder="John Doe" />
+
+          <div className="flex items-center justify-between">
+            <div className="space-y-(--lsd-spacing-smallest)">
+              <Label htmlFor={`${key}-autoSave`}>Auto-save Changes</Label>
+              <Typography variant="subtitle4" color="secondary" className="block">
+                Automatically save your work
+              </Typography>
+            </div>
+            <Switch id={`${key}-autoSave`} defaultChecked />
+          </div>
+
+          <div className="flex justify-between">
+            <div className="space-y-(--lsd-spacing-smallest)">
+              <Label htmlFor={`${key}-language`}>Language</Label>
+              <Select defaultValue="en">
+                <SelectTrigger id={`${key}-language`}>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="en">English</SelectItem>
+                  <SelectItem value="es">Español</SelectItem>
+                  <SelectItem value="fr">Français</SelectItem>
+                  <SelectItem value="de">Deutsch</SelectItem>
+                  <SelectItem value="ja">日本語</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-(--lsd-spacing-smallest)">
+              <Label htmlFor={`${key}-timezone`}>Timezone</Label>
+              <Select defaultValue="utc-5">
+                <SelectTrigger id={`${key}-timezone`}>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="utc-8">Pacific Time (UTC-8)</SelectItem>
+                  <SelectItem value="utc-5">Eastern Time (UTC-5)</SelectItem>
+                  <SelectItem value="utc+0">UTC (UTC+0)</SelectItem>
+                  <SelectItem value="utc+1">Central European (UTC+1)</SelectItem>
+                  <SelectItem value="utc+9">Japan (UTC+9)</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
-          {/* Preferences */}
-          <div className="space-y-3">
-            <Typography variant="label1">Preferences</Typography>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <label htmlFor="notifications" className="text-sm font-medium block">
-                    Email Notifications
-                  </label>
-                  <Typography variant="body3" color="secondary" className="block">
-                    Receive updates about your account
-                  </Typography>
-                </div>
-                <Switch id="notifications" defaultChecked />
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <label htmlFor="darkMode" className="text-sm font-medium block">
-                    Dark Mode
-                  </label>
-                  <Typography variant="body3" color="secondary" className="block">
-                    Use dark theme across the app
-                  </Typography>
-                </div>
-                <Switch id="darkMode" />
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <label htmlFor="autoSave" className="text-sm font-medium block">
-                    Auto-save Changes
-                  </label>
-                  <Typography variant="body3" color="secondary" className="block">
-                    Automatically save your work
-                  </Typography>
-                </div>
-                <Switch id="autoSave" defaultChecked />
-              </div>
-            </div>
-          </div>
+          <Separator />
 
-          {/* Regional Settings */}
-          <div className="space-y-3">
-            <Typography variant="label1">Regional Settings</Typography>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="space-y-1">
-                <label htmlFor="language" className="text-sm">
-                  Language
-                </label>
-                <Select defaultValue="en">
-                  <SelectTrigger id="language">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="en">English</SelectItem>
-                    <SelectItem value="es">Español</SelectItem>
-                    <SelectItem value="fr">Français</SelectItem>
-                    <SelectItem value="de">Deutsch</SelectItem>
-                    <SelectItem value="ja">日本語</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-1">
-                <label htmlFor="timezone" className="text-sm">
-                  Timezone
-                </label>
-                <Select defaultValue="utc-5">
-                  <SelectTrigger id="timezone">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="utc-8">Pacific Time (UTC-8)</SelectItem>
-                    <SelectItem value="utc-5">Eastern Time (UTC-5)</SelectItem>
-                    <SelectItem value="utc+0">UTC (UTC+0)</SelectItem>
-                    <SelectItem value="utc+1">Central European (UTC+1)</SelectItem>
-                    <SelectItem value="utc+9">Japan (UTC+9)</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+          <Typography variant="subtitle4" color="destructive">
+            Danger Zone
+          </Typography>
+          <div className="mt-(--lsd-spacing-smaller) flex items-center justify-between">
+            <div className="space-y-(--lsd-spacing-smallest) flex flex-col">
+              <Typography variant="label1">Delete Account</Typography>
+              <Typography variant="subtitle4" color="secondary">
+                There's no going back!
+              </Typography>
             </div>
-          </div>
-
-          {/* Danger Zone */}
-          <div className="border-t pt-6">
-            <Typography variant="label1" color="destructive">
-              Danger Zone
-            </Typography>
-            <div className="mt-3 flex items-center justify-between gap-4">
-              <div className="space-y-1 flex flex-col">
-                <Typography variant="body1">Delete Account</Typography>
-                <Typography variant="body3" color="secondary">
-                  Permanently delete your account and all data
-                </Typography>
-              </div>
-              <Button variant="destructive">Delete</Button>
-            </div>
+            <Button variant="destructive" size="sm">
+              Delete
+            </Button>
           </div>
         </CardContent>
 
-        <CardFooter className="justify-end gap-2">
-          <Button variant="outlined">Cancel</Button>
-          <Button>Save Changes</Button>
+        <CardFooter className="justify-between">
+          <Button variant="outlined" size="sm">
+            Cancel
+          </Button>
+          <Button size="sm">Save Changes</Button>
         </CardFooter>
       </Card>
     </div>

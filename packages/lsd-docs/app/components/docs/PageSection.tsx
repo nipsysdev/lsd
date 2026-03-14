@@ -22,11 +22,14 @@ export function PageSection({ title, isChild = false, children }: PageSectionPro
     };
   }, [title, isChild]);
 
-  const HeadingVariant = isChild ? 'h3' : 'h2';
+  const headingVariant = isChild ? 'h4' : 'h2';
+  const spacingClasses = isChild
+    ? 'mt-(--lsd-spacing-largest) pt-(--lsd-spacing-small)'
+    : 'my-(--lsd-spacing-largest) py-(--lsd-spacing-small)';
 
   return (
-    <div id={title} className="my-(--lsd-spacing-largest) py-(--lsd-spacing-base)">
-      <Typography variant={HeadingVariant} className="mb-(--lsd-spacing-base)">
+    <div id={title} className={`${spacingClasses}`}>
+      <Typography variant={headingVariant} className="mb-(--lsd-spacing-base)">
         {title}
       </Typography>
       {children}
