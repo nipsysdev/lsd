@@ -15,6 +15,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       error,
       id,
       type,
+      disabled,
       ...props
     },
     ref
@@ -25,7 +26,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className={cn('lsd:flex lsd:flex-col lsd:box-border', className)}>
         {label && (
-          <label htmlFor={finalId} className={cn('lsd:font-medium', getLabelSizeClasses(size))}>
+          <label
+            htmlFor={finalId}
+            className={cn(
+              'lsd:font-medium',
+              getLabelSizeClasses(size),
+              disabled && 'lsd:text-lsd-text-secondary'
+            )}
+          >
             {label}
           </label>
         )}
@@ -35,13 +43,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             variant === 'outlined'
               ? 'lsd:border lsd:border-lsd-border'
               : 'lsd:border lsd:border-transparent lsd:border-b-lsd-border',
-            error && 'lsd:border-lsd-destructive'
+            error && !disabled && 'lsd:border-lsd-destructive',
+            disabled && 'lsd:opacity-34 lsd:cursor-not-allowed'
           )}
         >
           <input
             ref={ref}
             type={type}
             id={finalId}
+            disabled={disabled}
             className={cn(
               'file:lsd:text-lsd-text-primary placeholder:lsd:text-lsd-text-primary placeholder:lsd:opacity-30 selection:lsd:bg-lsd-primary selection:lsd:text-lsd-surface lsd:border-none lsd:outline-none lsd:bg-transparent lsd:text-lsd-text-primary lsd:w-full lsd:h-full file:lsd:inline-flex file:lsd:h-7 file:lsd:border-0 file:lsd:bg-transparent file:lsd:font-medium lsd:disabled:pointer-events-none lsd:disabled:cursor-not-allowed lsd:disabled:opacity-34',
               'focus-visible:lsd:outline-none lsd:px-(--lsd-spacing-base)',
@@ -57,7 +67,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               className={cn(
                 'lsd:text-sm',
                 size === 'lg' ? 'lsd:text-base' : 'lsd:text-sm',
-                error && 'lsd:text-lsd-destructive'
+                error && !disabled && 'lsd:text-lsd-destructive',
+                disabled && 'lsd:text-lsd-text-secondary'
               )}
             >
               {supportingText}

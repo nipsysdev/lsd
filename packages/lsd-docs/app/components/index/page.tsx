@@ -16,7 +16,7 @@ import Link from 'next/link';
 const componentCategories = [
   {
     name: 'Forms',
-    description: 'Input components for collecting user data',
+    description: 'Input components',
     components: [
       {
         name: 'Input',
