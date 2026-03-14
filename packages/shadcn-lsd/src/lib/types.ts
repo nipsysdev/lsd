@@ -1,5 +1,5 @@
 export type SizeVariant = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-export type IconSize = 'icon-xs' | 'icon-sm' | 'icon-md' | 'icon-lg' | 'icon-xl';
+export type SquareSize = 'square-xs' | 'square-sm' | 'square-md' | 'square-lg' | 'square-xl';
 
 export type BorderVariant = 'outlined' | 'underlined';

@@ -14,15 +14,15 @@ const LoadingSpinner = ({ size }: { size?: string }) => {
   const getSpinnerSize = () => {
     const md = 'lsd:w-[var(--lsd-spacing-large)] lsd:h-[var(--lsd-spacing-large)]';
     switch (size) {
-      case 'icon-sm':
+      case 'square-sm':
         return 'lsd:w-[var(--lsd-spacing-small)] lsd:h-[var(--lsd-spacing-small)]';
       case 'sm':
         return 'lsd:w-[var(--lsd-spacing-base)] lsd:h-[var(--lsd-spacing-base)]';
       case 'md':
-      case 'icon-md':
+      case 'square-md':
         return md;
       case 'lg':
-      case 'icon-lg':
+      case 'square-lg':
         return 'lsd:w-[var(--lsd-spacing-larger)] lsd:h-[var(--lsd-spacing-larger)]';
       default:
         return md;
@@ -48,7 +48,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const isLinkVariant = variant === 'link';
-    const isGhostVariant = variant === 'ghost' || variant === 'ghost-icon';
+    const isGhostVariant = variant === 'ghost' || variant === 'ghost-rounded';
     const Comp = asChild ? Slot : 'button';
 
     return (

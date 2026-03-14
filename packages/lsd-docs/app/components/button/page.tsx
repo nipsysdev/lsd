@@ -1,9 +1,27 @@
 'use client';
 
-import { Card, CardContent, Button as LSDButton, Separator, Typography } from '@nipsys/shadcn-lsd';
-import { PlusIcon } from '@phosphor-icons/react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Typography,
+} from '@nipsys/shadcn-lsd';
+import {
+  ArrowRightIcon,
+  CheckIcon,
+  DownloadIcon,
+  PlusIcon,
+  ShareIcon,
+  TrashIcon,
+} from '@phosphor-icons/react';
 import { CodeExample } from '@/components/docs/CodeExample';
-import { ComponentPreview } from '@/components/docs/ComponentPreview';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
@@ -15,369 +33,597 @@ export default function ButtonPage() {
     <DocsLayout>
       <PageHeader
         title="Button"
-        description="A button component that allows users to perform actions. Buttons communicate actions that users can take."
+        description="Interactive button component with multiple variants and sizes for different use cases"
       />
 
       <PageContent>
+        <PageSection title="About Button">
+          <Typography variant="body1" className="block">
+            Buttons are interactive elements that trigger actions or navigate users to different
+            locations. They are the primary way users interact with your application.
+          </Typography>
+        </PageSection>
+
         <PageSection title="Installation">
-          <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-        </PageSection>
+          <Typography variant="body1">Import the Button component from LSD:</Typography>
 
-        <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import { Button } from '@nipsys/shadcn-lsd'
 
-        <PageSection title="Import">
-          <CodeExample
-            title="Import the component"
-            code={`import { Button } from '@nipsys/shadcn-lsd';`}
-          />
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="Usage">
-          <CodeExample title="Basic button" code={'<Button>Click me</Button>'} />
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="Variants">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Use the{' '}
-            <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-              variant
-            </code>{' '}
-            prop to change the button style.
-          </Typography>
-
-          <ComponentPreview
-            title="Button variants"
-            code={`<div className="flex gap-(--lsd-spacing-base)">
-  <Button variant="filled">Filled</Button>
-  <Button variant="outlined">Outlined</Button>
-  <Button variant="ghost">Ghost</Button>
-  <Button variant="link">Link</Button>
-</div>`}
-          >
-            <div className="flex gap-(--lsd-spacing-base)">
-              <LSDButton variant="filled">Filled</LSDButton>
-              <LSDButton variant="outlined">Outlined</LSDButton>
-              <LSDButton variant="ghost">Ghost</LSDButton>
-              <LSDButton variant="link">Link</LSDButton>
-            </div>
-          </ComponentPreview>
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="Sizes">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Use the{' '}
-            <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-              size
-            </code>{' '}
-            prop to change the button size.
-          </Typography>
-
-          <ComponentPreview
-            title="Button sizes"
-            code={`<div className="flex gap-(--lsd-spacing-base) items-center">
-  <Button size="sm">Small</Button>
-  <Button size="md">Medium</Button>
-  <Button size="lg">Large</Button>
-</div>`}
-          >
-            <div className="flex gap-(--lsd-spacing-base) items-center">
-              <LSDButton size="sm">Small</LSDButton>
-              <LSDButton size="md">Medium</LSDButton>
-              <LSDButton size="lg">Large</LSDButton>
-            </div>
-          </ComponentPreview>
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="States">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Buttons can be disabled or show a loading state.
-          </Typography>
-
-          <ComponentPreview
-            title="Button states"
-            code={`<div className="flex gap-(--lsd-spacing-base)">
-  <Button>Normal</Button>
-  <Button disabled>Disabled</Button>
-  <Button loading>Loading</Button>
-</div>`}
-          >
-            <div className="flex gap-(--lsd-spacing-base)">
-              <LSDButton>Normal</LSDButton>
-              <LSDButton disabled>Disabled</LSDButton>
-              <LSDButton loading>Loading</LSDButton>
-            </div>
-          </ComponentPreview>
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="Icon Buttons">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Use icon variants for buttons that only contain an icon.
-          </Typography>
-
-          <ComponentPreview
-            title="Icon button variants"
-            code={`<div className="flex gap-(--lsd-spacing-base) items-center">
-  <Button variant="filled-icon" size="icon-md" aria-label="Add">
-    <PlusIcon />
-  </Button>
-  <Button variant="outlined-icon" size="icon-md" aria-label="Add">
-    <PlusIcon />
-  </Button>
-  <Button variant="ghost-icon" size="icon-md" aria-label="Add">
-    <PlusIcon />
-  </Button>
-</div>`}
-          >
-            <div className="flex gap-(--lsd-spacing-base) items-center">
-              <LSDButton variant="filled-icon" size="icon-md" aria-label="Add">
-                <PlusIcon />
-              </LSDButton>
-              <LSDButton variant="outlined-icon" size="icon-md" aria-label="Add">
-                <PlusIcon />
-              </LSDButton>
-              <LSDButton variant="ghost-icon" size="icon-md" aria-label="Add">
-                <PlusIcon />
-              </LSDButton>
-            </div>
-          </ComponentPreview>
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="Destructive & Success">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Use destructive variants for dangerous actions and success variants for positive
-            actions.
-          </Typography>
-
-          <ComponentPreview
-            title="Destructive and success variants"
-            code={`<div className="flex gap-(--lsd-spacing-base)">
-  <Button variant="destructive">Delete</Button>
-  <Button variant="success">Save</Button>
-  <Button variant="destructive-icon" size="icon-md" aria-label="Delete">
-    <PlusIcon />
-  </Button>
-  <Button variant="success-icon" size="icon-md" aria-label="Save">
-    <PlusIcon />
-  </Button>
-</div>`}
-          >
-            <div className="flex gap-(--lsd-spacing-base)">
-              <LSDButton variant="destructive">Delete</LSDButton>
-              <LSDButton variant="success">Save</LSDButton>
-              <LSDButton variant="destructive-icon" size="icon-md" aria-label="Delete">
-                <PlusIcon />
-              </LSDButton>
-              <LSDButton variant="success-icon" size="icon-md" aria-label="Save">
-                <PlusIcon />
-              </LSDButton>
-            </div>
-          </ComponentPreview>
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="asChild">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Use the{' '}
-            <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-              asChild
-            </code>{' '}
-            prop to merge the button styles with a child element, such as a link. This is useful
-            when you want a button that navigates to a different page.
-          </Typography>
-
-          <ComponentPreview
-            title="Button as a link"
-            code={`import Link from 'next/link';
-
-<Button asChild>
-  <Link href="/getting-started">Get Started</Link>
-</Button>
-
-<Button asChild variant="outlined">
-  <Link href="/components">View Components</Link>
-</Button>`}
-          >
-            <div className="flex gap-(--lsd-spacing-base)">
-              <LSDButton asChild>
-                <a href="/getting-started">Get Started</a>
-              </LSDButton>
-              <LSDButton asChild variant="outlined">
-                <a href="/components">View Components</a>
-              </LSDButton>
-            </div>
-          </ComponentPreview>
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="Full Width">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Use the{' '}
-            <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-              fullWidth
-            </code>{' '}
-            prop to make the button span the full width of its container.
-          </Typography>
-
-          <ComponentPreview
-            title="Full width button"
-            code={`<div className="w-full space-y-(--lsd-spacing-small)">
-  <Button fullWidth>Full Width Button</Button>
-  <Button variant="outlined" fullWidth>
-    Full Width Outlined
-  </Button>
-</div>`}
-          >
-            <div className="w-full space-y-(--lsd-spacing-small)" style={{ width: '300px' }}>
-              <LSDButton fullWidth>Full Width Button</LSDButton>
-              <LSDButton variant="outlined" fullWidth>
-                Full Width Outlined
-              </LSDButton>
-            </div>
-          </ComponentPreview>
-        </PageSection>
-
-        <Separator className="mb-(--lsd-spacing-larger)" />
-
-        <PageSection title="API Reference">
-          <Card>
-            <CardContent className="p-(--lsd-spacing-large)">
-              <PageSection title="Button Props" isChild>
-                <div className="space-y-(--lsd-spacing-base)">
-                  <div>
-                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                      variant
-                    </code>
-                    <Typography
-                      variant="body1"
-                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                    >
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                        "filled" | "outlined" | "ghost" | "link" | "filled-icon" | "outlined-icon" |
-                        "ghost-icon" | "destructive" | "success" | "destructive-icon" |
-                        "success-icon"
-                      </code>
-                      <br />
-                      Default:{' '}
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"filled"</code>
-                    </Typography>
-                  </div>
-                  <div>
-                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                      size
-                    </code>
-                    <Typography
-                      variant="body1"
-                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                    >
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                        "sm" | "md" | "lg" | "icon-sm" | "icon-md" | "icon-lg"
-                      </code>
-                      <br />
-                      Default:{' '}
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"md"</code>
-                    </Typography>
-                  </div>
-                  <div>
-                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                      loading
-                    </code>
-                    <Typography
-                      variant="body1"
-                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                    >
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                      <br />
-                      Default:{' '}
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                    </Typography>
-                  </div>
-                  <div>
-                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                      fullWidth
-                    </code>
-                    <Typography
-                      variant="body1"
-                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                    >
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                      <br />
-                      Default:{' '}
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                    </Typography>
-                  </div>
-                  <div>
-                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                      disabled
-                    </code>
-                    <Typography
-                      variant="body1"
-                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                    >
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                      <br />
-                      Default:{' '}
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                    </Typography>
-                  </div>
-                  <div>
-                    <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                      asChild
-                    </code>
-                    <Typography
-                      variant="body1"
-                      className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                    >
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                      <br />
-                      Default:{' '}
-                      <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                      <br />
-                      When true, merges the button styles with the child element. Useful for
-                      rendering buttons as links or other elements.
-                    </Typography>
-                  </div>
-                </div>
-              </PageSection>
+export default function MyComponent() {
+  return <Button>Click me</Button>
+}`}
+              />
             </CardContent>
           </Card>
         </PageSection>
 
-        <Separator className="mb-(--lsd-spacing-larger)" />
+        <PageSection title="Primary Variants">
+          <Typography variant="body1" className="text-muted-foreground">
+            Primary button variants for different use cases and visual hierarchy.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Primary Variants</CardTitle>
+              <CardDescription>Basic button styles for common actions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button variant="filled">Filled</Button>
+                <Button variant="outlined">Outlined</Button>
+                <Button variant="link">Link</Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button variant="filled">Filled</Button>
+<Button variant="outlined">Outlined</Button>
+<Button variant="link">Link</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Rounded Variants">
+          <Typography variant="body1" className="text-muted-foreground">
+            Rounded button variants with circular shape, perfect for icon-only buttons.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Rounded Variants</CardTitle>
+              <CardDescription>Circular buttons for icon-only actions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button variant="filled-rounded" size="square-md">
+                  <PlusIcon />
+                </Button>
+                <Button variant="outlined-rounded" size="square-md">
+                  <ShareIcon />
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button variant="filled-rounded" size="square-md">
+  <PlusIcon />
+</Button>
+<Button variant="outlined-rounded" size="square-md">
+  <ShareIcon />
+</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Ghost Variants">
+          <Typography variant="body1" className="text-muted-foreground">
+            Ghost variants with transparent backgrounds and hover states for subtle interactions.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Ghost Variants</CardTitle>
+              <CardDescription>Subtle buttons with hover effects</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button variant="ghost">Ghost</Button>
+                <Button variant="ghost-rounded" size="square-md">
+                  <DownloadIcon />
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button variant="ghost">Ghost</Button>
+<Button variant="ghost-rounded" size="square-md">
+  <DownloadIcon />
+</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Semantic Variants">
+          <Typography variant="body1" className="text-muted-foreground">
+            Semantic variants for destructive and success actions with appropriate visual cues.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Destructive Variants</CardTitle>
+              <CardDescription>For destructive or dangerous actions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button variant="destructive">Delete</Button>
+                <Button variant="destructive-rounded" size="square-md">
+                  <TrashIcon />
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button variant="destructive">Delete</Button>
+<Button variant="destructive-rounded" size="square-md">
+  <TrashIcon />
+</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Success Variants</CardTitle>
+              <CardDescription>For successful or positive actions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button variant="success">Save</Button>
+                <Button variant="success-rounded" size="square-md">
+                  <CheckIcon />
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button variant="success">Save</Button>
+<Button variant="success-rounded" size="square-md">
+  <CheckIcon />
+</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Sizes">
+          <Typography variant="body1" className="text-muted-foreground">
+            Buttons come in multiple sizes to fit different contexts and layouts.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Regular Sizes</CardTitle>
+              <CardDescription>Standard button sizes for text buttons</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap items-center gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button size="sm">Small</Button>
+                <Button size="md">Medium</Button>
+                <Button size="lg">Large</Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Square Sizes</CardTitle>
+              <CardDescription>Square sizes for icon-only buttons</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap items-center gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button variant="filled-rounded" size="square-sm">
+                  <PlusIcon />
+                </Button>
+                <Button variant="filled-rounded" size="square-md">
+                  <PlusIcon />
+                </Button>
+                <Button variant="filled-rounded" size="square-lg">
+                  <PlusIcon />
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button variant="filled-rounded" size="square-sm">
+  <PlusIcon />
+</Button>
+<Button variant="filled-rounded" size="square-md">
+  <PlusIcon />
+</Button>
+<Button variant="filled-rounded" size="square-lg">
+  <PlusIcon />
+</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Features">
+          <Typography variant="body1" className="text-muted-foreground">
+            Additional features like loading states, full width, and disabled states.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Loading State</CardTitle>
+              <CardDescription>Show loading spinner with optional text</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button loading>Loading</Button>
+                <Button loading>With Text</Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button loading>Loading</Button>
+<Button loading>With Text</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Full Width</CardTitle>
+              <CardDescription>Button that spans the full width of its container</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Button fullWidth>Full Width Button</Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={'<Button fullWidth>Full Width Button</Button>'} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Disabled State</CardTitle>
+              <CardDescription>Disabled button with reduced opacity</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button disabled>Disabled</Button>
+                <Button variant="outlined" disabled>
+                  Disabled
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button disabled>Disabled</Button>
+<Button variant="outlined" disabled>
+  Disabled
+</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>asChild (Link Button)</CardTitle>
+              <CardDescription>Render button as a link using Radix Slot</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button asChild>
+                  <a href="/docs">Link Button</a>
+                </Button>
+                <Button variant="outlined" asChild>
+                  <a href="/docs">
+                    Learn More
+                    <ArrowRightIcon className="ml-(--lsd-spacing-smaller)" />
+                  </a>
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Button asChild>
+  <a href="/docs">Link Button</a>
+</Button>
+<Button variant="outlined" asChild>
+  <a href="/docs">
+    Learn More
+    <ArrowRightIcon className="ml-(--lsd-spacing-smaller)" />
+  </a>
+</Button>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="API Reference">
+          <Typography variant="body1" className="text-muted-foreground">
+            All available props for the Button component.
+          </Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>variant</CardTitle>
+                <CardDescription>The visual style of the button</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-2">
+                  <strong>Type:</strong> ButtonVariant
+                </Typography>
+                <Typography variant="label1" className="block mb-2">
+                  <strong>Options:</strong> filled, outlined, filled-rounded, outlined-rounded,
+                  link, ghost, ghost-rounded, destructive, destructive-rounded, success,
+                  success-rounded
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> filled
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>size</CardTitle>
+                <CardDescription>The size of the button</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-2">
+                  <strong>Type:</strong> SizeVariant | SquareSize
+                </Typography>
+                <Typography variant="label1" className="block mb-2">
+                  <strong>Options:</strong> sm, md, lg, square-sm, square-md, square-lg
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> md
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>asChild</CardTitle>
+                <CardDescription>Whether to merge props with child element</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-2">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography variant="body2" className="text-muted-foreground mt-2">
+                  Used for rendering button as a link
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>loading</CardTitle>
+                <CardDescription>Show loading spinner and disable button</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-2">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography variant="body2" className="text-muted-foreground mt-2">
+                  Displays a spinner and disables the button
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>fullWidth</CardTitle>
+                <CardDescription>Make button span full width of container</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-2">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography variant="body2" className="text-muted-foreground mt-2">
+                  Button takes full width of its parent container
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>disabled</CardTitle>
+                <CardDescription>Disable the button</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-2">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography variant="body2" className="text-muted-foreground mt-2">
+                  Reduces opacity and prevents interaction
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="body2" className="text-muted-foreground mt-2">
+                  Merges with existing button classes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>...props</CardTitle>
+                <CardDescription>Standard HTML button attributes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> React.ButtonHTMLAttributes&lt;HTMLButtonElement&gt;
+                </Typography>
+                <Typography variant="body2" className="text-muted-foreground mt-2">
+                  All standard HTML button attributes are supported
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+        </PageSection>
 
         <PageSection title="Accessibility">
           <Typography variant="body1" className="text-muted-foreground">
-            Buttons follow WAI-ARIA guidelines and are fully accessible. When using icon buttons,
-            always provide an{' '}
-            <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-              aria-label
-            </code>{' '}
-            to describe the action.
+            The Button component follows accessibility best practices.
           </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Buttons are fully keyboard accessible</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-2">
+                • <strong>Tab</strong> - Navigate to the button
+              </Typography>
+              <Typography variant="body2" className="block mb-2">
+                • <strong>Enter</strong> or <strong>Space</strong> - Activate the button
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-2">
+                • Use <code>aria-label</code> for icon-only buttons to provide context
+              </Typography>
+              <Typography variant="body2" className="block mb-2">
+                • Use <code>aria-disabled</code> when button is disabled (automatically handled)
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Use <code>aria-describedby</code> to link to additional description text
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Buttons have visible focus states that follow the LSD design system's focus
+                indicators, ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
         </PageSection>
       </PageContent>
 
       <PageNavigation
         previous={{
-          title: 'Getting Started',
-          href: '/getting-started/installation',
+          title: 'Spacing',
+          href: '/design-tokens/spacing',
         }}
         next={{
-          title: 'Badge',
-          href: '/components/badge',
+          title: 'Input',
+          href: '/components/input',
         }}
       />
     </DocsLayout>

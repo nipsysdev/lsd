@@ -27,15 +27,15 @@ describe('Button', () => {
     expect(button).toHaveClass('lsd:text-foreground');
   });
 
-  it('applies filled-icon variant classes correctly', () => {
-    render(<Button variant="filled-icon">Icon</Button>);
+  it('applies filled-rounded variant classes correctly', () => {
+    render(<Button variant="filled-rounded">Icon</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-primary');
     expect(button).toHaveClass('lsd:rounded-full');
   });
 
-  it('applies outlined-icon variant classes correctly', () => {
-    render(<Button variant="outlined-icon">Icon</Button>);
+  it('applies outlined-rounded variant classes correctly', () => {
+    render(<Button variant="outlined-rounded">Icon</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-transparent');
     expect(button).toHaveClass('lsd:rounded-full');
@@ -60,8 +60,8 @@ describe('Button', () => {
     expect(button).toHaveClass('lsd:hover:text-accent-foreground');
   });
 
-  it('applies ghost-icon variant classes correctly', () => {
-    render(<Button variant="ghost-icon">Icon</Button>);
+  it('applies ghost-rounded variant classes correctly', () => {
+    render(<Button variant="ghost-rounded">Icon</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-transparent');
     expect(button).toHaveClass('lsd:text-foreground');
@@ -80,8 +80,8 @@ describe('Button', () => {
     expect(button).toHaveClass('lsd:hover:bg-lsd-destructive/90');
   });
 
-  it('applies destructive-icon variant classes correctly', () => {
-    render(<Button variant="destructive-icon">Delete</Button>);
+  it('applies destructive-rounded variant classes correctly', () => {
+    render(<Button variant="destructive-rounded">Delete</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-lsd-destructive');
     expect(button).toHaveClass('lsd:text-white');
@@ -99,8 +99,8 @@ describe('Button', () => {
     expect(button).toHaveClass('lsd:hover:bg-lsd-success/90');
   });
 
-  it('applies success-icon variant classes correctly', () => {
-    render(<Button variant="success-icon">Save</Button>);
+  it('applies success-rounded variant classes correctly', () => {
+    render(<Button variant="success-rounded">Save</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-lsd-success');
     expect(button).toHaveClass('lsd:text-white');
@@ -136,29 +136,29 @@ describe('Button', () => {
     expect(button).toHaveClass('lsd:text-lg');
   });
 
-  it('applies icon-md size classes correctly', () => {
-    render(<Button size="icon-md">Icon</Button>);
+  it('applies square-md size classes correctly', () => {
+    render(<Button size="square-md">Icon</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:w-10');
     expect(button).toHaveClass('lsd:h-10');
   });
 
-  it('applies icon-sm size classes correctly', () => {
-    render(<Button size="icon-sm">Icon</Button>);
+  it('applies square-sm size classes correctly', () => {
+    render(<Button size="square-sm">Icon</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:w-8');
     expect(button).toHaveClass('lsd:h-8');
   });
 
-  it('applies icon-md size classes correctly', () => {
-    render(<Button size="icon-md">Icon</Button>);
+  it('applies square-md size classes correctly', () => {
+    render(<Button size="square-md">Icon</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:w-10');
     expect(button).toHaveClass('lsd:h-10');
   });
 
-  it('applies icon-lg size classes correctly', () => {
-    render(<Button size="icon-lg">Icon</Button>);
+  it('applies square-lg size classes correctly', () => {
+    render(<Button size="square-lg">Icon</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:w-12');
     expect(button).toHaveClass('lsd:h-12');
@@ -293,14 +293,14 @@ describe('buttonVariants', () => {
     expect(buttonVariants({ variant: 'outlined' })).toContain('lsd:text-foreground');
   });
 
-  it('returns correct classes for filled-icon variant', () => {
-    expect(buttonVariants({ variant: 'filled-icon' })).toContain('lsd:bg-primary');
-    expect(buttonVariants({ variant: 'filled-icon' })).toContain('lsd:rounded-full');
+  it('returns correct classes for filled-rounded variant', () => {
+    expect(buttonVariants({ variant: 'filled-rounded' })).toContain('lsd:bg-primary');
+    expect(buttonVariants({ variant: 'filled-rounded' })).toContain('lsd:rounded-full');
   });
 
-  it('returns correct classes for outlined-icon variant', () => {
-    expect(buttonVariants({ variant: 'outlined-icon' })).toContain('lsd:bg-transparent');
-    expect(buttonVariants({ variant: 'outlined-icon' })).toContain('lsd:rounded-full');
+  it('returns correct classes for outlined-rounded variant', () => {
+    expect(buttonVariants({ variant: 'outlined-rounded' })).toContain('lsd:bg-transparent');
+    expect(buttonVariants({ variant: 'outlined-rounded' })).toContain('lsd:rounded-full');
   });
 
   it('returns correct classes for link variant', () => {
@@ -318,13 +318,15 @@ describe('buttonVariants', () => {
     expect(buttonVariants({ variant: 'ghost' })).toContain('lsd:hover:text-accent-foreground');
   });
 
-  it('returns correct classes for ghost-icon variant', () => {
-    expect(buttonVariants({ variant: 'ghost-icon' })).toContain('lsd:bg-transparent');
-    expect(buttonVariants({ variant: 'ghost-icon' })).toContain('lsd:text-foreground');
-    expect(buttonVariants({ variant: 'ghost-icon' })).toContain('lsd:border-0');
-    expect(buttonVariants({ variant: 'ghost-icon' })).toContain('lsd:rounded-full');
-    expect(buttonVariants({ variant: 'ghost-icon' })).toContain('lsd:hover:bg-accent');
-    expect(buttonVariants({ variant: 'ghost-icon' })).toContain('lsd:hover:text-accent-foreground');
+  it('returns correct classes for ghost-rounded variant', () => {
+    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:bg-transparent');
+    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:text-foreground');
+    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:border-0');
+    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:rounded-full');
+    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:hover:bg-accent');
+    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain(
+      'lsd:hover:text-accent-foreground'
+    );
   });
 
   it('returns correct classes for destructive variant', () => {
@@ -333,11 +335,11 @@ describe('buttonVariants', () => {
     expect(buttonVariants({ variant: 'destructive' })).toContain('lsd:hover:bg-lsd-destructive/90');
   });
 
-  it('returns correct classes for destructive-icon variant', () => {
-    expect(buttonVariants({ variant: 'destructive-icon' })).toContain('lsd:bg-lsd-destructive');
-    expect(buttonVariants({ variant: 'destructive-icon' })).toContain('lsd:text-white');
-    expect(buttonVariants({ variant: 'destructive-icon' })).toContain('lsd:rounded-full');
-    expect(buttonVariants({ variant: 'destructive-icon' })).toContain(
+  it('returns correct classes for destructive-rounded variant', () => {
+    expect(buttonVariants({ variant: 'destructive-rounded' })).toContain('lsd:bg-lsd-destructive');
+    expect(buttonVariants({ variant: 'destructive-rounded' })).toContain('lsd:text-white');
+    expect(buttonVariants({ variant: 'destructive-rounded' })).toContain('lsd:rounded-full');
+    expect(buttonVariants({ variant: 'destructive-rounded' })).toContain(
       'lsd:hover:bg-lsd-destructive/90'
     );
   });
@@ -348,11 +350,11 @@ describe('buttonVariants', () => {
     expect(buttonVariants({ variant: 'success' })).toContain('lsd:hover:bg-lsd-success/90');
   });
 
-  it('returns correct classes for success-icon variant', () => {
-    expect(buttonVariants({ variant: 'success-icon' })).toContain('lsd:bg-lsd-success');
-    expect(buttonVariants({ variant: 'success-icon' })).toContain('lsd:text-white');
-    expect(buttonVariants({ variant: 'success-icon' })).toContain('lsd:rounded-full');
-    expect(buttonVariants({ variant: 'success-icon' })).toContain('lsd:hover:bg-lsd-success/90');
+  it('returns correct classes for success-rounded variant', () => {
+    expect(buttonVariants({ variant: 'success-rounded' })).toContain('lsd:bg-lsd-success');
+    expect(buttonVariants({ variant: 'success-rounded' })).toContain('lsd:text-white');
+    expect(buttonVariants({ variant: 'success-rounded' })).toContain('lsd:rounded-full');
+    expect(buttonVariants({ variant: 'success-rounded' })).toContain('lsd:hover:bg-lsd-success/90');
   });
 
   it('returns correct classes for medium size', () => {
@@ -376,24 +378,24 @@ describe('buttonVariants', () => {
     expect(buttonVariants({ size: 'lg' })).toContain('lsd:text-lg');
   });
 
-  it('returns correct classes for icon-md size', () => {
-    expect(buttonVariants({ size: 'icon-md' })).toContain('lsd:w-10');
-    expect(buttonVariants({ size: 'icon-md' })).toContain('lsd:h-10');
+  it('returns correct classes for square-md size', () => {
+    expect(buttonVariants({ size: 'square-md' })).toContain('lsd:w-10');
+    expect(buttonVariants({ size: 'square-md' })).toContain('lsd:h-10');
   });
 
-  it('returns correct classes for icon-sm size', () => {
-    expect(buttonVariants({ size: 'icon-sm' })).toContain('lsd:w-8');
-    expect(buttonVariants({ size: 'icon-sm' })).toContain('lsd:h-8');
+  it('returns correct classes for square-sm size', () => {
+    expect(buttonVariants({ size: 'square-sm' })).toContain('lsd:w-8');
+    expect(buttonVariants({ size: 'square-sm' })).toContain('lsd:h-8');
   });
 
-  it('returns correct classes for icon-md size', () => {
-    expect(buttonVariants({ size: 'icon-md' })).toContain('lsd:w-10');
-    expect(buttonVariants({ size: 'icon-md' })).toContain('lsd:h-10');
+  it('returns correct classes for square-md size', () => {
+    expect(buttonVariants({ size: 'square-md' })).toContain('lsd:w-10');
+    expect(buttonVariants({ size: 'square-md' })).toContain('lsd:h-10');
   });
 
-  it('returns correct classes for icon-lg size', () => {
-    expect(buttonVariants({ size: 'icon-lg' })).toContain('lsd:w-12');
-    expect(buttonVariants({ size: 'icon-lg' })).toContain('lsd:h-12');
+  it('returns correct classes for square-lg size', () => {
+    expect(buttonVariants({ size: 'square-lg' })).toContain('lsd:w-12');
+    expect(buttonVariants({ size: 'square-lg' })).toContain('lsd:h-12');
   });
 
   it('uses default variant when not specified', () => {

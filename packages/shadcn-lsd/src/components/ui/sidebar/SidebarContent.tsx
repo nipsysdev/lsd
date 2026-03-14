@@ -101,7 +101,7 @@ export function SidebarTrigger({ className, onClick, ...props }: SidebarTriggerP
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
       variant="ghost"
-      size="icon-sm"
+      size="square-sm"
       className={className}
       onClick={event => {
         onClick?.(event);
