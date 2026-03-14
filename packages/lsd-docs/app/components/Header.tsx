@@ -1,6 +1,7 @@
 'use client';
 
 import { SidebarTrigger } from '@nipsys/shadcn-lsd';
+import { FontToggle } from './docs/FontToggle';
 import { ThemeAccentToggle, ThemeToggle } from './docs/ThemeToggle';
 
 interface HeaderProps {
@@ -16,6 +17,7 @@ export default function Header({ className }: HeaderProps) {
         <div className="flex items-center gap-(--lsd-spacing-large)">
           <ThemeToggle />
           <ThemeAccentToggle />
+          <FontToggle />
         </div>
       </div>
     </header>
