@@ -1,6 +1,5 @@
 import {
   ChatIcon,
-  CodeIcon,
   CompassIcon,
   LayoutIcon,
   PaintBrushIcon,
@@ -12,7 +11,7 @@ import {
   TextboxIcon,
   TextIndentIcon,
 } from '@phosphor-icons/react';
-import type { NavGroup } from '../types/navigation';
+import type { NavGroup } from '@/types/navigation';
 
 export const navItems: NavGroup[] = [
   {
@@ -23,7 +22,6 @@ export const navItems: NavGroup[] = [
         url: '/getting-started/installation',
         icon: RocketIcon,
       },
-      { title: 'Usage', url: '/getting-started/usage', icon: CodeIcon },
       {
         title: 'Theming',
         url: '/getting-started/theming',
