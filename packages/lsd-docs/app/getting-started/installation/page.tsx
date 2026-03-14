@@ -1,16 +1,15 @@
 'use client';
 
 import {
-  Button,
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Separator,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import Link from 'next/link';
+import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
@@ -27,125 +26,83 @@ export default function InstallationPage() {
 
       <PageContent>
         <PageSection title="Prerequisites">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
+          <Typography variant="body1">
             Before installing LSD, make sure you have the following:
           </Typography>
-          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-            <li>Node.js 18 or higher</li>
-            <li>A package manager (npm, pnpm, or yarn)</li>
-            <li>A React project with TypeScript</li>
-            <li>Tailwind CSS configured</li>
+          <ul className="list-disc list-inside mt-(--lsd-spacing-base)">
+            <li>Node.js 24 or higher</li>
+            <li>A React 19 project or higher</li>
           </ul>
         </PageSection>
 
-        <Separator />
-
         <PageSection title="Install the package">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Install LSD using your preferred package manager:
-          </Typography>
+          <Typography variant="body1">Install LSD using your preferred package manager:</Typography>
+          <Tabs defaultValue="npm" className="mt-(--lsd-spacing-base)" fullWidth bordered>
+            <TabsList>
+              <TabsTrigger value="npm">npm</TabsTrigger>
+              <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+              <TabsTrigger value="yarn">yarn</TabsTrigger>
+              <TabsTrigger value="bun">bun</TabsTrigger>
+            </TabsList>
+            <TabsContent value="npm" className="p-(--lsd-spacing-large)">
+              <CodeExample code="npm add @nipsys/shadcn-lsd" />
+            </TabsContent>
+            <TabsContent value="pnpm" className="p-(--lsd-spacing-large)">
+              <CodeExample code="pnpm add @nipsys/shadcn-lsd" />
+            </TabsContent>
+            <TabsContent value="yarn" className="p-(--lsd-spacing-large)">
+              <CodeExample code="yarn add @nipsys/shadcn-lsd" />
+            </TabsContent>
+            <TabsContent value="bun" className="p-(--lsd-spacing-large)">
+              <CodeExample code="bun add @nipsys/shadcn-lsd" />
+            </TabsContent>
+          </Tabs>
+        </PageSection>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>npm</CardTitle>
-              <CardDescription>Install using npm</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <code>npm install @nipsys/shadcn-lsd</code>
-              </div>
-            </CardContent>
-          </Card>
+        <PageSection title="Import the styles">
+          <Typography variant="body1">Import the LSD styles, either in CSS or JS/TS:</Typography>
+
+          <Tabs defaultValue="css" className="mt-(--lsd-spacing-base)" fullWidth bordered>
+            <TabsList>
+              <TabsTrigger value="css">in CSS</TabsTrigger>
+              <TabsTrigger value="js">in JS/TS</TabsTrigger>
+            </TabsList>
+            <TabsContent value="css">
+              <CodeExample code={`@import "@nipsys/shadcn-lsd/css";`} />
+            </TabsContent>
+            <TabsContent value="js">
+              <CodeExample code={`import '@nipsys/shadcn-lsd/css';`} />
+            </TabsContent>
+          </Tabs>
+        </PageSection>
+
+        <PageSection title="Use components">
+          <Typography variant="body1">
+            Now that you've installed LSD, you can start using components:
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>pnpm</CardTitle>
-              <CardDescription>Install using pnpm</CardDescription>
-            </CardHeader>
             <CardContent>
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <code>pnpm add @nipsys/shadcn-lsd</code>
-              </div>
+              <CodeExample
+                code={`import { Button } from '@nipsys/shadcn-lsd'
+
+export default function Home() {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  )
+}`}
+              />
             </CardContent>
           </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>yarn</CardTitle>
-              <CardDescription>Install using yarn</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <code>yarn add @nipsys/shadcn-lsd</code>
-              </div>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <Separator />
-
-        <PageSection title="Import the CSS">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Import the LSD styles in your main CSS file:
-          </Typography>
-
-          <Card>
-            <CardContent className="pt-(--lsd-spacing-large)">
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <pre>
-                  <code>{`@import '@nipsys/shadcn-lsd/dist/style.css';`}</code>
-                </pre>
-              </div>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <Separator />
-
-        <PageSection title="Configure Tailwind CSS">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Add the LSD content path to your Tailwind configuration:
-          </Typography>
-
-          <Card>
-            <CardContent className="pt-(--lsd-spacing-large)">
-              <div className="bg-muted p-(--lsd-spacing-base) rounded-lg font-mono text-sm overflow-x-auto">
-                <pre>
-                  <code>{`// tailwind.config.js
-module.exports = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@nipsys/shadcn-lsd/**/*.{js,ts,jsx,tsx}',
-  ],
-  // ... rest of your config
-}`}</code>
-                </pre>
-              </div>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <Separator />
-
-        <PageSection title="Next Steps">
-          <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-            Now that you've installed LSD, learn how to use the components:
-          </Typography>
-          <div className="flex gap-(--lsd-spacing-base)">
-            <Link href="/getting-started/usage">
-              <Button>Learn Usage</Button>
-            </Link>
-            <Link href="/getting-started/theming">
-              <Button variant="outlined">Explore Theming</Button>
-            </Link>
-          </div>
         </PageSection>
       </PageContent>
 
       <PageNavigation
         next={{
-          title: 'Usage',
-          href: '/getting-started/usage',
+          title: 'Theming',
+          href: '/getting-started/theming',
         }}
       />
     </DocsLayout>

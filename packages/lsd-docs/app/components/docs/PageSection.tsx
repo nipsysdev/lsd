@@ -25,7 +25,7 @@ export function PageSection({ title, isChild = false, children }: PageSectionPro
   const HeadingVariant = isChild ? 'h3' : 'h2';
 
   return (
-    <div id={title} className="mb-(--lsd-spacing-larger)">
+    <div id={title} className="my-(--lsd-spacing-largest) py-(--lsd-spacing-base)">
       <Typography variant={HeadingVariant} className="mb-(--lsd-spacing-base)">
         {title}
       </Typography>

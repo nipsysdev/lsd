@@ -2,6 +2,7 @@
 
 import { useStore } from '@nanostores/react';
 import { type ReactNode, useEffect } from 'react';
+import { Toaster } from 'sonner';
 import { $sections, cleanup, setupObserver } from '@/stores/toc-store';
 import { TableOfContents } from './TableOfContents';
 
@@ -26,6 +27,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
           <TableOfContents items={sections} />
         </div>
       )}
+      <Toaster />
     </div>
   );
 }

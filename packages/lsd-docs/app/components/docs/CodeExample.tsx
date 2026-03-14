@@ -1,54 +1,41 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
-import { CheckIcon, ClipboardIcon } from '@phosphor-icons/react';
-import { useState } from 'react';
+import { Button, Typography } from '@nipsys/shadcn-lsd';
+import { ClipboardIcon } from '@phosphor-icons/react';
+import { toast } from 'sonner';
 
 interface CodeExampleProps {
-  title?: string;
   code: string;
-  language?: string;
 }
 
-export function CodeExample({ title = 'Code Example', code }: CodeExampleProps) {
-  const [copied, setCopied] = useState(false);
-
+export function CodeExample({ code }: CodeExampleProps) {
   const copyCode = async () => {
     try {
       await navigator.clipboard.writeText(code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      toast.success('Code successfully copied to clipboard');
     } catch (err) {
+      toast.error('Failed to copy code to clipboard');
       console.error('Failed to copy code:', err);
     }
   };
 
   return (
-    <Card>
-      {title && (
-        <CardHeader>
-          <CardTitle className="text-base">{title}</CardTitle>
-        </CardHeader>
-      )}
-      <CardContent>
-        <div className="relative group">
-          <pre className="overflow-x-auto text-sm">
-            <code>{code}</code>
-          </pre>
-          <button
-            type="button"
-            onClick={copyCode}
-            className="absolute top-2 right-2 p-2 rounded-md bg-background border border-border opacity-0 group-hover:opacity-100 transition-opacity hover:bg-muted"
-            aria-label="Copy code"
-          >
-            {copied ? (
-              <CheckIcon className="h-4 w-4 text-green-600" />
-            ) : (
-              <ClipboardIcon className="h-4 w-4" />
-            )}
-          </button>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="flex justify-between size-full relative group">
+      <Typography variant="subtitle3" className="my-auto">
+        <pre>
+          <code>{code}</code>
+        </pre>
+      </Typography>
+
+      <Button
+        onClick={copyCode}
+        variant="outlined"
+        size="icon-md"
+        className="opacity-0 group-hover:opacity-100 transition-opacity"
+        aria-label="Copy code"
+      >
+        <ClipboardIcon className="size-4" />
+      </Button>
+    </div>
   );
 }

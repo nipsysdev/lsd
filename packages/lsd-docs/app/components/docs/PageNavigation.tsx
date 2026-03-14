@@ -15,22 +15,26 @@ interface PageNavigationProps {
 
 export function PageNavigation({ previous, next }: PageNavigationProps) {
   return (
-    <div className="hidden h-16 w-full items-center gap-2 px-4 sm:flex sm:px-0">
+    <div className="grid grid-cols-2 my-(--lsd-spacing-larger) items-center">
       {previous && (
-        <Link href={previous.href}>
-          <Button variant="outlined" size="sm">
-            <ArrowLeftIcon className="mr-2 h-4 w-4" weight="duotone" />
-            {previous.title}
+        <div>
+          <Button className="w-fit" variant="outlined" asChild>
+            <Link href={previous.href}>
+              <ArrowLeftIcon className="mr-(--lsd-spacing-smaller)" weight="duotone" />
+              {previous.title}
+            </Link>
           </Button>
-        </Link>
+        </div>
       )}
       {next && (
-        <Link href={next.href} className="ml-auto">
-          <Button variant="outlined" size="sm">
-            {next.title}
-            <ArrowRightIcon className="ml-2 h-4 w-4" weight="duotone" />
+        <div className="col-start-2 text-right">
+          <Button className="w-fit" asChild>
+            <Link href={next.href}>
+              {next.title}
+              <ArrowRightIcon className="ml-(--lsd-spacing-smaller)" weight="duotone" />
+            </Link>
           </Button>
-        </Link>
+        </div>
       )}
     </div>
   );
