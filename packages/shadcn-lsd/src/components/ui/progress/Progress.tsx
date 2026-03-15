@@ -41,10 +41,13 @@ const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root
           'lsd:w-1/3',
           'lsd:animate-indeterminate-progress',
           speed === 'slow' && 'lsd:animate-indeterminate-progress-slow',
-          speed === 'fast' && 'lsd:animate-indeterminate-progress-fast',
-          paused && 'lsd:animation-paused'
+          speed === 'fast' && 'lsd:animate-indeterminate-progress-fast'
         )
       : 'lsd:w-full';
+
+    const animationStyle = indeterminate
+      ? { animationPlayState: paused ? 'paused' : 'running' }
+      : undefined;
 
     // Label text is always percentage
     const labelText = showLabel ? `${value ?? 0}%` : null;
@@ -74,7 +77,9 @@ const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root
               variantClasses[variant],
               indeterminateAnimationClasses
             )}
-            style={indeterminate ? undefined : { transform: `translateX(-${100 - (value || 0)}%)` }}
+            style={
+              indeterminate ? animationStyle : { transform: `translateX(-${100 - (value || 0)}%)` }
+            }
           />
         </ProgressPrimitive.Root>
         {showLabel && labelText && labelPosition === 'bottom' && (
