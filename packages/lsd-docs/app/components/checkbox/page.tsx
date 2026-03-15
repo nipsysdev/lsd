@@ -1,475 +1,476 @@
 'use client';
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Card,
   CardContent,
-  Checkbox as LSDCheckbox,
-  Separator,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Checkbox,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { CodeExample } from '../../components/docs/CodeExample';
-import { ComponentPreview } from '../../components/docs/ComponentPreview';
+import { useState } from 'react';
+import { CodeExample } from '@/components/docs/CodeExample';
+import { DocsLayout } from '@/components/docs/DocsLayout';
+import { PageContent } from '@/components/docs/PageContent';
+import { PageHeader } from '@/components/docs/PageHeader';
+import { PageNavigation } from '@/components/docs/PageNavigation';
+import { PageSection } from '@/components/docs/PageSection';
 
 export default function CheckboxPage() {
+  const [controlled, setControlled] = useState(false);
+
   return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-base)">
-          Checkbox
-        </Typography>
-        <Typography
-          variant="body1"
-          className="text-muted-foreground text-lg mb-(--lsd-spacing-base)"
-        >
-          A checkbox component that allows users to select one or more options from a set.
-        </Typography>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Installation
-        </Typography>
-        <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Import
-        </Typography>
-        <CodeExample
-          title="Import the component"
-          code={`import { Checkbox } from '@nipsys/shadcn-lsd';`}
-        />
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Usage
-        </Typography>
-        <CodeExample
-          title="Basic checkbox"
-          code={`<div className="flex items-center space-x-(--lsd-spacing-small)">
-  <Checkbox id="default-checkbox" />
-  <label htmlFor="default-checkbox">Accept terms and conditions</label>
-</div>`}
-        />
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Default Checkbox
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          A basic checkbox with a label. Always provide an{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            id
-          </code>{' '}
-          and associate it with a label using{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            htmlFor
-          </code>
-          .
-        </Typography>
-
-        <ComponentPreview
-          title="Default checkbox"
-          code={`<div className="flex items-center space-x-(--lsd-spacing-small)">
-  <Checkbox id="default-checkbox" />
-  <label htmlFor="default-checkbox">Accept terms and conditions</label>
-</div>`}
-        >
-          <div className="flex items-center space-x-(--lsd-spacing-small)">
-            <LSDCheckbox id="default-checkbox" />
-            <label htmlFor="default-checkbox">Accept terms and conditions</label>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Controlled Checkbox
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            checked
-          </code>{' '}
-          and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            onCheckedChange
-          </code>{' '}
-          props to control the checkbox state.
-        </Typography>
-
-        <ComponentPreview
-          title="Controlled checkbox"
-          code={`function CheckboxExample() {
-  const [checked, setChecked] = useState(false);
-  
-  return (
-    <div className="flex items-center space-x-(--lsd-spacing-small)">
-      <Checkbox
-        id="controlled-checkbox"
-        checked={checked}
-        onCheckedChange={(value) => setChecked(!!value)}
+    <DocsLayout>
+      <PageHeader
+        title="Checkbox"
+        description="Interactive checkbox component with support for checked and unchecked states"
       />
-      <label htmlFor="controlled-checkbox">
-        Checkbox is {checked ? 'checked' : 'unchecked'}
-      </label>
-    </div>
-  );
+
+      <PageContent>
+        <PageSection title="About Checkbox">
+          <Typography variant="body1" className="block">
+            Checkboxes allow users to select one or more options from a set. They support checked
+            and unchecked states.
+          </Typography>
+        </PageSection>
+
+        <PageSection title="Installation">
+          <Typography variant="body1">Import the Checkbox component from LSD:</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import { Checkbox } from '@nipsys/shadcn-lsd'
+
+export default function MyComponent() {
+  return <Checkbox />
 }`}
-        >
-          <div className="flex items-center space-x-(--lsd-spacing-small)">
-            <LSDCheckbox id="controlled-checkbox" />
-            <label htmlFor="controlled-checkbox">Checkbox is unchecked</label>
-          </div>
-        </ComponentPreview>
-      </div>
+              />
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+        <PageSection title="States">
+          <Typography variant="body1" className="text-muted-foreground">
+            Checkboxes support two states: checked and unchecked.
+          </Typography>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Checked by Default
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            defaultChecked
-          </code>{' '}
-          prop to set the initial checked state.
-        </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic States</CardTitle>
+              <CardDescription>Unchecked and checked states</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <div className="flex items-center gap-(--lsd-spacing-smaller)">
+                  <Checkbox />
+                  <Typography variant="body1">Unchecked</Typography>
+                </div>
+                <div className="flex items-center gap-(--lsd-spacing-smaller)">
+                  <Checkbox defaultChecked />
+                  <Typography variant="body1">Checked</Typography>
+                </div>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Checkbox />
+<Checkbox defaultChecked />`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-        <ComponentPreview
-          title="Checked by default"
-          code={`<div className="flex items-center space-x-(--lsd-spacing-small)">
-  <Checkbox id="default-checked" defaultChecked />
-  <label htmlFor="default-checked">Pre-checked option</label>
+        <PageSection title="Features">
+          <Typography variant="body1" className="text-muted-foreground">
+            Additional features like disabled state, error state, and controlled components.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Disabled State</CardTitle>
+              <CardDescription>Disabled checkbox with reduced opacity</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <div className="flex items-center gap-(--lsd-spacing-smaller)">
+                  <Checkbox disabled />
+                  <Typography variant="body1">Disabled unchecked</Typography>
+                </div>
+                <div className="flex items-center gap-(--lsd-spacing-smaller)">
+                  <Checkbox disabled defaultChecked />
+                  <Typography variant="body1">Disabled checked</Typography>
+                </div>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Checkbox disabled />
+<Checkbox disabled defaultChecked />`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Labels</CardTitle>
+              <CardDescription>Checkbox with associated label text</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <div className="flex items-center gap-(--lsd-spacing-smaller)">
+                  <Checkbox id="terms" />
+                  <label htmlFor="terms" className="text-sm">
+                    I agree to the terms and conditions
+                  </label>
+                </div>
+                <div className="flex items-center gap-(--lsd-spacing-smaller)">
+                  <Checkbox id="newsletter" defaultChecked />
+                  <label htmlFor="newsletter" className="text-sm">
+                    Subscribe to newsletter
+                  </label>
+                </div>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<div className="flex items-center gap-(--lsd-spacing-smaller)">
+  <Checkbox id="terms" />
+  <label htmlFor="terms" className="text-sm">
+    I agree to the terms and conditions
+  </label>
+</div>
+<div className="flex items-center gap-(--lsd-spacing-smaller)">
+  <Checkbox id="newsletter" defaultChecked />
+  <label htmlFor="newsletter" className="text-sm">
+    Subscribe to newsletter
+  </label>
 </div>`}
-        >
-          <div className="flex items-center space-x-(--lsd-spacing-small)">
-            <LSDCheckbox id="default-checked" defaultChecked />
-            <label htmlFor="default-checked">Pre-checked option</label>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Controlled Component</CardTitle>
+              <CardDescription>Manage checkbox state with React state</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-(--lsd-spacing-smaller) mb-(--lsd-spacing-base)">
+                <Checkbox
+                  checked={controlled}
+                  onCheckedChange={checked => setControlled(checked === true)}
+                />
+                <Typography variant="body1">
+                  Controlled checkbox (currently {controlled ? 'checked' : 'unchecked'})
+                </Typography>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`const [controlled, setControlled] = useState(false);
+
+<Checkbox
+  checked={controlled}
+  onCheckedChange={(checked) => setControlled(checked === true)}
+/>
+<Typography variant="body1">
+  Controlled checkbox (currently {controlled ? 'checked' : 'unchecked'})
+</Typography>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="API Reference">
+          <Typography variant="body1" className="text-muted-foreground">
+            All available props for the Checkbox component.
+          </Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>checked</CardTitle>
+                <CardDescription>Whether the checkbox is checked</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Controlled value - use with onCheckedChange for controlled components
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>defaultChecked</CardTitle>
+                <CardDescription>Whether the checkbox is initially checked</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Uncontrolled value - use for simple cases without state management
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>onCheckedChange</CardTitle>
+                <CardDescription>Callback when checkbox state changes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> (checked: boolean) =&gt; void
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Called when user toggles the checkbox
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>disabled</CardTitle>
+                <CardDescription>Whether the checkbox is disabled</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Prevents user interaction and reduces opacity
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>required</CardTitle>
+                <CardDescription>Whether the checkbox is required</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Adds required attribute for form validation
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>name</CardTitle>
+                <CardDescription>Name attribute for form submission</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Used when checkbox is part of a form
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>value</CardTitle>
+                <CardDescription>Value attribute for form submission</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 'on'
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Value submitted when checkbox is checked
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Merges with existing checkbox classes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>...props</CardTitle>
+                <CardDescription>Radix UI Checkbox props</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong>{' '}
+                  <code>React.ComponentProps&lt;typeof CheckboxPrimitive.Root&gt;</code>
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  All Radix UI Checkbox Root component props are supported
+                </Typography>
+              </CardContent>
+            </Card>
           </div>
-        </ComponentPreview>
-      </div>
+        </PageSection>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+        <PageSection title="Accessibility">
+          <Typography variant="body1" className="text-muted-foreground">
+            The Checkbox component follows accessibility best practices built on Radix UI.
+          </Typography>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Disabled State
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            disabled
-          </code>{' '}
-          prop to disable the checkbox.
-        </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Checkboxes are fully keyboard accessible</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Tab</strong> - Navigate to the checkbox
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Space</strong> - Toggle checkbox state
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+              </Typography>
+            </CardContent>
+          </Card>
 
-        <ComponentPreview
-          title="Disabled state"
-          code={`<div className="space-y-(--lsd-spacing-base)">
-  <div className="flex items-center space-x-(--lsd-spacing-small)">
-    <Checkbox id="disabled-unchecked" disabled />
-    <label htmlFor="disabled-unchecked">Disabled unchecked</label>
-  </div>
-  <div className="flex items-center space-x-(--lsd-spacing-small)">
-    <Checkbox id="disabled-checked" disabled checked />
-    <label htmlFor="disabled-checked">Disabled checked</label>
-  </div>
-</div>`}
-        >
-          <div className="space-y-(--lsd-spacing-base)">
-            <div className="flex items-center space-x-(--lsd-spacing-small)">
-              <LSDCheckbox id="disabled-unchecked" disabled />
-              <label htmlFor="disabled-unchecked">Disabled unchecked</label>
-            </div>
-            <div className="flex items-center space-x-(--lsd-spacing-small)">
-              <LSDCheckbox id="disabled-checked" disabled checked />
-              <label htmlFor="disabled-checked">Disabled checked</label>
-            </div>
-          </div>
-        </ComponentPreview>
-      </div>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Use <code>aria-label</code> for checkboxes without visible labels
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Use <code>aria-describedby</code> to link to supporting text
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <code>aria-checked</code> is automatically managed (true/false)
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <code>aria-required</code> is set when required prop is true
+              </Typography>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Checkboxes have visible focus states that follow the LSD design system's focus
+                indicators, ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
+      </PageContent>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Multiple Checkboxes
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Group multiple checkboxes together to allow users to select multiple options.
-        </Typography>
-
-        <ComponentPreview
-          title="Multiple checkboxes"
-          code={`function MultipleCheckboxesExample() {
-  const [checked, setChecked] = useState(true);
-  
-  return (
-    <div className="space-y-(--lsd-spacing-base)">
-      <div className="flex items-center space-x-(--lsd-spacing-small)">
-        <Checkbox
-          id="terms"
-          checked={checked}
-          onCheckedChange={(value) => setChecked(!!value)}
-        />
-        <label htmlFor="terms">I agree to the terms and conditions</label>
-      </div>
-      <div className="flex items-center space-x-(--lsd-spacing-small)">
-        <Checkbox id="newsletter" />
-        <label htmlFor="newsletter">Subscribe to newsletter</label>
-      </div>
-      <div className="flex items-center space-x-(--lsd-spacing-small)">
-        <Checkbox id="updates" />
-        <label htmlFor="updates">Receive product updates</label>
-      </div>
-    </div>
-  );
-}`}
-        >
-          <div className="space-y-(--lsd-spacing-base)">
-            <div className="flex items-center space-x-(--lsd-spacing-small)">
-              <LSDCheckbox id="terms" />
-              <label htmlFor="terms">I agree to the terms and conditions</label>
-            </div>
-            <div className="flex items-center space-x-(--lsd-spacing-small)">
-              <LSDCheckbox id="newsletter" />
-              <label htmlFor="newsletter">Subscribe to newsletter</label>
-            </div>
-            <div className="flex items-center space-x-(--lsd-spacing-small)">
-              <LSDCheckbox id="updates" />
-              <label htmlFor="updates">Receive product updates</label>
-            </div>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Checkbox Group
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Organize related checkboxes in a group with a descriptive label.
-        </Typography>
-
-        <ComponentPreview
-          title="Checkbox group"
-          code={`<div className="space-y-(--lsd-spacing-small)">
-  <p className="text-sm font-medium">Select your interests:</p>
-  <div className="space-y-(--lsd-spacing-small) pl-(--lsd-spacing-small)">
-    <div className="flex items-center space-x-(--lsd-spacing-small)">
-      <Checkbox id="tech" />
-      <label htmlFor="tech">Technology</label>
-    </div>
-    <div className="flex items-center space-x-(--lsd-spacing-small)">
-      <Checkbox id="design" />
-      <label htmlFor="design">Design</label>
-    </div>
-    <div className="flex items-center space-x-(--lsd-spacing-small)">
-      <Checkbox id="business" />
-      <label htmlFor="business">Business</label>
-    </div>
-  </div>
-</div>`}
-        >
-          <div className="space-y-(--lsd-spacing-small)">
-            <p className="text-sm font-medium">Select your interests:</p>
-            <div className="space-y-(--lsd-spacing-small) pl-(--lsd-spacing-small)">
-              <div className="flex items-center space-x-(--lsd-spacing-small)">
-                <LSDCheckbox id="tech" />
-                <label htmlFor="tech">Technology</label>
-              </div>
-              <div className="flex items-center space-x-(--lsd-spacing-small)">
-                <LSDCheckbox id="design" />
-                <label htmlFor="design">Design</label>
-              </div>
-              <div className="flex items-center space-x-(--lsd-spacing-small)">
-                <LSDCheckbox id="business" />
-                <label htmlFor="business">Business</label>
-              </div>
-            </div>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          API Reference
-        </Typography>
-        <Card>
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              Checkbox Props
-            </Typography>
-            <div className="space-y-(--lsd-spacing-base)">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  id
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Required for accessibility. Associates the checkbox with its label.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  checked
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Controlled checked state.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">undefined</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  defaultChecked
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Initial checked state (uncontrolled).
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  onCheckedChange
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    (checked: boolean | "indeterminate") =&gt; void
-                  </code>
-                  <br />
-                  Callback when the checked state changes.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">undefined</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  disabled
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Disables the checkbox.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  required
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Marks the checkbox as required.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  name
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Name of the checkbox (for form submission).
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">undefined</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  value
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Value of the checkbox (for form submission).
-                  <br />
-                  Default: <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"on"</code>
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Accessibility
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground">
-          Checkboxes follow WAI-ARIA guidelines and are fully accessible. Always provide an{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            id
-          </code>{' '}
-          and associate it with a label using the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            htmlFor
-          </code>{' '}
-          attribute. This ensures screen readers can properly announce the checkbox and its purpose.
-        </Typography>
-      </div>
-    </div>
+      <PageNavigation
+        previous={{
+          title: 'Badge',
+          href: '/components/badge',
+        }}
+        next={{
+          title: 'Switch',
+          href: '/components/switch',
+        }}
+      />
+    </DocsLayout>
   );
 }

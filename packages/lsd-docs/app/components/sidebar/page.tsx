@@ -1,128 +1,167 @@
 'use client';
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Card,
   CardContent,
-  Sidebar as LSDSidebar,
-  Separator,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarInput,
-  SidebarInset,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarProvider,
-  SidebarTrigger,
-  Typography,
-} from '@nipsys/shadcn-lsd';
-import {
-  Calendar,
-  Question as HelpCircle,
-  House as Home,
-  Tray as Inbox,
-  Gear as Settings,
-} from '@phosphor-icons/react';
-import { CodeExample } from '../../components/docs/CodeExample';
-import { ComponentPreview } from '../../components/docs/ComponentPreview';
-
-// Menu items for examples
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home,
-  },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox,
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings,
-  },
-];
-
-export default function SidebarPage() {
-  return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-base)">
-          Sidebar
-        </Typography>
-        <Typography
-          variant="body1"
-          className="text-muted-foreground text-lg mb-(--lsd-spacing-base)"
-        >
-          A sidebar component that provides navigation and additional content alongside the main
-          content area. Sidebars are commonly used for navigation menus, filters, and supplementary
-          information.
-        </Typography>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Installation
-        </Typography>
-        <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Import
-        </Typography>
-        <CodeExample
-          title="Import the component"
-          code={`import {
+  CardDescription,
+  CardHeader,
+  CardTitle,
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
   SidebarInput,
   SidebarInset,
   SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSkeleton,
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarProvider,
+  SidebarRail,
+  SidebarSeparator,
   SidebarTrigger,
-} from '@nipsys/shadcn-lsd';`}
-        />
-      </div>
+  Typography,
+} from '@nipsys/shadcn-lsd';
+import {
+  ArrowRightIcon,
+  BellIcon,
+  ChalkboardIcon,
+  CheckIcon,
+  FileTextIcon,
+  GearIcon,
+  HouseIcon,
+  PlusIcon,
+  StarIcon,
+  UserIcon,
+} from '@phosphor-icons/react';
+import { CodeExample } from '@/components/docs/CodeExample';
+import { DocsLayout } from '@/components/docs/DocsLayout';
+import { PageContent } from '@/components/docs/PageContent';
+import { PageHeader } from '@/components/docs/PageHeader';
+import { PageNavigation } from '@/components/docs/PageNavigation';
+import { PageSection } from '@/components/docs/PageSection';
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+export default function SidebarPage() {
+  return (
+    <DocsLayout>
+      <PageHeader
+        title="Sidebar"
+        description="Collapsible navigation sidebar with multiple variants and responsive design"
+      />
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Usage
-        </Typography>
-        <CodeExample
-          title="Basic sidebar"
-          code={`<SidebarProvider>
-  <Sidebar>
+      <PageContent>
+        <PageSection title="About Sidebar">
+          <Typography variant="body1" className="block">
+            Sidebars are navigation components that provide access to different sections of your
+            application. They support multiple visual variants, collapsible modes, and responsive
+            behavior for optimal user experience across devices.
+          </Typography>
+        </PageSection>
+
+        <PageSection title="Installation">
+          <Typography variant="body1">Import the Sidebar components from LSD:</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import {
+  Sidebar,
+  SidebarProvider,
+  SidebarContent,
+  SidebarHeader,
+  SidebarFooter,
+  SidebarInset,
+  SidebarTrigger,
+  SidebarRail,
+  SidebarSeparator,
+  SidebarInput,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarGroupAction,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarMenuAction,
+  SidebarMenuBadge,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
+  SidebarMenuSkeleton,
+} from '@nipsys/shadcn-lsd'
+
+export default function MyComponent() {
+  return (
+    <SidebarProvider>
+      <Sidebar>
+        {/* Sidebar content */}
+      </Sidebar>
+    </SidebarProvider>
+  )
+}`}
+              />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Variants">
+          <Typography variant="body1" className="text-muted-foreground">
+            Sidebar comes in three visual variants for different design contexts.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Sidebar Variant</CardTitle>
+              <CardDescription>Standard sidebar with full-height navigation</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar variant="sidebar">
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar variant="sidebar">
     <SidebarContent>
       <SidebarGroup>
         <SidebarGroupLabel>Navigation</SidebarGroupLabel>
@@ -130,8 +169,238 @@ export default function SidebarPage() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <Home />
+                <HouseIcon />
                 <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Floating Variant</CardTitle>
+              <CardDescription>Floating sidebar with shadow and rounded corners</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar variant="floating">
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar variant="floating">
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Inset Variant</CardTitle>
+              <CardDescription>Inset sidebar with reduced width and spacing</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar variant="inset">
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar variant="inset">
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Collapsible Modes">
+          <Typography variant="body1" className="text-muted-foreground">
+            Sidebar supports three collapsible modes for different user preferences.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Offcanvas Mode</CardTitle>
+              <CardDescription>
+                Sidebar slides in from the side when triggered, overlaying content
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar collapsible="offcanvas">
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                  <SidebarInset>
+                    <SidebarTrigger />
+                    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+                      Main content area
+                    </Typography>
+                  </SidebarInset>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar collapsible="offcanvas">
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -140,426 +409,456 @@ export default function SidebarPage() {
     </SidebarContent>
   </Sidebar>
   <SidebarInset>
-    <main>Main Content</main>
+    <SidebarTrigger />
+    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+      Main content area
+    </Typography>
   </SidebarInset>
 </SidebarProvider>`}
-        />
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Basic Sidebar
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Create a sidebar with navigation items using{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarProvider
-          </code>
-          ,{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            Sidebar
-          </code>
-          , and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarInset
-          </code>
-          .
-        </Typography>
-
-        <ComponentPreview
-          title="Basic sidebar"
-          clientOnly={true}
-          code={`<SidebarProvider>
-  <Sidebar>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Icon Mode</CardTitle>
+              <CardDescription>
+                Sidebar collapses to show only icons, saving horizontal space
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar collapsible="icon">
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                  <SidebarInset>
+                    <SidebarTrigger />
+                    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+                      Main content area
+                    </Typography>
+                  </SidebarInset>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar collapsible="icon">
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Application</SidebarGroupLabel>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
-            {items.map((item) => (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
-                  <a href={item.url}>
-                    <item.icon />
-                    <span>{item.title}</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroupContent>
       </SidebarGroup>
     </SidebarContent>
   </Sidebar>
   <SidebarInset>
-    <main className="flex items-center gap-(--lsd-spacing-small)">
-      <SidebarTrigger />
-      <h1 className="text-2xl font-bold">Main Content</h1>
-    </main>
+    <SidebarTrigger />
+    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+      Main content area
+    </Typography>
   </SidebarInset>
 </SidebarProvider>`}
-        >
-          <SidebarProvider>
-            <LSDSidebar>
-              <SidebarContent>
-                <SidebarGroup>
-                  <SidebarGroupLabel>Application</SidebarGroupLabel>
-                  <SidebarGroupContent>
-                    <SidebarMenu>
-                      {items.map(item => (
-                        <SidebarMenuItem key={item.title}>
-                          <SidebarMenuButton asChild>
-                            <a href={item.url}>
-                              <item.icon />
-                              <span>{item.title}</span>
-                            </a>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))}
-                    </SidebarMenu>
-                  </SidebarGroupContent>
-                </SidebarGroup>
-              </SidebarContent>
-            </LSDSidebar>
-            <SidebarInset>
-              <main className="flex items-center gap-(--lsd-spacing-small)">
-                <SidebarTrigger />
-                <Typography variant="h1">Main Content</Typography>
-              </main>
-            </SidebarInset>
-          </SidebarProvider>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>None Mode</CardTitle>
+              <CardDescription>Sidebar is always visible and cannot be collapsed</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar collapsible="none">
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                  <SidebarInset>
+                    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+                      Main content area
+                    </Typography>
+                  </SidebarInset>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar collapsible="none">
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+  <SidebarInset>
+    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+      Main content area
+    </Typography>
+  </SidebarInset>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Sidebar with Header and Footer
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarHeader
-          </code>{' '}
-          and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarFooter
-          </code>{' '}
-          to add branding and additional information to your sidebar.
-        </Typography>
+        <PageSection title="Features">
+          <Typography variant="body1" className="text-muted-foreground">
+            Additional features like groups, submenus, active states, tooltips, badges, and more.
+          </Typography>
 
-        <ComponentPreview
-          title="Sidebar with header and footer"
-          clientOnly={true}
-          code={`<SidebarProvider>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic Structure</CardTitle>
+              <CardDescription>Complete sidebar with header, content, and footer</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarHeader>
+                      <Typography variant="h2" className="p-(--lsd-spacing-base)">
+                        App Name
+                      </Typography>
+                    </SidebarHeader>
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                    <SidebarFooter>
+                      <Typography variant="body2" className="p-(--lsd-spacing-base)">
+                        © 2024 App
+                      </Typography>
+                    </SidebarFooter>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
   <Sidebar>
     <SidebarHeader>
-      <SidebarMenu>
-        <SidebarMenuItem>
-          <SidebarMenuButton size="lg">
-            <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-              <Home className="size-4" />
-            </div>
-            <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
-              <span className="font-semibold">LSD React</span>
-              <span>v1.0.0</span>
-            </div>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
+      <Typography variant="h2" className="p-(--lsd-spacing-base)">
+        App Name
+      </Typography>
     </SidebarHeader>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Application</SidebarGroupLabel>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
-            {items.map((item) => (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
-                  <a href={item.url}>
-                    <item.icon />
-                    <span>{item.title}</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroupContent>
       </SidebarGroup>
     </SidebarContent>
     <SidebarFooter>
-      <SidebarMenu>
-        <SidebarMenuItem>
-          <SidebarMenuButton>
-            <HelpCircle />
-            <span>Help & Support</span>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
+      <Typography variant="body2" className="p-(--lsd-spacing-base)">
+        © 2024 App
+      </Typography>
     </SidebarFooter>
   </Sidebar>
-  <SidebarInset>
-    <main className="flex items-center gap-(--lsd-spacing-small)">
-      <SidebarTrigger />
-      <h1 className="text-2xl font-bold">Main Content</h1>
-    </main>
-  </SidebarInset>
 </SidebarProvider>`}
-        >
-          <SidebarProvider>
-            <LSDSidebar>
-              <SidebarHeader>
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton size="lg">
-                      <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                        <Home className="size-4" />
-                      </div>
-                      <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
-                        <span className="font-semibold">LSD React</span>
-                        <span>v1.0.0</span>
-                      </div>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-              </SidebarHeader>
-              <SidebarContent>
-                <SidebarGroup>
-                  <SidebarGroupLabel>Application</SidebarGroupLabel>
-                  <SidebarGroupContent>
-                    <SidebarMenu>
-                      {items.map(item => (
-                        <SidebarMenuItem key={item.title}>
-                          <SidebarMenuButton asChild>
-                            <a href={item.url}>
-                              <item.icon />
-                              <span>{item.title}</span>
-                            </a>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))}
-                    </SidebarMenu>
-                  </SidebarGroupContent>
-                </SidebarGroup>
-              </SidebarContent>
-              <SidebarFooter>
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton>
-                      <HelpCircle />
-                      <span>Help & Support</span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-              </SidebarFooter>
-            </LSDSidebar>
-            <SidebarInset>
-              <main className="flex items-center gap-(--lsd-spacing-small)">
-                <SidebarTrigger />
-                <Typography variant="h1">Main Content</Typography>
-              </main>
-            </SidebarInset>
-          </SidebarProvider>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Sidebar with Search
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarInput
-          </code>{' '}
-          to add a search input to your sidebar header.
-        </Typography>
-
-        <ComponentPreview
-          title="Sidebar with search"
-          clientOnly={true}
-          code={`<SidebarProvider>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Groups</CardTitle>
+              <CardDescription>Organize menu items into logical groups</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Main</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                      <SidebarSeparator />
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Settings</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Settings</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
   <Sidebar>
-    <SidebarHeader>
-      <SidebarMenu>
-        <SidebarMenuItem>
-          <SidebarMenuButton size="lg">
-            <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-              <Home className="size-4" />
-            </div>
-            <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
-              <span className="font-semibold">LSD React</span>
-              <span>v1.0.0</span>
-            </div>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
-      <SidebarInput placeholder="Search..." />
-    </SidebarHeader>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Application</SidebarGroupLabel>
+        <SidebarGroupLabel>Main</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
-            {items.map((item) => (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
-                  <a href={item.url}>
-                    <item.icon />
-                    <span>{item.title}</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroupContent>
       </SidebarGroup>
-    </SidebarContent>
-  </Sidebar>
-  <SidebarInset>
-    <main className="flex items-center gap-(--lsd-spacing-small)">
-      <SidebarTrigger />
-      <h1 className="text-2xl font-bold">Main Content</h1>
-    </main>
-  </SidebarInset>
-</SidebarProvider>`}
-        >
-          <SidebarProvider>
-            <LSDSidebar>
-              <SidebarHeader>
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton size="lg">
-                      <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                        <Home className="size-4" />
-                      </div>
-                      <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
-                        <span className="font-semibold">LSD React</span>
-                        <span>v1.0.0</span>
-                      </div>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-                <SidebarInput placeholder="Search..." />
-              </SidebarHeader>
-              <SidebarContent>
-                <SidebarGroup>
-                  <SidebarGroupLabel>Application</SidebarGroupLabel>
-                  <SidebarGroupContent>
-                    <SidebarMenu>
-                      {items.map(item => (
-                        <SidebarMenuItem key={item.title}>
-                          <SidebarMenuButton asChild>
-                            <a href={item.url}>
-                              <item.icon />
-                              <span>{item.title}</span>
-                            </a>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))}
-                    </SidebarMenu>
-                  </SidebarGroupContent>
-                </SidebarGroup>
-              </SidebarContent>
-            </LSDSidebar>
-            <SidebarInset>
-              <main className="flex items-center gap-(--lsd-spacing-small)">
-                <SidebarTrigger />
-                <Typography variant="h1">Main Content</Typography>
-              </main>
-            </SidebarInset>
-          </SidebarProvider>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Sidebar with Submenu
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarMenuSub
-          </code>
-          ,{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarMenuSubItem
-          </code>
-          , and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarMenuSubButton
-          </code>{' '}
-          to create nested navigation items.
-        </Typography>
-
-        <ComponentPreview
-          title="Sidebar with submenu"
-          clientOnly={true}
-          code={`<SidebarProvider>
-  <Sidebar>
-    <SidebarHeader>
-      <SidebarMenu>
-        <SidebarMenuItem>
-          <SidebarMenuButton size="lg">
-            <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-              <Home className="size-4" />
-            </div>
-            <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
-              <span className="font-semibold">LSD React</span>
-              <span>v1.0.0</span>
-            </div>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
-    </SidebarHeader>
-    <SidebarContent>
-      <SidebarGroup>
-        <SidebarGroupLabel>Application</SidebarGroupLabel>
-        <SidebarGroupContent>
-          <SidebarMenu>
-            {items.map((item) => (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
-                  <a href={item.url}>
-                    <item.icon />
-                    <span>{item.title}</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
-          </SidebarMenu>
-        </SidebarGroupContent>
-      </SidebarGroup>
+      <SidebarSeparator />
       <SidebarGroup>
         <SidebarGroupLabel>Settings</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <Settings />
+                <SettingsIcon />
                 <span>Settings</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Submenus</CardTitle>
+              <CardDescription>Nested menu items for hierarchical navigation</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <FileTextIcon />
+                                <span>Documents</span>
+                                <ArrowRightIcon />
+                              </SidebarMenuButton>
+                              <SidebarMenuSub>
+                                <SidebarMenuSubItem>
+                                  <SidebarMenuSubButton>
+                                    <span>All Documents</span>
+                                  </SidebarMenuSubButton>
+                                </SidebarMenuSubItem>
+                                <SidebarMenuSubItem>
+                                  <SidebarMenuSubButton>
+                                    <span>Recent</span>
+                                  </SidebarMenuSubButton>
+                                </SidebarMenuSubItem>
+                              </SidebarMenuSub>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <FileTextIcon />
+                <span>Documents</span>
+                <ChevronRightIcon />
               </SidebarMenuButton>
               <SidebarMenuSub>
                 <SidebarMenuSubItem>
-                  <SidebarMenuSubButton asChild>
-                    <a href="#profile">Profile</a>
+                  <SidebarMenuSubButton>
+                    <span>All Documents</span>
                   </SidebarMenuSubButton>
                 </SidebarMenuSubItem>
                 <SidebarMenuSubItem>
-                  <SidebarMenuSubButton asChild>
-                    <a href="#account">Account</a>
-                  </SidebarMenuSubButton>
-                </SidebarMenuSubItem>
-                <SidebarMenuSubItem>
-                  <SidebarMenuSubButton asChild>
-                    <a href="#appearance">Appearance</a>
+                  <SidebarMenuSubButton>
+                    <span>Recent</span>
                   </SidebarMenuSubButton>
                 </SidebarMenuSubItem>
               </SidebarMenuSub>
@@ -569,202 +868,853 @@ export default function SidebarPage() {
       </SidebarGroup>
     </SidebarContent>
   </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Active States</CardTitle>
+              <CardDescription>Highlight the currently active menu item</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton isActive>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton isActive>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Tooltips</CardTitle>
+              <CardDescription>Show tooltips on hover for collapsed sidebar</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar collapsible="icon">
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton tooltip="Home">
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton tooltip="Dashboard">
+                                <ChalkboardIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                  <SidebarInset>
+                    <SidebarTrigger />
+                    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+                      Main content area
+                    </Typography>
+                  </SidebarInset>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar collapsible="icon">
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton tooltip="Home">
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton tooltip="Dashboard">
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
   <SidebarInset>
-    <main className="flex items-center gap-(--lsd-spacing-small)">
-      <SidebarTrigger />
-      <h1 className="text-2xl font-bold">Main Content</h1>
-    </main>
+    <SidebarTrigger />
+    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+      Main content area
+    </Typography>
   </SidebarInset>
 </SidebarProvider>`}
-        >
-          <SidebarProvider>
-            <LSDSidebar>
-              <SidebarHeader>
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton size="lg">
-                      <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                        <Home className="size-4" />
-                      </div>
-                      <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
-                        <span className="font-semibold">LSD React</span>
-                        <span>v1.0.0</span>
-                      </div>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-              </SidebarHeader>
-              <SidebarContent>
-                <SidebarGroup>
-                  <SidebarGroupLabel>Application</SidebarGroupLabel>
-                  <SidebarGroupContent>
-                    <SidebarMenu>
-                      {items.map(item => (
-                        <SidebarMenuItem key={item.title}>
-                          <SidebarMenuButton asChild>
-                            <a href={item.url}>
-                              <item.icon />
-                              <span>{item.title}</span>
-                            </a>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))}
-                    </SidebarMenu>
-                  </SidebarGroupContent>
-                </SidebarGroup>
-                <SidebarGroup>
-                  <SidebarGroupLabel>Settings</SidebarGroupLabel>
-                  <SidebarGroupContent>
-                    <SidebarMenu>
-                      <SidebarMenuItem>
-                        <SidebarMenuButton>
-                          <Settings />
-                          <span>Settings</span>
-                        </SidebarMenuButton>
-                        <SidebarMenuSub>
-                          <SidebarMenuSubItem>
-                            <SidebarMenuSubButton asChild>
-                              <a href="#profile">Profile</a>
-                            </SidebarMenuSubButton>
-                          </SidebarMenuSubItem>
-                          <SidebarMenuSubItem>
-                            <SidebarMenuSubButton asChild>
-                              <a href="#account">Account</a>
-                            </SidebarMenuSubButton>
-                          </SidebarMenuSubItem>
-                          <SidebarMenuSubItem>
-                            <SidebarMenuSubButton asChild>
-                              <a href="#appearance">Appearance</a>
-                            </SidebarMenuSubButton>
-                          </SidebarMenuSubItem>
-                        </SidebarMenuSub>
-                      </SidebarMenuItem>
-                    </SidebarMenu>
-                  </SidebarGroupContent>
-                </SidebarGroup>
-              </SidebarContent>
-            </LSDSidebar>
-            <SidebarInset>
-              <main className="flex items-center gap-(--lsd-spacing-small)">
-                <SidebarTrigger />
-                <Typography variant="h1">Main Content</Typography>
-              </main>
-            </SidebarInset>
-          </SidebarProvider>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Badges</CardTitle>
+              <CardDescription>
+                Add badges to menu items for notifications or counts
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <BellIcon />
+                                <span>Notifications</span>
+                              </SidebarMenuButton>
+                              <SidebarMenuBadge>3</SidebarMenuBadge>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <BellIcon />
+                <span>Notifications</span>
+              </SidebarMenuButton>
+              <SidebarMenuBadge>3</SidebarMenuBadge>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          API Reference
-        </Typography>
-        <Card>
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              Sidebar Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  className
-                </code>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Action Buttons</CardTitle>
+              <CardDescription>Add action buttons to menu items or groups</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>
+                          Projects
+                          <SidebarGroupAction>
+                            <PlusIcon />
+                          </SidebarGroupAction>
+                        </SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <StarIcon />
+                                <span>Project A</span>
+                              </SidebarMenuButton>
+                              <SidebarMenuAction>
+                                <GearIcon />
+                              </SidebarMenuAction>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <StarIcon />
+                                <span>Project B</span>
+                              </SidebarMenuButton>
+                              <SidebarMenuAction>
+                                <GearIcon />
+                              </SidebarMenuAction>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>
+          Projects
+          <SidebarGroupAction>
+            <PlusIcon />
+          </SidebarGroupAction>
+        </SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <StarIcon />
+                <span>Project A</span>
+              </SidebarMenuButton>
+              <SidebarMenuAction>
+                <GearIcon />
+              </SidebarMenuAction>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <StarIcon />
+                <span>Project B</span>
+              </SidebarMenuButton>
+              <SidebarMenuAction>
+                <GearIcon />
+              </SidebarMenuAction>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Skeleton Loading</CardTitle>
+              <CardDescription>Show skeleton placeholders while loading content</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuSkeleton showIcon />
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuSkeleton showIcon />
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuSkeleton showIcon />
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuSkeleton showIcon />
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuSkeleton showIcon />
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuSkeleton showIcon />
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Search</CardTitle>
+              <CardDescription>Add search input to filter menu items</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarContent>
+                      <SidebarInput placeholder="Search..." />
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarInput placeholder="Search..." />
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Mobile Responsiveness</CardTitle>
+              <CardDescription>
+                Sidebar automatically adapts to mobile screens with offcanvas behavior
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <SidebarProvider>
+                  <Sidebar>
+                    <SidebarContent>
+                      <SidebarGroup>
+                        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                        <SidebarGroupContent>
+                          <SidebarMenu>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <HouseIcon />
+                                <span>Home</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            <SidebarMenuItem>
+                              <SidebarMenuButton>
+                                <GearIcon />
+                                <span>Dashboard</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      </SidebarGroup>
+                    </SidebarContent>
+                  </Sidebar>
+                  <SidebarInset>
+                    <SidebarTrigger />
+                    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+                      Main content area with trigger button
+                    </Typography>
+                  </SidebarInset>
+                </SidebarProvider>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <HouseIcon />
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <DashboardIcon />
+                <span>Dashboard</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+  <SidebarInset>
+    <SidebarTrigger />
+    <Typography variant="body1" className="p-(--lsd-spacing-base)">
+      Main content area with trigger button
+    </Typography>
+  </SidebarInset>
+</SidebarProvider>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="API Reference">
+          <Typography variant="body1" className="text-muted-foreground">
+            All available props for the key Sidebar components.
+          </Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>variant</CardTitle>
+                <CardDescription>The visual style of the sidebar</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'sidebar' | 'floating' | 'inset'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> sidebar, floating, inset
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> sidebar
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>collapsible</CardTitle>
+                <CardDescription>The collapsible behavior of the sidebar</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'offcanvas' | 'icon' | 'none'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> offcanvas, icon, none
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> offcanvas
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>side</CardTitle>
+                <CardDescription>The side of the screen where sidebar appears</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'left' | 'right'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> left, right
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> left
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>defaultOpen</CardTitle>
+                <CardDescription>Initial open state of the sidebar</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> true
+                </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className="text-muted-foreground mt-(--lsd-spacing-smaller)"
                 >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Additional CSS classes to apply to the sidebar
+                  Controls whether sidebar is open on initial render
                 </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
 
-        <Card className="mt-(--lsd-spacing-base)">
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              SidebarMenuButton Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  asChild
-                </code>
+            <Card>
+              <CardHeader>
+                <CardTitle>open</CardTitle>
+                <CardDescription>Controlled open state of the sidebar</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className="text-muted-foreground mt-(--lsd-spacing-smaller)"
                 >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                  <br />
-                  Merge props with child element
+                  Use with onOpenChange for controlled component
                 </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  size
-                </code>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>onOpenChange</CardTitle>
+                <CardDescription>Callback when sidebar open state changes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> (open: boolean) =&gt; void
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className="text-muted-foreground mt-(--lsd-spacing-smaller)"
                 >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "default" | "sm" | "lg"
-                  </code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"default"</code>
+                  Called when sidebar is opened or closed
                 </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+              </CardContent>
+            </Card>
 
-        <Card className="mt-(--lsd-spacing-base)">
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              SidebarInput Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  placeholder
-                </code>
+            <Card>
+              <CardHeader>
+                <CardTitle>isActive</CardTitle>
+                <CardDescription>Active state for menu buttons</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className="text-muted-foreground mt-(--lsd-spacing-smaller)"
                 >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Placeholder text for the input
+                  Highlights the menu item as currently active
                 </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+              </CardContent>
+            </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+            <Card>
+              <CardHeader>
+                <CardTitle>tooltip</CardTitle>
+                <CardDescription>Tooltip text for menu buttons</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Shows tooltip on hover, useful for collapsed sidebar
+                </Typography>
+              </CardContent>
+            </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Accessibility
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground">
-          Sidebars follow WAI-ARIA guidelines and are fully accessible. The component uses proper
-          role attributes, keyboard navigation support, and screen reader announcements. The{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SidebarTrigger
-          </code>{' '}
-          provides a toggle button for mobile and responsive layouts, and all navigation items are
-          properly labeled for screen readers.
-        </Typography>
-      </div>
-    </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>showIcon</CardTitle>
+                <CardDescription>Show icon in skeleton loading state</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Displays icon placeholder in skeleton
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>variant (MenuButton)</CardTitle>
+                <CardDescription>Visual variant for menu buttons</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'default' | 'outline'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> default, outline
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> default
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>size (MenuButton)</CardTitle>
+                <CardDescription>Size variant for menu buttons</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'default' | 'sm' | 'lg'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> default, sm, lg
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> default
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+        </PageSection>
+
+        <PageSection title="Accessibility">
+          <Typography variant="body1" className="text-muted-foreground">
+            The Sidebar component follows accessibility best practices.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Full keyboard support for navigation</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Tab</strong> - Navigate to the sidebar
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Arrow Keys</strong> - Navigate between menu items
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Enter / Space</strong> - Activate menu item
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Escape</strong> - Close sidebar (in offcanvas mode)
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Ctrl/Cmd + B</strong> - Toggle sidebar (keyboard shortcut)
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Sidebar uses <code>role="navigation"</code> for semantic meaning
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Menu items use <code>role="menuitem"</code> for proper navigation
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Active states are indicated with <code>aria-current="page"</code>
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Expanded/collapsed states use <code>aria-expanded"</code>
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Tooltips use <code>aria-label"</code> for icon-only buttons
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Sidebar components have visible focus states that follow the LSD design system's
+                focus indicators, ensuring keyboard users can always see which element has focus.
+                Focus management is handled automatically when opening/closing the sidebar.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
+      </PageContent>
+
+      <PageNavigation
+        previous={{
+          title: 'Menubar',
+          href: '/components/menubar',
+        }}
+      />
+    </DocsLayout>
   );
 }

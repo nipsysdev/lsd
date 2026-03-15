@@ -1,73 +1,15 @@
 'use client';
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Card,
   CardContent,
-  Select as LSDSelect,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectSeparator,
-  SelectTrigger,
-  SelectValue,
-  Separator,
-  Typography,
-} from '@nipsys/shadcn-lsd';
-import { CodeExample } from '../../components/docs/CodeExample';
-import { ComponentPreview } from '../../components/docs/ComponentPreview';
-
-const frameworks = [
-  { value: 'react', label: 'React' },
-  { value: 'vue', label: 'Vue' },
-  { value: 'angular', label: 'Angular' },
-  { value: 'svelte', label: 'Svelte' },
-  { value: 'solid', label: 'Solid' },
-  { value: 'qwik', label: 'Qwik' },
-];
-
-const languages = [
-  { value: 'en', label: 'English' },
-  { value: 'es', label: 'Spanish' },
-  { value: 'fr', label: 'French' },
-  { value: 'de', label: 'German' },
-  { value: 'ja', label: 'Japanese' },
-  { value: 'zh', label: 'Chinese' },
-];
-
-export default function SelectPage() {
-  return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-base)">
-          Select
-        </Typography>
-        <Typography
-          variant="body1"
-          className="text-muted-foreground text-lg mb-(--lsd-spacing-base)"
-        >
-          A select component that allows users to select from a list of options.
-        </Typography>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Installation
-        </Typography>
-        <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Import
-        </Typography>
-        <CodeExample
-          title="Import the component"
-          code={`import {
+  CardDescription,
+  CardHeader,
+  CardTitle,
   Select,
   SelectContent,
   SelectGroup,
@@ -76,629 +18,694 @@ export default function SelectPage() {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from '@nipsys/shadcn-lsd';`}
-        />
-      </div>
+  Typography,
+} from '@nipsys/shadcn-lsd';
+import { useState } from 'react';
+import { CodeExample } from '@/components/docs/CodeExample';
+import { DocsLayout } from '@/components/docs/DocsLayout';
+import { PageContent } from '@/components/docs/PageContent';
+import { PageHeader } from '@/components/docs/PageHeader';
+import { PageNavigation } from '@/components/docs/PageNavigation';
+import { PageSection } from '@/components/docs/PageSection';
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+function ControlledSelectExample() {
+  const [value, setValue] = useState('option2');
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Usage
-        </Typography>
-        <CodeExample
-          title="Basic select"
-          code={`<Select>
-  <SelectTrigger className="w-[180px]">
-    <SelectValue placeholder="Select a framework" />
+  return (
+    <>
+      <Select value={value} onValueChange={setValue}>
+        <SelectTrigger>
+          <SelectValue placeholder="Select an option" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="option1">Option 1</SelectItem>
+          <SelectItem value="option2">Option 2</SelectItem>
+          <SelectItem value="option3">Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+      <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+        Selected: {value === 'option1' ? 'Option 1' : value === 'option2' ? 'Option 2' : 'Option 3'}
+      </Typography>
+    </>
+  );
+}
+
+export default function SelectPage() {
+  return (
+    <DocsLayout>
+      <PageHeader
+        title="Select"
+        description="Dropdown select component for choosing from a list of options"
+      />
+
+      <PageContent>
+        <PageSection title="About Select">
+          <Typography variant="body1" className="block">
+            Select components allow users to choose a single option from a list of choices. They are
+            ideal for situations where space is limited or when you need to present many options in
+            an organized way.
+          </Typography>
+        </PageSection>
+
+        <PageSection title="Installation">
+          <Typography variant="body1">Import the Select components from LSD:</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from '@nipsys/shadcn-lsd'
+
+export default function MyComponent() {
+  return (
+    <Select>
+      <SelectTrigger>
+        <SelectValue placeholder="Choose an option" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="option1">Option 1</SelectItem>
+        <SelectItem value="option2">Option 2</SelectItem>
+        <SelectItem value="option3">Option 3</SelectItem>
+      </SelectContent>
+    </Select>
+  )
+}`}
+              />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Sizes">
+          <Typography variant="body1" className="text-muted-foreground">
+            Select triggers come in two sizes to fit different contexts and layouts.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>All Sizes</CardTitle>
+              <CardDescription>Small and default sizes</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Select>
+                  <SelectTrigger size="sm">
+                    <SelectValue placeholder="Small size" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="option1">Option 1</SelectItem>
+                    <SelectItem value="option2">Option 2</SelectItem>
+                    <SelectItem value="option3">Option 3</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                <Select>
+                  <SelectTrigger size="default">
+                    <SelectValue placeholder="Default size" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="option1">Option 1</SelectItem>
+                    <SelectItem value="option2">Option 2</SelectItem>
+                    <SelectItem value="option3">Option 3</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Select>
+  <SelectTrigger size="sm">
+    <SelectValue placeholder="Small size" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="option1">Option 1</SelectItem>
+    <SelectItem value="option2">Option 2</SelectItem>
+    <SelectItem value="option3">Option 3</SelectItem>
+  </SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger size="default">
+    <SelectValue placeholder="Default size" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="option1">Option 1</SelectItem>
+    <SelectItem value="option2">Option 2</SelectItem>
+    <SelectItem value="option3">Option 3</SelectItem>
+  </SelectContent>
+</Select>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Features">
+          <Typography variant="body1" className="text-muted-foreground">
+            Additional features like placeholders, grouped items, separators, disabled items, and
+            controlled/uncontrolled states.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic Usage</CardTitle>
+              <CardDescription>Simple select with placeholder</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a fruit" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="apple">Apple</SelectItem>
+                    <SelectItem value="banana">Banana</SelectItem>
+                    <SelectItem value="orange">Orange</SelectItem>
+                    <SelectItem value="grape">Grape</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Select a fruit" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="apple">Apple</SelectItem>
+    <SelectItem value="banana">Banana</SelectItem>
+    <SelectItem value="orange">Orange</SelectItem>
+    <SelectItem value="grape">Grape</SelectItem>
+  </SelectContent>
+</Select>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Grouped Items</CardTitle>
+              <CardDescription>Organize items with labels and groups</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a food" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel>Fruits</SelectLabel>
+                      <SelectItem value="apple">Apple</SelectItem>
+                      <SelectItem value="banana">Banana</SelectItem>
+                      <SelectItem value="orange">Orange</SelectItem>
+                    </SelectGroup>
+                    <SelectSeparator />
+                    <SelectGroup>
+                      <SelectLabel>Vegetables</SelectLabel>
+                      <SelectItem value="carrot">Carrot</SelectItem>
+                      <SelectItem value="broccoli">Broccoli</SelectItem>
+                      <SelectItem value="spinach">Spinach</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Select a food" />
   </SelectTrigger>
   <SelectContent>
     <SelectGroup>
-      <SelectLabel>Frameworks</SelectLabel>
-      <SelectItem value="react">React</SelectItem>
-      <SelectItem value="vue">Vue</SelectItem>
-      <SelectItem value="angular">Angular</SelectItem>
+      <SelectLabel>Fruits</SelectLabel>
+      <SelectItem value="apple">Apple</SelectItem>
+      <SelectItem value="banana">Banana</SelectItem>
+      <SelectItem value="orange">Orange</SelectItem>
+    </SelectGroup>
+    <SelectSeparator />
+    <SelectGroup>
+      <SelectLabel>Vegetables</SelectLabel>
+      <SelectItem value="carrot">Carrot</SelectItem>
+      <SelectItem value="broccoli">Broccoli</SelectItem>
+      <SelectItem value="spinach">Spinach</SelectItem>
     </SelectGroup>
   </SelectContent>
 </Select>`}
-        />
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Separator</CardTitle>
+              <CardDescription>Divide items with visual separators</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a priority" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="high">High Priority</SelectItem>
+                    <SelectItem value="medium">Medium Priority</SelectItem>
+                    <SelectSeparator />
+                    <SelectItem value="low">Low Priority</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Select a priority" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="high">High Priority</SelectItem>
+    <SelectItem value="medium">Medium Priority</SelectItem>
+    <SelectSeparator />
+    <SelectItem value="low">Low Priority</SelectItem>
+  </SelectContent>
+</Select>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Basic Usage
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          A basic select with a placeholder and a list of options. Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            defaultValue
-          </code>{' '}
-          to set an initial value.
-        </Typography>
-
-        <ComponentPreview
-          title="Basic select"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <div>
-    <Select>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select a framework" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Frameworks</SelectLabel>
-          {frameworks.map((framework) => (
-            <SelectItem key={framework.value} value={framework.value}>
-              {framework.label}
-            </SelectItem>
-          ))}
-        </SelectGroup>
-      </SelectContent>
-    </Select>
-  </div>
-  <div>
-    <Select defaultValue="react">
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select a framework" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Frameworks</SelectLabel>
-          {frameworks.map((framework) => (
-            <SelectItem key={framework.value} value={framework.value}>
-              {framework.label}
-            </SelectItem>
-          ))}
-        </SelectGroup>
-      </SelectContent>
-    </Select>
-  </div>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <div>
-              <LSDSelect>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Select a framework" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Frameworks</SelectLabel>
-                    {frameworks.map(framework => (
-                      <SelectItem key={framework.value} value={framework.value}>
-                        {framework.label}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </LSDSelect>
-            </div>
-            <div>
-              <LSDSelect defaultValue="react">
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Select a framework" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Frameworks</SelectLabel>
-                    {frameworks.map(framework => (
-                      <SelectItem key={framework.value} value={framework.value}>
-                        {framework.label}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </LSDSelect>
-            </div>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Sizes
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            size
-          </code>{' '}
-          prop on{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SelectTrigger
-          </code>{' '}
-          to change the select size.
-        </Typography>
-
-        <ComponentPreview
-          title="Select sizes"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <div>
-    <h4 className="text-sm font-medium mb-(--lsd-spacing-smaller)">Default Size</h4>
-    <Select>
-      <SelectTrigger className="w-[180px]" size="default">
-        <SelectValue placeholder="Default size" />
-      </SelectTrigger>
-      <SelectContent>
-        {frameworks.map((framework) => (
-          <SelectItem key={framework.value} value={framework.value}>
-            {framework.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  </div>
-  <div>
-    <h4 className="text-sm font-medium mb-(--lsd-spacing-smaller)">Small Size</h4>
-    <Select>
-      <SelectTrigger className="w-[180px]" size="sm">
-        <SelectValue placeholder="Small size" />
-      </SelectTrigger>
-      <SelectContent>
-        {frameworks.map((framework) => (
-          <SelectItem key={framework.value} value={framework.value}>
-            {framework.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  </div>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <div>
-              <h4 className="text-sm font-medium mb-(--lsd-spacing-smaller)">Default Size</h4>
-              <LSDSelect>
-                <SelectTrigger className="w-[180px]" size="default">
-                  <SelectValue placeholder="Default size" />
-                </SelectTrigger>
-                <SelectContent>
-                  {frameworks.map(framework => (
-                    <SelectItem key={framework.value} value={framework.value}>
-                      {framework.label}
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Disabled Items</CardTitle>
+              <CardDescription>Disable specific options</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a plan" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="free">Free Plan</SelectItem>
+                    <SelectItem value="pro">Pro Plan</SelectItem>
+                    <SelectItem value="enterprise" disabled>
+                      Enterprise Plan (Sold Out)
                     </SelectItem>
-                  ))}
-                </SelectContent>
-              </LSDSelect>
-            </div>
-            <div>
-              <h4 className="text-sm font-medium mb-(--lsd-spacing-smaller)">Small Size</h4>
-              <LSDSelect>
-                <SelectTrigger className="w-[180px]" size="sm">
-                  <SelectValue placeholder="Small size" />
-                </SelectTrigger>
-                <SelectContent>
-                  {frameworks.map(framework => (
-                    <SelectItem key={framework.value} value={framework.value}>
-                      {framework.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </LSDSelect>
-            </div>
+                  </SelectContent>
+                </Select>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Select a plan" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="free">Free Plan</SelectItem>
+    <SelectItem value="pro">Pro Plan</SelectItem>
+    <SelectItem value="enterprise" disabled>
+      Enterprise Plan (Sold Out)
+    </SelectItem>
+  </SelectContent>
+</Select>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Controlled Component</CardTitle>
+              <CardDescription>Manage value with state</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <ControlledSelectExample />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`import { useState } from 'react'
+
+function MyComponent() {
+  const [value, setValue] = useState('option2')
+
+  return (
+    <>
+      <Select value={value} onValueChange={setValue}>
+        <SelectTrigger>
+          <SelectValue placeholder="Select an option" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="option1">Option 1</SelectItem>
+          <SelectItem value="option2">Option 2</SelectItem>
+          <SelectItem value="option3">Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+      <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+        Selected: {value === 'option1' ? 'Option 1' : value === 'option2' ? 'Option 2' : 'Option 3'}
+      </Typography>
+    </>
+  )
+}`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="API Reference">
+          <Typography variant="body1" className="text-muted-foreground">
+            All available props for the Select components.
+          </Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>value</CardTitle>
+                <CardDescription>The controlled value of the select</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Use with onValueChange for controlled component
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>defaultValue</CardTitle>
+                <CardDescription>The default value of the select</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Use for uncontrolled component
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>onValueChange</CardTitle>
+                <CardDescription>Callback when value changes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> (value: string) {'>'} void
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Called when user selects an option
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>disabled</CardTitle>
+                <CardDescription>Disable the entire select</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Prevents user interaction
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>required</CardTitle>
+                <CardDescription>Mark select as required</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Adds required attribute for form validation
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>name</CardTitle>
+                <CardDescription>Name attribute for form submission</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Used when select is part of a form
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>size (SelectTrigger)</CardTitle>
+                <CardDescription>The size of the select trigger</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'sm' | 'default'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> sm, default
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> default
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>placeholder (SelectValue)</CardTitle>
+                <CardDescription>Placeholder text when no value is selected</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Displayed when no option is selected
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>value (SelectItem)</CardTitle>
+                <CardDescription>The value of the select item</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Required prop for each SelectItem
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>disabled (SelectItem)</CardTitle>
+                <CardDescription>Disable individual select item</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Prevents selection of specific item
+                </Typography>
+              </CardContent>
+            </Card>
           </div>
-        </ComponentPreview>
-      </div>
+        </PageSection>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+        <PageSection title="Accessibility">
+          <Typography variant="body1" className="text-muted-foreground">
+            The Select component follows accessibility best practices.
+          </Typography>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          With Groups and Separators
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SelectGroup
-          </code>{' '}
-          to group related options and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            SelectSeparator
-          </code>{' '}
-          to visually separate groups.
-        </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Select is fully keyboard accessible</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Tab</strong> - Navigate to the select trigger
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Enter / Space</strong> - Open the select dropdown
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Arrow Up / Down</strong> - Navigate through options
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Home / End</strong> - Jump to first or last option
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Escape</strong> - Close the dropdown
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Enter</strong> - Select the focused option
+              </Typography>
+            </CardContent>
+          </Card>
 
-        <ComponentPreview
-          title="Select with groups and separators"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <div>
-    <Select>
-      <SelectTrigger className="w-[250px]">
-        <SelectValue placeholder="Select an option" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Frameworks</SelectLabel>
-          {frameworks.map((framework) => (
-            <SelectItem key={framework.value} value={framework.value}>
-              {framework.label}
-            </SelectItem>
-          ))}
-        </SelectGroup>
-        <SelectSeparator />
-        <SelectGroup>
-          <SelectLabel>Languages</SelectLabel>
-          {languages.map((language) => (
-            <SelectItem key={language.value} value={language.value}>
-              {language.label}
-            </SelectItem>
-          ))}
-        </SelectGroup>
-      </SelectContent>
-    </Select>
-  </div>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <div>
-              <LSDSelect>
-                <SelectTrigger className="w-[250px]">
-                  <SelectValue placeholder="Select an option" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Frameworks</SelectLabel>
-                    {frameworks.map(framework => (
-                      <SelectItem key={framework.value} value={framework.value}>
-                        {framework.label}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                  <SelectSeparator />
-                  <SelectGroup>
-                    <SelectLabel>Languages</SelectLabel>
-                    {languages.map(language => (
-                      <SelectItem key={language.value} value={language.value}>
-                        {language.label}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </LSDSelect>
-            </div>
-          </div>
-        </ComponentPreview>
-      </div>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Uses <code>aria-expanded</code> to indicate dropdown state
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Uses <code>aria-haspopup</code> to indicate dropdown behavior
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Uses <code>aria-selected</code> to indicate selected option
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Uses <code>aria-disabled</code> for disabled items
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Uses <code>role="listbox"</code> for the dropdown content
+              </Typography>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Select components have visible focus states that follow the LSD design system's
+                focus indicators, ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
+      </PageContent>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Disabled State
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            disabled
-          </code>{' '}
-          prop to disable the select.
-        </Typography>
-
-        <ComponentPreview
-          title="Disabled state"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <div>
-    <Select disabled>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Disabled select" />
-      </SelectTrigger>
-      <SelectContent>
-        {frameworks.map((framework) => (
-          <SelectItem key={framework.value} value={framework.value}>
-            {framework.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  </div>
-  <div>
-    <Select disabled defaultValue="react">
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Disabled select" />
-      </SelectTrigger>
-      <SelectContent>
-        {frameworks.map((framework) => (
-          <SelectItem key={framework.value} value={framework.value}>
-            {framework.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  </div>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <div>
-              <LSDSelect disabled>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Disabled select" />
-                </SelectTrigger>
-                <SelectContent>
-                  {frameworks.map(framework => (
-                    <SelectItem key={framework.value} value={framework.value}>
-                      {framework.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </LSDSelect>
-            </div>
-            <div>
-              <LSDSelect disabled defaultValue="react">
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Disabled select" />
-                </SelectTrigger>
-                <SelectContent>
-                  {frameworks.map(framework => (
-                    <SelectItem key={framework.value} value={framework.value}>
-                      {framework.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </LSDSelect>
-            </div>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          With Value Change Handler
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            onValueChange
-          </code>{' '}
-          prop to handle value changes.
-        </Typography>
-
-        <ComponentPreview
-          title="With value change handler"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <div>
-    <Select onValueChange={(value) => console.log('Selected:', value)}>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select a framework" />
-      </SelectTrigger>
-      <SelectContent>
-        {frameworks.map((framework) => (
-          <SelectItem key={framework.value} value={framework.value}>
-            {framework.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  </div>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <div>
-              <LSDSelect onValueChange={value => console.log('Selected:', value)}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Select a framework" />
-                </SelectTrigger>
-                <SelectContent>
-                  {frameworks.map(framework => (
-                    <SelectItem key={framework.value} value={framework.value}>
-                      {framework.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </LSDSelect>
-            </div>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          API Reference
-        </Typography>
-        <Card>
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              Select Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  value
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Controlled value of the select.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">undefined</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  defaultValue
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Initial value of the select (uncontrolled).
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">undefined</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  onValueChange
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    (value: string) =&gt; void
-                  </code>
-                  <br />
-                  Callback when the selected value changes.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">undefined</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  disabled
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Disables the select.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  name
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Name of the select (for form submission).
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">undefined</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  required
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Marks the select as required.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-            </div>
-
-            <Typography variant="h3" className="mb-(--lsd-spacing-base) mt-(--lsd-spacing-larger)">
-              SelectTrigger Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  size
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "default" | "sm"
-                  </code>
-                  <br />
-                  Size of the select trigger.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"default"</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  disabled
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Disables the select trigger.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-            </div>
-
-            <Typography variant="h3" className="mb-(--lsd-spacing-base) mt-(--lsd-spacing-larger)">
-              SelectItem Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  value
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Required. The value of the item.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  disabled
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Disables the item.
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Accessibility
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground">
-          Selects follow WAI-ARIA guidelines and are fully accessible. The component uses proper
-          ARIA roles and attributes to ensure screen readers can properly announce the select, its
-          options, and the current selection. Keyboard navigation is fully supported with arrow
-          keys, Enter, and Escape.
-        </Typography>
-      </div>
-    </div>
+      <PageNavigation
+        previous={{
+          title: 'ButtonGroup',
+          href: '/components/button-group',
+        }}
+        next={{
+          title: 'Menubar',
+          href: '/components/menubar',
+        }}
+      />
+    </DocsLayout>
   );
 }

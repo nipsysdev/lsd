@@ -1,294 +1,500 @@
 'use client';
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Button,
+  ButtonGroup,
+  ButtonGroupSeparator,
   ButtonGroupText,
   Card,
   CardContent,
-  ButtonGroup as LSDButtonGroup,
-  Separator,
+  CardDescription,
+  CardHeader,
+  CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { CodeExample } from '../../components/docs/CodeExample';
-import { ComponentPreview } from '../../components/docs/ComponentPreview';
+import { DownloadIcon, PlusIcon, TrashIcon } from '@phosphor-icons/react';
+import { CodeExample } from '@/components/docs/CodeExample';
+import { DocsLayout } from '@/components/docs/DocsLayout';
+import { PageContent } from '@/components/docs/PageContent';
+import { PageHeader } from '@/components/docs/PageHeader';
+import { PageNavigation } from '@/components/docs/PageNavigation';
+import { PageSection } from '@/components/docs/PageSection';
 
 export default function ButtonGroupPage() {
   return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-base)">
-          ButtonGroup
-        </Typography>
-        <Typography
-          variant="body1"
-          className="text-muted-foreground text-lg mb-(--lsd-spacing-base)"
-        >
-          A button group component that groups related buttons together with proper visual
-          separation. Button groups help organize related actions and improve the user interface by
-          visually connecting related buttons.
-        </Typography>
-      </div>
+    <DocsLayout>
+      <PageHeader
+        title="ButtonGroup"
+        description="Groups related buttons and controls together with proper spacing and focus management"
+      />
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+      <PageContent>
+        <PageSection title="About ButtonGroup">
+          <Typography variant="body1" className="block">
+            ButtonGroup organizes related buttons into groups with horizontal and vertical
+            orientations, separators, and text labels.
+          </Typography>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Installation
-        </Typography>
-        <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-      </div>
+        <PageSection title="Installation">
+          <Typography variant="body1">Import the ButtonGroup components from LSD:</Typography>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import {
+  Button,
+  ButtonGroup,
+} from '@nipsys/shadcn-lsd'
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Import
-        </Typography>
-        <CodeExample
-          title="Import the component"
-          code={`import { ButtonGroup, ButtonGroupText } from '@nipsys/shadcn-lsd';`}
-        />
-      </div>
+export default function MyComponent() {
+  return (
+    <ButtonGroup>
+      <Button>Button 1</Button>
+      <Button>Button 2</Button>
+      <Button>Button 3</Button>
+    </ButtonGroup>
+  )
+}`}
+              />
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+        <PageSection title="Orientation">
+          <Typography variant="body1" className="text-muted-foreground">
+            ButtonGroup supports horizontal and vertical orientations for different layout needs.
+          </Typography>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Usage
-        </Typography>
-        <CodeExample
-          title="Basic button group"
-          code={`<ButtonGroup>
-  <Button variant="filled">Save</Button>
-  <Button variant="filled">Save As</Button>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Horizontal Orientation</CardTitle>
+              <CardDescription>Buttons arranged in a row (default)</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <ButtonGroup orientation="horizontal">
+                  <Button>Left</Button>
+                  <Button>Middle</Button>
+                  <Button>Right</Button>
+                </ButtonGroup>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<ButtonGroup orientation="horizontal">
+  <Button>Left</Button>
+  <Button>Middle</Button>
+  <Button>Right</Button>
 </ButtonGroup>`}
-        />
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Basic Button Group
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Group related buttons together with proper visual separation.
-        </Typography>
-
-        <ComponentPreview
-          title="Basic button group"
-          code={`<ButtonGroup>
-  <Button variant="filled">Save</Button>
-  <Button variant="filled">Save As</Button>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Vertical Orientation</CardTitle>
+              <CardDescription>Buttons arranged in a column</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <ButtonGroup orientation="vertical">
+                  <Button>Top</Button>
+                  <Button>Middle</Button>
+                  <Button>Bottom</Button>
+                </ButtonGroup>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<ButtonGroup orientation="vertical">
+  <Button>Top</Button>
+  <Button>Middle</Button>
+  <Button>Bottom</Button>
 </ButtonGroup>`}
-        >
-          <LSDButtonGroup>
-            <Button variant="filled">Save</Button>
-            <Button variant="filled">Save As</Button>
-          </LSDButtonGroup>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+        <PageSection title="Features">
+          <Typography variant="body1" className="text-muted-foreground">
+            Advanced features including separators, text labels, and integration with other
+            components.
+          </Typography>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          With Text Label
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            ButtonGroupText
-          </code>{' '}
-          to add a text label between buttons, useful for pagination or displaying additional
-          information.
-        </Typography>
-
-        <ComponentPreview
-          title="Button group with text label"
-          code={`<ButtonGroup>
-  <Button variant="outlined">Previous</Button>
-  <ButtonGroupText>Page 1 of 5</ButtonGroupText>
-  <Button variant="outlined">Next</Button>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Separators</CardTitle>
+              <CardDescription>
+                Use ButtonGroupSeparator to visually separate groups of buttons
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <ButtonGroup>
+                  <Button>Save</Button>
+                  <Button>Cancel</Button>
+                  <ButtonGroupSeparator />
+                  <Button variant="destructive">Delete</Button>
+                </ButtonGroup>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<ButtonGroup>
+  <Button>Save</Button>
+  <Button>Cancel</Button>
+  <ButtonGroupSeparator />
+  <Button variant="destructive">Delete</Button>
 </ButtonGroup>`}
-        >
-          <LSDButtonGroup>
-            <Button variant="outlined">Previous</Button>
-            <ButtonGroupText>Page 1 of 5</ButtonGroupText>
-            <Button variant="outlined">Next</Button>
-          </LSDButtonGroup>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Vertical Orientation
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            orientation
-          </code>{' '}
-          prop to create a vertical button group.
-        </Typography>
-
-        <ComponentPreview
-          title="Vertical button group"
-          code={`<ButtonGroup orientation="vertical">
-  <Button variant="outlined">Profile</Button>
-  <Button variant="outlined">Settings</Button>
-  <Button variant="outlined">Logout</Button>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Text Labels</CardTitle>
+              <CardDescription>
+                Use ButtonGroupText to add informational labels within the group
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <ButtonGroup>
+                  <Button>Previous</Button>
+                  <ButtonGroupText>Page 1 of 10</ButtonGroupText>
+                  <Button>Next</Button>
+                </ButtonGroup>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<ButtonGroup>
+  <Button>Previous</Button>
+  <ButtonGroupText>Page 1 of 10</ButtonGroupText>
+  <Button>Next</Button>
 </ButtonGroup>`}
-        >
-          <LSDButtonGroup orientation="vertical">
-            <Button variant="outlined">Profile</Button>
-            <Button variant="outlined">Settings</Button>
-            <Button variant="outlined">Logout</Button>
-          </LSDButtonGroup>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Different Button Variants</CardTitle>
+              <CardDescription>Mix different button variants within the same group</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <ButtonGroup>
+                  <Button variant="filled">Primary</Button>
+                  <Button variant="outlined">Secondary</Button>
+                </ButtonGroup>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<ButtonGroup>
+<Button variant="filled">Primary</Button>
+<Button variant="outlined">Secondary</Button>
+</ButtonGroup>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Icon Buttons</CardTitle>
+              <CardDescription>Use icon-only buttons for compact controls</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <ButtonGroup>
+                  <Button variant="filled-rounded" size="square-md">
+                    <PlusIcon />
+                  </Button>
+                  <Button variant="outlined-rounded" size="square-md">
+                    <DownloadIcon />
+                  </Button>
+                  <Button variant="destructive-rounded" size="square-md">
+                    <TrashIcon />
+                  </Button>
+                </ButtonGroup>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<ButtonGroup>
+<Button variant="filled-rounded" size="square-md">
+<PlusIcon />
+</Button>
+<Button variant="outlined-rounded" size="square-md">
+<DownloadIcon />
+</Button>
+<Button variant="destructive-rounded" size="square-md">
+<TrashIcon />
+</Button>
+</ButtonGroup>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Different Button Variants
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Button groups work with all button variants, allowing you to create different visual
-          styles.
-        </Typography>
+        <PageSection title="API Reference">
+          <Typography variant="body1" className="text-muted-foreground">
+            All available props for the ButtonGroup components.
+          </Typography>
 
-        <ComponentPreview
-          title="Button group with different variants"
-          code={`<div className="space-y-4">
-  <ButtonGroup>
-    <Button variant="filled">Save</Button>
-    <Button variant="filled">Save As</Button>
-  </ButtonGroup>
-  <ButtonGroup>
-    <Button variant="outlined">Cancel</Button>
-    <Button variant="outlined">Reset</Button>
-  </ButtonGroup>
-  <ButtonGroup>
-    <Button variant="ghost">Edit</Button>
-    <Button variant="ghost">Delete</Button>
-  </ButtonGroup>
-</div>`}
-        >
-          <div className="space-y-4">
-            <LSDButtonGroup>
-              <Button variant="filled">Save</Button>
-              <Button variant="filled">Save As</Button>
-            </LSDButtonGroup>
-            <LSDButtonGroup>
-              <Button variant="outlined">Cancel</Button>
-              <Button variant="outlined">Reset</Button>
-            </LSDButtonGroup>
-            <LSDButtonGroup>
-              <Button variant="ghost">Edit</Button>
-              <Button variant="ghost">Delete</Button>
-            </LSDButtonGroup>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>orientation</CardTitle>
+                <CardDescription>The layout direction of the button group</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'horizontal' | 'vertical'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> horizontal, vertical
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> horizontal
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Merges with existing button group classes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>children</CardTitle>
+                <CardDescription>Child elements to render in the group</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> React.ReactNode
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Buttons, inputs, selects, separators, and text labels
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>...props</CardTitle>
+                <CardDescription>Standard HTML fieldset attributes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> <code>React.ComponentProps&lt;'fieldset'&gt;</code>
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  All standard HTML fieldset attributes are supported
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>orientation (Separator)</CardTitle>
+                <CardDescription>The orientation of the separator</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'horizontal' | 'vertical'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> horizontal, vertical
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> vertical
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>className (Separator)</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Merges with existing separator classes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>asChild (Text)</CardTitle>
+                <CardDescription>Whether to merge props with child element</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Used for rendering text as a different element
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>className (Text)</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Merges with existing text classes
+                </Typography>
+              </CardContent>
+            </Card>
           </div>
-        </ComponentPreview>
-      </div>
+        </PageSection>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+        <PageSection title="Accessibility">
+          <Typography variant="body1" className="text-muted-foreground">
+            The ButtonGroup component follows accessibility best practices.
+          </Typography>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          API Reference
-        </Typography>
-        <Card>
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              ButtonGroup Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  orientation
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "horizontal" | "vertical"
-                  </code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"horizontal"</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  className
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Additional CSS classes to apply to the button group
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Button groups are fully keyboard accessible</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Tab</strong> - Navigate to the button group
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Arrow Keys</strong> - Navigate between buttons in the group
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Enter/Space</strong> - Activate the focused button
+              </Typography>
+            </CardContent>
+          </Card>
 
-        <Card className="mt-(--lsd-spacing-base)">
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              ButtonGroupText Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  children
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">ReactNode</code>
-                  <br />
-                  The text content to display between buttons
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  className
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Additional CSS classes to apply to the text element
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • ButtonGroup renders as a <code>fieldset</code> element for semantic grouping
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Use <code>aria-label</code> on the group if no visible label is present
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • ButtonGroupText provides visual and screen reader accessible labels
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Separators are visually indicated but not announced to screen readers
+              </Typography>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Focused elements within the button group automatically rise to the top (z-index) for
+                visibility, ensuring keyboard users can always see which element has focus. This is
+                particularly important for button groups with overlapping borders.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Accessibility
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground">
-          Button groups follow WAI-ARIA guidelines and are fully accessible. The component uses
-          proper role attributes and keyboard navigation support. When using button groups, ensure
-          that the buttons have clear, descriptive labels that indicate their purpose.
-        </Typography>
-      </div>
-    </div>
+        <PageNavigation
+          previous={{ title: 'Switch', href: '/components/switch' }}
+          next={{ title: 'Select', href: '/components/select' }}
+        />
+      </PageContent>
+    </DocsLayout>
   );
 }

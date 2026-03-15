@@ -1,705 +1,619 @@
 'use client';
 
-import { Card, CardContent, Button as LSDButton, Separator, Typography } from '@nipsys/shadcn-lsd';
-import { CodeExample } from '../../components/docs/CodeExample';
-import { ComponentPreview } from '../../components/docs/ComponentPreview';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Typography,
+} from '@nipsys/shadcn-lsd';
+import { toast } from 'sonner';
+import { CodeExample } from '@/components/docs/CodeExample';
+import { DocsLayout } from '@/components/docs/DocsLayout';
+import { PageContent } from '@/components/docs/PageContent';
+import { PageHeader } from '@/components/docs/PageHeader';
+import { PageNavigation } from '@/components/docs/PageNavigation';
+import { PageSection } from '@/components/docs/PageSection';
 
-declare global {
-  interface Window {
-    toast?: {
-      (message: string, options?: Record<string, unknown>): void;
-      success(message: string, options?: Record<string, unknown>): void;
-      error(message: string, options?: Record<string, unknown>): void;
-      info(message: string, options?: Record<string, unknown>): void;
-      warning(message: string, options?: Record<string, unknown>): void;
-      dismiss(): void;
-    };
-  }
-}
+const installationCode = `import { Toaster } from '@nipsys/shadcn-lsd'
+import { toast } from 'sonner'
+
+export default function MyComponent() {
+  return (
+    <>
+      <Toaster />
+      <Button onClick={() => toast('Hello world')}>
+        Show toast
+      </Button>
+    </>
+  )
+}`;
+
+const toastTypesCode = `toast('Simple toast message')
+toast.success('Changes saved successfully!')
+toast.error('Something went wrong!')
+toast.warning('Please review your changes')
+toast.info('New feature available')`;
+
+const durationCode = `toast('Short duration', { duration: 2000 })
+toast('Long duration', { duration: 10000 })`;
+
+const actionCode = `toast('Event has been created', {
+  action: {
+    label: 'Undo',
+    onClick: () => console.log('Undo clicked'),
+  },
+})`;
+
+const promiseCode = `const promise = new Promise((resolve) =>
+  setTimeout(() => resolve('Data loaded!'), 2000)
+)
+
+toast.promise(promise, {
+  loading: 'Loading...',
+  success: (data) => data,
+  error: 'Error loading data',
+})`;
+
+const persistentCode = `toast('This toast will not auto-dismiss', {
+  duration: Infinity,
+})
+
+toast.dismiss()`;
+
+const positionedCode = `toast('Top-left toast', { position: 'top-left' })
+toast('Top-right toast', { position: 'top-right' })
+toast('Bottom-left toast', { position: 'bottom-left' })
+toast('Bottom-right toast', { position: 'bottom-right' })`;
+
+const richCode = `import { CheckIcon } from '@phosphor-icons/react'
+
+toast(
+  <div>
+    <h4 className="lsd:font-semibold">Event Created</h4>
+    <p className="lsd:text-sm">
+      Your event has been created successfully.
+    </p>
+  </div>,
+  {
+    duration: 5000,
+  },
+)
+))`;
 
 export default function SonnerPage() {
   return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-base)">
-          Sonner
-        </Typography>
-        <Typography
-          variant="body1"
-          className="text-muted-foreground text-lg mb-(--lsd-spacing-base)"
-        >
-          A toast notification component that displays messages to users. Sonner provides beautiful,
-          animated toast notifications with rich content support.
-        </Typography>
-      </div>
+    <DocsLayout>
+      <PageHeader
+        title="Sonner"
+        description="Toast notification component with multiple types and customizable options"
+      />
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+      <PageContent>
+        <PageSection title="About Sonner">
+          <Typography variant="body1" className="block">
+            Sonner is a toast notification component that displays brief, non-intrusive messages to
+            users. It provides multiple toast types, customizable positioning, and rich color
+            options for different notification states.
+          </Typography>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Installation
-        </Typography>
-        <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-      </div>
+        <PageSection title="Installation">
+          <Typography variant="body1">
+            Import the Toaster component and toast function from LSD and sonner:
+          </Typography>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample code={installationCode} />
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Import
-        </Typography>
-        <CodeExample
-          title="Import the component"
-          code={`import { toast, Toaster } from '@nipsys/shadcn-lsd';`}
-        />
-      </div>
+        <PageSection title="Toast Types">
+          <Typography variant="body1" className="text-muted-foreground">
+            Sonner provides multiple toast types for different notification states.
+          </Typography>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>All Toast Types</CardTitle>
+              <CardDescription>Display different toast types with various styling</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button variant="outlined" onClick={() => toast('Simple toast message')}>
+                  Show Simple Toast
+                </Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => toast.success('Changes saved successfully!')}
+                >
+                  Show Success Toast
+                </Button>
+                <Button variant="outlined" onClick={() => toast.error('Something went wrong!')}>
+                  Show Error Toast
+                </Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => toast.warning('Please review your changes')}
+                >
+                  Show Warning Toast
+                </Button>
+                <Button variant="outlined" onClick={() => toast.info('New feature available')}>
+                  Show Info Toast
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={toastTypesCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Setup
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Add the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            Toaster
-          </code>{' '}
-          component to your app's root layout to enable toast notifications.
-        </Typography>
-        <CodeExample
-          title="Add Toaster to your app"
-          code={`// In your root layout or App component
-import { Toaster } from '@nipsys/shadcn-lsd';
+        <PageSection title="Features">
+          <Typography variant="body1" className="text-muted-foreground">
+            Additional features like custom duration, position options, and promise-based toasts.
+          </Typography>
 
-export default function App() {
-  return (
-    <>
-      {/* Your app content */}
-      <Toaster />
-    </>
-  );
-}`}
-        />
-      </div>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Custom Duration</CardTitle>
+              <CardDescription>Control how long the toast is displayed</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button
+                  variant="outlined"
+                  onClick={() => toast('Short duration', { duration: 2000 })}
+                >
+                  2 seconds
+                </Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => toast('Long duration', { duration: 10000 })}
+                >
+                  10 seconds
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={durationCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Actions</CardTitle>
+              <CardDescription>Add action buttons to toasts</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Button
+                  variant="outlined"
+                  onClick={() =>
+                    toast('Event has been created', {
+                      action: {
+                        label: 'Undo',
+                        onClick: () => console.log('Undo clicked'),
+                      },
+                    })
+                  }
+                >
+                  Show with Action
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={actionCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Usage
-        </Typography>
-        <CodeExample title="Basic toast" code={`toast('Event has been created');`} />
-      </div>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Promise-based Toasts</CardTitle>
+              <CardDescription>
+                Show loading state and success/error for async operations
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Button
+                  variant="outlined"
+                  onClick={() => {
+                    const promise = new Promise(resolve =>
+                      setTimeout(() => resolve('Data loaded!'), 2000)
+                    );
+                    toast.promise(promise, {
+                      loading: 'Loading...',
+                      success: data => String(data),
+                      error: 'Error loading data',
+                    });
+                  }}
+                >
+                  Show Promise Toast
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={promiseCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Persistent Toasts</CardTitle>
+              <CardDescription>Toasts that stay until manually dismissed</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button
+                  variant="outlined"
+                  onClick={() =>
+                    toast('This toast will not auto-dismiss', {
+                      duration: Number.POSITIVE_INFINITY,
+                    })
+                  }
+                >
+                  Show Persistent Toast
+                </Button>
+                <Button variant="outlined" onClick={() => toast.dismiss()}>
+                  Dismiss All Toasts
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={persistentCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Basic Toasts
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            toast
-          </code>{' '}
-          function to display notifications with different types.
-        </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Positioned Toasts</CardTitle>
+              <CardDescription>Display toasts in different corners of the screen</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Button
+                  variant="outlined"
+                  onClick={() => toast('Top-left toast', { position: 'top-left' })}
+                >
+                  Top-Left
+                </Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => toast('Top-right toast', { position: 'top-right' })}
+                >
+                  Top-Right
+                </Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => toast('Bottom-left toast', { position: 'bottom-left' })}
+                >
+                  Bottom-Left
+                </Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => toast('Bottom-right toast', { position: 'bottom-right' })}
+                >
+                  Bottom-Right
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={positionedCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-        <ComponentPreview
-          title="Basic toast types"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <Button
-    variant="filled"
-    onClick={() => toast('Event has been created')}
-  >
-    Show Simple Toast
-  </Button>
-  <Button
-    variant="filled"
-    onClick={() => toast.success('Event has been created')}
-  >
-    Show Success Toast
-  </Button>
-  <Button
-    variant="filled"
-    onClick={() => toast.error('Event has not been created')}
-  >
-    Show Error Toast
-  </Button>
-  <Button
-    variant="filled"
-    onClick={() => toast.info('This is an informational message')}
-  >
-    Show Info Toast
-  </Button>
-  <Button
-    variant="filled"
-    onClick={() => toast.warning('This is a warning message')}
-  >
-    Show Warning Toast
-  </Button>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast('Event has been created');
-                }
-              }}
-            >
-              Show Simple Toast
-            </LSDButton>
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast.success('Event has been created');
-                }
-              }}
-            >
-              Show Success Toast
-            </LSDButton>
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast.error('Event has not been created');
-                }
-              }}
-            >
-              Show Error Toast
-            </LSDButton>
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast.info('This is an informational message');
-                }
-              }}
-            >
-              Show Info Toast
-            </LSDButton>
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast.warning('This is a warning message');
-                }
-              }}
-            >
-              Show Warning Toast
-            </LSDButton>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Rich Toasts</CardTitle>
+              <CardDescription>Create custom toasts with rich content and styling</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Button
+                  variant="outlined"
+                  onClick={() =>
+                    toast(
+                      <div>
+                        <h4 className="lsd:font-semibold">Event Created</h4>
+                        <p className="lsd:text-sm">Your event has been created successfully.</p>
+                      </div>,
+                      {
+                        duration: 5000,
+                      }
+                    )
+                  }
+                >
+                  Show Rich Toast
+                </Button>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={richCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="API Reference">
+          <Typography variant="body1" className="text-muted-foreground">
+            All available props for the Toaster component.
+          </Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>theme</CardTitle>
+                <CardDescription>Theme for the toast notifications</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'light' | 'dark' | 'system'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> light, dark, system
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> system
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>position</CardTitle>
+                <CardDescription>Position of the toast container</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> ToasterPosition
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> top-left, top-center, top-right, bottom-left,
+                  bottom-center, bottom-right
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> bottom-right
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>expand</CardTitle>
+                <CardDescription>Whether to expand toasts on hover</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Expands toast to show full content on hover
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>duration</CardTitle>
+                <CardDescription>Default duration for all toasts</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> number
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 4000
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Duration in milliseconds before toast auto-dismisses
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>richColors</CardTitle>
+                <CardDescription>Enable rich color backgrounds for toast types</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> true
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Applies colored backgrounds based on toast type
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>closeButton</CardTitle>
+                <CardDescription>Show close button on toasts</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Displays a close button on each toast
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>toastOptions</CardTitle>
+                <CardDescription>Default options for all toasts</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> ToastOptions
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Default configuration applied to all toasts
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Merges with existing toaster classes
+                </Typography>
+              </CardContent>
+            </Card>
           </div>
-        </ComponentPreview>
-      </div>
+        </PageSection>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+        <PageSection title="Accessibility">
+          <Typography variant="body1" className="text-muted-foreground">
+            The Sonner component follows accessibility best practices.
+          </Typography>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Toast with Action
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Add an action button to your toast using the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            action
-          </code>{' '}
-          option.
-        </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Toasts are fully keyboard accessible</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Tab</strong> - Navigate to toast actions
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Enter</strong> - Activate toast action button
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Escape</strong> - Dismiss toast (if dismissible)
+              </Typography>
+            </CardContent>
+          </Card>
 
-        <ComponentPreview
-          title="Toast with action"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <Button
-    variant="filled"
-    onClick={() =>
-      toast('Event has been created', {
-        action: {
-          label: 'Undo',
-          onClick: () => console.log('Undo'),
-        },
-      })
-    }
-  >
-    Show Toast with Action
-  </Button>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast('Event has been created', {
-                    action: {
-                      label: 'Undo',
-                      onClick: () => console.log('Undo'),
-                    },
-                  });
-                }
-              }}
-            >
-              Show Toast with Action
-            </LSDButton>
-          </div>
-        </ComponentPreview>
-      </div>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Toasts use <code>role="alert"</code> for important notifications
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Use <code>aria-live</code> for announcing toast messages
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Action buttons are properly labeled for screen readers
+              </Typography>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Toasts have visible focus states that follow the LSD design system's focus
+                indicators, ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
+      </PageContent>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Toast with Rich Content
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Pass React components as the message to create rich, custom toast content.
-        </Typography>
-
-        <ComponentPreview
-          title="Toast with rich content"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <Button
-    variant="filled"
-    onClick={() =>
-      toast(
-        <div>
-          <h4 className="font-semibold">Event Created</h4>
-          <p className="text-sm">
-            Your event has been created successfully.
-          </p>
-        </div>,
-        {
-          duration: 5000,
-        },
-      )
-    }
-  >
-    Show Rich Toast
-  </Button>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast('Event has been created with rich content', {
-                    duration: 5000,
-                  });
-                }
-              }}
-            >
-              Show Rich Toast
-            </LSDButton>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Persistent Toast
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            duration: Infinity
-          </code>{' '}
-          to create a toast that doesn't auto-dismiss.
-        </Typography>
-
-        <ComponentPreview
-          title="Persistent toast"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <Button
-    variant="filled"
-    onClick={() =>
-      toast('This toast will not close automatically', {
-        duration: Infinity,
-      })
-    }
-  >
-    Show Persistent Toast
-  </Button>
-  <Button variant="outlined" onClick={() => toast.dismiss()}>
-    Dismiss All Toasts
-  </Button>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast('This toast will not close automatically', {
-                    duration: Number.POSITIVE_INFINITY,
-                  });
-                }
-              }}
-            >
-              Show Persistent Toast
-            </LSDButton>
-            <LSDButton
-              variant="outlined"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast.dismiss();
-                }
-              }}
-            >
-              Dismiss All Toasts
-            </LSDButton>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Positioned Toasts
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            position
-          </code>{' '}
-          option to control where toasts appear.
-        </Typography>
-
-        <ComponentPreview
-          title="Positioned toasts"
-          code={`<div className="flex flex-wrap gap-(--lsd-spacing-base)">
-  <Button
-    variant="filled"
-    onClick={() =>
-      toast('Top-left toast', {
-        position: 'top-left',
-      })
-    }
-  >
-    Top-Left
-  </Button>
-  <Button
-    variant="filled"
-    onClick={() =>
-      toast('Top-right toast', {
-        position: 'top-right',
-      })
-    }
-  >
-    Top-Right
-  </Button>
-  <Button
-    variant="filled"
-    onClick={() =>
-      toast('Bottom-left toast', {
-        position: 'bottom-left',
-      })
-    }
-  >
-    Bottom-Left
-  </Button>
-  <Button
-    variant="filled"
-    onClick={() =>
-      toast('Bottom-right toast', {
-        position: 'bottom-right',
-      })
-    }
-  >
-    Bottom-Right
-  </Button>
-</div>`}
-        >
-          <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast('Top-left toast', {
-                    position: 'top-left',
-                  });
-                }
-              }}
-            >
-              Top-Left
-            </LSDButton>
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast('Top-right toast', {
-                    position: 'top-right',
-                  });
-                }
-              }}
-            >
-              Top-Right
-            </LSDButton>
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast('Bottom-left toast', {
-                    position: 'bottom-left',
-                  });
-                }
-              }}
-            >
-              Bottom-Left
-            </LSDButton>
-            <LSDButton
-              variant="filled"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.toast) {
-                  window.toast('Bottom-right toast', {
-                    position: 'bottom-right',
-                  });
-                }
-              }}
-            >
-              Bottom-Right
-            </LSDButton>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          API Reference
-        </Typography>
-        <Card>
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              Toast Options
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  message
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    string | React.ReactNode
-                  </code>
-                  <br />
-                  The message to display in the toast.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  duration
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">number</code>
-                  <br />
-                  Default: <code className="px-(--lsd-spacing-smaller) bg-muted rounded">4000</code>
-                  <br />
-                  The duration in milliseconds before the toast auto-dismisses. Use{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">Infinity</code> for
-                  persistent toasts.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  position
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "top-left" | "top-right" | "bottom-left" | "bottom-right"
-                  </code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "bottom-right"
-                  </code>
-                  <br />
-                  The position where the toast appears.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  action
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    &lbrace; label: string; onClick: () =&gt; void &rbrace;
-                  </code>
-                  <br />
-                  An action button to display in the toast.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  id
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    string | number
-                  </code>
-                  <br />
-                  Optional unique identifier for the toast.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  onDismiss
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">() =&gt; void</code>
-                  <br />
-                  Callback function when the toast is dismissed.
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Toaster Props
-        </Typography>
-        <Card>
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              Toaster Component Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  theme
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "light" | "dark" | "system"
-                  </code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"system"</code>
-                  <br />
-                  The theme for the toaster. Automatically syncs with your app's theme.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  richColors
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default: <code className="px-(--lsd-spacing-smaller) bg-muted rounded">true</code>
-                  <br />
-                  Whether to use rich colours for different toast types.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  expand
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                  <br />
-                  Whether to expand the toast on hover.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  position
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "top-left" | "top-right" | "bottom-left" | "bottom-right"
-                  </code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "bottom-right"
-                  </code>
-                  <br />
-                  The default position for all toasts.
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  className
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Additional CSS classes to apply to the toaster.
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Accessibility
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground">
-          Sonner toasts follow WAI-ARIA guidelines and are fully accessible. The component
-          automatically includes the appropriate{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            role="alert"
-          </code>{' '}
-          and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            aria-live
-          </code>{' '}
-          attributes. Toasts are announced to screen readers and can be dismissed using keyboard
-          navigation.
-        </Typography>
-      </div>
-    </div>
+      <PageNavigation
+        previous={{
+          title: 'Progress',
+          href: '/components/progress',
+        }}
+        next={{
+          title: 'Tabs',
+          href: '/components/tabs',
+        }}
+      />
+    </DocsLayout>
   );
 }

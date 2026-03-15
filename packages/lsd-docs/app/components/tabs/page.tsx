@@ -1,788 +1,890 @@
 'use client';
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Card,
   CardContent,
-  Tabs as LSDTabs,
-  Separator,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { CodeExample } from '../../components/docs/CodeExample';
-import { ComponentPreview } from '../../components/docs/ComponentPreview';
+import { ChartLineUpIcon, GearIcon, HouseIcon, InfoIcon, UserIcon } from '@phosphor-icons/react';
+import { useState } from 'react';
+import { CodeExample } from '@/components/docs/CodeExample';
+import { DocsLayout } from '@/components/docs/DocsLayout';
+import { PageContent } from '@/components/docs/PageContent';
+import { PageHeader } from '@/components/docs/PageHeader';
+import { PageNavigation } from '@/components/docs/PageNavigation';
+import { PageSection } from '@/components/docs/PageSection';
 
 export default function TabsPage() {
+  const [controlledValue, setControlledValue] = useState('tab1');
+
   return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-base)">
-          Tabs
-        </Typography>
-        <Typography
-          variant="body1"
-          className="text-muted-foreground text-lg mb-(--lsd-spacing-base)"
-        >
-          A tabs component that allows users to navigate between different content sections. Tabs
-          are useful for organizing content into logical groups and reducing clutter by showing only
-          one section at a time.
-        </Typography>
-      </div>
+    <DocsLayout>
+      <PageHeader
+        title="Tabs"
+        description="Organized content switcher with multiple sizes and layout options"
+      />
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+      <PageContent>
+        <PageSection title="About Tabs">
+          <Typography variant="body1" className="block">
+            Tabs are a set of layered sections of content, known as tab panels, that display one
+            panel at a time. They help organize content into separate views while keeping all
+            content accessible within the same context.
+          </Typography>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Installation
-        </Typography>
-        <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-      </div>
+        <PageSection title="Installation">
+          <Typography variant="body1">Import the Tabs components from LSD:</Typography>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Import
-        </Typography>
-        <CodeExample
-          title="Import the component"
-          code={`import {
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import {
   Tabs,
-  TabsContent,
   TabsList,
   TabsTrigger,
-} from '@nipsys/shadcn-lsd';`}
-        />
-      </div>
+  TabsContent,
+} from '@nipsys/shadcn-lsd'
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+export default function MyComponent() {
+  return (
+    <Tabs defaultValue="tab1">
+      <TabsList>
+        <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+        <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+      </TabsList>
+      <TabsContent value="tab1">Content 1</TabsContent>
+      <TabsContent value="tab2">Content 2</TabsContent>
+    </Tabs>
+  )
+}`}
+              />
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Usage
-        </Typography>
-        <CodeExample
-          title="Basic tabs"
-          code={`<Tabs defaultValue="tab1">
+        <PageSection title="Sizes">
+          <Typography variant="body1" className="text-muted-foreground">
+            Tabs come in three sizes to fit different contexts and layouts.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>All Sizes</CardTitle>
+              <CardDescription>From small to large</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Tabs defaultValue="tab1" size="sm">
+                  <TabsList>
+                    <TabsTrigger value="tab1">Small</TabsTrigger>
+                    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+                    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="tab1">
+                    <Typography variant="body1" className="block">
+                      Small tab content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab2">
+                    <Typography variant="body1" className="block">
+                      Small tab content 2
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab3">
+                    <Typography variant="body1" className="block">
+                      Small tab content 3
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+
+                <Tabs defaultValue="tab1" size="md">
+                  <TabsList>
+                    <TabsTrigger value="tab1">Medium</TabsTrigger>
+                    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+                    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="tab1">
+                    <Typography variant="body1" className="block">
+                      Medium tab content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab2">
+                    <Typography variant="body1" className="block">
+                      Medium tab content 2
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab3">
+                    <Typography variant="body1" className="block">
+                      Medium tab content 3
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+
+                <Tabs defaultValue="tab1" size="lg">
+                  <TabsList>
+                    <TabsTrigger value="tab1">Large</TabsTrigger>
+                    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+                    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="tab1">
+                    <Typography variant="body1" className="block">
+                      Large tab content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab2">
+                    <Typography variant="body1" className="block">
+                      Large tab content 2
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab3">
+                    <Typography variant="body1" className="block">
+                      Large tab content 3
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Tabs defaultValue="tab1" size="sm">
   <TabsList>
-    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
-    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">
-    <p>Content for Tab 1</p>
-  </TabsContent>
-  <TabsContent value="tab2">
-    <p>Content for Tab 2</p>
-  </TabsContent>
-</Tabs>`}
-        />
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Default Tabs
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Create a basic tabs component with multiple tabs and content sections.
-        </Typography>
-
-        <ComponentPreview
-          title="Default tabs"
-          clientOnly={true}
-          code={`<Tabs defaultValue="tab1">
-  <TabsList>
-    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+    <TabsTrigger value="tab1">Small</TabsTrigger>
     <TabsTrigger value="tab2">Tab 2</TabsTrigger>
     <TabsTrigger value="tab3">Tab 3</TabsTrigger>
   </TabsList>
-  <TabsContent value="tab1">
-    <p>Content for Tab 1</p>
-  </TabsContent>
-  <TabsContent value="tab2">
-    <p>Content for Tab 2</p>
-  </TabsContent>
-  <TabsContent value="tab3">
-    <p>Content for Tab 3</p>
-  </TabsContent>
-</Tabs>`}
-        >
-          <LSDTabs defaultValue="tab1">
-            <TabsList>
-              <TabsTrigger value="tab1">Tab 1</TabsTrigger>
-              <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-              <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-            </TabsList>
-            <TabsContent value="tab1">
-              <p>Content for Tab 1</p>
-            </TabsContent>
-            <TabsContent value="tab2">
-              <p>Content for Tab 2</p>
-            </TabsContent>
-            <TabsContent value="tab3">
-              <p>Content for Tab 3</p>
-            </TabsContent>
-          </LSDTabs>
-        </ComponentPreview>
-      </div>
+  <TabsContent value="tab1">Small tab content</TabsContent>
+  <TabsContent value="tab2">Small tab content 2</TabsContent>
+  <TabsContent value="tab3">Small tab content 3</TabsContent>
+</Tabs>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Sizes
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            size
-          </code>{' '}
-          prop to change the size of the tabs. Available sizes are{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            sm
-          </code>
-          ,{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            md
-          </code>
-          , and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            lg
-          </code>
-          .
-        </Typography>
-
-        <ComponentPreview
-          title="Tabs sizes"
-          clientOnly={true}
-          code={`<div className="space-y-(--lsd-spacing-larger)">
-  <div>
-    <h3 className="text-lg font-medium mb-(--lsd-spacing-small)">Small Tabs</h3>
-    <Tabs defaultValue="tab1" size="sm">
-      <TabsList size="sm">
-        <TabsTrigger value="tab1" size="sm">Tab 1</TabsTrigger>
-        <TabsTrigger value="tab2" size="sm">Tab 2</TabsTrigger>
-        <TabsTrigger value="tab3" size="sm">Tab 3</TabsTrigger>
-      </TabsList>
-      <TabsContent value="tab1">
-        <p>Content for Small Tab 1</p>
-      </TabsContent>
-      <TabsContent value="tab2">
-        <p>Content for Small Tab 2</p>
-      </TabsContent>
-      <TabsContent value="tab3">
-        <p>Content for Small Tab 3</p>
-      </TabsContent>
-    </Tabs>
-  </div>
-
-  <div>
-    <h3 className="text-lg font-medium mb-(--lsd-spacing-small)">Medium Tabs</h3>
-    <Tabs defaultValue="tab1" size="md">
-      <TabsList size="md">
-        <TabsTrigger value="tab1" size="md">Tab 1</TabsTrigger>
-        <TabsTrigger value="tab2" size="md">Tab 2</TabsTrigger>
-        <TabsTrigger value="tab3" size="md">Tab 3</TabsTrigger>
-      </TabsList>
-      <TabsContent value="tab1">
-        <p>Content for Medium Tab 1</p>
-      </TabsContent>
-      <TabsContent value="tab2">
-        <p>Content for Medium Tab 2</p>
-      </TabsContent>
-      <TabsContent value="tab3">
-        <p>Content for Medium Tab 3</p>
-      </TabsContent>
-    </Tabs>
-  </div>
-
-  <div>
-    <h3 className="text-lg font-medium mb-(--lsd-spacing-small)">Large Tabs</h3>
-    <Tabs defaultValue="tab1" size="lg">
-      <TabsList size="lg">
-        <TabsTrigger value="tab1" size="lg">Tab 1</TabsTrigger>
-        <TabsTrigger value="tab2" size="lg">Tab 2</TabsTrigger>
-        <TabsTrigger value="tab3" size="lg">Tab 3</TabsTrigger>
-      </TabsList>
-      <TabsContent value="tab1">
-        <p>Content for Large Tab 1</p>
-      </TabsContent>
-      <TabsContent value="tab2">
-        <p>Content for Large Tab 2</p>
-      </TabsContent>
-      <TabsContent value="tab3">
-        <p>Content for Large Tab 3</p>
-      </TabsContent>
-    </Tabs>
-  </div>
-</div>`}
-        >
-          <div className="space-y-(--lsd-spacing-larger)">
-            <div>
-              <Typography variant="h3" className="mb-(--lsd-spacing-small)">
-                Small Tabs
-              </Typography>
-              <LSDTabs defaultValue="tab1" size="sm">
-                <TabsList size="sm">
-                  <TabsTrigger value="tab1" size="sm">
-                    Tab 1
-                  </TabsTrigger>
-                  <TabsTrigger value="tab2" size="sm">
-                    Tab 2
-                  </TabsTrigger>
-                  <TabsTrigger value="tab3" size="sm">
-                    Tab 3
-                  </TabsTrigger>
-                </TabsList>
-                <TabsContent value="tab1">
-                  <p>Content for Small Tab 1</p>
-                </TabsContent>
-                <TabsContent value="tab2">
-                  <p>Content for Small Tab 2</p>
-                </TabsContent>
-                <TabsContent value="tab3">
-                  <p>Content for Small Tab 3</p>
-                </TabsContent>
-              </LSDTabs>
-            </div>
-
-            <div>
-              <Typography variant="h3" className="mb-(--lsd-spacing-small)">
-                Medium Tabs
-              </Typography>
-              <LSDTabs defaultValue="tab1" size="md">
-                <TabsList size="md">
-                  <TabsTrigger value="tab1" size="md">
-                    Tab 1
-                  </TabsTrigger>
-                  <TabsTrigger value="tab2" size="md">
-                    Tab 2
-                  </TabsTrigger>
-                  <TabsTrigger value="tab3" size="md">
-                    Tab 3
-                  </TabsTrigger>
-                </TabsList>
-                <TabsContent value="tab1">
-                  <p>Content for Medium Tab 1</p>
-                </TabsContent>
-                <TabsContent value="tab2">
-                  <p>Content for Medium Tab 2</p>
-                </TabsContent>
-                <TabsContent value="tab3">
-                  <p>Content for Medium Tab 3</p>
-                </TabsContent>
-              </LSDTabs>
-            </div>
-
-            <div>
-              <Typography variant="h3" className="mb-(--lsd-spacing-small)">
-                Large Tabs
-              </Typography>
-              <LSDTabs defaultValue="tab1" size="lg">
-                <TabsList size="lg">
-                  <TabsTrigger value="tab1" size="lg">
-                    Tab 1
-                  </TabsTrigger>
-                  <TabsTrigger value="tab2" size="lg">
-                    Tab 2
-                  </TabsTrigger>
-                  <TabsTrigger value="tab3" size="lg">
-                    Tab 3
-                  </TabsTrigger>
-                </TabsList>
-                <TabsContent value="tab1">
-                  <p>Content for Large Tab 1</p>
-                </TabsContent>
-                <TabsContent value="tab2">
-                  <p>Content for Large Tab 2</p>
-                </TabsContent>
-                <TabsContent value="tab3">
-                  <p>Content for Large Tab 3</p>
-                </TabsContent>
-              </LSDTabs>
-            </div>
-          </div>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Full Width Tabs
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            fullWidth
-          </code>{' '}
-          prop to make the tabs span the full width of their container.
-        </Typography>
-
-        <ComponentPreview
-          title="Full width tabs"
-          clientOnly={true}
-          code={`<Tabs defaultValue="tab1" fullWidth>
-  <TabsList fullWidth>
-    <TabsTrigger value="tab1" fullWidth>Tab 1</TabsTrigger>
-    <TabsTrigger value="tab2" fullWidth>Tab 2</TabsTrigger>
-    <TabsTrigger value="tab3" fullWidth>Tab 3</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">
-    <p>Content for Full Width Tab 1</p>
-  </TabsContent>
-  <TabsContent value="tab2">
-    <p>Content for Full Width Tab 2</p>
-  </TabsContent>
-  <TabsContent value="tab3">
-    <p>Content for Full Width Tab 3</p>
-  </TabsContent>
-</Tabs>`}
-        >
-          <LSDTabs defaultValue="tab1" fullWidth>
-            <TabsList fullWidth>
-              <TabsTrigger value="tab1" fullWidth>
-                Tab 1
-              </TabsTrigger>
-              <TabsTrigger value="tab2" fullWidth>
-                Tab 2
-              </TabsTrigger>
-              <TabsTrigger value="tab3" fullWidth>
-                Tab 3
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent value="tab1">
-              <p>Content for Full Width Tab 1</p>
-            </TabsContent>
-            <TabsContent value="tab2">
-              <p>Content for Full Width Tab 2</p>
-            </TabsContent>
-            <TabsContent value="tab3">
-              <p>Content for Full Width Tab 3</p>
-            </TabsContent>
-          </LSDTabs>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Tabs with Icons
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Add icons to your tabs to provide visual context and improve usability.
-        </Typography>
-
-        <ComponentPreview
-          title="Tabs with icons"
-          clientOnly={true}
-          code={`<Tabs defaultValue="tab1">
+<Tabs defaultValue="tab1" size="md">
   <TabsList>
-    <TabsTrigger value="tab1">
-      Tab 1
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-      >
-        <title>Lightning Bolt Icon</title>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-        />
-      </svg>
-    </TabsTrigger>
-    <TabsTrigger value="tab2">
-      Tab 2
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-      >
-        <title>Envelope Icon</title>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-        />
-      </svg>
-    </TabsTrigger>
-    <TabsTrigger value="tab3">
-      Tab 3
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-      >
-        <title>User Icon</title>
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-        />
-      </svg>
-    </TabsTrigger>
+    <TabsTrigger value="tab1">Medium</TabsTrigger>
+    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
   </TabsList>
-  <TabsContent value="tab1">
-    <p>Content for Tab 1 with Icon</p>
+  <TabsContent value="tab1">Medium tab content</TabsContent>
+  <TabsContent value="tab2">Medium tab content 2</TabsContent>
+  <TabsContent value="tab3">Medium tab content 3</TabsContent>
+</Tabs>
+
+<Tabs defaultValue="tab1" size="lg">
+  <TabsList>
+    <TabsTrigger value="tab1">Large</TabsTrigger>
+    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Large tab content</TabsContent>
+  <TabsContent value="tab2">Large tab content 2</TabsContent>
+  <TabsContent value="tab3">Large tab content 3</TabsContent>
+</Tabs>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Features">
+          <Typography variant="body1" className="text-muted-foreground">
+            Additional features like full width, bordered content, icons, disabled states, and
+            controlled components.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic Usage</CardTitle>
+              <CardDescription>Simple uncontrolled tabs with default value</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Tabs defaultValue="account">
+                  <TabsList>
+                    <TabsTrigger value="account">Account</TabsTrigger>
+                    <TabsTrigger value="password">Password</TabsTrigger>
+                    <TabsTrigger value="settings">Settings</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="account">
+                    <Typography variant="body1" className="block">
+                      Make changes to your account here. Click save when you're done.
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="password">
+                    <Typography variant="body1" className="block">
+                      Change your password here. After saving, you'll be logged out.
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="settings">
+                    <Typography variant="body1" className="block">
+                      Manage your application settings here.
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+    <TabsTrigger value="settings">Settings</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">
+    Make changes to your account here. Click save when you're done.
   </TabsContent>
-  <TabsContent value="tab2">
-    <p>Content for Tab 2 with Icon</p>
+  <TabsContent value="password">
+    Change your password here. After saving, you'll be logged out.
   </TabsContent>
-  <TabsContent value="tab3">
-    <p>Content for Tab 3 with Icon</p>
+  <TabsContent value="settings">
+    Manage your application settings here.
   </TabsContent>
 </Tabs>`}
-        >
-          <LSDTabs defaultValue="tab1">
-            <TabsList>
-              <TabsTrigger value="tab1">
-                Tab 1
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                >
-                  <title>Lightning Bolt Icon</title>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                  />
-                </svg>
-              </TabsTrigger>
-              <TabsTrigger value="tab2">
-                Tab 2
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                >
-                  <title>Envelope Icon</title>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                  />
-                </svg>
-              </TabsTrigger>
-              <TabsTrigger value="tab3">
-                Tab 3
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                >
-                  <title>User Icon</title>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent value="tab1">
-              <p>Content for Tab 1 with Icon</p>
-            </TabsContent>
-            <TabsContent value="tab2">
-              <p>Content for Tab 2 with Icon</p>
-            </TabsContent>
-            <TabsContent value="tab3">
-              <p>Content for Tab 3 with Icon</p>
-            </TabsContent>
-          </LSDTabs>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Full Width</CardTitle>
+              <CardDescription>Tabs that span the full width of their container</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Tabs defaultValue="tab1" fullWidth>
+                  <TabsList>
+                    <TabsTrigger value="tab1">Overview</TabsTrigger>
+                    <TabsTrigger value="tab2">Details</TabsTrigger>
+                    <TabsTrigger value="tab3">Reviews</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="tab1">
+                    <Typography variant="body1" className="block">
+                      Overview content goes here
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab2">
+                    <Typography variant="body1" className="block">
+                      Details content goes here
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab3">
+                    <Typography variant="body1" className="block">
+                      Reviews content goes here
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Tabs defaultValue="tab1" fullWidth>
+  <TabsList>
+    <TabsTrigger value="tab1">Overview</TabsTrigger>
+    <TabsTrigger value="tab2">Details</TabsTrigger>
+    <TabsTrigger value="tab3">Reviews</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Overview content goes here</TabsContent>
+  <TabsContent value="tab2">Details content goes here</TabsContent>
+  <TabsContent value="tab3">Reviews content goes here</TabsContent>
+</Tabs>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Disabled Tabs
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            disabled
-          </code>{' '}
-          prop to prevent users from selecting certain tabs.
-        </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Bordered Content</CardTitle>
+              <CardDescription>Add borders around tab content areas</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Tabs defaultValue="tab1" bordered>
+                  <TabsList>
+                    <TabsTrigger value="tab1">Profile</TabsTrigger>
+                    <TabsTrigger value="tab2">Billing</TabsTrigger>
+                    <TabsTrigger value="tab3">Notifications</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="tab1">
+                    <Typography variant="body1" className="block">
+                      Profile information with border
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab2">
+                    <Typography variant="body1" className="block">
+                      Billing information with border
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab3">
+                    <Typography variant="body1" className="block">
+                      Notification settings with border
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Tabs defaultValue="tab1" bordered>
+  <TabsList>
+    <TabsTrigger value="tab1">Profile</TabsTrigger>
+    <TabsTrigger value="tab2">Billing</TabsTrigger>
+    <TabsTrigger value="tab3">Notifications</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Profile information with border</TabsContent>
+  <TabsContent value="tab2">Billing information with border</TabsContent>
+  <TabsContent value="tab3">Notification settings with border</TabsContent>
+</Tabs>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-        <ComponentPreview
-          title="Disabled tabs"
-          clientOnly={true}
-          code={`<Tabs defaultValue="tab1">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Icons</CardTitle>
+              <CardDescription>Add icons to tab triggers for visual context</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Tabs defaultValue="home">
+                  <TabsList>
+                    <TabsTrigger value="home">
+                      <HouseIcon />
+                      Home
+                    </TabsTrigger>
+                    <TabsTrigger value="analytics">
+                      <ChartLineUpIcon />
+                      Analytics
+                    </TabsTrigger>
+                    <TabsTrigger value="settings">
+                      <GearIcon />
+                      Settings
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="home">
+                    <Typography variant="body1" className="block">
+                      Home page content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="analytics">
+                    <Typography variant="body1" className="block">
+                      Analytics dashboard content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="settings">
+                    <Typography variant="body1" className="block">
+                      Settings configuration content
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Tabs defaultValue="home">
+  <TabsList>
+    <TabsTrigger value="home">
+      <HouseIcon />
+      Home
+    </TabsTrigger>
+    <TabsTrigger value="analytics">
+      <ChartLineUpIcon />
+      Analytics
+    </TabsTrigger>
+    <TabsTrigger value="settings">
+      <GearIcon />
+      Settings
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="home">Home page content</TabsContent>
+  <TabsContent value="analytics">Analytics dashboard content</TabsContent>
+  <TabsContent value="settings">Settings configuration content</TabsContent>
+</Tabs>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Disabled Tabs</CardTitle>
+              <CardDescription>Disable individual tab triggers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Tabs defaultValue="tab1">
+                  <TabsList>
+                    <TabsTrigger value="tab1">Active Tab</TabsTrigger>
+                    <TabsTrigger value="tab2">Another Tab</TabsTrigger>
+                    <TabsTrigger value="tab3" disabled>
+                      Disabled Tab
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="tab1">
+                    <Typography variant="body1" className="block">
+                      Active tab content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab2">
+                    <Typography variant="body1" className="block">
+                      Another tab content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab3">
+                    <Typography variant="body1" className="block">
+                      Disabled tab content
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Tabs defaultValue="tab1">
   <TabsList>
     <TabsTrigger value="tab1">Active Tab</TabsTrigger>
-    <TabsTrigger value="tab2">Normal Tab</TabsTrigger>
+    <TabsTrigger value="tab2">Another Tab</TabsTrigger>
     <TabsTrigger value="tab3" disabled>
       Disabled Tab
     </TabsTrigger>
   </TabsList>
-  <TabsContent value="tab1">
-    <p>Content for Active Tab</p>
-  </TabsContent>
-  <TabsContent value="tab2">
-    <p>Content for Normal Tab</p>
-  </TabsContent>
-  <TabsContent value="tab3">
-    <p>Content for Disabled Tab (not accessible)</p>
-  </TabsContent>
+  <TabsContent value="tab1">Active tab content</TabsContent>
+  <TabsContent value="tab2">Another tab content</TabsContent>
+  <TabsContent value="tab3">Disabled tab content</TabsContent>
 </Tabs>`}
-        >
-          <LSDTabs defaultValue="tab1">
-            <TabsList>
-              <TabsTrigger value="tab1">Active Tab</TabsTrigger>
-              <TabsTrigger value="tab2">Normal Tab</TabsTrigger>
-              <TabsTrigger value="tab3" disabled>
-                Disabled Tab
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent value="tab1">
-              <p>Content for Active Tab</p>
-            </TabsContent>
-            <TabsContent value="tab2">
-              <p>Content for Normal Tab</p>
-            </TabsContent>
-            <TabsContent value="tab3">
-              <p>Content for Disabled Tab (not accessible)</p>
-            </TabsContent>
-          </LSDTabs>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Controlled Component</CardTitle>
+              <CardDescription>Control the active tab with state</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Tabs value={controlledValue} onValueChange={setControlledValue}>
+                  <TabsList>
+                    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+                    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+                    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="tab1">
+                    <Typography variant="body1" className="block">
+                      Controlled tab 1 content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab2">
+                    <Typography variant="body1" className="block">
+                      Controlled tab 2 content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="tab3">
+                    <Typography variant="body1" className="block">
+                      Controlled tab 3 content
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`import { useState } from 'react'
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          API Reference
-        </Typography>
-        <Card>
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              Tabs Props
-            </Typography>
-            <div className="space-y-(--lsd-spacing-base)">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  defaultValue
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  The value of the tab that should be active by default
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  value
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  The controlled value of the active tab
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  onValueChange
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    (value: string) =&gt; void
-                  </code>
-                  <br />
-                  Callback when the active tab changes
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  size
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "sm" | "md" | "lg"
-                  </code>
-                  <br />
-                  Default: <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"md"</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  fullWidth
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  className
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Additional CSS classes to apply to the tabs
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+export default function ControlledTabs() {
+  const [value, setValue] = useState('tab1')
 
-        <Card className="mt-(--lsd-spacing-base)">
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              TabsTrigger Props
-            </Typography>
-            <div className="space-y-(--lsd-spacing-base)">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  value
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  The value that identifies this tab
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  disabled
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  size
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "sm" | "md" | "lg"
-                  </code>
-                  <br />
-                  Default: <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"md"</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  fullWidth
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+  return (
+    <Tabs value={value} onValueChange={setValue}>
+      <TabsList>
+        <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+        <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+        <TabsTrigger value="tab3">Tab 3</TabsTrigger>
+      </TabsList>
+      <TabsContent value="tab1">Controlled tab 1 content</TabsContent>
+      <TabsContent value="tab2">Controlled tab 2 content</TabsContent>
+      <TabsContent value="tab3">Controlled tab 3 content</TabsContent>
+    </Tabs>
+  )
+}`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-        <Card className="mt-(--lsd-spacing-base)">
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              TabsContent Props
-            </Typography>
-            <div className="space-y-(--lsd-spacing-base)">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  value
-                </code>
+        <PageSection title="API Reference">
+          <Typography variant="body1" className="text-muted-foreground">
+            All available props for the Tabs components.
+          </Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>defaultValue</CardTitle>
+                <CardDescription>The initial active tab value</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className="text-muted-foreground mt-(--lsd-spacing-smaller)"
                 >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  The value that identifies this content (must match a trigger)
+                  The value of the tab that should be active when the component first renders
                 </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  className
-                </code>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>value</CardTitle>
+                <CardDescription>The currently active tab value (controlled)</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className="text-muted-foreground mt-(--lsd-spacing-smaller)"
                 >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Additional CSS classes to apply to the content
+                  Use with onValueChange for controlled components
                 </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+              </CardContent>
+            </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+            <Card>
+              <CardHeader>
+                <CardTitle>onValueChange</CardTitle>
+                <CardDescription>Callback when the active tab changes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> (value: string) =&gt; void
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Called when a tab is clicked or activated
+                </Typography>
+              </CardContent>
+            </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Accessibility
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground">
-          Tabs follow WAI-ARIA guidelines and are fully accessible. The component uses proper role
-          attributes, keyboard navigation support, and screen reader announcements. Users can
-          navigate between tabs using arrow keys, and the active tab is properly announced to screen
-          readers.
-        </Typography>
-      </div>
-    </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>size</CardTitle>
+                <CardDescription>The size of the tabs</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'sm' | 'md' | 'lg'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> sm, md, lg
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> lg
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>fullWidth</CardTitle>
+                <CardDescription>Make tabs span full width of container</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  When true, tab triggers will expand to fill available space
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>bordered</CardTitle>
+                <CardDescription>Add borders around tab content areas</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Adds visual separation between tab list and content
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Merges with existing tabs classes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>...props</CardTitle>
+                <CardDescription>Standard Radix UI Tabs props</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong>{' '}
+                  <code>React.ComponentProps&lt;typeof TabsPrimitive.Root&gt;</code>
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  All standard Radix UI Tabs Root props are supported
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>TabsTrigger value</CardTitle>
+                <CardDescription>The unique identifier for the tab trigger</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Must match the value of the corresponding TabsContent
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>TabsTrigger disabled</CardTitle>
+                <CardDescription>Disable the tab trigger</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Prevents the tab from being activated
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>TabsContent value</CardTitle>
+                <CardDescription>The unique identifier for the tab content</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Must match the value of the corresponding TabsTrigger
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>TabsList className</CardTitle>
+                <CardDescription>Additional CSS classes for the list</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Merges with existing list classes
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+        </PageSection>
+
+        <PageSection title="Accessibility">
+          <Typography variant="body1" className="text-muted-foreground">
+            The Tabs component follows accessibility best practices.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Tabs are fully keyboard accessible</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Tab</strong> - Navigate to the tabs list
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Arrow Left / Right</strong> - Navigate between tab triggers
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Home</strong> - Navigate to the first tab trigger
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>End</strong> - Navigate to the last tab trigger
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Enter / Space</strong> - Activate the focused tab trigger
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Tab triggers have <code>role="tab"</code> and are properly labeled
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Tab content has <code>role="tabpanel"</code> and is associated with its trigger
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Active tab is indicated with <code>aria-selected="true"</code>
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Disabled tabs have <code>aria-disabled="true"</code>
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Use <code>aria-label</code> for tabs without visible text labels
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Tabs have visible focus states that follow the LSD design system's focus indicators,
+                ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
+      </PageContent>
+
+      <PageNavigation
+        previous={{
+          title: 'Sonner',
+          href: '/components/sonner',
+        }}
+        next={{
+          title: 'Sidebar',
+          href: '/components/sidebar',
+        }}
+      />
+    </DocsLayout>
   );
 }

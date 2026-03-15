@@ -1,90 +1,131 @@
 'use client';
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Card,
   CardContent,
-  Menubar as LSDMenubar,
-  MenubarCheckboxItem,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Menubar,
   MenubarContent,
-  MenubarGroup,
   MenubarItem,
   MenubarLabel,
   MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
+  MenubarPortal,
   MenubarSeparator,
   MenubarSub,
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-  Separator,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { CodeExample } from '../../components/docs/CodeExample';
-import { ComponentPreview } from '../../components/docs/ComponentPreview';
+import { CodeExample } from '@/components/docs/CodeExample';
+import { DocsLayout } from '@/components/docs/DocsLayout';
+import { PageContent } from '@/components/docs/PageContent';
+import { PageHeader } from '@/components/docs/PageHeader';
+import { PageNavigation } from '@/components/docs/PageNavigation';
+import { PageSection } from '@/components/docs/PageSection';
 
 export default function MenubarPage() {
   return (
-    <div className="container mx-auto px-(--lsd-spacing-base) py-(--lsd-spacing-larger) max-w-5xl">
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-base)">
-          Menubar
-        </Typography>
-        <Typography
-          variant="body1"
-          className="text-muted-foreground text-lg mb-(--lsd-spacing-base)"
-        >
-          A horizontally stacked set of menus that provides access to a consistent set of commands
-          or actions. Menubars are commonly used in desktop applications to organize commands into
-          logical groups.
-        </Typography>
-      </div>
+    <DocsLayout>
+      <PageHeader
+        title="Menubar"
+        description="Dropdown menu bar component with keyboard navigation and submenu support"
+      />
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+      <PageContent>
+        <PageSection title="About Menubar">
+          <Typography variant="body1" className="block">
+            Menubars are horizontal navigation menus that display dropdown menus when triggered.
+            They provide a familiar pattern for organizing commands and actions in applications.
+          </Typography>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Installation
-        </Typography>
-        <CodeExample title="Install the component" code={'pnpm add @nipsys/shadcn-lsd'} />
-      </div>
+        <PageSection title="Installation">
+          <Typography variant="body1">Import the Menubar components from LSD:</Typography>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Import
-        </Typography>
-        <CodeExample
-          title="Import the component"
-          code={`import {
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import {
   Menubar,
-  MenubarCheckboxItem,
-  MenubarContent,
-  MenubarGroup,
-  MenubarItem,
-  MenubarLabel,
   MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
   MenubarTrigger,
-} from '@nipsys/shadcn-lsd';`}
-        />
-      </div>
+  MenubarContent,
+  MenubarItem,
+} from '@nipsys/shadcn-lsd'
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+export default function MyComponent() {
+  return (
+    <Menubar>
+      <MenubarMenu>
+        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>New</MenubarItem>
+          <MenubarItem>Open</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  )
+}`}
+              />
+            </CardContent>
+          </Card>
+        </PageSection>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Usage
-        </Typography>
-        <CodeExample
-          title="Basic menubar"
-          code={`<Menubar>
+        <PageSection title="Features">
+          <Typography variant="body1" className="text-muted-foreground">
+            Comprehensive features including submenus, destructive items, labels, separators, and
+            keyboard navigation.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic Menubar</CardTitle>
+              <CardDescription>Simple menubar with dropdown menus</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Menubar>
+                  <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>New</MenubarItem>
+                      <MenubarItem>Open</MenubarItem>
+                      <MenubarItem>Save</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                  <MenubarMenu>
+                    <MenubarTrigger>Edit</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>Undo</MenubarItem>
+                      <MenubarItem>Redo</MenubarItem>
+                      <MenubarItem>Cut</MenubarItem>
+                      <MenubarItem>Copy</MenubarItem>
+                      <MenubarItem>Paste</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                  <MenubarMenu>
+                    <MenubarTrigger>View</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>Zoom In</MenubarItem>
+                      <MenubarItem>Zoom Out</MenubarItem>
+                      <MenubarItem>Full Screen</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                </Menubar>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Menubar>
   <MenubarMenu>
     <MenubarTrigger>File</MenubarTrigger>
     <MenubarContent>
@@ -93,524 +134,717 @@ export default function MenubarPage() {
       <MenubarItem>Save</MenubarItem>
     </MenubarContent>
   </MenubarMenu>
-</Menubar>`}
-        />
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Basic Usage
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Create a menubar with multiple menus, items, and keyboard shortcuts.
-        </Typography>
-
-        <ComponentPreview
-          title="Basic menubar"
-          clientOnly={true}
-          code={`<Menubar>
-  <MenubarMenu>
-    <MenubarTrigger>File</MenubarTrigger>
-    <MenubarContent>
-      <MenubarItem shortcut="⌘T">New Tab</MenubarItem>
-      <MenubarItem shortcut="⌘N">New Window</MenubarItem>
-      <MenubarItem disabled>New Incognito Window</MenubarItem>
-      <MenubarSeparator />
-      <MenubarItem shortcut="⌘P">Print...</MenubarItem>
-    </MenubarContent>
-  </MenubarMenu>
   <MenubarMenu>
     <MenubarTrigger>Edit</MenubarTrigger>
     <MenubarContent>
-      <MenubarItem shortcut="⌘Z">Undo</MenubarItem>
-      <MenubarItem shortcut="⇧⌘Z">Redo</MenubarItem>
-      <MenubarSeparator />
-      <MenubarItem shortcut="⌘X">Cut</MenubarItem>
-      <MenubarItem shortcut="⌘C">Copy</MenubarItem>
-      <MenubarItem shortcut="⌘V">Paste</MenubarItem>
+      <MenubarItem>Undo</MenubarItem>
+      <MenubarItem>Redo</MenubarItem>
+      <MenubarItem>Cut</MenubarItem>
+      <MenubarItem>Copy</MenubarItem>
+      <MenubarItem>Paste</MenubarItem>
     </MenubarContent>
   </MenubarMenu>
-</Menubar>`}
-        >
-          <LSDMenubar>
-            <MenubarMenu>
-              <MenubarTrigger>File</MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem shortcut="⌘T">New Tab</MenubarItem>
-                <MenubarItem shortcut="⌘N">New Window</MenubarItem>
-                <MenubarItem disabled>New Incognito Window</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem shortcut="⌘P">Print...</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-            <MenubarMenu>
-              <MenubarTrigger>Edit</MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem shortcut="⌘Z">Undo</MenubarItem>
-                <MenubarItem shortcut="⇧⌘Z">Redo</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem shortcut="⌘X">Cut</MenubarItem>
-                <MenubarItem shortcut="⌘C">Copy</MenubarItem>
-                <MenubarItem shortcut="⌘V">Paste</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-          </LSDMenubar>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          With Groups and Labels
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            MenubarGroup
-          </code>{' '}
-          and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            MenubarLabel
-          </code>{' '}
-          to organize items into logical groups with descriptive labels.
-        </Typography>
-
-        <ComponentPreview
-          title="Menubar with groups and labels"
-          clientOnly={true}
-          code={`<Menubar>
   <MenubarMenu>
-    <MenubarTrigger>Actions</MenubarTrigger>
+    <MenubarTrigger>View</MenubarTrigger>
     <MenubarContent>
-      <MenubarGroup>
-        <MenubarLabel>File Actions</MenubarLabel>
-        <MenubarItem>New File</MenubarItem>
-        <MenubarItem>Open File</MenubarItem>
-        <MenubarItem>Save File</MenubarItem>
-      </MenubarGroup>
-      <MenubarSeparator />
-      <MenubarGroup>
-        <MenubarLabel>Edit Actions</MenubarLabel>
-        <MenubarItem>Cut</MenubarItem>
-        <MenubarItem>Copy</MenubarItem>
-        <MenubarItem>Paste</MenubarItem>
-      </MenubarGroup>
+      <MenubarItem>Zoom In</MenubarItem>
+      <MenubarItem>Zoom Out</MenubarItem>
+      <MenubarItem>Full Screen</MenubarItem>
     </MenubarContent>
   </MenubarMenu>
 </Menubar>`}
-        >
-          <LSDMenubar>
-            <MenubarMenu>
-              <MenubarTrigger>Actions</MenubarTrigger>
-              <MenubarContent>
-                <MenubarGroup>
-                  <MenubarLabel>File Actions</MenubarLabel>
-                  <MenubarItem>New File</MenubarItem>
-                  <MenubarItem>Open File</MenubarItem>
-                  <MenubarItem>Save File</MenubarItem>
-                </MenubarGroup>
-                <MenubarSeparator />
-                <MenubarGroup>
-                  <MenubarLabel>Edit Actions</MenubarLabel>
-                  <MenubarItem>Cut</MenubarItem>
-                  <MenubarItem>Copy</MenubarItem>
-                  <MenubarItem>Paste</MenubarItem>
-                </MenubarGroup>
-              </MenubarContent>
-            </MenubarMenu>
-          </LSDMenubar>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Destructive Variant
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use the{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            destructive
-          </code>{' '}
-          variant on menu items to indicate dangerous actions like delete or remove.
-        </Typography>
-
-        <ComponentPreview
-          title="Menubar with destructive item"
-          clientOnly={true}
-          code={`<Menubar>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Submenus</CardTitle>
+              <CardDescription>Nested menus for hierarchical organization</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Menubar>
+                  <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>New</MenubarItem>
+                      <MenubarItem>Open</MenubarItem>
+                      <MenubarSub>
+                        <MenubarSubTrigger>Share</MenubarSubTrigger>
+                        <MenubarPortal>
+                          <MenubarSubContent>
+                            <MenubarItem>Email</MenubarItem>
+                            <MenubarItem>Twitter</MenubarItem>
+                            <MenubarItem>Facebook</MenubarItem>
+                          </MenubarSubContent>
+                        </MenubarPortal>
+                      </MenubarSub>
+                      <MenubarItem>Print</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                </Menubar>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Menubar>
   <MenubarMenu>
     <MenubarTrigger>File</MenubarTrigger>
     <MenubarContent>
-      <MenubarItem>New File</MenubarItem>
-      <MenubarItem>Save</MenubarItem>
-      <MenubarSeparator />
-      <MenubarItem variant="destructive">
-        Delete File
-      </MenubarItem>
-    </MenubarContent>
-  </MenubarMenu>
-</Menubar>`}
-        >
-          <LSDMenubar>
-            <MenubarMenu>
-              <MenubarTrigger>File</MenubarTrigger>
-              <MenubarContent>
-                <MenubarItem>New File</MenubarItem>
-                <MenubarItem>Save</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem variant="destructive">Delete File</MenubarItem>
-              </MenubarContent>
-            </MenubarMenu>
-          </LSDMenubar>
-        </ComponentPreview>
-      </div>
-
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Nested Submenus
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Create nested submenus using{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            MenubarSub
-          </code>
-          ,{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            MenubarSubTrigger
-          </code>
-          , and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            MenubarSubContent
-          </code>
-          .
-        </Typography>
-
-        <ComponentPreview
-          title="Menubar with nested submenus"
-          clientOnly={true}
-          code={`<Menubar>
-  <MenubarMenu>
-    <MenubarTrigger>Preferences</MenubarTrigger>
-    <MenubarContent>
+      <MenubarItem>New</MenubarItem>
+      <MenubarItem>Open</MenubarItem>
       <MenubarSub>
-        <MenubarSubTrigger>Appearance</MenubarSubTrigger>
-        <MenubarSubContent>
-          <MenubarItem>Theme</MenubarItem>
-          <MenubarItem>Font Size</MenubarItem>
-          <MenubarSub>
-            <MenubarSubTrigger>Colour Scheme</MenubarSubTrigger>
-            <MenubarSubContent>
-              <MenubarItem>Light</MenubarItem>
-              <MenubarItem>Dark</MenubarItem>
-              <MenubarItem>System</MenubarItem>
-            </MenubarSubContent>
-          </MenubarSub>
-        </MenubarSubContent>
+        <MenubarSubTrigger>Share</MenubarSubTrigger>
+        <MenubarPortal>
+          <MenubarSubContent>
+            <MenubarItem>Email</MenubarItem>
+            <MenubarItem>Twitter</MenubarItem>
+            <MenubarItem>Facebook</MenubarItem>
+          </MenubarSubContent>
+        </MenubarPortal>
       </MenubarSub>
-      <MenubarSub>
-        <MenubarSubTrigger>Settings</MenubarSubTrigger>
-        <MenubarSubContent>
-          <MenubarItem>General</MenubarItem>
-          <MenubarItem>Keyboard</MenubarItem>
-          <MenubarItem>Language</MenubarItem>
-        </MenubarSubContent>
-      </MenubarSub>
+      <MenubarItem>Print</MenubarItem>
     </MenubarContent>
   </MenubarMenu>
 </Menubar>`}
-        >
-          <LSDMenubar>
-            <MenubarMenu>
-              <MenubarTrigger>Preferences</MenubarTrigger>
-              <MenubarContent>
-                <MenubarSub>
-                  <MenubarSubTrigger>Appearance</MenubarSubTrigger>
-                  <MenubarSubContent>
-                    <MenubarItem>Theme</MenubarItem>
-                    <MenubarItem>Font Size</MenubarItem>
-                    <MenubarSub>
-                      <MenubarSubTrigger>Colour Scheme</MenubarSubTrigger>
-                      <MenubarSubContent>
-                        <MenubarItem>Light</MenubarItem>
-                        <MenubarItem>Dark</MenubarItem>
-                        <MenubarItem>System</MenubarItem>
-                      </MenubarSubContent>
-                    </MenubarSub>
-                  </MenubarSubContent>
-                </MenubarSub>
-                <MenubarSub>
-                  <MenubarSubTrigger>Settings</MenubarSubTrigger>
-                  <MenubarSubContent>
-                    <MenubarItem>General</MenubarItem>
-                    <MenubarItem>Keyboard</MenubarItem>
-                    <MenubarItem>Language</MenubarItem>
-                  </MenubarSubContent>
-                </MenubarSub>
-              </MenubarContent>
-            </MenubarMenu>
-          </LSDMenubar>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
-
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Checkbox and Radio Items
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground mb-(--lsd-spacing-base)">
-          Use{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            MenubarCheckboxItem
-          </code>{' '}
-          for toggleable options and{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            MenubarRadioGroup
-          </code>{' '}
-          with{' '}
-          <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-            MenubarRadioItem
-          </code>{' '}
-          for mutually exclusive options.
-        </Typography>
-
-        <ComponentPreview
-          title="Menubar with checkbox and radio items"
-          clientOnly={true}
-          code={`<Menubar>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Destructive Items</CardTitle>
+              <CardDescription>Dangerous actions with destructive styling</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Menubar>
+                  <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>New</MenubarItem>
+                      <MenubarItem>Open</MenubarItem>
+                      <MenubarSeparator />
+                      <MenubarItem variant="destructive">Delete</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                </Menubar>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Menubar>
   <MenubarMenu>
-    <MenubarTrigger>Options</MenubarTrigger>
+    <MenubarTrigger>File</MenubarTrigger>
     <MenubarContent>
-      <MenubarCheckboxItem checked>Show Toolbar</MenubarCheckboxItem>
-      <MenubarCheckboxItem>Show Status Bar</MenubarCheckboxItem>
-      <MenubarCheckboxItem>Show Ruler</MenubarCheckboxItem>
+      <MenubarItem>New</MenubarItem>
+      <MenubarItem>Open</MenubarItem>
       <MenubarSeparator />
-      <MenubarLabel inset>Zoom Level</MenubarLabel>
-      <MenubarRadioGroup value="100">
-        <MenubarRadioItem value="50">50%</MenubarRadioItem>
-        <MenubarRadioItem value="100">100%</MenubarRadioItem>
-        <MenubarRadioItem value="150">150%</MenubarRadioItem>
-        <MenubarRadioItem value="200">200%</MenubarRadioItem>
-      </MenubarRadioGroup>
+      <MenubarItem variant="destructive">Delete</MenubarItem>
     </MenubarContent>
   </MenubarMenu>
 </Menubar>`}
-        >
-          <LSDMenubar>
-            <MenubarMenu>
-              <MenubarTrigger>Options</MenubarTrigger>
-              <MenubarContent>
-                <MenubarCheckboxItem checked>Show Toolbar</MenubarCheckboxItem>
-                <MenubarCheckboxItem>Show Status Bar</MenubarCheckboxItem>
-                <MenubarCheckboxItem>Show Ruler</MenubarCheckboxItem>
-                <MenubarSeparator />
-                <MenubarLabel inset>Zoom Level</MenubarLabel>
-                <MenubarRadioGroup value="100">
-                  <MenubarRadioItem value="50">50%</MenubarRadioItem>
-                  <MenubarRadioItem value="100">100%</MenubarRadioItem>
-                  <MenubarRadioItem value="150">150%</MenubarRadioItem>
-                  <MenubarRadioItem value="200">200%</MenubarRadioItem>
-                </MenubarRadioGroup>
-              </MenubarContent>
-            </MenubarMenu>
-          </LSDMenubar>
-        </ComponentPreview>
-      </div>
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Labels and Separators</CardTitle>
+              <CardDescription>Organize items with labels and visual separators</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Menubar>
+                  <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarLabel>Recent Files</MenubarLabel>
+                      <MenubarItem>Document 1</MenubarItem>
+                      <MenubarItem>Document 2</MenubarItem>
+                      <MenubarSeparator />
+                      <MenubarLabel>Actions</MenubarLabel>
+                      <MenubarItem>New</MenubarItem>
+                      <MenubarItem>Open</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                </Menubar>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarLabel>Recent Files</MenubarLabel>
+      <MenubarItem>Document 1</MenubarItem>
+      <MenubarItem>Document 2</MenubarItem>
+      <MenubarSeparator />
+      <MenubarLabel>Actions</MenubarLabel>
+      <MenubarItem>New</MenubarItem>
+      <MenubarItem>Open</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          API Reference
-        </Typography>
-        <Card>
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              Menubar Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  className
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Additional CSS classes to apply to the menubar
-                </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Inset Items</CardTitle>
+              <CardDescription>Items with inset padding for visual hierarchy</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Menubar>
+                  <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>New</MenubarItem>
+                      <MenubarItem>Open</MenubarItem>
+                      <MenubarSeparator />
+                      <MenubarItem inset>Settings</MenubarItem>
+                      <MenubarItem inset>Preferences</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                </Menubar>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>New</MenubarItem>
+      <MenubarItem>Open</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem inset>Settings</MenubarItem>
+      <MenubarItem inset>Preferences</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-        <Card className="mt-(--lsd-spacing-base)">
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              MenubarItem Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  disabled
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Shortcuts</CardTitle>
+              <CardDescription>Display keyboard shortcuts for quick access</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <Menubar>
+                  <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem shortcut="⌘N">New</MenubarItem>
+                      <MenubarItem shortcut="⌘O">Open</MenubarItem>
+                      <MenubarItem shortcut="⌘S">Save</MenubarItem>
+                      <MenubarSeparator />
+                      <MenubarItem shortcut="⌘P">Print</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                </Menubar>
               </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  variant
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    "default" | "destructive"
-                  </code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">"default"</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  shortcut
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  Keyboard shortcut to display
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  inset
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample
+                      code={`<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem shortcut="⌘N">New</MenubarItem>
+      <MenubarItem shortcut="⌘O">Open</MenubarItem>
+      <MenubarItem shortcut="⌘S">Save</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem shortcut="⌘P">Print</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>`}
+                    />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-        <Card className="mt-(--lsd-spacing-base)">
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              MenubarCheckboxItem Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  checked
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">boolean</code>
-                  <br />
-                  Default:{' '}
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">false</code>
-                </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  onCheckedChange
-                </code>
-                <Typography
-                  variant="body1"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    (checked: boolean) =&gt; void
-                  </code>
-                  <br />
-                  Callback when checked state changes
-                </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <PageSection title="API Reference">
+          <Typography variant="body1" className="text-muted-foreground">
+            All available props for the Menubar components.
+          </Typography>
 
-        <Card className="mt-(--lsd-spacing-base)">
-          <CardContent className="p-(--lsd-spacing-large)">
-            <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-              MenubarRadioGroup Props
-            </Typography>
-            <div className="space-y-4">
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  value
-                </code>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>Menubar</CardTitle>
+                <CardDescription>Root menubar container component</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className="text-muted-foreground mt-(--lsd-spacing-smaller)"
                 >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">string</code>
-                  <br />
-                  The currently selected value
+                  Container for all menubar menus
                 </Typography>
-              </div>
-              <div>
-                <code className="px-(--lsd-spacing-small) py-(--lsd-spacing-smaller) bg-muted rounded text-sm">
-                  onValueChange
-                </code>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarMenu</CardTitle>
+                <CardDescription>Individual menu item in the menubar</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   className="text-muted-foreground mt-(--lsd-spacing-smaller)"
                 >
-                  <code className="px-(--lsd-spacing-smaller) bg-muted rounded">
-                    (value: string) =&gt; void
-                  </code>
-                  <br />
-                  Callback when value changes
+                  Wraps a trigger and its content
                 </Typography>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+              </CardContent>
+            </Card>
 
-      <Separator className="mb-(--lsd-spacing-larger)" />
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarTrigger</CardTitle>
+                <CardDescription>Button that opens the menu</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Click to open the dropdown menu
+                </Typography>
+              </CardContent>
+            </Card>
 
-      <div className="mb-(--lsd-spacing-larger)">
-        <Typography variant="h2" className="mb-(--lsd-spacing-base)">
-          Accessibility
-        </Typography>
-        <Typography variant="body1" className="text-muted-foreground">
-          Menubars follow WAI-ARIA guidelines and are fully accessible. The component uses proper
-          role attributes, keyboard navigation support, and screen reader announcements. Users can
-          navigate using arrow keys, Enter, and Escape. Keyboard shortcuts are displayed for items
-          that have them.
-        </Typography>
-      </div>
-    </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarContent</CardTitle>
+                <CardDescription>Dropdown menu content container</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> align (start, center, end)
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Default:</strong> start
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Contains all menu items
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarItem</CardTitle>
+                <CardDescription>Individual menu item</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> variant (default, destructive)
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Default:</strong> default
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Clickable action item
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarCheckboxItem</CardTitle>
+                <CardDescription>Toggleable checkbox item</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>checked</strong>: boolean
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>onCheckedChange</strong>: (checked: boolean) =&gt; void
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Item with checkbox state
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarRadioItem</CardTitle>
+                <CardDescription>Radio selection item</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>value</strong>: string
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Must be used within MenubarRadioGroup
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarRadioGroup</CardTitle>
+                <CardDescription>Radio group container</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>value</strong>: string
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>onValueChange</strong>: (value: string) =&gt; void
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Wraps radio items for exclusive selection
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarLabel</CardTitle>
+                <CardDescription>Non-interactive label text</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Used to group related items
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarSeparator</CardTitle>
+                <CardDescription>Visual separator line</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Divides menu items visually
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarSub</CardTitle>
+                <CardDescription>Submenu container</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Wraps submenu trigger and content
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarSubTrigger</CardTitle>
+                <CardDescription>Button that opens submenu</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Click to open nested menu
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarSubContent</CardTitle>
+                <CardDescription>Submenu content container</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Contains submenu items
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>MenubarPortal</CardTitle>
+                <CardDescription>Portal for submenu rendering</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> React.ComponentType
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Renders submenu outside DOM hierarchy
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>align</CardTitle>
+                <CardDescription>Alignment of the menu content</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'start' | 'center' | 'end'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> start, center, end
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> start
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>alignOffset</CardTitle>
+                <CardDescription>Offset from the alignment edge</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> number
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 0
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>sideOffset</CardTitle>
+                <CardDescription>Offset from the trigger element</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> number
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 0
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>inset</CardTitle>
+                <CardDescription>Add inset padding to item</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Adds left padding for visual hierarchy
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>shortcut</CardTitle>
+                <CardDescription>Keyboard shortcut to display</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography
+                  variant="body2"
+                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
+                >
+                  Displayed on the right side of the item
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+        </PageSection>
+
+        <PageSection title="Accessibility">
+          <Typography variant="body1" className="text-muted-foreground">
+            The Menubar component follows accessibility best practices.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Full keyboard support for all interactions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Tab</strong> - Navigate to the menubar
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Arrow Keys</strong> - Navigate between menu items
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Enter / Space</strong> - Select menu item
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Escape</strong> - Close menu
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Menubar items have proper <code>role</code> attributes
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Use <code>aria-label</code> for icon-only items
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Submenus have proper <code>aria-expanded</code> states
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Menubar components have visible focus states that follow the LSD design system's
+                focus indicators, ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
+      </PageContent>
+
+      <PageNavigation
+        previous={{
+          title: 'Tabs',
+          href: '/components/tabs',
+        }}
+        next={{
+          title: 'Sidebar',
+          href: '/components/sidebar',
+        }}
+      />
+    </DocsLayout>
   );
 }
