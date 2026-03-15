@@ -118,7 +118,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Variants">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Sidebar comes in three visual variants for different design contexts.
           </Typography>
 
@@ -334,7 +334,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Collapsible Modes">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Sidebar supports three collapsible modes for different user preferences.
           </Typography>
 
@@ -588,7 +588,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Additional features like groups, submenus, active states, tooltips, badges, and more.
           </Typography>
 
@@ -1414,7 +1414,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             All available props for the key Sidebar components.
           </Typography>
 
@@ -1485,10 +1485,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> true
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Controls whether sidebar is open on initial render
                 </Typography>
               </CardContent>
@@ -1506,10 +1503,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Use with onOpenChange for controlled component
                 </Typography>
               </CardContent>
@@ -1527,10 +1521,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Called when sidebar is opened or closed
                 </Typography>
               </CardContent>
@@ -1548,10 +1539,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Highlights the menu item as currently active
                 </Typography>
               </CardContent>
@@ -1569,10 +1557,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Shows tooltip on hover, useful for collapsed sidebar
                 </Typography>
               </CardContent>
@@ -1590,10 +1575,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Displays icon placeholder in skeleton
                 </Typography>
               </CardContent>
@@ -1638,7 +1620,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Sidebar component follows accessibility best practices.
           </Typography>
 

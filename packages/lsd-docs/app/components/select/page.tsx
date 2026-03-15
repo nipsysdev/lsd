@@ -101,7 +101,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Sizes">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Select triggers come in two sizes to fit different contexts and layouts.
           </Typography>
 
@@ -169,7 +169,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Additional features like placeholders, grouped items, separators, disabled items, and
             controlled/uncontrolled states.
           </Typography>
@@ -408,9 +408,7 @@ function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
-            All available props for the Select components.
-          </Typography>
+          <Typography variant="body1">All available props for the Select components.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -425,10 +423,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Use with onValueChange for controlled component
                 </Typography>
               </CardContent>
@@ -446,10 +441,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Use for uncontrolled component
                 </Typography>
               </CardContent>
@@ -467,10 +459,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Called when user selects an option
                 </Typography>
               </CardContent>
@@ -488,10 +477,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Prevents user interaction
                 </Typography>
               </CardContent>
@@ -509,10 +495,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Adds required attribute for form validation
                 </Typography>
               </CardContent>
@@ -530,10 +513,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Used when select is part of a form
                 </Typography>
               </CardContent>
@@ -569,10 +549,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Displayed when no option is selected
                 </Typography>
               </CardContent>
@@ -590,10 +567,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Required prop for each SelectItem
                 </Typography>
               </CardContent>
@@ -611,10 +585,7 @@ function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Prevents selection of specific item
                 </Typography>
               </CardContent>
@@ -623,7 +594,7 @@ function MyComponent() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Select component follows accessibility best practices.
           </Typography>
 

@@ -29,7 +29,6 @@ describe('SheetDescription', () => {
       </Sheet>
     );
     const description = screen.getByText('Description');
-    expect(description).toHaveClass('lsd:text-muted-foreground');
     expect(description).toHaveClass('lsd:text-sm');
   });
 

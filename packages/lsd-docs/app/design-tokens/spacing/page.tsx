@@ -26,7 +26,7 @@ export default function SpacingPage() {
 
       <PageContent>
         <PageSection title="Spacing Scale">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             LSD uses a consistent spacing scale built on rem units.
           </Typography>
 
@@ -104,7 +104,7 @@ export default function SpacingPage() {
         </PageSection>
 
         <PageSection title="Usage Examples">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Spacing tokens provide a unified system for margins, padding, gaps, and layout
             throughout the interface.
           </Typography>

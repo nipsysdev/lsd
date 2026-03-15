@@ -53,7 +53,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Variants">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Input comes in two visual variants for different design contexts.
           </Typography>
 
@@ -83,7 +83,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Sizes">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Inputs come in five sizes to fit different contexts and layouts.
           </Typography>
 
@@ -119,7 +119,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Additional features like labels, supporting text, error states, and different input
             types.
           </Typography>
@@ -278,9 +278,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
-            All available props for the Input component.
-          </Typography>
+          <Typography variant="body1">All available props for the Input component.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -331,10 +329,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Optional label for the input field
                 </Typography>
               </CardContent>
@@ -352,10 +347,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Additional context or guidance for the input
                 </Typography>
               </CardContent>
@@ -373,10 +365,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Changes border color to destructive and supporting text color
                 </Typography>
               </CardContent>
@@ -394,10 +383,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> text
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Supports all standard HTML input types
                 </Typography>
               </CardContent>
@@ -415,10 +401,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> auto-generated
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   If not provided, a unique ID is automatically generated
                 </Typography>
               </CardContent>
@@ -433,10 +416,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing input classes
                 </Typography>
               </CardContent>
@@ -452,10 +432,7 @@ export default function MyComponent() {
                   <strong>Type:</strong>{' '}
                   <code>React.InputHTMLAttributes&lt;HTMLInputElement&gt;</code>
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   All standard HTML input attributes are supported
                 </Typography>
               </CardContent>
@@ -464,7 +441,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Input component follows accessibility best practices.
           </Typography>
 

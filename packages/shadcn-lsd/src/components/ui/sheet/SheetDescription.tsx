@@ -10,7 +10,7 @@ export function SheetDescription({
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"
-      className={cn('lsd:text-muted-foreground lsd:text-sm', className)}
+      className={cn('lsd:text-sm', className)}
       {...props}
     />
   );

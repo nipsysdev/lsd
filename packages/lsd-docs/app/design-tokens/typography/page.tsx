@@ -34,7 +34,7 @@ export default function TypographyPage() {
             accessibility, and the hierarchy of ideas over trends.
           </Typography>
 
-          <Typography variant="body1" className="text-muted-foreground mt-(--lsd-spacing-base)">
+          <Typography variant="body1" className="mt-(--lsd-spacing-base)">
             The content comes first — everything else serves it. Our scale is designed for
             real‑world reading across devices and conditions.
           </Typography>

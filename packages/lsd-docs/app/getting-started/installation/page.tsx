@@ -33,7 +33,7 @@ export default function InstallationPage() {
             building tools for civil society.
           </Typography>
 
-          <Typography variant="body1" className="text-muted-foreground mt-(--lsd-spacing-base)">
+          <Typography variant="body1" className="mt-(--lsd-spacing-base)">
             LSD is not just another UI library. It's infrastructure for builders who are
             constructing alternatives to captured systems — design that serves a purpose.
           </Typography>

@@ -61,7 +61,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Primary Variants">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Primary button variants for different use cases and visual hierarchy.
           </Typography>
 
@@ -93,7 +93,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Rounded Variants">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Rounded button variants with circular shape, perfect for icon-only buttons.
           </Typography>
 
@@ -131,7 +131,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Ghost Variants">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Ghost variants with transparent backgrounds and hover states for subtle interactions.
           </Typography>
 
@@ -165,7 +165,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Semantic Variants">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Semantic variants for destructive and success actions with appropriate visual cues.
           </Typography>
 
@@ -227,7 +227,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Sizes">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Buttons come in multiple sizes to fit different contexts and layouts.
           </Typography>
 
@@ -297,7 +297,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Additional features like loading states, full width, and disabled states.
           </Typography>
 
@@ -413,9 +413,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
-            All available props for the Button component.
-          </Typography>
+          <Typography variant="body1">All available props for the Button component.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -468,7 +466,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography variant="body2" className="text-muted-foreground mt-2">
+                <Typography variant="body2" className="mt-2">
                   Used for rendering button as a link
                 </Typography>
               </CardContent>
@@ -486,7 +484,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography variant="body2" className="text-muted-foreground mt-2">
+                <Typography variant="body2" className="mt-2">
                   Displays a spinner and disables the button
                 </Typography>
               </CardContent>
@@ -504,7 +502,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography variant="body2" className="text-muted-foreground mt-2">
+                <Typography variant="body2" className="mt-2">
                   Button takes full width of its parent container
                 </Typography>
               </CardContent>
@@ -522,7 +520,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography variant="body2" className="text-muted-foreground mt-2">
+                <Typography variant="body2" className="mt-2">
                   Reduces opacity and prevents interaction
                 </Typography>
               </CardContent>
@@ -537,7 +535,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography variant="body2" className="text-muted-foreground mt-2">
+                <Typography variant="body2" className="mt-2">
                   Merges with existing button classes
                 </Typography>
               </CardContent>
@@ -552,7 +550,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> React.ButtonHTMLAttributes&lt;HTMLButtonElement&gt;
                 </Typography>
-                <Typography variant="body2" className="text-muted-foreground mt-2">
+                <Typography variant="body2" className="mt-2">
                   All standard HTML button attributes are supported
                 </Typography>
               </CardContent>
@@ -561,7 +559,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Button component follows accessibility best practices.
           </Typography>
 

@@ -56,7 +56,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="States">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Checkboxes support two states: checked and unchecked.
           </Typography>
 
@@ -92,7 +92,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Additional features like disabled state, error state, and controlled components.
           </Typography>
 
@@ -208,9 +208,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
-            All available props for the Checkbox component.
-          </Typography>
+          <Typography variant="body1">All available props for the Checkbox component.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -225,10 +223,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Controlled value - use with onCheckedChange for controlled components
                 </Typography>
               </CardContent>
@@ -246,10 +241,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Uncontrolled value - use for simple cases without state management
                 </Typography>
               </CardContent>
@@ -267,10 +259,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Called when user toggles the checkbox
                 </Typography>
               </CardContent>
@@ -288,10 +277,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Prevents user interaction and reduces opacity
                 </Typography>
               </CardContent>
@@ -309,10 +295,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Adds required attribute for form validation
                 </Typography>
               </CardContent>
@@ -330,10 +313,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Used when checkbox is part of a form
                 </Typography>
               </CardContent>
@@ -351,10 +331,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> 'on'
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Value submitted when checkbox is checked
                 </Typography>
               </CardContent>
@@ -372,10 +349,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing checkbox classes
                 </Typography>
               </CardContent>
@@ -391,10 +365,7 @@ export default function MyComponent() {
                   <strong>Type:</strong>{' '}
                   <code>React.ComponentProps&lt;typeof CheckboxPrimitive.Root&gt;</code>
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   All Radix UI Checkbox Root component props are supported
                 </Typography>
               </CardContent>
@@ -403,7 +374,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Checkbox component follows accessibility best practices built on Radix UI.
           </Typography>
 

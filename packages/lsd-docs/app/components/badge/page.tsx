@@ -55,7 +55,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Variants">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Badges come in seven variants for different semantic meanings and visual styles.
           </Typography>
 
@@ -141,7 +141,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Sizes">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Badges come in three sizes to fit different contexts and visual hierarchies.
           </Typography>
 
@@ -173,7 +173,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Additional features like clickability, dismissibility, icon support, and dot indicators.
           </Typography>
 
@@ -307,9 +307,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
-            All available props for the Badge component.
-          </Typography>
+          <Typography variant="body1">All available props for the Badge component.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -361,10 +359,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Used for rendering badge as a different element
                 </Typography>
               </CardContent>
@@ -382,10 +377,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Shows a close button when provided
                 </Typography>
               </CardContent>
@@ -403,10 +395,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Makes badge clickable and keyboard accessible
                 </Typography>
               </CardContent>
@@ -424,10 +413,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Icon component to display alongside text
                 </Typography>
               </CardContent>
@@ -463,10 +449,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Shows badge as a circular dot without text
                 </Typography>
               </CardContent>
@@ -481,10 +464,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing badge classes
                 </Typography>
               </CardContent>
@@ -499,10 +479,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> <code>React.ComponentProps&lt;'span'&gt;</code>
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   All standard HTML span attributes are supported
                 </Typography>
               </CardContent>
@@ -511,7 +488,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Badge component follows accessibility best practices for screen readers and keyboard
             navigation.
           </Typography>

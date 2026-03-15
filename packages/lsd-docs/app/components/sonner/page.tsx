@@ -117,7 +117,7 @@ export default function SonnerPage() {
         </PageSection>
 
         <PageSection title="Toast Types">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Sonner provides multiple toast types for different notification states.
           </Typography>
 
@@ -163,7 +163,7 @@ export default function SonnerPage() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Additional features like custom duration, position options, and promise-based toasts.
           </Typography>
 
@@ -378,9 +378,7 @@ export default function SonnerPage() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
-            All available props for the Toaster component.
-          </Typography>
+          <Typography variant="body1">All available props for the Toaster component.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -432,10 +430,7 @@ export default function SonnerPage() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Expands toast to show full content on hover
                 </Typography>
               </CardContent>
@@ -453,10 +448,7 @@ export default function SonnerPage() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> 4000
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Duration in milliseconds before toast auto-dismisses
                 </Typography>
               </CardContent>
@@ -474,10 +466,7 @@ export default function SonnerPage() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> true
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Applies colored backgrounds based on toast type
                 </Typography>
               </CardContent>
@@ -495,10 +484,7 @@ export default function SonnerPage() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Displays a close button on each toast
                 </Typography>
               </CardContent>
@@ -516,10 +502,7 @@ export default function SonnerPage() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Default configuration applied to all toasts
                 </Typography>
               </CardContent>
@@ -534,10 +517,7 @@ export default function SonnerPage() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing toaster classes
                 </Typography>
               </CardContent>
@@ -546,7 +526,7 @@ export default function SonnerPage() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Sonner component follows accessibility best practices.
           </Typography>
 

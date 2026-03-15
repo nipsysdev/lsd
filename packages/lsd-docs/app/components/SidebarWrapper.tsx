@@ -39,7 +39,7 @@ export default function SidebarWrapper({ currentPath, children }: SidebarWrapper
                   </div>
                   <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
                     <span className="font-semibold">shadcn-lsd</span>
-                    <span className="text-xs text-muted-foreground">v0.2.5</span>
+                    <span className="text-xs">v0.2.5</span>
                   </div>
                 </a>
               </SidebarMenuButton>

@@ -75,7 +75,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Sizes">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Tabs come in three sizes to fit different contexts and layouts.
           </Typography>
 
@@ -201,7 +201,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Additional features like full width, bordered content, icons, disabled states, and
             controlled components.
           </Typography>
@@ -556,9 +556,7 @@ export default function ControlledTabs() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
-            All available props for the Tabs components.
-          </Typography>
+          <Typography variant="body1">All available props for the Tabs components.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -573,10 +571,7 @@ export default function ControlledTabs() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   The value of the tab that should be active when the component first renders
                 </Typography>
               </CardContent>
@@ -594,10 +589,7 @@ export default function ControlledTabs() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Use with onValueChange for controlled components
                 </Typography>
               </CardContent>
@@ -615,10 +607,7 @@ export default function ControlledTabs() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Called when a tab is clicked or activated
                 </Typography>
               </CardContent>
@@ -654,10 +643,7 @@ export default function ControlledTabs() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   When true, tab triggers will expand to fill available space
                 </Typography>
               </CardContent>
@@ -675,10 +661,7 @@ export default function ControlledTabs() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Adds visual separation between tab list and content
                 </Typography>
               </CardContent>
@@ -693,10 +676,7 @@ export default function ControlledTabs() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing tabs classes
                 </Typography>
               </CardContent>
@@ -712,10 +692,7 @@ export default function ControlledTabs() {
                   <strong>Type:</strong>{' '}
                   <code>React.ComponentProps&lt;typeof TabsPrimitive.Root&gt;</code>
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   All standard Radix UI Tabs Root props are supported
                 </Typography>
               </CardContent>
@@ -733,10 +710,7 @@ export default function ControlledTabs() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Must match the value of the corresponding TabsContent
                 </Typography>
               </CardContent>
@@ -754,10 +728,7 @@ export default function ControlledTabs() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Prevents the tab from being activated
                 </Typography>
               </CardContent>
@@ -775,10 +746,7 @@ export default function ControlledTabs() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Must match the value of the corresponding TabsTrigger
                 </Typography>
               </CardContent>
@@ -793,10 +761,7 @@ export default function ControlledTabs() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing list classes
                 </Typography>
               </CardContent>
@@ -805,7 +770,7 @@ export default function ControlledTabs() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Tabs component follows accessibility best practices.
           </Typography>
 

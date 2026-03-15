@@ -30,14 +30,11 @@ export default function ThemingPage() {
 
       <PageContent>
         <PageSection title="Built-in Themes">
-          <Typography
-            variant="body1"
-            className="text-muted-foreground block mb-(--lsd-spacing-small)"
-          >
+          <Typography variant="body1" className="block mb-(--lsd-spacing-small)">
             LSD comes with a few built-in themes, each with light and dark variants.
           </Typography>
 
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Each theme maintains the core LSD principle: high contrast, clear hierarchy, and
             content‑first presentation. Choose what works for your audience — the philosophy remains
             consistent.
@@ -85,7 +82,7 @@ export default function ThemingPage() {
           </div>
 
           <PageSection title="Setting Theme & Mode in HTML" isChild>
-            <Typography variant="body1" className="text-muted-foreground">
+            <Typography variant="body1">
               You can set the theme and mode directly in your HTML by adding classes and attributes
               to any element:
             </Typography>
@@ -132,7 +129,7 @@ export default function ThemingPage() {
           </PageSection>
 
           <PageSection title="Setting Theme & Mode Dynamically with JavaScript" isChild>
-            <Typography variant="body1" className="text-muted-foreground">
+            <Typography variant="body1">
               You can dynamically switch themes and modes using JavaScript by manipulating an
               element's class list and attributes:
             </Typography>

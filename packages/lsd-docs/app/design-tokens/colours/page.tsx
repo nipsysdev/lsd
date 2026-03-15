@@ -23,7 +23,7 @@ export default function ColorsPage() {
             contrast and accessibility across all conditions.
           </Typography>
 
-          <Typography variant="body1" className="text-muted-foreground mt-(--lsd-spacing-base)">
+          <Typography variant="body1" className="mt-(--lsd-spacing-base)">
             High contrast isn't a design choice — it's a commitment to inclusivity.
           </Typography>
         </PageSection>

@@ -66,7 +66,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Orientation">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             ButtonGroup supports horizontal and vertical orientations for different layout needs.
           </Typography>
 
@@ -132,7 +132,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Advanced features including separators, text labels, and integration with other
             components.
           </Typography>
@@ -274,7 +274,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             All available props for the ButtonGroup components.
           </Typography>
 
@@ -306,10 +306,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing button group classes
                 </Typography>
               </CardContent>
@@ -324,10 +321,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> React.ReactNode
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Buttons, inputs, selects, separators, and text labels
                 </Typography>
               </CardContent>
@@ -342,10 +336,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> <code>React.ComponentProps&lt;'fieldset'&gt;</code>
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   All standard HTML fieldset attributes are supported
                 </Typography>
               </CardContent>
@@ -378,10 +369,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing separator classes
                 </Typography>
               </CardContent>
@@ -399,10 +387,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Used for rendering text as a different element
                 </Typography>
               </CardContent>
@@ -417,10 +402,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Merges with existing text classes
                 </Typography>
               </CardContent>
@@ -429,7 +411,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The ButtonGroup component follows accessibility best practices.
           </Typography>
 

@@ -79,7 +79,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             Comprehensive features including submenus, destructive items, labels, separators, and
             keyboard navigation.
           </Typography>
@@ -400,9 +400,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="text-muted-foreground">
-            All available props for the Menubar components.
-          </Typography>
+          <Typography variant="body1">All available props for the Menubar components.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -414,10 +412,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Container for all menubar menus
                 </Typography>
               </CardContent>
@@ -432,10 +427,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Wraps a trigger and its content
                 </Typography>
               </CardContent>
@@ -450,10 +442,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Click to open the dropdown menu
                 </Typography>
               </CardContent>
@@ -474,10 +463,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Default:</strong> start
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Contains all menu items
                 </Typography>
               </CardContent>
@@ -498,10 +484,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Default:</strong> default
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Clickable action item
                 </Typography>
               </CardContent>
@@ -522,10 +505,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
                   <strong>onCheckedChange</strong>: (checked: boolean) =&gt; void
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Item with checkbox state
                 </Typography>
               </CardContent>
@@ -543,10 +523,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
                   <strong>value</strong>: string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Must be used within MenubarRadioGroup
                 </Typography>
               </CardContent>
@@ -567,10 +544,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
                   <strong>onValueChange</strong>: (value: string) =&gt; void
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Wraps radio items for exclusive selection
                 </Typography>
               </CardContent>
@@ -585,10 +559,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Used to group related items
                 </Typography>
               </CardContent>
@@ -603,10 +574,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Divides menu items visually
                 </Typography>
               </CardContent>
@@ -621,10 +589,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Wraps submenu trigger and content
                 </Typography>
               </CardContent>
@@ -639,10 +604,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Click to open nested menu
                 </Typography>
               </CardContent>
@@ -657,10 +619,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Contains submenu items
                 </Typography>
               </CardContent>
@@ -675,10 +634,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> React.ComponentType
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Renders submenu outside DOM hierarchy
                 </Typography>
               </CardContent>
@@ -744,10 +700,7 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> false
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Adds left padding for visual hierarchy
                 </Typography>
               </CardContent>
@@ -762,10 +715,7 @@ export default function MyComponent() {
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> string
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-muted-foreground mt-(--lsd-spacing-smaller)"
-                >
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Displayed on the right side of the item
                 </Typography>
               </CardContent>
@@ -774,7 +724,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="text-muted-foreground">
+          <Typography variant="body1">
             The Menubar component follows accessibility best practices.
           </Typography>
 

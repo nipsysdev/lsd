@@ -38,7 +38,7 @@ export function SidebarContentComponent({ currentPath }: SidebarContentProps) {
                   </div>
                   <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
                     <span className="font-semibold">shadcn-lsd</span>
-                    <span className="text-xs text-muted-foreground">v{siteConfig.version}</span>
+                    <span className="text-xs">v{siteConfig.version}</span>
                   </div>
                 </a>
               </SidebarMenuButton>
