@@ -48,20 +48,24 @@ export const navItems: NavGroup[] = [
         title: 'Forms',
         icon: TextboxIcon,
         subItems: [
+          { title: 'Autocomplete', url: '/components/autocomplete' },
           { title: 'Button', url: '/components/button' },
-          { title: 'Input', url: '/components/input' },
+          { title: 'Button Group', url: '/components/button-group' },
           { title: 'Checkbox', url: '/components/checkbox' },
-          { title: 'Switch', url: '/components/switch' },
+          { title: 'Input', url: '/components/input' },
+          { title: 'Label', url: '/components/label' },
           { title: 'Select', url: '/components/select' },
+          { title: 'Switch', url: '/components/switch' },
         ],
       },
       {
         title: 'Navigation',
         icon: CompassIcon,
         subItems: [
-          { title: 'Tabs', url: '/components/tabs' },
-          { title: 'Menubar', url: '/components/menubar' },
           { title: 'Command', url: '/components/command' },
+          { title: 'Menubar', url: '/components/menubar' },
+          { title: 'Sidebar', url: '/components/sidebar' },
+          { title: 'Tabs', url: '/components/tabs' },
         ],
       },
       {
@@ -70,8 +74,8 @@ export const navItems: NavGroup[] = [
         subItems: [
           { title: 'Alert Dialog', url: '/components/alert-dialog' },
           { title: 'Dialog', url: '/components/dialog' },
-          { title: 'Sonner', url: '/components/sonner' },
           { title: 'Progress', url: '/components/progress' },
+          { title: 'Sonner', url: '/components/sonner' },
         ],
       },
       {
@@ -79,24 +83,30 @@ export const navItems: NavGroup[] = [
         icon: LayoutIcon,
         subItems: [
           { title: 'Card', url: '/components/card' },
-          { title: 'Separator', url: '/components/separator' },
           { title: 'Scroll Area', url: '/components/scroll-area' },
+          { title: 'Separator', url: '/components/separator' },
         ],
       },
       {
         title: 'Data Display',
         icon: TableIcon,
         subItems: [
-          { title: 'Badge', url: '/components/badge' },
           { title: 'Accordion', url: '/components/accordion' },
+          { title: 'Badge', url: '/components/badge' },
+          { title: 'Skeleton', url: '/components/skeleton' },
+          { title: 'Toggle', url: '/components/toggle' },
+          { title: 'Toggle Group', url: '/components/toggle-group' },
         ],
       },
       {
         title: 'Overlays',
         icon: StackIcon,
         subItems: [
+          { title: 'Alert Dialog', url: '/components/alert-dialog' },
+          { title: 'Dialog', url: '/components/dialog' },
           { title: 'Popover', url: '/components/popover' },
           { title: 'Sheet', url: '/components/sheet' },
+          { title: 'Tooltip', url: '/components/tooltip' },
         ],
       },
     ],
