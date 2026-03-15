@@ -93,7 +93,7 @@ function Badge({
       onClick={isClickable ? onClick : undefined}
       {...props}
     >
-      {!isDot && (
+      {isDot ? null : (
         <>
           {icon && iconPosition === 'left' && (
             <span className="lsd:flex lsd:items-center lsd:justify-center">{icon}</span>

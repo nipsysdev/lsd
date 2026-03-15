@@ -21,7 +21,7 @@ export const badgeVariants = cva(
         success: 'lsd:bg-lsd-success lsd:text-white lsd:border-lsd-success',
         warning: 'lsd:bg-lsd-warning lsd:text-white lsd:border-lsd-warning',
         info: 'lsd:bg-lsd-info lsd:text-white lsd:border-lsd-info',
-        dot: 'lsd:rounded-full lsd:w-fit lsd:h-fit lsd:p-0',
+        dot: 'lsd:bg-lsd-primary lsd:rounded-full lsd:w-fit lsd:h-fit lsd:p-0 lsd:border-0',
       },
       size: {
         sm: 'lsd:h-[var(--lsd-spacing-larger)] lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smallest)] lsd:gap-[var(--lsd-spacing-smallest)] lsd:text-[0.75rem] [&>svg]:size-3',
