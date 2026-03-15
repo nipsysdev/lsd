@@ -6,6 +6,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --animate-spin: spin 1.3s linear infinite;
+  --lsd-font-family: monospace;
 
   --animate-indeterminate-progress: indeterminate-progress 1.5s ease-in-out infinite;
   --animate-indeterminate-progress-slow: indeterminate-progress 3s ease-in-out infinite;
@@ -196,36 +197,27 @@
   .font-serif {
     &,
     body {
-      font-family: serif;
+      --lsd-font-family: serif;
     }
   }
 
   .font-sans {
     &,
     body {
-      font-family: sans-serif;
+      --lsd-font-family: sans-serif;
     }
   }
 
   .font-mono {
     &,
     body {
-      font-family: monospace;
+      --lsd-font-family: monospace;
     }
   }
 }
 
 html {
-  font-family: monospace;
-}
-
-[data-sonner-toaster] {
-  [data-sonner-toast],
-  [data-content],
-  button {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
+  font-family: var(--lsd-font-family);
 }
 
 [data-radix-scroll-area-viewport] > div {
