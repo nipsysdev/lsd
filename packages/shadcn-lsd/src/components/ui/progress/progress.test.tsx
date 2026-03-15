@@ -116,12 +116,25 @@ describe('Progress', () => {
     expect(indicator).toHaveStyle({ transform: 'translateX(-25%)' });
   });
 
-  it('applies empty style for indeterminate progress', () => {
+  it('applies animation style for indeterminate progress', () => {
     render(<Progress indeterminate />);
     const indicator = document.querySelector('[data-slot="progress-indicator"]');
     expect(indicator).toBeInTheDocument();
-    // For indeterminate, style.transform should be empty or undefined
+    // For indeterminate, style should have animationPlayState but no transform
     const style = indicator?.getAttribute('style');
-    expect(style).toBeFalsy();
+    expect(style).toContain('animation-play-state');
+    expect(style).toContain('running');
+    expect(style).not.toContain('transform');
+  });
+
+  it('applies paused animation style when paused', () => {
+    render(<Progress indeterminate paused />);
+    const indicator = document.querySelector('[data-slot="progress-indicator"]');
+    expect(indicator).toBeInTheDocument();
+    // For indeterminate with paused, style should have animationPlayState: paused
+    const style = indicator?.getAttribute('style');
+    expect(style).toContain('animation-play-state');
+    expect(style).toContain('paused');
+    expect(style).not.toContain('transform');
   });
 });
