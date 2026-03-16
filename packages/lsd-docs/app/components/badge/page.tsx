@@ -251,10 +251,10 @@ export default function MyComponent() {
                 <Badge icon={<CheckIcon />} variant="success">
                   Verified
                 </Badge>
-                <Badge icon={<WarningIcon />} variant="warning">
+                <Badge icon={<WarningIcon weight="duotone" />} variant="warning">
                   Warning
                 </Badge>
-                <Badge icon={<InfoIcon />} variant="info" iconPosition="right">
+                <Badge icon={<InfoIcon weight="duotone" />} variant="info" iconPosition="right">
                   Info
                 </Badge>
               </div>
@@ -266,10 +266,10 @@ export default function MyComponent() {
                       code={`<Badge icon={<CheckIcon />} variant="success">
   Verified
 </Badge>
-<Badge icon={<WarningIcon />} variant="warning">
+<Badge icon={<WarningIcon weight="duotone" />} variant="warning">
   Warning
 </Badge>
-<Badge icon={<InfoIcon />} variant="info" iconPosition="right">
+<Badge icon={<InfoIcon weight="duotone" />} variant="info" iconPosition="right">
   Info
 </Badge>`}
                     />

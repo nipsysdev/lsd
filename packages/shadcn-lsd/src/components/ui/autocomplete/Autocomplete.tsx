@@ -1,4 +1,4 @@
-import { XIcon } from 'lucide-react';
+import { XIcon } from '@phosphor-icons/react';
 import * as React from 'react';
 import { Popover, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
@@ -156,9 +156,10 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                 >
                   <XIcon
                     className={cn(
-                      'lsd:h-4 lsd:w-4',
+                      'lsd:size-4',
                       disabled ? 'lsd:text-lsd-text-secondary' : 'lsd:text-lsd-icon-primary'
                     )}
+                    weight="duotone"
                   />
                 </button>
               )}

@@ -1,7 +1,6 @@
+import { CaretDownIcon } from '@phosphor-icons/react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { ChevronDownIcon } from 'lucide-react';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 import { type AccordionVariants, accordionTriggerVariants } from './types';
 
@@ -29,11 +28,12 @@ function AccordionTrigger({ className, children, size = 'md', ...props }: Accord
         {...props}
       >
         {children}
-        <ChevronDownIcon
+        <CaretDownIcon
           className={cn(
             'lsd:text-lsd-icon-primary lsd:pointer-events-none lsd:shrink-0 lsd:translate-y-0.5 lsd:transition-transform lsd:duration-200',
             getIconSize()
           )}
+          weight="duotone"
         />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>

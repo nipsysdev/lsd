@@ -242,10 +242,10 @@ export default function MyComponent() {
                     <PlusIcon />
                   </Button>
                   <Button variant="outlined-rounded" size="square-md">
-                    <DownloadIcon />
+                    <DownloadIcon weight="duotone" />
                   </Button>
                   <Button variant="destructive-rounded" size="square-md">
-                    <TrashIcon />
+                    <TrashIcon weight="duotone" />
                   </Button>
                 </ButtonGroup>
               </div>
@@ -259,10 +259,10 @@ export default function MyComponent() {
 <PlusIcon />
 </Button>
 <Button variant="outlined-rounded" size="square-md">
-<DownloadIcon />
+<DownloadIcon weight="duotone" />
 </Button>
 <Button variant="destructive-rounded" size="square-md">
-<TrashIcon />
+<TrashIcon weight="duotone" />
 </Button>
 </ButtonGroup>`}
                     />

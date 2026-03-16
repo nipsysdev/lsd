@@ -1,9 +1,7 @@
+import { XIcon } from '@phosphor-icons/react';
 import * as SheetPrimitive from '@radix-ui/react-dialog';
-import { XIcon } from 'lucide-react';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
-
 import { SheetOverlay } from './SheetOverlay';
 import { SheetPortal } from './SheetPortal';
 
@@ -36,7 +34,7 @@ export function SheetContent({
       >
         {children}
         <SheetPrimitive.Close className="lsd:data-[state=open]:bg-secondary lsd:absolute lsd:top-(--lsd-spacing-base) lsd:right-(--lsd-spacing-base) lsd:rounded-xs lsd:opacity-70 lsd:transition-opacity lsd:hover:opacity-100 lsd:p-(--lsd-spacing-smaller) lsd:cursor-pointer lsd:disabled:pointer-events-none">
-          <XIcon className="lsd:size-(--lsd-spacing-base)" />
+          <XIcon className="lsd:size-4" weight="duotone" />
           <span className="lsd:sr-only">Close</span>
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>

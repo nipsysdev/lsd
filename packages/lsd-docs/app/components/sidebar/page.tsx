@@ -135,13 +135,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -166,13 +166,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -205,13 +205,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -236,13 +236,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -275,13 +275,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -306,13 +306,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -353,13 +353,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -390,13 +390,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -437,13 +437,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -474,13 +474,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -519,13 +519,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -555,13 +555,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -610,13 +610,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -651,13 +651,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -695,13 +695,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -715,7 +715,7 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Settings</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -740,13 +740,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -760,7 +760,7 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <SettingsIcon />
+                <SettingsIcon weight="duotone" />
                 <span>Settings</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -793,15 +793,15 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <FileTextIcon />
+                                <FileTextIcon weight="duotone" />
                                 <span>Documents</span>
-                                <ArrowRightIcon />
+                                <ArrowRightIcon weight="duotone" />
                               </SidebarMenuButton>
                               <SidebarMenuSub>
                                 <SidebarMenuSubItem>
@@ -837,15 +837,15 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <FileTextIcon />
+                <FileTextIcon weight="duotone" />
                 <span>Documents</span>
-                <ChevronRightIcon />
+                <ChevronRightIcon weight="duotone" />
               </SidebarMenuButton>
               <SidebarMenuSub>
                 <SidebarMenuSubItem>
@@ -889,13 +889,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton isActive>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -920,13 +920,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton isActive>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -958,13 +958,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton tooltip="Home">
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton tooltip="Dashboard">
-                                <ChalkboardIcon />
+                                <ChalkboardIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -994,13 +994,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton tooltip="Home">
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton tooltip="Dashboard">
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -1041,13 +1041,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <BellIcon />
+                                <BellIcon weight="duotone" />
                                 <span>Notifications</span>
                               </SidebarMenuButton>
                               <SidebarMenuBadge>3</SidebarMenuBadge>
@@ -1073,13 +1073,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <BellIcon />
+                <BellIcon weight="duotone" />
                 <span>Notifications</span>
               </SidebarMenuButton>
               <SidebarMenuBadge>3</SidebarMenuBadge>
@@ -1118,20 +1118,20 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <StarIcon />
+                                <StarIcon weight="duotone" />
                                 <span>Project A</span>
                               </SidebarMenuButton>
                               <SidebarMenuAction>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                               </SidebarMenuAction>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <StarIcon />
+                                <StarIcon weight="duotone" />
                                 <span>Project B</span>
                               </SidebarMenuButton>
                               <SidebarMenuAction>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                               </SidebarMenuAction>
                             </SidebarMenuItem>
                           </SidebarMenu>
@@ -1160,20 +1160,20 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <StarIcon />
+                <StarIcon weight="duotone" />
                 <span>Project A</span>
               </SidebarMenuButton>
               <SidebarMenuAction>
-                <GearIcon />
+                <GearIcon weight="duotone" />
               </SidebarMenuAction>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <StarIcon />
+                <StarIcon weight="duotone" />
                 <span>Project B</span>
               </SidebarMenuButton>
               <SidebarMenuAction>
-                <GearIcon />
+                <GearIcon weight="duotone" />
               </SidebarMenuAction>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -1270,13 +1270,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -1302,13 +1302,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -1343,13 +1343,13 @@ export default function MyComponent() {
                           <SidebarMenu>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <HouseIcon />
+                                <HouseIcon weight="duotone" />
                                 <span>Home</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                               <SidebarMenuButton>
-                                <GearIcon />
+                                <GearIcon weight="duotone" />
                                 <span>Dashboard</span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
@@ -1380,13 +1380,13 @@ export default function MyComponent() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <HouseIcon />
+                <HouseIcon weight="duotone" />
                 <span>Home</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <DashboardIcon />
+                <DashboardIcon weight="duotone" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
             </SidebarMenuItem>

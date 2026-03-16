@@ -3,6 +3,7 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 import { type BadgeVariants, badgeVariants } from './types';
+import { XIcon } from '@phosphor-icons/react';
 
 export interface BadgeProps extends React.ComponentProps<'span'>, BadgeVariants {
   asChild?: boolean;
@@ -12,24 +13,6 @@ export interface BadgeProps extends React.ComponentProps<'span'>, BadgeVariants 
   iconPosition?: 'left' | 'right';
   dot?: boolean;
 }
-
-const CloseIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="12"
-    height="12"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M18 6L6 18" />
-    <path d="M6 6l12 12" />
-  </svg>
-);
 
 function Badge({
   className,
@@ -109,7 +92,7 @@ function Badge({
               onClick={handleDismiss}
               aria-label="Dismiss"
             >
-              <CloseIcon />
+              <XIcon weight="duotone"/>
             </button>
           )}
         </>

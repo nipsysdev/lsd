@@ -378,15 +378,15 @@ export default function MyComponent() {
                 <Tabs defaultValue="home">
                   <TabsList>
                     <TabsTrigger value="home">
-                      <HouseIcon />
+                      <HouseIcon weight="duotone" className="size-4" />
                       Home
                     </TabsTrigger>
                     <TabsTrigger value="analytics">
-                      <ChartLineUpIcon />
+                      <ChartLineUpIcon weight="duotone" />
                       Analytics
                     </TabsTrigger>
                     <TabsTrigger value="settings">
-                      <GearIcon />
+                      <GearIcon weight="duotone" />
                       Settings
                     </TabsTrigger>
                   </TabsList>
@@ -415,15 +415,15 @@ export default function MyComponent() {
                       code={`<Tabs defaultValue="home">
   <TabsList>
     <TabsTrigger value="home">
-      <HouseIcon />
+      <HouseIcon weight="duotone" />
       Home
     </TabsTrigger>
     <TabsTrigger value="analytics">
-      <ChartLineUpIcon />
+      <ChartLineUpIcon weight="duotone" />
       Analytics
     </TabsTrigger>
     <TabsTrigger value="settings">
-      <GearIcon />
+      <GearIcon weight="duotone" />
       Settings
     </TabsTrigger>
   </TabsList>

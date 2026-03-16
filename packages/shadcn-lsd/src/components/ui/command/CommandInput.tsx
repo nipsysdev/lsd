@@ -1,7 +1,6 @@
+import { MagnifyingGlassIcon } from '@phosphor-icons/react';
 import { Command as CommandPrimitive } from 'cmdk';
-import { SearchIcon } from 'lucide-react';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 
 export function CommandInput({
@@ -13,7 +12,7 @@ export function CommandInput({
       data-slot="command-input-wrapper"
       className="lsd:flex lsd:h-9 lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:border-b lsd:border-lsd-border lsd:px-(--lsd-spacing-small)"
     >
-      <SearchIcon className="lsd:size-4 lsd:shrink-0 lsd:opacity-50" />
+      <MagnifyingGlassIcon className="lsd:size-4 lsd:shrink-0 lsd:opacity-50" weight="duotone" />
       <CommandPrimitive.Input
         data-slot="command-input"
         className={cn(

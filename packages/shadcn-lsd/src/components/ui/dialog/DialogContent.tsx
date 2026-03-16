@@ -1,7 +1,6 @@
+import { XIcon } from '@phosphor-icons/react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon } from 'lucide-react';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 import { DialogClose } from './DialogClose';
 import { DialogOverlay } from './DialogOverlay';
@@ -32,7 +31,7 @@ function DialogContent({
             data-slot="dialog-close"
             className="lsd:p-(--lsd-spacing-smaller) focus:lsd:outline-hidden lsd:data-[state=open]:bg-lsd-surface lsd:data-[state=open]:text-lsd-text-primary lsd:absolute lsd:top-(--lsd-spacing-base) lsd:right-(--lsd-spacing-base) lsd:rounded-xs lsd:opacity-70 lsd:transition-opacity lsd:hover:opacity-100 lsd:disabled:pointer-events-none lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-4 lsd:cursor-pointer"
           >
-            <XIcon />
+            <XIcon weight="duotone" />
             <span className="lsd:sr-only">Close</span>
           </DialogClose>
         )}

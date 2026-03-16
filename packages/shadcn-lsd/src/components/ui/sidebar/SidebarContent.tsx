@@ -1,4 +1,4 @@
-import { PanelLeftIcon } from 'lucide-react';
+import { SidebarSimpleIcon } from '@phosphor-icons/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
@@ -109,7 +109,7 @@ export function SidebarTrigger({ className, onClick, ...props }: SidebarTriggerP
       }}
       {...props}
     >
-      <PanelLeftIcon className="lsd:size-3/4" />
+      <SidebarSimpleIcon className="lsd:size-full" weight="duotone" />
       <span className="lsd:sr-only">Toggle Sidebar</span>
     </Button>
   );

@@ -1,7 +1,6 @@
-import { ChevronRightIcon } from 'lucide-react';
+import { CaretRightIcon } from '@phosphor-icons/react';
 import { Menubar as MenubarPrimitive } from 'radix-ui';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 import { type MenubarSubTriggerVariants, menubarSubTriggerVariants } from './types';
 
@@ -18,7 +17,7 @@ function MenubarSubTrigger({ className, inset, children, ...props }: MenubarSubT
       {...props}
     >
       <span className="lsd:group-hover:underline lsd:group-focus:underline">{children}</span>
-      <ChevronRightIcon className="lsd:ml-auto lsd:h-(--lsd-spacing-base) lsd:w-(--lsd-spacing-base)" />
+      <CaretRightIcon className="lsd:ml-auto lsd:size-4" weight="duotone" />
     </MenubarPrimitive.SubTrigger>
   );
 }

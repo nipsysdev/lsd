@@ -1,7 +1,6 @@
+import { CaretUpIcon } from '@phosphor-icons/react';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { ChevronUpIcon } from 'lucide-react';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 
 export function SelectScrollUpButton({
@@ -17,7 +16,7 @@ export function SelectScrollUpButton({
       )}
       {...props}
     >
-      <ChevronUpIcon className="lsd:size-(--lsd-spacing-base)" />
+      <CaretUpIcon className="lsd:size-4" weight="duotone" />
     </SelectPrimitive.ScrollUpButton>
   );
 }

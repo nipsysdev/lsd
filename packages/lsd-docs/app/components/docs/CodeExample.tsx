@@ -34,7 +34,7 @@ export function CodeExample({ code }: CodeExampleProps) {
         className="opacity-0 group-hover:opacity-100 transition-opacity"
         aria-label="Copy code"
       >
-        <ClipboardIcon className="size-4" />
+        <ClipboardIcon className="size-4" weight="duotone" />
       </Button>
     </div>
   );

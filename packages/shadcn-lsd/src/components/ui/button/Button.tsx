@@ -29,7 +29,7 @@ const LoadingSpinner = ({ size }: { size?: string }) => {
     }
   };
 
-  return <CircleNotchIcon className={`${getSpinnerSize()} lsd:animate-spin`} />;
+  return <CircleNotchIcon className={`${getSpinnerSize()} lsd:animate-spin`} weight="duotone" />;
 };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

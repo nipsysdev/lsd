@@ -108,7 +108,7 @@ export default function MyComponent() {
                   <PlusIcon />
                 </Button>
                 <Button variant="outlined-rounded" size="square-md">
-                  <ShareIcon />
+                  <ShareIcon weight="duotone" />
                 </Button>
               </div>
               <Accordion type="single" collapsible>
@@ -120,7 +120,7 @@ export default function MyComponent() {
   <PlusIcon />
 </Button>
 <Button variant="outlined-rounded" size="square-md">
-  <ShareIcon />
+  <ShareIcon weight="duotone" />
 </Button>`}
                     />
                   </AccordionContent>
@@ -144,7 +144,7 @@ export default function MyComponent() {
               <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
                 <Button variant="ghost">Ghost</Button>
                 <Button variant="ghost-rounded" size="square-md">
-                  <DownloadIcon />
+                  <DownloadIcon weight="duotone" />
                 </Button>
               </div>
               <Accordion type="single" collapsible>
@@ -154,7 +154,7 @@ export default function MyComponent() {
                     <CodeExample
                       code={`<Button variant="ghost">Ghost</Button>
 <Button variant="ghost-rounded" size="square-md">
-  <DownloadIcon />
+  <DownloadIcon weight="duotone" />
 </Button>`}
                     />
                   </AccordionContent>
@@ -178,7 +178,7 @@ export default function MyComponent() {
               <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
                 <Button variant="destructive">Delete</Button>
                 <Button variant="destructive-rounded" size="square-md">
-                  <TrashIcon />
+                  <TrashIcon weight="duotone" />
                 </Button>
               </div>
               <Accordion type="single" collapsible>
@@ -188,7 +188,7 @@ export default function MyComponent() {
                     <CodeExample
                       code={`<Button variant="destructive">Delete</Button>
 <Button variant="destructive-rounded" size="square-md">
-  <TrashIcon />
+  <TrashIcon weight="duotone" />
 </Button>`}
                     />
                   </AccordionContent>
@@ -386,7 +386,7 @@ export default function MyComponent() {
                 <Button variant="outlined" asChild>
                   <a href="/docs">
                     Learn More
-                    <ArrowRightIcon className="ml-(--lsd-spacing-smaller)" />
+                    <ArrowRightIcon className="ml-(--lsd-spacing-smaller)" weight="duotone" />
                   </a>
                 </Button>
               </div>
@@ -401,7 +401,7 @@ export default function MyComponent() {
 <Button variant="outlined" asChild>
   <a href="/docs">
     Learn More
-    <ArrowRightIcon className="ml-(--lsd-spacing-smaller)" />
+    <ArrowRightIcon className="ml-(--lsd-spacing-smaller)" weight="duotone" />
   </a>
 </Button>`}
                     />

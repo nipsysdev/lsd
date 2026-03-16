@@ -1,7 +1,6 @@
-import { CircleIcon } from 'lucide-react';
+import { CircleIcon } from '@phosphor-icons/react';
 import { Menubar as MenubarPrimitive } from 'radix-ui';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 import { menubarRadioItemVariants } from './types';
 
@@ -17,7 +16,10 @@ function MenubarRadioItem({ className, children, ...props }: MenubarRadioItemPro
     >
       <span className="lsd:pointer-events-none lsd:absolute lsd:left-(--lsd-spacing-smaller) lsd:flex lsd:size-(--lsd-spacing-base) lsd:items-center lsd:justify-center">
         <MenubarPrimitive.ItemIndicator>
-          <CircleIcon className="lsd:size-(--lsd-spacing-smaller) lsd:fill-current" />
+          <CircleIcon
+            className="lsd:size-(--lsd-spacing-smaller) lsd:fill-current"
+            weight="duotone"
+          />
         </MenubarPrimitive.ItemIndicator>
       </span>
       <span className="lsd:group-hover:underline lsd:group-focus:underline">{children}</span>

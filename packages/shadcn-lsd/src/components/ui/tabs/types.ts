@@ -14,7 +14,7 @@ export const tabsVariants = cva('', {
     },
   },
   defaultVariants: {
-    size: 'lg',
+    size: 'md',
     fullWidth: false,
   },
 });
@@ -32,7 +32,7 @@ export const tabsListVariants = cva('lsd:bg-lsd-surface lsd:border-b lsd:flex ls
     },
   },
   defaultVariants: {
-    size: 'lg',
+    size: 'md',
     fullWidth: false,
   },
 });
@@ -42,9 +42,9 @@ export const tabsTriggerVariants = cva(
   {
     variants: {
       size: {
-        sm: 'lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm lsd:[&>svg]:ml-[var(--lsd-spacing-smaller)] lsd:[&>svg]:h-[var(--lsd-spacing-base)] lsd:[&>svg]:w-[var(--lsd-spacing-base)]',
-        md: 'lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-base lsd:[&>svg]:ml-[var(--lsd-spacing-small)] lsd:[&>svg]:h-[var(--lsd-spacing-large)] lsd:[&>svg]:w-[var(--lsd-spacing-large)]',
-        lg: 'lsd:px-[var(--lsd-spacing-large)] lsd:py-[var(--lsd-spacing-small)] lsd:text-lg lsd:[&>svg]:ml-[var(--lsd-spacing-base)] lsd:[&>svg]:h-[var(--lsd-spacing-larger)] lsd:[&>svg]:w-[var(--lsd-spacing-larger)]',
+        sm: 'lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm lsd:gap-x-(--lsd-spacing-smallest) lsd:[&>svg]:size-2',
+        md: 'lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-base lsd:gap-x-(--lsd-spacing-smaller) lsd:[&>svg]:size-6',
+        lg: 'lsd:px-[var(--lsd-spacing-large)] lsd:py-[var(--lsd-spacing-small)] lsd:text-lg lsd:gap-x-(--lsd-spacing-smaller) lsd:[&>svg]:size-6',
       },
       fullWidth: {
         true: 'lsd:flex-1',
@@ -52,7 +52,7 @@ export const tabsTriggerVariants = cva(
       },
     },
     defaultVariants: {
-      size: 'lg',
+      size: 'md',
       fullWidth: false,
     },
   }

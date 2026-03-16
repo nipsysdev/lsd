@@ -1,7 +1,6 @@
+import { CheckIcon } from '@phosphor-icons/react';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { CheckIcon } from 'lucide-react';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 
 export function SelectItem({
@@ -20,7 +19,7 @@ export function SelectItem({
     >
       <span className="lsd:absolute lsd:right-(--lsd-spacing-smaller) lsd:flex lsd:size-(--lsd-spacing-base) lsd:items-center lsd:justify-center">
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon className="lsd:size-(--lsd-spacing-base) lsd:text-lsd-icon-primary" />
+          <CheckIcon className="lsd:size-4 lsd:text-lsd-icon-primary" />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>

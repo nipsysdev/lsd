@@ -1,7 +1,6 @@
+import { CaretDownIcon } from '@phosphor-icons/react';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { ChevronDownIcon } from 'lucide-react';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 
 export function SelectScrollDownButton({
@@ -17,7 +16,7 @@ export function SelectScrollDownButton({
       )}
       {...props}
     >
-      <ChevronDownIcon className="lsd:size-(--lsd-spacing-base)" />
+      <CaretDownIcon className="lsd:size-(--lsd-spacing-base)" weight="duotone" />
     </SelectPrimitive.ScrollDownButton>
   );
 }
