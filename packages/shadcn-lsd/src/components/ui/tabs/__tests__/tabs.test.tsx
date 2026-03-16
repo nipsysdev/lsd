@@ -117,7 +117,7 @@ describe('tabsListVariants', () => {
     expect(result).toContain('lsd:border-b');
     expect(result).toContain('lsd:flex');
     expect(result).toContain('lsd:flex-row');
-    expect(result).toContain('lsd:h-12');
+    expect(result).toContain('lsd:h-10');
     expect(result).toContain('lsd:w-fit');
   });
 
@@ -143,16 +143,16 @@ describe('tabsListVariants', () => {
 describe('tabsTriggerVariants', () => {
   it('returns correct classes for default variants', () => {
     const result = tabsTriggerVariants();
-    expect(result).toContain('lsd:text-lsd-text');
+    expect(result).toContain('lsd:text-lsd-text-primary');
     expect(result).toContain('lsd:border');
     expect(result).toContain('lsd:border-transparent');
     expect(result).toContain('lsd:border-b-0');
     expect(result).toContain('lsd:flex');
     expect(result).toContain('lsd:items-center');
     expect(result).toContain('lsd:justify-center');
-    expect(result).toContain('lsd:px-[var(--lsd-spacing-large)]');
-    expect(result).toContain('lsd:py-[var(--lsd-spacing-small)]');
-    expect(result).toContain('lsd:text-lg');
+    expect(result).toContain('lsd:px-[var(--lsd-spacing-base)]');
+    expect(result).toContain('lsd:py-[var(--lsd-spacing-smaller)]');
+    expect(result).toContain('lsd:text-base');
   });
 
   it('returns correct classes for size variants', () => {

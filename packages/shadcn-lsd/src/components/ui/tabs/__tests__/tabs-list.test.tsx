@@ -45,7 +45,7 @@ describe('TabsList', () => {
     expect(list).toHaveClass('lsd:flex-row');
   });
 
-  it('applies default size classes (lg)', () => {
+  it('applies default size classes (md)', () => {
     render(
       <Tabs defaultValue="tab-1">
         <TabsList>
@@ -55,13 +55,13 @@ describe('TabsList', () => {
       </Tabs>
     );
     const list = document.querySelector('[data-slot="tabs-list"]');
-    expect(list).toHaveClass('lsd:h-12');
+    expect(list).toHaveClass('lsd:h-10');
   });
 
-  it('applies small size classes when size="sm"', () => {
+  it('applies small size classes when size="sm" on Tabs', () => {
     render(
-      <Tabs defaultValue="tab-1">
-        <TabsList size="sm">
+      <Tabs defaultValue="tab-1" size="sm">
+        <TabsList>
           <TabsTrigger value="tab-1">Tab 1</TabsTrigger>
         </TabsList>
         <TabsContent value="tab-1">Content 1</TabsContent>
@@ -71,17 +71,17 @@ describe('TabsList', () => {
     expect(list).toHaveClass('lsd:h-8');
   });
 
-  it('applies medium size classes when size="md"', () => {
+  it('applies large size classes when size="lg" on Tabs', () => {
     render(
-      <Tabs defaultValue="tab-1">
-        <TabsList size="md">
+      <Tabs defaultValue="tab-1" size="lg">
+        <TabsList>
           <TabsTrigger value="tab-1">Tab 1</TabsTrigger>
         </TabsList>
         <TabsContent value="tab-1">Content 1</TabsContent>
       </Tabs>
     );
     const list = document.querySelector('[data-slot="tabs-list"]');
-    expect(list).toHaveClass('lsd:h-10');
+    expect(list).toHaveClass('lsd:h-12');
   });
 
   it('applies default fullWidth classes (false)', () => {

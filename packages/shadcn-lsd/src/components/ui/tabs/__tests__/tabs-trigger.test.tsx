@@ -67,7 +67,7 @@ describe('TabsTrigger', () => {
     expect(trigger).toHaveClass('lsd:data-[state=active]:font-medium');
   });
 
-  it('applies default size classes (lg)', () => {
+  it('applies default size classes (md)', () => {
     render(
       <Tabs defaultValue="tab-1">
         <TabsList>
@@ -77,18 +77,16 @@ describe('TabsTrigger', () => {
       </Tabs>
     );
     const trigger = document.querySelector('[data-slot="tabs-trigger"]');
-    expect(trigger).toHaveClass('lsd:px-[var(--lsd-spacing-large)]');
-    expect(trigger).toHaveClass('lsd:py-[var(--lsd-spacing-small)]');
-    expect(trigger).toHaveClass('lsd:text-lg');
+    expect(trigger).toHaveClass('lsd:px-[var(--lsd-spacing-base)]');
+    expect(trigger).toHaveClass('lsd:py-[var(--lsd-spacing-smaller)]');
+    expect(trigger).toHaveClass('lsd:text-base');
   });
 
-  it('applies small size classes when size="sm"', () => {
+  it('applies small size classes when size="sm" on Tabs', () => {
     render(
-      <Tabs defaultValue="tab-1">
+      <Tabs defaultValue="tab-1" size="sm">
         <TabsList>
-          <TabsTrigger value="tab-1" size="sm">
-            Tab 1
-          </TabsTrigger>
+          <TabsTrigger value="tab-1">Tab 1</TabsTrigger>
         </TabsList>
         <TabsContent value="tab-1">Content 1</TabsContent>
       </Tabs>
@@ -99,21 +97,19 @@ describe('TabsTrigger', () => {
     expect(trigger).toHaveClass('lsd:text-sm');
   });
 
-  it('applies medium size classes when size="md"', () => {
+  it('applies large size classes when size="lg" on Tabs', () => {
     render(
-      <Tabs defaultValue="tab-1">
+      <Tabs defaultValue="tab-1" size="lg">
         <TabsList>
-          <TabsTrigger value="tab-1" size="md">
-            Tab 1
-          </TabsTrigger>
+          <TabsTrigger value="tab-1">Tab 1</TabsTrigger>
         </TabsList>
         <TabsContent value="tab-1">Content 1</TabsContent>
       </Tabs>
     );
     const trigger = document.querySelector('[data-slot="tabs-trigger"]');
-    expect(trigger).toHaveClass('lsd:px-[var(--lsd-spacing-base)]');
-    expect(trigger).toHaveClass('lsd:py-[var(--lsd-spacing-smaller)]');
-    expect(trigger).toHaveClass('lsd:text-base');
+    expect(trigger).toHaveClass('lsd:px-[var(--lsd-spacing-large)]');
+    expect(trigger).toHaveClass('lsd:py-[var(--lsd-spacing-small)]');
+    expect(trigger).toHaveClass('lsd:text-lg');
   });
 
   it('applies default fullWidth classes (false)', () => {
