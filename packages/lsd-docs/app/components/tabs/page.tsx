@@ -374,11 +374,75 @@ export default function MyComponent() {
               <CardDescription>Add icons to tab triggers for visual context</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Tabs defaultValue="home">
+              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
+                <Tabs defaultValue="home" size="sm">
                   <TabsList>
                     <TabsTrigger value="home">
-                      <HouseIcon weight="duotone" className="size-4" />
+                      <HouseIcon weight="duotone" />
+                      Home
+                    </TabsTrigger>
+                    <TabsTrigger value="analytics">
+                      <ChartLineUpIcon weight="duotone" />
+                      Analytics
+                    </TabsTrigger>
+                    <TabsTrigger value="settings">
+                      <GearIcon weight="duotone" />
+                      Settings
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="home">
+                    <Typography variant="body1" className="block">
+                      Home page content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="analytics">
+                    <Typography variant="body1" className="block">
+                      Analytics dashboard content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="settings">
+                    <Typography variant="body1" className="block">
+                      Settings configuration content
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+
+                <Tabs defaultValue="home" size="md">
+                  <TabsList>
+                    <TabsTrigger value="home">
+                      <HouseIcon weight="duotone" />
+                      Home
+                    </TabsTrigger>
+                    <TabsTrigger value="analytics">
+                      <ChartLineUpIcon weight="duotone" />
+                      Analytics
+                    </TabsTrigger>
+                    <TabsTrigger value="settings">
+                      <GearIcon weight="duotone" />
+                      Settings
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="home">
+                    <Typography variant="body1" className="block">
+                      Home page content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="analytics">
+                    <Typography variant="body1" className="block">
+                      Analytics dashboard content
+                    </Typography>
+                  </TabsContent>
+                  <TabsContent value="settings">
+                    <Typography variant="body1" className="block">
+                      Settings configuration content
+                    </Typography>
+                  </TabsContent>
+                </Tabs>
+
+                <Tabs defaultValue="home" size="lg">
+                  <TabsList>
+                    <TabsTrigger value="home">
+                      <HouseIcon weight="duotone" />
                       Home
                     </TabsTrigger>
                     <TabsTrigger value="analytics">
@@ -412,7 +476,47 @@ export default function MyComponent() {
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
                     <CodeExample
-                      code={`<Tabs defaultValue="home">
+                      code={`<Tabs defaultValue="home" size="sm">
+  <TabsList>
+    <TabsTrigger value="home">
+      <HouseIcon weight="duotone" />
+      Home
+    </TabsTrigger>
+    <TabsTrigger value="analytics">
+      <ChartLineUpIcon weight="duotone" />
+      Analytics
+    </TabsTrigger>
+    <TabsTrigger value="settings">
+      <GearIcon weight="duotone" />
+      Settings
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="home">Home page content</TabsContent>
+  <TabsContent value="analytics">Analytics dashboard content</TabsContent>
+  <TabsContent value="settings">Settings configuration content</TabsContent>
+</Tabs>
+
+<Tabs defaultValue="home" size="md">
+  <TabsList>
+    <TabsTrigger value="home">
+      <HouseIcon weight="duotone" />
+      Home
+    </TabsTrigger>
+    <TabsTrigger value="analytics">
+      <ChartLineUpIcon weight="duotone" />
+      Analytics
+    </TabsTrigger>
+    <TabsTrigger value="settings">
+      <GearIcon weight="duotone" />
+      Settings
+    </TabsTrigger>
+  </TabsList>
+  <TabsContent value="home">Home page content</TabsContent>
+  <TabsContent value="analytics">Analytics dashboard content</TabsContent>
+  <TabsContent value="settings">Settings configuration content</TabsContent>
+</Tabs>
+
+<Tabs defaultValue="home" size="lg">
   <TabsList>
     <TabsTrigger value="home">
       <HouseIcon weight="duotone" />
