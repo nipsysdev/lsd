@@ -42,7 +42,7 @@ export const tabsTriggerVariants = cva(
   {
     variants: {
       size: {
-        sm: 'lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm lsd:gap-x-(--lsd-spacing-smallest) lsd:[&>svg]:size-2',
+        sm: 'lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm lsd:gap-x-(--lsd-spacing-smallest) lsd:[&>svg]:size-4',
         md: 'lsd:px-[var(--lsd-spacing-base)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-base lsd:gap-x-(--lsd-spacing-smaller) lsd:[&>svg]:size-6',
         lg: 'lsd:px-[var(--lsd-spacing-large)] lsd:py-[var(--lsd-spacing-small)] lsd:text-lg lsd:gap-x-(--lsd-spacing-smaller) lsd:[&>svg]:size-6',
       },
@@ -68,8 +68,8 @@ export interface TabsProps extends React.ComponentProps<typeof TabsPrimitive.Roo
 
 export interface TabsListProps
   extends React.ComponentProps<typeof TabsPrimitive.List>,
-    TabsListVariants {}
+    Omit<TabsListVariants, 'size'> {}
 
 export interface TabsTriggerProps
   extends React.ComponentProps<typeof TabsPrimitive.Trigger>,
-    TabsTriggerVariants {}
+    Omit<TabsTriggerVariants, 'size'> {}

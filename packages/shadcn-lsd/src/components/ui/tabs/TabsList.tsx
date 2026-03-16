@@ -5,8 +5,8 @@ import { useTabsContext } from './Tabs';
 import type { TabsListProps } from './types';
 import { tabsListVariants } from './types';
 
-function TabsList({ className, size, fullWidth, ...props }: TabsListProps) {
-  const { fullWidth: contextFullWidth, bordered } = useTabsContext();
+function TabsList({ className, fullWidth, ...props }: TabsListProps) {
+  const { size, fullWidth: contextFullWidth, bordered } = useTabsContext();
 
   const resolvedFullWidth = fullWidth ?? contextFullWidth;
 

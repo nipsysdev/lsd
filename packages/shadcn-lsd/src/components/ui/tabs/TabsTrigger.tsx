@@ -5,8 +5,8 @@ import { useTabsContext } from './Tabs';
 import type { TabsTriggerProps } from './types';
 import { tabsTriggerVariants } from './types';
 
-function TabsTrigger({ className, size, fullWidth, ...props }: TabsTriggerProps) {
-  const { fullWidth: contextFullWidth } = useTabsContext();
+function TabsTrigger({ className, fullWidth, ...props }: TabsTriggerProps) {
+  const { size, fullWidth: contextFullWidth } = useTabsContext();
 
   const resolvedFullWidth = fullWidth ?? contextFullWidth;
 

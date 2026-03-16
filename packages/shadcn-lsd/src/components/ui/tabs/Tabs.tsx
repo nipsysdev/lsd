@@ -6,6 +6,7 @@ import type { TabsProps } from './types';
 import { tabsVariants } from './types';
 
 interface TabsContextValue {
+  size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   bordered?: boolean;
 }
@@ -14,7 +15,7 @@ const TabsContext = React.createContext<TabsContextValue | undefined>(undefined)
 
 function Tabs({ className, size, fullWidth, bordered, ...props }: TabsProps) {
   return (
-    <TabsContext.Provider value={{ fullWidth: fullWidth ?? false, bordered }}>
+    <TabsContext.Provider value={{ size: size ?? 'md', fullWidth: fullWidth ?? false, bordered }}>
       <TabsPrimitive.Root
         data-slot="tabs"
         className={cn(tabsVariants({ size, fullWidth }), className)}
