@@ -3,8 +3,6 @@
 import {
   Card,
   CardContent,
-  Label,
-  Separator,
   Tabs,
   TabsContent,
   TabsList,

@@ -13,7 +13,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { CheckIcon, InfoIcon, PlusIcon, WarningIcon, XIcon } from '@phosphor-icons/react';
+import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
@@ -546,8 +546,8 @@ export default function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Button Group', href: '/components/button-group' }}
-          next={{ title: 'Checkbox', href: '/components/checkbox' }}
+          previous={{ title: 'Accordion', href: '/components/accordion' }}
+          next={{ title: 'Skeleton', href: '/components/skeleton' }}
         />
       </PageContent>
     </DocsLayout>

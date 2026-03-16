@@ -16,7 +16,7 @@ import {
   TabsTrigger,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { ChartLineUpIcon, GearIcon, HouseIcon, InfoIcon, UserIcon } from '@phosphor-icons/react';
+import { ChartLineUpIcon, GearIcon, HouseIcon } from '@phosphor-icons/react';
 import { useState } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -842,12 +842,12 @@ export default function ControlledTabs() {
 
       <PageNavigation
         previous={{
-          title: 'Sonner',
-          href: '/components/sonner',
-        }}
-        next={{
           title: 'Sidebar',
           href: '/components/sidebar',
+        }}
+        next={{
+          title: 'Alert Dialog',
+          href: '/components/alert-dialog',
         }}
       />
     </DocsLayout>

@@ -6,7 +6,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Separator,
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { CodeExample } from '@/components/docs/CodeExample';

@@ -30,7 +30,6 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarProvider,
-  SidebarRail,
   SidebarSeparator,
   SidebarTrigger,
   Typography,
@@ -39,13 +38,11 @@ import {
   ArrowRightIcon,
   BellIcon,
   ChalkboardIcon,
-  CheckIcon,
   FileTextIcon,
   GearIcon,
   HouseIcon,
   PlusIcon,
   StarIcon,
-  UserIcon,
 } from '@phosphor-icons/react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -1695,6 +1692,10 @@ export default function MyComponent() {
         previous={{
           title: 'Menubar',
           href: '/components/menubar',
+        }}
+        next={{
+          title: 'Tabs',
+          href: '/components/tabs',
         }}
       />
     </DocsLayout>
