@@ -1,9 +1,8 @@
+import { XIcon } from '@phosphor-icons/react';
 import { Slot } from '@radix-ui/react-slot';
 import type * as React from 'react';
-
 import { cn } from '@/lib/utils';
 import { type BadgeVariants, badgeVariants } from './types';
-import { XIcon } from '@phosphor-icons/react';
 
 export interface BadgeProps extends React.ComponentProps<'span'>, BadgeVariants {
   asChild?: boolean;
@@ -92,7 +91,7 @@ function Badge({
               onClick={handleDismiss}
               aria-label="Dismiss"
             >
-              <XIcon weight="duotone"/>
+              <XIcon weight="duotone" />
             </button>
           )}
         </>
