@@ -590,7 +590,7 @@ function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Select', href: '/components/select' }}
+          previous={{ title: 'Dialog', href: '/components/dialog' }}
           next={{ title: 'Sonner', href: '/components/sonner' }}
         />
       </PageContent>

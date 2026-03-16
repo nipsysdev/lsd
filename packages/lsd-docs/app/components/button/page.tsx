@@ -612,18 +612,18 @@ export default function MyComponent() {
             </CardContent>
           </Card>
         </PageSection>
-      </PageContent>
 
-      <PageNavigation
-        previous={{
-          title: 'Spacing',
-          href: '/design-tokens/spacing',
-        }}
-        next={{
-          title: 'Input',
-          href: '/components/input',
-        }}
-      />
+        <PageNavigation
+          previous={{
+            title: 'Autocomplete',
+            href: '/components/autocomplete',
+          }}
+          next={{
+            title: 'Button Group',
+            href: '/components/button-group',
+          }}
+        />
+      </PageContent>
     </DocsLayout>
   );
 }

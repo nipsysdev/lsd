@@ -787,8 +787,8 @@ export default function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Tabs',
-          href: '/components/tabs',
+          title: 'Command',
+          href: '/components/command',
         }}
         next={{
           title: 'Sidebar',

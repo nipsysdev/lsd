@@ -28,29 +28,8 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 
-function ControlledSelectExample() {
-  const [value, setValue] = useState('option2');
-
-  return (
-    <>
-      <Select value={value} onValueChange={setValue}>
-        <SelectTrigger>
-          <SelectValue placeholder="Select an option" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="option1">Option 1</SelectItem>
-          <SelectItem value="option2">Option 2</SelectItem>
-          <SelectItem value="option3">Option 3</SelectItem>
-        </SelectContent>
-      </Select>
-      <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-        Selected: {value === 'option1' ? 'Option 1' : value === 'option2' ? 'Option 2' : 'Option 3'}
-      </Typography>
-    </>
-  );
-}
-
 export default function SelectPage() {
+  const [value, setValue] = useState('option2');
   return (
     <DocsLayout>
       <PageHeader
@@ -369,7 +348,20 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <ControlledSelectExample />
+                <Select value={value} onValueChange={setValue}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select an option" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="option1">Option 1</SelectItem>
+                    <SelectItem value="option2">Option 2</SelectItem>
+                    <SelectItem value="option3">Option 3</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Selected:{' '}
+                  {value === 'option1' ? 'Option 1' : value === 'option2' ? 'Option 2' : 'Option 3'}
+                </Typography>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -378,7 +370,7 @@ export default function MyComponent() {
                     <CodeExample
                       code={`import { useState } from 'react'
 
-function MyComponent() {
+export default function MyComponent() {
   const [value, setValue] = useState('option2')
 
   return (
@@ -669,12 +661,12 @@ function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'ButtonGroup',
-          href: '/components/button-group',
+          title: 'Label',
+          href: '/components/label',
         }}
         next={{
-          title: 'Menubar',
-          href: '/components/menubar',
+          title: 'Switch',
+          href: '/components/switch',
         }}
       />
     </DocsLayout>

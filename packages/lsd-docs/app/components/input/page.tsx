@@ -502,12 +502,12 @@ export default function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Button',
-          href: '/components/button',
-        }}
-        next={{
           title: 'Checkbox',
           href: '/components/checkbox',
+        }}
+        next={{
+          title: 'Label',
+          href: '/components/label',
         }}
       />
     </DocsLayout>

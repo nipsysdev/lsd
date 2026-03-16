@@ -467,8 +467,8 @@ export default function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Checkbox', href: '/components/checkbox' }}
-          next={{ title: 'Select', href: '/components/select' }}
+          previous={{ title: 'Select', href: '/components/select' }}
+          next={{ title: 'Command', href: '/components/command' }}
         />
       </PageContent>
     </DocsLayout>

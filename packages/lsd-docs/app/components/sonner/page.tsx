@@ -21,72 +21,6 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 
-const installationCode = `import { Toaster } from '@nipsys/shadcn-lsd'
-import { toast } from 'sonner'
-
-export default function MyComponent() {
-  return (
-    <>
-      <Toaster />
-      <Button onClick={() => toast('Hello world')}>
-        Show toast
-      </Button>
-    </>
-  )
-}`;
-
-const toastTypesCode = `toast('Simple toast message')
-toast.success('Changes saved successfully!')
-toast.error('Something went wrong!')
-toast.warning('Please review your changes')
-toast.info('New feature available')`;
-
-const durationCode = `toast('Short duration', { duration: 2000 })
-toast('Long duration', { duration: 10000 })`;
-
-const actionCode = `toast('Event has been created', {
-  action: {
-    label: 'Undo',
-    onClick: () => console.log('Undo clicked'),
-  },
-})`;
-
-const promiseCode = `const promise = new Promise((resolve) =>
-  setTimeout(() => resolve('Data loaded!'), 2000)
-)
-
-toast.promise(promise, {
-  loading: 'Loading...',
-  success: (data) => data,
-  error: 'Error loading data',
-})`;
-
-const persistentCode = `toast('This toast will not auto-dismiss', {
-  duration: Infinity,
-})
-
-toast.dismiss()`;
-
-const positionedCode = `toast('Top-left toast', { position: 'top-left' })
-toast('Top-right toast', { position: 'top-right' })
-toast('Bottom-left toast', { position: 'bottom-left' })
-toast('Bottom-right toast', { position: 'bottom-right' })`;
-
-const richCode = `import { CheckIcon } from '@phosphor-icons/react'
-
-toast(
-  <div>
-    <h4 className="lsd:font-semibold">Event Created</h4>
-    <p className="lsd:text-sm">
-      Your event has been created successfully.
-    </p>
-  </div>,
-  {
-    duration: 5000,
-  },
-)
-))`;
-
 export default function SonnerPage() {
   return (
     <DocsLayout>
@@ -111,7 +45,21 @@ export default function SonnerPage() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
-              <CodeExample code={installationCode} />
+              <CodeExample
+                code={`import { Toaster } from '@nipsys/shadcn-lsd'
+import { toast } from 'sonner'
+
+export default function MyComponent() {
+  return (
+    <>
+      <Toaster />
+      <Button onClick={() => toast('Hello world')}>
+        Show toast
+      </Button>
+    </>
+  )
+}`}
+              />
             </CardContent>
           </Card>
         </PageSection>
@@ -154,7 +102,13 @@ export default function SonnerPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={toastTypesCode} />
+                    <CodeExample
+                      code={`toast('Simple toast message')
+toast.success('Changes saved successfully!')
+toast.error('Something went wrong!')
+toast.warning('Please review your changes')
+toast.info('New feature available')`}
+                    />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -191,7 +145,10 @@ export default function SonnerPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={durationCode} />
+                    <CodeExample
+                      code={`toast('Short duration', { duration: 2000 })
+toast('Long duration', { duration: 10000 })`}
+                    />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -223,7 +180,14 @@ export default function SonnerPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={actionCode} />
+                    <CodeExample
+                      code={`toast('Event has been created', {
+  action: {
+    label: 'Undo',
+    onClick: () => console.log('Undo clicked'),
+  },
+})`}
+                    />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -259,7 +223,17 @@ export default function SonnerPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={promiseCode} />
+                    <CodeExample
+                      code={`const promise = new Promise((resolve) =>
+  setTimeout(() => resolve('Data loaded!'), 2000)
+)
+
+toast.promise(promise, {
+  loading: 'Loading...',
+  success: (data) => data,
+  error: 'Error loading data',
+})`}
+                    />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -291,7 +265,13 @@ export default function SonnerPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={persistentCode} />
+                    <CodeExample
+                      code={`toast('This toast will not auto-dismiss', {
+  duration: Infinity,
+})
+
+toast.dismiss()`}
+                    />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -334,7 +314,12 @@ export default function SonnerPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={positionedCode} />
+                    <CodeExample
+                      code={`toast('Top-left toast', { position: 'top-left' })
+toast('Top-right toast', { position: 'top-right' })
+toast('Bottom-left toast', { position: 'bottom-left' })
+toast('Bottom-right toast', { position: 'bottom-right' })`}
+                    />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -369,7 +354,21 @@ export default function SonnerPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={richCode} />
+                    <CodeExample
+                      code={`import { CheckIcon } from '@phosphor-icons/react'
+
+toast(
+  <div>
+    <h4 className="lsd:font-semibold">Event Created</h4>
+    <p className="lsd:text-sm">
+      Your event has been created successfully.
+    </p>
+  </div>,
+  {
+    duration: 5000,
+  },
+)`}
+                    />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -590,8 +589,8 @@ export default function SonnerPage() {
           href: '/components/progress',
         }}
         next={{
-          title: 'Tabs',
-          href: '/components/tabs',
+          title: 'Card',
+          href: '/components/card',
         }}
       />
     </DocsLayout>
