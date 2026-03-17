@@ -23,7 +23,7 @@ export function CodeExample({ code }: CodeExampleProps) {
     <div className="flex justify-between size-full relative group">
       <Typography variant="subtitle3" className="my-auto">
         <pre>
-          <code>{code}</code>
+          <code className="whitespace-break-spaces">{code}</code>
         </pre>
       </Typography>
 
