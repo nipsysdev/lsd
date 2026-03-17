@@ -20,13 +20,13 @@ export function DocsLayout({ children }: DocsLayoutProps) {
 
   return (
     <div className="flex justify-between gap-x-(--lsd-spacing-large) p-(--lsd-spacing-largest)">
-      <div className="flex-auto hidden xl:block" />
+      <div className="flex-auto hidden xl:block mr-(--lsd-spacing-large)" />
       <div className="flex basis-4xl max-w-full mx-auto shrink flex-col">{children}</div>
-      {sections.length > 0 && (
-        <div className="flex-auto hidden xl:flex justify-center relative">
-          <TableOfContents items={sections} />
-        </div>
-      )}
+
+      <div className="flex-auto hidden xl:flex justify-center relative xl:ml-(--lsd-spacing-large)">
+        {sections.length > 0 && <TableOfContents items={sections} />}
+      </div>
+
       <Toaster />
     </div>
   );
