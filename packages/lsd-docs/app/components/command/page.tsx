@@ -819,50 +819,65 @@ export function CommandDialogExample() {
         </PageSection>
 
         <PageSection title="Accessibility">
-          <Typography variant="body1" className="mb-(--lsd-spacing-base)">
+          <Typography variant="body1">
             The Command component follows WAI-ARIA patterns for command palettes and is fully
             accessible via keyboard.
           </Typography>
 
-          <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-            Keyboard Navigation
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>Tab</strong> - Navigate to the command input
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>Arrow Down / Arrow Up</strong> - Navigate through command items
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>Enter</strong> - Select the highlighted command
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>Escape</strong> - Close the command dialog
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-base)">
-            • <strong>Home / End</strong> - Jump to first or last item
-          </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Full keyboard support for command palette</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Tab</strong> - Navigate to the command input
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Arrow Down / Arrow Up</strong> - Navigate through command items
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Enter</strong> - Select the highlighted command
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Escape</strong> - Close the command dialog
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Home / End</strong> - Jump to first or last item
+              </Typography>
+            </CardContent>
+          </Card>
 
-          <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-            ARIA Attributes
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • Use <code>aria-label</code> for command inputs without visible labels
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • Use <code>aria-describedby</code> to link to supporting text
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-base)">
-            • Use <code>aria-disabled</code> for disabled command items
-          </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA support for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Use <code>aria-label</code> for command inputs without visible labels
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Use <code>aria-describedby</code> to link to supporting text
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Use <code>aria-disabled</code> for disabled command items
+              </Typography>
+            </CardContent>
+          </Card>
 
-          <Typography variant="h3" className="mb-(--lsd-spacing-base)">
-            Focus States
-          </Typography>
-          <Typography variant="body2" className="block">
-            Components have visible focus states that follow the LSD design system's focus
-            indicators, ensuring keyboard users can always see which element has focus.
-          </Typography>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Components have visible focus states that follow the LSD design system's focus
+                indicators, ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageNavigation
