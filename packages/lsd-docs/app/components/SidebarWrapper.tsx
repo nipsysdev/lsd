@@ -17,6 +17,7 @@ import {
   SidebarProvider,
 } from '@nipsys/shadcn-lsd';
 import { BookOpenIcon, GithubLogoIcon } from '@phosphor-icons/react';
+import Link from 'next/link';
 import type React from 'react';
 import { navItems } from '../config/navigation';
 
@@ -33,15 +34,15 @@ export default function SidebarWrapper({ currentPath, children }: SidebarWrapper
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton size="lg" asChild>
-                <a href="/">
-                  <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                <Link href="/">
+                  <div className="flex aspect-square size-8 items-center justify-center">
                     <BookOpenIcon className="size-4" weight="duotone" />
                   </div>
                   <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
                     <span className="font-semibold">shadcn-lsd</span>
                     <span className="text-xs">v0.2.5</span>
                   </div>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -105,14 +106,14 @@ export default function SidebarWrapper({ currentPath, children }: SidebarWrapper
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
-                <a
+                <Link
                   href="https://github.com/nipsysdev/shadcn-lsd"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <GithubLogoIcon weight="duotone" />
                   <span>GitHub</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
