@@ -56,7 +56,7 @@ export default function MyComponent() {
 
         <PageSection title="Variants">
           <Typography variant="body1">
-            Badges come in seven variants for different semantic meanings and visual styles.
+            Badges come in eight variants for different semantic meanings and visual styles.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
