@@ -109,9 +109,10 @@ export default function LabelPage() {
   // Send initial params when iframes load
   useEffect(() => {
     const iframes = [basicIframeRef.current, variantsIframeRef.current, sizesIframeRef.current];
+    const cleanupFunctions: Array<() => void> = [];
 
-    iframes.forEach(iframe => {
-      if (!iframe) return;
+    for (const iframe of iframes) {
+      if (!iframe) continue;
 
       const handleLoad = () => {
         const params: ExampleParams = {
@@ -123,7 +124,16 @@ export default function LabelPage() {
       };
 
       iframe.addEventListener('load', handleLoad);
-    });
+      cleanupFunctions.push(() => {
+        iframe.removeEventListener('load', handleLoad);
+      });
+    }
+
+    return () => {
+      for (const cleanup of cleanupFunctions) {
+        cleanup();
+      }
+    };
   }, [theme, accent, font]);
 
   return (
@@ -166,23 +176,22 @@ export default function MyComponent() {
 
         <PageSection title="Usage">
           <Typography variant="body1">
-            Basic usage of the Label component with form inputs.
+            Basic usage of the Label component with checkboxes.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Demo</CardTitle>
-              <CardDescription>
-                A simple form with labels for email and password fields.
-              </CardDescription>
+              <CardDescription>Labels paired with checkboxes for form controls.</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
+                <div className="w-full overflow-hidden">
                   <iframe
                     ref={basicIframeRef}
                     src="/examples/label/basic"
-                    className="size-full"
+                    className="w-full"
+                    style={{ height: 'auto', minHeight: '200px' }}
                     title="Label Basic Example"
                   />
                 </div>
@@ -194,7 +203,7 @@ export default function MyComponent() {
                     <CodeExample
                       code={`'use client';
 
-import { Label } from '@nipsys/shadcn-lsd';
+import { Checkbox, Label } from '@nipsys/shadcn-lsd';
 import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
 
 export function LabelBasicExample() {
@@ -229,25 +238,19 @@ export function LabelBasicExample() {
 
   return (
     <div className="w-full max-w-sm space-y-(--lsd-spacing-base)">
-        <div>
-          <Label htmlFor="email">Email</Label>
-          <input
-            id="email"
-            type="email"
-            placeholder="you@example.com"
-            className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-          />
-        </div>
-        <div>
-          <Label htmlFor="password">Password</Label>
-          <input
-            id="password"
-            type="password"
-            placeholder="••••••••"
-            className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-          />
-        </div>
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="terms" />
+        <Label htmlFor="terms">Accept terms and conditions</Label>
       </div>
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="newsletter" defaultChecked />
+        <Label htmlFor="newsletter">Subscribe to newsletter</Label>
+      </div>
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="updates" />
+        <Label htmlFor="updates">Receive product updates</Label>
+      </div>
+    </div>
   );
 }`}
                     />
@@ -270,11 +273,12 @@ export function LabelBasicExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
+                <div className="w-full overflow-hidden">
                   <iframe
                     ref={variantsIframeRef}
                     src="/examples/label/variants"
-                    className="size-full"
+                    className="w-full"
+                    style={{ height: 'auto', minHeight: '200px' }}
                     title="Label Variants Example"
                   />
                 </div>
@@ -286,7 +290,7 @@ export function LabelBasicExample() {
                     <CodeExample
                       code={`'use client';
 
-import { Label } from '@nipsys/shadcn-lsd';
+import { Checkbox, Label } from '@nipsys/shadcn-lsd';
 import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
 
 export function LabelVariantsExample() {
@@ -321,27 +325,17 @@ export function LabelVariantsExample() {
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
-      <div>
-        <Label variant="default" htmlFor="default-input">
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="default-checkbox" />
+        <Label variant="default" htmlFor="default-checkbox">
           Default Label
         </Label>
-        <input
-          id="default-input"
-          type="text"
-          placeholder="Default variant"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
       </div>
-      <div>
-        <Label variant="secondary" htmlFor="secondary-input">
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="secondary-checkbox" defaultChecked />
+        <Label variant="secondary" htmlFor="secondary-checkbox">
           Secondary Label
         </Label>
-        <input
-          id="secondary-input"
-          type="text"
-          placeholder="Secondary variant"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
       </div>
     </div>
   );
@@ -366,11 +360,12 @@ export function LabelVariantsExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
+                <div className="w-full overflow-hidden">
                   <iframe
                     ref={sizesIframeRef}
                     src="/examples/label/sizes"
-                    className="size-full"
+                    className="w-full"
+                    style={{ height: 'auto', minHeight: '200px' }}
                     title="Label Sizes Example"
                   />
                 </div>
@@ -382,7 +377,7 @@ export function LabelVariantsExample() {
                     <CodeExample
                       code={`'use client';
 
-import { Label } from '@nipsys/shadcn-lsd';
+import { Checkbox, Label } from '@nipsys/shadcn-lsd';
 import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
 
 export function LabelSizesExample() {
@@ -417,38 +412,23 @@ export function LabelSizesExample() {
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
-      <div>
-        <Label size="sm" htmlFor="small-input">
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="small-checkbox" />
+        <Label size="sm" htmlFor="small-checkbox">
           Small Label
         </Label>
-        <input
-          id="small-input"
-          type="text"
-          placeholder="Small size"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
       </div>
-      <div>
-        <Label size="md" htmlFor="medium-input">
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="medium-checkbox" defaultChecked />
+        <Label size="md" htmlFor="medium-checkbox">
           Medium Label
         </Label>
-        <input
-          id="medium-input"
-          type="text"
-          placeholder="Medium size"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
       </div>
-      <div>
-        <Label size="lg" htmlFor="large-input">
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="large-checkbox" />
+        <Label size="lg" htmlFor="large-checkbox">
           Large Label
         </Label>
-        <input
-          id="large-input"
-          type="text"
-          placeholder="Large size"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
       </div>
     </div>
   );
