@@ -485,7 +485,8 @@ export default function MyComponent() {
                   <strong>Default:</strong> false
                 </Typography>
                 <Typography variant="body2" className="mt-2">
-                  Displays a spinner and disables the button
+                  Displays a spinner and disables the button. When loading=true with children, the
+                  text is shown with 50% opacity.
                 </Typography>
               </CardContent>
             </Card>
