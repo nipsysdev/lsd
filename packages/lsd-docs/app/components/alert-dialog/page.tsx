@@ -12,115 +12,19 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { type ExampleParams, sendToIframe } from '@/components/docs/useIframeSync';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 
 export default function AlertDialogPage() {
   const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
-  const [accent, setAccent] = useState<string>('monochrome');
-  const [font, setFont] = useState<string>('monospace');
 
-  // Track theme changes
-  useEffect(() => {
-    const updateTheme = () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      setTheme(isDark ? 'dark' : 'light');
-    };
-
-    // Initial check
-    updateTheme();
-
-    // Listen for theme changes
-    const observer = new MutationObserver(updateTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Track accent theme changes
-  useEffect(() => {
-    const updateAccent = () => {
-      const accent = document.documentElement.getAttribute('data-theme');
-      setAccent(accent || 'monochrome');
-    };
-
-    // Initial check
-    updateAccent();
-
-    // Listen for accent changes
-    const observer = new MutationObserver(updateAccent);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-theme'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Track font changes
-  useEffect(() => {
-    const updateFont = () => {
-      if (document.documentElement.classList.contains('font-serif')) {
-        setFont('serif');
-      } else if (document.documentElement.classList.contains('font-sans')) {
-        setFont('sans-serif');
-      } else if (document.documentElement.classList.contains('font-mono')) {
-        setFont('monospace');
-      }
-    };
-
-    // Initial check
-    updateFont();
-
-    // Listen for font changes
-    const observer = new MutationObserver(updateFont);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Send params to iframes when theme, accent, or font changes
-  useEffect(() => {
-    const params: ExampleParams = {
-      theme,
-      accent,
-      font,
-    };
-    sendToIframe(basicIframeRef.current, 'example-params', params);
-  }, [theme, accent, font]);
-
-  // Send initial params when iframes load
-  useEffect(() => {
-    const iframe = basicIframeRef.current;
-    if (!iframe) return;
-
-    const handleLoad = () => {
-      const params: ExampleParams = {
-        theme,
-        accent,
-        font,
-      };
-      sendToIframe(iframe, 'example-params', params);
-    };
-
-    iframe.addEventListener('load', handleLoad);
-    return () => {
-      iframe.removeEventListener('load', handleLoad);
-    };
-  }, [theme, accent, font]);
+  useIframeThemeSync(basicIframeRef);
 
   return (
     <DocsLayout>
