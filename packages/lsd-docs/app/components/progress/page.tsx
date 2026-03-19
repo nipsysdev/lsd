@@ -296,17 +296,17 @@ function MyComponent() {
                   <Button
                     variant="outlined"
                     size="sm"
-                    onClick={() => setControlledProgress(Math.max(0, controlledProgress - 10))}
+                    onClick={() => setProgress(Math.max(0, progress - 10))}
                   >
                     Decrease
                   </Button>
-                  <Button variant="outlined" size="sm" onClick={() => setControlledProgress(0)}>
+                  <Button variant="outlined" size="sm" onClick={() => setProgress(0)}>
                     Reset
                   </Button>
                   <Button
                     variant="outlined"
                     size="sm"
-                    onClick={() => setControlledProgress(Math.min(100, controlledProgress + 10))}
+                    onClick={() => setProgress(Math.min(100, progress + 10))}
                   >
                     Increase
                   </Button>
