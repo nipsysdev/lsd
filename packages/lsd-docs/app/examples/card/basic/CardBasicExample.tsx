@@ -14,6 +14,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@nipsys/shadcn-lsd';
+import { DotsThreeIcon } from '@phosphor-icons/react';
 import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import {
@@ -30,6 +31,7 @@ export const CODE = `import {
   PopoverContent,
   PopoverTrigger,
 } from '@nipsys/shadcn-lsd';
+import { DotsThreeIcon } from '@phosphor-icons/react';
 
 export function Example() {
   return (
@@ -43,22 +45,7 @@ export function Example() {
           <Popover>
             <PopoverTrigger asChild>
               <Button variant="ghost" size="square-sm" aria-label="More options">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <title>More options</title>
-                  <circle cx="12" cy="12" r="1" />
-                  <circle cx="19" cy="12" r="1" />
-                  <circle cx="5" cy="12" r="1" />
-                </svg>
+                <DotsThreeIcon weight="bold" />
               </Button>
             </PopoverTrigger>
             <PopoverContent align="end" size="sm" className="p-0">
@@ -106,22 +93,7 @@ export function CardBasicExample() {
           <Popover>
             <PopoverTrigger asChild>
               <Button variant="ghost" size="square-sm" aria-label="More options">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <title>More options</title>
-                  <circle cx="12" cy="12" r="1" />
-                  <circle cx="19" cy="12" r="1" />
-                  <circle cx="5" cy="12" r="1" />
-                </svg>
+                <DotsThreeIcon weight="bold" />
               </Button>
             </PopoverTrigger>
             <PopoverContent align="end" size="sm" className="p-0">

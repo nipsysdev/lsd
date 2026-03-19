@@ -20,6 +20,7 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as DialogBasicExampleCODE } from '@/examples/dialog/basic/DialogBasicExample';
 
 export default function DialogPage() {
   const basicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -121,55 +122,7 @@ export default function DialogPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`'use client';
-
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  Button,
-} from '@nipsys/shadcn-lsd';
-
-export function DialogBasicExample() {
-  return (
-    <Dialog>
-        <DialogTrigger asChild>
-          <Button>Open Dialog</Button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Dialog Title</DialogTitle>
-            <DialogDescription>
-              This is a dialog component. You can put any content here, including forms,
-              information, or interactive elements.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="py-(--lsd-spacing-base)">
-            <p className="text-sm">
-              Dialogs are used to focus the user's attention on a specific task or piece of
-              information. They can contain forms, confirmations, or any other content that
-              requires user interaction.
-            </p>
-          </div>
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="outlined">Cancel</Button>
-            </DialogClose>
-            <DialogClose asChild>
-              <Button>Confirm</Button>
-            </DialogClose>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-  );
-}`}
-                    />
+                    <CodeExample code={DialogBasicExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

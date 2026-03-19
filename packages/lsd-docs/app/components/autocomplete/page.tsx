@@ -20,6 +20,10 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as BASIC_CODE } from '@/examples/autocomplete/basic/AutocompleteBasicExample';
+import { CODE as FEATURES_CODE } from '@/examples/autocomplete/features/AutocompleteFeaturesExample';
+import { CODE as SIZES_CODE } from '@/examples/autocomplete/sizes/AutocompleteSizesExample';
+import { CODE as VARIANTS_CODE } from '@/examples/autocomplete/variants/AutocompleteVariantsExample';
 
 export default function AutocompletePage() {
   const basicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -94,28 +98,7 @@ export default function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { Autocomplete } from '@nipsys/shadcn-lsd';
-
-const options = [
-  { value: 'js', label: 'JavaScript' },
-  { value: 'ts', label: 'TypeScript' },
-  { value: 'py', label: 'Python' },
-  { value: 'rb', label: 'Ruby' },
-  { value: 'go', label: 'Go' },
-  { value: 'rs', label: 'Rust' },
-  { value: 'java', label: 'Java' },
-  { value: 'cs', label: 'C#' },
-  { value: 'cpp', label: 'C++' },
-  { value: 'swift', label: 'Swift' },
-];
-
-export function MyComponent() {
-  return (
-    <Autocomplete options={options} placeholder="Search languages..." />
-  );
-}`}
-                    />
+                    <CodeExample code={BASIC_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -148,24 +131,7 @@ export function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { Autocomplete } from '@nipsys/shadcn-lsd';
-
-const options = [
-  { value: '1', label: 'Option 1' },
-  { value: '2', label: 'Option 2' },
-  { value: '3', label: 'Option 3' },
-];
-
-export function MyComponent() {
-  return (
-    <div className="flex flex-col gap-(--lsd-spacing-large)">
-      <Autocomplete variant="outlined" options={options} placeholder="Outlined" />
-      <Autocomplete variant="underlined" options={options} placeholder="Underlined" />
-    </div>
-  );
-}`}
-                    />
+                    <CodeExample code={VARIANTS_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -198,27 +164,7 @@ export function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { Autocomplete } from '@nipsys/shadcn-lsd';
-
-const options = [
-  { value: '1', label: 'Option 1' },
-  { value: '2', label: 'Option 2' },
-  { value: '3', label: 'Option 3' },
-];
-
-export function MyComponent() {
-  return (
-    <div className="flex flex-col gap-(--lsd-spacing-large)">
-      <Autocomplete size="xs" options={options} placeholder="Extra Small" />
-      <Autocomplete size="sm" options={options} placeholder="Small" />
-      <Autocomplete size="md" options={options} placeholder="Medium" />
-      <Autocomplete size="lg" options={options} placeholder="Large" />
-      <Autocomplete size="xl" options={options} placeholder="Extra Large" />
-    </div>
-  );
-}`}
-                    />
+                    <CodeExample code={SIZES_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -252,47 +198,7 @@ export function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { Autocomplete } from '@nipsys/shadcn-lsd';
-
-const options = [
-  { value: '1', label: 'Option 1' },
-  { value: '2', label: 'Option 2' },
-  { value: '3', label: 'Option 3' },
-];
-
-export function MyComponent() {
-  return (
-    <div className="flex flex-col gap-(--lsd-spacing-large)">
-      <Autocomplete label="Select an option" options={options} placeholder="Choose..." />
-      <Autocomplete
-        label="With Icon"
-        options={options}
-        placeholder="Search..."
-        icon={<span>🔍</span>}
-      />
-      <Autocomplete
-        label="Clearable"
-        options={options}
-        placeholder="Type to search..."
-        clearable
-      />
-      <Autocomplete
-        label="Error State"
-        options={options}
-        placeholder="Select an option"
-        error
-      />
-      <Autocomplete
-        label="Disabled"
-        options={options}
-        placeholder="Can't select"
-        disabled
-      />
-    </div>
-  );
-}`}
-                    />
+                    <CodeExample code={FEATURES_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

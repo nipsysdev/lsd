@@ -20,6 +20,7 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as AlertDialogBasicExampleCODE } from '@/examples/alert-dialog/basic/AlertDialogBasicExample';
 
 export default function AlertDialogPage() {
   const basicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -125,45 +126,7 @@ export default function AlertDialogPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-  Button,
-} from '@nipsys/shadcn-lsd';
-
-export function MyComponent() {
-  return (
-    <AlertDialog>
-        <AlertDialogTrigger asChild>
-          <Button variant="destructive">Delete Account</Button>
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-            <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your account and remove
-              all your data from our servers.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction asChild>
-              <Button>Delete</Button>
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-  );
-}`}
-                    />
+                    <CodeExample code={AlertDialogBasicExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

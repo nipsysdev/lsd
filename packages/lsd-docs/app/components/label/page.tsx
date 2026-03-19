@@ -20,6 +20,9 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as LabelBasicExampleCODE } from '@/examples/label/basic/LabelBasicExample';
+import { CODE as LabelSizesExampleCODE } from '@/examples/label/sizes/LabelSizesExample';
+import { CODE as LabelVariantsExampleCODE } from '@/examples/label/variants/LabelVariantsExample';
 
 export default function LabelPage() {
   const basicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -92,28 +95,7 @@ export default function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { Checkbox, Label } from '@nipsys/shadcn-lsd';
-
-export function MyComponent() {
-  return (
-    <div className="space-y-(--lsd-spacing-base)">
-      <div className="flex items-center gap-(--lsd-spacing-base)">
-        <Checkbox id="terms" />
-        <Label htmlFor="terms">Accept terms and conditions</Label>
-      </div>
-      <div className="flex items-center gap-(--lsd-spacing-base)">
-        <Checkbox id="newsletter" defaultChecked />
-        <Label htmlFor="newsletter">Subscribe to newsletter</Label>
-      </div>
-      <div className="flex items-center gap-(--lsd-spacing-base)">
-        <Checkbox id="updates" />
-        <Label htmlFor="updates">Receive product updates</Label>
-      </div>
-    </div>
-  );
-}`}
-                    />
+                    <CodeExample code={LabelBasicExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -147,28 +129,7 @@ export function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { Checkbox, Label } from '@nipsys/shadcn-lsd';
-
-export function MyComponent() {
-  return (
-    <div className="flex flex-col gap-(--lsd-spacing-large)">
-      <div className="flex items-center gap-(--lsd-spacing-base)">
-        <Checkbox id="default-checkbox" />
-        <Label variant="default" htmlFor="default-checkbox">
-          Default Label
-        </Label>
-      </div>
-      <div className="flex items-center gap-(--lsd-spacing-base)">
-        <Checkbox id="secondary-checkbox" defaultChecked />
-        <Label variant="secondary" htmlFor="secondary-checkbox">
-          Secondary Label
-        </Label>
-      </div>
-    </div>
-  );
-}`}
-                    />
+                    <CodeExample code={LabelVariantsExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -202,34 +163,7 @@ export function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { Checkbox, Label } from '@nipsys/shadcn-lsd';
-
-export function MyComponent() {
-  return (
-    <div className="flex flex-col gap-(--lsd-spacing-large)">
-      <div className="flex items-center gap-(--lsd-spacing-base)">
-        <Checkbox id="small-checkbox" />
-        <Label size="sm" htmlFor="small-checkbox">
-          Small Label
-        </Label>
-      </div>
-      <div className="flex items-center gap-(--lsd-spacing-base)">
-        <Checkbox id="medium-checkbox" defaultChecked />
-        <Label size="md" htmlFor="medium-checkbox">
-          Medium Label
-        </Label>
-      </div>
-      <div className="flex items-center gap-(--lsd-spacing-base)">
-        <Checkbox id="large-checkbox" />
-        <Label size="lg" htmlFor="large-checkbox">
-          Large Label
-        </Label>
-      </div>
-    </div>
-  );
-}`}
-                    />
+                    <CodeExample code={LabelSizesExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

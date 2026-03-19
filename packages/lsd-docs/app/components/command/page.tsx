@@ -20,6 +20,10 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as CommandBasicExampleCODE } from '@/examples/command/basic/CommandBasicExample';
+import { CODE as CommandDialogExampleCODE } from '@/examples/command/dialog/CommandDialogExample';
+import { CODE as CommandGroupsExampleCODE } from '@/examples/command/groups/CommandGroupsExample';
+import { CODE as CommandShortcutsExampleCODE } from '@/examples/command/shortcuts/CommandShortcutsExample';
 
 export default function CommandPage() {
   const basicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -127,35 +131,7 @@ export default function CommandPage() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import {
-  Command,
-  CommandEmpty,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from '@nipsys/shadcn-lsd';
-
-export function MyComponent() {
-  return (
-    <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandItem>
-            <span>Calendar</span>
-          </CommandItem>
-          <CommandItem>
-            <span>Search Emoji</span>
-          </CommandItem>
-          <CommandItem>
-            <span>Calculator</span>
-          </CommandItem>
-        </CommandList>
-      </Command>
-  );
-}`}
-                    />
+                    <CodeExample code={CommandBasicExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -190,39 +166,7 @@ export function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-} from '@nipsys/shadcn-lsd';
-
-export function MyComponent() {
-  return (
-    <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem>Profile</CommandItem>
-            <CommandItem>Billing</CommandItem>
-            <CommandItem>Settings</CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </Command>
-  );
-}`}
-                    />
+                    <CodeExample code={CommandGroupsExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -257,58 +201,7 @@ export function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from '@nipsys/shadcn-lsd';
-
-export function MyComponent() {
-  return (
-    <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>
-              <span>Calendar</span>
-              <CommandShortcut>⌘K</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Search Emoji</span>
-              <CommandShortcut>⌘E</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Calculator</span>
-              <CommandShortcut>⌘C</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem>
-              <span>Profile</span>
-              <CommandShortcut>⌘P</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Billing</span>
-              <CommandShortcut>⌘B</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </Command>
-  );
-}`}
-                    />
+                    <CodeExample code={CommandShortcutsExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -343,71 +236,7 @@ export function MyComponent() {
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from '@nipsys/shadcn-lsd';
-import { useState } from 'react';
-
-export function MyComponent() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-      >
-        Open Command Palette
-      </button>
-
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>
-              <span>Calendar</span>
-              <CommandShortcut>⌘K</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Search Emoji</span>
-              <CommandShortcut>⌘E</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Calculator</span>
-              <CommandShortcut>⌘C</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem>
-              <span>Profile</span>
-              <CommandShortcut>⌘P</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Billing</span>
-              <CommandShortcut>⌘B</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
-            </CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </CommandDialog>
-    </>
-  );
-}`}
-                    />
+                    <CodeExample code={CommandDialogExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

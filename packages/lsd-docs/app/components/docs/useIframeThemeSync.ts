@@ -4,7 +4,7 @@ import * as React from 'react';
 import { type ExampleParams, sendToIframe } from './useIframeSync';
 import { useThemeSync } from './useThemeSync';
 
-export function useIframeThemeSync(...iframeRefs: React.RefObject<HTMLIFrameElement>[]) {
+export function useIframeThemeSync(...iframeRefs: React.RefObject<HTMLIFrameElement | null>[]) {
   const { theme, accent, font } = useThemeSync();
 
   // Send params to iframes when theme, accent, or font changes
@@ -25,7 +25,9 @@ export function useIframeThemeSync(...iframeRefs: React.RefObject<HTMLIFrameElem
       };
 
       iframe.addEventListener('load', handleLoad);
-      return () => { iframe.removeEventListener('load', handleLoad); };
+      return () => {
+        iframe.removeEventListener('load', handleLoad);
+      };
     });
   }, [theme, accent, font, iframeRefs]);
 }
