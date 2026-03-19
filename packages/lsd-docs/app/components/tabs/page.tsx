@@ -730,7 +730,7 @@ export default function ControlledTabs() {
                   <strong>Options:</strong> sm, md, lg
                 </Typography>
                 <Typography variant="label1" className="block">
-                  <strong>Default:</strong> lg
+                  <strong>Default:</strong> md
                 </Typography>
               </CardContent>
             </Card>
