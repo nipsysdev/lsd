@@ -14,37 +14,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@nipsys/shadcn-lsd';
-import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
+import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export function CardBasicExample() {
-  useIframeMessageListener('example-params', (params: ExampleParams) => {
-    if (params.theme) {
-      if (params.theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-
-    if (params.accent) {
-      if (params.accent === 'monochrome') {
-        document.documentElement.removeAttribute('data-theme');
-      } else {
-        document.documentElement.setAttribute('data-theme', params.accent);
-      }
-    }
-
-    if (params.font) {
-      document.documentElement.classList.remove('font-serif', 'font-sans', 'font-mono');
-      if (params.font === 'serif') {
-        document.documentElement.classList.add('font-serif');
-      } else if (params.font === 'sans-serif') {
-        document.documentElement.classList.add('font-sans');
-      } else if (params.font === 'monospace') {
-        document.documentElement.classList.add('font-mono');
-      }
-    }
-  });
+  useInIframeThemeSync();
 
   return (
     <Card className="w-full max-w-md">
