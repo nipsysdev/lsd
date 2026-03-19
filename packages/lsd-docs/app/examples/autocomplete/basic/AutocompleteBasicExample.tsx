@@ -46,9 +46,5 @@ export function AutocompleteBasicExample() {
     }
   });
 
-  return (
-    <div className="flex justify-center p-(--lsd-spacing-larger)">
-      <Autocomplete options={options} placeholder="Search languages..." />
-    </div>
-  );
+  return <Autocomplete options={options} placeholder="Search languages..." />;
 }
