@@ -200,10 +200,7 @@ export default function MyComponent() {
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
                     <CodeExample
-                      code={`'use client';
-
-import { Autocomplete } from '@nipsys/shadcn-lsd';
-import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
+                      code={`import { Autocomplete } from '@nipsys/shadcn-lsd';
 
 const options = [
   { value: 'js', label: 'JavaScript' },
@@ -218,36 +215,7 @@ const options = [
   { value: 'swift', label: 'Swift' },
 ];
 
-export function AutocompleteBasicExample() {
-  useIframeMessageListener('example-params', (params: ExampleParams) => {
-    if (params.theme) {
-      if (params.theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-
-    if (params.accent) {
-      if (params.accent === 'monochrome') {
-        document.documentElement.removeAttribute('data-theme');
-      } else {
-        document.documentElement.setAttribute('data-theme', params.accent);
-      }
-    }
-
-    if (params.font) {
-      document.documentElement.classList.remove('font-serif', 'font-sans', 'font-mono');
-      if (params.font === 'serif') {
-        document.documentElement.classList.add('font-serif');
-      } else if (params.font === 'sans-serif') {
-        document.documentElement.classList.add('font-sans');
-      } else if (params.font === 'monospace') {
-        document.documentElement.classList.add('font-mono');
-      }
-    }
-  });
-
+export function MyComponent() {
   return (
     <Autocomplete options={options} placeholder="Search languages..." />
   );
@@ -286,10 +254,7 @@ export function AutocompleteBasicExample() {
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
                     <CodeExample
-                      code={`'use client';
-
-import { Autocomplete } from '@nipsys/shadcn-lsd';
-import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
+                      code={`import { Autocomplete } from '@nipsys/shadcn-lsd';
 
 const options = [
   { value: '1', label: 'Option 1' },
@@ -297,38 +262,9 @@ const options = [
   { value: '3', label: 'Option 3' },
 ];
 
-export function AutocompleteVariantsExample() {
-  useIframeMessageListener('example-params', (params: ExampleParams) => {
-    if (params.theme) {
-      if (params.theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-
-    if (params.accent) {
-      if (params.accent === 'monochrome') {
-        document.documentElement.removeAttribute('data-theme');
-      } else {
-        document.documentElement.setAttribute('data-theme', params.accent);
-      }
-    }
-
-    if (params.font) {
-      document.documentElement.classList.remove('font-serif', 'font-sans', 'font-mono');
-      if (params.font === 'serif') {
-        document.documentElement.classList.add('font-serif');
-      } else if (params.font === 'sans-serif') {
-        document.documentElement.classList.add('font-sans');
-      } else if (params.font === 'monospace') {
-        document.documentElement.classList.add('font-mono');
-      }
-    }
-  });
-
+export function MyComponent() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <Autocomplete variant="outlined" options={options} placeholder="Outlined" />
       <Autocomplete variant="underlined" options={options} placeholder="Underlined" />
     </div>
@@ -368,10 +304,7 @@ export function AutocompleteVariantsExample() {
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
                     <CodeExample
-                      code={`'use client';
-
-import { Autocomplete } from '@nipsys/shadcn-lsd';
-import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
+                      code={`import { Autocomplete } from '@nipsys/shadcn-lsd';
 
 const options = [
   { value: '1', label: 'Option 1' },
@@ -379,38 +312,9 @@ const options = [
   { value: '3', label: 'Option 3' },
 ];
 
-export function AutocompleteSizesExample() {
-  useIframeMessageListener('example-params', (params: ExampleParams) => {
-    if (params.theme) {
-      if (params.theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-
-    if (params.accent) {
-      if (params.accent === 'monochrome') {
-        document.documentElement.removeAttribute('data-theme');
-      } else {
-        document.documentElement.setAttribute('data-theme', params.accent);
-      }
-    }
-
-    if (params.font) {
-      document.documentElement.classList.remove('font-serif', 'font-sans', 'font-mono');
-      if (params.font === 'serif') {
-        document.documentElement.classList.add('font-serif');
-      } else if (params.font === 'sans-serif') {
-        document.documentElement.classList.add('font-sans');
-      } else if (params.font === 'monospace') {
-        document.documentElement.classList.add('font-mono');
-      }
-    }
-  });
-
+export function MyComponent() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <Autocomplete size="xs" options={options} placeholder="Extra Small" />
       <Autocomplete size="sm" options={options} placeholder="Small" />
       <Autocomplete size="md" options={options} placeholder="Medium" />
@@ -454,10 +358,7 @@ export function AutocompleteSizesExample() {
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
                     <CodeExample
-                      code={`'use client';
-
-import { Autocomplete } from '@nipsys/shadcn-lsd';
-import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
+                      code={`import { Autocomplete } from '@nipsys/shadcn-lsd';
 
 const options = [
   { value: '1', label: 'Option 1' },
@@ -465,38 +366,9 @@ const options = [
   { value: '3', label: 'Option 3' },
 ];
 
-export function AutocompleteFeaturesExample() {
-  useIframeMessageListener('example-params', (params: ExampleParams) => {
-    if (params.theme) {
-      if (params.theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-
-    if (params.accent) {
-      if (params.accent === 'monochrome') {
-        document.documentElement.removeAttribute('data-theme');
-      } else {
-        document.documentElement.setAttribute('data-theme', params.accent);
-      }
-    }
-
-    if (params.font) {
-      document.documentElement.classList.remove('font-serif', 'font-sans', 'font-mono');
-      if (params.font === 'serif') {
-        document.documentElement.classList.add('font-serif');
-      } else if (params.font === 'sans-serif') {
-        document.documentElement.classList.add('font-sans');
-      } else if (params.font === 'monospace') {
-        document.documentElement.classList.add('font-mono');
-      }
-    }
-  });
-
+export function MyComponent() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <Autocomplete label="Select an option" options={options} placeholder="Choose..." />
       <Autocomplete
         label="With Icon"
