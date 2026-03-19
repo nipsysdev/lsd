@@ -1,6 +1,6 @@
 'use client';
 
-import { Label } from '@nipsys/shadcn-lsd';
+import { Checkbox, Label } from '@nipsys/shadcn-lsd';
 import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
 
 export function LabelBasicExample() {
@@ -35,23 +35,17 @@ export function LabelBasicExample() {
 
   return (
     <div className="w-full max-w-sm space-y-(--lsd-spacing-base)">
-      <div>
-        <Label htmlFor="email">Email</Label>
-        <input
-          id="email"
-          type="email"
-          placeholder="you@example.com"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="terms" />
+        <Label htmlFor="terms">Accept terms and conditions</Label>
       </div>
-      <div>
-        <Label htmlFor="password">Password</Label>
-        <input
-          id="password"
-          type="password"
-          placeholder="••••••••"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="newsletter" defaultChecked />
+        <Label htmlFor="newsletter">Subscribe to newsletter</Label>
+      </div>
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="updates" />
+        <Label htmlFor="updates">Receive product updates</Label>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { Label } from '@nipsys/shadcn-lsd';
+import { Checkbox, Label } from '@nipsys/shadcn-lsd';
 import { type ExampleParams, useIframeMessageListener } from '@/components/docs/useIframeSync';
 
 export function LabelVariantsExample() {
@@ -35,27 +35,17 @@ export function LabelVariantsExample() {
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
-      <div>
-        <Label variant="default" htmlFor="default-input">
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="default-checkbox" />
+        <Label variant="default" htmlFor="default-checkbox">
           Default Label
         </Label>
-        <input
-          id="default-input"
-          type="text"
-          placeholder="Default variant"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
       </div>
-      <div>
-        <Label variant="secondary" htmlFor="secondary-input">
+      <div className="flex items-center gap-(--lsd-spacing-base)">
+        <Checkbox id="secondary-checkbox" defaultChecked />
+        <Label variant="secondary" htmlFor="secondary-checkbox">
           Secondary Label
         </Label>
-        <input
-          id="secondary-input"
-          type="text"
-          placeholder="Secondary variant"
-          className="mt-(--lsd-spacing-smaller) w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-        />
       </div>
     </div>
   );
