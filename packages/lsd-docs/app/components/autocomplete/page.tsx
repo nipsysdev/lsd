@@ -137,16 +137,15 @@ export default function AutocompletePage() {
     <DocsLayout>
       <PageHeader
         title="Autocomplete"
-        description="A text input with a dropdown list of suggestions that filters as you type."
+        description="A dropdown select component that provides a list of selectable options."
       />
 
       <PageContent>
         <PageSection title="About Autocomplete">
           <Typography variant="body1" className="block">
-            The Autocomplete component provides a text input with a dropdown list of suggestions
-            that filters as you type. It supports both static options and asynchronous fetching,
-            making it ideal for search fields, form inputs, and any scenario where users need to
-            select from a list of options.
+            The Autocomplete component provides a dropdown list of options that users can select
+            from. It supports both static options and asynchronous fetching, making it ideal for
+            form inputs and any scenario where users need to select from a list of options.
           </Typography>
         </PageSection>
 
