@@ -24,7 +24,7 @@ import { PageSection } from '@/components/docs/PageSection';
 
 export default function ProgressPage() {
   const [paused, setPaused] = useState(false);
-  const [controlledProgress, setControlledProgress] = useState(50);
+  const [controlledProgress] = useState(50);
 
   useEffect(() => {
     setTimeout(() => {

@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { type ExampleParams, useIframeMessageListener } from './useIframeSync';
 
 export function useInIframeThemeSync() {
