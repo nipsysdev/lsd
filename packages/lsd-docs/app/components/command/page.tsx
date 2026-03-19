@@ -218,7 +218,7 @@ export default function CommandPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={basicIframeRef}
                     src="/examples/command/basic"
@@ -274,8 +274,7 @@ export function CommandBasicExample() {
   });
 
   return (
-    <div className="flex items-center justify-center p-(--lsd-spacing-larger)">
-      <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
+    <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
@@ -290,7 +289,6 @@ export function CommandBasicExample() {
           </CommandItem>
         </CommandList>
       </Command>
-    </div>
   );
 }`}
                     />
@@ -315,7 +313,7 @@ export function CommandBasicExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={groupsIframeRef}
                     src="/examples/command/groups"
@@ -373,8 +371,7 @@ export function CommandGroupsExample() {
   });
 
   return (
-    <div className="flex items-center justify-center p-(--lsd-spacing-larger)">
-      <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
+    <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
@@ -391,7 +388,6 @@ export function CommandGroupsExample() {
           </CommandGroup>
         </CommandList>
       </Command>
-    </div>
   );
 }`}
                     />
@@ -416,7 +412,7 @@ export function CommandGroupsExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={shortcutsIframeRef}
                     src="/examples/command/shortcuts"
@@ -475,8 +471,7 @@ export function CommandShortcutsExample() {
   });
 
   return (
-    <div className="flex items-center justify-center p-(--lsd-spacing-larger)">
-      <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
+    <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
@@ -511,7 +506,6 @@ export function CommandShortcutsExample() {
           </CommandGroup>
         </CommandList>
       </Command>
-    </div>
   );
 }`}
                     />
@@ -536,7 +530,7 @@ export function CommandShortcutsExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={dialogIframeRef}
                     src="/examples/command/dialog"
@@ -598,7 +592,7 @@ export function CommandDialogExample() {
   });
 
   return (
-    <div className="flex items-center justify-center p-(--lsd-spacing-larger)">
+    <>
       <button
         type="button"
         onClick={() => setOpen(true)}
@@ -642,7 +636,7 @@ export function CommandDialogExample() {
           </CommandGroup>
         </CommandList>
       </CommandDialog>
-    </div>
+    </>
   );
 }`}
                     />

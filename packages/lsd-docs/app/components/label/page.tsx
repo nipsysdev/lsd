@@ -178,7 +178,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={basicIframeRef}
                     src="/examples/label/basic"
@@ -228,8 +228,7 @@ export function LabelBasicExample() {
   });
 
   return (
-    <div className="flex items-center justify-center p-(--lsd-spacing-larger)">
-      <div className="w-full max-w-sm space-y-(--lsd-spacing-base)">
+    <div className="w-full max-w-sm space-y-(--lsd-spacing-base)">
         <div>
           <Label htmlFor="email">Email</Label>
           <input
@@ -249,7 +248,6 @@ export function LabelBasicExample() {
           />
         </div>
       </div>
-    </div>
   );
 }`}
                     />
@@ -272,7 +270,7 @@ export function LabelBasicExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={variantsIframeRef}
                     src="/examples/label/variants"
@@ -368,7 +366,7 @@ export function LabelVariantsExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={sizesIframeRef}
                     src="/examples/label/sizes"

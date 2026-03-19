@@ -204,7 +204,7 @@ export default function DialogPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={basicIframeRef}
                     src="/examples/dialog/basic"
@@ -234,8 +234,7 @@ import {
 
 export function DialogBasicExample() {
   return (
-    <div className="flex justify-center p-(--lsd-spacing-larger)">
-      <Dialog>
+    <Dialog>
         <DialogTrigger asChild>
           <Button>Open Dialog</Button>
         </DialogTrigger>
@@ -264,7 +263,6 @@ export function DialogBasicExample() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </div>
   );
 }`}
                     />

@@ -186,7 +186,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={basicIframeRef}
                     src="/examples/autocomplete/basic"
@@ -249,9 +249,7 @@ export function AutocompleteBasicExample() {
   });
 
   return (
-    <div className="flex items-center justify-center p-(--lsd-spacing-larger)">
-      <Autocomplete options={options} placeholder="Search languages..." />
-    </div>
+    <Autocomplete options={options} placeholder="Search languages..." />
   );
 }`}
                     />
@@ -274,7 +272,7 @@ export function AutocompleteBasicExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={variantsIframeRef}
                     src="/examples/autocomplete/variants"
@@ -356,7 +354,7 @@ export function AutocompleteVariantsExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={sizesIframeRef}
                     src="/examples/autocomplete/sizes"
@@ -442,7 +440,7 @@ export function AutocompleteSizesExample() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={featuresIframeRef}
                     src="/examples/autocomplete/features"

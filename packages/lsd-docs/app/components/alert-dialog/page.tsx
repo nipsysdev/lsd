@@ -208,7 +208,7 @@ export default function AlertDialogPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
+                <div className="aspect-video w-full overflow-hidden">
                   <iframe
                     ref={basicIframeRef}
                     src="/examples/alert-dialog/basic"
@@ -269,8 +269,7 @@ export function AlertDialogBasicExample() {
   });
 
   return (
-    <div className="flex justify-center p-(--lsd-spacing-larger)">
-      <AlertDialog>
+    <AlertDialog>
         <AlertDialogTrigger asChild>
           <Button variant="destructive">Delete Account</Button>
         </AlertDialogTrigger>
@@ -290,7 +289,6 @@ export function AlertDialogBasicExample() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    </div>
   );
 }`}
                     />
