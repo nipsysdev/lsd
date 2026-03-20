@@ -140,12 +140,8 @@ describe('TooltipContent', () => {
     const content = document.querySelector('[data-slot="tooltip-content"]');
     const arrow = content?.querySelector('svg');
     expect(arrow).toBeInTheDocument();
-    expect(arrow).toHaveClass('lsd:bg-lsd-surface');
-    expect(arrow).toHaveClass('lsd:border-lsd-border');
-    expect(arrow).toHaveClass('lsd:border');
+    expect(arrow).toHaveAttribute('fill', 'var(--lsd-border)');
     expect(arrow).toHaveClass('lsd:z-50');
     expect(arrow).toHaveClass('lsd:size-2.5');
-    expect(arrow).toHaveClass('lsd:translate-y-[calc(-50%_-_2px)]');
-    expect(arrow).toHaveClass('lsd:rotate-45');
   });
 });

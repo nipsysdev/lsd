@@ -25,7 +25,7 @@ function TooltipContent({
         {...props}
       >
         {children}
-        <TooltipPrimitive.Arrow className="lsd:bg-lsd-surface lsd:border-lsd-border lsd:border lsd:z-50 lsd:size-2.5 lsd:translate-y-[calc(-50%_-_2px)] lsd:rotate-45" />
+        <TooltipPrimitive.Arrow className="lsd:z-50 lsd:size-2.5" fill="var(--lsd-border)" />
       </TooltipPrimitive.Content>
     </TooltipPortal>
   );
