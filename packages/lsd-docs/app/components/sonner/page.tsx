@@ -13,15 +13,21 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { toast } from 'sonner';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { SonnerExample, CODE as SonnerExampleCODE } from '@/examples/sonner/SonnerExample';
 
 export default function SonnerPage() {
+  const sonnerIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(sonnerIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -64,311 +70,33 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Toast Types">
+        <PageSection title="Sonner Examples">
           <Typography variant="body1">
-            Sonner provides multiple toast types for different notification states.
+            Various toast types, positions, and features including custom duration, actions,
+            promise-based toasts, and rich content.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>All Toast Types</CardTitle>
-              <CardDescription>Display different toast types with various styling</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button variant="outlined" onClick={() => toast('Simple toast message')}>
-                  Show Simple Toast
-                </Button>
-                <Button
-                  variant="outlined"
-                  onClick={() => toast.success('Changes saved successfully!')}
-                >
-                  Show Success Toast
-                </Button>
-                <Button variant="outlined" onClick={() => toast.error('Something went wrong!')}>
-                  Show Error Toast
-                </Button>
-                <Button
-                  variant="outlined"
-                  onClick={() => toast.warning('Please review your changes')}
-                >
-                  Show Warning Toast
-                </Button>
-                <Button variant="outlined" onClick={() => toast.info('New feature available')}>
-                  Show Info Toast
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`toast('Simple toast message')
-toast.success('Changes saved successfully!')
-toast.error('Something went wrong!')
-toast.warning('Please review your changes')
-toast.info('New feature available')`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Features">
-          <Typography variant="body1">
-            Additional features like custom duration, position options, and promise-based toasts.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Custom Duration</CardTitle>
-              <CardDescription>Control how long the toast is displayed</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button
-                  variant="outlined"
-                  onClick={() => toast('Short duration', { duration: 2000 })}
-                >
-                  2 seconds
-                </Button>
-                <Button
-                  variant="outlined"
-                  onClick={() => toast('Long duration', { duration: 10000 })}
-                >
-                  10 seconds
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`toast('Short duration', { duration: 2000 })
-toast('Long duration', { duration: 10000 })`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>With Actions</CardTitle>
-              <CardDescription>Add action buttons to toasts</CardDescription>
+              <CardTitle>All Sonner Features</CardTitle>
+              <CardDescription>Different toast types, positions, and features</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <Button
-                  variant="outlined"
-                  onClick={() =>
-                    toast('Event has been created', {
-                      action: {
-                        label: 'Undo',
-                        onClick: () => console.log('Undo clicked'),
-                      },
-                    })
-                  }
-                >
-                  Show with Action
-                </Button>
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={sonnerIframeRef}
+                    src="/examples/sonner"
+                    className="size-full"
+                    title="Sonner Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`toast('Event has been created', {
-  action: {
-    label: 'Undo',
-    onClick: () => console.log('Undo clicked'),
-  },
-})`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Promise-based Toasts</CardTitle>
-              <CardDescription>
-                Show loading state and success/error for async operations
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Button
-                  variant="outlined"
-                  onClick={() => {
-                    const promise = new Promise(resolve =>
-                      setTimeout(() => resolve('Data loaded!'), 2000)
-                    );
-                    toast.promise(promise, {
-                      loading: 'Loading...',
-                      success: data => String(data),
-                      error: 'Error loading data',
-                    });
-                  }}
-                >
-                  Show Promise Toast
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`const promise = new Promise((resolve) =>
-  setTimeout(() => resolve('Data loaded!'), 2000)
-)
-
-toast.promise(promise, {
-  loading: 'Loading...',
-  success: (data) => data,
-  error: 'Error loading data',
-})`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Persistent Toasts</CardTitle>
-              <CardDescription>Toasts that stay until manually dismissed</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button
-                  variant="outlined"
-                  onClick={() =>
-                    toast('This toast will not auto-dismiss', {
-                      duration: Number.POSITIVE_INFINITY,
-                    })
-                  }
-                >
-                  Show Persistent Toast
-                </Button>
-                <Button variant="outlined" onClick={() => toast.dismiss()}>
-                  Dismiss All Toasts
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`toast('This toast will not auto-dismiss', {
-  duration: Infinity,
-})
-
-toast.dismiss()`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Positioned Toasts</CardTitle>
-              <CardDescription>Display toasts in different corners of the screen</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button
-                  variant="outlined"
-                  onClick={() => toast('Top-left toast', { position: 'top-left' })}
-                >
-                  Top-Left
-                </Button>
-                <Button
-                  variant="outlined"
-                  onClick={() => toast('Top-right toast', { position: 'top-right' })}
-                >
-                  Top-Right
-                </Button>
-                <Button
-                  variant="outlined"
-                  onClick={() => toast('Bottom-left toast', { position: 'bottom-left' })}
-                >
-                  Bottom-Left
-                </Button>
-                <Button
-                  variant="outlined"
-                  onClick={() => toast('Bottom-right toast', { position: 'bottom-right' })}
-                >
-                  Bottom-Right
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`toast('Top-left toast', { position: 'top-left' })
-toast('Top-right toast', { position: 'top-right' })
-toast('Bottom-left toast', { position: 'bottom-left' })
-toast('Bottom-right toast', { position: 'bottom-right' })`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Rich Toasts</CardTitle>
-              <CardDescription>Create custom toasts with rich content and styling</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Button
-                  variant="outlined"
-                  onClick={() =>
-                    toast(
-                      <div>
-                        <h4 className="lsd:font-semibold">Event Created</h4>
-                        <p className="lsd:text-sm">Your event has been created successfully.</p>
-                      </div>,
-                      {
-                        duration: 5000,
-                      }
-                    )
-                  }
-                >
-                  Show Rich Toast
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`import { CheckIcon } from '@phosphor-icons/react'
-
-toast(
-  <div>
-    <h4 className="lsd:font-semibold">Event Created</h4>
-    <p className="lsd:text-sm">
-      Your event has been created successfully.
-    </p>
-  </div>,
-  {
-    duration: 5000,
-  },
-)`}
-                    />
+                    <CodeExample code={SonnerExampleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
