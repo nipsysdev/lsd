@@ -556,8 +556,8 @@ export default function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Accordion', href: '/components/accordion' }}
-          next={{ title: 'Skeleton', href: '/components/skeleton' }}
+          previous={{ title: 'Autocomplete', href: '/components/autocomplete' }}
+          next={{ title: 'Button', href: '/components/button' }}
         />
       </PageContent>
     </DocsLayout>

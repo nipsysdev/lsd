@@ -498,8 +498,8 @@ export default function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Switch', href: '/components/switch' }}
-          next={{ title: 'Select', href: '/components/select' }}
+          previous={{ title: 'Button', href: '/components/button' }}
+          next={{ title: 'Card', href: '/components/card' }}
         />
       </PageContent>
     </DocsLayout>

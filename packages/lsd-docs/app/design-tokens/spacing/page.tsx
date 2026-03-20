@@ -175,8 +175,8 @@ export default function SpacingPage() {
           href: '/design-tokens/typography',
         }}
         next={{
-          title: 'Components',
-          href: '/components/button',
+          title: 'Alert Dialog',
+          href: '/components/alert-dialog',
         }}
       />
     </DocsLayout>

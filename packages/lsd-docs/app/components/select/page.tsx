@@ -735,12 +735,12 @@ export default function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Label',
-          href: '/components/label',
+          title: 'Progress',
+          href: '/components/progress',
         }}
         next={{
-          title: 'Switch',
-          href: '/components/switch',
+          title: 'Sidebar',
+          href: '/components/sidebar',
         }}
       />
     </DocsLayout>

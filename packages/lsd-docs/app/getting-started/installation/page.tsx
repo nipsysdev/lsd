@@ -113,8 +113,8 @@ export default function Home() {
 
       <PageNavigation
         next={{
-          title: 'Theming',
-          href: '/getting-started/theming',
+          title: 'Colours',
+          href: '/design-tokens/colours',
         }}
       />
     </DocsLayout>

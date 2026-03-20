@@ -368,8 +368,8 @@ export default function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Dialog', href: '/components/dialog' }}
-          next={{ title: 'Sonner', href: '/components/sonner' }}
+          previous={{ title: 'Menubar', href: '/components/menubar' }}
+          next={{ title: 'Select', href: '/components/select' }}
         />
       </PageContent>
     </DocsLayout>

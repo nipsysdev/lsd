@@ -394,8 +394,8 @@ export default function AlertDialogPage() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Autocomplete', href: '/components/autocomplete' }}
-          next={{ title: 'Badge', href: '/components/badge' }}
+          previous={{ title: 'Spacing', href: '/design-tokens/spacing' }}
+          next={{ title: 'Autocomplete', href: '/components/autocomplete' }}
         />
       </PageContent>
     </DocsLayout>
