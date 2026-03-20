@@ -38,16 +38,17 @@ describe('TooltipContent', () => {
       </Tooltip>
     );
     const content = document.querySelector('[data-slot="tooltip-content"]');
-    expect(content).toHaveClass('lsd:bg-foreground');
-    expect(content).toHaveClass('lsd:text-background');
+    expect(content).toHaveClass('lsd:bg-lsd-surface');
+    expect(content).toHaveClass('lsd:text-lsd-text-primary');
     expect(content).toHaveClass('lsd:animate-in');
     expect(content).toHaveClass('lsd:fade-in-0');
     expect(content).toHaveClass('lsd:zoom-in-95');
+    expect(content).toHaveClass('lsd:border');
+    expect(content).toHaveClass('lsd:border-lsd-border');
+    expect(content).toHaveClass('lsd:shadow-sm');
     expect(content).toHaveClass('lsd:z-50');
     expect(content).toHaveClass('lsd:w-fit');
-    expect(content).toHaveClass('lsd:rounded-md');
-    expect(content).toHaveClass('lsd:px-3');
-    expect(content).toHaveClass('lsd:py-1.5');
+    expect(content).toHaveClass('lsd:p-(--lsd-spacing-smaller)');
     expect(content).toHaveClass('lsd:text-xs');
   });
 
@@ -139,12 +140,12 @@ describe('TooltipContent', () => {
     const content = document.querySelector('[data-slot="tooltip-content"]');
     const arrow = content?.querySelector('svg');
     expect(arrow).toBeInTheDocument();
-    expect(arrow).toHaveClass('lsd:bg-foreground');
-    expect(arrow).toHaveClass('fill-foreground');
+    expect(arrow).toHaveClass('lsd:bg-lsd-surface');
+    expect(arrow).toHaveClass('lsd:border-lsd-border');
+    expect(arrow).toHaveClass('lsd:border');
     expect(arrow).toHaveClass('lsd:z-50');
     expect(arrow).toHaveClass('lsd:size-2.5');
     expect(arrow).toHaveClass('lsd:translate-y-[calc(-50%_-_2px)]');
     expect(arrow).toHaveClass('lsd:rotate-45');
-    expect(arrow).toHaveClass('lsd:rounded-[2px]');
   });
 });

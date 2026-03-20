@@ -15,13 +15,13 @@ function TooltipContent({
         data-slot="tooltip-content"
         sideOffset={sideOffset}
         className={cn(
-          'lsd:bg-foreground lsd:text-background lsd:animate-in lsd:fade-in-0 lsd:zoom-in-95 lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2 lsd:z-50 lsd:w-fit origin-(--radix-tooltip-content-transform-origin) lsd:rounded-md lsd:px-3 lsd:py-1.5 lsd:text-xs lsd:text-balance',
+          'lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:animate-in lsd:fade-in-0 lsd:zoom-in-95 lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2 lsd:border lsd:border-lsd-border lsd:shadow-sm lsd:z-50 lsd:w-fit origin-(--radix-tooltip-content-transform-origin) lsd:p-(--lsd-spacing-smaller) lsd:text-xs lsd:text-balance',
           className
         )}
         {...props}
       >
         {children}
-        <TooltipPrimitive.Arrow className="lsd:bg-foreground fill-foreground lsd:z-50 lsd:size-2.5 lsd:translate-y-[calc(-50%_-_2px)] lsd:rotate-45 lsd:rounded-[2px]" />
+        <TooltipPrimitive.Arrow className="lsd:bg-lsd-surface lsd:border-lsd-border lsd:border lsd:z-50 lsd:size-2.5 lsd:translate-y-[calc(-50%_-_2px)] lsd:rotate-45" />
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Portal>
   );
