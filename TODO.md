@@ -29,7 +29,7 @@
 
 ---
 
-#### 2. Split TooltipExample
+#### 2. ~~Split TooltipExample~~ ✅ COMPLETED (aa0c849)
 **File:** `packages/lsd-docs/app/examples/tooltip/TooltipExample.tsx` (166 lines)
 **Split into:**
 - `basic/TooltipBasicExample.tsx`
