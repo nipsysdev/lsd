@@ -7,13 +7,9 @@ const options = [
   { value: 'js', label: 'JavaScript' },
   { value: 'ts', label: 'TypeScript' },
   { value: 'py', label: 'Python' },
-  { value: 'rb', label: 'Ruby' },
   { value: 'go', label: 'Go' },
   { value: 'rs', label: 'Rust' },
   { value: 'java', label: 'Java' },
-  { value: 'cs', label: 'C#' },
-  { value: 'cpp', label: 'C++' },
-  { value: 'swift', label: 'Swift' },
 ];
 
 export const CODE = `import { Autocomplete } from '@nipsys/shadcn-lsd';

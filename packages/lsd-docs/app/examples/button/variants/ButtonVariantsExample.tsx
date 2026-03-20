@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@nipsys/shadcn-lsd';
-import { CheckIcon, DownloadIcon, ShareIcon, TrashIcon } from '@phosphor-icons/react';
+import { CheckIcon, DownloadIcon, PlusIcon, ShareIcon, TrashIcon } from '@phosphor-icons/react';
 import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import { Button } from '@nipsys/shadcn-lsd';
@@ -45,7 +45,6 @@ export function Example() {
 
 export function ButtonVariantsExample() {
   useInIframeThemeSync();
-  const { PlusIcon } = require('@phosphor-icons/react');
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
