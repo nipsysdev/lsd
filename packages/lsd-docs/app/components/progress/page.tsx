@@ -5,32 +5,29 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-  Progress,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useEffect, useState } from 'react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as ProgressBasicCODE } from '@/examples/progress/basic/ProgressBasicExample';
+import { CODE as ProgressFeaturesCODE } from '@/examples/progress/features/ProgressFeaturesExample';
 
 export default function ProgressPage() {
-  const [paused, setPaused] = useState(false);
-  const [controlledProgress] = useState(50);
+  const basicIframeRef = useRef<HTMLIFrameElement>(null);
+  const featuresIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setPaused(true);
-    }, 250);
-  }, []);
+  useIframeThemeSync(basicIframeRef, featuresIframeRef);
 
   return (
     <DocsLayout>
@@ -64,65 +61,35 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Variants">
+        <PageSection title="Basic Progress">
           <Typography variant="body1">
-            Progress bars come in four color variants for different semantic meanings.
+            Basic progress usage showing both controlled and uncontrolled progress states with
+            labels.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Color Variants</CardTitle>
-              <CardDescription>Visual styles for different states and contexts</CardDescription>
+              <CardTitle>Basic Examples</CardTitle>
+              <CardDescription>
+                Controlled and uncontrolled progress with interactive controls
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Progress value={25} variant="default" />
-                <Progress value={50} variant="success" />
-                <Progress value={75} variant="warning" />
-                <Progress value={100} variant="destructive" />
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={basicIframeRef}
+                    src="/examples/progress/basic"
+                    className="size-full"
+                    title="Progress Basic Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Progress value={25} variant="default" />
-<Progress value={50} variant="success" />
-<Progress value={75} variant="warning" />
-<Progress value={100} variant="destructive" />`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Sizes">
-          <Typography variant="body1">
-            Progress bars come in three sizes to fit different contexts and layouts.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>All Sizes</CardTitle>
-              <CardDescription>From small to large</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Progress value={33} size="sm" />
-                <Progress value={66} size="md" />
-                <Progress value={100} size="lg" />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<Progress value={33} size="sm" />
-<Progress value={66} size="md" />
-<Progress value={100} size="lg" />`}
-                    />
+                    <CodeExample code={ProgressBasicCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -132,222 +99,33 @@ export default function MyComponent() {
 
         <PageSection title="Features">
           <Typography variant="body1">
-            Additional features like determinate/indeterminate states, speed control, pause/resume,
-            and label display.
+            Additional features like indeterminate states, speed control, pause/resume, color
+            variants, and sizes.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Determinate Progress</CardTitle>
+              <CardTitle>Features Examples</CardTitle>
               <CardDescription>
-                Show specific progress value with smooth transitions
+                Indeterminate, speed control, paused states, variants, and sizes
               </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Progress value={25} />
-                <Progress value={50} />
-                <Progress value={75} />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`import { useState } from 'react'
-
-function MyComponent() {
-  const [progress, setProgress] = useState(25)
-
-  return <Progress value={progress} />
-}`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Indeterminate Progress</CardTitle>
-              <CardDescription>Show animated progress for unknown duration</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <Progress indeterminate />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={'<Progress indeterminate />'} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Speed Control</CardTitle>
-              <CardDescription>Adjust animation speed for indeterminate progress</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Progress indeterminate speed="slow" />
-                <Progress indeterminate speed="normal" />
-                <Progress indeterminate speed="fast" />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<Progress indeterminate speed="slow" />
-<Progress indeterminate speed="normal" />
-<Progress indeterminate speed="fast" />`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Paused State</CardTitle>
-              <CardDescription>Pause indeterminate animation</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Progress indeterminate paused={paused} />
-                <div>
-                  <Button variant="outlined" size="sm" onClick={() => setPaused(!paused)}>
-                    {paused ? 'Resume' : 'Pause'}
-                  </Button>
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={featuresIframeRef}
+                    src="/examples/progress/features"
+                    className="size-full"
+                    title="Progress Features Example"
+                  />
                 </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { useState } from 'react'
-
-function MyComponent() {
-  const [paused, setPaused] = useState(false)
-
-  return (
-    <>
-      <Progress indeterminate paused={paused} />
-      <div>
-        <Button onClick={() => setPaused(!paused)}>
-          {paused ? 'Resume' : 'Pause'}
-        </Button>
-      </div>
-    </>
-  )
-}`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Labels</CardTitle>
-              <CardDescription>
-                Show percentage label above or below the progress bar
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Progress value={25} showLabel labelPosition="top" />
-                <Progress value={50} showLabel labelPosition="bottom" />
-                <Progress value={75} showLabel labelPosition="top" />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<Progress value={25} showLabel labelPosition="top" />
-<Progress value={50} showLabel labelPosition="bottom" />
-<Progress value={75} showLabel labelPosition="top" />`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Controlled Component</CardTitle>
-              <CardDescription>Use controlled state for dynamic updates</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Progress value={controlledProgress} showLabel labelPosition="top" />
-                <div className="flex justify-between">
-                  <Button
-                    variant="outlined"
-                    size="sm"
-                    onClick={() => setProgress(Math.max(0, progress - 10))}
-                  >
-                    Decrease
-                  </Button>
-                  <Button variant="outlined" size="sm" onClick={() => setProgress(0)}>
-                    Reset
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    size="sm"
-                    onClick={() => setProgress(Math.min(100, progress + 10))}
-                  >
-                    Increase
-                  </Button>
-                </div>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`import { useState } from 'react'
-
-function MyComponent() {
-  const [progress, setProgress] = useState(50)
-
-  return (
-    <>
-      <Progress value={progress} showLabel labelPosition="top" />
-      <div className="flex justify-between">
-        <Button
-          variant="outlined"
-          size="sm"
-          onClick={() => setControlledProgress(Math.max(0, controlledProgress - 10))}
-        >
-          Decrease
-        </Button>
-        <Button variant="outlined" size="sm" onClick={() => setControlledProgress(0)}>
-          Reset
-        </Button>
-        <Button
-          variant="outlined"
-          size="sm"
-          onClick={() => setControlledProgress(Math.min(100, controlledProgress + 10))}
-        >
-          Increase
-        </Button>
-      </div>
-    </>
-  )
-}`}
-                    />
+                    <CodeExample code={ProgressFeaturesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

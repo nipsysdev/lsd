@@ -13,16 +13,20 @@ import {
   Checkbox,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as CheckboxCODE } from '@/examples/checkbox/CheckboxExample';
 
 export default function CheckboxPage() {
-  const [controlled, setControlled] = useState(false);
+  const checkboxIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(checkboxIframeRef);
 
   return (
     <DocsLayout>
@@ -55,151 +59,34 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="States">
+        <PageSection title="Basic States">
           <Typography variant="body1">
-            Checkboxes support two states: checked and unchecked.
+            Checkboxes support checked and unchecked states, both controlled and uncontrolled.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic States</CardTitle>
-              <CardDescription>Unchecked and checked states</CardDescription>
+              <CardTitle>Checkbox Examples</CardTitle>
+              <CardDescription>
+                Basic states, controlled components, and checkbox labels
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <div className="flex items-center gap-(--lsd-spacing-smaller)">
-                  <Checkbox />
-                  <Typography variant="body1">Unchecked</Typography>
-                </div>
-                <div className="flex items-center gap-(--lsd-spacing-smaller)">
-                  <Checkbox defaultChecked />
-                  <Typography variant="body1">Checked</Typography>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={checkboxIframeRef}
+                    src="/examples/checkbox"
+                    className="size-full"
+                    title="Checkbox Example"
+                  />
                 </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Checkbox />
-<Checkbox defaultChecked />`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Features">
-          <Typography variant="body1">
-            Additional features like disabled state, error state, and controlled components.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Disabled State</CardTitle>
-              <CardDescription>Disabled checkbox with reduced opacity</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <div className="flex items-center gap-(--lsd-spacing-smaller)">
-                  <Checkbox disabled />
-                  <Typography variant="body1">Disabled unchecked</Typography>
-                </div>
-                <div className="flex items-center gap-(--lsd-spacing-smaller)">
-                  <Checkbox disabled defaultChecked />
-                  <Typography variant="body1">Disabled checked</Typography>
-                </div>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<Checkbox disabled />
-<Checkbox disabled defaultChecked />`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>With Labels</CardTitle>
-              <CardDescription>Checkbox with associated label text</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <div className="flex items-center gap-(--lsd-spacing-smaller)">
-                  <Checkbox id="terms" />
-                  <label htmlFor="terms" className="text-sm">
-                    I agree to the terms and conditions
-                  </label>
-                </div>
-                <div className="flex items-center gap-(--lsd-spacing-smaller)">
-                  <Checkbox id="newsletter" defaultChecked />
-                  <label htmlFor="newsletter" className="text-sm">
-                    Subscribe to newsletter
-                  </label>
-                </div>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<div className="flex items-center gap-(--lsd-spacing-smaller)">
-  <Checkbox id="terms" />
-  <label htmlFor="terms" className="text-sm">
-    I agree to the terms and conditions
-  </label>
-</div>
-<div className="flex items-center gap-(--lsd-spacing-smaller)">
-  <Checkbox id="newsletter" defaultChecked />
-  <label htmlFor="newsletter" className="text-sm">
-    Subscribe to newsletter
-  </label>
-</div>`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Controlled Component</CardTitle>
-              <CardDescription>Manage checkbox state with React state</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center gap-(--lsd-spacing-smaller) mb-(--lsd-spacing-base)">
-                <Checkbox
-                  checked={controlled}
-                  onCheckedChange={checked => setControlled(checked === true)}
-                />
-                <Typography variant="body1">
-                  Controlled checkbox (currently {controlled ? 'checked' : 'unchecked'})
-                </Typography>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`const [controlled, setControlled] = useState(false);
-
-<Checkbox
-  checked={controlled}
-  onCheckedChange={(checked) => setControlled(checked === true)}
-/>
-<Typography variant="body1">
-  Controlled checkbox (currently {controlled ? 'checked' : 'unchecked'})
-</Typography>`}
-                    />
+                    <CodeExample code={CheckboxCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
