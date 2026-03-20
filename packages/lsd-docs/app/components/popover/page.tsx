@@ -83,7 +83,7 @@ export default function MyComponent() {
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
                   ref={popoverIframeRef}
-                  size="md"
+                  size="lg"
                   src="/examples/popover"
                   title="Popover Example"
                 />
