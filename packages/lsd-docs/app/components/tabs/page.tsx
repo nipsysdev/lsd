@@ -17,17 +17,19 @@ import {
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { ChartLineUpIcon, GearIcon, HouseIcon } from '@phosphor-icons/react';
-import { useState } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { CODE as TABS_BASIC_CODE, TabsBasicExample } from '@/examples/tabs/basic/TabsBasicExample';
+import {
+  CODE as TABS_CONTROLLED_CODE,
+  TabsControlledExample,
+} from '@/examples/tabs/controlled/TabsControlledExample';
 
 export default function TabsPage() {
-  const [controlledValue, setControlledValue] = useState('tab1');
-
   return (
     <DocsLayout>
       <PageHeader
@@ -213,51 +215,33 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <Tabs defaultValue="account">
-                  <TabsList>
-                    <TabsTrigger value="account">Account</TabsTrigger>
-                    <TabsTrigger value="password">Password</TabsTrigger>
-                    <TabsTrigger value="settings">Settings</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="account">
-                    <Typography variant="body1" className="block">
-                      Make changes to your account here. Click save when you're done.
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="password">
-                    <Typography variant="body1" className="block">
-                      Change your password here. After saving, you'll be logged out.
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="settings">
-                    <Typography variant="body1" className="block">
-                      Manage your application settings here.
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
+                <TabsBasicExample />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Tabs defaultValue="account">
-  <TabsList>
-    <TabsTrigger value="account">Account</TabsTrigger>
-    <TabsTrigger value="password">Password</TabsTrigger>
-    <TabsTrigger value="settings">Settings</TabsTrigger>
-  </TabsList>
-  <TabsContent value="account">
-    Make changes to your account here. Click save when you're done.
-  </TabsContent>
-  <TabsContent value="password">
-    Change your password here. After saving, you'll be logged out.
-  </TabsContent>
-  <TabsContent value="settings">
-    Manage your application settings here.
-  </TabsContent>
-</Tabs>`}
-                    />
+                    <CodeExample code={TABS_BASIC_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Controlled Component</CardTitle>
+              <CardDescription>Control the active tab with state</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <TabsControlledExample />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TABS_CONTROLLED_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -591,66 +575,6 @@ export default function MyComponent() {
   <TabsContent value="tab2">Another tab content</TabsContent>
   <TabsContent value="tab3">Disabled tab content</TabsContent>
 </Tabs>`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Controlled Component</CardTitle>
-              <CardDescription>Control the active tab with state</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Tabs value={controlledValue} onValueChange={setControlledValue}>
-                  <TabsList>
-                    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
-                    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-                    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="tab1">
-                    <Typography variant="body1" className="block">
-                      Controlled tab 1 content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab2">
-                    <Typography variant="body1" className="block">
-                      Controlled tab 2 content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab3">
-                    <Typography variant="body1" className="block">
-                      Controlled tab 3 content
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`import { useState } from 'react'
-
-export default function ControlledTabs() {
-  const [value, setValue] = useState('tab1')
-
-  return (
-    <Tabs value={value} onValueChange={setValue}>
-      <TabsList>
-        <TabsTrigger value="tab1">Tab 1</TabsTrigger>
-        <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-        <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-      </TabsList>
-      <TabsContent value="tab1">Controlled tab 1 content</TabsContent>
-      <TabsContent value="tab2">Controlled tab 2 content</TabsContent>
-      <TabsContent value="tab3">Controlled tab 3 content</TabsContent>
-    </Tabs>
-  )
-}`}
                     />
                   </AccordionContent>
                 </AccordionItem>

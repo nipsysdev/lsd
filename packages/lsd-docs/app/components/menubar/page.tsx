@@ -29,6 +29,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { CODE as MENUBAR_CODE, MenubarExample } from '@/examples/menubar/MenubarExample';
 
 export default function MenubarPage() {
   return (
@@ -91,69 +92,13 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <Menubar>
-                  <MenubarMenu>
-                    <MenubarTrigger>File</MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarItem>New</MenubarItem>
-                      <MenubarItem>Open</MenubarItem>
-                      <MenubarItem>Save</MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                  <MenubarMenu>
-                    <MenubarTrigger>Edit</MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarItem>Undo</MenubarItem>
-                      <MenubarItem>Redo</MenubarItem>
-                      <MenubarItem>Cut</MenubarItem>
-                      <MenubarItem>Copy</MenubarItem>
-                      <MenubarItem>Paste</MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                  <MenubarMenu>
-                    <MenubarTrigger>View</MenubarTrigger>
-                    <MenubarContent>
-                      <MenubarItem>Zoom In</MenubarItem>
-                      <MenubarItem>Zoom Out</MenubarItem>
-                      <MenubarItem>Full Screen</MenubarItem>
-                    </MenubarContent>
-                  </MenubarMenu>
-                </Menubar>
+                <MenubarExample />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Menubar>
-  <MenubarMenu>
-    <MenubarTrigger>File</MenubarTrigger>
-    <MenubarContent>
-      <MenubarItem>New</MenubarItem>
-      <MenubarItem>Open</MenubarItem>
-      <MenubarItem>Save</MenubarItem>
-    </MenubarContent>
-  </MenubarMenu>
-  <MenubarMenu>
-    <MenubarTrigger>Edit</MenubarTrigger>
-    <MenubarContent>
-      <MenubarItem>Undo</MenubarItem>
-      <MenubarItem>Redo</MenubarItem>
-      <MenubarItem>Cut</MenubarItem>
-      <MenubarItem>Copy</MenubarItem>
-      <MenubarItem>Paste</MenubarItem>
-    </MenubarContent>
-  </MenubarMenu>
-  <MenubarMenu>
-    <MenubarTrigger>View</MenubarTrigger>
-    <MenubarContent>
-      <MenubarItem>Zoom In</MenubarItem>
-      <MenubarItem>Zoom Out</MenubarItem>
-      <MenubarItem>Full Screen</MenubarItem>
-    </MenubarContent>
-  </MenubarMenu>
-</Menubar>`}
-                    />
+                    <CodeExample code={MENUBAR_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

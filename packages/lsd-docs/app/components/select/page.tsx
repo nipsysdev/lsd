@@ -20,16 +20,23 @@ import {
   SelectValue,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as SelectBasicCODE } from '@/examples/select/basic/SelectBasicExample';
+import { CODE as SelectVariantsCODE } from '@/examples/select/variants/SelectVariantsExample';
 
 export default function SelectPage() {
+  const basicIframeRef = useRef<HTMLIFrameElement>(null);
+  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
   const [value, setValue] = useState('option2');
+
+  useIframeThemeSync(basicIframeRef, variantsIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -44,6 +51,39 @@ export default function SelectPage() {
             ideal for situations where space is limited or when you need to present many options in
             an organized way.
           </Typography>
+        </PageSection>
+
+        <PageSection title="Examples">
+          <Typography variant="body1">
+            Interactive examples showing different select configurations.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic Select</CardTitle>
+              <CardDescription>Simple select with items</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={basicIframeRef}
+                    src="/examples/select/basic"
+                    className="size-full"
+                    title="Select Basic Example"
+                  />
+                </div>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={SelectBasicCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="Installation">
@@ -140,6 +180,40 @@ export default function MyComponent() {
   </SelectContent>
 </Select>`}
                     />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Advanced select examples including grouped items, separators, disabled items, and
+            controlled state.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Select Variants</CardTitle>
+              <CardDescription>Grouped items, separators, and controlled state</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={variantsIframeRef}
+                    src="/examples/select/variants"
+                    className="size-full"
+                    title="Select Variants Example"
+                  />
+                </div>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={SelectVariantsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

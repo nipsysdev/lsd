@@ -23,6 +23,10 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import {
+  CODE as BUTTON_GROUP_CODE,
+  ButtonGroupExample,
+} from '@/examples/button-group/ButtonGroupExample';
 
 export default function ButtonGroupPage() {
   return (
@@ -139,6 +143,26 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
+              <CardTitle>Button Group Variants</CardTitle>
+              <CardDescription>Different button group configurations</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <ButtonGroupExample />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={BUTTON_GROUP_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
               <CardTitle>With Separators</CardTitle>
               <CardDescription>
                 Use ButtonGroupSeparator to visually separate groups of buttons
@@ -202,6 +226,7 @@ export default function MyComponent() {
               </Accordion>
             </CardContent>
           </Card>
+
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>With Different Button Variants</CardTitle>

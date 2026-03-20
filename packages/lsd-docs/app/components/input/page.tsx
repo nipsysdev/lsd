@@ -13,14 +13,20 @@ import {
   Input,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as InputCODE } from '@/examples/input/InputExample';
 
 export default function InputPage() {
+  const inputIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(inputIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -34,6 +40,39 @@ export default function InputPage() {
             Inputs are form elements that allow users to enter and edit text. They are the primary
             way users provide data to your application, from simple text fields to complex forms.
           </Typography>
+        </PageSection>
+
+        <PageSection title="Examples">
+          <Typography variant="body1">
+            Interactive examples showing different input states and configurations.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Input States</CardTitle>
+              <CardDescription>Default, error, disabled, and with supporting text</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={inputIframeRef}
+                    src="/examples/input"
+                    className="size-full"
+                    title="Input Example"
+                  />
+                </div>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={InputCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="Installation">
