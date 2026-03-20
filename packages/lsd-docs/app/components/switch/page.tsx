@@ -13,16 +13,22 @@ import {
   Switch,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as SwitchBasicCODE } from '@/examples/switch/basic/SwitchBasicExample';
+import { CODE as SwitchControlledCODE } from '@/examples/switch/controlled/SwitchControlledExample';
 
 export default function SwitchPage() {
-  const [checked, setChecked] = useState(false);
+  const basicIframeRef = useRef<HTMLIFrameElement>(null);
+  const controlledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(basicIframeRef, controlledIframeRef);
 
   return (
     <DocsLayout>
@@ -114,70 +120,27 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Checked/Unchecked States</CardTitle>
-              <CardDescription>Demonstrate different states of the switch</CardDescription>
+              <CardTitle>Basic Examples</CardTitle>
+              <CardDescription>
+                Uncontrolled switches with default states and disabled options
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <div className="flex items-center gap-(--lsd-spacing-base)">
-                  <Switch defaultChecked={false} />
-                  <Typography variant="body2">Unchecked</Typography>
-                </div>
-                <div className="flex items-center gap-(--lsd-spacing-base)">
-                  <Switch defaultChecked={true} />
-                  <Typography variant="body2">Checked</Typography>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={basicIframeRef}
+                    src="/examples/switch/basic"
+                    className="size-full"
+                    title="Switch Basic Example"
+                  />
                 </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<div className="flex items-center gap-(--lsd-spacing-base)">
-  <Switch defaultChecked={false} />
-  <Typography variant="body2">Unchecked</Typography>
-</div>
-<div className="flex items-center gap-(--lsd-spacing-base)">
-  <Switch defaultChecked={true} />
-  <Typography variant="body2">Checked</Typography>
-</div>`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Disabled State</CardTitle>
-              <CardDescription>Disabled switch with reduced opacity</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <div className="flex items-center gap-(--lsd-spacing-base)">
-                  <Switch disabled />
-                  <Typography variant="body2">Disabled Unchecked</Typography>
-                </div>
-                <div className="flex items-center gap-(--lsd-spacing-base)">
-                  <Switch disabled defaultChecked={true} />
-                  <Typography variant="body2">Disabled Checked</Typography>
-                </div>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<div className="flex items-center gap-(--lsd-spacing-base)">
-  <Switch disabled />
-  <Typography variant="body2">Disabled Unchecked</Typography>
-</div>
-<div className="flex items-center gap-(--lsd-spacing-base)">
-  <Switch disabled defaultChecked={true} />
-  <Typography variant="body2">Disabled Checked</Typography>
-</div>`}
-                    />
+                    <CodeExample code={SwitchBasicCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -190,30 +153,21 @@ export default function MyComponent() {
               <CardDescription>Switch with controlled state using React state</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Switch checked={checked} onCheckedChange={setChecked} />
-                <Typography variant="body2">
-                  Notifications: {checked ? 'Enabled' : 'Disabled'}
-                </Typography>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={controlledIframeRef}
+                    src="/examples/switch/controlled"
+                    className="size-full"
+                    title="Switch Controlled Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`const [checked, setChecked] = useState(false);
-
-// In your component:
-<div className="flex items-center gap-(--lsd-spacing-base)">
-  <Switch
-    checked={checked}
-    onCheckedChange={setChecked}
-  />
-  <Typography variant="body2">
-    Notifications: {checked ? 'Enabled' : 'Disabled'}
-  </Typography>
-</div>`}
-                    />
+                    <CodeExample code={SwitchControlledCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
