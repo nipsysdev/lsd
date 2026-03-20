@@ -23,13 +23,31 @@ import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as BadgeBasicCODE } from '@/examples/badge/basic/BadgeBasicExample';
+import { CODE as BadgeDismissibleCODE } from '@/examples/badge/dismissible/BadgeDismissibleExample';
+import { CODE as BadgeDotsCODE } from '@/examples/badge/dots/BadgeDotsExample';
+import { CODE as BadgeFeaturesCODE } from '@/examples/badge/features/BadgeFeaturesExample';
+import { CODE as BadgeInteractiveCODE } from '@/examples/badge/interactive/BadgeInteractiveExample';
+import { CODE as BadgeSizesCODE } from '@/examples/badge/sizes/BadgeSizesExample';
 import { CODE as BadgeVariantsCODE } from '@/examples/badge/variants/BadgeVariantsExample';
 
 export default function BadgePage() {
   const basicIframeRef = useRef<HTMLIFrameElement>(null);
   const variantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const sizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const featuresIframeRef = useRef<HTMLIFrameElement>(null);
+  const dotsIframeRef = useRef<HTMLIFrameElement>(null);
+  const interactiveIframeRef = useRef<HTMLIFrameElement>(null);
+  const dismissibleIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(basicIframeRef, variantsIframeRef);
+  useIframeThemeSync(
+    basicIframeRef,
+    variantsIframeRef,
+    sizesIframeRef,
+    featuresIframeRef,
+    dotsIframeRef,
+    interactiveIframeRef,
+    dismissibleIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -129,20 +147,21 @@ export default function MyComponent() {
               <CardDescription>Minimal circular indicator for status display</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Badge variant="dot" size="sm" />
-                <Badge variant="dot" size="md" />
-                <Badge variant="dot" size="lg" />
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={dotsIframeRef}
+                    src="/examples/badge/dots"
+                    className="size-full"
+                    title="Badge Dots Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Badge variant="dot" size="sm" />
-<Badge variant="dot" size="md" />
-<Badge variant="dot" size="lg" />`}
-                    />
+                    <CodeExample code={BadgeDotsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -161,20 +180,21 @@ export default function MyComponent() {
               <CardDescription>Small, medium, and large badge sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap items-center gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Badge size="sm">Small</Badge>
-                <Badge size="md">Medium</Badge>
-                <Badge size="lg">Large</Badge>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={sizesIframeRef}
+                    src="/examples/badge/sizes"
+                    className="size-full"
+                    title="Badge Sizes Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Badge size="sm">Small</Badge>
-<Badge size="md">Medium</Badge>
-<Badge size="lg">Large</Badge>`}
-                    />
+                    <CodeExample code={BadgeSizesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -193,26 +213,21 @@ export default function MyComponent() {
               <CardDescription>Badges that respond to click events</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Badge onClick={() => alert('Clicked!')} variant="filled">
-                  Click me
-                </Badge>
-                <Badge onClick={() => alert('Clicked!')} variant="outlined">
-                  Interactive
-                </Badge>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={interactiveIframeRef}
+                    src="/examples/badge/interactive"
+                    className="size-full"
+                    title="Badge Interactive Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Badge onClick={() => alert('Clicked!')} variant="filled">
-  Click me
-</Badge>
-<Badge onClick={() => alert('Clicked!')} variant="outlined">
-  Interactive
-</Badge>`}
-                    />
+                    <CodeExample code={BadgeInteractiveCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -225,26 +240,21 @@ export default function MyComponent() {
               <CardDescription>Badges with close button for removal</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Badge onDismiss={() => alert('Dismissed!')} variant="filled">
-                  Removable
-                </Badge>
-                <Badge onDismiss={() => alert('Dismissed!')} variant="success">
-                  Complete
-                </Badge>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={dismissibleIframeRef}
+                    src="/examples/badge/dismissible"
+                    className="size-full"
+                    title="Badge Dismissible Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Badge onDismiss={() => alert('Dismissed!')} variant="filled">
-  Removable
-</Badge>
-<Badge onDismiss={() => alert('Dismissed!')} variant="success">
-  Complete
-</Badge>`}
-                    />
+                    <CodeExample code={BadgeDismissibleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -257,32 +267,21 @@ export default function MyComponent() {
               <CardDescription>Add icons to badges for better visual communication</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Badge icon={<CheckIcon />} variant="success">
-                  Verified
-                </Badge>
-                <Badge icon={<WarningIcon weight="duotone" />} variant="warning">
-                  Warning
-                </Badge>
-                <Badge icon={<InfoIcon weight="duotone" />} variant="info" iconPosition="right">
-                  Info
-                </Badge>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={featuresIframeRef}
+                    src="/examples/badge/features"
+                    className="size-full"
+                    title="Badge Features Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Badge icon={<CheckIcon />} variant="success">
-  Verified
-</Badge>
-<Badge icon={<WarningIcon weight="duotone" />} variant="warning">
-  Warning
-</Badge>
-<Badge icon={<InfoIcon weight="duotone" />} variant="info" iconPosition="right">
-  Info
-</Badge>`}
-                    />
+                    <CodeExample code={BadgeFeaturesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -295,20 +294,21 @@ export default function MyComponent() {
               <CardDescription>Use dot prop for circular status indicators</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Badge dot variant="success" size="sm" />
-                <Badge dot variant="warning" size="md" />
-                <Badge dot variant="destructive" size="lg" />
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={dotsIframeRef}
+                    src="/examples/badge/dots"
+                    className="size-full"
+                    title="Badge Dots Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Badge dot variant="success" size="sm" />
-<Badge dot variant="warning" size="md" />
-<Badge dot variant="destructive" size="lg" />`}
-                    />
+                    <CodeExample code={BadgeDotsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
