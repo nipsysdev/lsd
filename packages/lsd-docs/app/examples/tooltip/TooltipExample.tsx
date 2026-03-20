@@ -26,9 +26,9 @@ export function Example() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <button className="rounded-full p-2 hover:bg-(--lsd-color-surface-hover)">
+            <Button variant="ghost" size="square-sm">
               <InfoIcon />
-            </button>
+            </Button>
           </TooltipTrigger>
           <TooltipContent>
             <Typography variant="body2">Additional information</Typography>
@@ -105,9 +105,9 @@ export function TooltipExample() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <button className="rounded-full p-2 hover:bg-(--lsd-color-surface-hover)">
+            <Button variant="ghost" size="square-sm">
               <InfoIcon />
-            </button>
+            </Button>
           </TooltipTrigger>
           <TooltipContent>
             <Typography variant="body2">Additional information</Typography>

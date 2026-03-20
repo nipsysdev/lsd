@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: Tolerate array index key for code examples */
 'use client';
 
 import { Button, Popover, PopoverContent, PopoverTrigger, Typography } from '@nipsys/shadcn-lsd';
@@ -31,12 +32,14 @@ export function Example() {
             </div>
             <div className="grid grid-cols-7 gap-1">
               {[...Array(35)].map((_, i) => (
-                <button
+                <Button
                   key={i}
-                  className="h-8 rounded hover:bg-(--lsd-color-surface-hover) text-center"
+                  variant="ghost"
+                  size="sm"
+                  className="h-8"
                 >
                   {i + 1}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -69,12 +72,9 @@ export function PopoverExample() {
             </div>
             <div className="grid grid-cols-7 gap-1">
               {[...Array(35)].map((_, i) => (
-                <button
-                  key={i}
-                  className="h-8 rounded hover:bg-(--lsd-color-surface-hover) text-center"
-                >
+                <Button key={i} variant="ghost" size="sm" className="h-8">
                   {i + 1}
-                </button>
+                </Button>
               ))}
             </div>
           </div>

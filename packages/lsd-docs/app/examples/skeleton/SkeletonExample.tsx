@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: Tolerate array index key for code examples */
 'use client';
 
 import { Skeleton, Typography } from '@nipsys/shadcn-lsd';
