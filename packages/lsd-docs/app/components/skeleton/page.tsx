@@ -20,13 +20,24 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as SkeletonCODE } from '@/examples/skeleton/SkeletonExample';
+import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { CODE as SkeletonAvatarCODE } from '@/examples/skeleton/avatar/SkeletonAvatarExample';
+import { CODE as SkeletonCardCODE } from '@/examples/skeleton/card/SkeletonCardExample';
+import { CODE as SkeletonListCODE } from '@/examples/skeleton/list/SkeletonListExample';
+import { CODE as SkeletonSizesCODE } from '@/examples/skeleton/sizes/SkeletonSizesExample';
 
 export default function SkeletonPage() {
-  const skeletonIframeRef = useRef<HTMLIFrameElement>(null);
+  const skeletonCardIframeRef = useRef<HTMLIFrameElement>(null);
+  const skeletonAvatarIframeRef = useRef<HTMLIFrameElement>(null);
+  const skeletonListIframeRef = useRef<HTMLIFrameElement>(null);
+  const skeletonSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(skeletonIframeRef);
+  useIframeThemeSync(
+    skeletonCardIframeRef,
+    skeletonAvatarIframeRef,
+    skeletonListIframeRef,
+    skeletonSizesIframeRef
+  );
 
   return (
     <DocsLayout>
@@ -60,7 +71,7 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Skeleton">
+        <PageSection title="Card Skeleton">
           <Typography variant="body1">
             Skeleton components can be customized with className for different sizes and shapes to
             match your content structure.
@@ -68,25 +79,110 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Skeleton Examples</CardTitle>
+              <CardTitle>Card Skeleton</CardTitle>
               <CardDescription>
-                Different skeleton patterns for cards, avatars, and lists
+                Skeleton layout for a card with header and body text
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={skeletonIframeRef}
-                  size="sm"
-                  src="/examples/skeleton"
-                  title="Skeleton Example"
-                />
-              </div>
+              <IframeExample
+                ref={skeletonCardIframeRef}
+                size="sm"
+                src="/examples/skeleton/card"
+                title="Skeleton Card Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={SkeletonCODE} />
+                    <CodeExample code={SkeletonCardCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Avatar Skeleton">
+          <Typography variant="body1">
+            Create skeleton layouts for user avatars with optional text.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Avatar Skeleton</CardTitle>
+              <CardDescription>Skeleton layout for an avatar with name and label</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={skeletonAvatarIframeRef}
+                size="sm"
+                src="/examples/skeleton/avatar"
+                title="Skeleton Avatar Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={SkeletonAvatarCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="List Skeleton">
+          <Typography variant="body1">
+            Create skeleton layouts for lists of items like user lists or notifications.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>List Skeleton</CardTitle>
+              <CardDescription>Skeleton layout for a list of items with avatars</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={skeletonListIframeRef}
+                size="sm"
+                src="/examples/skeleton/list"
+                title="Skeleton List Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={SkeletonListCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Custom Sizes">
+          <Typography variant="body1">
+            Use className to control the height and width of skeleton elements.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Custom Sizes</CardTitle>
+              <CardDescription>Skeleton elements with different heights</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={skeletonSizesIframeRef}
+                size="sm"
+                src="/examples/skeleton/sizes"
+                title="Skeleton Sizes Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={SkeletonSizesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
