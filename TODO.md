@@ -138,7 +138,7 @@
 
 ### 🚨 P0 — Most Inline Examples
 
-#### 14. Extract Tabs Inline Examples
+#### 14. ~~Extract Tabs Inline Examples~~ ✅ COMPLETED (ddad4fe)
 **Page:** `packages/lsd-docs/app/components/tabs/page.tsx`
 **Inline examples to extract:**
 - Sizes (3 examples) → `examples/tabs/sizes/TabsSizesExample.tsx`
