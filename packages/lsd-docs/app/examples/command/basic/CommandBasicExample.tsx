@@ -7,23 +7,15 @@ export const CODE = `import { Command, CommandEmpty, CommandInput, CommandItem, 
 
 export function Example() {
   return (
-    <div className="p-(--lsd-spacing-larger)">
-      <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandItem>
-            <span>Calendar</span>
-          </CommandItem>
-          <CommandItem>
-            <span>Search Emoji</span>
-          </CommandItem>
-          <CommandItem>
-            <span>Calculator</span>
-          </CommandItem>
-        </CommandList>
-      </Command>
-    </div>
+    <Command>
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandItem><span>Calendar</span></CommandItem>
+        <CommandItem><span>Search Emoji</span></CommandItem>
+        <CommandItem><span>Calculator</span></CommandItem>
+      </CommandList>
+    </Command>
   )
 };`;
 

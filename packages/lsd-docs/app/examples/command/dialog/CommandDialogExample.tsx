@@ -30,7 +30,7 @@ export function Example() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="p-(--lsd-spacing-larger)">
+    <>
       <Button variant="outlined" onClick={() => setOpen(true)}>
         Open Command Palette
       </Button>
@@ -70,7 +70,7 @@ export function Example() {
           </CommandGroup>
         </CommandList>
       </CommandDialog>
-    </div>
+    </>
   )
 };`;
 
