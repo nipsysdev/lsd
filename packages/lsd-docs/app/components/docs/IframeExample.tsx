@@ -18,9 +18,13 @@ export const IframeExample = forwardRef<HTMLIFrameElement, IframeExampleProps>(
     }[size];
 
     return (
-      <div className={`${heightClass} w-full overflow-hidden`}>
-        <iframe ref={ref} src={src} className="size-full" title={title} {...props} />
-      </div>
+      <iframe
+        ref={ref}
+        src={src}
+        className={`${heightClass} w-full overflow-hidden`}
+        title={title}
+        {...props}
+      />
     );
   }
 );
