@@ -20,13 +20,17 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as TooltipCODE } from '@/examples/tooltip/TooltipExample';
+import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { CODE as TOOLTIP_BASIC_CODE } from '@/examples/tooltip/basic/TooltipBasicExample';
+import { CODE as TOOLTIP_POSITIONS_CODE } from '@/examples/tooltip/positions/TooltipPositionsExample';
+import { CODE as TOOLTIP_WITH_ICON_CODE } from '@/examples/tooltip/with-icon/TooltipWithIconExample';
 
 export default function TooltipPage() {
-  const tooltipIframeRef = useRef<HTMLIFrameElement>(null);
+  const tooltipBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const tooltipWithIconIframeRef = useRef<HTMLIFrameElement>(null);
+  const tooltipPositionsIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(tooltipIframeRef);
+  useIframeThemeSync(tooltipBasicIframeRef, tooltipWithIconIframeRef, tooltipPositionsIframeRef);
 
   return (
     <DocsLayout>
@@ -80,23 +84,77 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Tooltip Examples</CardTitle>
-              <CardDescription>Basic tooltip, with icon, and different positions</CardDescription>
+              <CardTitle>Basic Tooltip</CardTitle>
+              <CardDescription>Simple tooltip on hover</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={tooltipIframeRef}
-                  size="md"
-                  src="/examples/tooltip"
-                  title="Tooltip Example"
-                />
-              </div>
+              <IframeExample
+                ref={tooltipBasicIframeRef}
+                size="sm"
+                src="/examples/tooltip/basic"
+                title="Tooltip Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={TooltipCODE} />
+                    <CodeExample code={TOOLTIP_BASIC_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="With Icon">
+          <Typography variant="body1">
+            Tooltips can be attached to icon buttons for additional information.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Icon</CardTitle>
+              <CardDescription>Tooltip on an icon button</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={tooltipWithIconIframeRef}
+                size="sm"
+                src="/examples/tooltip/with-icon"
+                title="Tooltip With Icon Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOOLTIP_WITH_ICON_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Positions">
+          <Typography variant="body1">Control tooltip placement with the side prop.</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Different Positions</CardTitle>
+              <CardDescription>Top, bottom, left, and right placement</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={tooltipPositionsIframeRef}
+                size="sm"
+                src="/examples/tooltip/positions"
+                title="Tooltip Positions Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOOLTIP_POSITIONS_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

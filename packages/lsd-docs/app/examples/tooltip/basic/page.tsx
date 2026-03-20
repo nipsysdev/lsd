@@ -8,6 +8,7 @@ export const CODE = `import { Button, Tooltip, TooltipContent, TooltipProvider, 
 export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+      <Typography variant="label1">Basic Tooltip</Typography>
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -22,9 +23,10 @@ export function Example() {
   );
 }`;
 
-export function TooltipExample() {
+export function TooltipBasicExample() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+      <Typography variant="label1">Basic Tooltip</Typography>
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -39,6 +41,6 @@ export function TooltipExample() {
   );
 }
 
-export default function Tooltip() {
-  return <TooltipExample />;
+export default function Basic() {
+  return <TooltipBasicExample />;
 }
