@@ -597,12 +597,12 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Alert Dialog',
-            href: '/components/alert-dialog',
+            title: 'Spacing',
+            href: '/design-tokens/spacing',
           }}
           next={{
-            title: 'Badge',
-            href: '/components/badge',
+            title: 'Button',
+            href: '/components/button',
           }}
         />
       </PageContent>

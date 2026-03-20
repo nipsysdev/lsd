@@ -576,8 +576,8 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Badge',
-            href: '/components/badge',
+            title: 'Autocomplete',
+            href: '/components/autocomplete',
           }}
           next={{
             title: 'Button Group',

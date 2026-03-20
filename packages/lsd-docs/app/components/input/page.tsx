@@ -541,8 +541,8 @@ export default function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Dialog',
-          href: '/components/dialog',
+          title: 'Checkbox',
+          href: '/components/checkbox',
         }}
         next={{
           title: 'Label',

@@ -383,8 +383,8 @@ export default function SidebarPage() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Select', href: '/components/select' }}
-          next={{ title: 'Sonner', href: '/components/sonner' }}
+          previous={{ title: 'Menubar', href: '/components/menubar' }}
+          next={{ title: 'Tabs', href: '/components/tabs' }}
         />
       </PageContent>
     </DocsLayout>

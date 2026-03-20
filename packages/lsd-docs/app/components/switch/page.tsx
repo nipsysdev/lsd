@@ -420,7 +420,16 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageNavigation previous={{ title: 'Sonner', href: '/components/sonner' }} />
+        <PageNavigation
+          previous={{
+            title: 'Select',
+            href: '/components/select',
+          }}
+          next={{
+            title: 'Command',
+            href: '/components/command',
+          }}
+        />
       </PageContent>
     </DocsLayout>
   );

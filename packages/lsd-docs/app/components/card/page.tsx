@@ -320,8 +320,8 @@ export default function CardPage() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Button Group', href: '/components/button-group' }}
-          next={{ title: 'Checkbox', href: '/components/checkbox' }}
+          previous={{ title: 'Sonner', href: '/components/sonner' }}
+          next={{ title: 'Badge', href: '/components/badge' }}
         />
       </PageContent>
     </DocsLayout>

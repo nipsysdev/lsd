@@ -472,8 +472,8 @@ export default function CommandPage() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Checkbox', href: '/components/checkbox' }}
-          next={{ title: 'Dialog', href: '/components/dialog' }}
+          previous={{ title: 'Switch', href: '/components/switch' }}
+          next={{ title: 'Menubar', href: '/components/menubar' }}
         />
       </PageContent>
     </DocsLayout>

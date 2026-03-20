@@ -555,10 +555,7 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageNavigation
-          previous={{ title: 'Autocomplete', href: '/components/autocomplete' }}
-          next={{ title: 'Button', href: '/components/button' }}
-        />
+        <PageNavigation previous={{ title: 'Card', href: '/components/card' }} />
       </PageContent>
     </DocsLayout>
   );

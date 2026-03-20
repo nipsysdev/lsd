@@ -321,12 +321,12 @@ export default function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Card',
-          href: '/components/card',
+          title: 'Button Group',
+          href: '/components/button-group',
         }}
         next={{
-          title: 'Command',
-          href: '/components/command',
+          title: 'Input',
+          href: '/components/input',
         }}
       />
     </DocsLayout>
