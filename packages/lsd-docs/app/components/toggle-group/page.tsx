@@ -20,13 +20,21 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as ToggleGroupCODE } from '@/examples/toggle-group/ToggleGroupExample';
+import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { CODE as ToggleGroupMultipleCODE } from '@/examples/toggle-group/multiple/ToggleGroupMultipleExample';
+import { CODE as ToggleGroupSingleCODE } from '@/examples/toggle-group/single/ToggleGroupSingleExample';
+import { CODE as ToggleGroupSizesCODE } from '@/examples/toggle-group/sizes/ToggleGroupSizesExample';
 
 export default function ToggleGroupPage() {
-  const toggleGroupIframeRef = useRef<HTMLIFrameElement>(null);
+  const toggleGroupSingleIframeRef = useRef<HTMLIFrameElement>(null);
+  const toggleGroupMultipleIframeRef = useRef<HTMLIFrameElement>(null);
+  const toggleGroupSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(toggleGroupIframeRef);
+  useIframeThemeSync(
+    toggleGroupSingleIframeRef,
+    toggleGroupMultipleIframeRef,
+    toggleGroupSizesIframeRef
+  );
 
   return (
     <DocsLayout>
@@ -65,31 +73,86 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Basic ToggleGroup">
+        <PageSection title="Single Selection">
           <Typography variant="body1">
-            Use type="single" to allow only one item selection, or type="multiple" to allow multiple
-            items to be selected.
+            Use type="single" to allow only one item selection.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>ToggleGroup Examples</CardTitle>
-              <CardDescription>Single and multiple selection with text and icons</CardDescription>
+              <CardTitle>Single Selection</CardTitle>
+              <CardDescription>Only one item can be active at a time</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={toggleGroupIframeRef}
-                  size="sm"
-                  src="/examples/toggle-group"
-                  title="ToggleGroup Example"
-                />
-              </div>
+              <IframeExample
+                ref={toggleGroupSingleIframeRef}
+                size="sm"
+                src="/examples/toggle-group/single"
+                title="ToggleGroup Single Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={ToggleGroupCODE} />
+                    <CodeExample code={ToggleGroupSingleCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Multiple Selection">
+          <Typography variant="body1">
+            Use type="multiple" to allow multiple items to be selected.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Multiple Selection</CardTitle>
+              <CardDescription>Multiple items can be active at once</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toggleGroupMultipleIframeRef}
+                size="sm"
+                src="/examples/toggle-group/multiple"
+                title="ToggleGroup Multiple Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ToggleGroupMultipleCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Sizes">
+          <Typography variant="body1">
+            ToggleGroup items come in two sizes to fit different contexts.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Small Size</CardTitle>
+              <CardDescription>Small size toggle group items</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toggleGroupSizesIframeRef}
+                size="sm"
+                src="/examples/toggle-group/sizes"
+                title="ToggleGroup Sizes Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ToggleGroupSizesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
