@@ -15,6 +15,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -22,8 +23,6 @@ import { PageSection } from '@/components/docs/PageSection';
 import { CODE as SheetCODE } from '@/examples/sheet/SheetExample';
 
 export default function SheetPage() {
-  const sheetIframeRef = useRef<HTMLIFrameElement>(null);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -76,14 +75,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={sheetIframeRef}
-                    src="/examples/sheet"
-                    className="size-full"
-                    title="Sheet Example"
-                  />
-                </div>
+                <IframeExample size="lg" src="/examples/sheet" title="Sheet Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

@@ -16,6 +16,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -24,10 +25,6 @@ import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { SonnerExample, CODE as SonnerExampleCODE } from '@/examples/sonner/SonnerExample';
 
 export default function SonnerPage() {
-  const sonnerIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(sonnerIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -83,14 +80,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={sonnerIframeRef}
-                    src="/examples/sonner"
-                    className="size-full"
-                    title="Sonner Example"
-                  />
-                </div>
+                <IframeExample size="md" src="/examples/sonner" title="Sonner Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

@@ -17,6 +17,7 @@ import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -31,23 +32,6 @@ import { CODE as BadgeSizesCODE } from '@/examples/badge/sizes/BadgeSizesExample
 import { CODE as BadgeVariantsCODE } from '@/examples/badge/variants/BadgeVariantsExample';
 
 export default function BadgePage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const sizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const featuresIframeRef = useRef<HTMLIFrameElement>(null);
-  const dotsIframeRef = useRef<HTMLIFrameElement>(null);
-  const interactiveIframeRef = useRef<HTMLIFrameElement>(null);
-  const dismissibleIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(
-    basicIframeRef,
-    variantsIframeRef,
-    sizesIframeRef,
-    featuresIframeRef,
-    dotsIframeRef,
-    interactiveIframeRef,
-    dismissibleIframeRef
-  );
   return (
     <DocsLayout>
       <PageHeader
@@ -92,14 +76,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/badge/basic"
-                    className="size-full"
-                    title="Badge Basic Example"
-                  />
-                </div>
+                <IframeExample src="/examples/badge/basic" size="sm" title="Badge Basic Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -121,14 +98,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={variantsIframeRef}
-                    src="/examples/badge/variants"
-                    className="size-full"
-                    title="Badge Variants Example"
-                  />
-                </div>
+                <IframeExample
+                  src="/examples/badge/variants"
+                  size="sm"
+                  title="Badge Variants Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -148,14 +122,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={dotsIframeRef}
-                    src="/examples/badge/dots"
-                    className="size-full"
-                    title="Badge Dots Example"
-                  />
-                </div>
+                <IframeExample src="/examples/badge/dots" size="sm" title="Badge Dots Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -181,14 +148,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={sizesIframeRef}
-                    src="/examples/badge/sizes"
-                    className="size-full"
-                    title="Badge Sizes Example"
-                  />
-                </div>
+                <IframeExample src="/examples/badge/sizes" size="sm" title="Badge Sizes Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -214,14 +174,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={interactiveIframeRef}
-                    src="/examples/badge/interactive"
-                    className="size-full"
-                    title="Badge Interactive Example"
-                  />
-                </div>
+                <IframeExample
+                  src="/examples/badge/interactive"
+                  size="sm"
+                  title="Badge Interactive Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -241,14 +198,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={dismissibleIframeRef}
-                    src="/examples/badge/dismissible"
-                    className="size-full"
-                    title="Badge Dismissible Example"
-                  />
-                </div>
+                <IframeExample
+                  src="/examples/badge/dismissible"
+                  size="sm"
+                  title="Badge Dismissible Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -268,14 +222,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={featuresIframeRef}
-                    src="/examples/badge/features"
-                    className="size-full"
-                    title="Badge Features Example"
-                  />
-                </div>
+                <IframeExample
+                  src="/examples/badge/features"
+                  size="sm"
+                  title="Badge Features Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -295,14 +246,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={dotsIframeRef}
-                    src="/examples/badge/dots"
-                    className="size-full"
-                    title="Badge Dots Example"
-                  />
-                </div>
+                <IframeExample src="/examples/badge/dots" size="sm" title="Badge Dots Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

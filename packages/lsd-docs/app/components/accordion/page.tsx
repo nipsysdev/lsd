@@ -15,16 +15,14 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-
 import { CODE as AccordionCODE } from '@/examples/accordion/AccordionExample';
 
 export default function AccordionPage() {
-  const accordionIframeRef = useRef<HTMLIFrameElement>(null);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -84,14 +82,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={accordionIframeRef}
-                    src="/examples/accordion"
-                    className="size-full"
-                    title="Accordion Example"
-                  />
-                </div>
+                <IframeExample size="md" src="/examples/accordion" title="Accordion Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

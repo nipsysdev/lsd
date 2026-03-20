@@ -24,6 +24,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -37,22 +38,6 @@ import { CODE as ButtonSizesCODE } from '@/examples/button/sizes/ButtonSizesExam
 import { CODE as ButtonVariantsCODE } from '@/examples/button/variants/ButtonVariantsExample';
 
 export default function ButtonPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const sizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const iconsIframeRef = useRef<HTMLIFrameElement>(null);
-  const loadingIframeRef = useRef<HTMLIFrameElement>(null);
-  const groupsIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(
-    basicIframeRef,
-    variantsIframeRef,
-    sizesIframeRef,
-    iconsIframeRef,
-    loadingIframeRef,
-    groupsIframeRef
-  );
-
   return (
     <DocsLayout>
       <PageHeader
@@ -97,14 +82,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/button/basic"
-                    className="size-full"
-                    title="Button Basic Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/button/basic"
+                  title="Button Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -130,14 +112,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={variantsIframeRef}
-                    src="/examples/button/variants"
-                    className="size-full"
-                    title="Button Variants Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/button/variants"
+                  title="Button Variants Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -163,14 +142,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={sizesIframeRef}
-                    src="/examples/button/sizes"
-                    className="size-full"
-                    title="Button Sizes Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/button/sizes"
+                  title="Button Sizes Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -196,14 +172,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={iconsIframeRef}
-                    src="/examples/button/icons"
-                    className="size-full"
-                    title="Button Icons Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/button/icons"
+                  title="Button Icons Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -229,14 +202,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={loadingIframeRef}
-                    src="/examples/button/loading"
-                    className="size-full"
-                    title="Button Loading Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/button/loading"
+                  title="Button Loading Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -351,14 +321,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={groupsIframeRef}
-                    src="/examples/button/groups"
-                    className="size-full"
-                    title="Button Groups Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/button/groups"
+                  title="Button Groups Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

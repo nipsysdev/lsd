@@ -15,6 +15,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -25,12 +26,6 @@ import { CODE as LabelSizesExampleCODE } from '@/examples/label/sizes/LabelSizes
 import { CODE as LabelVariantsExampleCODE } from '@/examples/label/variants/LabelVariantsExample';
 
 export default function LabelPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const sizesIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(basicIframeRef, variantsIframeRef, sizesIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -81,15 +76,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/label/basic"
-                    className="w-full"
-                    style={{ height: 'auto', minHeight: '200px' }}
-                    title="Label Basic Example"
-                  />
-                </div>
+                <IframeExample size="sm" src="/examples/label/basic" title="Label Basic Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -115,15 +102,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="w-full overflow-hidden">
-                  <iframe
-                    ref={variantsIframeRef}
-                    src="/examples/label/variants"
-                    className="w-full"
-                    style={{ height: 'auto', minHeight: '200px' }}
-                    title="Label Variants Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/label/variants"
+                  title="Label Variants Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -149,15 +132,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="w-full overflow-hidden">
-                  <iframe
-                    ref={sizesIframeRef}
-                    src="/examples/label/sizes"
-                    className="w-full"
-                    style={{ height: 'auto', minHeight: '200px' }}
-                    title="Label Sizes Example"
-                  />
-                </div>
+                <IframeExample size="sm" src="/examples/label/sizes" title="Label Sizes Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

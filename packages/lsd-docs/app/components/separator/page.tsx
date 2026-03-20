@@ -16,16 +16,14 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-
 import { CODE as SeparatorCODE } from '@/examples/separator/SeparatorExample';
 
 export default function SeparatorPage() {
-  const separatorIframeRef = useRef<HTMLIFrameElement>(null);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -77,14 +75,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={separatorIframeRef}
-                    src="/examples/separator"
-                    className="size-full"
-                    title="Separator Example"
-                  />
-                </div>
+                <IframeExample size="sm" src="/examples/separator" title="Separator Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

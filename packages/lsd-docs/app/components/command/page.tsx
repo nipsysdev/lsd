@@ -15,6 +15,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -26,13 +27,6 @@ import { CODE as CommandGroupsExampleCODE } from '@/examples/command/groups/Comm
 import { CODE as CommandShortcutsExampleCODE } from '@/examples/command/shortcuts/CommandShortcutsExample';
 
 export default function CommandPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const groupsIframeRef = useRef<HTMLIFrameElement>(null);
-  const shortcutsIframeRef = useRef<HTMLIFrameElement>(null);
-  const dialogIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(basicIframeRef, groupsIframeRef, shortcutsIframeRef, dialogIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -118,14 +112,11 @@ export default function CommandPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/command/basic"
-                    className="size-full"
-                    title="Command Basic Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/command/basic"
+                  title="Command Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -153,14 +144,11 @@ export default function CommandPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={groupsIframeRef}
-                    src="/examples/command/groups"
-                    className="size-full"
-                    title="Command Groups Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/command/groups"
+                  title="Command Groups Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -188,14 +176,11 @@ export default function CommandPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={shortcutsIframeRef}
-                    src="/examples/command/shortcuts"
-                    className="size-full"
-                    title="Command Shortcuts Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/command/shortcuts"
+                  title="Command Shortcuts Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -223,14 +208,11 @@ export default function CommandPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={dialogIframeRef}
-                    src="/examples/command/dialog"
-                    className="size-full"
-                    title="Command Dialog Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/command/dialog"
+                  title="Command Dialog Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

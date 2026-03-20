@@ -15,6 +15,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -23,9 +24,6 @@ import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as CardBasicExampleCODE } from '@/examples/card/basic/CardBasicExample';
 
 export default function CardPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  useIframeThemeSync(basicIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -104,14 +102,7 @@ export default function CardPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/card/basic"
-                    className="size-full"
-                    title="Card Basic Example"
-                  />
-                </div>
+                <IframeExample size="md" src="/examples/card/basic" title="Card Basic Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

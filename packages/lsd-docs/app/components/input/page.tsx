@@ -16,6 +16,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -54,14 +55,7 @@ export default function InputPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={inputIframeRef}
-                    src="/examples/input"
-                    className="size-full"
-                    title="Input Example"
-                  />
-                </div>
+                <IframeExample size="sm" src="/examples/input" title="Input Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

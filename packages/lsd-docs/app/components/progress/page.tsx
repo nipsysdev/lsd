@@ -15,6 +15,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -24,11 +25,6 @@ import { CODE as ProgressBasicCODE } from '@/examples/progress/basic/ProgressBas
 import { CODE as ProgressFeaturesCODE } from '@/examples/progress/features/ProgressFeaturesExample';
 
 export default function ProgressPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const featuresIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(basicIframeRef, featuresIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -76,14 +72,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/progress/basic"
-                    className="size-full"
-                    title="Progress Basic Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/progress/basic"
+                  title="Progress Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -112,14 +105,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={featuresIframeRef}
-                    src="/examples/progress/features"
-                    className="size-full"
-                    title="Progress Features Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/progress/features"
+                  title="Progress Features Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

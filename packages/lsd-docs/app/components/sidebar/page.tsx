@@ -15,6 +15,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -23,10 +24,6 @@ import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as SidebarBasicExampleCODE } from '@/examples/sidebar/basic/SidebarBasicExample';
 
 export default function SidebarPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(basicIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -144,15 +141,8 @@ export default function SidebarPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden border">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/sidebar/basic"
-                    className="size-full"
-                    title="Sidebar Example"
-                  />
-                </div>
+              <div className="border">
+                <IframeExample size="lg" src="/examples/sidebar/basic" title="Sidebar Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

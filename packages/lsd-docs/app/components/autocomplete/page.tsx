@@ -15,6 +15,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -26,13 +27,6 @@ import { CODE as SIZES_CODE } from '@/examples/autocomplete/sizes/AutocompleteSi
 import { CODE as VARIANTS_CODE } from '@/examples/autocomplete/variants/AutocompleteVariantsExample';
 
 export default function AutocompletePage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const sizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const featuresIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(basicIframeRef, variantsIframeRef, sizesIframeRef, featuresIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -85,14 +79,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/autocomplete/basic"
-                    className="size-full"
-                    title="Autocomplete Basic Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/autocomplete/basic"
+                  title="Autocomplete Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -118,14 +109,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={variantsIframeRef}
-                    src="/examples/autocomplete/variants"
-                    className="size-full"
-                    title="Autocomplete Variants Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/autocomplete/variants"
+                  title="Autocomplete Variants Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -151,14 +139,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={sizesIframeRef}
-                    src="/examples/autocomplete/sizes"
-                    className="size-full"
-                    title="Autocomplete Sizes Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/autocomplete/sizes"
+                  title="Autocomplete Sizes Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -185,14 +170,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={featuresIframeRef}
-                    src="/examples/autocomplete/features"
-                    className="size-full"
-                    title="Autocomplete Features Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/autocomplete/features"
+                  title="Autocomplete Features Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

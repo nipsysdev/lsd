@@ -23,20 +23,16 @@ import {
 import { useRef, useState } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as SelectBasicCODE } from '@/examples/select/basic/SelectBasicExample';
 import { CODE as SelectVariantsCODE } from '@/examples/select/variants/SelectVariantsExample';
 
 export default function SelectPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
   const [value, setValue] = useState('option2');
-
-  useIframeThemeSync(basicIframeRef, variantsIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -65,14 +61,11 @@ export default function SelectPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/select/basic"
-                    className="size-full"
-                    title="Select Basic Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/select/basic"
+                  title="Select Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -200,14 +193,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={variantsIframeRef}
-                    src="/examples/select/variants"
-                    className="size-full"
-                    title="Select Variants Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/select/variants"
+                  title="Select Variants Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

@@ -15,6 +15,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -23,10 +24,6 @@ import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as DialogBasicExampleCODE } from '@/examples/dialog/basic/DialogBasicExample';
 
 export default function DialogPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(basicIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -109,14 +106,11 @@ export default function DialogPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/dialog/basic"
-                    className="size-full"
-                    title="Dialog Basic Example"
-                  />
-                </div>
+                <IframeExample
+                  size="md"
+                  src="/examples/dialog/basic"
+                  title="Dialog Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

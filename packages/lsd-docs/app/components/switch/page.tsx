@@ -16,6 +16,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -25,11 +26,6 @@ import { CODE as SwitchBasicCODE } from '@/examples/switch/basic/SwitchBasicExam
 import { CODE as SwitchControlledCODE } from '@/examples/switch/controlled/SwitchControlledExample';
 
 export default function SwitchPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const controlledIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(basicIframeRef, controlledIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -127,14 +123,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={basicIframeRef}
-                    src="/examples/switch/basic"
-                    className="size-full"
-                    title="Switch Basic Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/switch/basic"
+                  title="Switch Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -154,14 +147,11 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={controlledIframeRef}
-                    src="/examples/switch/controlled"
-                    className="size-full"
-                    title="Switch Controlled Example"
-                  />
-                </div>
+                <IframeExample
+                  size="sm"
+                  src="/examples/switch/controlled"
+                  title="Switch Controlled Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

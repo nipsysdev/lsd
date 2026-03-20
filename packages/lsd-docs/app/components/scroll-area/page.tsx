@@ -17,6 +17,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -25,8 +26,6 @@ import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 import { CODE as ScrollAreaCODE } from '@/examples/scroll-area/ScrollAreaExample';
 
 export default function ScrollAreaPage() {
-  const scrollAreaIframeRef = useRef<HTMLIFrameElement>(null);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -78,14 +77,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={scrollAreaIframeRef}
-                    src="/examples/scroll-area"
-                    className="size-full"
-                    title="ScrollArea Example"
-                  />
-                </div>
+                <IframeExample size="lg" src="/examples/scroll-area" title="ScrollArea Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

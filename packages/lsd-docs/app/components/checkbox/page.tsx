@@ -16,6 +16,7 @@ import {
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
@@ -24,10 +25,6 @@ import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as CheckboxCODE } from '@/examples/checkbox/CheckboxExample';
 
 export default function CheckboxPage() {
-  const checkboxIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(checkboxIframeRef);
-
   return (
     <DocsLayout>
       <PageHeader
@@ -73,14 +70,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <div className="aspect-video w-full overflow-hidden">
-                  <iframe
-                    ref={checkboxIframeRef}
-                    src="/examples/checkbox"
-                    className="size-full"
-                    title="Checkbox Example"
-                  />
-                </div>
+                <IframeExample size="sm" src="/examples/checkbox" title="Checkbox Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
