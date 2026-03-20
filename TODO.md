@@ -52,7 +52,7 @@
 
 ### 🔴 P1 — High Priority
 
-#### 4. Split ToggleExample
+#### 4. ~~Split ToggleExample~~ ✅ COMPLETED (1e2454f)
 **File:** `packages/lsd-docs/app/examples/toggle/ToggleExample.tsx` (96 lines)
 **Split into:**
 - `basic/ToggleBasicExample.tsx`
