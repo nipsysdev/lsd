@@ -23,8 +23,6 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as ButtonBasicCODE } from '@/examples/button/basic/ButtonBasicExample';
-import { CODE as ButtonGroupsCODE } from '@/examples/button/groups/ButtonGroupsExample';
 import { CODE as ButtonIconsCODE } from '@/examples/button/icons/ButtonIconsExample';
 import { CODE as ButtonLoadingCODE } from '@/examples/button/loading/ButtonLoadingExample';
 import { CODE as ButtonSizesCODE } from '@/examples/button/sizes/ButtonSizesExample';
@@ -78,38 +76,6 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Button">
-          <Typography variant="body1">
-            Basic button usage showing different variants including primary, outlined, link, ghost,
-            and semantic variants.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Basic Examples</CardTitle>
-              <CardDescription>Comprehensive overview of all button variants</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={buttonBasicIframeRef}
-                  size="sm"
-                  src="/examples/button/basic"
-                  title="Button Basic Example"
-                />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonBasicCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </PageSection>
-
         <PageSection title="Variants">
           <Typography variant="body1">
             Button variants organized by category: primary, rounded, ghost, and semantic variants.
@@ -124,7 +90,7 @@ export default function MyComponent() {
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
                   ref={buttonVariantsIframeRef}
-                  size="sm"
+                  size="md"
                   src="/examples/button/variants"
                   title="Button Variants Example"
                 />
@@ -313,40 +279,6 @@ export default function MyComponent() {
   </a>
 </Button>`}
                     />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Button Groups">
-          <Typography variant="body1">
-            ButtonGroup organizes related buttons into groups with horizontal and vertical
-            orientations.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Button Groups</CardTitle>
-              <CardDescription>
-                Horizontal and vertical button groups with different options
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={buttonGroupsIframeRef}
-                  size="sm"
-                  src="/examples/button/groups"
-                  title="Button Groups Example"
-                />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonGroupsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
