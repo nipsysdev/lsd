@@ -1,15 +1,8 @@
 'use client';
 
-import {
-  Button,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Button, Tooltip, TooltipContent, TooltipTrigger, Typography } from '@nipsys/shadcn-lsd';
 import { InfoIcon } from '@phosphor-icons/react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { TooltipProvider } from './TooltipProvider';
 
 export const CODE = `import { InfoIcon } from '@phosphor-icons/react';
 import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, Typography } from '@nipsys/shadcn-lsd';
@@ -94,8 +87,6 @@ export function Example() {
 }`;
 
 export function TooltipExample() {
-  useInIframeThemeSync();
-
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Typography variant="label1">Basic Tooltip</Typography>

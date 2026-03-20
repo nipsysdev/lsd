@@ -2,15 +2,19 @@ import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import { TooltipPortal } from './TooltipPortal';
 
 function TooltipContent({
   className,
   sideOffset = 0,
   children,
+  container,
   ...props
-}: React.ComponentProps<typeof TooltipPrimitive.Content>) {
+}: React.ComponentProps<typeof TooltipPrimitive.Content> & {
+  container?: HTMLElement | null;
+}) {
   return (
-    <TooltipPrimitive.Portal>
+    <TooltipPortal container={container}>
       <TooltipPrimitive.Content
         data-slot="tooltip-content"
         sideOffset={sideOffset}
@@ -23,7 +27,7 @@ function TooltipContent({
         {children}
         <TooltipPrimitive.Arrow className="lsd:bg-lsd-surface lsd:border-lsd-border lsd:border lsd:z-50 lsd:size-2.5 lsd:translate-y-[calc(-50%_-_2px)] lsd:rotate-45" />
       </TooltipPrimitive.Content>
-    </TooltipPrimitive.Portal>
+    </TooltipPortal>
   );
 }
 
