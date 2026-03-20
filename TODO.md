@@ -60,7 +60,7 @@
 - `with-text/ToggleWithTextExample.tsx`
 - `sizes/ToggleSizesExample.tsx`
 
-#### 5. Split ToggleGroupExample
+#### 5. ~~Split ToggleGroupExample~~ ✅ COMPLETED (89dbb09)
 **File:** `packages/lsd-docs/app/examples/toggle-group/ToggleGroupExample.tsx` (98 lines)
 **Split into:**
 - `single/ToggleGroupSingleExample.tsx`
