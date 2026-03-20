@@ -10,13 +10,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { ChartLineUpIcon, GearIcon, HouseIcon } from '@phosphor-icons/react';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -25,15 +20,33 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 import { CODE as TABS_BASIC_CODE } from '@/examples/tabs/basic/TabsBasicExample';
+import { CODE as TABS_BORDERED_CODE } from '@/examples/tabs/bordered/TabsBorderedExample';
 import { CODE as TABS_CONTROLLED_CODE } from '@/examples/tabs/controlled/TabsControlledExample';
+import { CODE as TABS_DISABLED_CODE } from '@/examples/tabs/disabled/TabsDisabledExample';
+import { CODE as TABS_FULL_WIDTH_CODE } from '@/examples/tabs/full-width/TabsFullWidthExample';
+import { CODE as TABS_SIZES_CODE } from '@/examples/tabs/sizes/TabsSizesExample';
+import { CODE as TABS_WITH_ICONS_CODE } from '@/examples/tabs/with-icons/TabsWithIconsExample';
 
 export default function TabsPage() {
   const tabsBasicIframeRef = useRef<HTMLIFrameElement>(null);
   const tabsControlledIframeRef = useRef<HTMLIFrameElement>(null);
+  const tabsSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const tabsFullWidthIframeRef = useRef<HTMLIFrameElement>(null);
+  const tabsBorderedIframeRef = useRef<HTMLIFrameElement>(null);
+  const tabsWithIconsIframeRef = useRef<HTMLIFrameElement>(null);
+  const tabsDisabledIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(tabsBasicIframeRef, tabsControlledIframeRef);
+  useIframeThemeSync(
+    tabsBasicIframeRef,
+    tabsControlledIframeRef,
+    tabsSizesIframeRef,
+    tabsFullWidthIframeRef,
+    tabsBorderedIframeRef,
+    tabsWithIconsIframeRef,
+    tabsDisabledIframeRef
+  );
 
   return (
     <DocsLayout>
@@ -92,114 +105,17 @@ export default function MyComponent() {
               <CardDescription>From small to large</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Tabs defaultValue="tab1" size="sm">
-                  <TabsList>
-                    <TabsTrigger value="tab1">Small</TabsTrigger>
-                    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-                    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="tab1">
-                    <Typography variant="body1" className="block">
-                      Small tab content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab2">
-                    <Typography variant="body1" className="block">
-                      Small tab content 2
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab3">
-                    <Typography variant="body1" className="block">
-                      Small tab content 3
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-
-                <Tabs defaultValue="tab1" size="md">
-                  <TabsList>
-                    <TabsTrigger value="tab1">Medium</TabsTrigger>
-                    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-                    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="tab1">
-                    <Typography variant="body1" className="block">
-                      Medium tab content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab2">
-                    <Typography variant="body1" className="block">
-                      Medium tab content 2
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab3">
-                    <Typography variant="body1" className="block">
-                      Medium tab content 3
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-
-                <Tabs defaultValue="tab1" size="lg">
-                  <TabsList>
-                    <TabsTrigger value="tab1">Large</TabsTrigger>
-                    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-                    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="tab1">
-                    <Typography variant="body1" className="block">
-                      Large tab content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab2">
-                    <Typography variant="body1" className="block">
-                      Large tab content 2
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab3">
-                    <Typography variant="body1" className="block">
-                      Large tab content 3
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-              </div>
+              <IframeExample
+                ref={tabsSizesIframeRef}
+                size="sm"
+                src="/examples/tabs/sizes"
+                title="Tabs Sizes Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Tabs defaultValue="tab1" size="sm">
-  <TabsList>
-    <TabsTrigger value="tab1">Small</TabsTrigger>
-    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">Small tab content</TabsContent>
-  <TabsContent value="tab2">Small tab content 2</TabsContent>
-  <TabsContent value="tab3">Small tab content 3</TabsContent>
-</Tabs>
-
-<Tabs defaultValue="tab1" size="md">
-  <TabsList>
-    <TabsTrigger value="tab1">Medium</TabsTrigger>
-    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">Medium tab content</TabsContent>
-  <TabsContent value="tab2">Medium tab content 2</TabsContent>
-  <TabsContent value="tab3">Medium tab content 3</TabsContent>
-</Tabs>
-
-<Tabs defaultValue="tab1" size="lg">
-  <TabsList>
-    <TabsTrigger value="tab1">Large</TabsTrigger>
-    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">Large tab content</TabsContent>
-  <TabsContent value="tab2">Large tab content 2</TabsContent>
-  <TabsContent value="tab3">Large tab content 3</TabsContent>
-</Tabs>`}
-                    />
+                    <CodeExample code={TABS_SIZES_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -265,46 +181,17 @@ export default function MyComponent() {
               <CardDescription>Tabs that span the full width of their container</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Tabs defaultValue="tab1" fullWidth>
-                  <TabsList>
-                    <TabsTrigger value="tab1">Overview</TabsTrigger>
-                    <TabsTrigger value="tab2">Details</TabsTrigger>
-                    <TabsTrigger value="tab3">Reviews</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="tab1">
-                    <Typography variant="body1" className="block">
-                      Overview content goes here
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab2">
-                    <Typography variant="body1" className="block">
-                      Details content goes here
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab3">
-                    <Typography variant="body1" className="block">
-                      Reviews content goes here
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-              </div>
+              <IframeExample
+                ref={tabsFullWidthIframeRef}
+                size="sm"
+                src="/examples/tabs/full-width"
+                title="Tabs Full Width Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Tabs defaultValue="tab1" fullWidth>
-  <TabsList>
-    <TabsTrigger value="tab1">Overview</TabsTrigger>
-    <TabsTrigger value="tab2">Details</TabsTrigger>
-    <TabsTrigger value="tab3">Reviews</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">Overview content goes here</TabsContent>
-  <TabsContent value="tab2">Details content goes here</TabsContent>
-  <TabsContent value="tab3">Reviews content goes here</TabsContent>
-</Tabs>`}
-                    />
+                    <CodeExample code={TABS_FULL_WIDTH_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -317,46 +204,17 @@ export default function MyComponent() {
               <CardDescription>Add borders around tab content areas</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Tabs defaultValue="tab1" bordered>
-                  <TabsList>
-                    <TabsTrigger value="tab1">Profile</TabsTrigger>
-                    <TabsTrigger value="tab2">Billing</TabsTrigger>
-                    <TabsTrigger value="tab3">Notifications</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="tab1">
-                    <Typography variant="body1" className="block">
-                      Profile information with border
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab2">
-                    <Typography variant="body1" className="block">
-                      Billing information with border
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab3">
-                    <Typography variant="body1" className="block">
-                      Notification settings with border
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-              </div>
+              <IframeExample
+                ref={tabsBorderedIframeRef}
+                size="sm"
+                src="/examples/tabs/bordered"
+                title="Tabs Bordered Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Tabs defaultValue="tab1" bordered>
-  <TabsList>
-    <TabsTrigger value="tab1">Profile</TabsTrigger>
-    <TabsTrigger value="tab2">Billing</TabsTrigger>
-    <TabsTrigger value="tab3">Notifications</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">Profile information with border</TabsContent>
-  <TabsContent value="tab2">Billing information with border</TabsContent>
-  <TabsContent value="tab3">Notification settings with border</TabsContent>
-</Tabs>`}
-                    />
+                    <CodeExample code={TABS_BORDERED_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -369,168 +227,17 @@ export default function MyComponent() {
               <CardDescription>Add icons to tab triggers for visual context</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Tabs defaultValue="home" size="sm">
-                  <TabsList>
-                    <TabsTrigger value="home">
-                      <HouseIcon weight="duotone" />
-                      Home
-                    </TabsTrigger>
-                    <TabsTrigger value="analytics">
-                      <ChartLineUpIcon weight="duotone" />
-                      Analytics
-                    </TabsTrigger>
-                    <TabsTrigger value="settings">
-                      <GearIcon weight="duotone" />
-                      Settings
-                    </TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="home">
-                    <Typography variant="body1" className="block">
-                      Home page content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="analytics">
-                    <Typography variant="body1" className="block">
-                      Analytics dashboard content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="settings">
-                    <Typography variant="body1" className="block">
-                      Settings configuration content
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-
-                <Tabs defaultValue="home" size="md">
-                  <TabsList>
-                    <TabsTrigger value="home">
-                      <HouseIcon weight="duotone" />
-                      Home
-                    </TabsTrigger>
-                    <TabsTrigger value="analytics">
-                      <ChartLineUpIcon weight="duotone" />
-                      Analytics
-                    </TabsTrigger>
-                    <TabsTrigger value="settings">
-                      <GearIcon weight="duotone" />
-                      Settings
-                    </TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="home">
-                    <Typography variant="body1" className="block">
-                      Home page content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="analytics">
-                    <Typography variant="body1" className="block">
-                      Analytics dashboard content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="settings">
-                    <Typography variant="body1" className="block">
-                      Settings configuration content
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-
-                <Tabs defaultValue="home" size="lg">
-                  <TabsList>
-                    <TabsTrigger value="home">
-                      <HouseIcon weight="duotone" />
-                      Home
-                    </TabsTrigger>
-                    <TabsTrigger value="analytics">
-                      <ChartLineUpIcon weight="duotone" />
-                      Analytics
-                    </TabsTrigger>
-                    <TabsTrigger value="settings">
-                      <GearIcon weight="duotone" />
-                      Settings
-                    </TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="home">
-                    <Typography variant="body1" className="block">
-                      Home page content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="analytics">
-                    <Typography variant="body1" className="block">
-                      Analytics dashboard content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="settings">
-                    <Typography variant="body1" className="block">
-                      Settings configuration content
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-              </div>
+              <IframeExample
+                ref={tabsWithIconsIframeRef}
+                size="sm"
+                src="/examples/tabs/with-icons"
+                title="Tabs With Icons Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Tabs defaultValue="home" size="sm">
-  <TabsList>
-    <TabsTrigger value="home">
-      <HouseIcon weight="duotone" />
-      Home
-    </TabsTrigger>
-    <TabsTrigger value="analytics">
-      <ChartLineUpIcon weight="duotone" />
-      Analytics
-    </TabsTrigger>
-    <TabsTrigger value="settings">
-      <GearIcon weight="duotone" />
-      Settings
-    </TabsTrigger>
-  </TabsList>
-  <TabsContent value="home">Home page content</TabsContent>
-  <TabsContent value="analytics">Analytics dashboard content</TabsContent>
-  <TabsContent value="settings">Settings configuration content</TabsContent>
-</Tabs>
-
-<Tabs defaultValue="home" size="md">
-  <TabsList>
-    <TabsTrigger value="home">
-      <HouseIcon weight="duotone" />
-      Home
-    </TabsTrigger>
-    <TabsTrigger value="analytics">
-      <ChartLineUpIcon weight="duotone" />
-      Analytics
-    </TabsTrigger>
-    <TabsTrigger value="settings">
-      <GearIcon weight="duotone" />
-      Settings
-    </TabsTrigger>
-  </TabsList>
-  <TabsContent value="home">Home page content</TabsContent>
-  <TabsContent value="analytics">Analytics dashboard content</TabsContent>
-  <TabsContent value="settings">Settings configuration content</TabsContent>
-</Tabs>
-
-<Tabs defaultValue="home" size="lg">
-  <TabsList>
-    <TabsTrigger value="home">
-      <HouseIcon weight="duotone" />
-      Home
-    </TabsTrigger>
-    <TabsTrigger value="analytics">
-      <ChartLineUpIcon weight="duotone" />
-      Analytics
-    </TabsTrigger>
-    <TabsTrigger value="settings">
-      <GearIcon weight="duotone" />
-      Settings
-    </TabsTrigger>
-  </TabsList>
-  <TabsContent value="home">Home page content</TabsContent>
-  <TabsContent value="analytics">Analytics dashboard content</TabsContent>
-  <TabsContent value="settings">Settings configuration content</TabsContent>
-</Tabs>`}
-                    />
+                    <CodeExample code={TABS_WITH_ICONS_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -543,50 +250,17 @@ export default function MyComponent() {
               <CardDescription>Disable individual tab triggers</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Tabs defaultValue="tab1">
-                  <TabsList>
-                    <TabsTrigger value="tab1">Active Tab</TabsTrigger>
-                    <TabsTrigger value="tab2">Another Tab</TabsTrigger>
-                    <TabsTrigger value="tab3" disabled>
-                      Disabled Tab
-                    </TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="tab1">
-                    <Typography variant="body1" className="block">
-                      Active tab content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab2">
-                    <Typography variant="body1" className="block">
-                      Another tab content
-                    </Typography>
-                  </TabsContent>
-                  <TabsContent value="tab3">
-                    <Typography variant="body1" className="block">
-                      Disabled tab content
-                    </Typography>
-                  </TabsContent>
-                </Tabs>
-              </div>
+              <IframeExample
+                ref={tabsDisabledIframeRef}
+                size="sm"
+                src="/examples/tabs/disabled"
+                title="Tabs Disabled Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Tabs defaultValue="tab1">
-  <TabsList>
-    <TabsTrigger value="tab1">Active Tab</TabsTrigger>
-    <TabsTrigger value="tab2">Another Tab</TabsTrigger>
-    <TabsTrigger value="tab3" disabled>
-      Disabled Tab
-    </TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">Active tab content</TabsContent>
-  <TabsContent value="tab2">Another tab content</TabsContent>
-  <TabsContent value="tab3">Disabled tab content</TabsContent>
-</Tabs>`}
-                    />
+                    <CodeExample code={TABS_DISABLED_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
