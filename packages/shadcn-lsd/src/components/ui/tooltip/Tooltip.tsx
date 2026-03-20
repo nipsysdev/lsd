@@ -5,7 +5,11 @@ import { TooltipProvider } from './TooltipProvider';
 import { TooltipTrigger } from './TooltipTrigger';
 
 function Tooltip({ ...props }: React.ComponentProps<typeof TooltipPrimitive.Root>) {
-  return <TooltipPrimitive.Root data-slot="tooltip" {...props} />;
+  return (
+    <TooltipProvider>
+      <TooltipPrimitive.Root data-slot="tooltip" {...props} />
+    </TooltipProvider>
+  );
 }
 
 export { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent };
