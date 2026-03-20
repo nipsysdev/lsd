@@ -62,7 +62,7 @@ export default function SelectPage() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
-                  size="md"
+                  size="sm"
                   src="/examples/select/basic"
                   title="Select Basic Example"
                 />

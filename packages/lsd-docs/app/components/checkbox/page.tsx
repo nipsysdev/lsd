@@ -67,7 +67,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/checkbox" title="Checkbox Example" />
+                <IframeExample size="lg" src="/examples/checkbox" title="Checkbox Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

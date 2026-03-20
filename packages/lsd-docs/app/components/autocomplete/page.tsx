@@ -183,7 +183,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
-                  size="md"
+                  size="lg"
                   src="/examples/autocomplete/features"
                   title="Autocomplete Features Example"
                 />
