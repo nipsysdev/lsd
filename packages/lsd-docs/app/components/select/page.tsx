@@ -10,17 +10,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectSeparator,
-  SelectTrigger,
-  SelectValue,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -28,11 +20,37 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 import { CODE as SelectBasicCODE } from '@/examples/select/basic/SelectBasicExample';
+import { CODE as SelectBasicUsageCODE } from '@/examples/select/basic-usage/SelectBasicExample';
+import { CODE as SelectControlledCODE } from '@/examples/select/controlled/SelectControlledExample';
+import { CODE as SelectDisabledCODE } from '@/examples/select/disabled/SelectDisabledExample';
+import { CODE as SelectGroupedCODE } from '@/examples/select/grouped/SelectGroupedExample';
+import { CODE as SelectSizesCODE } from '@/examples/select/sizes/SelectSizesExample';
 import { CODE as SelectVariantsCODE } from '@/examples/select/variants/SelectVariantsExample';
+import { CODE as SelectWithSeparatorCODE } from '@/examples/select/with-separator/SelectWithSeparatorExample';
 
 export default function SelectPage() {
-  const [value, setValue] = useState('option2');
+  const selectBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const selectVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const selectSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const selectBasicUsageIframeRef = useRef<HTMLIFrameElement>(null);
+  const selectGroupedIframeRef = useRef<HTMLIFrameElement>(null);
+  const selectWithSeparatorIframeRef = useRef<HTMLIFrameElement>(null);
+  const selectDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const selectControlledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(
+    selectBasicIframeRef,
+    selectVariantsIframeRef,
+    selectSizesIframeRef,
+    selectBasicUsageIframeRef,
+    selectGroupedIframeRef,
+    selectWithSeparatorIframeRef,
+    selectDisabledIframeRef,
+    selectControlledIframeRef
+  );
+
   return (
     <DocsLayout>
       <PageHeader
@@ -60,13 +78,12 @@ export default function SelectPage() {
               <CardDescription>Simple select with items</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="sm"
-                  src="/examples/select/basic"
-                  title="Select Basic Example"
-                />
-              </div>
+              <IframeExample
+                ref={selectBasicIframeRef}
+                size="sm"
+                src="/examples/select/basic"
+                title="Select Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -123,56 +140,17 @@ export default function MyComponent() {
               <CardDescription>Small and default sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Select>
-                  <SelectTrigger size="sm">
-                    <SelectValue placeholder="Small size" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="option1">Option 1</SelectItem>
-                    <SelectItem value="option2">Option 2</SelectItem>
-                    <SelectItem value="option3">Option 3</SelectItem>
-                  </SelectContent>
-                </Select>
-
-                <Select>
-                  <SelectTrigger size="default">
-                    <SelectValue placeholder="Default size" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="option1">Option 1</SelectItem>
-                    <SelectItem value="option2">Option 2</SelectItem>
-                    <SelectItem value="option3">Option 3</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              <IframeExample
+                ref={selectSizesIframeRef}
+                size="sm"
+                src="/examples/select/sizes"
+                title="Select Sizes Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Select>
-  <SelectTrigger size="sm">
-    <SelectValue placeholder="Small size" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="option1">Option 1</SelectItem>
-    <SelectItem value="option2">Option 2</SelectItem>
-    <SelectItem value="option3">Option 3</SelectItem>
-  </SelectContent>
-</Select>
-
-<Select>
-  <SelectTrigger size="default">
-    <SelectValue placeholder="Default size" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="option1">Option 1</SelectItem>
-    <SelectItem value="option2">Option 2</SelectItem>
-    <SelectItem value="option3">Option 3</SelectItem>
-  </SelectContent>
-</Select>`}
-                    />
+                    <CodeExample code={SelectSizesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -192,13 +170,12 @@ export default function MyComponent() {
               <CardDescription>Grouped items, separators, and controlled state</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/select/variants"
-                  title="Select Variants Example"
-                />
-              </div>
+              <IframeExample
+                ref={selectVariantsIframeRef}
+                size="md"
+                src="/examples/select/variants"
+                title="Select Variants Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -223,36 +200,17 @@ export default function MyComponent() {
               <CardDescription>Simple select with placeholder</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a fruit" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="apple">Apple</SelectItem>
-                    <SelectItem value="banana">Banana</SelectItem>
-                    <SelectItem value="orange">Orange</SelectItem>
-                    <SelectItem value="grape">Grape</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              <IframeExample
+                ref={selectBasicUsageIframeRef}
+                size="sm"
+                src="/examples/select/basic-usage"
+                title="Select Basic Usage Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Select>
-  <SelectTrigger>
-    <SelectValue placeholder="Select a fruit" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="apple">Apple</SelectItem>
-    <SelectItem value="banana">Banana</SelectItem>
-    <SelectItem value="orange">Orange</SelectItem>
-    <SelectItem value="grape">Grape</SelectItem>
-  </SelectContent>
-</Select>`}
-                    />
+                    <CodeExample code={SelectBasicUsageCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -265,54 +223,17 @@ export default function MyComponent() {
               <CardDescription>Organize items with labels and groups</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a food" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Fruits</SelectLabel>
-                      <SelectItem value="apple">Apple</SelectItem>
-                      <SelectItem value="banana">Banana</SelectItem>
-                      <SelectItem value="orange">Orange</SelectItem>
-                    </SelectGroup>
-                    <SelectSeparator />
-                    <SelectGroup>
-                      <SelectLabel>Vegetables</SelectLabel>
-                      <SelectItem value="carrot">Carrot</SelectItem>
-                      <SelectItem value="broccoli">Broccoli</SelectItem>
-                      <SelectItem value="spinach">Spinach</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
+              <IframeExample
+                ref={selectGroupedIframeRef}
+                size="sm"
+                src="/examples/select/grouped"
+                title="Select Grouped Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Select>
-  <SelectTrigger>
-    <SelectValue placeholder="Select a food" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectGroup>
-      <SelectLabel>Fruits</SelectLabel>
-      <SelectItem value="apple">Apple</SelectItem>
-      <SelectItem value="banana">Banana</SelectItem>
-      <SelectItem value="orange">Orange</SelectItem>
-    </SelectGroup>
-    <SelectSeparator />
-    <SelectGroup>
-      <SelectLabel>Vegetables</SelectLabel>
-      <SelectItem value="carrot">Carrot</SelectItem>
-      <SelectItem value="broccoli">Broccoli</SelectItem>
-      <SelectItem value="spinach">Spinach</SelectItem>
-    </SelectGroup>
-  </SelectContent>
-</Select>`}
-                    />
+                    <CodeExample code={SelectGroupedCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -325,36 +246,17 @@ export default function MyComponent() {
               <CardDescription>Divide items with visual separators</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a priority" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="high">High Priority</SelectItem>
-                    <SelectItem value="medium">Medium Priority</SelectItem>
-                    <SelectSeparator />
-                    <SelectItem value="low">Low Priority</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              <IframeExample
+                ref={selectWithSeparatorIframeRef}
+                size="sm"
+                src="/examples/select/with-separator"
+                title="Select With Separator Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Select>
-  <SelectTrigger>
-    <SelectValue placeholder="Select a priority" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="high">High Priority</SelectItem>
-    <SelectItem value="medium">Medium Priority</SelectItem>
-    <SelectSeparator />
-    <SelectItem value="low">Low Priority</SelectItem>
-  </SelectContent>
-</Select>`}
-                    />
+                    <CodeExample code={SelectWithSeparatorCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -367,38 +269,17 @@ export default function MyComponent() {
               <CardDescription>Disable specific options</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a plan" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="free">Free Plan</SelectItem>
-                    <SelectItem value="pro">Pro Plan</SelectItem>
-                    <SelectItem value="enterprise" disabled>
-                      Enterprise Plan (Sold Out)
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              <IframeExample
+                ref={selectDisabledIframeRef}
+                size="sm"
+                src="/examples/select/disabled"
+                title="Select Disabled Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Select>
-  <SelectTrigger>
-    <SelectValue placeholder="Select a plan" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="free">Free Plan</SelectItem>
-    <SelectItem value="pro">Pro Plan</SelectItem>
-    <SelectItem value="enterprise" disabled>
-      Enterprise Plan (Sold Out)
-    </SelectItem>
-  </SelectContent>
-</Select>`}
-                    />
+                    <CodeExample code={SelectDisabledCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -411,51 +292,17 @@ export default function MyComponent() {
               <CardDescription>Manage value with state</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <Select value={value} onValueChange={setValue}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select an option" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="option1">Option 1</SelectItem>
-                    <SelectItem value="option2">Option 2</SelectItem>
-                    <SelectItem value="option3">Option 3</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Selected:{' '}
-                  {value === 'option1' ? 'Option 1' : value === 'option2' ? 'Option 2' : 'Option 3'}
-                </Typography>
-              </div>
+              <IframeExample
+                ref={selectControlledIframeRef}
+                size="sm"
+                src="/examples/select/controlled"
+                title="Select Controlled Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`import { useState } from 'react'
-
-export default function MyComponent() {
-  const [value, setValue] = useState('option2')
-
-  return (
-    <>
-      <Select value={value} onValueChange={setValue}>
-        <SelectTrigger>
-          <SelectValue placeholder="Select an option" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="option1">Option 1</SelectItem>
-          <SelectItem value="option2">Option 2</SelectItem>
-          <SelectItem value="option3">Option 3</SelectItem>
-        </SelectContent>
-      </Select>
-      <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-        Selected: {value === 'option1' ? 'Option 1' : value === 'option2' ? 'Option 2' : 'Option 3'}
-      </Typography>
-    </>
-  )
-}`}
-                    />
+                    <CodeExample code={SelectControlledCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -510,7 +357,7 @@ export default function MyComponent() {
               </CardHeader>
               <CardContent>
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> (value: string) {'>'} void
+                  <strong>Type:</strong> (value: string) =&gt; void
                 </Typography>
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
