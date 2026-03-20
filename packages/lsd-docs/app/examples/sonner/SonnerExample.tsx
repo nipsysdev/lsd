@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@nipsys/shadcn-lsd';
-import { toast, Toaster } from 'sonner';
+import { Button, Typography } from '@nipsys/shadcn-lsd';
+import { Toaster, toast } from 'sonner';
 import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import { Button } from '@nipsys/shadcn-lsd';

@@ -54,13 +54,13 @@ export default function LabelPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
-                code={`import { Label } from '@nipsys/shadcn-lsd'
+                code={`import { Label, Input } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
   return (
     <div>
       <Label htmlFor="email">Email</Label>
-      <input id="email" type="email" />
+      <Input id="email" type="email" />
     </div>
   )
 }`}

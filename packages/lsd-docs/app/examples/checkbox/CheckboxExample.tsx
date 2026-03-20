@@ -1,10 +1,10 @@
 'use client';
 
-import { Checkbox, Typography } from '@nipsys/shadcn-lsd';
+import { Checkbox, Label, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
 import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
-export const CODE = `import { Checkbox, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Checkbox, Label, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
 
 export function Example() {
@@ -51,15 +51,15 @@ export function Example() {
       <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
           <Checkbox id="terms" />
-          <label htmlFor="terms" className="text-sm">
+          <Label htmlFor="terms">
             I agree to the terms and conditions
-          </label>
+          </Label>
         </div>
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
           <Checkbox id="newsletter" defaultChecked />
-          <label htmlFor="newsletter" className="text-sm">
+          <Label htmlFor="newsletter">
             Subscribe to newsletter
-          </label>
+          </Label>
         </div>
       </div>
     </div>
@@ -111,15 +111,11 @@ export function CheckboxExample() {
       <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
           <Checkbox id="terms" />
-          <label htmlFor="terms" className="text-sm">
-            I agree to the terms and conditions
-          </label>
+          <Label htmlFor="terms">I agree to the terms and conditions</Label>
         </div>
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
           <Checkbox id="newsletter" defaultChecked />
-          <label htmlFor="newsletter" className="text-sm">
-            Subscribe to newsletter
-          </label>
+          <Label htmlFor="newsletter">Subscribe to newsletter</Label>
         </div>
       </div>
     </div>
