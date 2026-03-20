@@ -149,7 +149,7 @@
 
 ---
 
-#### 15. Extract Select Inline Examples
+#### 15. ~~Extract Select Inline Examples~~ ✅ COMPLETED (22c3316)
 **Page:** `packages/lsd-docs/app/components/select/page.tsx`
 **Inline examples to extract:**
 - Sizes (2 examples) → `examples/select/sizes/SelectSizesExample.tsx`
