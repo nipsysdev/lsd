@@ -21,14 +21,38 @@ import {
   ShareIcon,
   TrashIcon,
 } from '@phosphor-icons/react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as ButtonBasicCODE } from '@/examples/button/basic/ButtonBasicExample';
+import { CODE as ButtonGroupsCODE } from '@/examples/button/groups/ButtonGroupsExample';
+import { CODE as ButtonIconsCODE } from '@/examples/button/icons/ButtonIconsExample';
+import { CODE as ButtonLoadingCODE } from '@/examples/button/loading/ButtonLoadingExample';
+import { CODE as ButtonSizesCODE } from '@/examples/button/sizes/ButtonSizesExample';
+import { CODE as ButtonVariantsCODE } from '@/examples/button/variants/ButtonVariantsExample';
 
 export default function ButtonPage() {
+  const basicIframeRef = useRef<HTMLIFrameElement>(null);
+  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const sizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const iconsIframeRef = useRef<HTMLIFrameElement>(null);
+  const loadingIframeRef = useRef<HTMLIFrameElement>(null);
+  const groupsIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(
+    basicIframeRef,
+    variantsIframeRef,
+    sizesIframeRef,
+    iconsIframeRef,
+    loadingIframeRef,
+    groupsIframeRef
+  );
+
   return (
     <DocsLayout>
       <PageHeader
@@ -50,7 +74,7 @@ export default function ButtonPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
-                code={`import { Button } from '@nipsys/shadcn-lsd'
+                code={`import { Button } from '@nipsys/shadcn-lsd';
 
 export default function MyComponent() {
   return <Button>Click me</Button>
@@ -60,31 +84,33 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Primary Variants">
+        <PageSection title="Basic Button">
           <Typography variant="body1">
-            Primary button variants for different use cases and visual hierarchy.
+            Basic button usage showing different variants including primary, outlined, link, ghost,
+            and semantic variants.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Primary Variants</CardTitle>
-              <CardDescription>Basic button styles for common actions</CardDescription>
+              <CardTitle>Basic Examples</CardTitle>
+              <CardDescription>Comprehensive overview of all button variants</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button variant="filled">Filled</Button>
-                <Button variant="outlined">Outlined</Button>
-                <Button variant="link">Link</Button>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={basicIframeRef}
+                    src="/examples/button/basic"
+                    className="size-full"
+                    title="Button Basic Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Button variant="filled">Filled</Button>
-<Button variant="outlined">Outlined</Button>
-<Button variant="link">Link</Button>`}
-                    />
+                    <CodeExample code={ButtonBasicCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -92,133 +118,32 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Rounded Variants">
+        <PageSection title="Variants">
           <Typography variant="body1">
-            Rounded button variants with circular shape, perfect for icon-only buttons.
+            Button variants organized by category: primary, rounded, ghost, and semantic variants.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Rounded Variants</CardTitle>
-              <CardDescription>Circular buttons for icon-only actions</CardDescription>
+              <CardTitle>All Variants</CardTitle>
+              <CardDescription>Button variants organized by category</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button variant="filled-rounded" size="square-md">
-                  <PlusIcon />
-                </Button>
-                <Button variant="outlined-rounded" size="square-md">
-                  <ShareIcon weight="duotone" />
-                </Button>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={variantsIframeRef}
+                    src="/examples/button/variants"
+                    className="size-full"
+                    title="Button Variants Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Button variant="filled-rounded" size="square-md">
-  <PlusIcon />
-</Button>
-<Button variant="outlined-rounded" size="square-md">
-  <ShareIcon weight="duotone" />
-</Button>`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Ghost Variants">
-          <Typography variant="body1">
-            Ghost variants with transparent backgrounds and hover states for subtle interactions.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Ghost Variants</CardTitle>
-              <CardDescription>Subtle buttons with hover effects</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button variant="ghost">Ghost</Button>
-                <Button variant="ghost-rounded" size="square-md">
-                  <DownloadIcon weight="duotone" />
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<Button variant="ghost">Ghost</Button>
-<Button variant="ghost-rounded" size="square-md">
-  <DownloadIcon weight="duotone" />
-</Button>`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Semantic Variants">
-          <Typography variant="body1">
-            Semantic variants for destructive and success actions with appropriate visual cues.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Destructive Variants</CardTitle>
-              <CardDescription>For destructive or dangerous actions</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button variant="destructive">Delete</Button>
-                <Button variant="destructive-rounded" size="square-md">
-                  <TrashIcon weight="duotone" />
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<Button variant="destructive">Delete</Button>
-<Button variant="destructive-rounded" size="square-md">
-  <TrashIcon weight="duotone" />
-</Button>`}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Success Variants</CardTitle>
-              <CardDescription>For successful or positive actions</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button variant="success">Save</Button>
-                <Button variant="success-rounded" size="square-md">
-                  <CheckIcon />
-                </Button>
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={`<Button variant="success">Save</Button>
-<Button variant="success-rounded" size="square-md">
-  <CheckIcon />
-</Button>`}
-                    />
+                    <CodeExample code={ButtonVariantsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -233,62 +158,58 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Regular Sizes</CardTitle>
-              <CardDescription>Standard button sizes for text buttons</CardDescription>
+              <CardTitle>All Sizes</CardTitle>
+              <CardDescription>Regular and square sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap items-center gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button size="sm">Small</Button>
-                <Button size="md">Medium</Button>
-                <Button size="lg">Large</Button>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={sizesIframeRef}
+                    src="/examples/button/sizes"
+                    className="size-full"
+                    title="Button Sizes Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Button size="sm">Small</Button>
-<Button size="md">Medium</Button>
-<Button size="lg">Large</Button>`}
-                    />
+                    <CodeExample code={ButtonSizesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
             </CardContent>
           </Card>
+        </PageSection>
+
+        <PageSection title="With Icons">
+          <Typography variant="body1">
+            Buttons can include icons for better visual communication and user experience.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Square Sizes</CardTitle>
-              <CardDescription>Square sizes for icon-only buttons</CardDescription>
+              <CardTitle>Icon Support</CardTitle>
+              <CardDescription>Buttons with leading and trailing icons</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap items-center gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button variant="filled-rounded" size="square-sm">
-                  <PlusIcon />
-                </Button>
-                <Button variant="filled-rounded" size="square-md">
-                  <PlusIcon />
-                </Button>
-                <Button variant="filled-rounded" size="square-lg">
-                  <PlusIcon />
-                </Button>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={iconsIframeRef}
+                    src="/examples/button/icons"
+                    className="size-full"
+                    title="Button Icons Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Button variant="filled-rounded" size="square-sm">
-  <PlusIcon />
-</Button>
-<Button variant="filled-rounded" size="square-md">
-  <PlusIcon />
-</Button>
-<Button variant="filled-rounded" size="square-lg">
-  <PlusIcon />
-</Button>`}
-                    />
+                    <CodeExample code={ButtonIconsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -307,18 +228,21 @@ export default function MyComponent() {
               <CardDescription>Show loading spinner with optional text</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Button loading>Loading</Button>
-                <Button loading>With Text</Button>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={loadingIframeRef}
+                    src="/examples/button/loading"
+                    className="size-full"
+                    title="Button Loading Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Button loading>Loading</Button>
-<Button loading>With Text</Button>`}
-                    />
+                    <CodeExample code={ButtonLoadingCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -405,6 +329,42 @@ export default function MyComponent() {
   </a>
 </Button>`}
                     />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Button Groups">
+          <Typography variant="body1">
+            ButtonGroup organizes related buttons into groups with horizontal and vertical
+            orientations.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Button Groups</CardTitle>
+              <CardDescription>
+                Horizontal and vertical button groups with different options
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={groupsIframeRef}
+                    src="/examples/button/groups"
+                    className="size-full"
+                    title="Button Groups Example"
+                  />
+                </div>
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ButtonGroupsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
