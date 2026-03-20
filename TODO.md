@@ -15,7 +15,7 @@
 
 ### 🚨 P0 — Highest Complexity
 
-#### 1. Split SonnerExample
+#### 1. ~~Split SonnerExample~~ ✅ COMPLETED (38f29df)
 **File:** `packages/lsd-docs/app/examples/sonner/SonnerExample.tsx` (296 lines)
 **Split into:**
 - `toast-types/ToastTypesExample.tsx`
