@@ -4,17 +4,9 @@ import {
   Menubar,
   MenubarContent,
   MenubarItem,
-  MenubarLabel,
   MenubarMenu,
-  MenubarPortal,
-  MenubarSeparator,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
   MenubarTrigger,
-  Typography,
 } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import {
   Menubar,
@@ -33,7 +25,7 @@ export const CODE = `import {
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <>
       <Menubar>
         <MenubarMenu>
           <MenubarTrigger>File</MenubarTrigger>
@@ -62,13 +54,11 @@ export function Example() {
           </MenubarContent>
         </MenubarMenu>
       </Menubar>
-    </div>
+    </>
   );
 }`;
 
 export function MenubarExample() {
-  useInIframeThemeSync();
-
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Menubar>

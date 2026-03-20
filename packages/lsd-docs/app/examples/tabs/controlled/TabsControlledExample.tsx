@@ -2,7 +2,6 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
@@ -11,7 +10,7 @@ export function Example() {
   const [value, setValue] = useState('tab1');
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <>
       <Tabs value={value} onValueChange={setValue}>
         <TabsList>
           <TabsTrigger value="tab1">Tab 1</TabsTrigger>
@@ -34,12 +33,11 @@ export function Example() {
           </Typography>
         </TabsContent>
       </Tabs>
-    </div>
+    </>
   );
 }`;
 
 export function TabsControlledExample() {
-  useInIframeThemeSync();
   const [value, setValue] = useState('tab1');
 
   return (

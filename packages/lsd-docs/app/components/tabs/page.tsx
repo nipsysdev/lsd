@@ -19,15 +19,13 @@ import {
 import { ChartLineUpIcon, GearIcon, HouseIcon } from '@phosphor-icons/react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as TABS_BASIC_CODE, TabsBasicExample } from '@/examples/tabs/basic/TabsBasicExample';
-import {
-  CODE as TABS_CONTROLLED_CODE,
-  TabsControlledExample,
-} from '@/examples/tabs/controlled/TabsControlledExample';
+import { CODE as TABS_BASIC_CODE } from '@/examples/tabs/basic/TabsBasicExample';
+import { CODE as TABS_CONTROLLED_CODE } from '@/examples/tabs/controlled/TabsControlledExample';
 
 export default function TabsPage() {
   return (
@@ -214,9 +212,7 @@ export default function MyComponent() {
               <CardDescription>Simple uncontrolled tabs with default value</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <TabsBasicExample />
-              </div>
+              <IframeExample size="sm" src="/examples/tabs/basic" title="Tabs Basic Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -234,9 +230,11 @@ export default function MyComponent() {
               <CardDescription>Control the active tab with state</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <TabsControlledExample />
-              </div>
+              <IframeExample
+                size="sm"
+                src="/examples/tabs/controlled"
+                title="Tabs Controlled Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

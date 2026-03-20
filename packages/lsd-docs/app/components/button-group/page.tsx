@@ -19,14 +19,12 @@ import {
 import { DownloadIcon, PlusIcon, TrashIcon } from '@phosphor-icons/react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import {
-  CODE as BUTTON_GROUP_CODE,
-  ButtonGroupExample,
-} from '@/examples/button-group/ButtonGroupExample';
+import { CODE as BUTTON_GROUP_CODE } from '@/examples/button-group/ButtonGroupExample';
 
 export default function ButtonGroupPage() {
   return (
@@ -147,9 +145,7 @@ export default function MyComponent() {
               <CardDescription>Different button group configurations</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <ButtonGroupExample />
-              </div>
+              <IframeExample size="sm" src="/examples/button-group" title="Button Group Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

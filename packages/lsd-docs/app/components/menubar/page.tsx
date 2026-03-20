@@ -25,11 +25,12 @@ import {
 } from '@nipsys/shadcn-lsd';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
+import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as MENUBAR_CODE, MenubarExample } from '@/examples/menubar/MenubarExample';
+import { CODE as MENUBAR_CODE } from '@/examples/menubar/MenubarExample';
 
 export default function MenubarPage() {
   return (
@@ -91,9 +92,7 @@ export default function MyComponent() {
               <CardDescription>Simple menubar with dropdown menus</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <MenubarExample />
-              </div>
+              <IframeExample size="sm" src="/examples/menubar" title="Menubar Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

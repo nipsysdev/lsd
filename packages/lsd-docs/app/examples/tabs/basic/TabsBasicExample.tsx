@@ -1,13 +1,12 @@
 'use client';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <>
       <Tabs defaultValue="account">
         <TabsList>
           <TabsTrigger value="account">Account</TabsTrigger>
@@ -30,13 +29,11 @@ export function Example() {
           </Typography>
         </TabsContent>
       </Tabs>
-    </div>
+    </>
   );
 }`;
 
 export function TabsBasicExample() {
-  useInIframeThemeSync();
-
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Tabs defaultValue="account">

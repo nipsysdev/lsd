@@ -1,7 +1,6 @@
 'use client';
 
 import { Button, ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import {
   Button,
@@ -12,7 +11,7 @@ export const CODE = `import {
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <>
       <ButtonGroup>
         <Button>Save</Button>
         <Button>Cancel</Button>
@@ -35,13 +34,11 @@ export function Example() {
         <Button variant="filled">Primary</Button>
         <Button variant="outlined">Secondary</Button>
       </ButtonGroup>
-    </div>
+    </>
   );
 }`;
 
 export function ButtonGroupExample() {
-  useInIframeThemeSync();
-
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <ButtonGroup>
