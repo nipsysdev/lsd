@@ -10,10 +10,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Input,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -21,13 +19,15 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as InputCODE } from '@/examples/input/InputExample';
+import { CODE as InputDisabledCODE } from '@/examples/input/disabled/InputDisabledExample';
+import { CODE as InputErrorCODE } from '@/examples/input/error/InputErrorExample';
+import { CODE as InputLabelCODE } from '@/examples/input/label/InputLabelExample';
+import { CODE as InputSizesCODE } from '@/examples/input/sizes/InputSizesExample';
+import { CODE as InputSupportingTextCODE } from '@/examples/input/supporting-text/InputSupportingTextExample';
+import { CODE as InputTypesCODE } from '@/examples/input/types/InputTypesExample';
+import { CODE as InputVariantsCODE } from '@/examples/input/variants/InputVariantsExample';
 
 export default function InputPage() {
-  const inputIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useIframeThemeSync(inputIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -41,37 +41,6 @@ export default function InputPage() {
             Inputs are form elements that allow users to enter and edit text. They are the primary
             way users provide data to your application, from simple text fields to complex forms.
           </Typography>
-        </PageSection>
-
-        <PageSection title="Examples">
-          <Typography variant="body1">
-            Interactive examples showing different input states and configurations.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Input States</CardTitle>
-              <CardDescription>Default, error, disabled, and with supporting text</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={inputIframeRef}
-                  size="sm"
-                  src="/examples/input"
-                  title="Input Example"
-                />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InputCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
         </PageSection>
 
         <PageSection title="Installation">
@@ -101,18 +70,18 @@ export default function MyComponent() {
               <CardDescription>Choose between outlined and underlined styles</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Input variant="outlined" label="Outlined" placeholder="Outlined input" />
-                <Input variant="underlined" label="Underlined" placeholder="Underlined input" />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  size="sm"
+                  src="/examples/input/variants"
+                  title="Input Variants Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Input variant="outlined" label="Outlined" placeholder="Outlined input" />
-<Input variant="underlined" label="Underlined" placeholder="Underlined input" />`}
-                    />
+                    <CodeExample code={InputVariantsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -131,24 +100,14 @@ export default function MyComponent() {
               <CardDescription>From extra small to extra large</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Input size="xs" label="Extra Small" placeholder="xs input" />
-                <Input size="sm" label="Small" placeholder="sm input" />
-                <Input size="md" label="Medium" placeholder="md input" />
-                <Input size="lg" label="Large" placeholder="lg input" />
-                <Input size="xl" label="Extra Large" placeholder="xl input" />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample size="lg" src="/examples/input/sizes" title="Input Sizes Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Input size="xs" label="Extra Small" placeholder="xs input" />
-<Input size="sm" label="Small" placeholder="sm input" />
-<Input size="md" label="Medium" placeholder="md input" />
-<Input size="lg" label="Large" placeholder="lg input" />
-<Input size="xl" label="Extra Large" placeholder="xl input" />`}
-                    />
+                    <CodeExample code={InputSizesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -169,15 +128,13 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <Input label="Full Name" placeholder="Enter your name" />
+                <IframeExample size="sm" src="/examples/input/label" title="Input Label Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={'<Input label="Full Name" placeholder="Enter your name" />'}
-                    />
+                    <CodeExample code={InputLabelCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -193,23 +150,17 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <Input
-                  label="Email"
-                  placeholder="you@example.com"
-                  supportingText="We'll never share your email with anyone else."
+                <IframeExample
+                  size="sm"
+                  src="/examples/input/supporting-text"
+                  title="Input Supporting Text Example"
                 />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Input
-  label="Email"
-  placeholder="you@example.com"
-  supportingText="We'll never share your email with anyone else."
-/>`}
-                    />
+                    <CodeExample code={InputSupportingTextCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -223,27 +174,13 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <Input
-                  label="Password"
-                  type="password"
-                  placeholder="Enter password"
-                  error
-                  supportingText="Password must be at least 8 characters."
-                />
+                <IframeExample size="sm" src="/examples/input/error" title="Input Error Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Input
-  label="Password"
-  type="password"
-  placeholder="Enter password"
-  error
-  supportingText="Password must be at least 8 characters."
-/>`}
-                    />
+                    <CodeExample code={InputErrorCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -256,24 +193,14 @@ export default function MyComponent() {
               <CardDescription>Support for various HTML input types</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Input type="text" label="Text" placeholder="Text input" />
-                <Input type="email" label="Email" placeholder="you@example.com" />
-                <Input type="password" label="Password" placeholder="••••••••" />
-                <Input type="number" label="Number" placeholder="123" />
-                <Input type="date" label="Date" />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample size="lg" src="/examples/input/types" title="Input Types Example" />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Input type="text" label="Text" placeholder="Text input" />
-<Input type="email" label="Email" placeholder="you@example.com" />
-<Input type="password" label="Password" placeholder="••••••••" />
-<Input type="number" label="Number" placeholder="123" />
-<Input type="date" label="Date" />`}
-                    />
+                    <CodeExample code={InputTypesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -286,28 +213,18 @@ export default function MyComponent() {
               <CardDescription>Disabled input with reduced opacity</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Input label="Disabled" placeholder="Can't edit this" disabled />
-                <Input
-                  variant="outlined"
-                  label="Also Disabled"
-                  placeholder="Can't edit this either"
-                  disabled
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  size="sm"
+                  src="/examples/input/disabled"
+                  title="Input Disabled Example"
                 />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Input label="Disabled" placeholder="Can't edit this" disabled />
-<Input
-  variant="outlined"
-  label="Also Disabled"
-  placeholder="Can't edit this either"
-  disabled
-/>`}
-                    />
+                    <CodeExample code={InputDisabledCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
