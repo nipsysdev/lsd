@@ -20,13 +20,15 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as AccordionCODE } from '@/examples/accordion/AccordionExample';
+import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { CODE as AccordionMultipleCODE } from '@/examples/accordion/multiple/AccordionMultipleExample';
+import { CODE as AccordionSingleCODE } from '@/examples/accordion/single/AccordionSingleExample';
 
 export default function AccordionPage() {
-  const accordionIframeRef = useRef<HTMLIFrameElement>(null);
+  const accordionSingleIframeRef = useRef<HTMLIFrameElement>(null);
+  const accordionMultipleIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(accordionIframeRef);
+  useIframeThemeSync(accordionSingleIframeRef, accordionMultipleIframeRef);
 
   return (
     <DocsLayout>
@@ -74,31 +76,58 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Accordion">
+        <PageSection title="Single Selection">
           <Typography variant="body1">
-            Use type="single" to allow only one panel to be open at a time, or type="multiple" to
-            allow multiple panels.
+            Use type="single" to allow only one panel to be open at a time. Add the collapsible prop
+            to allow closing all items.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Accordion Examples</CardTitle>
-              <CardDescription>Single and multiple selection modes</CardDescription>
+              <CardTitle>Basic Accordion</CardTitle>
+              <CardDescription>Single selection mode with collapsible items</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={accordionIframeRef}
-                  size="md"
-                  src="/examples/accordion"
-                  title="Accordion Example"
-                />
-              </div>
+              <IframeExample
+                ref={accordionSingleIframeRef}
+                size="md"
+                src="/examples/accordion/single"
+                title="Accordion Single Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={AccordionCODE} />
+                    <CodeExample code={AccordionSingleCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Multiple Selection">
+          <Typography variant="body1">
+            Use type="multiple" to allow multiple panels to be open at once.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Multiple Items Open</CardTitle>
+              <CardDescription>Multiple selection mode</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={accordionMultipleIframeRef}
+                size="md"
+                src="/examples/accordion/multiple"
+                title="Accordion Multiple Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={AccordionMultipleCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

@@ -1,6 +1,12 @@
 'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@nipsys/shadcn-lsd';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Typography,
+} from '@nipsys/shadcn-lsd';
 import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import {
@@ -8,11 +14,13 @@ export const CODE = `import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  Typography,
 } from '@nipsys/shadcn-lsd';
 
 export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+      <Typography variant="label1">Basic Accordion</Typography>
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -26,16 +34,23 @@ export function Example() {
             Yes. It comes with default styles that match the other components.
           </AccordionContent>
         </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Is it animated?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It's animated by default with smooth transitions.
+          </AccordionContent>
+        </AccordionItem>
       </Accordion>
     </div>
   );
 }`;
 
-export function AccordionExample() {
+export function AccordionSingleExample() {
   useInIframeThemeSync();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+      <Typography variant="label1">Basic Accordion</Typography>
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -47,11 +62,17 @@ export function AccordionExample() {
             Yes. It comes with default styles that match the other components.
           </AccordionContent>
         </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Is it animated?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It's animated by default with smooth transitions.
+          </AccordionContent>
+        </AccordionItem>
       </Accordion>
     </div>
   );
 }
 
-export default function AccordionPage() {
-  return <AccordionExample />;
+export default function Single() {
+  return <AccordionSingleExample />;
 }
