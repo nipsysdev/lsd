@@ -55,7 +55,12 @@ export default function InputPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/input" title="Input Example" />
+                <IframeExample
+                  ref={inputIframeRef}
+                  size="sm"
+                  src="/examples/input"
+                  title="Input Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

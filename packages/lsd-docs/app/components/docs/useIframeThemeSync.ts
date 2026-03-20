@@ -10,16 +10,15 @@ export function useIframeThemeSync(...iframeRefs: React.RefObject<HTMLIFrameElem
   // Send params to iframes when theme, accent, or font changes
   React.useEffect(() => {
     const params: ExampleParams = { theme, accent, font };
-    iframeRefs.forEach(ref => sendToIframe(ref.current, 'example-params', params));
+    iframeRefs.forEach(ref => void sendToIframe(ref.current, 'example-params', params));
   }, [theme, accent, font, iframeRefs]);
 
   // Send initial params when iframes load
   React.useEffect(() => {
     const iframes = iframeRefs.map(ref => ref.current).filter(Boolean) as HTMLIFrameElement[];
-
     const params: ExampleParams = { theme, accent, font };
 
-    iframes.forEach(iframe => {
+    const cleanups = iframes.map(iframe => {
       const handleLoad = () => {
         sendToIframe(iframe, 'example-params', params);
       };
@@ -29,5 +28,9 @@ export function useIframeThemeSync(...iframeRefs: React.RefObject<HTMLIFrameElem
         iframe.removeEventListener('load', handleLoad);
       };
     });
+
+    return () => {
+      cleanups.forEach(cleanup => void cleanup());
+    };
   }, [theme, accent, font, iframeRefs]);
 }

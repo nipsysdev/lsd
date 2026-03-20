@@ -24,6 +24,10 @@ import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as SidebarBasicExampleCODE } from '@/examples/sidebar/basic/SidebarBasicExample';
 
 export default function SidebarPage() {
+  const sidebarIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(sidebarIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -142,7 +146,12 @@ export default function SidebarPage() {
             </CardHeader>
             <CardContent>
               <div className="border">
-                <IframeExample size="lg" src="/examples/sidebar/basic" title="Sidebar Example" />
+                <IframeExample
+                  ref={sidebarIframeRef}
+                  size="lg"
+                  src="/examples/sidebar/basic"
+                  title="Sidebar Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

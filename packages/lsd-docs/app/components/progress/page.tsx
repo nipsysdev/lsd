@@ -25,6 +25,11 @@ import { CODE as ProgressBasicCODE } from '@/examples/progress/basic/ProgressBas
 import { CODE as ProgressFeaturesCODE } from '@/examples/progress/features/ProgressFeaturesExample';
 
 export default function ProgressPage() {
+  const progressBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const progressFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(progressBasicIframeRef, progressFeaturesIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -73,6 +78,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={progressBasicIframeRef}
                   size="md"
                   src="/examples/progress/basic"
                   title="Progress Basic Example"
@@ -106,6 +112,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={progressFeaturesIframeRef}
                   size="md"
                   src="/examples/progress/features"
                   title="Progress Features Example"

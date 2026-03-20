@@ -5,7 +5,6 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  Badge,
   Card,
   CardContent,
   CardDescription,
@@ -13,8 +12,6 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
-import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -22,7 +19,6 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as BadgeBasicCODE } from '@/examples/badge/basic/BadgeBasicExample';
 import { CODE as BadgeDismissibleCODE } from '@/examples/badge/dismissible/BadgeDismissibleExample';
 import { CODE as BadgeDotsCODE } from '@/examples/badge/dots/BadgeDotsExample';

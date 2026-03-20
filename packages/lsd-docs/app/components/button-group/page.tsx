@@ -17,6 +17,7 @@ import {
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { DownloadIcon, PlusIcon, TrashIcon } from '@phosphor-icons/react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -24,9 +25,14 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as BUTTON_GROUP_CODE } from '@/examples/button-group/ButtonGroupExample';
 
 export default function ButtonGroupPage() {
+  const buttonGroupIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(buttonGroupIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -145,7 +151,12 @@ export default function MyComponent() {
               <CardDescription>Different button group configurations</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/button-group" title="Button Group Example" />
+              <IframeExample
+                ref={buttonGroupIframeRef}
+                size="sm"
+                src="/examples/button-group"
+                title="Button Group Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

@@ -20,9 +20,14 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as AccordionCODE } from '@/examples/accordion/AccordionExample';
 
 export default function AccordionPage() {
+  const accordionIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(accordionIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -82,7 +87,12 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="md" src="/examples/accordion" title="Accordion Example" />
+                <IframeExample
+                  ref={accordionIframeRef}
+                  size="md"
+                  src="/examples/accordion"
+                  title="Accordion Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

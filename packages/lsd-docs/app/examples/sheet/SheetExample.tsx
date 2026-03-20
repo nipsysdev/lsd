@@ -11,7 +11,7 @@ import {
   SheetTrigger,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { ArrowRightIcon, InfoIcon } from '@phosphor-icons/react';
+import { InfoIcon } from '@phosphor-icons/react';
 import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import { ArrowRightIcon, InfoIcon } from '@phosphor-icons/react';

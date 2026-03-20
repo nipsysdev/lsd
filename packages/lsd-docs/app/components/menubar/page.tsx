@@ -23,6 +23,7 @@ import {
   MenubarTrigger,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -30,9 +31,14 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as MENUBAR_CODE } from '@/examples/menubar/MenubarExample';
 
 export default function MenubarPage() {
+  const menubarIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(menubarIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -92,7 +98,12 @@ export default function MyComponent() {
               <CardDescription>Simple menubar with dropdown menus</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/menubar" title="Menubar Example" />
+              <IframeExample
+                ref={menubarIframeRef}
+                size="sm"
+                src="/examples/menubar"
+                title="Menubar Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

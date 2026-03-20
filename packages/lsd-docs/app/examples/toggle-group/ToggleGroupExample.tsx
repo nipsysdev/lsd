@@ -1,6 +1,6 @@
 'use client';
 
-import { Toggle, ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/shadcn-lsd';
+import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/shadcn-lsd';
 import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import { Toggle, ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/shadcn-lsd';

@@ -10,10 +10,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { useRef } from 'react';
@@ -24,9 +20,14 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as TooltipCODE } from '@/examples/tooltip/TooltipExample';
 
 export default function TooltipPage() {
+  const tooltipIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(tooltipIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -84,7 +85,12 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="md" src="/examples/tooltip" title="Tooltip Example" />
+                <IframeExample
+                  ref={tooltipIframeRef}
+                  size="md"
+                  src="/examples/tooltip"
+                  title="Tooltip Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

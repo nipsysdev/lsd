@@ -26,6 +26,11 @@ import { CODE as SwitchBasicCODE } from '@/examples/switch/basic/SwitchBasicExam
 import { CODE as SwitchControlledCODE } from '@/examples/switch/controlled/SwitchControlledExample';
 
 export default function SwitchPage() {
+  const switchBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const switchControlledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(switchBasicIframeRef, switchControlledIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -124,6 +129,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={switchBasicIframeRef}
                   size="sm"
                   src="/examples/switch/basic"
                   title="Switch Basic Example"
@@ -148,6 +154,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={switchControlledIframeRef}
                   size="sm"
                   src="/examples/switch/controlled"
                   title="Switch Controlled Example"

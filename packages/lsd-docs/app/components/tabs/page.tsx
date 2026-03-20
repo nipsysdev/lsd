@@ -17,6 +17,7 @@ import {
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { ChartLineUpIcon, GearIcon, HouseIcon } from '@phosphor-icons/react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -24,10 +25,16 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as TABS_BASIC_CODE } from '@/examples/tabs/basic/TabsBasicExample';
 import { CODE as TABS_CONTROLLED_CODE } from '@/examples/tabs/controlled/TabsControlledExample';
 
 export default function TabsPage() {
+  const tabsBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const tabsControlledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(tabsBasicIframeRef, tabsControlledIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -212,7 +219,12 @@ export default function MyComponent() {
               <CardDescription>Simple uncontrolled tabs with default value</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/tabs/basic" title="Tabs Basic Example" />
+              <IframeExample
+                ref={tabsBasicIframeRef}
+                size="sm"
+                src="/examples/tabs/basic"
+                title="Tabs Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -231,6 +243,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={tabsControlledIframeRef}
                 size="sm"
                 src="/examples/tabs/controlled"
                 title="Tabs Controlled Example"

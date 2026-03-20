@@ -10,10 +10,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Separator,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';

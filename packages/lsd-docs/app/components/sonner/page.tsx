@@ -5,7 +5,6 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  Button,
   Card,
   CardContent,
   CardDescription,
@@ -22,9 +21,13 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { SonnerExample, CODE as SonnerExampleCODE } from '@/examples/sonner/SonnerExample';
+import { CODE as SonnerExampleCODE } from '@/examples/sonner/SonnerExample';
 
 export default function SonnerPage() {
+  const sonnerIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(sonnerIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -80,7 +83,12 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="md" src="/examples/sonner" title="Sonner Example" />
+                <IframeExample
+                  ref={sonnerIframeRef}
+                  size="md"
+                  src="/examples/sonner"
+                  title="Sonner Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

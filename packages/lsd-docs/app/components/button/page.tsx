@@ -13,14 +13,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import {
-  ArrowRightIcon,
-  CheckIcon,
-  DownloadIcon,
-  PlusIcon,
-  ShareIcon,
-  TrashIcon,
-} from '@phosphor-icons/react';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -38,6 +31,22 @@ import { CODE as ButtonSizesCODE } from '@/examples/button/sizes/ButtonSizesExam
 import { CODE as ButtonVariantsCODE } from '@/examples/button/variants/ButtonVariantsExample';
 
 export default function ButtonPage() {
+  const buttonBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const buttonVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const buttonSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const buttonIconsIframeRef = useRef<HTMLIFrameElement>(null);
+  const buttonLoadingIframeRef = useRef<HTMLIFrameElement>(null);
+  const buttonGroupsIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(
+    buttonBasicIframeRef,
+    buttonVariantsIframeRef,
+    buttonSizesIframeRef,
+    buttonIconsIframeRef,
+    buttonLoadingIframeRef,
+    buttonGroupsIframeRef
+  );
+
   return (
     <DocsLayout>
       <PageHeader
@@ -83,6 +92,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={buttonBasicIframeRef}
                   size="sm"
                   src="/examples/button/basic"
                   title="Button Basic Example"
@@ -113,6 +123,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={buttonVariantsIframeRef}
                   size="sm"
                   src="/examples/button/variants"
                   title="Button Variants Example"
@@ -143,6 +154,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={buttonSizesIframeRef}
                   size="sm"
                   src="/examples/button/sizes"
                   title="Button Sizes Example"
@@ -173,6 +185,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={buttonIconsIframeRef}
                   size="sm"
                   src="/examples/button/icons"
                   title="Button Icons Example"
@@ -203,6 +216,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={buttonLoadingIframeRef}
                   size="sm"
                   src="/examples/button/loading"
                   title="Button Loading Example"
@@ -322,6 +336,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={buttonGroupsIframeRef}
                   size="sm"
                   src="/examples/button/groups"
                   title="Button Groups Example"

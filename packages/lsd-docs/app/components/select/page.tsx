@@ -20,7 +20,7 @@ import {
   SelectValue,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';

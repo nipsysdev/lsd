@@ -27,6 +27,18 @@ import { CODE as SIZES_CODE } from '@/examples/autocomplete/sizes/AutocompleteSi
 import { CODE as VARIANTS_CODE } from '@/examples/autocomplete/variants/AutocompleteVariantsExample';
 
 export default function AutocompletePage() {
+  const autocompleteBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(
+    autocompleteBasicIframeRef,
+    autocompleteVariantsIframeRef,
+    autocompleteSizesIframeRef,
+    autocompleteFeaturesIframeRef
+  );
+
   return (
     <DocsLayout>
       <PageHeader

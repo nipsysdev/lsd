@@ -27,6 +27,18 @@ import { CODE as CommandGroupsExampleCODE } from '@/examples/command/groups/Comm
 import { CODE as CommandShortcutsExampleCODE } from '@/examples/command/shortcuts/CommandShortcutsExample';
 
 export default function CommandPage() {
+  const commandBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const commandGroupsIframeRef = useRef<HTMLIFrameElement>(null);
+  const commandShortcutsIframeRef = useRef<HTMLIFrameElement>(null);
+  const commandDialogIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(
+    commandBasicIframeRef,
+    commandGroupsIframeRef,
+    commandShortcutsIframeRef,
+    commandDialogIframeRef
+  );
+
   return (
     <DocsLayout>
       <PageHeader
@@ -113,6 +125,7 @@ export default function CommandPage() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={commandBasicIframeRef}
                   size="md"
                   src="/examples/command/basic"
                   title="Command Basic Example"
@@ -145,6 +158,7 @@ export default function CommandPage() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={commandGroupsIframeRef}
                   size="md"
                   src="/examples/command/groups"
                   title="Command Groups Example"
@@ -177,6 +191,7 @@ export default function CommandPage() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={commandShortcutsIframeRef}
                   size="md"
                   src="/examples/command/shortcuts"
                   title="Command Shortcuts Example"
@@ -209,6 +224,7 @@ export default function CommandPage() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={commandDialogIframeRef}
                   size="md"
                   src="/examples/command/dialog"
                   title="Command Dialog Example"

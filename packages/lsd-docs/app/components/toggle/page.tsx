@@ -20,9 +20,14 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as ToggleCODE } from '@/examples/toggle/ToggleExample';
 
 export default function TogglePage() {
+  const toggleIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(toggleIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -68,7 +73,12 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/toggle" title="Toggle Example" />
+                <IframeExample
+                  ref={toggleIframeRef}
+                  size="sm"
+                  src="/examples/toggle"
+                  title="Toggle Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

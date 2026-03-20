@@ -24,6 +24,10 @@ import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as CardBasicExampleCODE } from '@/examples/card/basic/CardBasicExample';
 
 export default function CardPage() {
+  const cardIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(cardIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -102,7 +106,12 @@ export default function CardPage() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="md" src="/examples/card/basic" title="Card Basic Example" />
+                <IframeExample
+                  ref={cardIframeRef}
+                  size="md"
+                  src="/examples/card/basic"
+                  title="Card Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from '@nipsys/shadcn-lsd';
-import { CheckIcon, DownloadIcon, PlusIcon, ShareIcon, TrashIcon } from '@phosphor-icons/react';
 import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
 
 export const CODE = `import { Button } from '@nipsys/shadcn-lsd';

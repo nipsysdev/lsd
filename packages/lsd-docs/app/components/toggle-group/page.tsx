@@ -20,9 +20,14 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as ToggleGroupCODE } from '@/examples/toggle-group/ToggleGroupExample';
 
 export default function ToggleGroupPage() {
+  const toggleGroupIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(toggleGroupIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -73,7 +78,12 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/toggle-group" title="ToggleGroup Example" />
+                <IframeExample
+                  ref={toggleGroupIframeRef}
+                  size="sm"
+                  src="/examples/toggle-group"
+                  title="ToggleGroup Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

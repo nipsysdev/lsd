@@ -26,6 +26,12 @@ import { CODE as LabelSizesExampleCODE } from '@/examples/label/sizes/LabelSizes
 import { CODE as LabelVariantsExampleCODE } from '@/examples/label/variants/LabelVariantsExample';
 
 export default function LabelPage() {
+  const labelBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const labelVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const labelSizesIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(labelBasicIframeRef, labelVariantsIframeRef, labelSizesIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -76,7 +82,12 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/label/basic" title="Label Basic Example" />
+                <IframeExample
+                  ref={labelBasicIframeRef}
+                  size="sm"
+                  src="/examples/label/basic"
+                  title="Label Basic Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
@@ -103,6 +114,7 @@ export default function MyComponent() {
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
                 <IframeExample
+                  ref={labelVariantsIframeRef}
                   size="sm"
                   src="/examples/label/variants"
                   title="Label Variants Example"
@@ -132,7 +144,12 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/label/sizes" title="Label Sizes Example" />
+                <IframeExample
+                  ref={labelSizesIframeRef}
+                  size="sm"
+                  src="/examples/label/sizes"
+                  title="Label Sizes Example"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">

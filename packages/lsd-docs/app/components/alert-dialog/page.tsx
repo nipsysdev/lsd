@@ -12,7 +12,6 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -20,7 +19,6 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
 import { CODE as AlertDialogBasicExampleCODE } from '@/examples/alert-dialog/basic/AlertDialogBasicExample';
 
 export default function AlertDialogPage() {
