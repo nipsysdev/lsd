@@ -20,13 +20,33 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as SonnerExampleCODE } from '@/examples/sonner/SonnerExample';
+import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { CODE as TOAST_ACTIONS_CODE } from '@/examples/sonner/actions/ToastActionsExample';
+import { CODE as TOAST_DURATION_CODE } from '@/examples/sonner/duration/ToastDurationExample';
+import { CODE as TOAST_PERSISTENT_CODE } from '@/examples/sonner/persistent/ToastPersistentExample';
+import { CODE as TOAST_POSITIONS_CODE } from '@/examples/sonner/positions/ToastPositionsExample';
+import { CODE as TOAST_PROMISE_CODE } from '@/examples/sonner/promise/ToastPromiseExample';
+import { CODE as TOAST_RICH_CODE } from '@/examples/sonner/rich/ToastRichExample';
+import { CODE as TOAST_TYPES_CODE } from '@/examples/sonner/toast-types/ToastTypesExample';
 
 export default function SonnerPage() {
-  const sonnerIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastTypesIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastDurationIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastPositionsIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastActionsIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastPersistentIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastPromiseIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastRichIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(sonnerIframeRef);
+  useIframeThemeSync(
+    toastTypesIframeRef,
+    toastDurationIframeRef,
+    toastPositionsIframeRef,
+    toastActionsIframeRef,
+    toastPersistentIframeRef,
+    toastPromiseIframeRef,
+    toastRichIframeRef
+  );
 
   return (
     <DocsLayout>
@@ -78,23 +98,159 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>All Sonner Features</CardTitle>
-              <CardDescription>Different toast types, positions, and features</CardDescription>
+              <CardTitle>Toast Types</CardTitle>
+              <CardDescription>Simple, success, error, warning, and info toasts</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={sonnerIframeRef}
-                  size="md"
-                  src="/examples/sonner"
-                  title="Sonner Example"
-                />
-              </div>
+              <IframeExample
+                ref={toastTypesIframeRef}
+                size="sm"
+                src="/examples/sonner/toast-types"
+                title="Toast Types Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={SonnerExampleCODE} />
+                    <CodeExample code={TOAST_TYPES_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Custom Duration</CardTitle>
+              <CardDescription>Control how long toasts stay visible</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastDurationIframeRef}
+                size="sm"
+                src="/examples/sonner/duration"
+                title="Toast Duration Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_DURATION_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Positioned Toasts</CardTitle>
+              <CardDescription>Control toast positioning on screen</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastPositionsIframeRef}
+                size="sm"
+                src="/examples/sonner/positions"
+                title="Toast Positions Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_POSITIONS_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Actions</CardTitle>
+              <CardDescription>Add action buttons to toasts</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastActionsIframeRef}
+                size="sm"
+                src="/examples/sonner/actions"
+                title="Toast Actions Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_ACTIONS_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Persistent Toasts</CardTitle>
+              <CardDescription>Toasts that don't auto-dismiss</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastPersistentIframeRef}
+                size="sm"
+                src="/examples/sonner/persistent"
+                title="Toast Persistent Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_PERSISTENT_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Promise-based Toasts</CardTitle>
+              <CardDescription>Async loading states with automatic success/error</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastPromiseIframeRef}
+                size="sm"
+                src="/examples/sonner/promise"
+                title="Toast Promise Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_PROMISE_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Rich Toasts</CardTitle>
+              <CardDescription>Custom JSX content in toasts</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastRichIframeRef}
+                size="sm"
+                src="/examples/sonner/rich"
+                title="Toast Rich Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_RICH_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

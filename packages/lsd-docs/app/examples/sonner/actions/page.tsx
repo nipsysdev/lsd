@@ -12,42 +12,53 @@ export function Example() {
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Toaster />
 
-      <Typography variant="label1">Toast Types</Typography>
+      <Typography variant="label1">With Actions</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <Button variant="outlined" onClick={() => toast('Simple toast message')}>
-          Show Simple Toast
-        </Button>
         <Button
           variant="outlined"
-          onClick={() => toast.success('Changes saved successfully!')}
+          onClick={() =>
+            toast('Event has been created', {
+              action: {
+                label: 'Undo',
+                onClick: () => console.log('Undo clicked'),
+              },
+            })
+          }
         >
-          Show Success Toast
+          Show with Action
         </Button>
       </div>
     </div>
   );
 }`;
 
-export function SonnerExample() {
+export function ToastActionsExample() {
   useInIframeThemeSync();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Toaster />
 
-      <Typography variant="label1">Toast Types</Typography>
+      <Typography variant="label1">With Actions</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <Button variant="outlined" onClick={() => toast('Simple toast message')}>
-          Show Simple Toast
-        </Button>
-        <Button variant="outlined" onClick={() => toast.success('Changes saved successfully!')}>
-          Show Success Toast
+        <Button
+          variant="outlined"
+          onClick={() =>
+            toast('Event has been created', {
+              action: {
+                label: 'Undo',
+                onClick: () => console.log('Undo clicked'),
+              },
+            })
+          }
+        >
+          Show with Action
         </Button>
       </div>
     </div>
   );
 }
 
-export default function Sonner() {
-  return <SonnerExample />;
+export default function Actions() {
+  return <ToastActionsExample />;
 }

@@ -23,12 +23,24 @@ export function Example() {
         >
           Show Success Toast
         </Button>
+        <Button variant="outlined" onClick={() => toast.error('Something went wrong!')}>
+          Show Error Toast
+        </Button>
+        <Button
+          variant="outlined"
+          onClick={() => toast.warning('Please review your changes')}
+        >
+          Show Warning Toast
+        </Button>
+        <Button variant="outlined" onClick={() => toast.info('New feature available')}>
+          Show Info Toast
+        </Button>
       </div>
     </div>
   );
 }`;
 
-export function SonnerExample() {
+export function ToastTypesExample() {
   useInIframeThemeSync();
 
   return (
@@ -43,11 +55,20 @@ export function SonnerExample() {
         <Button variant="outlined" onClick={() => toast.success('Changes saved successfully!')}>
           Show Success Toast
         </Button>
+        <Button variant="outlined" onClick={() => toast.error('Something went wrong!')}>
+          Show Error Toast
+        </Button>
+        <Button variant="outlined" onClick={() => toast.warning('Please review your changes')}>
+          Show Warning Toast
+        </Button>
+        <Button variant="outlined" onClick={() => toast.info('New feature available')}>
+          Show Info Toast
+        </Button>
       </div>
     </div>
   );
 }
 
-export default function Sonner() {
-  return <SonnerExample />;
+export default function Types() {
+  return <ToastTypesExample />;
 }

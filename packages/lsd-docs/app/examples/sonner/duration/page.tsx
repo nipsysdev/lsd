@@ -12,42 +12,45 @@ export function Example() {
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Toaster />
 
-      <Typography variant="label1">Toast Types</Typography>
+      <Typography variant="label1">Custom Duration</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <Button variant="outlined" onClick={() => toast('Simple toast message')}>
-          Show Simple Toast
+        <Button
+          variant="outlined"
+          onClick={() => toast('Short duration', { duration: 2000 })}
+        >
+          2 seconds
         </Button>
         <Button
           variant="outlined"
-          onClick={() => toast.success('Changes saved successfully!')}
+          onClick={() => toast('Long duration', { duration: 10000 })}
         >
-          Show Success Toast
+          10 seconds
         </Button>
       </div>
     </div>
   );
 }`;
 
-export function SonnerExample() {
+export function ToastDurationExample() {
   useInIframeThemeSync();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Toaster />
 
-      <Typography variant="label1">Toast Types</Typography>
+      <Typography variant="label1">Custom Duration</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <Button variant="outlined" onClick={() => toast('Simple toast message')}>
-          Show Simple Toast
+        <Button variant="outlined" onClick={() => toast('Short duration', { duration: 2000 })}>
+          2 seconds
         </Button>
-        <Button variant="outlined" onClick={() => toast.success('Changes saved successfully!')}>
-          Show Success Toast
+        <Button variant="outlined" onClick={() => toast('Long duration', { duration: 10000 })}>
+          10 seconds
         </Button>
       </div>
     </div>
   );
 }
 
-export default function Sonner() {
-  return <SonnerExample />;
+export default function Duration() {
+  return <ToastDurationExample />;
 }

@@ -12,42 +12,53 @@ export function Example() {
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Toaster />
 
-      <Typography variant="label1">Toast Types</Typography>
+      <Typography variant="label1">Persistent Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <Button variant="outlined" onClick={() => toast('Simple toast message')}>
-          Show Simple Toast
-        </Button>
         <Button
           variant="outlined"
-          onClick={() => toast.success('Changes saved successfully!')}
+          onClick={() =>
+            toast('This toast will not auto-dismiss', {
+              duration: Number.POSITIVE_INFINITY,
+            })
+          }
         >
-          Show Success Toast
+          Show Persistent Toast
+        </Button>
+        <Button variant="outlined" onClick={() => toast.dismiss()}>
+          Dismiss All Toasts
         </Button>
       </div>
     </div>
   );
 }`;
 
-export function SonnerExample() {
+export function ToastPersistentExample() {
   useInIframeThemeSync();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
       <Toaster />
 
-      <Typography variant="label1">Toast Types</Typography>
+      <Typography variant="label1">Persistent Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <Button variant="outlined" onClick={() => toast('Simple toast message')}>
-          Show Simple Toast
+        <Button
+          variant="outlined"
+          onClick={() =>
+            toast('This toast will not auto-dismiss', {
+              duration: Number.POSITIVE_INFINITY,
+            })
+          }
+        >
+          Show Persistent Toast
         </Button>
-        <Button variant="outlined" onClick={() => toast.success('Changes saved successfully!')}>
-          Show Success Toast
+        <Button variant="outlined" onClick={() => toast.dismiss()}>
+          Dismiss All Toasts
         </Button>
       </div>
     </div>
   );
 }
 
-export default function Sonner() {
-  return <SonnerExample />;
+export default function Persistent() {
+  return <ToastPersistentExample />;
 }
