@@ -14,14 +14,22 @@ import {
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
+import { CODE as BadgeBasicCODE } from '@/examples/badge/basic/BadgeBasicExample';
+import { CODE as BadgeVariantsCODE } from '@/examples/badge/variants/BadgeVariantsExample';
 
 export default function BadgePage() {
+  const basicIframeRef = useRef<HTMLIFrameElement>(null);
+  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useIframeThemeSync(basicIframeRef, variantsIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -65,18 +73,21 @@ export default function MyComponent() {
               <CardDescription>Basic badge styles for general use</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Badge variant="filled">Filled</Badge>
-                <Badge variant="outlined">Outlined</Badge>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={basicIframeRef}
+                    src="/examples/badge/basic"
+                    className="size-full"
+                    title="Badge Basic Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Badge variant="filled">Filled</Badge>
-<Badge variant="outlined">Outlined</Badge>`}
-                    />
+                    <CodeExample code={BadgeBasicCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -91,22 +102,21 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
-                <Badge variant="destructive">Error</Badge>
-                <Badge variant="success">Success</Badge>
-                <Badge variant="warning">Warning</Badge>
-                <Badge variant="info">Info</Badge>
+              <div className="mb-(--lsd-spacing-base)">
+                <div className="aspect-video w-full overflow-hidden">
+                  <iframe
+                    ref={variantsIframeRef}
+                    src="/examples/badge/variants"
+                    className="size-full"
+                    title="Badge Variants Example"
+                  />
+                </div>
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample
-                      code={`<Badge variant="destructive">Error</Badge>
-<Badge variant="success">Success</Badge>
-<Badge variant="warning">Warning</Badge>
-<Badge variant="info">Info</Badge>`}
-                    />
+                    <CodeExample code={BadgeVariantsCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
