@@ -20,13 +20,24 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as ToggleCODE } from '@/examples/toggle/ToggleExample';
+import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { CODE as ToggleBasicCODE } from '@/examples/toggle/basic/ToggleBasicExample';
+import { CODE as TogglePressedCODE } from '@/examples/toggle/pressed/TogglePressedExample';
+import { CODE as ToggleSizesCODE } from '@/examples/toggle/sizes/ToggleSizesExample';
+import { CODE as ToggleWithTextCODE } from '@/examples/toggle/with-text/ToggleWithTextExample';
 
 export default function TogglePage() {
-  const toggleIframeRef = useRef<HTMLIFrameElement>(null);
+  const toggleBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const togglePressedIframeRef = useRef<HTMLIFrameElement>(null);
+  const toggleWithTextIframeRef = useRef<HTMLIFrameElement>(null);
+  const toggleSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(toggleIframeRef);
+  useIframeThemeSync(
+    toggleBasicIframeRef,
+    togglePressedIframeRef,
+    toggleWithTextIframeRef,
+    toggleSizesIframeRef
+  );
 
   return (
     <DocsLayout>
@@ -66,25 +77,106 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Toggle Examples</CardTitle>
-              <CardDescription>
-                Basic toggle, pressed state, with text, and small size
-              </CardDescription>
+              <CardTitle>Basic Toggle</CardTitle>
+              <CardDescription>Simple toggle button with icon-only children</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={toggleIframeRef}
-                  size="sm"
-                  src="/examples/toggle"
-                  title="Toggle Example"
-                />
-              </div>
+              <IframeExample
+                ref={toggleBasicIframeRef}
+                size="sm"
+                src="/examples/toggle/basic"
+                title="Toggle Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={ToggleCODE} />
+                    <CodeExample code={ToggleBasicCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Pressed State">
+          <Typography variant="body1">Control the toggle state with the pressed prop.</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Pressed State</CardTitle>
+              <CardDescription>Toggle with some items pressed by default</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={togglePressedIframeRef}
+                size="sm"
+                src="/examples/toggle/pressed"
+                title="Toggle Pressed Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TogglePressedCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="With Text Labels">
+          <Typography variant="body1">
+            Toggles can include text content inside the button.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Text Labels</CardTitle>
+              <CardDescription>Toggle buttons with text labels</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toggleWithTextIframeRef}
+                size="sm"
+                src="/examples/toggle/with-text"
+                title="Toggle With Text Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ToggleWithTextCODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Sizes">
+          <Typography variant="body1">
+            Toggle buttons come in two sizes to fit different contexts.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Small Size</CardTitle>
+              <CardDescription>Toggle buttons in small size</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toggleSizesIframeRef}
+                size="sm"
+                src="/examples/toggle/sizes"
+                title="Toggle Sizes Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ToggleSizesCODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
