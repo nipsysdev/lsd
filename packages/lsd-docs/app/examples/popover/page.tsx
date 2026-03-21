@@ -14,7 +14,7 @@ export function Example() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button variant="outlined">
@@ -54,7 +54,7 @@ export function PopoverExample() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button variant="outlined">
