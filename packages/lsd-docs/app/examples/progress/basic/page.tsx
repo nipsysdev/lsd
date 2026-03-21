@@ -11,7 +11,7 @@ export function Example() {
   const [progress, setProgress] = useState(50);
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Uncontrolled Progress</Typography>
       <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
         <Progress value={25} showLabel labelPosition="top" />
@@ -51,7 +51,7 @@ export function ProgressBasicExample() {
   const [progress, setProgress] = useState(50);
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Uncontrolled Progress</Typography>
       <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
         <Progress value={25} showLabel labelPosition="top" />
