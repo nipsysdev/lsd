@@ -9,7 +9,7 @@ import { ArrowRightIcon, CheckIcon, DownloadIcon } from '@phosphor-icons/react';
 
 export function Example() {
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Button variant="outlined">
         <DownloadIcon className="mr-(--lsd-spacing-smaller)" weight="duotone" />
         Download
@@ -30,7 +30,7 @@ export function ButtonIconsExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Button variant="outlined">
         <DownloadIcon className="mr-(--lsd-spacing-smaller)" weight="duotone" />
         Download

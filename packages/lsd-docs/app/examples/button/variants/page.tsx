@@ -9,7 +9,7 @@ import { CheckIcon, DownloadIcon, ShareIcon, TrashIcon } from '@phosphor-icons/r
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button variant="filled">Filled</Button>
         <Button variant="outlined">Outlined</Button>
@@ -47,7 +47,7 @@ export function ButtonVariantsExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button variant="filled">Filled</Button>
         <Button variant="outlined">Outlined</Button>

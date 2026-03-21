@@ -9,7 +9,7 @@ import { PlusIcon } from '@phosphor-icons/react';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <div className="flex flex-wrap items-center gap-(--lsd-spacing-base)">
         <Button size="sm">Small</Button>
         <Button size="md">Medium</Button>
@@ -34,7 +34,7 @@ export function ButtonSizesExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <div className="flex flex-wrap items-center gap-(--lsd-spacing-base)">
         <Button size="sm">Small</Button>
         <Button size="md">Medium</Button>

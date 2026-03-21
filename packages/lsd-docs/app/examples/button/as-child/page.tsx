@@ -9,7 +9,7 @@ import { Button } from '@nipsys/shadcn-lsd';
 
 export function Example() {
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Button asChild>
         <a href="/docs">Link Button</a>
       </Button>
@@ -28,7 +28,7 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Button asChild>
         <a href="/docs">Link Button</a>
       </Button>
