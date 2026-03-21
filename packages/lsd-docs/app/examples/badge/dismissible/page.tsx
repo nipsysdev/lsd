@@ -19,7 +19,7 @@ export function Example() {
   };
 
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       {badges.map(badge => (
         <Badge 
           key={badge.id}
@@ -50,7 +50,7 @@ export function BadgeDismissibleExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       {badges.map(badge => (
         <Badge key={badge.id} variant="filled" onDismiss={() => handleDismiss(badge.id)}>
           {badge.text}

@@ -7,7 +7,7 @@ export const CODE = `import { Badge } from '@nipsys/shadcn-lsd';
 
 export function Example() {
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Badge variant="filled">Filled</Badge>
       <Badge variant="outlined">Outlined</Badge>
       <Badge variant="destructive">Error</Badge>
@@ -25,7 +25,7 @@ export function BadgeVariantsExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Badge variant="filled">Filled</Badge>
       <Badge variant="outlined">Outlined</Badge>
       <Badge variant="destructive">Error</Badge>

@@ -11,7 +11,7 @@ export function Example() {
   const [clickCount, setClickCount] = useState(0);
 
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Badge onClick={() => alert('Clicked!')}>
         Clickable Badge
       </Badge>
@@ -36,7 +36,7 @@ export function BadgeInteractiveExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Badge onClick={() => alert('Clicked!')}>Clickable Badge</Badge>
       <Badge variant="success" onClick={() => setClickCount(c => c + 1)}>
         Clicked {clickCount} times

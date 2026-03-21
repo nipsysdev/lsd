@@ -9,7 +9,7 @@ import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
 
 export function Example() {
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Badge icon={<CheckIcon />} variant="success">
         Verified
       </Badge>
@@ -27,7 +27,7 @@ export function BadgeFeaturesExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Badge icon={<CheckIcon />} variant="success">
         Verified
       </Badge>
