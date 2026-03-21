@@ -19,7 +19,7 @@ export const CODE = `import {
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Multiple Items Open</Typography>
       <Accordion type="multiple" className="w-full">
         <AccordionItem value="item-1">
@@ -49,7 +49,7 @@ export function AccordionMultipleExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Multiple Items Open</Typography>
       <Accordion type="multiple" className="w-full">
         <AccordionItem value="item-1">
