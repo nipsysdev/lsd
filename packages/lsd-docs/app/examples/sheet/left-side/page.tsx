@@ -18,7 +18,7 @@ import { Button, Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle,
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outlined">
@@ -47,7 +47,7 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outlined">

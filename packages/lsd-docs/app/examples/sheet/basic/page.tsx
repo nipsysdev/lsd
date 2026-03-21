@@ -17,7 +17,7 @@ export const CODE = `import { Button, Sheet, SheetContent, SheetDescription, She
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Sheet>
         <SheetTrigger asChild>
           <Button>Open Sheet</Button>
@@ -53,7 +53,7 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Sheet>
         <SheetTrigger asChild>
           <Button>Open Sheet</Button>
