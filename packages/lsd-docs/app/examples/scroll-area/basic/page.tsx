@@ -8,7 +8,7 @@ export const CODE = `import { ScrollArea, Typography } from '@nipsys/shadcn-lsd'
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Basic ScrollArea</Typography>
       <ScrollArea className="h-(--lsd-spacing-10x) w-full rounded-md border p-(--lsd-spacing-base)">
         <div className="flex flex-col gap-(--lsd-spacing-base)">
@@ -29,7 +29,7 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Basic ScrollArea</Typography>
       <ScrollArea className="flex-auto h-(--lsd-spacing-10x) border p-(--lsd-spacing-base)">
         <div className="flex flex-col gap-(--lsd-spacing-base)">

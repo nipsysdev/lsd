@@ -8,7 +8,7 @@ export const CODE = `import { ScrollArea, ScrollBar, Typography } from '@nipsys/
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Horizontal ScrollArea with ScrollBar</Typography>
       <ScrollArea className="w-full whitespace-nowrap rounded-md border p-(--lsd-spacing-base)">
         <div className="flex w-max space-x-(--lsd-spacing-base)">
@@ -30,7 +30,7 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Horizontal ScrollArea with ScrollBar</Typography>
       <ScrollArea className="flex-auto whitespace-nowrap border p-(--lsd-spacing-base)">
         <div className="flex gap-x-(--lsd-spacing-base)">
