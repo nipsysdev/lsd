@@ -80,7 +80,7 @@ export function CommandDialogExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="p-(--lsd-spacing-larger)">
+    <>
       <Button variant="outlined" onClick={() => setOpen(true)}>
         Open Command Palette
       </Button>
@@ -120,7 +120,7 @@ export function CommandDialogExample() {
           </CommandGroup>
         </CommandList>
       </CommandDialog>
-    </div>
+    </>
   );
 }
 
