@@ -20,15 +20,15 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
-import { CODE as SelectBasicCODE } from '@/examples/select/basic/SelectBasicExample';
-import { CODE as SelectBasicUsageCODE } from '@/examples/select/basic-usage/SelectBasicExample';
-import { CODE as SelectControlledCODE } from '@/examples/select/controlled/SelectControlledExample';
-import { CODE as SelectDisabledCODE } from '@/examples/select/disabled/SelectDisabledExample';
-import { CODE as SelectGroupedCODE } from '@/examples/select/grouped/SelectGroupedExample';
-import { CODE as SelectSizesCODE } from '@/examples/select/sizes/SelectSizesExample';
-import { CODE as SelectVariantsCODE } from '@/examples/select/variants/SelectVariantsExample';
-import { CODE as SelectWithSeparatorCODE } from '@/examples/select/with-separator/SelectWithSeparatorExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as SelectBasicCODE } from '@/examples/select/basic/page';
+import { CODE as SelectBasicUsageCODE } from '@/examples/select/basic-usage/page';
+import { CODE as SelectControlledCODE } from '@/examples/select/controlled/page';
+import { CODE as SelectDisabledCODE } from '@/examples/select/disabled/page';
+import { CODE as SelectGroupedCODE } from '@/examples/select/grouped/page';
+import { CODE as SelectSizesCODE } from '@/examples/select/sizes/page';
+import { CODE as SelectVariantsCODE } from '@/examples/select/variants/page';
+import { CODE as SelectWithSeparatorCODE } from '@/examples/select/with-separator/page';
 
 export default function SelectPage() {
   const selectBasicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -40,16 +40,7 @@ export default function SelectPage() {
   const selectDisabledIframeRef = useRef<HTMLIFrameElement>(null);
   const selectControlledIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(
-    selectBasicIframeRef,
-    selectVariantsIframeRef,
-    selectSizesIframeRef,
-    selectBasicUsageIframeRef,
-    selectGroupedIframeRef,
-    selectWithSeparatorIframeRef,
-    selectDisabledIframeRef,
-    selectControlledIframeRef
-  );
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

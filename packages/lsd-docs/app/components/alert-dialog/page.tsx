@@ -19,7 +19,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as AlertDialogBasicExampleCODE } from '@/examples/alert-dialog/basic/AlertDialogBasicExample';
+import { CODE as AlertDialogBasicExampleCODE } from '@/examples/alert-dialog/basic/page';
 
 export default function AlertDialogPage() {
   return (

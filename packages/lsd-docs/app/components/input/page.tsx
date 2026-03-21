@@ -19,13 +19,13 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as InputDisabledCODE } from '@/examples/input/disabled/InputDisabledExample';
-import { CODE as InputErrorCODE } from '@/examples/input/error/InputErrorExample';
-import { CODE as InputLabelCODE } from '@/examples/input/label/InputLabelExample';
-import { CODE as InputSizesCODE } from '@/examples/input/sizes/InputSizesExample';
-import { CODE as InputSupportingTextCODE } from '@/examples/input/supporting-text/InputSupportingTextExample';
-import { CODE as InputTypesCODE } from '@/examples/input/types/InputTypesExample';
-import { CODE as InputVariantsCODE } from '@/examples/input/variants/InputVariantsExample';
+import { CODE as InputDisabledCODE } from '@/examples/input/disabled/page';
+import { CODE as InputErrorCODE } from '@/examples/input/error/page';
+import { CODE as InputLabelCODE } from '@/examples/input/label/page';
+import { CODE as InputSizesCODE } from '@/examples/input/sizes/page';
+import { CODE as InputSupportingTextCODE } from '@/examples/input/supporting-text/page';
+import { CODE as InputTypesCODE } from '@/examples/input/types/page';
+import { CODE as InputVariantsCODE } from '@/examples/input/variants/page';
 
 export default function InputPage() {
   return (

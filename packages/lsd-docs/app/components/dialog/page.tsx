@@ -19,7 +19,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as DialogBasicExampleCODE } from '@/examples/dialog/basic/DialogBasicExample';
+import { CODE as DialogBasicExampleCODE } from '@/examples/dialog/basic/page';
 
 export default function DialogPage() {
   return (

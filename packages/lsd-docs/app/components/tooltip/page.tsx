@@ -20,17 +20,17 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
-import { CODE as TOOLTIP_BASIC_CODE } from '@/examples/tooltip/basic/TooltipBasicExample';
-import { CODE as TOOLTIP_POSITIONS_CODE } from '@/examples/tooltip/positions/TooltipPositionsExample';
-import { CODE as TOOLTIP_WITH_ICON_CODE } from '@/examples/tooltip/with-icon/TooltipWithIconExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as TOOLTIP_BASIC_CODE } from '@/examples/tooltip/basic/page';
+import { CODE as TOOLTIP_POSITIONS_CODE } from '@/examples/tooltip/positions/page';
+import { CODE as TOOLTIP_WITH_ICON_CODE } from '@/examples/tooltip/with-icon/page';
 
 export default function TooltipPage() {
   const tooltipBasicIframeRef = useRef<HTMLIFrameElement>(null);
   const tooltipWithIconIframeRef = useRef<HTMLIFrameElement>(null);
   const tooltipPositionsIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(tooltipBasicIframeRef, tooltipWithIconIframeRef, tooltipPositionsIframeRef);
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

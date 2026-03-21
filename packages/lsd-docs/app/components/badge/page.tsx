@@ -19,13 +19,13 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as BadgeBasicCODE } from '@/examples/badge/basic/BadgeBasicExample';
-import { CODE as BadgeDismissibleCODE } from '@/examples/badge/dismissible/BadgeDismissibleExample';
-import { CODE as BadgeDotsCODE } from '@/examples/badge/dots/BadgeDotsExample';
-import { CODE as BadgeFeaturesCODE } from '@/examples/badge/features/BadgeFeaturesExample';
-import { CODE as BadgeInteractiveCODE } from '@/examples/badge/interactive/BadgeInteractiveExample';
-import { CODE as BadgeSizesCODE } from '@/examples/badge/sizes/BadgeSizesExample';
-import { CODE as BadgeVariantsCODE } from '@/examples/badge/variants/BadgeVariantsExample';
+import { CODE as BadgeBasicCODE } from '@/examples/badge/basic/page';
+import { CODE as BadgeDismissibleCODE } from '@/examples/badge/dismissible/page';
+import { CODE as BadgeDotsCODE } from '@/examples/badge/dots/page';
+import { CODE as BadgeFeaturesCODE } from '@/examples/badge/features/page';
+import { CODE as BadgeInteractiveCODE } from '@/examples/badge/interactive/page';
+import { CODE as BadgeSizesCODE } from '@/examples/badge/sizes/page';
+import { CODE as BadgeVariantsCODE } from '@/examples/badge/variants/page';
 
 export default function BadgePage() {
   return (

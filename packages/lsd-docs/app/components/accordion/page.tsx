@@ -20,15 +20,15 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
-import { CODE as AccordionMultipleCODE } from '@/examples/accordion/multiple/AccordionMultipleExample';
-import { CODE as AccordionSingleCODE } from '@/examples/accordion/single/AccordionSingleExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as AccordionMultipleCODE } from '@/examples/accordion/multiple/page';
+import { CODE as AccordionSingleCODE } from '@/examples/accordion/single/page';
 
 export default function AccordionPage() {
   const accordionSingleIframeRef = useRef<HTMLIFrameElement>(null);
   const accordionMultipleIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(accordionSingleIframeRef, accordionMultipleIframeRef);
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

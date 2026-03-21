@@ -20,13 +20,13 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as SidebarBasicExampleCODE } from '@/examples/sidebar/basic/SidebarBasicExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as SidebarBasicExampleCODE } from '@/examples/sidebar/basic/page';
 
 export default function SidebarPage() {
   const sidebarIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(sidebarIframeRef);
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

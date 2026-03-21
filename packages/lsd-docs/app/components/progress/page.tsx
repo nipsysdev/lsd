@@ -20,15 +20,15 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as ProgressBasicCODE } from '@/examples/progress/basic/ProgressBasicExample';
-import { CODE as ProgressFeaturesCODE } from '@/examples/progress/features/ProgressFeaturesExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as ProgressBasicCODE } from '@/examples/progress/basic/page';
+import { CODE as ProgressFeaturesCODE } from '@/examples/progress/features/page';
 
 export default function ProgressPage() {
   const progressBasicIframeRef = useRef<HTMLIFrameElement>(null);
   const progressFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(progressBasicIframeRef, progressFeaturesIframeRef);
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

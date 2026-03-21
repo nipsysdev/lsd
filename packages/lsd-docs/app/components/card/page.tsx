@@ -20,13 +20,13 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as CardBasicExampleCODE } from '@/examples/card/basic/CardBasicExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as CardBasicExampleCODE } from '@/examples/card/basic/page';
 
 export default function CardPage() {
   const cardIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(cardIframeRef);
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

@@ -12,6 +12,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -19,9 +20,18 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as SeparatorCODE } from '@/examples/separator/SeparatorExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as HorizontalCode } from '@/examples/separator/horizontal/page';
+import { CODE as VerticalCode } from '@/examples/separator/vertical/page';
+import { CODE as WithTextCode } from '@/examples/separator/with-text/page';
 
 export default function SeparatorPage() {
+  const horizontalIframeRef = useRef<HTMLIFrameElement>(null);
+  const verticalIframeRef = useRef<HTMLIFrameElement>(null);
+  const withTextIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes();
+
   return (
     <DocsLayout>
       <PageHeader
@@ -59,27 +69,90 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Separator">
+        <PageSection title="Horizontal Separator">
           <Typography variant="body1">
-            Use Separator to visually divide content. Supports horizontal and vertical orientations.
+            Horizontal separator to divide content vertically.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Separator Examples</CardTitle>
-              <CardDescription>
-                Horizontal and vertical separators with custom content
-              </CardDescription>
+              <CardTitle>Horizontal Example</CardTitle>
+              <CardDescription>Basic horizontal separator</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/separator" title="Separator Example" />
+                <IframeExample
+                  ref={horizontalIframeRef}
+                  size="sm"
+                  src="/examples/separator/horizontal"
+                  title="Horizontal Separator"
+                />
               </div>
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={SeparatorCODE} />
+                    <CodeExample code={HorizontalCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Vertical Separator">
+          <Typography variant="body1">
+            Vertical separator to divide content horizontally.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Vertical Example</CardTitle>
+              <CardDescription>Vertical separator with multiple items</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  ref={verticalIframeRef}
+                  size="md"
+                  src="/examples/separator/vertical"
+                  title="Vertical Separator"
+                />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={VerticalCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Separator with Text">
+          <Typography variant="body1">Custom separator with embedded text content.</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Text Separator Example</CardTitle>
+              <CardDescription>Separator with centered text label</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  ref={withTextIframeRef}
+                  size="sm"
+                  src="/examples/separator/with-text"
+                  title="Separator with Text"
+                />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={WithTextCode} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

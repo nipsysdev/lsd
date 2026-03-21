@@ -20,11 +20,11 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as CommandBasicExampleCODE } from '@/examples/command/basic/CommandBasicExample';
-import { CODE as CommandDialogExampleCODE } from '@/examples/command/dialog/CommandDialogExample';
-import { CODE as CommandGroupsExampleCODE } from '@/examples/command/groups/CommandGroupsExample';
-import { CODE as CommandShortcutsExampleCODE } from '@/examples/command/shortcuts/CommandShortcutsExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as CommandBasicExampleCODE } from '@/examples/command/basic/page';
+import { CODE as CommandDialogExampleCODE } from '@/examples/command/dialog/page';
+import { CODE as CommandGroupsExampleCODE } from '@/examples/command/groups/page';
+import { CODE as CommandShortcutsExampleCODE } from '@/examples/command/shortcuts/page';
 
 export default function CommandPage() {
   const commandBasicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -32,12 +32,7 @@ export default function CommandPage() {
   const commandShortcutsIframeRef = useRef<HTMLIFrameElement>(null);
   const commandDialogIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(
-    commandBasicIframeRef,
-    commandGroupsIframeRef,
-    commandShortcutsIframeRef,
-    commandDialogIframeRef
-  );
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

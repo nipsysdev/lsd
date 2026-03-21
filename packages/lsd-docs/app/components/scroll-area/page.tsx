@@ -10,7 +10,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Typography,
 } from '@nipsys/shadcn-lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
@@ -20,13 +19,17 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as ScrollAreaCODE } from '@/examples/scroll-area/ScrollAreaExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as BasicCode } from '@/examples/scroll-area/basic/page';
+import { CODE as BothCode } from '@/examples/scroll-area/both/page';
+import { CODE as HorizontalCode } from '@/examples/scroll-area/horizontal/page';
 
 export default function ScrollAreaPage() {
-  const scrollAreaIframeRef = useRef<HTMLIFrameElement>(null);
+  const basicIframeRef = useRef<HTMLIFrameElement>(null);
+  const horizontalIframeRef = useRef<HTMLIFrameElement>(null);
+  const bothIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(scrollAreaIframeRef);
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>
@@ -37,15 +40,15 @@ export default function ScrollAreaPage() {
 
       <PageContent>
         <PageSection title="About ScrollArea">
-          <Typography variant="body1" className="block">
+          <p className="block">
             ScrollArea provides a cross-browser custom scrollbar for content that needs scrolling.
             It supports both horizontal and vertical orientations with smooth, stylized scrollbars
             that match your design system.
-          </Typography>
+          </p>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import the ScrollArea component from LSD:</Typography>
+          <p>Import the ScrollArea component from LSD:</p>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
@@ -65,32 +68,82 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="Basic ScrollArea">
-          <Typography variant="body1">
+          <p>
             Vertical scrolling with custom scrollbar. The ScrollArea automatically shows the
             scrollbar when content overflows.
-          </Typography>
+          </p>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>ScrollArea Examples</CardTitle>
-              <CardDescription>
-                Vertical and horizontal scrolling with ScrollBar component
-              </CardDescription>
+              <CardTitle>Vertical Scrolling</CardTitle>
+              <CardDescription>Basic vertical scrollable container</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={scrollAreaIframeRef}
-                  size="lg"
-                  src="/examples/scroll-area"
-                  title="ScrollArea Example"
-                />
-              </div>
+              <IframeExample
+                ref={basicIframeRef}
+                size="lg"
+                src="/examples/scroll-area/basic"
+                title="Basic ScrollArea"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
-                    <CodeExample code={ScrollAreaCODE} />
+                    <CodeExample code={BasicCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Horizontal ScrollArea">
+          <p>Horizontal scrolling with custom ScrollBar component for better UX.</p>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Horizontal Scrolling</CardTitle>
+              <CardDescription>Horizontal scrollable container with ScrollBar</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={horizontalIframeRef}
+                size="md"
+                src="/examples/scroll-area/horizontal"
+                title="Horizontal ScrollArea"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={HorizontalCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Both Orientations">
+          <p>Bi-directional scrolling with both horizontal and vertical scrollbars.</p>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Two-Way Scrolling</CardTitle>
+              <CardDescription>Scrollable container with both orientations</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={bothIframeRef}
+                size="lg"
+                src="/examples/scroll-area/both"
+                title="Both Orientations"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={BothCode} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -99,7 +152,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the ScrollArea component.</Typography>
+          <p>All available props for the ScrollArea component.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -108,12 +161,12 @@ export default function MyComponent() {
                 <CardDescription>Additional CSS classes to apply</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-2">
+                <p className="block mb-2">
                   <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
+                </p>
+                <p className="block">
                   <strong>Default:</strong> undefined
-                </Typography>
+                </p>
               </CardContent>
             </Card>
 
@@ -123,12 +176,12 @@ export default function MyComponent() {
                 <CardDescription>Content to be scrolled</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-2">
+                <p className="block mb-2">
                   <strong>Type:</strong> React.ReactNode
-                </Typography>
-                <Typography variant="label1" className="block">
+                </p>
+                <p className="block">
                   <strong>Default:</strong> undefined
-                </Typography>
+                </p>
               </CardContent>
             </Card>
 
@@ -138,43 +191,15 @@ export default function MyComponent() {
                 <CardDescription>Orientation of the scrollbar</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> 'vertical' | 'horizontal'
-                </Typography>
-                <Typography variant="label1" className="block">
+                <p className="block mb-2">
+                  <strong>Type:</strong> 'horizontal' | 'vertical'
+                </p>
+                <p className="block">
                   <strong>Default:</strong> 'vertical'
-                </Typography>
+                </p>
               </CardContent>
             </Card>
           </div>
-        </PageSection>
-
-        <PageSection title="Accessibility">
-          <Typography variant="body1">
-            The ScrollArea component is accessible by default with proper keyboard navigation and
-            screen reader support.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>ScrollArea is fully keyboard accessible</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Typography variant="body2" className="block mb-2">
-                • <strong>Arrow Up/Down</strong> - Scroll vertically
-              </Typography>
-              <Typography variant="body2" className="block mb-2">
-                • <strong>Arrow Left/Right</strong> - Scroll horizontally
-              </Typography>
-              <Typography variant="body2" className="block mb-2">
-                • <strong>Page Up/Down</strong> - Scroll by page
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Home/End</strong> - Scroll to start/end
-              </Typography>
-            </CardContent>
-          </Card>
         </PageSection>
 
         <PageNavigation

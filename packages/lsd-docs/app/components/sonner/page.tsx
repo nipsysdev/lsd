@@ -20,14 +20,14 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
-import { CODE as TOAST_ACTIONS_CODE } from '@/examples/sonner/actions/ToastActionsExample';
-import { CODE as TOAST_DURATION_CODE } from '@/examples/sonner/duration/ToastDurationExample';
-import { CODE as TOAST_PERSISTENT_CODE } from '@/examples/sonner/persistent/ToastPersistentExample';
-import { CODE as TOAST_POSITIONS_CODE } from '@/examples/sonner/positions/ToastPositionsExample';
-import { CODE as TOAST_PROMISE_CODE } from '@/examples/sonner/promise/ToastPromiseExample';
-import { CODE as TOAST_RICH_CODE } from '@/examples/sonner/rich/ToastRichExample';
-import { CODE as TOAST_TYPES_CODE } from '@/examples/sonner/toast-types/ToastTypesExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as TOAST_ACTIONS_CODE } from '@/examples/sonner/actions/page';
+import { CODE as TOAST_DURATION_CODE } from '@/examples/sonner/duration/page';
+import { CODE as TOAST_PERSISTENT_CODE } from '@/examples/sonner/persistent/page';
+import { CODE as TOAST_POSITIONS_CODE } from '@/examples/sonner/positions/page';
+import { CODE as TOAST_PROMISE_CODE } from '@/examples/sonner/promise/page';
+import { CODE as TOAST_RICH_CODE } from '@/examples/sonner/rich/page';
+import { CODE as TOAST_TYPES_CODE } from '@/examples/sonner/toast-types/page';
 
 export default function SonnerPage() {
   const toastTypesIframeRef = useRef<HTMLIFrameElement>(null);
@@ -38,15 +38,7 @@ export default function SonnerPage() {
   const toastPromiseIframeRef = useRef<HTMLIFrameElement>(null);
   const toastRichIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(
-    toastTypesIframeRef,
-    toastDurationIframeRef,
-    toastPositionsIframeRef,
-    toastActionsIframeRef,
-    toastPersistentIframeRef,
-    toastPromiseIframeRef,
-    toastRichIframeRef
-  );
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

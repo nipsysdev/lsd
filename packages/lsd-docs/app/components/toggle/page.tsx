@@ -20,11 +20,11 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
-import { CODE as ToggleBasicCODE } from '@/examples/toggle/basic/ToggleBasicExample';
-import { CODE as TogglePressedCODE } from '@/examples/toggle/pressed/TogglePressedExample';
-import { CODE as ToggleSizesCODE } from '@/examples/toggle/sizes/ToggleSizesExample';
-import { CODE as ToggleWithTextCODE } from '@/examples/toggle/with-text/ToggleWithTextExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as ToggleBasicCODE } from '@/examples/toggle/basic/page';
+import { CODE as TogglePressedCODE } from '@/examples/toggle/pressed/page';
+import { CODE as ToggleSizesCODE } from '@/examples/toggle/sizes/page';
+import { CODE as ToggleWithTextCODE } from '@/examples/toggle/with-text/page';
 
 export default function TogglePage() {
   const toggleBasicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -32,12 +32,7 @@ export default function TogglePage() {
   const toggleWithTextIframeRef = useRef<HTMLIFrameElement>(null);
   const toggleSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(
-    toggleBasicIframeRef,
-    togglePressedIframeRef,
-    toggleWithTextIframeRef,
-    toggleSizesIframeRef
-  );
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

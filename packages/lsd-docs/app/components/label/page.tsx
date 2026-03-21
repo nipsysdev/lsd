@@ -20,17 +20,17 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as LabelBasicExampleCODE } from '@/examples/label/basic/LabelBasicExample';
-import { CODE as LabelSizesExampleCODE } from '@/examples/label/sizes/LabelSizesExample';
-import { CODE as LabelVariantsExampleCODE } from '@/examples/label/variants/LabelVariantsExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as LabelBasicExampleCODE } from '@/examples/label/basic/page';
+import { CODE as LabelSizesExampleCODE } from '@/examples/label/sizes/page';
+import { CODE as LabelVariantsExampleCODE } from '@/examples/label/variants/page';
 
 export default function LabelPage() {
   const labelBasicIframeRef = useRef<HTMLIFrameElement>(null);
   const labelVariantsIframeRef = useRef<HTMLIFrameElement>(null);
   const labelSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(labelBasicIframeRef, labelVariantsIframeRef, labelSizesIframeRef);
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

@@ -20,14 +20,14 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
-import { CODE as TABS_BASIC_CODE } from '@/examples/tabs/basic/TabsBasicExample';
-import { CODE as TABS_BORDERED_CODE } from '@/examples/tabs/bordered/TabsBorderedExample';
-import { CODE as TABS_CONTROLLED_CODE } from '@/examples/tabs/controlled/TabsControlledExample';
-import { CODE as TABS_DISABLED_CODE } from '@/examples/tabs/disabled/TabsDisabledExample';
-import { CODE as TABS_FULL_WIDTH_CODE } from '@/examples/tabs/full-width/TabsFullWidthExample';
-import { CODE as TABS_SIZES_CODE } from '@/examples/tabs/sizes/TabsSizesExample';
-import { CODE as TABS_WITH_ICONS_CODE } from '@/examples/tabs/with-icons/TabsWithIconsExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as TABS_BASIC_CODE } from '@/examples/tabs/basic/page';
+import { CODE as TABS_BORDERED_CODE } from '@/examples/tabs/bordered/page';
+import { CODE as TABS_CONTROLLED_CODE } from '@/examples/tabs/controlled/page';
+import { CODE as TABS_DISABLED_CODE } from '@/examples/tabs/disabled/page';
+import { CODE as TABS_FULL_WIDTH_CODE } from '@/examples/tabs/full-width/page';
+import { CODE as TABS_SIZES_CODE } from '@/examples/tabs/sizes/page';
+import { CODE as TABS_WITH_ICONS_CODE } from '@/examples/tabs/with-icons/page';
 
 export default function TabsPage() {
   const tabsBasicIframeRef = useRef<HTMLIFrameElement>(null);
@@ -38,15 +38,7 @@ export default function TabsPage() {
   const tabsWithIconsIframeRef = useRef<HTMLIFrameElement>(null);
   const tabsDisabledIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(
-    tabsBasicIframeRef,
-    tabsControlledIframeRef,
-    tabsSizesIframeRef,
-    tabsFullWidthIframeRef,
-    tabsBorderedIframeRef,
-    tabsWithIconsIframeRef,
-    tabsDisabledIframeRef
-  );
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

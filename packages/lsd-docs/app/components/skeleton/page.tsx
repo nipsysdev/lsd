@@ -20,11 +20,11 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
-import { CODE as SkeletonAvatarCODE } from '@/examples/skeleton/avatar/SkeletonAvatarExample';
-import { CODE as SkeletonCardCODE } from '@/examples/skeleton/card/SkeletonCardExample';
-import { CODE as SkeletonListCODE } from '@/examples/skeleton/list/SkeletonListExample';
-import { CODE as SkeletonSizesCODE } from '@/examples/skeleton/sizes/SkeletonSizesExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as SkeletonAvatarCODE } from '@/examples/skeleton/avatar/page';
+import { CODE as SkeletonCardCODE } from '@/examples/skeleton/card/page';
+import { CODE as SkeletonListCODE } from '@/examples/skeleton/list/page';
+import { CODE as SkeletonSizesCODE } from '@/examples/skeleton/sizes/page';
 
 export default function SkeletonPage() {
   const skeletonCardIframeRef = useRef<HTMLIFrameElement>(null);
@@ -32,12 +32,7 @@ export default function SkeletonPage() {
   const skeletonListIframeRef = useRef<HTMLIFrameElement>(null);
   const skeletonSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(
-    skeletonCardIframeRef,
-    skeletonAvatarIframeRef,
-    skeletonListIframeRef,
-    skeletonSizesIframeRef
-  );
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

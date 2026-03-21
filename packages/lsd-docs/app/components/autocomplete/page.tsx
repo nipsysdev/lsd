@@ -20,24 +20,19 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useIframeThemeSync } from '@/components/docs/useIframeThemeSync';
-import { CODE as BASIC_CODE } from '@/examples/autocomplete/basic/AutocompleteBasicExample';
-import { CODE as FEATURES_CODE } from '@/examples/autocomplete/features/AutocompleteFeaturesExample';
-import { CODE as SIZES_CODE } from '@/examples/autocomplete/sizes/AutocompleteSizesExample';
-import { CODE as VARIANTS_CODE } from '@/examples/autocomplete/variants/AutocompleteVariantsExample';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { CODE as BASIC_CODE } from '@/examples/autocomplete/basic/page';
+import { CODE as FEATURES_CODE } from '@/examples/autocomplete/features/page';
+import { CODE as SIZES_CODE } from '@/examples/autocomplete/sizes/page';
+import { CODE as VARIANTS_CODE } from '@/examples/autocomplete/variants/page';
 
 export default function AutocompletePage() {
-  const autocompleteBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const autocompleteVariantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const autocompleteSizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const autocompleteFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
+  const _autocompleteBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const _autocompleteVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const _autocompleteSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const _autocompleteFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useIframeThemeSync(
-    autocompleteBasicIframeRef,
-    autocompleteVariantsIframeRef,
-    autocompleteSizesIframeRef,
-    autocompleteFeaturesIframeRef
-  );
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>

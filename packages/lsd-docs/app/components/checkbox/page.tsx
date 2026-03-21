@@ -19,7 +19,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as CheckboxCODE } from '@/examples/checkbox/CheckboxExample';
+import { CODE as CheckboxCODE } from '@/examples/checkbox/page';
 
 export default function CheckboxPage() {
   return (
