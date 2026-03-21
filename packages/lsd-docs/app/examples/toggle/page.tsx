@@ -7,7 +7,7 @@ export const CODE = `import { Toggle } from '@nipsys/shadcn-lsd';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <div className="flex items-center gap-(--lsd-spacing-base)">
         <Toggle aria-label="Toggle bold">B</Toggle>
         <Toggle aria-label="Toggle italic">I</Toggle>
@@ -21,7 +21,7 @@ export function ToggleExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <div className="flex items-center gap-(--lsd-spacing-base)">
         <Toggle aria-label="Toggle bold">B</Toggle>
         <Toggle aria-label="Toggle italic">I</Toggle>
