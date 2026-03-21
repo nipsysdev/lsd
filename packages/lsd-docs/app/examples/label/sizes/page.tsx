@@ -7,7 +7,7 @@ export const CODE = `import { Checkbox, Label } from '@nipsys/shadcn-lsd';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <div className="flex items-center gap-(--lsd-spacing-base)">
         <Checkbox id="small-checkbox" />
         <Label size="sm" htmlFor="small-checkbox">
@@ -34,7 +34,7 @@ export function LabelSizesExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <div className="flex items-center gap-(--lsd-spacing-base)">
         <Checkbox id="small-checkbox" />
         <Label size="sm" htmlFor="small-checkbox">
