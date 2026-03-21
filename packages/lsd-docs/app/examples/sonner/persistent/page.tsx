@@ -9,7 +9,7 @@ import { Toaster, toast } from 'sonner';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Toaster />
 
       <Typography variant="label1">Persistent Toasts</Typography>
@@ -36,7 +36,7 @@ export function ToastPersistentExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Toaster />
 
       <Typography variant="label1">Persistent Toasts</Typography>

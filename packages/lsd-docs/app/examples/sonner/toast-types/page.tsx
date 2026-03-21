@@ -9,9 +9,7 @@ import { Toaster, toast } from 'sonner';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
-      <Toaster />
-
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Toast Types</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button variant="outlined" onClick={() => toast('Simple toast message')}>
@@ -36,6 +34,7 @@ export function Example() {
           Show Info Toast
         </Button>
       </div>
+      <Toaster />
     </div>
   );
 }`;
@@ -44,9 +43,7 @@ export function ToastTypesExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
-      <Toaster />
-
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Toast Types</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button variant="outlined" onClick={() => toast('Simple toast message')}>
@@ -65,6 +62,7 @@ export function ToastTypesExample() {
           Show Info Toast
         </Button>
       </div>
+      <Toaster />
     </div>
   );
 }

@@ -18,7 +18,7 @@ export function Example() {
   };
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Toaster />
 
       <Typography variant="label1">Promise-based Toasts</Typography>
@@ -35,7 +35,7 @@ export function ToastPromiseExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Toaster />
 
       <Typography variant="label1">Promise-based Toasts</Typography>
