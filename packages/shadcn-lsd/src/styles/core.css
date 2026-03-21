@@ -6,7 +6,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --animate-spin: spin 1.3s linear infinite;
-  --lsd-font-family: monospace;
 
   --animate-indeterminate-progress: indeterminate-progress 1.5s ease-in-out infinite;
   --animate-indeterminate-progress-slow: indeterminate-progress 3s ease-in-out infinite;
@@ -80,6 +79,7 @@
   --lsd-spacing-largest: 1.75rem;
 
   /* LSD Design Tokens - Light Theme */
+  --lsd-font-family: monospace;
   --lsd-primary: #000000;
   --lsd-primary-foreground: #ffffff;
   --lsd-text-primary: #000000;
@@ -133,6 +133,7 @@
 
 .dark {
   /* LSD Design Tokens - Dark Theme */
+  --lsd-font-family: monospace;
   --lsd-primary: #ffffff;
   --lsd-primary-foreground: #000000;
   --lsd-text-primary: #ffffff;
