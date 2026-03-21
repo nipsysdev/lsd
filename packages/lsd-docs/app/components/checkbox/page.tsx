@@ -1,6 +1,10 @@
 'use client';
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -8,12 +12,16 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { CODE as BASIC_CODE } from '@/examples/checkbox/basic/page';
+import { CODE as CONTROLLED_CODE } from '@/examples/checkbox/controlled/page';
+import { CODE as WITH_LABEL_CODE } from '@/examples/checkbox/with-label/page';
 
 export default function CheckboxPage() {
   return (
@@ -60,7 +68,15 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/checkbox/basic" title="Basic Checkbox" />
+              <IframeExample size="md" src="/examples/checkbox/basic" title="Basic Checkbox" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={BASIC_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
@@ -73,10 +89,18 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
-                size="sm"
+                size="md"
                 src="/examples/checkbox/controlled"
                 title="Controlled Checkbox"
               />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={CONTROLLED_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
@@ -89,10 +113,18 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
-                size="sm"
+                size="md"
                 src="/examples/checkbox/with-label"
                 title="Checkbox with Label"
               />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={WITH_LABEL_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
         </PageSection>

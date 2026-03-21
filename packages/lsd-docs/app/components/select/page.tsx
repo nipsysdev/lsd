@@ -71,7 +71,7 @@ export default function SelectPage() {
             <CardContent>
               <IframeExample
                 ref={selectBasicIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/select/basic"
                 title="Select Basic Example"
               />
@@ -133,7 +133,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={selectSizesIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/select/sizes"
                 title="Select Sizes Example"
               />
@@ -193,7 +193,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={selectBasicUsageIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/select/basic-usage"
                 title="Select Basic Usage Example"
               />
@@ -216,7 +216,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={selectGroupedIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/select/grouped"
                 title="Select Grouped Example"
               />
@@ -239,7 +239,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={selectWithSeparatorIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/select/with-separator"
                 title="Select With Separator Example"
               />
@@ -262,7 +262,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={selectDisabledIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/select/disabled"
                 title="Select Disabled Example"
               />
@@ -285,7 +285,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={selectControlledIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/select/controlled"
                 title="Select Controlled Example"
               />

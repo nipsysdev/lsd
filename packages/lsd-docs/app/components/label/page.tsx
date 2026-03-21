@@ -81,14 +81,12 @@ export default function MyComponent() {
               <CardDescription>Labels paired with checkboxes for form controls.</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={labelBasicIframeRef}
-                  size="sm"
-                  src="/examples/label/basic"
-                  title="Label Basic Example"
-                />
-              </div>
+              <IframeExample
+                ref={labelBasicIframeRef}
+                size="md"
+                src="/examples/label/basic"
+                title="Label Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -112,14 +110,12 @@ export default function MyComponent() {
               <CardDescription>Default and secondary label styles</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={labelVariantsIframeRef}
-                  size="sm"
-                  src="/examples/label/variants"
-                  title="Label Variants Example"
-                />
-              </div>
+              <IframeExample
+                ref={labelVariantsIframeRef}
+                size="md"
+                src="/examples/label/variants"
+                title="Label Variants Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -143,14 +139,12 @@ export default function MyComponent() {
               <CardDescription>Small, medium, and large label sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={labelSizesIframeRef}
-                  size="sm"
-                  src="/examples/label/sizes"
-                  title="Label Sizes Example"
-                />
-              </div>
+              <IframeExample
+                ref={labelSizesIframeRef}
+                size="md"
+                src="/examples/label/sizes"
+                title="Label Sizes Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

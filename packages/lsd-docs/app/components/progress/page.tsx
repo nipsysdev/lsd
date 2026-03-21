@@ -2,6 +2,9 @@
 
 import {
   Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -9,6 +12,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -17,8 +21,14 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { CODE as ProgressBasicCODE } from '@/examples/progress/basic/page';
+import { CODE as COLORS_CODE } from '@/examples/progress/colors/page';
+import { CODE as INDETERMINATE_CODE } from '@/examples/progress/indeterminate/page';
+import { CODE as PAUSED_CODE } from '@/examples/progress/paused/page';
+import { CODE as SIZES_CODE } from '@/examples/progress/sizes/page';
 
 export default function ProgressPage() {
+  const progressBasicIframeRef = useRef<HTMLIFrameElement>(null);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -65,14 +75,12 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={progressBasicIframeRef}
-                  size="md"
-                  src="/examples/progress/basic"
-                  title="Progress Basic Example"
-                />
-              </div>
+              <IframeExample
+                ref={progressBasicIframeRef}
+                size="md"
+                src="/examples/progress/basic"
+                title="Progress Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -100,10 +108,18 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
-                size="sm"
+                size="md"
                 src="/examples/progress/indeterminate"
                 title="Indeterminate Progress"
               />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={INDETERMINATE_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
@@ -113,7 +129,15 @@ export default function MyComponent() {
               <CardDescription>Pause/resume control for indeterminate progress</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/progress/paused" title="Paused Progress" />
+              <IframeExample size="md" src="/examples/progress/paused" title="Paused Progress" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={PAUSED_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
@@ -123,7 +147,15 @@ export default function MyComponent() {
               <CardDescription>Semantic color variants for different states</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/progress/colors" title="Progress Colors" />
+              <IframeExample size="md" src="/examples/progress/colors" title="Progress Colors" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={COLORS_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
@@ -133,7 +165,15 @@ export default function MyComponent() {
               <CardDescription>Small, medium, and large progress bars</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/progress/sizes" title="Progress Sizes" />
+              <IframeExample size="md" src="/examples/progress/sizes" title="Progress Sizes" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={SIZES_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
         </PageSection>

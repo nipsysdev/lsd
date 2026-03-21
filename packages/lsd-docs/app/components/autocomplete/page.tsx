@@ -79,13 +79,11 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/autocomplete/basic"
-                  title="Autocomplete Basic Example"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/autocomplete/basic"
+                title="Autocomplete Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -109,13 +107,11 @@ export default function MyComponent() {
               <CardDescription>Choose between outlined and underlined styles</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/autocomplete/variants"
-                  title="Autocomplete Variants Example"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/autocomplete/variants"
+                title="Autocomplete Variants Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -139,13 +135,11 @@ export default function MyComponent() {
               <CardDescription>From extra small to extra large</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/autocomplete/sizes"
-                  title="Autocomplete Sizes Example"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/autocomplete/sizes"
+                title="Autocomplete Sizes Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -170,13 +164,11 @@ export default function MyComponent() {
               <CardDescription>Add an icon to the autocomplete input</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/autocomplete/icon"
-                  title="Autocomplete with Icon"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/autocomplete/icon"
+                title="Autocomplete with Icon"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -194,13 +186,11 @@ export default function MyComponent() {
               <CardDescription>Add a clear button to reset the input</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/autocomplete/clearable"
-                  title="Clearable Autocomplete"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/autocomplete/clearable"
+                title="Clearable Autocomplete"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -218,13 +208,11 @@ export default function MyComponent() {
               <CardDescription>Display autocomplete with error styling</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/autocomplete/error"
-                  title="Error Autocomplete"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/autocomplete/error"
+                title="Error Autocomplete"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -242,13 +230,11 @@ export default function MyComponent() {
               <CardDescription>Disable the autocomplete input</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/autocomplete/disabled"
-                  title="Disabled Autocomplete"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/autocomplete/disabled"
+                title="Disabled Autocomplete"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

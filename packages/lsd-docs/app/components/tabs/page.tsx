@@ -99,7 +99,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tabsSizesIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tabs/sizes"
                 title="Tabs Sizes Example"
               />
@@ -129,7 +129,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tabsBasicIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tabs/basic"
                 title="Tabs Basic Example"
               />
@@ -152,7 +152,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tabsControlledIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tabs/controlled"
                 title="Tabs Controlled Example"
               />
@@ -175,7 +175,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tabsFullWidthIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tabs/full-width"
                 title="Tabs Full Width Example"
               />
@@ -198,7 +198,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tabsBorderedIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tabs/bordered"
                 title="Tabs Bordered Example"
               />
@@ -221,7 +221,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tabsWithIconsIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tabs/with-icons"
                 title="Tabs With Icons Example"
               />
@@ -244,7 +244,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tabsDisabledIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tabs/disabled"
                 title="Tabs Disabled Example"
               />

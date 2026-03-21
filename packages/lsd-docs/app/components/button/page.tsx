@@ -112,7 +112,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={buttonSizesIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button/sizes"
                 title="Button Sizes Example"
               />
@@ -142,7 +142,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={buttonIconsIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button/icons"
                 title="Button Icons Example"
               />
@@ -165,7 +165,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={buttonLoadingIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button/loading"
                 title="Loading State Example"
               />
@@ -188,7 +188,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={buttonFullWidthIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button/full-width"
                 title="Full Width Button"
               />
@@ -211,7 +211,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={buttonDisabledIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button/disabled"
                 title="Disabled State"
               />

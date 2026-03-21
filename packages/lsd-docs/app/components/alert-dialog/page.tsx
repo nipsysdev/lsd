@@ -107,13 +107,11 @@ export default function AlertDialogPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="md"
-                  src="/examples/alert-dialog/basic"
-                  title="Alert Dialog Basic Example"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/alert-dialog/basic"
+                title="Alert Dialog Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

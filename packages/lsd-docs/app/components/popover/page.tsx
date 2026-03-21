@@ -80,14 +80,12 @@ export default function MyComponent() {
               <CardDescription>Controlled popover with calendar content</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={popoverIframeRef}
-                  size="lg"
-                  src="/examples/popover"
-                  title="Popover Example"
-                />
-              </div>
+              <IframeExample
+                ref={popoverIframeRef}
+                size="lg"
+                src="/examples/popover"
+                title="Popover Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

@@ -105,14 +105,12 @@ export default function CardPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={cardIframeRef}
-                  size="md"
-                  src="/examples/card/basic"
-                  title="Card Basic Example"
-                />
-              </div>
+              <IframeExample
+                ref={cardIframeRef}
+                size="md"
+                src="/examples/card/basic"
+                title="Card Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

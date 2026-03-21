@@ -82,7 +82,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleGroupSingleIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/toggle-group/single"
                 title="ToggleGroup Single Example"
               />
@@ -111,7 +111,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleGroupMultipleIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/toggle-group/multiple"
                 title="ToggleGroup Multiple Example"
               />
@@ -140,7 +140,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleGroupSizesIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/toggle-group/sizes"
                 title="ToggleGroup Sizes Example"
               />

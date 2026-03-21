@@ -100,7 +100,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={menubarIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/menubar"
                 title="Menubar Example"
               />
@@ -146,7 +146,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={destructiveIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/menubar/destructive"
                 title="Destructive Items Example"
               />
@@ -169,7 +169,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={labelsIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/menubar/labels-separators"
                 title="Labels and Separators Example"
               />
@@ -192,7 +192,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={insetIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/menubar/inset"
                 title="Inset Items Example"
               />
@@ -215,7 +215,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={shortcutsIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/menubar/shortcuts"
                 title="Keyboard Shortcuts Example"
               />

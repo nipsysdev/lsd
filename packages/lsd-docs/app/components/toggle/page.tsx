@@ -78,7 +78,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleBasicIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/toggle/basic"
                 title="Toggle Basic Example"
               />
@@ -105,7 +105,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={togglePressedIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/toggle/pressed"
                 title="Toggle Pressed Example"
               />
@@ -134,7 +134,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleWithTextIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/toggle/with-text"
                 title="Toggle With Text Example"
               />
@@ -163,7 +163,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleSizesIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/toggle/sizes"
                 title="Toggle Sizes Example"
               />

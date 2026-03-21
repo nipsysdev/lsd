@@ -80,14 +80,12 @@ export default function MyComponent() {
               <CardDescription>Basic horizontal separator</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={horizontalIframeRef}
-                  size="sm"
-                  src="/examples/separator/horizontal"
-                  title="Horizontal Separator"
-                />
-              </div>
+              <IframeExample
+                ref={horizontalIframeRef}
+                size="md"
+                src="/examples/separator/horizontal"
+                title="Horizontal Separator"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -111,14 +109,12 @@ export default function MyComponent() {
               <CardDescription>Vertical separator with multiple items</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={verticalIframeRef}
-                  size="md"
-                  src="/examples/separator/vertical"
-                  title="Vertical Separator"
-                />
-              </div>
+              <IframeExample
+                ref={verticalIframeRef}
+                size="md"
+                src="/examples/separator/vertical"
+                title="Vertical Separator"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -140,14 +136,12 @@ export default function MyComponent() {
               <CardDescription>Separator with centered text label</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={withTextIframeRef}
-                  size="sm"
-                  src="/examples/separator/with-text"
-                  title="Separator with Text"
-                />
-              </div>
+              <IframeExample
+                ref={withTextIframeRef}
+                size="md"
+                src="/examples/separator/with-text"
+                title="Separator with Text"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

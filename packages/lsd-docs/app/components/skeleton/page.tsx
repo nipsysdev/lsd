@@ -82,7 +82,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={skeletonCardIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/skeleton/card"
                 title="Skeleton Card Example"
               />
@@ -111,7 +111,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={skeletonAvatarIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/skeleton/avatar"
                 title="Skeleton Avatar Example"
               />
@@ -140,7 +140,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={skeletonListIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/skeleton/list"
                 title="Skeleton List Example"
               />
@@ -169,7 +169,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={skeletonSizesIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/skeleton/sizes"
                 title="Skeleton Sizes Example"
               />

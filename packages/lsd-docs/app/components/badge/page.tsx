@@ -71,9 +71,7 @@ export default function MyComponent() {
               <CardDescription>Basic badge styles for general use</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample src="/examples/badge/basic" size="sm" title="Badge Basic Example" />
-              </div>
+              <IframeExample src="/examples/badge/basic" size="md" title="Badge Basic Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -93,13 +91,11 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  src="/examples/badge/variants"
-                  size="sm"
-                  title="Badge Variants Example"
-                />
-              </div>
+              <IframeExample
+                src="/examples/badge/variants"
+                size="md"
+                title="Badge Variants Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -117,9 +113,7 @@ export default function MyComponent() {
               <CardDescription>Minimal circular indicator for status display</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample src="/examples/badge/dots" size="sm" title="Badge Dots Example" />
-              </div>
+              <IframeExample src="/examples/badge/dots" size="md" title="Badge Dots Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -143,9 +137,7 @@ export default function MyComponent() {
               <CardDescription>Small, medium, and large badge sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample src="/examples/badge/sizes" size="sm" title="Badge Sizes Example" />
-              </div>
+              <IframeExample src="/examples/badge/sizes" size="md" title="Badge Sizes Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -169,13 +161,11 @@ export default function MyComponent() {
               <CardDescription>Badges that respond to click events</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  src="/examples/badge/interactive"
-                  size="sm"
-                  title="Badge Interactive Example"
-                />
-              </div>
+              <IframeExample
+                src="/examples/badge/interactive"
+                size="md"
+                title="Badge Interactive Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -193,13 +183,11 @@ export default function MyComponent() {
               <CardDescription>Badges with close button for removal</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  src="/examples/badge/dismissible"
-                  size="sm"
-                  title="Badge Dismissible Example"
-                />
-              </div>
+              <IframeExample
+                src="/examples/badge/dismissible"
+                size="md"
+                title="Badge Dismissible Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -217,13 +205,11 @@ export default function MyComponent() {
               <CardDescription>Add icons to badges for better visual communication</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  src="/examples/badge/features"
-                  size="sm"
-                  title="Badge Features Example"
-                />
-              </div>
+              <IframeExample
+                src="/examples/badge/features"
+                size="md"
+                title="Badge Features Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -241,9 +227,7 @@ export default function MyComponent() {
               <CardDescription>Use dot prop for circular status indicators</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample src="/examples/badge/dots" size="sm" title="Badge Dots Example" />
-              </div>
+              <IframeExample src="/examples/badge/dots" size="md" title="Badge Dots Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

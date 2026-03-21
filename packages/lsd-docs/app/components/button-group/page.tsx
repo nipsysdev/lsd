@@ -90,7 +90,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={horizontalIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button-group/horizontal"
                 title="Horizontal Orientation"
               />
@@ -143,7 +143,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={buttonGroupIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button-group"
                 title="Button Group Example"
               />
@@ -168,7 +168,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={separatorsIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button-group/separators"
                 title="Separators Example"
               />
@@ -193,7 +193,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={textIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button-group/text"
                 title="Text Labels Example"
               />
@@ -216,7 +216,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={variantsIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/button-group/variants"
                 title="Variants Example"
               />

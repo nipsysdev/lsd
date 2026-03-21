@@ -70,13 +70,11 @@ export default function MyComponent() {
               <CardDescription>Choose between outlined and underlined styles</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="sm"
-                  src="/examples/input/variants"
-                  title="Input Variants Example"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/input/variants"
+                title="Input Variants Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -100,9 +98,7 @@ export default function MyComponent() {
               <CardDescription>From extra small to extra large</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="lg" src="/examples/input/sizes" title="Input Sizes Example" />
-              </div>
+              <IframeExample size="lg" src="/examples/input/sizes" title="Input Sizes Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -127,9 +123,7 @@ export default function MyComponent() {
               <CardDescription>Add a label to provide context for the input</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/input/label" title="Input Label Example" />
-              </div>
+              <IframeExample size="md" src="/examples/input/label" title="Input Label Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -149,13 +143,11 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="sm"
-                  src="/examples/input/supporting-text"
-                  title="Input Supporting Text Example"
-                />
-              </div>
+              <IframeExample
+                size="md"
+                src="/examples/input/supporting-text"
+                title="Input Supporting Text Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -173,9 +165,7 @@ export default function MyComponent() {
               <CardDescription>Show error state with destructive styling</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="sm" src="/examples/input/error" title="Input Error Example" />
-              </div>
+              <IframeExample size="md" src="/examples/input/error" title="Input Error Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -193,9 +183,7 @@ export default function MyComponent() {
               <CardDescription>Support for various HTML input types</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="lg" src="/examples/input/types" title="Input Types Example" />
-              </div>
+              <IframeExample size="lg" src="/examples/input/types" title="Input Types Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -213,13 +201,11 @@ export default function MyComponent() {
               <CardDescription>Disabled input with reduced opacity</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="sm"
-                  src="/examples/input/disabled"
-                  title="Input Disabled Example"
-                />
-              </div>
+              <IframeExample
+                size="sm"
+                src="/examples/input/disabled"
+                title="Input Disabled Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>

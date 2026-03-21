@@ -74,7 +74,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={switchSizesIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/switch/sizes"
                 title="Switch Sizes"
               />
@@ -105,7 +105,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={switchBasicIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/switch/basic"
                 title="Switch Basic Example"
               />
@@ -128,7 +128,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={switchControlledIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/switch/controlled"
                 title="Switch Controlled Example"
               />

@@ -90,7 +90,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tooltipBasicIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tooltip/basic"
                 title="Tooltip Basic Example"
               />
@@ -119,7 +119,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tooltipWithIconIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tooltip/with-icon"
                 title="Tooltip With Icon Example"
               />
@@ -146,7 +146,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={tooltipPositionsIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/tooltip/positions"
                 title="Tooltip Positions Example"
               />

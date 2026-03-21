@@ -118,14 +118,12 @@ export default function CommandPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={commandBasicIframeRef}
-                  size="md"
-                  src="/examples/command/basic"
-                  title="Command Basic Example"
-                />
-              </div>
+              <IframeExample
+                ref={commandBasicIframeRef}
+                size="md"
+                src="/examples/command/basic"
+                title="Command Basic Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -151,14 +149,12 @@ export default function CommandPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={commandGroupsIframeRef}
-                  size="md"
-                  src="/examples/command/groups"
-                  title="Command Groups Example"
-                />
-              </div>
+              <IframeExample
+                ref={commandGroupsIframeRef}
+                size="md"
+                src="/examples/command/groups"
+                title="Command Groups Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -184,14 +180,12 @@ export default function CommandPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={commandShortcutsIframeRef}
-                  size="md"
-                  src="/examples/command/shortcuts"
-                  title="Command Shortcuts Example"
-                />
-              </div>
+              <IframeExample
+                ref={commandShortcutsIframeRef}
+                size="md"
+                src="/examples/command/shortcuts"
+                title="Command Shortcuts Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
@@ -217,14 +211,12 @@ export default function CommandPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={commandDialogIframeRef}
-                  size="md"
-                  src="/examples/command/dialog"
-                  title="Command Dialog Example"
-                />
-              </div>
+              <IframeExample
+                ref={commandDialogIframeRef}
+                size="md"
+                src="/examples/command/dialog"
+                title="Command Dialog Example"
+              />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
