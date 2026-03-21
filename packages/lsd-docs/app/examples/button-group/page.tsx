@@ -40,7 +40,7 @@ export function Example() {
 
 export function ButtonGroupExample() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <ButtonGroup>
         <Button>Save</Button>
         <Button>Cancel</Button>
