@@ -2,9 +2,6 @@
 
 import {
   Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -12,7 +9,6 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -20,16 +16,9 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 import { CODE as ProgressBasicCODE } from '@/examples/progress/basic/page';
-import { CODE as ProgressFeaturesCODE } from '@/examples/progress/features/page';
 
 export default function ProgressPage() {
-  const progressBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const progressFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useSendThemeToIframes();
-
   return (
     <DocsLayout>
       <PageHeader
@@ -104,28 +93,47 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Features Examples</CardTitle>
+              <CardTitle>Indeterminate Progress</CardTitle>
               <CardDescription>
-                Indeterminate, speed control, paused states, variants, and sizes
+                Loading indicators for unknown duration with speed options
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  ref={progressFeaturesIframeRef}
-                  size="md"
-                  src="/examples/progress/features"
-                  title="Progress Features Example"
-                />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ProgressFeaturesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <IframeExample
+                size="sm"
+                src="/examples/progress/indeterminate"
+                title="Indeterminate Progress"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Paused Indeterminate</CardTitle>
+              <CardDescription>Pause/resume control for indeterminate progress</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="sm" src="/examples/progress/paused" title="Paused Progress" />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Color Variants</CardTitle>
+              <CardDescription>Semantic color variants for different states</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="sm" src="/examples/progress/colors" title="Progress Colors" />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Sizes</CardTitle>
+              <CardDescription>Small, medium, and large progress bars</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="sm" src="/examples/progress/sizes" title="Progress Sizes" />
             </CardContent>
           </Card>
         </PageSection>
