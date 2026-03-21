@@ -182,7 +182,7 @@ export function Example() {
       </Sidebar>
 
       <SidebarInset>
-        <main className="p-(--lsd-spacing-larger)">
+        <main>
           <div className="flex items-center gap-(--lsd-spacing-large)">
             <SidebarTrigger />
             <Typography variant="h3">Dashboard</Typography>
@@ -312,7 +312,7 @@ export function SidebarBasicExample() {
       </Sidebar>
 
       <SidebarInset>
-        <main className="p-(--lsd-spacing-larger)">
+        <main>
           <div className="flex items-center gap-(--lsd-spacing-large)">
             <SidebarTrigger />
             <Typography variant="h3">Dashboard</Typography>
