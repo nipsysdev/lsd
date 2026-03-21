@@ -7,7 +7,7 @@ export const CODE = `import { ToggleGroup, ToggleGroupItem } from '@nipsys/shadc
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <ToggleGroup type="single" defaultValue="item-2">
         <ToggleGroupItem value="item-1" aria-label="Item 1">
           One
@@ -27,7 +27,7 @@ export function ToggleGroupExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <ToggleGroup type="single" defaultValue="item-2">
         <ToggleGroupItem value="item-1" aria-label="Item 1">
           One

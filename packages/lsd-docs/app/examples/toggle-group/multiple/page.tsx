@@ -7,7 +7,7 @@ export const CODE = `import { ToggleGroup, ToggleGroupItem, Typography } from '@
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Multiple Selection</Typography>
       <ToggleGroup type="multiple" defaultValue={['item-1', 'item-2']}>
         <ToggleGroupItem value="item-1" aria-label="Toggle item 1">
@@ -28,7 +28,7 @@ export function ToggleGroupMultipleExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Multiple Selection</Typography>
       <ToggleGroup type="multiple" defaultValue={['item-1', 'item-2']}>
         <ToggleGroupItem value="item-1" aria-label="Toggle item 1">
