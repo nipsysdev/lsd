@@ -7,7 +7,7 @@ export const CODE = `import { Separator, Typography } from '@nipsys/shadcn-lsd';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Separator with Text</Typography>
       <div className="flex flex-col gap-(--lsd-spacing-base)">
         <Typography variant="body1">Some content above the separator</Typography>
@@ -32,7 +32,7 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Separator with Text</Typography>
       <div className="flex flex-col gap-(--lsd-spacing-base)">
         <Typography variant="body1">Some content above the separator</Typography>
