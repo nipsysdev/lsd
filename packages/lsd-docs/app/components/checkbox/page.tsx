@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -12,14 +8,12 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { CODE as CheckboxCODE } from '@/examples/checkbox/page';
 
 export default function CheckboxPage() {
   return (
@@ -60,23 +54,45 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Checkbox Examples</CardTitle>
+              <CardTitle>Basic Checkbox States</CardTitle>
               <CardDescription>
-                Basic states, controlled components, and checkbox labels
+                Uncontrolled checkboxes with default checked and unchecked states
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample size="lg" src="/examples/checkbox" title="Checkbox Example" />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={CheckboxCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <IframeExample size="sm" src="/examples/checkbox/basic" title="Basic Checkbox" />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Controlled Checkboxes</CardTitle>
+              <CardDescription>
+                Checkboxes with controlled state using React useState
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="sm"
+                src="/examples/checkbox/controlled"
+                title="Controlled Checkbox"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Checkbox with Labels</CardTitle>
+              <CardDescription>
+                Checkboxes associated with Label components for accessibility
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="sm"
+                src="/examples/checkbox/with-label"
+                title="Checkbox with Label"
+              />
             </CardContent>
           </Card>
         </PageSection>
