@@ -18,7 +18,7 @@ export function Example() {
   const [value, setValue] = useState('option2');
 
   return (
-    <div className="p-(--lsd-spacing-larger)">
+    <div>
       <Select value={value} onValueChange={setValue}>
         <SelectTrigger>
           <SelectValue placeholder="Select an option" />
@@ -41,7 +41,7 @@ export function SelectControlledExample() {
   const [value, setValue] = useState('option2');
 
   return (
-    <div className="p-(--lsd-spacing-larger)">
+    <div>
       <Select value={value} onValueChange={setValue}>
         <SelectTrigger>
           <SelectValue placeholder="Select an option" />

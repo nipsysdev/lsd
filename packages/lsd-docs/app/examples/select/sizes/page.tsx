@@ -7,7 +7,7 @@ export const CODE = `import { Select, SelectContent, SelectItem, SelectTrigger, 
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Select>
         <SelectTrigger size="sm">
           <SelectValue placeholder="Small size" />
@@ -37,7 +37,7 @@ export function SelectSizesExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Select>
         <SelectTrigger size="sm">
           <SelectValue placeholder="Small size" />

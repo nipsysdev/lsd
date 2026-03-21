@@ -20,7 +20,7 @@ export const CODE = `import {
 
 export function Example() {
   return (
-    <div className="flex items-center justify-center p-(--lsd-spacing-larger)">
+    <div className="flex items-center justify-center">
       <Select defaultValue="apple">
         <SelectTrigger className="w-full max-w-xs">
           <SelectValue placeholder="Select a fruit" />

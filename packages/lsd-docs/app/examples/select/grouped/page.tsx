@@ -25,7 +25,7 @@ export const CODE = `import {
 
 export function Example() {
   return (
-    <div className="p-(--lsd-spacing-larger)">
+    <div>
       <Select>
         <SelectTrigger>
           <SelectValue placeholder="Select a food" />
@@ -54,7 +54,7 @@ export function SelectGroupedExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="p-(--lsd-spacing-larger)">
+    <div>
       <Select>
         <SelectTrigger>
           <SelectValue placeholder="Select a food" />

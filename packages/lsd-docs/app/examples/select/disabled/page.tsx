@@ -7,7 +7,7 @@ export const CODE = `import { Select, SelectContent, SelectItem, SelectTrigger, 
 
 export function Example() {
   return (
-    <div className="p-(--lsd-spacing-larger)">
+    <div>
       <Select>
         <SelectTrigger>
           <SelectValue placeholder="Select a plan" />
@@ -28,7 +28,7 @@ export function SelectDisabledExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="p-(--lsd-spacing-larger)">
+    <div>
       <Select>
         <SelectTrigger>
           <SelectValue placeholder="Select a plan" />

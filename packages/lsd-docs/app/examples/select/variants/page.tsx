@@ -29,7 +29,7 @@ export function Example() {
   const [value, setValue] = useState('option2');
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Select>
         <SelectTrigger>
           <SelectValue placeholder="Select a priority" />
@@ -82,7 +82,7 @@ export function SelectVariantsExample() {
   const [value, setValue] = useState('option2');
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Select>
         <SelectTrigger>
           <SelectValue placeholder="Select a priority" />
