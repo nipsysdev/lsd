@@ -9,7 +9,7 @@ import { InfoIcon } from '@phosphor-icons/react';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">With Icon</Typography>
       <TooltipProvider>
         <Tooltip>
@@ -29,7 +29,7 @@ export function Example() {
 
 export function TooltipWithIconExample() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">With Icon</Typography>
       <TooltipProvider>
         <Tooltip>

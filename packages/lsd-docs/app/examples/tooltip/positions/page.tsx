@@ -7,7 +7,7 @@ export const CODE = `import { Button, Tooltip, TooltipContent, TooltipProvider, 
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Different Positions</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <TooltipProvider>
@@ -60,7 +60,7 @@ export function Example() {
 
 export function TooltipPositionsExample() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Different Positions</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <TooltipProvider>
