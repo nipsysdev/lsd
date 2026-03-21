@@ -41,7 +41,7 @@ export function TabsControlledExample() {
   const [value, setValue] = useState('tab1');
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Tabs value={value} onValueChange={setValue}>
         <TabsList>
           <TabsTrigger value="tab1">Tab 1</TabsTrigger>
