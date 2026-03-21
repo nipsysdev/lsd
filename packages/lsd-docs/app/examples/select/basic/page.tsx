@@ -8,7 +8,7 @@ import {
   OrangeIcon,
   PepperIcon,
 } from '@phosphor-icons/react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   Select,
@@ -38,7 +38,7 @@ export function Example() {
 }`;
 
 export function SelectBasicExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <Select defaultValue="avocado">

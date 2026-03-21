@@ -1,7 +1,7 @@
 'use client';
 
 import { ToggleGroup, ToggleGroupItem } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { ToggleGroup, ToggleGroupItem } from '@nipsys/shadcn-lsd';
 
@@ -24,7 +24,7 @@ export function Example() {
 }`;
 
 export function ToggleGroupExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">

@@ -39,6 +39,6 @@ export function TooltipExample() {
   );
 }
 
-export default function Tooltip() {
+export default function TooltipPage() {
   return <TooltipExample />;
 }

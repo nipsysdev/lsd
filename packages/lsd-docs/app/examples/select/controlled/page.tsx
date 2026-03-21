@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
@@ -37,7 +37,7 @@ export function Example() {
 }`;
 
 export function SelectControlledExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
   const [value, setValue] = useState('option2');
 
   return (

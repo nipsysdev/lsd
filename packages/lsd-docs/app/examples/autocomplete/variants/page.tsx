@@ -1,7 +1,7 @@
 'use client';
 
 import { Autocomplete } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 const options = [
   { value: '1', label: 'Option 1' },
@@ -27,7 +27,7 @@ export function Example() {
 };`;
 
 export function AutocompleteVariantsExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">

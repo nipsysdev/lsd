@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Select, SelectContent, SelectItem, SelectSeparator, SelectTrigger, SelectValue } from '@nipsys/shadcn-lsd';
 
@@ -31,7 +31,7 @@ export function Example() {
 }`;
 
 export function SelectWithSeparatorExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="p-(--lsd-spacing-larger)">

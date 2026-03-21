@@ -12,7 +12,7 @@ import {
   AlertDialogTrigger,
   Button,
 } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   AlertDialog,
@@ -53,7 +53,7 @@ export function Example() {
 };`;
 
 export function AlertDialogBasicExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <AlertDialog>

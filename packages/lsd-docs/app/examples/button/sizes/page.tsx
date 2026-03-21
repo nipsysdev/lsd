@@ -2,7 +2,7 @@
 
 import { Button } from '@nipsys/shadcn-lsd';
 import { PlusIcon } from '@phosphor-icons/react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Button } from '@nipsys/shadcn-lsd';
 import { PlusIcon } from '@phosphor-icons/react';
@@ -31,7 +31,7 @@ export function Example() {
 }`;
 
 export function ButtonSizesExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">

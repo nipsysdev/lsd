@@ -2,7 +2,7 @@
 
 import { Checkbox, Label, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Checkbox, Label, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
@@ -67,7 +67,7 @@ export function Example() {
 }`;
 
 export function CheckboxExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
   const [controlled, setControlled] = useState(false);
   const [controlledChecked, setControlledChecked] = useState(true);
 

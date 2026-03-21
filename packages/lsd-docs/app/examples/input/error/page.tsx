@@ -1,7 +1,7 @@
 'use client';
 
 import { Input } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Input } from '@nipsys/shadcn-lsd';
 
@@ -18,7 +18,7 @@ export function Example() {
 }`;
 
 export function InputErrorExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <Input

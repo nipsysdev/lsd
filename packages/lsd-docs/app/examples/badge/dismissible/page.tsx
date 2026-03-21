@@ -2,7 +2,7 @@
 
 import { Badge } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { useState } from 'react';
 import { Badge } from '@nipsys/shadcn-lsd';
@@ -47,7 +47,7 @@ export function BadgeDismissibleExample() {
     setBadges(prev => prev.filter(b => b.id !== id));
   };
 
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">

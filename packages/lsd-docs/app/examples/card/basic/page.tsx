@@ -15,7 +15,7 @@ import {
   PopoverTrigger,
 } from '@nipsys/shadcn-lsd';
 import { DotsThreeIcon } from '@phosphor-icons/react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   Button,
@@ -80,7 +80,7 @@ export function Example() {
 };`;
 
 export function CardBasicExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <Card className="w-full max-w-md">

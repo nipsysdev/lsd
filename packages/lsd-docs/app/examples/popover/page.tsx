@@ -4,7 +4,7 @@
 import { Button, Popover, PopoverContent, PopoverTrigger, Typography } from '@nipsys/shadcn-lsd';
 import { CalendarIcon } from '@phosphor-icons/react';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { CalendarIcon } from '@phosphor-icons/react';
 import { Button, Popover, PopoverContent, PopoverTrigger, Typography } from '@nipsys/shadcn-lsd';
@@ -50,7 +50,7 @@ export function Example() {
 }`;
 
 export function PopoverExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
   const [open, setOpen] = useState(false);
 
   return (

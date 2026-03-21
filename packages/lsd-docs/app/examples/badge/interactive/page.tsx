@@ -2,7 +2,7 @@
 
 import { Badge } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { useState } from 'react';
 import { Badge } from '@nipsys/shadcn-lsd';
@@ -33,7 +33,7 @@ export function Example() {
 
 export function BadgeInteractiveExample() {
   const [clickCount, setClickCount] = useState(0);
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">

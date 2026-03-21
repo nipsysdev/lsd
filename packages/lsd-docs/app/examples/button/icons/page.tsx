@@ -2,7 +2,7 @@
 
 import { Button } from '@nipsys/shadcn-lsd';
 import { ArrowRightIcon, CheckIcon, DownloadIcon } from '@phosphor-icons/react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Button } from '@nipsys/shadcn-lsd';
 import { ArrowRightIcon, CheckIcon, DownloadIcon } from '@phosphor-icons/react';
@@ -27,7 +27,7 @@ export function Example() {
 }`;
 
 export function ButtonIconsExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-wrap gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">

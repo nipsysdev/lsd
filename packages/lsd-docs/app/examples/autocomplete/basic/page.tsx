@@ -1,7 +1,7 @@
 'use client';
 
 import { Autocomplete } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 const options = [
   { value: 'js', label: 'JavaScript' },
@@ -32,7 +32,7 @@ export function Example() {
 };`;
 
 export function AutocompleteBasicExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return <Autocomplete options={options} placeholder="Search languages..." />;
 }

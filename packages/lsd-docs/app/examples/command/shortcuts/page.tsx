@@ -10,7 +10,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   Command,
@@ -64,7 +64,7 @@ export function Example() {
 };`;
 
 export function CommandShortcutsExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="p-(--lsd-spacing-larger)">

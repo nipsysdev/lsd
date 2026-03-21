@@ -1,7 +1,7 @@
 'use client';
 
 import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from '@nipsys/shadcn-lsd';
 
@@ -20,7 +20,7 @@ export function Example() {
 };`;
 
 export function CommandBasicExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="p-(--lsd-spacing-larger)">

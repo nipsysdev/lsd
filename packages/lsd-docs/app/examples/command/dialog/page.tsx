@@ -12,7 +12,7 @@ import {
   CommandShortcut,
 } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   Button,
@@ -77,7 +77,7 @@ export function Example() {
 export function CommandDialogExample() {
   const [open, setOpen] = useState(false);
 
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="p-(--lsd-spacing-larger)">

@@ -2,7 +2,7 @@
 
 import { Switch, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Switch, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
@@ -21,7 +21,7 @@ export function Example() {
 }`;
 
 export function SwitchControlledExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
   const [checked, setChecked] = useState(false);
 
   return (

@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   Button,
@@ -60,7 +60,7 @@ export function Example() {
 };`;
 
 export function DialogBasicExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <Dialog>

@@ -2,7 +2,7 @@
 
 import { Button, Typography } from '@nipsys/shadcn-lsd';
 import { Toaster, toast } from 'sonner';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Button, Typography } from '@nipsys/shadcn-lsd';
 import { Toaster, toast } from 'sonner';
@@ -33,7 +33,7 @@ export function Example() {
 }`;
 
 export function ToastActionsExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">

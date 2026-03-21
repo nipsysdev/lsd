@@ -2,7 +2,7 @@
 
 import { Button } from '@nipsys/shadcn-lsd';
 import { CheckIcon, DownloadIcon, PlusIcon, ShareIcon, TrashIcon } from '@phosphor-icons/react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Button } from '@nipsys/shadcn-lsd';
 import { CheckIcon, DownloadIcon, ShareIcon, TrashIcon } from '@phosphor-icons/react';
@@ -44,7 +44,7 @@ export function Example() {
 }`;
 
 export function ButtonVariantsExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">

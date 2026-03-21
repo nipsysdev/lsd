@@ -2,7 +2,7 @@
 
 import { Button, Progress, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Button, Progress, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
@@ -48,7 +48,7 @@ export function Example() {
 }`;
 
 export function ProgressFeaturesExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
   const [paused, setPaused] = useState(false);
 
   return (

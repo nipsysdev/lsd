@@ -31,7 +31,7 @@ import {
   UserIcon,
 } from '@phosphor-icons/react';
 import Link from 'next/link';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   Sidebar,
@@ -194,7 +194,7 @@ export function Example() {
 };`;
 
 export function SidebarBasicExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <SidebarProvider defaultOpen={true}>

@@ -2,7 +2,7 @@
 
 import { Autocomplete } from '@nipsys/shadcn-lsd';
 import { TextAaIcon } from '@phosphor-icons/react';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 const options = [
   { value: '1', label: 'Option 1' },
@@ -37,7 +37,7 @@ export function Example() {
 };`;
 
 export function AutocompleteFeaturesExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">

@@ -1,7 +1,7 @@
 'use client';
 
 import { Checkbox, Label } from '@nipsys/shadcn-lsd';
-import { useInIframeThemeSync } from '@/components/docs/useInIframeThemeSync';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Checkbox, Label } from '@nipsys/shadcn-lsd';
 
@@ -25,7 +25,7 @@ export function Example() {
 };`;
 
 export function LabelBasicExample() {
-  useInIframeThemeSync();
+  useSendThemeToIframes();
 
   return (
     <div className="w-full max-w-sm space-y-(--lsd-spacing-base)">
