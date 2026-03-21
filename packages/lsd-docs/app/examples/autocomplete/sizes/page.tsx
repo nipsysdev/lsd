@@ -19,7 +19,7 @@ const options = [
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <Autocomplete size="xs" options={options} placeholder="Extra Small" />
       <Autocomplete size="sm" options={options} placeholder="Small" />
       <Autocomplete size="md" options={options} placeholder="Medium" />
@@ -33,7 +33,7 @@ export function AutocompleteSizesExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <Autocomplete size="xs" options={options} placeholder="Extra Small" />
       <Autocomplete size="sm" options={options} placeholder="Small" />
       <Autocomplete size="md" options={options} placeholder="Medium" />

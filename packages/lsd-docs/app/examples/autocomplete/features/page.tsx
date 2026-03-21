@@ -21,7 +21,7 @@ const options = [
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <Autocomplete label="Select an option" options={options} placeholder="Choose..." />
       <Autocomplete
         label="With Icon"
@@ -40,7 +40,7 @@ export function AutocompleteFeaturesExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-large) p-(--lsd-spacing-larger)">
+    <div className="flex flex-col gap-(--lsd-spacing-large)">
       <Autocomplete label="Select an option" options={options} placeholder="Choose..." />
       <Autocomplete
         label="With Icon"
