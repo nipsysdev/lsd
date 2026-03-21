@@ -1,6 +1,7 @@
 'use client';
 
 import { Autocomplete } from '@nipsys/shadcn-lsd';
+import { TextAaIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 const options = [
@@ -10,6 +11,7 @@ const options = [
 ];
 
 export const CODE = `import { Autocomplete } from '@nipsys/shadcn-lsd';
+import { TextAaIcon } from '@phosphor-icons/react';
 
 const options = [
   { value: '1', label: 'Option 1' },
@@ -19,27 +21,28 @@ const options = [
 
 export function Example() {
   return (
-    <div className="p-(--lsd-spacing-larger)">
-      <Autocomplete
-        label="Error State"
-        options={options}
-        placeholder="Select an option"
-        error
-      />
-    </div>
+    <Autocomplete
+      label="With Icon"
+      options={options}
+      placeholder="Search..."
+      icon={<TextAaIcon className="size-6" />}
+    />
   );
 }`;
 
-export function AutocompleteErrorExample() {
+export function AutocompleteIconExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="p-(--lsd-spacing-larger)">
-      <Autocomplete label="Error State" options={options} placeholder="Select an option" error />
-    </div>
+    <Autocomplete
+      label="With Icon"
+      options={options}
+      placeholder="Search..."
+      icon={<TextAaIcon className="size-6" />}
+    />
   );
 }
 
-export default function AutocompleteErrorPage() {
-  return <AutocompleteErrorExample />;
+export default function AutocompleteIconPage() {
+  return <AutocompleteIconExample />;
 }

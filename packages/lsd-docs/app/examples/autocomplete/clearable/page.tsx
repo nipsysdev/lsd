@@ -19,14 +19,12 @@ const options = [
 
 export function Example() {
   return (
-    <div className="p-(--lsd-spacing-larger)">
-      <Autocomplete
-        label="Clearable"
-        options={options}
-        placeholder="Type to search..."
-        clearable
-      />
-    </div>
+    <Autocomplete
+      label="Clearable"
+      options={options}
+      placeholder="Type to search..."
+      clearable
+    />
   );
 }`;
 
@@ -34,9 +32,7 @@ export function AutocompleteClearableExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="p-(--lsd-spacing-larger)">
-      <Autocomplete label="Clearable" options={options} placeholder="Type to search..." clearable />
-    </div>
+    <Autocomplete label="Clearable" options={options} placeholder="Type to search..." clearable />
   );
 }
 

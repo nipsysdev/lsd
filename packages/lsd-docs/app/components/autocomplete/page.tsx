@@ -2,6 +2,9 @@
 
 import {
   Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -17,6 +20,10 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { CODE as BASIC_CODE } from '@/examples/autocomplete/basic/page';
+import { CODE as CLEARABLE_CODE } from '@/examples/autocomplete/clearable/page';
+import { CODE as DISABLED_CODE } from '@/examples/autocomplete/disabled/page';
+import { CODE as ERROR_CODE } from '@/examples/autocomplete/error/page';
+import { CODE as ICON_CODE } from '@/examples/autocomplete/icon/page';
 import { CODE as SIZES_CODE } from '@/examples/autocomplete/sizes/page';
 import { CODE as VARIANTS_CODE } from '@/examples/autocomplete/variants/page';
 
@@ -163,11 +170,21 @@ export default function MyComponent() {
               <CardDescription>Add an icon to the autocomplete input</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                size="sm"
-                src="/examples/autocomplete/icon"
-                title="Autocomplete with Icon"
-              />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  size="md"
+                  src="/examples/autocomplete/icon"
+                  title="Autocomplete with Icon"
+                />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ICON_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
@@ -177,11 +194,21 @@ export default function MyComponent() {
               <CardDescription>Add a clear button to reset the input</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                size="sm"
-                src="/examples/autocomplete/clearable"
-                title="Clearable Autocomplete"
-              />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  size="md"
+                  src="/examples/autocomplete/clearable"
+                  title="Clearable Autocomplete"
+                />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={CLEARABLE_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
@@ -191,11 +218,21 @@ export default function MyComponent() {
               <CardDescription>Display autocomplete with error styling</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                size="sm"
-                src="/examples/autocomplete/error"
-                title="Error Autocomplete"
-              />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  size="md"
+                  src="/examples/autocomplete/error"
+                  title="Error Autocomplete"
+                />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ERROR_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
 
@@ -205,11 +242,21 @@ export default function MyComponent() {
               <CardDescription>Disable the autocomplete input</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                size="sm"
-                src="/examples/autocomplete/disabled"
-                title="Disabled Autocomplete"
-              />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  size="md"
+                  src="/examples/autocomplete/disabled"
+                  title="Disabled Autocomplete"
+                />
+              </div>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={DISABLED_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
         </PageSection>

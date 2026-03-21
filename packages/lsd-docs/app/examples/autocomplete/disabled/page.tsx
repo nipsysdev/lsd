@@ -19,25 +19,19 @@ const options = [
 
 export function Example() {
   return (
-    <div className="p-(--lsd-spacing-larger)">
-      <Autocomplete
-        label="Disabled"
-        options={options}
-        placeholder="Can't select"
-        disabled
-      />
-    </div>
+    <Autocomplete
+      label="Disabled"
+      options={options}
+      placeholder="Can't select"
+      disabled
+    />
   );
 }`;
 
 export function AutocompleteDisabledExample() {
   useSendThemeToIframes();
 
-  return (
-    <div className="p-(--lsd-spacing-larger)">
-      <Autocomplete label="Disabled" options={options} placeholder="Can't select" disabled />
-    </div>
-  );
+  return <Autocomplete label="Disabled" options={options} placeholder="Can't select" disabled />;
 }
 
 export default function AutocompleteDisabledPage() {
