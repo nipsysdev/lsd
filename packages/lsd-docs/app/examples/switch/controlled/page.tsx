@@ -11,7 +11,7 @@ export function Example() {
   const [checked, setChecked] = useState(false);
 
   return (
-    <div className="flex items-center gap-(--lsd-spacing-base) p-(--lsd-spacing-larger)">
+    <div className="flex items-center gap-(--lsd-spacing-base)">
       <Switch checked={checked} onCheckedChange={setChecked} />
       <Typography variant="body2">
         Notifications: {checked ? 'Enabled' : 'Disabled'}
