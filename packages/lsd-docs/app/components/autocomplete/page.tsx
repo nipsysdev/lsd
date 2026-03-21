@@ -2,9 +2,6 @@
 
 import {
   Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -12,7 +9,6 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
-import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -20,20 +16,11 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 import { CODE as BASIC_CODE } from '@/examples/autocomplete/basic/page';
-import { CODE as FEATURES_CODE } from '@/examples/autocomplete/features/page';
 import { CODE as SIZES_CODE } from '@/examples/autocomplete/sizes/page';
 import { CODE as VARIANTS_CODE } from '@/examples/autocomplete/variants/page';
 
 export default function AutocompletePage() {
-  const _autocompleteBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const _autocompleteVariantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const _autocompleteSizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const _autocompleteFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useSendThemeToIframes();
-
   return (
     <DocsLayout>
       <PageHeader
@@ -172,25 +159,57 @@ export default function MyComponent() {
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>With Label</CardTitle>
-              <CardDescription>Add a label to provide context for the autocomplete</CardDescription>
+              <CardTitle>With Icon</CardTitle>
+              <CardDescription>Add an icon to the autocomplete input</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-(--lsd-spacing-base)">
-                <IframeExample
-                  size="lg"
-                  src="/examples/autocomplete/features"
-                  title="Autocomplete Features Example"
-                />
-              </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={FEATURES_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <IframeExample
+                size="sm"
+                src="/examples/autocomplete/icon"
+                title="Autocomplete with Icon"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Clearable</CardTitle>
+              <CardDescription>Add a clear button to reset the input</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="sm"
+                src="/examples/autocomplete/clearable"
+                title="Clearable Autocomplete"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Error State</CardTitle>
+              <CardDescription>Display autocomplete with error styling</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="sm"
+                src="/examples/autocomplete/error"
+                title="Error Autocomplete"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Disabled</CardTitle>
+              <CardDescription>Disable the autocomplete input</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="sm"
+                src="/examples/autocomplete/disabled"
+                title="Disabled Autocomplete"
+              />
             </CardContent>
           </Card>
         </PageSection>
