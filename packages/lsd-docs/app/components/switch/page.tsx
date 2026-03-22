@@ -302,12 +302,12 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Skeleton',
-            href: '/components/skeleton',
+            title: 'Select',
+            href: '/components/select',
           }}
           next={{
-            title: 'Tabs',
-            href: '/components/tabs',
+            title: 'Command',
+            href: '/components/command',
           }}
         />
       </PageContent>

@@ -348,12 +348,12 @@ export default function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Dialog',
-          href: '/components/dialog',
+          title: 'Typography',
+          href: '/design-tokens/typography',
         }}
         next={{
-          title: 'Label',
-          href: '/components/label',
+          title: 'Card',
+          href: '/components/card',
         }}
       />
     </DocsLayout>

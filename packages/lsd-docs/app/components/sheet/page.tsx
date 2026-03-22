@@ -203,12 +203,12 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Select',
-            href: '/components/select',
+            title: 'Popover',
+            href: '/components/popover',
           }}
           next={{
-            title: 'Skeleton',
-            href: '/components/skeleton',
+            title: 'Tooltip',
+            href: '/components/tooltip',
           }}
         />
       </PageContent>

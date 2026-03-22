@@ -204,12 +204,12 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Progress',
-            href: '/components/progress',
+            title: 'Card',
+            href: '/components/card',
           }}
           next={{
-            title: 'Select',
-            href: '/components/select',
+            title: 'Separator',
+            href: '/components/separator',
           }}
         />
       </PageContent>

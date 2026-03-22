@@ -253,8 +253,8 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Menubar',
-            href: '/components/menubar',
+            title: 'Toggle Group',
+            href: '/components/toggle-group',
           }}
           next={{
             title: 'Sheet',

@@ -262,8 +262,8 @@ export default function MyComponent() {
             href: '/components/button',
           }}
           next={{
-            title: 'Card',
-            href: '/components/card',
+            title: 'Checkbox',
+            href: '/components/checkbox',
           }}
         />
       </PageContent>

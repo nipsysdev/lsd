@@ -232,12 +232,12 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Sidebar',
-            href: '/components/sidebar',
+            title: 'Badge',
+            href: '/components/badge',
           }}
           next={{
-            title: 'Sonner',
-            href: '/components/sonner',
+            title: 'Toggle',
+            href: '/components/toggle',
           }}
         />
       </PageContent>

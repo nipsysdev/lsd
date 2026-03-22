@@ -479,7 +479,16 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageNavigation previous={{ title: 'Card', href: '/components/card' }} />
+        <PageNavigation
+          previous={{
+            title: 'Accordion',
+            href: '/components/accordion',
+          }}
+          next={{
+            title: 'Skeleton',
+            href: '/components/skeleton',
+          }}
+        />
       </PageContent>
     </DocsLayout>
   );

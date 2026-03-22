@@ -281,12 +281,12 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Label',
-            href: '/components/label',
+            title: 'Separator',
+            href: '/components/separator',
           }}
           next={{
-            title: 'Switch',
-            href: '/components/switch',
+            title: 'Badge',
+            href: '/components/badge',
           }}
         />
       </PageContent>
