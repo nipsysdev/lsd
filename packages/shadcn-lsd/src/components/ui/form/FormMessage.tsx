@@ -1,10 +1,10 @@
 'use client';
 
 import type * as React from 'react';
-import { Typography } from '../typography/Typography';
+import { cn } from '@/lib/utils';
 import { useFormField } from './useFormField';
 
-type FormMessageProps = React.ComponentProps<typeof Typography>;
+type FormMessageProps = React.ComponentProps<'p'>;
 
 function FormMessage({ className, ...props }: FormMessageProps) {
   const { error, formMessageId } = useFormField();
@@ -15,16 +15,14 @@ function FormMessage({ className, ...props }: FormMessageProps) {
   }
 
   return (
-    <Typography
-      variant="body2"
-      color="destructive"
+    <p
       data-slot="form-message"
       id={formMessageId}
-      className={className}
+      className={cn('lsd:text-sm lsd:leading-[1.25rem] lsd:text-lsd-destructive-text', className)}
       {...props}
     >
       {body}
-    </Typography>
+    </p>
   );
 }
 

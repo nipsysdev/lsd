@@ -276,7 +276,7 @@ describe('Form Components', () => {
       }
       render(<TestComponent />);
       const description = screen.getByTestId('description');
-      expect(description).toBeInTheDocument();
+      expect(description).toHaveClass('lsd:text-lsd-text-secondary');
     });
   });
 

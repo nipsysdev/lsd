@@ -21,3 +21,15 @@ export interface FieldLabelProps extends React.HTMLAttributes<HTMLLabelElement> 
 export interface FieldContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export interface FieldSeparatorProps extends React.HTMLAttributes<HTMLHRElement> {}
+
+export interface ErrorItem {
+  message?: string;
+  [key: string]: any;
+}
+
+export interface FieldErrorProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
+  errors?: Array<string | ErrorItem | null | undefined>;
+}
+
+export interface FieldTitleProps extends React.HTMLAttributes<HTMLDivElement> {}

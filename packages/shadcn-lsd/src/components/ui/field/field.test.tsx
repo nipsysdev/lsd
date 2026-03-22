@@ -4,11 +4,13 @@ import {
   Field,
   FieldContent,
   FieldDescription,
+  FieldError,
   FieldGroup,
   FieldLabel,
   FieldLegend,
   FieldSeparator,
   FieldSet,
+  FieldTitle,
 } from './index';
 
 describe('Field', () => {
@@ -383,6 +385,153 @@ describe('FieldSeparator', () => {
     const { container } = render(<FieldSeparator />);
     const separator = container.querySelector('[data-slot="field-separator"]');
     expect(separator).toHaveAttribute('data-slot', 'field-separator');
+  });
+});
+
+describe('FieldTitle', () => {
+  it('renders without crashing', () => {
+    render(<FieldTitle>Field Title</FieldTitle>);
+    expect(screen.getByText('Field Title')).toBeInTheDocument();
+  });
+
+  it('renders as a div element', () => {
+    render(<FieldTitle>Field Title</FieldTitle>);
+    const title = screen.getByText('Field Title');
+    expect(title.tagName).toBe('DIV');
+  });
+
+  it('applies base classes correctly', () => {
+    render(<FieldTitle>Field Title</FieldTitle>);
+    const title = screen.getByText('Field Title');
+    expect(title).toHaveClass('lsd:text-sm');
+    expect(title).toHaveClass('lsd:leading-snug');
+    expect(title).toHaveClass('lsd:font-medium');
+  });
+
+  it('merges custom className with component classes', () => {
+    render(<FieldTitle className="custom-class">Field Title</FieldTitle>);
+    const title = screen.getByText('Field Title');
+    expect(title).toHaveClass('custom-class');
+  });
+
+  it('passes through additional props', () => {
+    render(
+      <FieldTitle id="title-1" data-custom="test">
+        Field Title
+      </FieldTitle>
+    );
+    const title = screen.getByText('Field Title');
+    expect(title).toHaveAttribute('id', 'title-1');
+    expect(title).toHaveAttribute('data-custom', 'test');
+  });
+
+  it('applies data-slot attribute', () => {
+    render(<FieldTitle>Field Title</FieldTitle>);
+    expect(screen.getByText('Field Title')).toHaveAttribute('data-slot', 'field-title');
+  });
+});
+
+describe('FieldError', () => {
+  it('renders without crashing with children', () => {
+    render(<FieldError>Error message</FieldError>);
+    expect(screen.getByText('Error message')).toBeInTheDocument();
+  });
+
+  it('renders as a div element', () => {
+    render(<FieldError>Error message</FieldError>);
+    const error = screen.getByText('Error message');
+    expect(error.tagName).toBe('DIV');
+  });
+
+  it('applies base classes correctly', () => {
+    render(<FieldError>Error message</FieldError>);
+    const error = screen.getByText('Error message');
+    expect(error).toHaveClass('lsd:text-sm');
+    expect(error).toHaveClass('lsd:font-normal');
+    expect(error).toHaveClass('lsd:text-lsd-destructive-text');
+  });
+
+  it('applies role="alert" for accessibility', () => {
+    render(<FieldError>Error message</FieldError>);
+    const error = screen.getByText('Error message');
+    expect(error).toHaveAttribute('role', 'alert');
+  });
+
+  it('renders single error message from errors array', () => {
+    render(<FieldError errors={['Email is required']} />);
+    expect(screen.getByText('Email is required')).toBeInTheDocument();
+  });
+
+  it('renders multiple error messages as list', () => {
+    render(<FieldError errors={['Email is required', 'Email is invalid']} />);
+    const errorContainer = screen.getByRole('alert');
+    expect(errorContainer).toHaveTextContent('• Email is required');
+    expect(errorContainer).toHaveTextContent('• Email is invalid');
+  });
+
+  it('deduplicates duplicate error messages', () => {
+    render(<FieldError errors={['Email is required', 'Email is required']} />);
+    const errorContainer = screen.getByRole('alert');
+    expect(errorContainer.textContent?.trim()).toBe('Email is required');
+    const bullets = errorContainer.textContent?.match(/•/g);
+    expect(bullets).toBeNull();
+  });
+
+  it('renders error from object with message property', () => {
+    render(<FieldError errors={[{ message: 'Invalid email format' }]} />);
+    expect(screen.getByText('Invalid email format')).toBeInTheDocument();
+  });
+
+  it('renders errors from mixed sources', () => {
+    render(<FieldError errors={['String error', { message: 'Object error' }]} />);
+    const errorContainer = screen.getByRole('alert');
+    expect(errorContainer).toHaveTextContent('• String error');
+    expect(errorContainer).toHaveTextContent('• Object error');
+  });
+
+  it('filters out errors without messages', () => {
+    render(<FieldError errors={['Valid error', null, undefined, {}]} />);
+    const errorContainer = screen.getByRole('alert');
+    expect(errorContainer).toHaveTextContent('Valid error');
+    expect(errorContainer.childElementCount).toBe(0);
+  });
+
+  it('does not render when errors array is empty', () => {
+    render(<FieldError errors={[]} data-testid="error" />);
+    expect(screen.queryByTestId('error')).not.toBeInTheDocument();
+  });
+
+  it('does not render when errors prop is undefined', () => {
+    render(<FieldError data-testid="error" />);
+    expect(screen.queryByTestId('error')).not.toBeInTheDocument();
+  });
+
+  it('prioritizes children over errors array', () => {
+    render(<FieldError errors={['Should not render']}>Custom error</FieldError>);
+    expect(screen.getByText('Custom error')).toBeInTheDocument();
+    expect(screen.queryByText('Should not render')).not.toBeInTheDocument();
+  });
+
+  it('merges custom className with component classes', () => {
+    render(<FieldError className="custom-class">Error message</FieldError>);
+    const error = screen.getByText('Error message');
+    expect(error).toHaveClass('custom-class');
+  });
+
+  it('passes through additional props', () => {
+    render(
+      <FieldError id="error-1" data-custom="test">
+        Error message
+      </FieldError>
+    );
+    const error = screen.getByText('Error message');
+    expect(error).toHaveAttribute('id', 'error-1');
+    expect(error).toHaveAttribute('data-custom', 'test');
+  });
+
+  it('applies data-slot attribute', () => {
+    render(<FieldError>Error message</FieldError>);
+    expect(screen.getByText('Error message')).toHaveAttribute('data-slot', 'field-error');
   });
 });
 

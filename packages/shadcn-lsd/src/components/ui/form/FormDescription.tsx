@@ -1,21 +1,19 @@
 'use client';
 
 import type * as React from 'react';
-import { Typography } from '../typography/Typography';
+import { cn } from '@/lib/utils';
 import { useFormField } from './useFormField';
 
-type FormDescriptionProps = React.ComponentProps<typeof Typography>;
+type FormDescriptionProps = React.ComponentProps<'p'>;
 
 function FormDescription({ className, ...props }: FormDescriptionProps) {
   const { formDescriptionId } = useFormField();
 
   return (
-    <Typography
-      variant="body2"
-      color="secondary"
+    <p
       data-slot="form-description"
       id={formDescriptionId}
-      className={className}
+      className={cn('lsd:text-sm lsd:leading-[1.25rem] lsd:text-lsd-text-secondary', className)}
       {...props}
     />
   );

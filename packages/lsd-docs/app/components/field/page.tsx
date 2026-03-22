@@ -20,6 +20,7 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { CODE as BASIC_CODE } from '@/examples/field/basic/page';
+import { CODE as ERROR_CODE } from '@/examples/field/error/page';
 import { CODE as HORIZONTAL_CODE } from '@/examples/field/horizontal/page';
 import { CODE as LEGEND_DESCRIPTION_CODE } from '@/examples/field/legend-description/page';
 
@@ -47,26 +48,28 @@ export default function FieldPage() {
             <CardContent>
               <CodeExample
                 code={`import {
-  Field,
-  FieldGroup,
-  FieldSet,
-  FieldLegend,
-  FieldDescription,
-  FieldLabel,
-  FieldContent,
-  FieldSeparator,
-} from '@nipsys/shadcn-lsd'
+   Field,
+   FieldGroup,
+   FieldSet,
+   FieldLegend,
+   FieldTitle,
+   FieldDescription,
+   FieldLabel,
+   FieldContent,
+   FieldError,
+   FieldSeparator,
+ } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
-  return (
-    <FieldGroup>
-      <Field>
-        <FieldLabel htmlFor="field">Label</FieldLabel>
-        <Input id="field" />
-      </Field>
-    </FieldGroup>
-  );
-}`}
+   return (
+     <FieldGroup>
+       <Field>
+         <FieldLabel htmlFor="field">Label</FieldLabel>
+         <Input id="field" />
+       </Field>
+     </FieldGroup>
+   );
+ }`}
               />
             </CardContent>
           </Card>
@@ -143,6 +146,31 @@ export default function MyComponent() {
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
                     <CodeExample code={LEGEND_DESCRIPTION_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Error Handling">
+          <Typography variant="body1">
+            Use <code>FieldError</code> to display validation errors with proper accessibility
+            support and deduplication.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Form With Validation</CardTitle>
+              <CardDescription>Error handling examples with FieldError component</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/field/error" title="Field Error" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ERROR_CODE} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -275,6 +303,42 @@ export default function MyComponent() {
                 </Typography>
                 <Typography variant="body2" className="block">
                   Renders a horizontal rule with border color and 1rem top/bottom margin
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>FieldTitle</CardTitle>
+                <CardDescription>Title for field sections</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Extends:</strong> HTMLDivElement
+                </Typography>
+                <Typography variant="body2" className="block">
+                  Renders at 0.875rem with medium font weight, compact line height, and no semantic
+                  legend. Use as an alternative to FieldLegend for non-fieldset headings.
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>FieldError</CardTitle>
+                <CardDescription>Error message display</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>errors:</strong> Array&lt;string | ErrorItem&gt;
+                </Typography>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>children:</strong> React.ReactNode (optional)
+                </Typography>
+                <Typography variant="body2" className="block">
+                  Renders error messages from array or children, with deduplication and{' '}
+                  <code>role="alert"</code> for accessibility. Renders single message or bullet list
+                  for multiple errors.
                 </Typography>
               </CardContent>
             </Card>
