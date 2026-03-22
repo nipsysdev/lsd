@@ -25,7 +25,7 @@ export function FormBasicExample() {
     },
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: { username: string; email: string; bio: string }) {
     console.log(data);
   }
 
@@ -91,7 +91,7 @@ export function FormBasicExample() {
     },
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: { username: string; email: string; bio: string }) {
     console.log(data);
   }
 

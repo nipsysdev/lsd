@@ -26,7 +26,7 @@ export function FormValidationExample() {
     },
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: { username: string; email: string; password: string; confirmPassword: string }) {
     console.log(data);
   }
 
@@ -126,7 +126,12 @@ export function FormValidationExample() {
     },
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: {
+    username: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+  }) {
     console.log(data);
   }
 

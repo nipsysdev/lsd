@@ -6,13 +6,6 @@ import { useFormContext, useFormState } from 'react-hook-form';
 import { FormFieldContext } from './FormField';
 import { FormItemContext } from './FormItem';
 
-type FormFieldContextValue<
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = {
-  name: TName;
-};
-
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
   const itemContext = React.useContext(FormItemContext);
