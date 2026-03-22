@@ -10,14 +10,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
   Typography,
 } from '@nipsys/shadcn-lsd';
 import { useRef } from 'react';

@@ -24,7 +24,7 @@ export interface FieldSeparatorProps extends React.HTMLAttributes<HTMLHRElement>
 
 export interface ErrorItem {
   message?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface FieldErrorProps extends React.HTMLAttributes<HTMLDivElement> {

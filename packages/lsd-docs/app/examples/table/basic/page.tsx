@@ -1,14 +1,6 @@
 'use client';
 
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@nipsys/shadcn-lsd';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@nipsys/shadcn-lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
