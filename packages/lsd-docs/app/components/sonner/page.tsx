@@ -22,14 +22,20 @@ import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 import { CODE as TOAST_ACTIONS_CODE } from '@/examples/sonner/actions/page';
+import { CODE as TOAST_BASIC_CODE } from '@/examples/sonner/basic/page';
+import { CODE as TOAST_CUSTOM_CODE } from '@/examples/sonner/custom/page';
 import { CODE as TOAST_DURATION_CODE } from '@/examples/sonner/duration/page';
 import { CODE as TOAST_PERSISTENT_CODE } from '@/examples/sonner/persistent/page';
+import { CODE as TOAST_POSITION_CODE } from '@/examples/sonner/position/page';
 import { CODE as TOAST_POSITIONS_CODE } from '@/examples/sonner/positions/page';
 import { CODE as TOAST_PROMISE_CODE } from '@/examples/sonner/promise/page';
 import { CODE as TOAST_RICH_CODE } from '@/examples/sonner/rich/page';
 import { CODE as TOAST_TYPES_CODE } from '@/examples/sonner/toast-types/page';
 
 export default function SonnerPage() {
+  const toastBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastCustomIframeRef = useRef<HTMLIFrameElement>(null);
+  const toastPositionIframeRef = useRef<HTMLIFrameElement>(null);
   const toastTypesIframeRef = useRef<HTMLIFrameElement>(null);
   const toastDurationIframeRef = useRef<HTMLIFrameElement>(null);
   const toastPositionsIframeRef = useRef<HTMLIFrameElement>(null);
@@ -87,6 +93,77 @@ export default function MyComponent() {
             Various toast types, positions, and features including custom duration, actions,
             promise-based toasts, and rich content.
           </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic Toasts</CardTitle>
+              <CardDescription>Success, error, warning, and info toasts</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastBasicIframeRef}
+                size="md"
+                src="/examples/sonner/basic"
+                title="Basic Toast Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_BASIC_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Custom Toasts</CardTitle>
+              <CardDescription>
+                Rich content, custom icons, and promise-based toasts
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastCustomIframeRef}
+                size="md"
+                src="/examples/sonner/custom"
+                title="Custom Toast Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_CUSTOM_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Toast Positions</CardTitle>
+              <CardDescription>Different toast positioning options</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={toastPositionIframeRef}
+                size="md"
+                src="/examples/sonner/position"
+                title="Toast Position Example"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={TOAST_POSITION_CODE} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>

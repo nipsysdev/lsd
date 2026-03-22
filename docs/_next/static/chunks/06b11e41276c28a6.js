@@ -9,7 +9,7 @@ export function FormBasicExample() {
     },
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: { username: string; email: string; bio: string }) {
     console.log(data);
   }
 
@@ -74,7 +74,7 @@ export function FormValidationExample() {
     },
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: { username: string; email: string; password: string; confirmPassword: string }) {
     console.log(data);
   }
 
@@ -173,7 +173,7 @@ export function FormWithOtherComponentsExample() {
     },
   });
 
-  function onSubmit(data: any) {
+  function onSubmit(data: { name: string; email: string; category: string; newsletter: boolean; terms: boolean }) {
     console.log(data);
   }
 
