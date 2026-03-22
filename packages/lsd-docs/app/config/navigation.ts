@@ -54,6 +54,7 @@ export const navItems: NavGroup[] = [
           { title: 'Checkbox', url: '/components/checkbox' },
           { title: 'Input', url: '/components/input' },
           { title: 'Label', url: '/components/label' },
+          { title: 'Form', url: '/components/form' },
           { title: 'Select', url: '/components/select' },
           { title: 'Switch', url: '/components/switch' },
         ],

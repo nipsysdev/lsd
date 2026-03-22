@@ -563,8 +563,8 @@ export default function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Label',
-          href: '/components/label',
+          title: 'Form',
+          href: '/components/form',
         }}
         next={{
           title: 'Switch',
