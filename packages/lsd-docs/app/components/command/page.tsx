@@ -458,7 +458,7 @@ export default function CommandPage() {
 
         <PageNavigation
           previous={{ title: 'Switch', href: '/components/switch' }}
-          next={{ title: 'Menubar', href: '/components/menubar' }}
+          next={{ title: 'Dropdown Menu', href: '/components/dropdown-menu' }}
         />
       </PageContent>
     </DocsLayout>

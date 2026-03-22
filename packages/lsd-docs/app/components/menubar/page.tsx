@@ -370,8 +370,8 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Command',
-            href: '/components/command',
+            title: 'Dropdown Menu',
+            href: '/components/dropdown-menu',
           }}
           next={{
             title: 'Sidebar',
