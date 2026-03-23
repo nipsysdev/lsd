@@ -76,6 +76,7 @@ export const navItems: NavGroup[] = [
         title: 'Feedback',
         icon: ChatIcon,
         subItems: [
+          { title: 'Alert', url: '/components/alert' },
           { title: 'Alert Dialog', url: '/components/alert-dialog' },
           { title: 'Dialog', url: '/components/dialog' },
           { title: 'Progress', url: '/components/progress' },
