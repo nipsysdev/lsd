@@ -19,7 +19,7 @@ Components in the shadcn-lsd library built with LSD token integration.
 | 6 | **Alert** | ✅ Complete | Full implementation with 13 tests, 3 example pages, documentation complete. Added 2026-03-23. |
 | 7 | **Avatar** | ✅ Complete | Full implementation with 22 tests, LSD tokens, 3 sizes (default, sm, lg), AvatarImage, AvatarFallback, AvatarBadge, AvatarGroup, AvatarGroupCount. Added 2026-03-23. |
 | 8 | **Calendar / Date Picker** | 📝 Planned | Date selection, range picker (consider Radix primitives) |
-| 9 | **Radio Group** | 📝 Planned | Single selection from mutually exclusive options |
+| 9 | **Radio Group** | ✅ Complete | Full implementation with 12 tests, documentation with About, Installation, Basic Usage, With Labels, Disabled State, API Reference, Accessibility. 3 example pages: basic, with-labels, disabled. Added 2026-03-23. |
 | 10 | **Slider** | 📝 Planned | Range input, value selection |
 
 ## 🟢 Low Priority
