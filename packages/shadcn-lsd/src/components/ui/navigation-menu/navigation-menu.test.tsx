@@ -397,24 +397,6 @@ describe('NavigationMenuContent', () => {
   });
 });
 
-describe('NavigationMenuContent', () => {
-  it('renders without crashing', () => {
-    render(
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Trigger</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <p>Content</p>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    );
-    expect(screen.getByText('Trigger')).toBeInTheDocument();
-  });
-});
-
 describe('NavigationMenuLink', () => {
   it('renders without crashing', () => {
     render(

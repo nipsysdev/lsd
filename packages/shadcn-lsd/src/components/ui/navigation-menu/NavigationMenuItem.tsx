@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 export type NavigationMenuItemProps = React.ComponentProps<typeof NavigationMenuPrimitive.Item>;
 
 /**
- * NavigationMenuItem - A单个导航菜单项,包含触发器和内容。
+ * NavigationMenuItem - A navigation menu item containing a trigger and optional content.
  */
 export function NavigationMenuItem({ className, ...props }: NavigationMenuItemProps) {
   return (
