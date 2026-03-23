@@ -66,6 +66,7 @@ export const navItems: NavGroup[] = [
         subItems: [
           { title: 'Command', url: '/components/command' },
           { title: 'Dropdown Menu', url: '/components/dropdown-menu' },
+          { title: 'Navigation Menu', url: '/components/navigation-menu' },
           { title: 'Menubar', url: '/components/menubar' },
           { title: 'Sidebar', url: '/components/sidebar' },
           { title: 'Tabs', url: '/components/tabs' },
