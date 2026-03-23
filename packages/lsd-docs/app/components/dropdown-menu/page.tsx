@@ -1,5 +1,7 @@
 'use client';
 
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@nipsys/shadcn-lsd';
+import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
@@ -50,33 +52,45 @@ export default function DropdownMenuPage() {
           <p className="mb-4 lsd:text-lsd-text-secondary">
             Here's a simple dropdown menu with basic items:
           </p>
-          <IframeExample
-            title="Basic"
-            code={BasicCode}
-            examplePath="/examples/dropdown-menu/basic"
-          />
+          <IframeExample size="md" src="/examples/dropdown-menu/basic" title="Basic" />
+          <Accordion type="single" collapsible>
+            <AccordionItem value="code">
+              <AccordionTrigger>View code</AccordionTrigger>
+              <AccordionContent>
+                <CodeExample code={BasicCode} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </PageSection>
 
         <PageSection title="Shortcuts">
           <p className="mb-4 lsd:text-lsd-text-secondary">
             Display keyboard shortcuts for menu items:
           </p>
-          <IframeExample
-            title="Shortcuts"
-            code={ShortcutsCode}
-            examplePath="/examples/dropdown-menu/shortcuts"
-          />
+          <IframeExample size="md" src="/examples/dropdown-menu/shortcuts" title="Shortcuts" />
+          <Accordion type="single" collapsible>
+            <AccordionItem value="code">
+              <AccordionTrigger>View code</AccordionTrigger>
+              <AccordionContent>
+                <CodeExample code={ShortcutsCode} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </PageSection>
 
         <PageSection title="Submenus">
           <p className="mb-4 lsd:text-lsd-text-secondary">
             Create nested dropdown menus for hierarchical actions:
           </p>
-          <IframeExample
-            title="Submenus"
-            code={SubmenusCode}
-            examplePath="/examples/dropdown-menu/submenus"
-          />
+          <IframeExample size="md" src="/examples/dropdown-menu/submenus" title="Submenus" />
+          <Accordion type="single" collapsible>
+            <AccordionItem value="code">
+              <AccordionTrigger>View code</AccordionTrigger>
+              <AccordionContent>
+                <CodeExample code={SubmenusCode} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </PageSection>
 
         <PageSection title="Checkbox Items">
@@ -84,21 +98,33 @@ export default function DropdownMenuPage() {
             Use checkbox items for boolean toggles:
           </p>
           <IframeExample
+            size="md"
+            src="/examples/dropdown-menu/checkbox-items"
             title="Checkbox Items"
-            code={CheckboxCode}
-            examplePath="/examples/dropdown-menu/checkbox-items"
           />
+          <Accordion type="single" collapsible>
+            <AccordionItem value="code">
+              <AccordionTrigger>View code</AccordionTrigger>
+              <AccordionContent>
+                <CodeExample code={CheckboxCode} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </PageSection>
 
         <PageSection title="Radio Group Items">
           <p className="mb-4 lsd:text-lsd-text-secondary">
             Use radio group items for exclusive selection:
           </p>
-          <IframeExample
-            title="Radio Items"
-            code={RadioCode}
-            examplePath="/examples/dropdown-menu/radio-items"
-          />
+          <IframeExample size="md" src="/examples/dropdown-menu/radio-items" title="Radio Items" />
+          <Accordion type="single" collapsible>
+            <AccordionItem value="code">
+              <AccordionTrigger>View code</AccordionTrigger>
+              <AccordionContent>
+                <CodeExample code={RadioCode} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </PageSection>
 
         <PageSection title="API Reference">

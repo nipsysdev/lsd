@@ -25,7 +25,7 @@ export function DropdownMenuBasic() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open Menu</Button>
+        <Button variant="outlined">Open Menu</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -44,7 +44,7 @@ export default function Page() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open Menu</Button>
+        <Button variant="outlined">Open Menu</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

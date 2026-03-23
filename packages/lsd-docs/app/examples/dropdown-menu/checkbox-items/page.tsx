@@ -31,7 +31,7 @@ export function DropdownMenuCheckboxItems() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Options</Button>
+        <Button variant="outlined">Options</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Appearance</DropdownMenuLabel>
@@ -71,7 +71,7 @@ export default function Page() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Options</Button>
+        <Button variant="outlined">Options</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Appearance</DropdownMenuLabel>

@@ -5,16 +5,19 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@nipsys/shadcn-lsd';
 
-export const CODE = `\`\`\`tsx
-import { 
-  DropdownMenu, 
-  DropdownMenuTrigger, 
+export const CODE = `
+\`\`\`tsx
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuShortcut,
   Button,
 } from '@nipsys/shadcn-lsd';
@@ -23,7 +26,7 @@ export function DropdownMenuShortcuts() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open Menu</Button>
+        <Button variant="outlined">Open Menu</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
@@ -58,7 +61,7 @@ export default function Page() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open Menu</Button>
+        <Button variant="outlined">Open Menu</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>

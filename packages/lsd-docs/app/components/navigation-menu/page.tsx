@@ -1,5 +1,7 @@
 'use client';
 
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@nipsys/shadcn-lsd';
+import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
@@ -47,11 +49,15 @@ export default function NavigationMenuPage() {
           <p className="mb-4 lsd:text-lsd-text-secondary">
             Here&apos;s a simple navigation menu with basic items:
           </p>
-          <IframeExample
-            title="Basic"
-            code={BasicCode}
-            examplePath="/examples/navigation-menu/basic"
-          />
+          <IframeExample size="md" src="/examples/navigation-menu/basic" title="Basic" />
+          <Accordion type="single" collapsible>
+            <AccordionItem value="code">
+              <AccordionTrigger>View code</AccordionTrigger>
+              <AccordionContent>
+                <CodeExample code={BasicCode} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </PageSection>
 
         <PageSection title="Positioning with Collapsible">
@@ -59,10 +65,18 @@ export default function NavigationMenuPage() {
             Configure positioning and collapsible behavior:
           </p>
           <IframeExample
+            size="md"
+            src="/examples/navigation-menu/positioning-collapsible"
             title="Positioning with Collapsible"
-            code={PositioningCode}
-            examplePath="/examples/navigation-menu/positioning-collapsible"
           />
+          <Accordion type="single" collapsible>
+            <AccordionItem value="code">
+              <AccordionTrigger>View code</AccordionTrigger>
+              <AccordionContent>
+                <CodeExample code={PositioningCode} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </PageSection>
 
         <PageSection title="API Reference">
@@ -157,7 +171,7 @@ export default function NavigationMenuPage() {
       </PageContent>
 
       <PageNavigation
-        prev={{
+        previous={{
           title: 'Dropdown Menu',
           href: '/components/dropdown-menu',
         }}

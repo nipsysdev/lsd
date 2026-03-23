@@ -32,7 +32,7 @@ export function DropdownMenuRadioItems() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">
+        <Button variant="outlined">
           Position: {position}
         </Button>
       </DropdownMenuTrigger>
@@ -57,7 +57,7 @@ export default function Page() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Position: {position}</Button>
+        <Button variant="outlined">Position: {position}</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
