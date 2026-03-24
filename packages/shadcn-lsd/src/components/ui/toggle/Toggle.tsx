@@ -14,6 +14,7 @@ const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
       <TogglePrimitive.Root
         ref={ref}
         className={cn(toggleVariants({ size }), className)}
+        data-slot="toggle"
         {...props}
       />
     );

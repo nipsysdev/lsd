@@ -27,8 +27,9 @@ export default function SliderPage() {
         <PageSection title="About Slider">
           <div className="space-y-4">
             <p className="lsd:text-lsd-text-secondary">
-              The Slider component is built on Radix UI and provides a smooth, intuitive way for users
-              to select values from a continuous range. It supports various interaction patterns:
+              The Slider component is built on Radix UI and provides a smooth, intuitive way for
+              users to select values from a continuous range. It supports various interaction
+              patterns:
             </p>
             <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
               <li>Single value selection (one thumb)</li>
@@ -54,9 +55,7 @@ export default function SliderPage() {
         </PageSection>
 
         <PageSection title="Basic Usage">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            A simple slider with a single value:
-          </p>
+          <p className="mb-4 lsd:text-lsd-text-secondary">A simple slider with a single value:</p>
           <IframeExample size="md" src="/examples/slider/basic" title="Basic" />
           <Accordion type="single" collapsible>
             <AccordionItem value="code">
@@ -219,8 +218,7 @@ export default function SliderPage() {
                   </kbd>
                   <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
                     ArrowDown
-                  </kbd>
-                  {' '}
+                  </kbd>{' '}
                   - Decrement by step
                 </li>
                 <li>
@@ -229,36 +227,31 @@ export default function SliderPage() {
                   </kbd>
                   <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
                     ArrowUp
-                  </kbd>
-                  {' '}
+                  </kbd>{' '}
                   - Increment by step
                 </li>
                 <li>
                   <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
                     PageDown
-                  </kbd>
-                  {' '}
+                  </kbd>{' '}
                   - Decrement by larger amount
                 </li>
                 <li>
                   <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
                     PageUp
-                  </kbd>
-                  {' '}
+                  </kbd>{' '}
                   - Increment by larger amount
                 </li>
                 <li>
                   <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
                     Home
-                  </kbd>
-                  {' '}
+                  </kbd>{' '}
                   - Jump to minimum value
                 </li>
                 <li>
                   <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
                     End
-                  </kbd>
-                  {' '}
+                  </kbd>{' '}
                   - Jump to maximum value
                 </li>
               </ul>
@@ -270,16 +263,20 @@ export default function SliderPage() {
                   <code className="lsd:font-mono lsd:text-sm">role="slider"</code> on each thumb
                 </li>
                 <li>
-                  <code className="lsd:font-mono lsd:text-sm">aria-valuenow</code> indicates current value
+                  <code className="lsd:font-mono lsd:text-sm">aria-valuenow</code> indicates current
+                  value
                 </li>
                 <li>
-                  <code className="lsd:font-mono lsd:text-sm">aria-valuemin</code> indicates minimum value
+                  <code className="lsd:font-mono lsd:text-sm">aria-valuemin</code> indicates minimum
+                  value
                 </li>
                 <li>
-                  <code className="lsd:font-mono lsd:text-sm">aria-valuemax</code> indicates maximum value
+                  <code className="lsd:font-mono lsd:text-sm">aria-valuemax</code> indicates maximum
+                  value
                 </li>
                 <li>
-                  <code className="lsd:font-mono lsd:text-sm">aria-disabled</code> indicates disabled state
+                  <code className="lsd:font-mono lsd:text-sm">aria-disabled</code> indicates
+                  disabled state
                 </li>
               </ul>
             </div>
