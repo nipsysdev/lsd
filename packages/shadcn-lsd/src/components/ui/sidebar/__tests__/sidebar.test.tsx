@@ -209,8 +209,8 @@ describe('SidebarTrigger', () => {
       </SidebarProvider>
     );
     const trigger = queryByDataSlot(container, 'sidebar-trigger');
-    expect(trigger).toHaveClass('lsd:w-8');
-    expect(trigger).toHaveClass('lsd:h-8');
+    expect(trigger).toHaveClass('w-8');
+    expect(trigger).toHaveClass('h-8');
   });
 
   it('renders PanelLeftIcon', () => {

@@ -27,7 +27,8 @@ describe('AlertDialogCancel', () => {
       </AlertDialog>
     );
     const cancel = screen.getByRole('button', { name: 'Cancel' });
-    expect(cancel).toHaveClass('lsd:cursor-pointer');
+    expect(cancel).toHaveClass('bg-transparent');
+    expect(cancel).toHaveClass('text-foreground');
   });
 
   it('merges custom className with component classes', () => {

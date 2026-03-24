@@ -27,7 +27,7 @@ describe('AlertDialogAction', () => {
       </AlertDialog>
     );
     const action = screen.getByRole('button', { name: 'Confirm' });
-    expect(action).toHaveClass('lsd:cursor-pointer');
+    expect(action).toHaveClass('cursor-pointer');
   });
 
   it('merges custom className with component classes', () => {
