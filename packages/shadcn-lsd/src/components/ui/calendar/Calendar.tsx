@@ -1,5 +1,4 @@
 import * as React from 'react';
-import type { Modifiers } from 'react-day-picker';
 import { DayPicker, getDefaultClassNames } from 'react-day-picker';
 import { type Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
