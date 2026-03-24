@@ -63,7 +63,7 @@ export default function Page() {
 
   const holidays = [new Date(2025, 0, 1), new Date(2025, 11, 25)];
 
-  const isPast = (date: Date) => {
+  const _isPast = (date: Date) => {
     return date < new Date();
   };
 
