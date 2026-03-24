@@ -58,6 +58,7 @@ export const navItems: NavGroup[] = [
           { title: 'Field', url: '/components/field' },
           { title: 'Form', url: '/components/form' },
           { title: 'Radio Group', url: '/components/radio-group' },
+          { title: 'Slider', url: '/components/slider' },
           { title: 'Select', url: '/components/select' },
           { title: 'Switch', url: '/components/switch' },
         ],
