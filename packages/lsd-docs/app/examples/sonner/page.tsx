@@ -18,7 +18,7 @@ export function Example() {
           Show Simple Toast
         </Button>
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast.success('Changes saved successfully!')}
         >
           Show Success Toast

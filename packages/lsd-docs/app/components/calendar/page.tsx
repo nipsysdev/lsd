@@ -276,8 +276,8 @@ export default function CalendarPage() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Autocomplete', href: '/components/autocomplete' }}
-          next={{ title: 'Card', href: '/components/card' }}
+          previous={{ title: 'Button Group', href: '/components/button-group' }}
+          next={{ title: 'Checkbox', href: '/components/checkbox' }}
         />
       </PageContent>
     </DocsLayout>

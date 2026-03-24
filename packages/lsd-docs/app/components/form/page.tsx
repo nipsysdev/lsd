@@ -528,8 +528,8 @@ export default function MyForm() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Label', href: '/components/label' }}
-          next={{ title: 'Select', href: '/components/select' }}
+          previous={{ title: 'Field', href: '/components/field' }}
+          next={{ title: 'Radio Group', href: '/components/radio-group' }}
         />
       </PageContent>
     </DocsLayout>

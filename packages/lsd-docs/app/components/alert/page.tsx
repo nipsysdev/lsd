@@ -251,7 +251,7 @@ export default function AlertPage() {
 
         <PageNavigation
           previous={{ title: 'Sonner', href: '/components/sonner' }}
-          next={{ title: 'Alert Dialog', href: '/components/alert-dialog' }}
+          next={{ title: 'Dialog', href: '/components/dialog' }}
         />
       </PageContent>
     </DocsLayout>

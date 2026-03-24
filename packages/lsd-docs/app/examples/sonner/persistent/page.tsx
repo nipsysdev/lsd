@@ -15,7 +15,7 @@ export function Example() {
       <Typography variant="label1">Persistent Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() =>
             toast('This toast will not auto-dismiss', {
               duration: Number.POSITIVE_INFINITY,
@@ -42,7 +42,7 @@ export function ToastPersistentExample() {
       <Typography variant="label1">Persistent Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() =>
             toast('This toast will not auto-dismiss', {
               duration: Number.POSITIVE_INFINITY,

@@ -3,7 +3,7 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-type AvatarSize = 'default' | 'sm' | 'lg';
+export type AvatarSize = 'default' | 'sm' | 'lg';
 
 interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root> {
   size?: AvatarSize;
@@ -25,4 +25,4 @@ function Avatar({ className, size = 'default', children, ...props }: AvatarProps
   );
 }
 
-export { Avatar, type AvatarSize };
+export { Avatar };

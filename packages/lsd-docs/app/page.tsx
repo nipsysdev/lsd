@@ -22,7 +22,7 @@ export default function Home() {
           <Button asChild>
             <Link href="/getting-started/installation">Start Building</Link>
           </Button>
-          <Button asChild variant="outline">
+          <Button asChild variant="outlined">
             <Link href="/components/button">Explore Components</Link>
           </Button>
         </div>

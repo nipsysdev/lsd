@@ -15,37 +15,37 @@ export function Example() {
       <Typography variant="label1">Toast Positions</Typography>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-(--lsd-spacing-base)">
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast('Top-left toast', { position: 'top-left' })}
         >
           Top-Left
         </Button>
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast('Top-center toast', { position: 'top-center' })}
         >
           Top-Center
         </Button>
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast('Top-right toast', { position: 'top-right' })}
         >
           Top-Right
         </Button>
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast('Bottom-left toast', { position: 'bottom-left' })}
         >
           Bottom-Left
         </Button>
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast('Bottom-center toast', { position: 'bottom-center' })}
         >
           Bottom-Center
         </Button>
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast('Bottom-right toast', { position: 'bottom-right' })}
         >
           Bottom-Right
@@ -76,19 +76,19 @@ export function PositionExample() {
           </Typography>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-(--lsd-spacing-base)">
             <Button
-              variant="outline"
+              variant="outlined"
               onClick={() => toast('Top-left toast message', { position: 'top-left' })}
             >
               Top-Left
             </Button>
             <Button
-              variant="outline"
+              variant="outlined"
               onClick={() => toast('Top-center toast message', { position: 'top-center' })}
             >
               Top-Center
             </Button>
             <Button
-              variant="outline"
+              variant="outlined"
               onClick={() => toast('Top-right toast message', { position: 'top-right' })}
             >
               Top-Right
@@ -106,19 +106,19 @@ export function PositionExample() {
           </Typography>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-(--lsd-spacing-base)">
             <Button
-              variant="outline"
+              variant="outlined"
               onClick={() => toast('Bottom-left toast message', { position: 'bottom-left' })}
             >
               Bottom-Left
             </Button>
             <Button
-              variant="outline"
+              variant="outlined"
               onClick={() => toast('Bottom-center toast message', { position: 'bottom-center' })}
             >
               Bottom-Center
             </Button>
             <Button
-              variant="outline"
+              variant="outlined"
               onClick={() => toast('Bottom-right toast message', { position: 'bottom-right' })}
             >
               Bottom-Right

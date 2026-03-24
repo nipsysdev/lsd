@@ -361,7 +361,7 @@ export default function DialogPage() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Alert Dialog', href: '/components/alert-dialog' }}
+          previous={{ title: 'Alert', href: '/components/alert' }}
           next={{ title: 'Progress', href: '/components/progress' }}
         />
       </PageContent>

@@ -29,8 +29,8 @@ export function CodeExample({ code }: CodeExampleProps) {
 
       <Button
         onClick={copyCode}
-        variant="outline"
-        size="icon"
+        variant="outlined"
+        size="square-md"
         className="opacity-0 group-hover:opacity-100 transition-opacity"
         aria-label="Copy code"
       >

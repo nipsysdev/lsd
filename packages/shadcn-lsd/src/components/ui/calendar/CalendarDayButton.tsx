@@ -22,7 +22,7 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
     <Button
       ref={ref}
       variant="ghost"
-      size="icon"
+      size="square-md"
       data-day={day.date.toLocaleDateString()}
       data-selected-single={isSelected}
       data-range-start={isRangeStart}
@@ -52,4 +52,3 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
 CalendarDayButton.displayName = 'CalendarDayButton';
 
 export { CalendarDayButton };
-export type { CalendarDayButtonProps };

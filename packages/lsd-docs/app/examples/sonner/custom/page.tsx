@@ -30,7 +30,7 @@ export function Example() {
 
       <Typography variant="label1">Rich Content Toast</Typography>
       <Button
-        variant="outline"
+        variant="outlined"
         onClick={() => {
           toast(
             <div className="flex items-center gap-(--lsd-spacing-smaller)">
@@ -61,7 +61,7 @@ export function Example() {
         className="mb-(--lsd-spacing-smaller)"
       />
       <Button
-        variant="outline"
+        variant="outlined"
         disabled={!filename}
         onClick={() => {
           toast.promise(
@@ -114,7 +114,7 @@ export function CustomExample() {
             Custom JSX content with inline styles and action buttons.
           </Typography>
           <Button
-            variant="outline"
+            variant="outlined"
             onClick={() => {
               toast(
                 <div className="flex items-center gap-3">
@@ -150,7 +150,7 @@ export function CustomExample() {
             Toast with custom visual elements and different styling.
           </Typography>
           <Button
-            variant="outline"
+            variant="outlined"
             onClick={() => {
               toast(
                 <div className="flex items-center gap-3">
@@ -187,7 +187,7 @@ export function CustomExample() {
             className="mb-(--lsd-spacing-base) max-w-sm"
           />
           <Button
-            variant="outline"
+            variant="outlined"
             disabled={!filename}
             onClick={() => {
               toast.promise(handleUpload(), {

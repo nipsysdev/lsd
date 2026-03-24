@@ -15,7 +15,7 @@ export function Example() {
       <Typography variant="label1">Rich Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() =>
             toast(
               <div>
@@ -45,7 +45,7 @@ export function ToastRichExample() {
       <Typography variant="label1">Rich Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() =>
             toast(
               <div>

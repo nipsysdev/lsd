@@ -279,7 +279,7 @@ export default function RadioGroupPage() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Progress', href: '/components/progress' }}
+          previous={{ title: 'Form', href: '/components/form' }}
           next={{ title: 'Slider', href: '/components/slider' }}
         />
       </PageContent>

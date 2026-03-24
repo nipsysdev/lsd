@@ -320,12 +320,12 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Tabs',
-            href: '/components/tabs',
+            title: 'Sheet',
+            href: '/components/sheet',
           }}
           next={{
-            title: 'Button',
-            href: '/components/button',
+            title: '',
+            href: '',
           }}
         />
       </PageContent>

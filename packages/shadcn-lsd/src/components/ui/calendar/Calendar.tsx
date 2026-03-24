@@ -10,18 +10,18 @@ export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
 
 type CalendarRootProps = {
   className?: string;
-  rootRef?: React.RefObject<HTMLDivElement>;
+  rootRef?: React.Ref<HTMLDivElement>;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 function CalendarRoot({ className, rootRef, ...props }: CalendarRootProps) {
   return <div data-slot="calendar" ref={rootRef} className={cn(className)} {...props} />;
 }
 
-const CalendarRootMemo = React.memo(CalendarRoot);
+const CalendarRootMemo = React.memo(CalendarRoot) as React.ComponentType<
+  { rootRef?: React.Ref<HTMLDivElement> } & React.HTMLAttributes<HTMLDivElement>
+>;
 
-function CalendarDayButtonComponent(props: React.ComponentProps<typeof CalendarDayButton>) {
-  return <CalendarDayButton {...props} />;
-}
+const CalendarDayButtonComponent = CalendarDayButton;
 
 function Calendar({
   className,
@@ -105,15 +105,16 @@ function Calendar({
         hidden: cn('lsd:invisible', defaultClassNames.hidden),
         ...classNames,
       }}
-      components={{
-        Root: CalendarRootMemo,
-        DayButton: CalendarDayButtonComponent as React.ComponentType<Record<string, unknown>>,
-        ...components,
-      }}
+      components={
+        {
+          Root: CalendarRootMemo,
+          DayButton: CalendarDayButtonComponent,
+          ...components,
+        } as any
+      }
       {...props}
     />
   );
 }
 
 export { Calendar };
-export type { CalendarProps };

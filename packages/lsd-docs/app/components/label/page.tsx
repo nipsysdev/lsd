@@ -305,8 +305,8 @@ export default function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Autocomplete', href: '/components/autocomplete' }}
-          next={{ title: 'Form', href: '/components/form' }}
+          previous={{ title: 'Input', href: '/components/input' }}
+          next={{ title: 'Field', href: '/components/field' }}
         />
       </PageContent>
     </DocsLayout>

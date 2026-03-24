@@ -231,8 +231,8 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Select',
-            href: '/components/select',
+            title: 'Scroll Area',
+            href: '/components/scroll-area',
           }}
           next={{
             title: 'Sidebar',

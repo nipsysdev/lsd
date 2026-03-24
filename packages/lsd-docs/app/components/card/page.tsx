@@ -319,7 +319,7 @@ export default function CardPage() {
 
         <PageNavigation
           previous={{ title: 'Sonner', href: '/components/sonner' }}
-          next={{ title: 'Badge', href: '/components/badge' }}
+          next={{ title: 'Scroll Area', href: '/components/scroll-area' }}
         />
       </PageContent>
     </DocsLayout>

@@ -14,7 +14,7 @@ export function Example() {
 
       <Typography variant="label1">Success Toast</Typography>
       <Button 
-        variant="outline" 
+        variant="outlined" 
         onClick={() => toast.success('Operation completed successfully!')}
       >
         Show Success Toast
@@ -22,7 +22,7 @@ export function Example() {
 
       <Typography variant="label1">Error Toast</Typography>
       <Button 
-        variant="outline" 
+        variant="outlined" 
         onClick={() => toast.error('Something went wrong. Please try again.')}
       >
         Show Error Toast
@@ -30,7 +30,7 @@ export function Example() {
 
       <Typography variant="label1">Warning Toast</Typography>
       <Button 
-        variant="outline" 
+        variant="outlined" 
         onClick={() => toast.warning('Please review your input before proceeding.')}
       >
         Show Warning Toast
@@ -38,7 +38,7 @@ export function Example() {
 
       <Typography variant="label1">Info Toast</Typography>
       <Button 
-        variant="outline" 
+        variant="outlined" 
         onClick={() => toast.info('A new feature is now available!')}
       >
         Show Info Toast
@@ -61,7 +61,7 @@ export function BasicExample() {
         <div className="space-y-(--lsd-spacing-base)">
           <Typography variant="label1">Success Toast</Typography>
           <Button
-            variant="outline"
+            variant="outlined"
             onClick={() => toast.success('Operation completed successfully!')}
           >
             Show Success Toast
@@ -71,7 +71,7 @@ export function BasicExample() {
         <div className="space-y-(--lsd-spacing-base)">
           <Typography variant="label1">Error Toast</Typography>
           <Button
-            variant="outline"
+            variant="outlined"
             onClick={() => toast.error('Something went wrong. Please try again.')}
           >
             Show Error Toast
@@ -81,7 +81,7 @@ export function BasicExample() {
         <div className="space-y-(--lsd-spacing-base)">
           <Typography variant="label1">Warning Toast</Typography>
           <Button
-            variant="outline"
+            variant="outlined"
             onClick={() => toast.warning('Please review your input before proceeding.')}
           >
             Show Warning Toast

@@ -276,9 +276,4 @@ describe('AvatarIntegration', () => {
     const avatar = container.querySelector('[data-size="lg"]');
     expect(avatar).toBeInTheDocument();
   });
-
-  it('exports AvatarSize type', async () => {
-    const module = await import('./index');
-    expect(module.AvatarSize).toBeUndefined(); // Exported from index as re-export from Avatar.tsx but not using named export in that pattern
-  });
 });

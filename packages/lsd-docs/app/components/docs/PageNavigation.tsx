@@ -18,7 +18,7 @@ export function PageNavigation({ previous, next }: PageNavigationProps) {
     <div className="grid grid-cols-2 my-(--lsd-spacing-larger) items-center">
       {previous && (
         <div>
-          <Button className="w-fit" variant="outline" asChild>
+          <Button className="w-fit" variant="outlined" asChild>
             <Link href={previous.href}>
               <ArrowLeftIcon className="mr-(--lsd-spacing-smaller)" weight="duotone" />
               {previous.title}

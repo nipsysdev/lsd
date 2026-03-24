@@ -15,13 +15,13 @@ export function Example() {
       <Typography variant="label1">Custom Duration</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast('Short duration', { duration: 2000 })}
         >
           2 seconds
         </Button>
         <Button
-          variant="outline"
+          variant="outlined"
           onClick={() => toast('Long duration', { duration: 10000 })}
         >
           10 seconds

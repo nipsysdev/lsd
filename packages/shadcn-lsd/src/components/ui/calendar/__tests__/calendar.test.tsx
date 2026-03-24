@@ -45,12 +45,12 @@ describe('Calendar', () => {
     });
 
     it('supports captionLayout prop', () => {
-      render(<Calendar captionLayout="buttons" />);
+      render(<Calendar captionLayout="dropdown" />);
       expect(screen.getByRole('grid')).toBeInTheDocument();
     });
 
     it('supports buttonVariant prop', () => {
-      render(<Calendar buttonVariant="outline" />);
+      render(<Calendar buttonVariant="outlined" />);
       expect(screen.getByRole('grid')).toBeInTheDocument();
     });
   });
@@ -199,7 +199,7 @@ describe('Calendar', () => {
     });
 
     it('applies custom buttonVariant', () => {
-      render(<Calendar buttonVariant="default" />);
+      render(<Calendar buttonVariant="filled" />);
       expect(screen.getByRole('grid')).toBeInTheDocument();
     });
   });
@@ -249,8 +249,19 @@ describe('Calendar', () => {
   });
 
   describe('CalendarDayButton', () => {
+    const createMockDay = (date: Date) => ({
+      date,
+      dateLib: {} as any,
+      outside: false,
+      displayMonth: date,
+      isoDate: date.toISOString().split('T')[0],
+      displayMonthId: `${date.getFullYear()}-${date.getMonth()}`,
+      dateMonthId: date.toISOString().split('T')[0].slice(0, 7),
+      isEqualTo: () => false,
+    });
+
     it('renders CalendarDayButton with proper attributes', () => {
-      const day = { date: new Date(2025, 0, 15) };
+      const day = createMockDay(new Date(2025, 0, 15));
       const modifiers = { selected: true };
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
@@ -258,7 +269,7 @@ describe('Calendar', () => {
     });
 
     it('applies data-day attribute', () => {
-      const day = { date: new Date(2025, 0, 15) };
+      const day = createMockDay(new Date(2025, 0, 15));
       const modifiers = {};
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
@@ -266,7 +277,7 @@ describe('Calendar', () => {
     });
 
     it('applies range start data attribute', () => {
-      const day = { date: new Date(2025, 0, 15) };
+      const day = createMockDay(new Date(2025, 0, 15));
       const modifiers = { range_start: true };
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
@@ -274,7 +285,7 @@ describe('Calendar', () => {
     });
 
     it('applies range end data attribute', () => {
-      const day = { date: new Date(2025, 0, 20) };
+      const day = createMockDay(new Date(2025, 0, 20));
       const modifiers = { range_end: true };
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
@@ -282,7 +293,7 @@ describe('Calendar', () => {
     });
 
     it('applies range middle data attribute', () => {
-      const day = { date: new Date(2025, 0, 17) };
+      const day = createMockDay(new Date(2025, 0, 17));
       const modifiers = { range_middle: true };
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
@@ -290,7 +301,7 @@ describe('Calendar', () => {
     });
 
     it('applies selected single data attribute', () => {
-      const day = { date: new Date(2025, 0, 15) };
+      const day = createMockDay(new Date(2025, 0, 15));
       const modifiers = { selected: true };
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
@@ -298,7 +309,7 @@ describe('Calendar', () => {
     });
 
     it('is disabled when modifiers indicate disabled', () => {
-      const day = { date: new Date(2025, 0, 15) };
+      const day = createMockDay(new Date(2025, 0, 15));
       const modifiers = { disabled: true };
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
@@ -306,7 +317,7 @@ describe('Calendar', () => {
     });
 
     it('is disabled when modifiers indicate hidden', () => {
-      const day = { date: new Date(2025, 0, 15) };
+      const day = createMockDay(new Date(2025, 0, 15));
       const modifiers = { hidden: true };
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
@@ -314,7 +325,7 @@ describe('Calendar', () => {
     });
 
     it('applies custom className', () => {
-      const day = { date: new Date(2025, 0, 15) };
+      const day = createMockDay(new Date(2025, 0, 15));
       const modifiers = {};
       render(<CalendarDayButton day={day} modifiers={modifiers} className="custom-class" />);
       const button = screen.getByRole('button');
