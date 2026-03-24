@@ -20,7 +20,7 @@ export default function Page() {
   );
 }
 
-export const CODE = `\`use client\';
+export const CODE = `\`use client';
 
 import { Slider } from 'https://cdn.jsdelivr.net/npm/@nipsys/shadcn-lsd@latest/+esm';
 

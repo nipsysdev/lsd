@@ -1,7 +1,7 @@
 'use client';
 
-import * as React from 'react';
 import { Slider } from '@nipsys/shadcn-lsd';
+import * as React from 'react';
 
 export default function Page() {
   const [value, setValue] = React.useState([33]);
@@ -13,12 +13,7 @@ export default function Page() {
           <div className="lsd:text-[0.875rem] lsd:leading-[1.5rem] lsd:font-medium lsd:text-lsd-text-primary lsd:mb-4 lsd:block">
             Brightness
           </div>
-          <Slider
-            value={value}
-            onValueChange={setValue}
-            max={100}
-            step={1}
-          />
+          <Slider value={value} onValueChange={setValue} max={100} step={1} />
           <p className="lsd:text-[0.75rem] lsd:leading-[1.25rem] lsd:text-lsd-text-secondary lsd:mt-2">
             Current value: {value[0]}%
           </p>
