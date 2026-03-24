@@ -119,9 +119,7 @@ export function ThemeDemoCard({
         </CardContent>
 
         <CardFooter className="justify-between">
-          <Button size="sm">
-            Cancel
-          </Button>
+          <Button size="sm">Cancel</Button>
           <Button size="sm">Save Changes</Button>
         </CardFooter>
       </Card>

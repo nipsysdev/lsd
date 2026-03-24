@@ -52,10 +52,7 @@ export function ToastPositionsExample() {
 
       <Typography variant="label1">Positioned Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <Button
-          variant="outline"
-          onClick={() => toast('Top-left toast', { position: 'top-left' })}
-        >
+        <Button variant="outline" onClick={() => toast('Top-left toast', { position: 'top-left' })}>
           Top-Left
         </Button>
         <Button
