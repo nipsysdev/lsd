@@ -1,14 +1,12 @@
 'use client';
 
 import {
-  Button,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from '@nipsys/shadcn-lsd';
 
 export const CODE = `
