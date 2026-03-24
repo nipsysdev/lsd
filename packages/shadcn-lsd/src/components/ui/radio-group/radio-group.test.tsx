@@ -123,7 +123,11 @@ describe('RadioGroupItem', () => {
   it('handles onValueChange callback', async () => {
     let capturedValue: string | undefined;
     render(
-      <RadioGroup onValueChange={value => (capturedValue = value)}>
+      <RadioGroup
+        onValueChange={value => {
+          capturedValue = value;
+        }}
+      >
         <RadioGroupItem value="test" aria-label="Test" />
       </RadioGroup>
     );
