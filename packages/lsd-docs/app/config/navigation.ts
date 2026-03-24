@@ -51,6 +51,7 @@ export const navItems: NavGroup[] = [
           { title: 'Autocomplete', url: '/components/autocomplete' },
           { title: 'Button', url: '/components/button' },
           { title: 'Button Group', url: '/components/button-group' },
+          { title: 'Calendar', url: '/components/calendar' },
           { title: 'Checkbox', url: '/components/checkbox' },
           { title: 'Input', url: '/components/input' },
           { title: 'Label', url: '/components/label' },

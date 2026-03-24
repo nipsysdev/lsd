@@ -1,6 +1,6 @@
-export { Avatar, type AvatarSize } from './Avatar';
-export { AvatarImage } from './AvatarImage';
-export { AvatarFallback } from './AvatarFallback';
-export { AvatarBadge } from './AvatarBadge';
-export { AvatarGroup } from './AvatarGroup';
-export { AvatarGroupCount } from './AvatarGroupCount';
+export { Avatar } from './Avatar';
+export { AvatarBadge, type AvatarBadgeProps } from './AvatarBadge';
+export { AvatarFallback, type AvatarFallbackProps } from './AvatarFallback';
+export { AvatarGroup, type AvatarGroupProps } from './AvatarGroup';
+export { AvatarGroupCount, type AvatarGroupCountProps } from './AvatarGroupCount';
+export { AvatarImage, type AvatarImageProps } from './AvatarImage';

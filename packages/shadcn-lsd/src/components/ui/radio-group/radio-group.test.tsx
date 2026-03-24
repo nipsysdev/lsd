@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { RadioGroup, RadioGroupItem } from './index';
 
 describe('RadioGroup', () => {
@@ -123,7 +123,7 @@ describe('RadioGroupItem', () => {
   it('handles onValueChange callback', async () => {
     let capturedValue: string | undefined;
     render(
-      <RadioGroup onValueChange={(value) => capturedValue = value}>
+      <RadioGroup onValueChange={value => (capturedValue = value)}>
         <RadioGroupItem value="test" aria-label="Test" />
       </RadioGroup>
     );

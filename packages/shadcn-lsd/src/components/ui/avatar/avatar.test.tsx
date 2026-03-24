@@ -1,6 +1,13 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import { Avatar, AvatarImage, AvatarFallback, AvatarBadge, AvatarGroup, AvatarGroupCount } from './index';
+import { describe, expect, it } from 'vitest';
+import {
+  Avatar,
+  AvatarBadge,
+  AvatarFallback,
+  AvatarGroup,
+  AvatarGroupCount,
+  AvatarImage,
+} from './index';
 
 // NOTE: AvatarImage and AvatarFallback require Avatar context from Radix Avatar.
 // Standalone tests for these components are not valid - they must be rendered inside Avatar.
@@ -15,7 +22,7 @@ describe('Avatar', () => {
   it('renders with different sizes', () => {
     const sizes = ['default', 'sm', 'lg'] as const;
 
-    sizes.forEach((size) => {
+    sizes.forEach(size => {
       const { container, rerender } = render(<Avatar size={size} />);
       expect(container.firstChild).toHaveAttribute('data-size', size);
       rerender(<Avatar size={size} />);
