@@ -15,7 +15,7 @@ export function Example() {
       <Typography variant="label1">With Actions</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
-          variant="outlined"
+          variant="outline"
           onClick={() =>
             toast('Event has been created', {
               action: {
@@ -42,7 +42,7 @@ export function ToastActionsExample() {
       <Typography variant="label1">With Actions</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
-          variant="outlined"
+          variant="outline"
           onClick={() =>
             toast('Event has been created', {
               action: {

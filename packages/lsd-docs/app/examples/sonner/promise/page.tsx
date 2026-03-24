@@ -41,7 +41,7 @@ export function ToastPromiseExample() {
       <Typography variant="label1">Promise-based Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
-          variant="outlined"
+          variant="outline"
           onClick={() => {
             const promise = new Promise(resolve => setTimeout(() => resolve('Data loaded!'), 2000));
             toast.promise(promise, {

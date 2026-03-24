@@ -16,7 +16,7 @@ export function Example() {
           Show Simple Toast
         </Button>
         <Button
-          variant="outlined"
+          variant="outline"
           onClick={() => toast.success('Changes saved successfully!')}
         >
           Show Success Toast
@@ -25,7 +25,7 @@ export function Example() {
           Show Error Toast
         </Button>
         <Button
-          variant="outlined"
+          variant="outline"
           onClick={() => toast.warning('Please review your changes')}
         >
           Show Warning Toast

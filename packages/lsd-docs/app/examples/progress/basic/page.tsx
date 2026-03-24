@@ -24,7 +24,7 @@ export function Example() {
         <Progress value={progress} showLabel labelPosition="top" />
         <div className="flex justify-between">
           <Button
-            variant="outlined"
+            variant="outline"
             size="sm"
             onClick={() => setProgress(Math.max(0, progress - 10))}
           >
@@ -34,7 +34,7 @@ export function Example() {
             Reset
           </Button>
           <Button
-            variant="outlined"
+            variant="outline"
             size="sm"
             onClick={() => setProgress(Math.min(100, progress + 10))}
           >
@@ -64,7 +64,7 @@ export function ProgressBasicExample() {
         <Progress value={progress} showLabel labelPosition="top" />
         <div className="flex justify-between">
           <Button
-            variant="outlined"
+            variant="outline"
             size="sm"
             onClick={() => setProgress(Math.max(0, progress - 10))}
           >
@@ -74,7 +74,7 @@ export function ProgressBasicExample() {
             Reset
           </Button>
           <Button
-            variant="outlined"
+            variant="outline"
             size="sm"
             onClick={() => setProgress(Math.min(100, progress + 10))}
           >

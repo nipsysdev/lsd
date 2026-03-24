@@ -20,18 +20,8 @@ function CalendarRoot({ className, rootRef, ...props }: CalendarRootProps) {
 
 const CalendarRootMemo = React.memo(CalendarRoot);
 
-function CalendarDayButtonComponent({
-  day,
-  modifiers,
-  ...props
-}: { day: { date: Date }; modifiers: Modifiers } & Record<string, unknown>) {
-  return (
-    <CalendarDayButton
-      day={day}
-      modifiers={modifiers}
-      {...(props as React.ComponentProps<typeof CalendarDayButton>)}
-    />
-  );
+function CalendarDayButtonComponent(props: React.ComponentProps<typeof CalendarDayButton>) {
+  return <CalendarDayButton {...props} />;
 }
 
 function Calendar({

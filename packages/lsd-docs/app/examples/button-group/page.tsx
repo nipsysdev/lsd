@@ -18,9 +18,9 @@ export function Example() {
       </ButtonGroup>
 
       <ButtonGroup>
-        <Button variant="filled">Previous</Button>
+        <Button variant="default">Previous</Button>
         <ButtonGroupText>Page 1 of 10</ButtonGroupText>
-        <Button variant="filled">Next</Button>
+        <Button variant="default">Next</Button>
       </ButtonGroup>
 
       <ButtonGroup>
@@ -31,7 +31,7 @@ export function Example() {
       </ButtonGroup>
 
       <ButtonGroup>
-        <Button variant="filled">Primary</Button>
+        <Button variant="default">Primary</Button>
         <Button variant="outlined">Secondary</Button>
       </ButtonGroup>
     </>
@@ -47,9 +47,9 @@ export function ButtonGroupExample() {
       </ButtonGroup>
 
       <ButtonGroup>
-        <Button variant="filled">Previous</Button>
+        <Button variant="default">Previous</Button>
         <ButtonGroupText>Page 1 of 10</ButtonGroupText>
-        <Button variant="filled">Next</Button>
+        <Button variant="default">Next</Button>
       </ButtonGroup>
 
       <ButtonGroup>
@@ -60,7 +60,7 @@ export function ButtonGroupExample() {
       </ButtonGroup>
 
       <ButtonGroup>
-        <Button variant="filled">Primary</Button>
+        <Button variant="default">Primary</Button>
         <Button variant="outlined">Secondary</Button>
       </ButtonGroup>
     </div>

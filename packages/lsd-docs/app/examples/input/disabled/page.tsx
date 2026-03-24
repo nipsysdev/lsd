@@ -10,7 +10,7 @@ export function Example() {
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Input label="Disabled" placeholder="Can't edit this" disabled />
       <Input
-        variant="outlined"
+        variant="outline"
         label="Also Disabled"
         placeholder="Can't edit this either"
         disabled
@@ -26,7 +26,7 @@ export function InputDisabledExample() {
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Input label="Disabled" placeholder="Can't edit this" disabled />
       <Input
-        variant="outlined"
+        variant="outline"
         label="Also Disabled"
         placeholder="Can't edit this either"
         disabled
