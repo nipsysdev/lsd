@@ -137,7 +137,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
-                size="md"
+                size="lg"
                 src="/examples/field/legend-description"
                 title="Legend and Description"
               />
