@@ -2,6 +2,8 @@
 
 import {
   Button,
+  Card,
+  CardContent,
   Checkbox,
   Form,
   FormControl,
@@ -21,7 +23,7 @@ import {
 } from '@nipsys/shadcn-lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Switch, Checkbox, useForm } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Switch, Checkbox, useForm } from '@nipsys/shadcn-lsd';
 
 export function FormWithOtherComponentsExample() {
   const form = useForm({
@@ -40,7 +42,7 @@ export function FormWithOtherComponentsExample() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className=\\"space-y-(--lsd-spacing-base)\\" style={{ minWidth: 360 }}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className=\\"space-y-(--lsd-spacing-larger)\\" style={{ minWidth: 360 }}>
         <FormField
           control={form.control}
           name=\\"name\\"
@@ -104,20 +106,22 @@ export function FormWithOtherComponentsExample() {
           control={form.control}
           name=\\"newsletter\\"
           render={({ field }) => (
-            <FormItem className=\\"flex flex-row items-center justify-between rounded-lg border p-(--lsd-spacing-base) shadow-sm\\">
-              <div className=\\"space-y-0.5\\">
-                <FormLabel>Newsletter</FormLabel>
-                <FormDescription>
-                  Receive our weekly newsletter with updates and tips.
-                </FormDescription>
-              </div>
-              <FormControl>
-                <Switch
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
-            </FormItem>
+            <Card>
+              <CardContent className=\\"flex flex-col gap-y-(--lsd-spacing-small) items-end\\">
+                <div className=\\"space-y-0.5\\">
+                  <FormLabel>Newsletter</FormLabel>
+                  <FormDescription>
+                    Receive our weekly newsletter with updates and tips.
+                  </FormDescription>
+                </div>
+                <FormControl>
+                  <Switch
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+              </CardContent>
+            </Card>
           )}
         />
         <FormField
@@ -128,16 +132,14 @@ export function FormWithOtherComponentsExample() {
           }}
           render={({ field }) => (
             <FormItem className=\\"flex flex-row items-start space-x-3 space-y-0\\">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
-              <div className=\\"space-y-1 leading-none\\">
-                <FormLabel>
-                  I agree to the terms and conditions
-                </FormLabel>
+              <div className=\\"flex gap-x-(--lsd-spacing-smaller)\\">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <FormLabel>I agree to the terms and conditions</FormLabel>
               </div>
               <FormMessage />
             </FormItem>
@@ -176,7 +178,7 @@ export function FormWithOtherComponentsExample() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-(--lsd-spacing-base)"
+        className="space-y-(--lsd-spacing-larger)"
         style={{ minWidth: 360 }}
       >
         <FormField
@@ -244,17 +246,19 @@ export function FormWithOtherComponentsExample() {
           control={form.control}
           name="newsletter"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-center justify-between rounded-lg border p-(--lsd-spacing-base) shadow-sm">
-              <div className="space-y-0.5">
-                <FormLabel>Newsletter</FormLabel>
-                <FormDescription>
-                  Receive our weekly newsletter with updates and tips.
-                </FormDescription>
-              </div>
-              <FormControl>
-                <Switch checked={field.value} onCheckedChange={field.onChange} />
-              </FormControl>
-            </FormItem>
+            <Card>
+              <CardContent className="flex flex-col gap-y-(--lsd-spacing-small) items-end">
+                <div className="space-y-0.5">
+                  <FormLabel>Newsletter</FormLabel>
+                  <FormDescription>
+                    Receive our weekly newsletter with updates and tips.
+                  </FormDescription>
+                </div>
+                <FormControl>
+                  <Switch checked={field.value} onCheckedChange={field.onChange} />
+                </FormControl>
+              </CardContent>
+            </Card>
           )}
         />
         <FormField
@@ -265,10 +269,10 @@ export function FormWithOtherComponentsExample() {
           }}
           render={({ field }) => (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-              <FormControl>
-                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-              </FormControl>
-              <div className="space-y-1 leading-none">
+              <div className="flex gap-x-(--lsd-spacing-smaller)">
+                <FormControl>
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                </FormControl>
                 <FormLabel>I agree to the terms and conditions</FormLabel>
               </div>
               <FormMessage />
