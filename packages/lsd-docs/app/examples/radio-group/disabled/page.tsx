@@ -1,11 +1,11 @@
 'use client';
 
-import { RadioGroup, RadioGroupItem, Typography } from '@nipsys/shadcn-lsd';
+import { Label, RadioGroup, RadioGroupItem, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `
-import { RadioGroup, RadioGroupItem, Typography } from '@nipsys/shadcn-lsd';
+import { RadioGroup, RadioGroupItem, Label, Typography } from '@nipsys/shadcn-lsd';
 
 export function Example() {
   const [value, setValue] = useState('enabled');
@@ -15,18 +15,16 @@ export function Example() {
       <Typography variant="label1">Select payment method</Typography>
       <RadioGroup value={value} onValueChange={setValue}>
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
-          <RadioGroupItem value="enabled" />
-          <Typography variant="body1">Credit Card</Typography>
+          <RadioGroupItem value="enabled" id="r1" />
+          <Label htmlFor="r1">Credit Card</Label>
         </div>
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
-          <RadioGroupItem value="disabled" disabled />
-          <Typography variant="body1" className="lsd:text-lsd-text-tertiary">
-            PayPal (unavailable)
-          </Typography>
+          <RadioGroupItem value="disabled" id="r2" disabled />
+          <Label htmlFor="r2">PayPal (unavailable)</Label>
         </div>
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
-          <RadioGroupItem value="cash" />
-          <Typography variant="body1">Cash on Delivery</Typography>
+          <RadioGroupItem value="cash" id="r3" />
+          <Label htmlFor="r3">Cash on Delivery</Label>
         </div>
       </RadioGroup>
     </div>
@@ -43,18 +41,16 @@ export function RadioGroupDisabledExample() {
       <Typography variant="label1">Select payment method</Typography>
       <RadioGroup value={value} onValueChange={setValue}>
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
-          <RadioGroupItem value="enabled" />
-          <Typography variant="body1">Credit Card</Typography>
+          <RadioGroupItem value="enabled" id="r1" />
+          <Label htmlFor="r1">Credit Card</Label>
         </div>
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
-          <RadioGroupItem value="disabled" disabled />
-          <Typography variant="body1" className="lsd:text-lsd-text-tertiary">
-            PayPal (unavailable)
-          </Typography>
+          <RadioGroupItem value="disabled" id="r2" disabled />
+          <Label htmlFor="r2">PayPal (unavailable)</Label>
         </div>
         <div className="flex items-center gap-(--lsd-spacing-smaller)">
-          <RadioGroupItem value="cash" />
-          <Typography variant="body1">Cash on Delivery</Typography>
+          <RadioGroupItem value="cash" id="r3" />
+          <Label htmlFor="r3">Cash on Delivery</Label>
         </div>
       </RadioGroup>
     </div>
