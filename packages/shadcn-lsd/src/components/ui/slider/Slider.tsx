@@ -24,7 +24,7 @@ function Slider({
       min={min}
       max={max}
       className={cn(
-        'relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col',
+        'lsd:relative lsd:flex lsd:w-full lsd:touch-none lsd:items-center lsd:select-none lsd:data-[disabled]:opacity-50 lsd:data-[orientation=vertical]:h-full lsd:data-[orientation=vertical]:min-h-[var(--lsd-spacing-largest)] lsd:data-[orientation=vertical]:w-auto lsd:data-[orientation=vertical]:flex-col',
         className
       )}
       {...props}
@@ -32,15 +32,13 @@ function Slider({
       <SliderPrimitive.Track
         data-slot="slider-track"
         className={cn(
-          'relative grow overflow-hidden rounded-full bg-muted data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5',
-          'lsd:bg-lsd-base-surface'
+          'lsd:relative lsd:grow lsd:overflow-hidden lsd:rounded-full lsd:bg-lsd-base-surface lsd:data-[orientation=horizontal]:h-[var(--lsd-spacing-smaller)] lsd:data-[orientation=horizontal]:w-full lsd:data-[orientation=vertical]:h-full lsd:data-[orientation=vertical]:w-[var(--lsd-spacing-smaller)]'
         )}
       >
         <SliderPrimitive.Range
           data-slot="slider-range"
           className={cn(
-            'absolute bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
-            'lsd:bg-lsd-primary'
+            'lsd:absolute lsd:bg-lsd-primary lsd:data-[orientation=horizontal]:h-full lsd:data-[orientation=vertical]:w-full'
           )}
         />
       </SliderPrimitive.Track>
@@ -49,13 +47,14 @@ function Slider({
           data-slot="slider-thumb"
           key={`thumb-${_values[index]}`}
           className={cn(
-            'block size-4 shrink-0 rounded-full border border-primary bg-white shadow-sm ring-ring/50 transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50',
-            'lsd:border-lsd-primary lsd:bg-lsd-background lsd:shadow-sm hover:lsd:ring-4 focus-visible:lsd:ring-4'
+            'lsd:block lsd:size-[var(--lsd-spacing-small)] lsd:shrink-0 lsd:rounded-full lsd:border lsd:border-lsd-primary lsd:bg-lsd-background lsd:shadow-xs lsd:ring-lsd-text/50 lsd:transition-all hover:lsd:ring-[var(--lsd-spacing-base)] focus-visible:lsd:ring-[var(--lsd-spacing-base)] focus-visible:lsd:outline-none lsd:disabled:pointer-events-none lsd:disabled:opacity-50'
           )}
         />
       ))}
     </SliderPrimitive.Root>
   );
 }
+
+Slider.displayName = 'Slider';
 
 export { Slider };
