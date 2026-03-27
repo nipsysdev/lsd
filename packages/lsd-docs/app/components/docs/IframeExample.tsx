@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 interface IframeExampleProps {
   src: string;
   title: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
 }
 
@@ -15,6 +15,7 @@ export const IframeExample = forwardRef<HTMLIFrameElement, IframeExampleProps>(
       sm: 'min-h-[128px]',
       md: 'min-h-[256px]',
       lg: 'min-h-[450px]',
+      xl: 'min-h-[600px]',
     }[size];
 
     return (
