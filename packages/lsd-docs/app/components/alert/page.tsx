@@ -1,6 +1,17 @@
 'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@nipsys/shadcn-lsd';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Typography,
+} from '@nipsys/shadcn-lsd';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -22,231 +33,277 @@ export default function AlertPage() {
 
       <PageContent>
         <PageSection title="About Alert">
-          <div className="space-y-4">
-            <p className="lsd:text-lsd-text-secondary">
-              The Alert component is a versatile notification element designed to convey important
-              information to users. It provides a clean, accessible way to display messages with
-              different semantic meanings:
-            </p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>
-                Multiple variants for different message types (default, destructive, info, success,
-                warning)
-              </li>
-              <li>Optional title and description for structured content</li>
-              <li>Icon support for visual context</li>
-              <li>Built-in accessibility with role="alert" attribute</li>
-              <li>Responsive grid layout for optimal spacing</li>
-              <li>LSD theme integration for consistent styling</li>
-            </ul>
-          </div>
+          <Typography variant="body1" className="block">
+            The Alert component is a versatile notification element designed to convey important
+            information to users. It provides a clean, accessible way to display messages with
+            different semantic meanings.
+          </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <p className="lsd:text-lsd-text-secondary">
-            The Alert component is included in @nipsys/shadcn-lsd. No additional installation steps
-            are required.
-          </p>
-          <div className="mt-4 p-4 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded-lg">
-            <code className="text-sm lsd:text-lsd-text-primary">
-              npm install @nipsys/shadcn-lsd
-            </code>
-          </div>
+          <Typography variant="body1">Import the Alert component from LSD:</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import { Alert, AlertTitle, AlertDescription } from '@nipsys/shadcn-lsd'
+
+export default function MyComponent() {
+  return (
+    <Alert>
+      <AlertTitle>Success</AlertTitle>
+      <AlertDescription>Your changes have been saved.</AlertDescription>
+    </Alert>
+  )
+}`}
+              />
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Import">
-          <div className="mb-4 p-4 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded-lg">
-            <code className="text-sm lsd:text-lsd-text-primary">
-              import `{'{'} Alert, AlertTitle, AlertDescription {'}'}` from '@nipsys/shadcn-lsd';
-            </code>
-          </div>
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Alert comes in five variants for different message types and contexts.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>All Variants</CardTitle>
+              <CardDescription>
+                Different semantic meanings for various message types
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/alert/all-variants" title="All Variants" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={AllVariantsCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Basic Usage">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Here's a simple alert with a title and description:
-          </p>
-          <IframeExample size="md" src="/examples/alert/basic" title="Basic" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={BasicCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </PageSection>
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features like icons and structured content with titles and descriptions.
+          </Typography>
 
-        <PageSection title="All Variants">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            You can use different variants to convey different meanings:
-          </p>
-          <IframeExample size="md" src="/examples/alert/all-variants" title="All Variants" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={AllVariantsCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </PageSection>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic Usage</CardTitle>
+              <CardDescription>Simple alert with title and description</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/alert/basic" title="Basic" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={BasicCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-        <PageSection title="With Icon">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            You can add an icon to provide additional visual context:
-          </p>
-          <IframeExample size="md" src="/examples/alert/with-icon" title="With Icon" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={WithIconCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Icon</CardTitle>
+              <CardDescription>Add an icon for additional visual context</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/alert/with-icon" title="With Icon" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={WithIconCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <div className="space-y-6">
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">Alert</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                The root alert component that wraps all alert content.
-              </p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">variant</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">
-                      default | destructive | info | success | warning
-                    </td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">default</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">className</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">string</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p className="mt-2 text-sm lsd:text-lsd-text-secondary">
-                Extends HTMLDivElement and accepts all standard div props.
-              </p>
-            </div>
+          <Typography variant="body1">All available props for the Alert components.</Typography>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">AlertTitle</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                The title of the alert, displayed prominently at the top.
-              </p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">className</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">string</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p className="mt-2 text-sm lsd:text-lsd-text-secondary">
-                Extends HTMLDivElement and accepts all standard div props.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>variant</CardTitle>
+                <CardDescription>The semantic style of the alert</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> AlertVariant
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> default, destructive, info, success, warning
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> default
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">AlertDescription</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                The detailed description of the alert message.
-              </p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">className</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">string</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p className="mt-2 text-sm lsd:text-lsd-text-secondary">
-                Extends HTMLParagraphElement and accepts all standard p props.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Merges with existing alert classes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>...props</CardTitle>
+                <CardDescription>Standard HTML div attributes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> <code>React.HTMLAttributes&lt;HTMLDivElement&gt;</code>
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  All standard HTML div attributes are supported
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Typography variant="h2" className="mt-(--lsd-spacing-larger) mb-(--lsd-spacing-base)">
+            AlertTitle
+          </Typography>
+          <Typography variant="body1" className="mb-(--lsd-spacing-base)">
+            The title of the alert, displayed prominently at the top.
+          </Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Merges with existing title classes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>...props</CardTitle>
+                <CardDescription>Standard HTML div attributes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> <code>React.HTMLAttributes&lt;HTMLDivElement&gt;</code>
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  All standard HTML div attributes are supported
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Typography variant="h2" className="mt-(--lsd-spacing-larger) mb-(--lsd-spacing-base)">
+            AlertDescription
+          </Typography>
+          <Typography variant="body1" className="mb-(--lsd-spacing-base)">
+            The detailed description of the alert message.
+          </Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Merges with existing description classes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>...props</CardTitle>
+                <CardDescription>Standard HTML paragraph attributes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  <strong>Type:</strong>{' '}
+                  <code>React.HTMLAttributes&lt;HTMLParagraphElement&gt;</code>
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  All standard HTML paragraph attributes are supported
+                </Typography>
+              </CardContent>
+            </Card>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
-          <div className="space-y-4">
-            <p className="mb-4 lsd:text-lsd-text-secondary">
-              The Alert component follows WAI-ARIA accessibility patterns:
-            </p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>
-                Built with a{' '}
-                <code className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
+          <Typography variant="body1">
+            The Alert component follows accessibility best practices.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Built with{' '}
+                <code className="px-2 py-1 bg-[var(--lsd-surface)] border border-[var(--lsd-border)] rounded text-sm">
                   role="alert"
                 </code>{' '}
                 attribute for screen reader announcement
-              </li>
-              <li>Proper color contrast with LSD theme tokens for each variant</li>
-              <li>Semantic HTML structure with title and description slots</li>
-              <li>Keyboard accessible by default (all elements are focusable)</li>
-              <li>Screen reader friendly with clear role and content</li>
-            </ul>
-          </div>
-        </PageSection>
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Proper color contrast with LSD theme tokens for each variant
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Semantic HTML structure with title and description slots
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Screen reader friendly with clear role and content
+              </Typography>
+            </CardContent>
+          </Card>
 
-        <PageSection title="Examples">
-          <div className="space-y-4">
-            <p className="lsd:text-lsd-text-secondary">Explore more Alert examples:</p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>
-                <a href="/examples/alert/basic" className="lsd:text-blue-500 hover:lsd:underline">
-                  Basic Alert
-                </a>{' '}
-                - Simple alert with title and description
-              </li>
-              <li>
-                <a
-                  href="/examples/alert/all-variants"
-                  className="lsd:text-blue-500 hover:lsd:underline"
-                >
-                  All Variants
-                </a>{' '}
-                - All available alert variants
-              </li>
-              <li>
-                <a
-                  href="/examples/alert/with-icon"
-                  className="lsd:text-blue-500 hover:lsd:underline"
-                >
-                  With Icon
-                </a>{' '}
-                - Alert with an icon
-              </li>
-            </ul>
-          </div>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Alerts have visible focus states that follow the LSD design system's focus
+                indicators, ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageNavigation

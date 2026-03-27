@@ -1,6 +1,17 @@
 'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@nipsys/shadcn-lsd';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Typography,
+} from '@nipsys/shadcn-lsd';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -25,262 +36,424 @@ export default function SliderPage() {
 
       <PageContent>
         <PageSection title="About Slider">
-          <div className="space-y-4">
-            <p className="lsd:text-lsd-text-secondary">
-              The Slider component is built on Radix UI and provides a smooth, intuitive way for
-              users to select values from a continuous range. It supports various interaction
-              patterns:
-            </p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>Single value selection (one thumb)</li>
-              <li>Range selection (two thumbs for min/max)</li>
-              <li>Multiple thumbs for advanced use cases</li>
-              <li>Horizontal and vertical orientations</li>
-              <li>Controlled and uncontrolled modes</li>
-              <li>Disabled state support</li>
-              <li>Custom step increments</li>
-              <li>LSD theme integration for consistent styling</li>
-            </ul>
-          </div>
+          <Typography variant="body1" className="block">
+            The Slider component is built on Radix UI and provides a smooth, intuitive way for users
+            to select values from a continuous range. It supports single value selection, range
+            selection with two thumbs for min/max, multiple thumbs for advanced use cases,
+            horizontal and vertical orientations, controlled and uncontrolled modes, disabled state
+            support, custom step increments, and LSD theme integration for consistent styling.
+          </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <p className="lsd:text-lsd-text-secondary">
+          <Typography variant="body1">
             The Slider component is included in @nipsys/shadcn-lsd. No additional installation steps
             are required.
-          </p>
-          <div className="mt-4">
-            <CodeExample code={`import { Slider } from '@nipsys/shadcn-lsd'`} />
-          </div>
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import { Slider } from '@nipsys/shadcn-lsd'
+
+export default function MyComponent() {
+  return <Slider />
+}`}
+              />
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Basic Usage">
-          <p className="mb-4 lsd:text-lsd-text-secondary">A simple slider with a single value:</p>
-          <IframeExample size="md" src="/examples/slider/basic" title="Basic" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={BasicCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Slider supports different selection modes and orientations.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Single Value</CardTitle>
+              <CardDescription>A simple slider with a single value</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/slider/basic" title="Basic" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={BasicCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Range Selection</CardTitle>
+              <CardDescription>Use an array with two values for a range slider</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/slider/range" title="Range" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={RangeCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Multiple Thumbs</CardTitle>
+              <CardDescription>
+                Use an array with multiple values for multiple thumbs
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/slider/multiple" title="Multiple" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={MultipleCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Vertical Orientation</CardTitle>
+              <CardDescription>Use orientation="vertical" for a vertical slider</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/slider/vertical" title="Vertical" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={VerticalCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Range Selection">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Use an array with two values for a range slider:
-          </p>
-          <IframeExample size="md" src="/examples/slider/range" title="Range" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={RangeCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <PageSection title="Sizes">
+          <Typography variant="body1">
+            Slider adapts to different container sizes with responsive design.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Responsive Size</CardTitle>
+              <CardDescription>Automatically adjusts to container width</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/slider/basic" title="Slider Size" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={BasicCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Multiple Thumbs">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Use an array with multiple values for multiple thumbs:
-          </p>
-          <IframeExample size="md" src="/examples/slider/multiple" title="Multiple" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={MultipleCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </PageSection>
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features like controlled mode and disabled state.
+          </Typography>
 
-        <PageSection title="Vertical Orientation">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Use orientation="vertical" for a vertical slider:
-          </p>
-          <IframeExample size="md" src="/examples/slider/vertical" title="Vertical" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={VerticalCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </PageSection>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Controlled Component</CardTitle>
+              <CardDescription>
+                Use the value and onValueChange props for controlled sliders
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/slider/controlled" title="Controlled" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={ControlledCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
 
-        <PageSection title="Controlled Component">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Use the value and onValueChange props for controlled sliders:
-          </p>
-          <IframeExample size="md" src="/examples/slider/controlled" title="Controlled" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={ControlledCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </PageSection>
-
-        <PageSection title="Disabled State">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Use the disabled prop to disable the slider:
-          </p>
-          <IframeExample size="md" src="/examples/slider/disabled" title="Disabled" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={DisabledCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Disabled State</CardTitle>
+              <CardDescription>Use the disabled prop to disable the slider</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/slider/disabled" title="Disabled" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={DisabledCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <div className="space-y-6">
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">Slider</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                The root slider component. All props from Radix UI Slider are supported.
-              </p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">defaultValue</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">number[]</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">[min, max]</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">value</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">number[]</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">onValueChange</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">(value: number[]) =&gt; void</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">min</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">number</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">0</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">max</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">number</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">100</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">step</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">number</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">1</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">orientation</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">'horizontal' | 'vertical'</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">'horizontal'</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">disabled</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">boolean</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">false</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <Typography variant="body1">All available props for the Slider component.</Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>defaultValue</CardTitle>
+                <CardDescription>Initial value(s) for uncontrolled slider</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> number[]
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> [min, max]
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Sets the initial value(s) when not controlled
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>value</CardTitle>
+                <CardDescription>Current value(s) for controlled slider</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> number[]
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Controlled prop for current value(s)
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>onValueChange</CardTitle>
+                <CardDescription>Callback when value changes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> (value: number[]) =&gt; void
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Called when user changes the slider value
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>min</CardTitle>
+                <CardDescription>Minimum value of the slider</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> number
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 0
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Sets the minimum selectable value
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>max</CardTitle>
+                <CardDescription>Maximum value of the slider</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> number
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 100
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Sets the maximum selectable value
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>step</CardTitle>
+                <CardDescription>Step increment for value changes</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> number
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 1
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Controls the granularity of value changes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>orientation</CardTitle>
+                <CardDescription>Orientation of the slider</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'horizontal' | 'vertical'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> horizontal, vertical
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 'horizontal'
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Sets the slider orientation
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>disabled</CardTitle>
+                <CardDescription>Disable the slider</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> false
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Prevents user interaction when true
+                </Typography>
+              </CardContent>
+            </Card>
           </div>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Additional Props</CardTitle>
+              <CardDescription>Extends Radix UI Slider props</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                The Slider component extends all props from Radix UI Slider. See{' '}
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/slider"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Radix UI Slider documentation
+                </a>{' '}
+                for complete reference.
+              </Typography>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="Accessibility">
-          <div className="space-y-4">
-            <p className="mb-4 lsd:text-lsd-text-secondary">
-              The Slider component follows WAI-ARIA patterns and is fully accessible:
-            </p>
-            <div>
-              <h4 className="font-semibold mb-2 lsd:text-lsd-text-primary">Keyboard Navigation</h4>
-              <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-                <li>
-                  <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                    ArrowLeft
-                  </kbd>
-                  <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                    ArrowDown
-                  </kbd>{' '}
-                  - Decrement by step
-                </li>
-                <li>
-                  <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                    ArrowRight
-                  </kbd>
-                  <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                    ArrowUp
-                  </kbd>{' '}
-                  - Increment by step
-                </li>
-                <li>
-                  <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                    PageDown
-                  </kbd>{' '}
-                  - Decrement by larger amount
-                </li>
-                <li>
-                  <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                    PageUp
-                  </kbd>{' '}
-                  - Increment by larger amount
-                </li>
-                <li>
-                  <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                    Home
-                  </kbd>{' '}
-                  - Jump to minimum value
-                </li>
-                <li>
-                  <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                    End
-                  </kbd>{' '}
-                  - Jump to maximum value
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-2 lsd:text-lsd-text-primary">ARIA Attributes</h4>
-              <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-                <li>
-                  <code className="lsd:font-mono lsd:text-sm">role="slider"</code> on each thumb
-                </li>
-                <li>
-                  <code className="lsd:font-mono lsd:text-sm">aria-valuenow</code> indicates current
-                  value
-                </li>
-                <li>
-                  <code className="lsd:font-mono lsd:text-sm">aria-valuemin</code> indicates minimum
-                  value
-                </li>
-                <li>
-                  <code className="lsd:font-mono lsd:text-sm">aria-valuemax</code> indicates maximum
-                  value
-                </li>
-                <li>
-                  <code className="lsd:font-mono lsd:text-sm">aria-disabled</code> indicates
-                  disabled state
-                </li>
-              </ul>
-            </div>
-          </div>
+          <Typography variant="body1">
+            The Slider component follows WAI-ARIA patterns and is fully accessible.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Full keyboard support for value adjustment</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>ArrowLeft / ArrowDown:</strong> Decrement by step
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>ArrowRight / ArrowUp:</strong> Increment by step
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>PageDown:</strong> Decrement by larger amount
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>PageUp:</strong> Increment by larger amount
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Home:</strong> Jump to minimum value
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>End:</strong> Jump to maximum value
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <code>role="slider"</code> on each thumb
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <code>aria-valuenow</code> indicates current value
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <code>aria-valuemin</code> indicates minimum value
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <code>aria-valuemax</code> indicates maximum value
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <code>aria-disabled</code> indicates disabled state
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Components have visible focus states that follow the LSD design system's focus
+                indicators, ensuring keyboard users can always see which element has focus.
+              </Typography>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageNavigation

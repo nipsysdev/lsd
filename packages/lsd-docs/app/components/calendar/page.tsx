@@ -1,6 +1,17 @@
 'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@nipsys/shadcn-lsd';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Typography,
+} from '@nipsys/shadcn-lsd';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -22,257 +33,425 @@ export default function CalendarPage() {
 
       <PageContent>
         <PageSection title="About Calendar">
-          <div className="space-y-4">
-            <p className="lsd:text-lsd-text-secondary">
-              The Calendar component is a comprehensive date picker built on top of
-              react-day-picker, providing a flexible and accessible interface for date selection. It
-              features:
-            </p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>Multiple selection modes: single, multiple, and range selection</li>
-              <li>Month and year navigation with customizable controls</li>
-              <li>Support for disabled dates and date range validation</li>
-              <li>Customizable styling with LSD design tokens</li>
-              <li>Built-in accessibility features (keyboard navigation, ARIA attributes)</li>
-              <li>Integration with forms and validation libraries</li>
-              <li>Responsive design with mobile-friendly touch interactions</li>
-            </ul>
-          </div>
+          <Typography variant="body1" className="block">
+            The Calendar component is a comprehensive date picker built on top of react-day-picker,
+            providing a flexible and accessible interface for date selection. It features multiple
+            selection modes, month and year navigation, support for disabled dates and date range
+            validation, customizable styling with LSD design tokens, built-in accessibility
+            features, integration with forms and validation libraries, and responsive design with
+            mobile-friendly touch interactions.
+          </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <p className="lsd:text-lsd-text-secondary">
+          <Typography variant="body1">
             The Calendar component requires react-day-picker as a peer dependency. Install it along
             with @nipsys/shadcn-lsd:
-          </p>
-          <div className="mt-4 p-4 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded-lg">
-            <code className="text-sm lsd:text-lsd-text-primary block mb-2">
-              npm install @nipsys/shadcn-lsd react-day-picker date-fns
-            </code>
-          </div>
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                code={`import { Calendar } from '@nipsys/shadcn-lsd'
+
+export default function MyComponent() {
+  return <Calendar />
+}`}
+              />
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Import">
-          <div className="mb-4 p-4 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded-lg">
-            <code className="text-sm lsd:text-lsd-text-primary">
-              import '{'{'} Calendar {'}'}' from '@nipsys/shadcn-lsd';
-            </code>
-          </div>
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Calendar supports multiple selection modes for different use cases.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Selection Modes</CardTitle>
+              <CardDescription>Single, multiple, and range selection</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/calendar/basic" title="Basic Calendar" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={BasicCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Basic Usage">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            A simple calendar with single date selection:
-          </p>
-          <IframeExample size="md" src="/examples/calendar/basic" title="Basic Calendar" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={BasicCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <PageSection title="Sizes">
+          <Typography variant="body1">
+            Calendar adapts to different container sizes with responsive design.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Responsive Size</CardTitle>
+              <CardDescription>Automatically adjusts to container width</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample size="md" src="/examples/calendar/basic" title="Calendar Size" />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={BasicCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Form Controlled">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Calendar component controlled by React state with form integration:
-          </p>
-          <IframeExample
-            size="md"
-            src="/examples/calendar/form-controlled"
-            title="Form Controlled"
-          />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={FormControlledCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </PageSection>
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features like form control, validation, and date constraints.
+          </Typography>
 
-        <PageSection title="With Validation">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Calendar with disabled dates, date range constraints, and custom validation:
-          </p>
-          <IframeExample
-            size="md"
-            src="/examples/calendar/with-validation"
-            title="With Validation"
-          />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={WithValidationCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Form Controlled</CardTitle>
+              <CardDescription>
+                Calendar component controlled by React state with form integration
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="md"
+                src="/examples/calendar/form-controlled"
+                title="Form Controlled"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={FormControlledCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Validation</CardTitle>
+              <CardDescription>
+                Calendar with disabled dates, date range constraints, and custom validation
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="md"
+                src="/examples/calendar/with-validation"
+                title="With Validation"
+              />
+              <Accordion type="single" collapsible>
+                <AccordionItem value="code">
+                  <AccordionTrigger>View code</AccordionTrigger>
+                  <AccordionContent>
+                    <CodeExample code={WithValidationCode} />
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <div className="space-y-6">
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">Calendar</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                The main calendar component that renders the date picker interface.
-              </p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">mode</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">single | multiple | range</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">single</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">selected</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">Date | Date[] | DateRange</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">defaultMonth</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">Date</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">today</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">disabled</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">Date[] | DateRange | Matcher</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">fromMonth</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">Date</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">toMonth</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">Date</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">showOutsideDays</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">boolean</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">true</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">captionLayout</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">label | buttons</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">label</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">buttonVariant</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">Button variant</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">ghost</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">onSelect</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">(date) =&gt; void</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">className</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">string</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">undefined</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p className="mt-2 text-sm lsd:text-lsd-text-secondary">
-                Extends react-day-picker DayPicker props. See
+          <Typography variant="body1">All available props for the Calendar component.</Typography>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>mode</CardTitle>
+                <CardDescription>The selection mode for the calendar</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> single | multiple | range
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> single, multiple, range
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> single
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>selected</CardTitle>
+                <CardDescription>The currently selected date(s)</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> Date | Date[] | DateRange
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Controlled prop for selected date(s)
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>defaultMonth</CardTitle>
+                <CardDescription>The month to display initially</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> Date
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> today
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Sets the initial month shown in the calendar
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>disabled</CardTitle>
+                <CardDescription>Dates that should be disabled</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> Date[] | DateRange | Matcher
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Prevents selection of specified dates
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>fromMonth</CardTitle>
+                <CardDescription>Earliest selectable month</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> Date
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Prevents navigation before this month
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>toMonth</CardTitle>
+                <CardDescription>Latest selectable month</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> Date
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Prevents navigation after this month
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>showOutsideDays</CardTitle>
+                <CardDescription>Show days from previous/next months</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> boolean
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> true
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Displays days from adjacent months in the grid
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>captionLayout</CardTitle>
+                <CardDescription>Layout for the month/year caption</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> label | buttons
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> label, buttons
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> label
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Controls how month/year navigation is displayed
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>buttonVariant</CardTitle>
+                <CardDescription>Button variant for day cells</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> Button variant
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> ghost
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Applies LSD button variant to day cells
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>onSelect</CardTitle>
+                <CardDescription>Callback when a date is selected</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> (date) =&gt; void
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Called when user selects a date
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>className</CardTitle>
+                <CardDescription>Additional CSS classes to apply</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> string
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Merges with existing calendar classes
+                </Typography>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Additional Props</CardTitle>
+              <CardDescription>Extends react-day-picker DayPicker props</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                The Calendar component extends all props from react-day-picker. See{' '}
                 <a
                   href="https://daypicker.dev/"
-                  className="lsd:text-blue-500 hover:lsd:underline"
+                  className="text-primary hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   react-day-picker documentation
-                </a>
+                </a>{' '}
                 for complete reference.
-              </p>
-            </div>
-          </div>
+              </Typography>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="Accessibility">
-          <div className="space-y-4">
-            <p className="mb-4 lsd:text-lsd-text-secondary">
-              The Calendar component follows WAI-ARIA accessibility best practices:
-            </p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>
-                Full keyboard navigation support (Arrow keys, Home, End, PageUp, PageDown, etc.)
-              </li>
-              <li>Screen reader friendly with proper ARIA roles (grid, row, gridcell)</li>
-              <li>High contrast colors using LSD design tokens</li>
-              <li>Focus indicators for keyboard users</li>
-              <li>Semantic HTML structure</li>
-              <li>Disabled states are properly announced to screen readers</li>
-            </ul>
-            <div className="mt-4 p-4 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded-lg">
-              <h4 className="font-medium mb-2">Keyboard Shortcuts</h4>
-              <ul className="list-disc list-inside space-y-1 text-sm lsd:text-lsd-text-secondary">
-                <li>
-                  <strong>Arrow keys:</strong> Navigate between days
-                </li>
-                <li>
-                  <strong>Page Up / Page Down:</strong> Navigate months
-                </li>
-                <li>
-                  <strong>Home:</strong> Jump to first day of month
-                </li>
-                <li>
-                  <strong>End:</strong> Jump to last day of month
-                </li>
-                <li>
-                  <strong>Enter / Space:</strong> Select focused date
-                </li>
-              </ul>
-            </div>
-          </div>
-        </PageSection>
+          <Typography variant="body1">
+            The Calendar component follows WAI-ARIA accessibility best practices.
+          </Typography>
 
-        <PageSection title="Examples">
-          <div className="space-y-4">
-            <p className="lsd:text-lsd-text-secondary">Explore more Calendar examples:</p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>
-                <a
-                  href="/examples/calendar/basic"
-                  className="lsd:text-blue-500 hover:lsd:underline"
-                >
-                  Basic Calendar
-                </a>{' '}
-                - Simple single date selection
-              </li>
-              <li>
-                <a
-                  href="/examples/calendar/form-controlled"
-                  className="lsd:text-blue-500 hover:lsd:underline"
-                >
-                  Form Controlled
-                </a>{' '}
-                - Controlled component with form integration
-              </li>
-              <li>
-                <a
-                  href="/examples/calendar/with-validation"
-                  className="lsd:text-blue-500 hover:lsd:underline"
-                >
-                  With Validation
-                </a>{' '}
-                - Disabled dates and date range constraints
-              </li>
-            </ul>
-          </div>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Full keyboard support for date selection</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Arrow keys:</strong> Navigate between days
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Page Up / Page Down:</strong> Navigate months
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Home:</strong> Jump to first day of month
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>End:</strong> Jump to last day of month
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Enter / Space:</strong> Select focused date
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA roles and attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Screen reader friendly with proper ARIA roles (grid, row, gridcell)
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Disabled states are properly announced to screen readers
+              </Typography>
+              <Typography variant="body2" className="block">
+                • Semantic HTML structure for better accessibility
+              </Typography>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block">
+                Components have visible focus states that follow the LSD design system's focus
+                indicators, ensuring keyboard users can always see which element has focus. High
+                contrast colors using LSD design tokens ensure good visibility.
+              </Typography>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageNavigation
