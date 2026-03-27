@@ -47,7 +47,8 @@ export default function FormPage() {
 
         <PageSection title="Installation">
           <Typography variant="body1">
-            react-hook-form is already installed. Import the Form components from LSD:
+            The Form component is built on react-hook-form, which is included as a dependency.
+            Import the Form components from LSD:
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
@@ -240,7 +241,7 @@ export default function MyForm() {
             <CardContent>
               <IframeExample
                 ref={formBasicIframeRef}
-                size="md"
+                size="lg"
                 src="/examples/form/basic"
                 title="Form Basic Example"
               />
@@ -269,7 +270,7 @@ export default function MyForm() {
             <CardContent>
               <IframeExample
                 ref={formValidationIframeRef}
-                size="md"
+                size="xl"
                 src="/examples/form/validation"
                 title="Form Validation Example"
               />
@@ -300,7 +301,7 @@ export default function MyForm() {
             <CardContent>
               <IframeExample
                 ref={formWithOtherComponentsIframeRef}
-                size="lg"
+                size="xl"
                 src="/examples/form/with-other-components"
                 title="Form with Other Components Example"
               />
