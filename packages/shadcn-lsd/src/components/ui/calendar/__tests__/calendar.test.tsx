@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { DateLib } from 'react-day-picker';
 import { describe, expect, it, vi } from 'vitest';
 import { Calendar, CalendarDayButton } from '../index';
 
@@ -251,7 +252,7 @@ describe('Calendar', () => {
   describe('CalendarDayButton', () => {
     const createMockDay = (date: Date) => ({
       date,
-      dateLib: {} as any,
+      dateLib: {} as DateLib,
       outside: false,
       displayMonth: date,
       isoDate: date.toISOString().split('T')[0],
