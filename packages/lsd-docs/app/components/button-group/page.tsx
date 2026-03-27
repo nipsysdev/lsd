@@ -22,8 +22,6 @@ import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 import { CODE as HorizontalCode } from '@/examples/button-group/horizontal/page';
 import { CODE as BUTTON_GROUP_CODE } from '@/examples/button-group/page';
-import { CODE as SeparatorsCode } from '@/examples/button-group/separators/page';
-import { CODE as TextCode } from '@/examples/button-group/text/page';
 import { CODE as VariantsCode } from '@/examples/button-group/variants/page';
 import { CODE as VerticalCode } from '@/examples/button-group/vertical/page';
 
@@ -31,8 +29,6 @@ export default function ButtonGroupPage() {
   const buttonGroupIframeRef = useRef<HTMLIFrameElement>(null);
   const horizontalIframeRef = useRef<HTMLIFrameElement>(null);
   const verticalIframeRef = useRef<HTMLIFrameElement>(null);
-  const separatorsIframeRef = useRef<HTMLIFrameElement>(null);
-  const textIframeRef = useRef<HTMLIFrameElement>(null);
   const variantsIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes();
@@ -152,56 +148,6 @@ export default function MyComponent() {
                   <AccordionTrigger>View code</AccordionTrigger>
                   <AccordionContent>
                     <CodeExample code={BUTTON_GROUP_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>With Separators</CardTitle>
-              <CardDescription>
-                Use ButtonGroupSeparator to visually separate groups of buttons
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={separatorsIframeRef}
-                size="md"
-                src="/examples/button-group/separators"
-                title="Separators Example"
-              />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SeparatorsCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>With Text Labels</CardTitle>
-              <CardDescription>
-                Use ButtonGroupText to add informational labels within the group
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={textIframeRef}
-                size="md"
-                src="/examples/button-group/text"
-                title="Text Labels Example"
-              />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TextCode} />
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
