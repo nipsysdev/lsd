@@ -39,7 +39,7 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
         isRangeMiddle && 'lsd:rounded-none lsd:bg-lsd-surface lsd:text-lsd-text-primary',
         isSelected && 'lsd:bg-lsd-primary lsd:text-lsd-primary-foreground',
         'dark:lsd:hover:lsd:text-lsd-text-primary',
-        '[&>span]:lsd:text-xs [&>span]:lsd:opacity-70',
+        '[&>span]:lsd:opacity-70 [&>span]:lsd:lsd-typography-label1',
         defaultClassNames.day,
         className
       )}

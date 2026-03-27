@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DayPicker, getDefaultClassNames } from 'react-day-picker';
+import { type CustomComponents, DayPicker, getDefaultClassNames } from 'react-day-picker';
 import { type Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { CalendarDayButton } from './CalendarDayButton';
@@ -76,10 +76,10 @@ function Calendar({
         table: 'lsd:w-full lsd:border-collapse',
         weekdays: cn('lsd:flex', defaultClassNames.weekdays),
         weekday: cn(
-          'lsd:flex-1 lsd:rounded-md lsd:text-[0.8rem] lsd:font-normal lsd:text-lsd-text-secondary lsd:select-none',
+          'lsd:flex-1 lsd:rounded-md lsd:font-normal lsd:text-lsd-text-secondary lsd:select-none lsd:lsd-typography-label1',
           defaultClassNames.weekday
         ),
-        week: cn('lsd:mt-2 lsd:flex lsd:w-full', defaultClassNames.week),
+        week: cn('lsd:mt-[var(--lsd-spacing-smaller)] lsd:flex lsd:w-full', defaultClassNames.week),
         day: cn(
           'lsd:group/day lsd:relative lsd:aspect-square lsd:h-full lsd:w-full lsd:p-0 lsd:text-center lsd:select-none [&:last-child[data-selected=true]_button]:lsd:rounded-r-md',
           props.showWeekNumber
@@ -110,11 +110,13 @@ function Calendar({
           Root: CalendarRootMemo,
           DayButton: CalendarDayButtonComponent,
           ...components,
-        } as any
+        } as CustomComponents
       }
       {...props}
     />
   );
 }
+
+Calendar.displayName = 'Calendar';
 
 export { Calendar };
