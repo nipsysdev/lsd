@@ -93,7 +93,13 @@ export default defineConfig(({ mode }) => {
           external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
           // https://rollupjs.org/configuration-options/#input
           input: Object.fromEntries(
-            globSync(['src/components/**/*.{ts,tsx}', 'src/**/*.ts', 'src/**/*.tsx', 'src/style.css', 'src/main.ts']).map(file => {
+            globSync([
+              'src/components/**/*.{ts,tsx}',
+              'src/**/*.ts',
+              'src/**/*.tsx',
+              'src/style.css',
+              'src/main.ts',
+            ]).map(file => {
               // This remove `src/` as well as the file extension from each
               // file, so e.g. src/nested/foo.js becomes nested/foo
               const entryName = path.relative(
