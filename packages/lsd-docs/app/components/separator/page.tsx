@@ -235,8 +235,8 @@ export default function MyComponent() {
             href: '/components/scroll-area',
           }}
           next={{
-            title: 'Sidebar',
-            href: '/components/sidebar',
+            title: 'Accordion',
+            href: '/components/accordion',
           }}
         />
       </PageContent>

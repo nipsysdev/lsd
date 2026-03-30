@@ -307,8 +307,8 @@ export default function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Sonner', href: '/components/sonner' }}
-          next={{ title: 'Dialog', href: '/components/dialog' }}
+          previous={{ title: 'Tabs', href: '/components/tabs' }}
+          next={{ title: 'Progress', href: '/components/progress' }}
         />
       </PageContent>
     </DocsLayout>

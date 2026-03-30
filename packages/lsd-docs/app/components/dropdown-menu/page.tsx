@@ -358,7 +358,7 @@ export default function DropdownMenuPage() {
 
         <PageNavigation
           previous={{ title: 'Command', href: '/components/command' }}
-          next={{ title: 'Menubar', href: '/components/menubar' }}
+          next={{ title: 'Navigation Menu', href: '/components/navigation-menu' }}
         />
       </PageContent>
     </DocsLayout>

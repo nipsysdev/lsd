@@ -551,8 +551,8 @@ export default function MyComponent() {
           href: '/components/sidebar',
         }}
         next={{
-          title: 'Alert Dialog',
-          href: '/components/alert-dialog',
+          title: 'Alert',
+          href: '/components/alert',
         }}
       />
     </DocsLayout>

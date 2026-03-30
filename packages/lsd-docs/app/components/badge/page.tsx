@@ -481,8 +481,8 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Table',
-            href: '/components/table',
+            title: 'Accordion',
+            href: '/components/accordion',
           }}
           next={{
             title: 'Skeleton',

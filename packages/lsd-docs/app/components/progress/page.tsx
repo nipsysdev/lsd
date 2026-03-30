@@ -413,7 +413,7 @@ export default function MyComponent() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Dialog', href: '/components/dialog' }}
+          previous={{ title: 'Alert', href: '/components/alert' }}
           next={{ title: 'Sonner', href: '/components/sonner' }}
         />
       </PageContent>

@@ -356,8 +356,8 @@ export default function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Button Group',
-          href: '/components/button-group',
+          title: 'Calendar',
+          href: '/components/calendar',
         }}
         next={{
           title: 'Input',

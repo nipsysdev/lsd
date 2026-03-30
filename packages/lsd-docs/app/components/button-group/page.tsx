@@ -208,8 +208,8 @@ export default function MyComponent() {
             href: '/components/button',
           }}
           next={{
-            title: 'Checkbox',
-            href: '/components/checkbox',
+            title: 'Calendar',
+            href: '/components/calendar',
           }}
         />
       </PageContent>

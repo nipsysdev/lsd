@@ -323,8 +323,8 @@ export default function MyComponent() {
             href: '/components/toggle',
           }}
           next={{
-            title: 'Popover',
-            href: '/components/popover',
+            title: 'Alert Dialog',
+            href: '/components/alert-dialog',
           }}
         />
       </PageContent>

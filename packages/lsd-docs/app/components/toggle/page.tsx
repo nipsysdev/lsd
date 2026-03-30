@@ -316,8 +316,8 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Skeleton',
-            href: '/components/skeleton',
+            title: 'Table',
+            href: '/components/table',
           }}
           next={{
             title: 'Toggle Group',

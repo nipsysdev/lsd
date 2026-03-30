@@ -253,8 +253,8 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Toggle Group',
-            href: '/components/toggle-group',
+            title: 'Dialog',
+            href: '/components/dialog',
           }}
           next={{
             title: 'Sheet',

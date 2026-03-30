@@ -236,8 +236,8 @@ export default function MyComponent() {
             href: '/components/badge',
           }}
           next={{
-            title: 'Toggle',
-            href: '/components/toggle',
+            title: 'Table',
+            href: '/components/table',
           }}
         />
       </PageContent>
