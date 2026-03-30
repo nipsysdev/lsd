@@ -323,10 +323,6 @@ export default function MyComponent() {
             title: 'Sheet',
             href: '/components/sheet',
           }}
-          next={{
-            title: '',
-            href: '',
-          }}
         />
       </PageContent>
     </DocsLayout>
