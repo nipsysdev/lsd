@@ -80,7 +80,6 @@ export const navItems: NavGroup[] = [
         icon: ChatIcon,
         subItems: [
           { title: 'Alert', url: '/components/alert' },
-          { title: 'Dialog', url: '/components/dialog' },
           { title: 'Progress', url: '/components/progress' },
           { title: 'Sonner', url: '/components/sonner' },
         ],
