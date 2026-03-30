@@ -321,8 +321,8 @@ export default function ColorsPage() {
 
       <PageNavigation
         previous={{
-          title: 'Installation',
-          href: '/getting-started/installation',
+          title: 'Theming',
+          href: '/getting-started/theming',
         }}
         next={{
           title: 'Typography',
