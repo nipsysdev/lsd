@@ -51,7 +51,7 @@ export default function TabsPage() {
         <PageSection title="About Tabs">
           <Typography variant="body1" className="block">
             Tabs are a set of layered sections of content, known as tab panels, that display one
-            panel at a time. They help organize content into separate views while keeping all
+            panel at a time. They help organise content into separate views while keeping all
             content accessible within the same context.
           </Typography>
         </PageSection>

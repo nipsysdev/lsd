@@ -159,7 +159,7 @@ card.setAttribute('data-theme', 'nord');`}
 
         <PageSection title="Creating a custom theme">
           <Typography variant="body1" className="mt-(--lsd-spacing-base)">
-            LSD uses CSS variables for theming. You can customize these variables to create your own
+            LSD uses CSS variables for theming. You can customise these variables to create your own
             theme. Here's an example based on the built-in Nord theme:
           </Typography>
 

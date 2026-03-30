@@ -35,7 +35,7 @@ export default function FieldPage() {
       <PageContent>
         <PageSection title="About Field">
           <Typography variant="body1" className="block">
-            Field components provide a structured way to organize form elements with consistent
+            Field components provide a structured way to organise form elements with consistent
             spacing and orientation. They include containers for grouping fields, semantic
             fieldset/legend wrappers, and utilities for labels, descriptions, and separators.
           </Typography>

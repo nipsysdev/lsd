@@ -35,7 +35,7 @@ export function Example() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>Can I customize it?</AccordionTrigger>
+          <AccordionTrigger>Can I customise it?</AccordionTrigger>
           <AccordionContent>
             Yes! You can style it with className or pass your own components.
           </AccordionContent>
@@ -65,7 +65,7 @@ export function AccordionMultipleExample() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>Can I customize it?</AccordionTrigger>
+          <AccordionTrigger>Can I customise it?</AccordionTrigger>
           <AccordionContent>
             Yes! You can style it with className or pass your own components.
           </AccordionContent>
