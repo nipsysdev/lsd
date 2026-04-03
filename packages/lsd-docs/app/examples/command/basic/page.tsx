@@ -23,7 +23,7 @@ export function CommandBasicExample() {
   useSendThemeToIframes();
 
   return (
-    <Command className="lsd:rounded-lg lsd:border lsd:border-lsd-border lsd:shadow-md">
+    <Command className="lsd:border lsd:border-lsd-border">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>

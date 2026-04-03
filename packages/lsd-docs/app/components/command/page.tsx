@@ -213,7 +213,7 @@ export default function CommandPage() {
             <CardContent>
               <IframeExample
                 ref={commandDialogIframeRef}
-                size="md"
+                size="lg"
                 src="/examples/command/dialog"
                 title="Command Dialog Example"
               />
@@ -267,7 +267,7 @@ export default function CommandPage() {
                   <strong>description:</strong> string (default: "Search for a command to run...")
                 </Typography>
                 <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>showCloseButton:</strong> boolean (default: true)
+                  <strong>showCloseButton:</strong> boolean (default: false)
                 </Typography>
                 <Typography variant="label1" className="block">
                   <strong>open:</strong> boolean (controlled)
