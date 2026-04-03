@@ -37,11 +37,11 @@ describe('CommandList', () => {
         </CommandList>
       </Command>
     );
+    const scrollArea = document.querySelector('[data-slot="scroll-area"]');
     const list = document.querySelector('[data-slot="command-list"]');
-    expect(list).toHaveClass('lsd:max-h-[300px]');
+    expect(scrollArea).toHaveClass('lsd:max-h-[300px]');
     expect(list).toHaveClass('lsd:scroll-py-(--lsd-spacing-smallest)');
     expect(list).toHaveClass('lsd:overflow-x-hidden');
-    expect(list).toHaveClass('lsd:overflow-y-auto');
   });
 
   it('merges custom className with component classes', () => {
