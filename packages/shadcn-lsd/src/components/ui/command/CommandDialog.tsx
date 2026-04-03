@@ -15,7 +15,7 @@ export function CommandDialog({
   description = 'Search for a command to run...',
   children,
   className,
-  showCloseButton = true,
+  showCloseButton = false,
   ...props
 }: React.ComponentProps<typeof Dialog> & {
   title?: string;
