@@ -15,6 +15,7 @@
     "@nanostores/react": "^1.0.0",
     "@nipsys/shadcn-lsd": "workspace:*",
     "@phosphor-icons/react": "^2.1.10",
+    "fuse.js": "^7.1.0",
     "nanostores": "^1.1.1",
     "next": "16.1.6",
     "react": "19.2.3",
