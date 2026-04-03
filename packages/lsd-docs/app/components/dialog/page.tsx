@@ -103,7 +103,7 @@ export default function DialogPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/dialog/basic" title="Dialog Basic Example" />
+              <IframeExample size="lg" src="/examples/dialog/basic" title="Dialog Basic Example" />
               <Accordion type="single" collapsible>
                 <AccordionItem value="code">
                   <AccordionTrigger>View code</AccordionTrigger>
