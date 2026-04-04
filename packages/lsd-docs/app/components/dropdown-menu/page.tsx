@@ -1,6 +1,5 @@
 'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@nipsys/shadcn-lsd';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -53,14 +52,7 @@ export default function DropdownMenuPage() {
             Here's a simple dropdown menu with basic items:
           </p>
           <IframeExample size="md" src="/examples/dropdown-menu/basic" title="Basic" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={BasicCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CodeExample code={BasicCode} />
         </PageSection>
 
         <PageSection title="Shortcuts">
@@ -68,14 +60,7 @@ export default function DropdownMenuPage() {
             Display keyboard shortcuts for menu items:
           </p>
           <IframeExample size="md" src="/examples/dropdown-menu/shortcuts" title="Shortcuts" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={ShortcutsCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CodeExample code={ShortcutsCode} />
         </PageSection>
 
         <PageSection title="Submenus">
@@ -83,14 +68,7 @@ export default function DropdownMenuPage() {
             Create nested dropdown menus for hierarchical actions:
           </p>
           <IframeExample size="md" src="/examples/dropdown-menu/submenus" title="Submenus" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={SubmenusCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CodeExample code={SubmenusCode} />
         </PageSection>
 
         <PageSection title="Checkbox Items">
@@ -102,14 +80,7 @@ export default function DropdownMenuPage() {
             src="/examples/dropdown-menu/checkbox-items"
             title="Checkbox Items"
           />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={CheckboxCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CodeExample code={CheckboxCode} />
         </PageSection>
 
         <PageSection title="Radio Group Items">
@@ -117,14 +88,7 @@ export default function DropdownMenuPage() {
             Use radio group items for exclusive selection:
           </p>
           <IframeExample size="md" src="/examples/dropdown-menu/radio-items" title="Radio Items" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={RadioCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CodeExample code={RadioCode} />
         </PageSection>
 
         <PageSection title="API Reference">

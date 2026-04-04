@@ -1,6 +1,5 @@
 'use client';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@nipsys/shadcn-lsd';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -50,14 +49,7 @@ export default function NavigationMenuPage() {
             Here&apos;s a simple navigation menu with basic items:
           </p>
           <IframeExample size="md" src="/examples/navigation-menu/basic" title="Basic" />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={BasicCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CodeExample code={BasicCode} />
         </PageSection>
 
         <PageSection title="Positioning with Collapsible">
@@ -69,14 +61,7 @@ export default function NavigationMenuPage() {
             src="/examples/navigation-menu/positioning-collapsible"
             title="Positioning with Collapsible"
           />
-          <Accordion type="single" collapsible>
-            <AccordionItem value="code">
-              <AccordionTrigger>View code</AccordionTrigger>
-              <AccordionContent>
-                <CodeExample code={PositioningCode} />
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <CodeExample code={PositioningCode} />
         </PageSection>
 
         <PageSection title="API Reference">

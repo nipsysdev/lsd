@@ -52,6 +52,7 @@ export default function AccordionPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Accordion,
   AccordionContent,
@@ -94,14 +95,7 @@ export default function MyComponent() {
                 src="/examples/accordion/single"
                 title="Accordion Single Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={AccordionSingleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={AccordionSingleCODE} />
             </CardContent>
           </Card>
         </PageSection>
