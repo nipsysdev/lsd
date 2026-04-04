@@ -1,14 +1,22 @@
 'use client';
 
-import { Button, Typography } from '@nipsys/shadcn-lsd';
-import { ClipboardIcon } from '@phosphor-icons/react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Button,
+  Typography,
+} from '@nipsys/shadcn-lsd';
+import { ClipboardIcon, CodeIcon } from '@phosphor-icons/react';
 import { toast } from 'sonner';
 
 interface CodeExampleProps {
+  useAccordion?: boolean;
   code: string;
 }
 
-export function CodeExample({ code }: CodeExampleProps) {
+export function CodeExample({ code, useAccordion = true }: CodeExampleProps) {
   const copyCode = async () => {
     try {
       await navigator.clipboard.writeText(code);
@@ -19,7 +27,7 @@ export function CodeExample({ code }: CodeExampleProps) {
     }
   };
 
-  return (
+  const codeExample = (
     <div className="flex justify-between size-full relative group">
       <Typography variant="subtitle3" className="my-auto">
         <pre>
@@ -37,5 +45,20 @@ export function CodeExample({ code }: CodeExampleProps) {
         <ClipboardIcon className="size-4" weight="duotone" />
       </Button>
     </div>
+  );
+
+  return useAccordion ? (
+    <Accordion type="single" collapsible>
+      <AccordionItem value="code">
+        <AccordionTrigger>
+          <div className="flex items-center justify-center gap-x-(--lsd-spacing-base)">
+            <CodeIcon weight="duotone" className="size-5" /> View code
+          </div>
+        </AccordionTrigger>
+        <AccordionContent>{codeExample}</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  ) : (
+    codeExample
   );
 }
