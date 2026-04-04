@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -56,6 +52,7 @@ export default function SkeletonPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Skeleton } from '@nipsys/shadcn-lsd';
 
 export default function MyComponent() {
@@ -86,14 +83,7 @@ export default function MyComponent() {
                 src="/examples/skeleton/card"
                 title="Skeleton Card Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SkeletonCardCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SkeletonCardCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -115,14 +105,7 @@ export default function MyComponent() {
                 src="/examples/skeleton/avatar"
                 title="Skeleton Avatar Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SkeletonAvatarCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SkeletonAvatarCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -144,14 +127,7 @@ export default function MyComponent() {
                 src="/examples/skeleton/list"
                 title="Skeleton List Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SkeletonListCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SkeletonListCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -173,14 +149,7 @@ export default function MyComponent() {
                 src="/examples/skeleton/sizes"
                 title="Skeleton Sizes Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SkeletonSizesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SkeletonSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>

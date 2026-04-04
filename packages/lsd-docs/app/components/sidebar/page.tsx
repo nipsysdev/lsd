@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -50,6 +46,7 @@ export default function SidebarPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Sidebar,
   SidebarContent,
@@ -153,14 +150,7 @@ export default function SidebarPage() {
                   title="Sidebar Example"
                 />
               </div>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SidebarBasicExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SidebarBasicExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>

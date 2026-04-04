@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -50,6 +46,7 @@ export default function AutocompletePage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Autocomplete } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
@@ -84,14 +81,7 @@ export default function MyComponent() {
                 src="/examples/autocomplete/basic"
                 title="Autocomplete Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BASIC_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BASIC_CODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -112,14 +102,7 @@ export default function MyComponent() {
                 src="/examples/autocomplete/variants"
                 title="Autocomplete Variants Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={VARIANTS_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={VARIANTS_CODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -140,14 +123,7 @@ export default function MyComponent() {
                 src="/examples/autocomplete/sizes"
                 title="Autocomplete Sizes Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SIZES_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SIZES_CODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -169,14 +145,7 @@ export default function MyComponent() {
                 src="/examples/autocomplete/icon"
                 title="Autocomplete with Icon"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ICON_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ICON_CODE} />
             </CardContent>
           </Card>
 
@@ -191,14 +160,7 @@ export default function MyComponent() {
                 src="/examples/autocomplete/clearable"
                 title="Clearable Autocomplete"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={CLEARABLE_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={CLEARABLE_CODE} />
             </CardContent>
           </Card>
 
@@ -213,14 +175,7 @@ export default function MyComponent() {
                 src="/examples/autocomplete/error"
                 title="Error Autocomplete"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ERROR_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ERROR_CODE} />
             </CardContent>
           </Card>
 
@@ -235,14 +190,7 @@ export default function MyComponent() {
                 src="/examples/autocomplete/disabled"
                 title="Disabled Autocomplete"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={DISABLED_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={DISABLED_CODE} />
             </CardContent>
           </Card>
         </PageSection>

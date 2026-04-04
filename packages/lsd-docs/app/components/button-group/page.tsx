@@ -1,16 +1,6 @@
 'use client';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -54,6 +44,7 @@ export default function ButtonGroupPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Button,
   ButtonGroup,
@@ -90,14 +81,7 @@ export default function MyComponent() {
                 src="/examples/button-group/horizontal"
                 title="Horizontal Orientation"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={HorizontalCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={HorizontalCode} />
             </CardContent>
           </Card>
 
@@ -113,14 +97,7 @@ export default function MyComponent() {
                 src="/examples/button-group/vertical"
                 title="Vertical Orientation"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={VerticalCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={VerticalCode} />
             </CardContent>
           </Card>
         </PageSection>
@@ -143,14 +120,7 @@ export default function MyComponent() {
                 src="/examples/button-group"
                 title="Button Group Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BUTTON_GROUP_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BUTTON_GROUP_CODE} />
             </CardContent>
           </Card>
 
@@ -166,14 +136,7 @@ export default function MyComponent() {
                 src="/examples/button-group/variants"
                 title="Variants Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={VariantsCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={VariantsCode} />
             </CardContent>
           </Card>
         </PageSection>

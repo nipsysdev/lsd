@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -45,6 +41,7 @@ export default function CheckboxPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Checkbox } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
@@ -69,14 +66,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/checkbox/basic" title="Basic Checkbox" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BASIC_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BASIC_CODE} />
             </CardContent>
           </Card>
 
@@ -93,14 +83,7 @@ export default function MyComponent() {
                 src="/examples/checkbox/controlled"
                 title="Controlled Checkbox"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={CONTROLLED_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={CONTROLLED_CODE} />
             </CardContent>
           </Card>
 
@@ -117,14 +100,7 @@ export default function MyComponent() {
                 src="/examples/checkbox/with-label"
                 title="Checkbox with Label"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={WITH_LABEL_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={WITH_LABEL_CODE} />
             </CardContent>
           </Card>
         </PageSection>

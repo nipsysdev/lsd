@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -46,6 +42,7 @@ export default function AlertPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Alert, AlertTitle, AlertDescription } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
@@ -75,14 +72,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/alert/all-variants" title="All Variants" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={AllVariantsCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={AllVariantsCode} />
             </CardContent>
           </Card>
         </PageSection>
@@ -99,14 +89,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/alert/basic" title="Basic" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BasicCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
 
@@ -117,14 +100,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/alert/with-icon" title="With Icon" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={WithIconCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={WithIconCode} />
             </CardContent>
           </Card>
         </PageSection>

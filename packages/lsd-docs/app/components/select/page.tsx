@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -75,14 +71,7 @@ export default function SelectPage() {
                 src="/examples/select/basic"
                 title="Select Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SelectBasicCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SelectBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -93,6 +82,7 @@ export default function SelectPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Select,
   SelectTrigger,
@@ -137,14 +127,7 @@ export default function MyComponent() {
                 src="/examples/select/sizes"
                 title="Select Sizes Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SelectSizesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SelectSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -167,14 +150,7 @@ export default function MyComponent() {
                 src="/examples/select/variants"
                 title="Select Variants Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SelectVariantsCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SelectVariantsCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -197,14 +173,7 @@ export default function MyComponent() {
                 src="/examples/select/basic-usage"
                 title="Select Basic Usage Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SelectBasicUsageCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SelectBasicUsageCODE} />
             </CardContent>
           </Card>
 
@@ -220,14 +189,7 @@ export default function MyComponent() {
                 src="/examples/select/grouped"
                 title="Select Grouped Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SelectGroupedCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SelectGroupedCODE} />
             </CardContent>
           </Card>
 
@@ -243,14 +205,7 @@ export default function MyComponent() {
                 src="/examples/select/with-separator"
                 title="Select With Separator Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SelectWithSeparatorCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SelectWithSeparatorCODE} />
             </CardContent>
           </Card>
 
@@ -266,14 +221,7 @@ export default function MyComponent() {
                 src="/examples/select/disabled"
                 title="Select Disabled Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SelectDisabledCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SelectDisabledCODE} />
             </CardContent>
           </Card>
 
@@ -289,14 +237,7 @@ export default function MyComponent() {
                 src="/examples/select/controlled"
                 title="Select Controlled Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SelectControlledCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SelectControlledCODE} />
             </CardContent>
           </Card>
         </PageSection>

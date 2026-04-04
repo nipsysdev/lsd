@@ -2,17 +2,7 @@
 
 'use client';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -60,6 +50,7 @@ export default function MenubarPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Menubar,
   MenubarMenu,
@@ -104,14 +95,7 @@ export default function MyComponent() {
                 src="/examples/menubar"
                 title="Menubar Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={MENUBAR_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={MENUBAR_CODE} />
             </CardContent>
           </Card>
 
@@ -127,14 +111,7 @@ export default function MyComponent() {
                 src="/examples/menubar/submenus"
                 title="Submenus Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SubmenusCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SubmenusCode} />
             </CardContent>
           </Card>
 
@@ -150,14 +127,7 @@ export default function MyComponent() {
                 src="/examples/menubar/destructive"
                 title="Destructive Items Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={DestructiveCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={DestructiveCode} />
             </CardContent>
           </Card>
 
@@ -173,14 +143,7 @@ export default function MyComponent() {
                 src="/examples/menubar/labels-separators"
                 title="Labels and Separators Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={LabelsCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={LabelsCode} />
             </CardContent>
           </Card>
 
@@ -196,14 +159,7 @@ export default function MyComponent() {
                 src="/examples/menubar/inset"
                 title="Inset Items Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InsetCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={InsetCode} />
             </CardContent>
           </Card>
 
@@ -219,14 +175,7 @@ export default function MyComponent() {
                 src="/examples/menubar/shortcuts"
                 title="Keyboard Shortcuts Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ShortcutsCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ShortcutsCode} />
             </CardContent>
           </Card>
         </PageSection>

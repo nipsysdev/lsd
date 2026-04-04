@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -45,6 +41,7 @@ export default function DialogPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Dialog,
   DialogClose,
@@ -104,14 +101,7 @@ export default function DialogPage() {
             </CardHeader>
             <CardContent>
               <IframeExample size="lg" src="/examples/dialog/basic" title="Dialog Basic Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={DialogBasicExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={DialogBasicExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>

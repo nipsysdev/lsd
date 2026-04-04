@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -50,6 +46,7 @@ export default function PopoverPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Popover, PopoverContent, PopoverTrigger } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
 
@@ -86,14 +83,7 @@ export default function MyComponent() {
                 src="/examples/popover"
                 title="Popover Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={PopoverCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={PopoverCODE} />
             </CardContent>
           </Card>
         </PageSection>

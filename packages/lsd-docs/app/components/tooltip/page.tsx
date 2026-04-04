@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -54,6 +50,7 @@ export default function TooltipPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Tooltip,
   TooltipContent,
@@ -94,14 +91,7 @@ export default function MyComponent() {
                 src="/examples/tooltip/basic"
                 title="Tooltip Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOOLTIP_BASIC_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOOLTIP_BASIC_CODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -123,14 +113,7 @@ export default function MyComponent() {
                 src="/examples/tooltip/with-icon"
                 title="Tooltip With Icon Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOOLTIP_WITH_ICON_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOOLTIP_WITH_ICON_CODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -150,14 +133,7 @@ export default function MyComponent() {
                 src="/examples/tooltip/positions"
                 title="Tooltip Positions Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOOLTIP_POSITIONS_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOOLTIP_POSITIONS_CODE} />
             </CardContent>
           </Card>
         </PageSection>

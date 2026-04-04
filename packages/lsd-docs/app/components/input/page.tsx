@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -49,6 +45,7 @@ export default function InputPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Input } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
@@ -75,14 +72,7 @@ export default function MyComponent() {
                 src="/examples/input/variants"
                 title="Input Variants Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InputVariantsCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={InputVariantsCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -99,14 +89,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="lg" src="/examples/input/sizes" title="Input Sizes Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InputSizesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={InputSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -124,14 +107,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/input/label" title="Input Label Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InputLabelCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={InputLabelCODE} />
             </CardContent>
           </Card>
 
@@ -148,14 +124,7 @@ export default function MyComponent() {
                 src="/examples/input/supporting-text"
                 title="Input Supporting Text Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InputSupportingTextCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={InputSupportingTextCODE} />
             </CardContent>
           </Card>
 
@@ -166,14 +135,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/input/error" title="Input Error Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InputErrorCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={InputErrorCODE} />
             </CardContent>
           </Card>
 
@@ -184,14 +146,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="lg" src="/examples/input/types" title="Input Types Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InputTypesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={InputTypesCODE} />
             </CardContent>
           </Card>
 
@@ -206,14 +161,7 @@ export default function MyComponent() {
                 src="/examples/input/disabled"
                 title="Input Disabled Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={InputDisabledCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={InputDisabledCODE} />
             </CardContent>
           </Card>
         </PageSection>

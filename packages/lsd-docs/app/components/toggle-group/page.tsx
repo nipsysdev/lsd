@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -54,6 +50,7 @@ export default function ToggleGroupPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { ToggleGroup, ToggleGroupItem } from '@nipsys/shadcn-lsd';
 
 export default function MyComponent() {
@@ -86,14 +83,7 @@ export default function MyComponent() {
                 src="/examples/toggle-group/single"
                 title="ToggleGroup Single Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ToggleGroupSingleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ToggleGroupSingleCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -115,14 +105,7 @@ export default function MyComponent() {
                 src="/examples/toggle-group/multiple"
                 title="ToggleGroup Multiple Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ToggleGroupMultipleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ToggleGroupMultipleCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -144,14 +127,7 @@ export default function MyComponent() {
                 src="/examples/toggle-group/sizes"
                 title="ToggleGroup Sizes Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ToggleGroupSizesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ToggleGroupSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>

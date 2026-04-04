@@ -1,16 +1,6 @@
 'use client';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -62,6 +52,7 @@ export default function ButtonPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Button } from '@nipsys/shadcn-lsd';
 
 export default function MyComponent() {
@@ -89,14 +80,7 @@ export default function MyComponent() {
                 src="/examples/button/variants"
                 title="Button Variants Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonVariantsCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ButtonVariantsCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -116,14 +100,7 @@ export default function MyComponent() {
                 src="/examples/button/sizes"
                 title="Button Sizes Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonSizesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ButtonSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -146,14 +123,7 @@ export default function MyComponent() {
                 src="/examples/button/icons"
                 title="Button Icons Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonIconsCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ButtonIconsCODE} />
             </CardContent>
           </Card>
 
@@ -169,14 +139,7 @@ export default function MyComponent() {
                 src="/examples/button/loading"
                 title="Loading State Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonLoadingCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ButtonLoadingCODE} />
             </CardContent>
           </Card>
 
@@ -192,14 +155,7 @@ export default function MyComponent() {
                 src="/examples/button/full-width"
                 title="Full Width Button"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonFullWidthCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ButtonFullWidthCODE} />
             </CardContent>
           </Card>
 
@@ -215,14 +171,7 @@ export default function MyComponent() {
                 src="/examples/button/disabled"
                 title="Disabled State"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonDisabledCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ButtonDisabledCODE} />
             </CardContent>
           </Card>
 
@@ -238,14 +187,7 @@ export default function MyComponent() {
                 src="/examples/button/as-child"
                 title="Link Button"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ButtonAsChildCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ButtonAsChildCODE} />
             </CardContent>
           </Card>
         </PageSection>

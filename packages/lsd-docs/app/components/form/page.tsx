@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -54,6 +50,7 @@ export default function FormPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Form,
   FormControl,
@@ -245,14 +242,7 @@ export default function MyForm() {
                 src="/examples/form/basic"
                 title="Form Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={require('../../examples/form/basic/page').CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={require('../../examples/form/basic/page').CODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -274,14 +264,7 @@ export default function MyForm() {
                 src="/examples/form/validation"
                 title="Form Validation Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={require('../../examples/form/validation/page').CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={require('../../examples/form/validation/page').CODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -305,16 +288,7 @@ export default function MyForm() {
                 src="/examples/form/with-other-components"
                 title="Form with Other Components Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample
-                      code={require('../../examples/form/with-other-components/page').CODE}
-                    />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={require('../../examples/form/with-other-components/page').CODE} />
             </CardContent>
           </Card>
         </PageSection>

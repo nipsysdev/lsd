@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -58,6 +54,7 @@ export default function TablePage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Table,
   TableBody,
@@ -120,14 +117,7 @@ export default function TablePage() {
                 src="/examples/table/basic"
                 title="Table Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TableBasicExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TableBasicExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -151,14 +141,7 @@ export default function TablePage() {
                 src="/examples/table/striped"
                 title="Table Striped Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TableStripedExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TableStripedExampleCODE} />
             </CardContent>
           </Card>
 
@@ -176,14 +159,7 @@ export default function TablePage() {
                 src="/examples/table/with-footer"
                 title="Table With Footer Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TableWithFooterExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TableWithFooterExampleCODE} />
             </CardContent>
           </Card>
 
@@ -201,14 +177,7 @@ export default function TablePage() {
                 src="/examples/table/with-caption"
                 title="Table With Caption Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TableWithCaptionExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TableWithCaptionExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>

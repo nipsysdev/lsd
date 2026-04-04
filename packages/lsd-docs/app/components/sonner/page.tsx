@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -70,6 +66,7 @@ export default function SonnerPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Toaster } from '@nipsys/shadcn-lsd'
 import { toast } from 'sonner'
 
@@ -106,14 +103,7 @@ export default function MyComponent() {
                 src="/examples/sonner/basic"
                 title="Basic Toast Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_BASIC_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_BASIC_CODE} />
             </CardContent>
           </Card>
 
@@ -131,14 +121,7 @@ export default function MyComponent() {
                 src="/examples/sonner/custom"
                 title="Custom Toast Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_CUSTOM_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_CUSTOM_CODE} />
             </CardContent>
           </Card>
 
@@ -154,14 +137,7 @@ export default function MyComponent() {
                 src="/examples/sonner/position"
                 title="Toast Position Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_POSITION_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_POSITION_CODE} />
             </CardContent>
           </Card>
 
@@ -177,14 +153,7 @@ export default function MyComponent() {
                 src="/examples/sonner/toast-types"
                 title="Toast Types Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_TYPES_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_TYPES_CODE} />
             </CardContent>
           </Card>
 
@@ -200,14 +169,7 @@ export default function MyComponent() {
                 src="/examples/sonner/duration"
                 title="Toast Duration Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_DURATION_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_DURATION_CODE} />
             </CardContent>
           </Card>
 
@@ -223,14 +185,7 @@ export default function MyComponent() {
                 src="/examples/sonner/positions"
                 title="Toast Positions Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_POSITIONS_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_POSITIONS_CODE} />
             </CardContent>
           </Card>
 
@@ -246,14 +201,7 @@ export default function MyComponent() {
                 src="/examples/sonner/actions"
                 title="Toast Actions Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_ACTIONS_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_ACTIONS_CODE} />
             </CardContent>
           </Card>
 
@@ -269,14 +217,7 @@ export default function MyComponent() {
                 src="/examples/sonner/persistent"
                 title="Toast Persistent Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_PERSISTENT_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_PERSISTENT_CODE} />
             </CardContent>
           </Card>
 
@@ -292,14 +233,7 @@ export default function MyComponent() {
                 src="/examples/sonner/promise"
                 title="Toast Promise Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_PROMISE_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_PROMISE_CODE} />
             </CardContent>
           </Card>
 
@@ -315,14 +249,7 @@ export default function MyComponent() {
                 src="/examples/sonner/rich"
                 title="Toast Rich Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TOAST_RICH_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TOAST_RICH_CODE} />
             </CardContent>
           </Card>
         </PageSection>

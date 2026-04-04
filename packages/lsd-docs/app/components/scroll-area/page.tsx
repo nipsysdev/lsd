@@ -1,16 +1,6 @@
 'use client';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -53,6 +43,7 @@ export default function ScrollAreaPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { ScrollArea, ScrollBar } from '@nipsys/shadcn-lsd';
 
 export default function MyComponent() {
@@ -85,14 +76,7 @@ export default function MyComponent() {
                 src="/examples/scroll-area/basic"
                 title="Basic ScrollArea"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BasicCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
         </PageSection>
@@ -112,14 +96,7 @@ export default function MyComponent() {
                 src="/examples/scroll-area/horizontal"
                 title="Horizontal ScrollArea"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={HorizontalCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={HorizontalCode} />
             </CardContent>
           </Card>
         </PageSection>
@@ -139,14 +116,7 @@ export default function MyComponent() {
                 src="/examples/scroll-area/both"
                 title="Both Orientations"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BothCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BothCode} />
             </CardContent>
           </Card>
         </PageSection>

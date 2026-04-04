@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -51,6 +47,7 @@ export default function ProgressPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Progress } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
@@ -81,14 +78,7 @@ export default function MyComponent() {
                 src="/examples/progress/basic"
                 title="Progress Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ProgressBasicCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ProgressBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -112,14 +102,7 @@ export default function MyComponent() {
                 src="/examples/progress/indeterminate"
                 title="Indeterminate Progress"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={INDETERMINATE_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={INDETERMINATE_CODE} />
             </CardContent>
           </Card>
 
@@ -130,14 +113,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/progress/paused" title="Paused Progress" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={PAUSED_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={PAUSED_CODE} />
             </CardContent>
           </Card>
 
@@ -148,14 +124,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/progress/colors" title="Progress Colors" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={COLORS_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={COLORS_CODE} />
             </CardContent>
           </Card>
 
@@ -166,14 +135,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/progress/sizes" title="Progress Sizes" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SIZES_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SIZES_CODE} />
             </CardContent>
           </Card>
         </PageSection>

@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -45,6 +41,7 @@ export default function AlertDialogPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   AlertDialog,
   AlertDialogAction,
@@ -112,14 +109,7 @@ export default function AlertDialogPage() {
                 src="/examples/alert-dialog/basic"
                 title="Alert Dialog Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={AlertDialogBasicExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={AlertDialogBasicExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>

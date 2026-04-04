@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -62,6 +58,7 @@ export default function TabsPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Tabs,
   TabsList,
@@ -103,14 +100,7 @@ export default function MyComponent() {
                 src="/examples/tabs/sizes"
                 title="Tabs Sizes Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TABS_SIZES_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TABS_SIZES_CODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -133,14 +123,7 @@ export default function MyComponent() {
                 src="/examples/tabs/basic"
                 title="Tabs Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TABS_BASIC_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TABS_BASIC_CODE} />
             </CardContent>
           </Card>
 
@@ -156,14 +139,7 @@ export default function MyComponent() {
                 src="/examples/tabs/controlled"
                 title="Tabs Controlled Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TABS_CONTROLLED_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TABS_CONTROLLED_CODE} />
             </CardContent>
           </Card>
 
@@ -179,14 +155,7 @@ export default function MyComponent() {
                 src="/examples/tabs/full-width"
                 title="Tabs Full Width Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TABS_FULL_WIDTH_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TABS_FULL_WIDTH_CODE} />
             </CardContent>
           </Card>
 
@@ -202,14 +171,7 @@ export default function MyComponent() {
                 src="/examples/tabs/bordered"
                 title="Tabs Bordered Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TABS_BORDERED_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TABS_BORDERED_CODE} />
             </CardContent>
           </Card>
 
@@ -225,14 +187,7 @@ export default function MyComponent() {
                 src="/examples/tabs/with-icons"
                 title="Tabs With Icons Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TABS_WITH_ICONS_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TABS_WITH_ICONS_CODE} />
             </CardContent>
           </Card>
 
@@ -248,14 +203,7 @@ export default function MyComponent() {
                 src="/examples/tabs/disabled"
                 title="Tabs Disabled Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TABS_DISABLED_CODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TABS_DISABLED_CODE} />
             </CardContent>
           </Card>
         </PageSection>

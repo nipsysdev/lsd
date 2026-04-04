@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -55,6 +51,7 @@ export default function LabelPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Label, Input } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
@@ -87,14 +84,7 @@ export default function MyComponent() {
                 src="/examples/label/basic"
                 title="Label Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={LabelBasicExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={LabelBasicExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -116,14 +106,7 @@ export default function MyComponent() {
                 src="/examples/label/variants"
                 title="Label Variants Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={LabelVariantsExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={LabelVariantsExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -145,14 +128,7 @@ export default function MyComponent() {
                 src="/examples/label/sizes"
                 title="Label Sizes Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={LabelSizesExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={LabelSizesExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>

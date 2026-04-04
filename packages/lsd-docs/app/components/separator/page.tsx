@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -53,6 +49,7 @@ export default function SeparatorPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Separator } from '@nipsys/shadcn-lsd';
 
 export default function MyComponent() {
@@ -86,14 +83,7 @@ export default function MyComponent() {
                 src="/examples/separator/horizontal"
                 title="Horizontal Separator"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={HorizontalCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={HorizontalCode} />
             </CardContent>
           </Card>
         </PageSection>
@@ -115,14 +105,7 @@ export default function MyComponent() {
                 src="/examples/separator/vertical"
                 title="Vertical Separator"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={VerticalCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={VerticalCode} />
             </CardContent>
           </Card>
         </PageSection>
@@ -142,14 +125,7 @@ export default function MyComponent() {
                 src="/examples/separator/with-text"
                 title="Separator with Text"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={WithTextCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={WithTextCode} />
             </CardContent>
           </Card>
         </PageSection>

@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -54,6 +50,7 @@ export default function SliderPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Slider } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
@@ -76,14 +73,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/slider/basic" title="Basic" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BasicCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
 
@@ -94,14 +84,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/slider/range" title="Range" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={RangeCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={RangeCode} />
             </CardContent>
           </Card>
 
@@ -114,14 +97,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/slider/multiple" title="Multiple" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={MultipleCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={MultipleCode} />
             </CardContent>
           </Card>
 
@@ -132,14 +108,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/slider/vertical" title="Vertical" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={VerticalCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={VerticalCode} />
             </CardContent>
           </Card>
         </PageSection>
@@ -156,14 +125,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/slider/basic" title="Slider Size" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BasicCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
         </PageSection>
@@ -182,14 +144,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/slider/controlled" title="Controlled" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ControlledCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ControlledCode} />
             </CardContent>
           </Card>
 
@@ -200,14 +155,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample size="md" src="/examples/slider/disabled" title="Disabled" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={DisabledCode} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={DisabledCode} />
             </CardContent>
           </Card>
         </PageSection>

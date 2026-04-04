@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -56,6 +52,7 @@ export default function CommandPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import {
   Command,
   CommandDialog,
@@ -124,14 +121,7 @@ export default function CommandPage() {
                 src="/examples/command/basic"
                 title="Command Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={CommandBasicExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={CommandBasicExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -155,14 +145,7 @@ export default function CommandPage() {
                 src="/examples/command/groups"
                 title="Command Groups Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={CommandGroupsExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={CommandGroupsExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -186,14 +169,7 @@ export default function CommandPage() {
                 src="/examples/command/shortcuts"
                 title="Command Shortcuts Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={CommandShortcutsExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={CommandShortcutsExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -217,14 +193,7 @@ export default function CommandPage() {
                 src="/examples/command/dialog"
                 title="Command Dialog Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={CommandDialogExampleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={CommandDialogExampleCODE} />
             </CardContent>
           </Card>
         </PageSection>

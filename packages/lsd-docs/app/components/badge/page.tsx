@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -50,6 +46,7 @@ export default function BadgePage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Badge } from '@nipsys/shadcn-lsd'
 
 export default function MyComponent() {
@@ -72,14 +69,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample src="/examples/badge/basic" size="md" title="Badge Basic Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BadgeBasicCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BadgeBasicCODE} />
             </CardContent>
           </Card>
 
@@ -96,14 +86,7 @@ export default function MyComponent() {
                 size="md"
                 title="Badge Variants Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BadgeVariantsCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BadgeVariantsCODE} />
             </CardContent>
           </Card>
 
@@ -114,14 +97,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample src="/examples/badge/dots" size="md" title="Badge Dots Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BadgeDotsCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BadgeDotsCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -138,14 +114,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample src="/examples/badge/sizes" size="md" title="Badge Sizes Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BadgeSizesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BadgeSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -166,14 +135,7 @@ export default function MyComponent() {
                 size="md"
                 title="Badge Interactive Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BadgeInteractiveCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BadgeInteractiveCODE} />
             </CardContent>
           </Card>
 
@@ -188,14 +150,7 @@ export default function MyComponent() {
                 size="md"
                 title="Badge Dismissible Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BadgeDismissibleCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BadgeDismissibleCODE} />
             </CardContent>
           </Card>
 
@@ -210,14 +165,7 @@ export default function MyComponent() {
                 size="md"
                 title="Badge Features Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BadgeFeaturesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BadgeFeaturesCODE} />
             </CardContent>
           </Card>
 
@@ -228,14 +176,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample src="/examples/badge/dots" size="md" title="Badge Dots Example" />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={BadgeDotsCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={BadgeDotsCODE} />
             </CardContent>
           </Card>
         </PageSection>

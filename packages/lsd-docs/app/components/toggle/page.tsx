@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -55,6 +51,7 @@ export default function TogglePage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Toggle } from '@nipsys/shadcn-lsd';
 
 export default function MyComponent() {
@@ -82,14 +79,7 @@ export default function MyComponent() {
                 src="/examples/toggle/basic"
                 title="Toggle Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ToggleBasicCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ToggleBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -109,14 +99,7 @@ export default function MyComponent() {
                 src="/examples/toggle/pressed"
                 title="Toggle Pressed Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={TogglePressedCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={TogglePressedCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -138,14 +121,7 @@ export default function MyComponent() {
                 src="/examples/toggle/with-text"
                 title="Toggle With Text Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ToggleWithTextCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ToggleWithTextCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -167,14 +143,7 @@ export default function MyComponent() {
                 src="/examples/toggle/sizes"
                 title="Toggle Sizes Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={ToggleSizesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={ToggleSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>

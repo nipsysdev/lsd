@@ -1,16 +1,6 @@
 'use client';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -53,6 +43,7 @@ export default function SwitchPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Switch } from '@nipsys/shadcn-lsd';
 
 export default function MyComponent() {
@@ -78,14 +69,7 @@ export default function MyComponent() {
                 src="/examples/switch/sizes"
                 title="Switch Sizes"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SwitchSizesCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SwitchSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -109,14 +93,7 @@ export default function MyComponent() {
                 src="/examples/switch/basic"
                 title="Switch Basic Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SwitchBasicCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SwitchBasicCODE} />
             </CardContent>
           </Card>
 
@@ -132,14 +109,7 @@ export default function MyComponent() {
                 src="/examples/switch/controlled"
                 title="Switch Controlled Example"
               />
-              <Accordion type="single" collapsible>
-                <AccordionItem value="code">
-                  <AccordionTrigger>View code</AccordionTrigger>
-                  <AccordionContent>
-                    <CodeExample code={SwitchControlledCODE} />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <CodeExample code={SwitchControlledCODE} />
             </CardContent>
           </Card>
         </PageSection>
