@@ -54,6 +54,7 @@ export const navItems: NavGroup[] = [
           { title: 'Calendar', url: '/components/calendar' },
           { title: 'Checkbox', url: '/components/checkbox' },
           { title: 'Input', url: '/components/input' },
+          { title: 'Input Group', url: '/components/input-group' },
           { title: 'Label', url: '/components/label' },
           { title: 'Field', url: '/components/field' },
           { title: 'Form', url: '/components/form' },
@@ -61,6 +62,7 @@ export const navItems: NavGroup[] = [
           { title: 'Slider', url: '/components/slider' },
           { title: 'Select', url: '/components/select' },
           { title: 'Switch', url: '/components/switch' },
+          { title: 'Textarea', url: '/components/textarea' },
         ],
       },
       {

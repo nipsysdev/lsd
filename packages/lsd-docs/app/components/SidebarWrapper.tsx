@@ -36,7 +36,7 @@ export default function SidebarWrapper({ currentPath, children }: SidebarWrapper
               <SidebarMenuButton size="lg" asChild>
                 <Link href="/">
                   <div className="flex aspect-square size-8 items-center justify-center">
-                    <PillIcon className="size-8" weight="duotone" />
+                    <PillIcon className="size-6" weight="duotone" />
                   </div>
                   <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
                     <span className="font-semibold">@nipsys/lsd</span>
