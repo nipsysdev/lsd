@@ -42,7 +42,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             'lsd:flex lsd:items-center lsd:justify-between',
             variant === 'outlined'
               ? 'lsd:border lsd:border-lsd-border'
-              : 'lsd:border lsd:border-transparent lsd:border-b-lsd-border',
+              : variant !== 'ghost' && 'lsd:border lsd:border-transparent lsd:border-b-lsd-border',
             error && !disabled && 'lsd:border-lsd-destructive',
             disabled && 'lsd:opacity-34 lsd:cursor-not-allowed'
           )}
