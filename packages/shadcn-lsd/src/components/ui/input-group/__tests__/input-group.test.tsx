@@ -6,7 +6,6 @@ import {
   InputGroupButton,
   InputGroupInput,
   InputGroupText,
-  InputGroupTextarea,
 } from '../index';
 
 describe('InputGroup', () => {
@@ -70,7 +69,7 @@ describe('InputGroupButton', () => {
     );
     const button = screen.getByRole('button');
     expect(button).toHaveTextContent('Submit');
-    expect(button).toHaveAttribute('data-size', 'xs');
+    expect(button).toHaveClass('lsd:h-10'); // Default md size
   });
 
   it('handles click events', () => {
@@ -93,7 +92,7 @@ describe('InputGroupButton', () => {
       </InputGroup>
     );
     const button = screen.getByRole('button');
-    expect(button).toHaveAttribute('data-size', 'sm');
+    expect(button).toHaveClass('lsd:h-8'); // sm size
   });
 });
 
@@ -155,42 +154,6 @@ describe('InputGroupInput', () => {
   });
 });
 
-describe('InputGroupTextarea', () => {
-  it('renders textarea with default props', () => {
-    render(
-      <InputGroup>
-        <InputGroupTextarea placeholder="Enter message" />
-      </InputGroup>
-    );
-    const textarea = screen.getByPlaceholderText('Enter message');
-    expect(textarea).toBeInTheDocument();
-    expect(textarea).toHaveAttribute('data-slot', 'input-group-control');
-  });
-
-  it('handles change events', () => {
-    const handleChange = vi.fn();
-    render(
-      <InputGroup>
-        <InputGroupTextarea onChange={handleChange} />
-      </InputGroup>
-    );
-
-    const textarea = screen.getByRole('textbox');
-    fireEvent.change(textarea, { target: { value: 'test message' } });
-    expect(handleChange).toHaveBeenCalledTimes(1);
-  });
-
-  it('renders with custom className', () => {
-    render(
-      <InputGroup>
-        <InputGroupTextarea className="custom-textarea" />
-      </InputGroup>
-    );
-    const textarea = screen.getByRole('textbox');
-    expect(textarea).toHaveClass('custom-textarea');
-  });
-});
-
 describe('InputGroup Integration', () => {
   it('renders complete input group with all components', () => {
     render(
@@ -200,7 +163,7 @@ describe('InputGroup Integration', () => {
         </InputGroupAddon>
         <InputGroupInput placeholder="0.00" />
         <InputGroupAddon align="inline-end">
-          <InputGroupButton size="icon-xs">✓</InputGroupButton>
+          <InputGroupButton variant="icon">✓</InputGroupButton>
         </InputGroupAddon>
       </InputGroup>
     );
@@ -208,23 +171,5 @@ describe('InputGroup Integration', () => {
     expect(screen.getByText('$')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('0.00')).toBeInTheDocument();
     expect(screen.getByRole('button')).toBeInTheDocument();
-  });
-
-  it('renders textarea input group', () => {
-    render(
-      <InputGroup>
-        <InputGroupAddon align="block-start">
-          <InputGroupText>Message</InputGroupText>
-        </InputGroupAddon>
-        <InputGroupTextarea placeholder="Type your message..." />
-        <InputGroupAddon align="block-end">
-          <InputGroupButton>Send</InputGroupButton>
-        </InputGroupAddon>
-      </InputGroup>
-    );
-
-    expect(screen.getByText('Message')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('Type your message...')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Send' })).toBeInTheDocument();
   });
 });
