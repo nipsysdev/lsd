@@ -43,16 +43,16 @@ export default function InstallationPage() {
               <TabsTrigger value="bun">bun</TabsTrigger>
             </TabsList>
             <TabsContent value="npm" className="p-(--lsd-spacing-large)">
-              <CodeExample code="npm add @nipsys/shadcn-lsd" />
+              <CodeExample useAccordion={false} code="npm add @nipsys/shadcn-lsd" />
             </TabsContent>
             <TabsContent value="pnpm" className="p-(--lsd-spacing-large)">
-              <CodeExample code="pnpm add @nipsys/shadcn-lsd" />
+              <CodeExample useAccordion={false} code="pnpm add @nipsys/shadcn-lsd" />
             </TabsContent>
             <TabsContent value="yarn" className="p-(--lsd-spacing-large)">
-              <CodeExample code="yarn add @nipsys/shadcn-lsd" />
+              <CodeExample useAccordion={false} code="yarn add @nipsys/shadcn-lsd" />
             </TabsContent>
             <TabsContent value="bun" className="p-(--lsd-spacing-large)">
-              <CodeExample code="bun add @nipsys/shadcn-lsd" />
+              <CodeExample useAccordion={false} code="bun add @nipsys/shadcn-lsd" />
             </TabsContent>
           </Tabs>
         </PageSection>
@@ -66,10 +66,10 @@ export default function InstallationPage() {
               <TabsTrigger value="js">in JS/TS</TabsTrigger>
             </TabsList>
             <TabsContent value="css">
-              <CodeExample code={`@import "@nipsys/shadcn-lsd/css";`} />
+              <CodeExample useAccordion={false} code={`@import "@nipsys/shadcn-lsd/css";`} />
             </TabsContent>
             <TabsContent value="js">
-              <CodeExample code={`import '@nipsys/shadcn-lsd/css';`} />
+              <CodeExample useAccordion={false} code={`import '@nipsys/shadcn-lsd/css';`} />
             </TabsContent>
           </Tabs>
         </PageSection>
@@ -82,6 +82,7 @@ export default function InstallationPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Button } from '@nipsys/shadcn-lsd'
 
 export default function Home() {

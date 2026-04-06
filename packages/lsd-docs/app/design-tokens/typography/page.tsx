@@ -1,10 +1,6 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   Card,
   CardContent,
   CardDescription,
@@ -86,6 +82,7 @@ export default function TypographyPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`<!-- Set font family on HTML element -->
 <html class="font-serif">
   <body>
@@ -104,6 +101,7 @@ export default function TypographyPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`<!-- Parent element with serif font -->
 <div class="font-serif">
   <!-- Child elements inherit the parent's font -->
@@ -140,16 +138,7 @@ export default function TypographyPage() {
                 <Typography variant="display1" className="mb-(--lsd-spacing-small)">
                   Display Text
                 </Typography>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="code">
-                    <AccordionTrigger>View code</AccordionTrigger>
-                    <AccordionContent>
-                      <CodeExample
-                        code={`<Typography variant="display1">Display Text</Typography>`}
-                      />
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                <CodeExample code={`<Typography variant="display1">Display Text</Typography>`} />
               </CardContent>
             </Card>
 
@@ -162,14 +151,7 @@ export default function TypographyPage() {
                 <Typography variant="h1" className="mb-(--lsd-spacing-small)">
                   Heading 1
                 </Typography>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="code">
-                    <AccordionTrigger>View code</AccordionTrigger>
-                    <AccordionContent>
-                      <CodeExample code={`<Typography variant="h1">Heading 1</Typography>`} />
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                <CodeExample code={`<Typography variant="h1">Heading 1</Typography>`} />
               </CardContent>
             </Card>
 
@@ -182,14 +164,7 @@ export default function TypographyPage() {
                 <Typography variant="h2" className="mb-(--lsd-spacing-small)">
                   Heading 2
                 </Typography>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="code">
-                    <AccordionTrigger>View code</AccordionTrigger>
-                    <AccordionContent>
-                      <CodeExample code={`<Typography variant="h2">Heading 2</Typography>`} />
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                <CodeExample code={`<Typography variant="h2">Heading 2</Typography>`} />
               </CardContent>
             </Card>
 
@@ -202,14 +177,7 @@ export default function TypographyPage() {
                 <Typography variant="h3" className="mb-(--lsd-spacing-small)">
                   Heading 3
                 </Typography>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="code">
-                    <AccordionTrigger>View code</AccordionTrigger>
-                    <AccordionContent>
-                      <CodeExample code={`<Typography variant="h3">Heading 3</Typography>`} />
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                <CodeExample code={`<Typography variant="h3">Heading 3</Typography>`} />
               </CardContent>
             </Card>
 
@@ -222,14 +190,7 @@ export default function TypographyPage() {
                 <Typography variant="h4" className="mb-(--lsd-spacing-small)">
                   Heading 4
                 </Typography>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="code">
-                    <AccordionTrigger>View code</AccordionTrigger>
-                    <AccordionContent>
-                      <CodeExample code={`<Typography variant="h4">Heading 4</Typography>`} />
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                <CodeExample code={`<Typography variant="h4">Heading 4</Typography>`} />
               </CardContent>
             </Card>
 
@@ -243,14 +204,7 @@ export default function TypographyPage() {
                   Body text is used for most content. It provides excellent readability and is the
                   default choice for paragraphs and longer text blocks.
                 </Typography>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="code">
-                    <AccordionTrigger>View code</AccordionTrigger>
-                    <AccordionContent>
-                      <CodeExample code={`<Typography variant="body1">Body text</Typography>`} />
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                <CodeExample code={`<Typography variant="body1">Body text</Typography>`} />
               </CardContent>
             </Card>
 
@@ -263,14 +217,7 @@ export default function TypographyPage() {
                 <Typography variant="label1" className="mb-(--lsd-spacing-small)">
                   Label text is used for secondary information, captions, and labels.
                 </Typography>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="code">
-                    <AccordionTrigger>View code</AccordionTrigger>
-                    <AccordionContent>
-                      <CodeExample code={`<Typography variant="label1">Label text</Typography>`} />
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                <CodeExample code={`<Typography variant="label1">Label text</Typography>`} />
               </CardContent>
             </Card>
           </div>
@@ -285,6 +232,7 @@ export default function TypographyPage() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`import { Typography } from '@nipsys/shadcn-lsd';
 
 function MyComponent() {

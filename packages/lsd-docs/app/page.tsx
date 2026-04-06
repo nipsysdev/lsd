@@ -6,18 +6,24 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className="container mx-auto px-(--lsd-spacing-small) py-(--lsd-spacing-larger) mt-(--lsd-spacing-larger) max-w-5xl">
-      <div className="flex flex-col items-center text-center pb-(--lsd-spacing-largest)">
+      <div className="flex flex-col pb-(--lsd-spacing-largest)">
         <Typography variant="h1" className="mb-(--lsd-spacing-largest)">
           @nipsys/lsd
         </Typography>
 
+        <Typography variant="h3" className="mb-(--lsd-spacing-largest) max-w-2xl">
+          Substance over Spectacle.
+        </Typography>
+
         <Typography variant="h5" className="mb-(--lsd-spacing-largest) max-w-2xl">
-          Components built for clarity, accessibility, and real‑world use.
+          Built on Radix UI. Styled with Tailwind CSS 4.
+          <br />
+          Three themes, light and dark modes, fully extensible
         </Typography>
 
         <div className="flex gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
           <Button asChild>
-            <Link href="/getting-started/installation">Start Building</Link>
+            <Link href="/getting-started/installation">Get Started</Link>
           </Button>
           <Button asChild variant="outlined">
             <Link href="/components/button">Explore Components</Link>

@@ -88,6 +88,7 @@ export default function ThemingPage() {
             <Card className="mt-(--lsd-spacing-base)">
               <CardContent>
                 <CodeExample
+                  useAccordion={false}
                   code={`<!-- Dark mode with teal theme -->
 <html class="dark" data-theme="teal">
   <body>
@@ -106,6 +107,7 @@ export default function ThemingPage() {
             <Card className="mt-(--lsd-spacing-base)">
               <CardContent>
                 <CodeExample
+                  useAccordion={false}
                   code={`<!-- Parent element with dark mode and teal theme -->
 <div class="dark" data-theme="teal">
   <!-- Child elements inherit the parent's theme -->
@@ -135,6 +137,7 @@ export default function ThemingPage() {
             <Card className="mt-(--lsd-spacing-base)">
               <CardContent>
                 <CodeExample
+                  useAccordion={false}
                   code={`// Toggle between light and dark mode
 document.documentElement.classList.toggle('dark');
 
@@ -166,6 +169,7 @@ card.setAttribute('data-theme', 'nord');`}
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
+                useAccordion={false}
                 code={`/* Light mode */
 [data-theme="nord"] {
   --lsd-primary: #5e81ac;

@@ -116,6 +116,7 @@ export default function SpacingPage() {
               </CardHeader>
               <CardContent>
                 <CodeExample
+                  useAccordion={false}
                   code={`/* Using CSS variables */
 .my-element {
   padding: var(--lsd-spacing-base);
@@ -134,6 +135,7 @@ export default function SpacingPage() {
               </CardHeader>
               <CardContent>
                 <CodeExample
+                  useAccordion={false}
                   code={`/* Using CSS variables */
 .my-element {
   margin: var(--lsd-spacing-large);
@@ -152,6 +154,7 @@ export default function SpacingPage() {
               </CardHeader>
               <CardContent>
                 <CodeExample
+                  useAccordion={false}
                   code={`/* Using CSS variables */
 .my-container {
   gap: var(--lsd-spacing-base);
