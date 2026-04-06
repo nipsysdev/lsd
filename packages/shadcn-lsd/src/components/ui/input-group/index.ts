@@ -1,9 +1,8 @@
 export { InputGroup } from './InputGroup';
 export { InputGroupAddon, inputGroupAddonVariants } from './InputGroupAddon';
-export { InputGroupButton, inputGroupButtonVariants } from './InputGroupButton';
+export { InputGroupButton } from './InputGroupButton';
 export { InputGroupInput } from './InputGroupInput';
 export { InputGroupText } from './InputGroupText';
-export { InputGroupTextarea } from './InputGroupTextarea';
 
 export type {
   InputGroupAddonAlign,
@@ -12,6 +11,6 @@ export type {
   InputGroupButtonSize,
   InputGroupInputProps,
   InputGroupProps,
-  InputGroupTextareaProps,
+  InputGroupSize,
   InputGroupTextProps,
 } from './types';
