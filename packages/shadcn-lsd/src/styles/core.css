@@ -215,10 +215,10 @@
       --lsd-font-family: monospace;
     }
   }
-}
 
-html {
-  font-family: var(--lsd-font-family);
+  html {
+    font-family: var(--lsd-font-family);
+  }
 }
 
 [data-radix-scroll-area-viewport] > div {
