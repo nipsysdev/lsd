@@ -20,7 +20,7 @@ const ToggleGroupItem = React.forwardRef<
         toggleVariants({
           size: context.size || size,
         }),
-        'lsd:min-w-0 lsd:flex-1 lsd:shrink-0 lsd:rounded-none lsd:shadow-none focus:lsd:z-10 focus-visible:lsd:z-10 lsd:border-l-0 lsd:first:border-l lsd:cursor-pointer lsd:disabled:cursor-not-allowed',
+        'lsd:min-w-fit lsd:flex-1 lsd:shrink-0 lsd:rounded-none lsd:shadow-none focus:lsd:z-10 focus-visible:lsd:z-10 lsd:border-l-0 lsd:first:border-l lsd:cursor-pointer lsd:disabled:cursor-not-allowed',
         className
       )}
       {...props}

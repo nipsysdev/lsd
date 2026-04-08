@@ -19,7 +19,7 @@ describe('ToggleGroupItem', () => {
       </ToggleGroup>
     );
     const item = screen.getByRole('radio', { name: 'A' });
-    expect(item).toHaveClass('lsd:min-w-0');
+    expect(item).toHaveClass('lsd:min-w-fit');
     expect(item).toHaveClass('lsd:flex-1');
     expect(item).toHaveClass('lsd:shrink-0');
     expect(item).toHaveClass('lsd:rounded-none');
