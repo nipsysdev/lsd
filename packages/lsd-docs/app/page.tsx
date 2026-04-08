@@ -12,6 +12,7 @@ import {
   ToggleGroupItem,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { ArrowSquareOutIcon, HeartIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { useState } from 'react';
 import SocialUIPreview from './previews/social-ui';
@@ -65,9 +66,10 @@ export default function Home() {
         clarity, accessibility, and resilience. The message matters more than the medium.🙷
       </Typography>
       <div>
-        <Button asChild variant="ghost" className="p-0! h-fit!">
+        <Button asChild variant="link" className="p-0! h-fit!">
           <Link href="https://logos.co" target="_blank" rel="noopener noreferrer">
             — Learn more about the philosophy at logos.co
+            <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
           </Link>
         </Button>
       </div>
@@ -94,7 +96,39 @@ export default function Home() {
 
       <Separator className="my-10" />
 
-      <Typography variant="h5">Lineage</Typography>
+      <div className="grid grid-cols-2 grid-rows-2">
+        <Button variant="link" className="w-fit" asChild>
+          <Link href="https://guide.logos.co/" target="_blank" rel="noopener noreferrer">
+            Logos Brand Guidelines
+            <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
+          </Link>
+        </Button>
+
+        <Typography className="text-right">MIT License</Typography>
+
+        <Button variant="link" className="w-fit" asChild>
+          <Link
+            href="https://guide.logos.co/lsd/overview"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Original LSD Overview
+            <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
+          </Link>
+        </Button>
+
+        <Typography className="text-right">
+          Created with <HeartIcon weight="duotone" className="size-5 inline" /> by{' '}
+          <Link
+            href="https://nipsys.eth.limo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Xav
+          </Link>
+        </Typography>
+      </div>
     </div>
   );
 }
