@@ -1,27 +1,53 @@
 'use client';
 
-import { Button, Separator, Typography } from '@nipsys/shadcn-lsd';
+import {
+  Button,
+  Card,
+  CardAction,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  Separator,
+  ToggleGroup,
+  ToggleGroupItem,
+  Typography,
+} from '@nipsys/shadcn-lsd';
 import Link from 'next/link';
+import { useState } from 'react';
+import SocialUIPreview from './previews/social-ui';
+import SystemUIPreview from './previews/system-ui';
+import WorkUIPreview from './previews/work-ui';
+
+type Preview = 'work' | 'social' | 'system';
 
 export default function Home() {
+  const [activePreview, setActivePreview] = useState<Preview>('work');
+
+  const preview = () => {
+    switch (activePreview) {
+      case 'work':
+        return <WorkUIPreview />;
+      case 'social':
+        return <SocialUIPreview />;
+      case 'system':
+        return <SystemUIPreview />;
+    }
+  };
+
   return (
     <div className="container mx-auto px-(--lsd-spacing-small) py-(--lsd-spacing-larger) mt-(--lsd-spacing-larger) max-w-5xl">
-      <div className="flex flex-col pb-(--lsd-spacing-largest)">
-        <Typography variant="h1" className="mb-(--lsd-spacing-largest)">
-          @nipsys/lsd
-        </Typography>
+      <div className="flex flex-col gap-(--lsd-spacing-largest)">
+        <Typography variant="h1">@nipsys/lsd</Typography>
 
-        <Typography variant="h3" className="mb-(--lsd-spacing-largest) max-w-2xl">
-          Substance over Spectacle.
-        </Typography>
+        <Typography variant="h3">Substance over Spectacle.</Typography>
 
-        <Typography variant="h5" className="mb-(--lsd-spacing-largest) max-w-2xl">
-          Built on Radix UI. Styled with Tailwind CSS 4.
+        <Typography variant="h5">
+          The Logos Design System. Built on top of Radix UI and shadcn/ui.
           <br />
-          Three themes, light and dark modes, fully extensible
+          Light and dark modes, themable, fully extensible.
         </Typography>
 
-        <div className="flex gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+        <div className="flex gap-(--lsd-spacing-base)">
           <Button asChild>
             <Link href="/getting-started/installation">Get Started</Link>
           </Button>
@@ -31,48 +57,44 @@ export default function Home() {
         </div>
       </div>
 
-      <Separator className="my-(--lsd-spacing-largest)" />
+      <Separator className="my-15" />
 
-      <div className="pt-(--lsd-spacing-largest) flex flex-col gap-(--lsd-spacing-largest)">
-        <Typography variant="h4" className="mb-(--lsd-spacing-small)">
-          An implementation of the Logos Design System
-        </Typography>
-
-        <Typography variant="body1">
-          <blockquote className="border-l-2 pl-6 italic">
-            Conventional design has lost its way: chrome over content, spectacle over substance.
-            <br />
-            LSD exists because design should serve the mission — never distract from it. We build
-            for clarity, accessibility, and resilience. The message matters more than the medium.
-          </blockquote>
-        </Typography>
-
-        <Typography variant="body1">
-          <code>@nipsys/lsd</code> is the RadixUI/shadcn implementation of the Logos Design System
-          as defined by the original Logos Brand Guidelines.
-        </Typography>
-
-        <Typography variant="body1">
-          This implementation follows these principles:
-          <ul>
-            <li>- Functional design that prioritises content</li>
-            <li>- Accessibility and usability over decoration</li>
-          </ul>
-        </Typography>
-
-        <Typography variant="body1">
-          It is open-source, permissive, and designed for anyone building tools meant to be
-          alternatives to captured systems.
-        </Typography>
-
-        <div className="text-right">
-          <Button asChild variant="link" className="text-right">
-            <Link href="https://logos.co" target="_blank" rel="noopener noreferrer">
-              Learn more about the philosophy behind LSD at logos.co
-            </Link>
-          </Button>
-        </div>
+      <Typography variant="h5" className="font-bold mb-(--lsd-spacing-smaller)">
+        🙶Conventional design has lost its way: chrome over content, spectacle over substance. LSD
+        exists because design should serve the mission — never distract from it. We build for
+        clarity, accessibility, and resilience. The message matters more than the medium.🙷
+      </Typography>
+      <div>
+        <Button asChild variant="ghost" className="p-0! h-fit!">
+          <Link href="https://logos.co" target="_blank" rel="noopener noreferrer">
+            — Learn more about the philosophy at logos.co
+          </Link>
+        </Button>
       </div>
+
+      <Card className="mt-15">
+        <CardHeader>
+          <CardTitle>
+            <Typography variant="h5">Preview</Typography>
+          </CardTitle>
+          <CardAction>
+            <ToggleGroup
+              type="single"
+              defaultValue="work"
+              onValueChange={value => setActivePreview(value as Preview)}
+            >
+              <ToggleGroupItem value="work">Work UI</ToggleGroupItem>
+              <ToggleGroupItem value="social">Social UI</ToggleGroupItem>
+              <ToggleGroupItem value="system">System UI</ToggleGroupItem>
+            </ToggleGroup>
+          </CardAction>
+        </CardHeader>
+        <CardContent>{preview()}</CardContent>
+      </Card>
+
+      <Separator className="my-10" />
+
+      <Typography variant="h5">Lineage</Typography>
     </div>
   );
 }
