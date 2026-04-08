@@ -1,0 +1,10 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,45173,e=>{"use strict";var t=e.i(75201);function n(){var e;let n;e=e=>{let t=document.documentElement;e.theme&&("dark"===e.theme?t.classList.add("dark"):t.classList.remove("dark")),e.accent&&("monochrome"===e.accent?t.removeAttribute("data-theme"):t.setAttribute("data-theme",e.accent)),e.font&&(t.classList.remove("font-serif","font-sans","font-mono"),"serif"===e.font?t.classList.add("font-serif"):"sans-serif"===e.font?t.classList.add("font-sans"):"monospace"===e.font&&t.classList.add("font-mono"))},n=t.useRef(e),t.useEffect(()=>{n.current=e},[e]),t.useEffect(()=>{if(window.self===window.top)return;let e=e=>{"example-params"===e.data.type&&n.current(e.data.data)};return window.addEventListener("message",e),()=>{window.removeEventListener("message",e)}},["example-params"])}e.s(["useSendThemeToIframes",()=>n],45173)},82886,e=>{"use strict";var t=e.i(98134);e.i(26940);var n=e.i(23155),a=e.i(45173);let s=`import { Input } from '@nipsys/shadcn-lsd';
+
+export function Example() {
+  return (
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
+      <Input variant="outlined" label="Outlined" placeholder="Outlined input" />
+      <Input variant="underlined" label="Underlined" placeholder="Underlined input" />
+    </div>
+  );
+}`;function i(){return(0,a.useSendThemeToIframes)(),(0,t.jsxs)("div",{className:"flex flex-col gap-(--lsd-spacing-base)",children:[(0,t.jsx)(n.Input,{variant:"outlined",label:"Outlined",placeholder:"Outlined input"}),(0,t.jsx)(n.Input,{variant:"underlined",label:"Underlined",placeholder:"Underlined input"})]})}function r(){return(0,t.jsx)(i,{})}e.s(["CODE",0,s,"InputVariantsExample",()=>i,"default",()=>r])}]);
