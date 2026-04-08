@@ -10,7 +10,7 @@ function AlertTitle({ className, ...props }: AlertTitleProps) {
     <div
       data-slot="alert-title"
       className={cn(
-        'lsd:col-start-2 lsd:line-clamp-1 lsd:min-h-4 lsd:font-medium lsd:tracking-tight lsd:text-sm lsd:leading-[1.25rem]',
+        'lsd:col-start-2 lsd:line-clamp-1 lsd:min-h-4 lsd:font-medium lsd:tracking-tight lsd:text-sm lsd:leading-5',
         className
       )}
       {...props}
