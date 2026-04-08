@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as TOAST_ACTIONS_CODE } from '@/examples/sonner/actions/page';
 import { CODE as TOAST_BASIC_CODE } from '@/examples/sonner/basic/page';
 import { CODE as TOAST_CUSTOM_CODE } from '@/examples/sonner/custom/page';
@@ -40,7 +40,18 @@ export default function SonnerPage() {
   const toastPromiseIframeRef = useRef<HTMLIFrameElement>(null);
   const toastRichIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    toastBasicIframeRef,
+    toastCustomIframeRef,
+    toastPositionIframeRef,
+    toastTypesIframeRef,
+    toastDurationIframeRef,
+    toastPositionsIframeRef,
+    toastActionsIframeRef,
+    toastPersistentIframeRef,
+    toastPromiseIframeRef,
+    toastRichIframeRef
+  );
 
   return (
     <DocsLayout>

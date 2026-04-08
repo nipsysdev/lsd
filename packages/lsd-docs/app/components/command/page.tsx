@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as CommandBasicExampleCODE } from '@/examples/command/basic/page';
 import { CODE as CommandDialogExampleCODE } from '@/examples/command/dialog/page';
 import { CODE as CommandGroupsExampleCODE } from '@/examples/command/groups/page';
@@ -28,7 +28,12 @@ export default function CommandPage() {
   const commandShortcutsIframeRef = useRef<HTMLIFrameElement>(null);
   const commandDialogIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    commandBasicIframeRef,
+    commandGroupsIframeRef,
+    commandShortcutsIframeRef,
+    commandDialogIframeRef
+  );
 
   return (
     <DocsLayout>

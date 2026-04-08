@@ -9,7 +9,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as ButtonAsChildCODE } from '@/examples/button/as-child/page';
 import { CODE as ButtonDisabledCODE } from '@/examples/button/disabled/page';
 import { CODE as ButtonFullWidthCODE } from '@/examples/button/full-width/page';
@@ -29,7 +29,15 @@ export default function ButtonPage() {
   const buttonDisabledIframeRef = useRef<HTMLIFrameElement>(null);
   const buttonAsChildIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    buttonVariantsIframeRef,
+    buttonSizesIframeRef,
+    buttonIconsIframeRef,
+    buttonLoadingIframeRef,
+    buttonFullWidthIframeRef,
+    buttonDisabledIframeRef,
+    buttonAsChildIframeRef
+  );
 
   return (
     <DocsLayout>

@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as SkeletonAvatarCODE } from '@/examples/skeleton/avatar/page';
 import { CODE as SkeletonCardCODE } from '@/examples/skeleton/card/page';
 import { CODE as SkeletonListCODE } from '@/examples/skeleton/list/page';
@@ -28,7 +28,12 @@ export default function SkeletonPage() {
   const skeletonListIframeRef = useRef<HTMLIFrameElement>(null);
   const skeletonSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    skeletonCardIframeRef,
+    skeletonAvatarIframeRef,
+    skeletonListIframeRef,
+    skeletonSizesIframeRef
+  );
 
   return (
     <DocsLayout>

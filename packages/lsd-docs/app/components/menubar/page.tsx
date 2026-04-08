@@ -11,7 +11,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as DestructiveCode } from '@/examples/menubar/destructive/page';
 import { CODE as InsetCode } from '@/examples/menubar/inset/page';
 import { CODE as LabelsCode } from '@/examples/menubar/labels-separators/page';
@@ -27,7 +27,14 @@ export default function MenubarPage() {
   const insetIframeRef = useRef<HTMLIFrameElement>(null);
   const shortcutsIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    menubarIframeRef,
+    submenusIframeRef,
+    destructiveIframeRef,
+    labelsIframeRef,
+    insetIframeRef,
+    shortcutsIframeRef
+  );
 
   return (
     <DocsLayout>

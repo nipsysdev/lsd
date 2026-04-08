@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as ToggleGroupMultipleCODE } from '@/examples/toggle-group/multiple/page';
 import { CODE as ToggleGroupSingleCODE } from '@/examples/toggle-group/single/page';
 import { CODE as ToggleGroupSizesCODE } from '@/examples/toggle-group/sizes/page';
@@ -26,7 +26,11 @@ export default function ToggleGroupPage() {
   const toggleGroupMultipleIframeRef = useRef<HTMLIFrameElement>(null);
   const toggleGroupSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    toggleGroupSingleIframeRef,
+    toggleGroupMultipleIframeRef,
+    toggleGroupSizesIframeRef
+  );
 
   return (
     <DocsLayout>

@@ -16,14 +16,18 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 
 export default function FormPage() {
   const formBasicIframeRef = useRef<HTMLIFrameElement>(null);
   const formValidationIframeRef = useRef<HTMLIFrameElement>(null);
   const formWithOtherComponentsIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    formBasicIframeRef,
+    formValidationIframeRef,
+    formWithOtherComponentsIframeRef
+  );
 
   return (
     <DocsLayout>

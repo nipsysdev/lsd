@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as TABS_BASIC_CODE } from '@/examples/tabs/basic/page';
 import { CODE as TABS_BORDERED_CODE } from '@/examples/tabs/bordered/page';
 import { CODE as TABS_CONTROLLED_CODE } from '@/examples/tabs/controlled/page';
@@ -34,7 +34,15 @@ export default function TabsPage() {
   const tabsWithIconsIframeRef = useRef<HTMLIFrameElement>(null);
   const tabsDisabledIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    tabsBasicIframeRef,
+    tabsControlledIframeRef,
+    tabsSizesIframeRef,
+    tabsFullWidthIframeRef,
+    tabsBorderedIframeRef,
+    tabsWithIconsIframeRef,
+    tabsDisabledIframeRef
+  );
 
   return (
     <DocsLayout>

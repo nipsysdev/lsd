@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as SelectBasicCODE } from '@/examples/select/basic/page';
 import { CODE as SelectBasicUsageCODE } from '@/examples/select/basic-usage/page';
 import { CODE as SelectControlledCODE } from '@/examples/select/controlled/page';
@@ -36,7 +36,16 @@ export default function SelectPage() {
   const selectDisabledIframeRef = useRef<HTMLIFrameElement>(null);
   const selectControlledIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    selectBasicIframeRef,
+    selectVariantsIframeRef,
+    selectSizesIframeRef,
+    selectBasicUsageIframeRef,
+    selectGroupedIframeRef,
+    selectWithSeparatorIframeRef,
+    selectDisabledIframeRef,
+    selectControlledIframeRef
+  );
 
   return (
     <DocsLayout>

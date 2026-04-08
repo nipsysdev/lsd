@@ -7,9 +7,23 @@ import { useThemeSync } from './useThemeSync';
 export function useSendThemeToIframes(...iframeRefs: React.RefObject<HTMLIFrameElement | null>[]) {
   const { theme, accent, font } = useThemeSync();
 
+  // DEBUG: Log iframe refs count
+  console.log(
+    '[useSendThemeToIframes] iframeRefs count:',
+    iframeRefs.length,
+    'refs:',
+    iframeRefs.map(r => r?.current)
+  );
+
   // Send params to iframes when theme, accent, or font changes
   React.useEffect(() => {
     const params: ExampleParams = { theme, accent, font };
+    console.log(
+      '[useSendThemeToIframes] Sending params on change:',
+      params,
+      'to iframes:',
+      iframeRefs.length
+    );
     iframeRefs.forEach(ref => void sendToIframe(ref.current, 'example-params', params));
   }, [theme, accent, font, iframeRefs]);
 

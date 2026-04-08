@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as TableBasicExampleCODE } from '@/examples/table/basic/page';
 import { CODE as TableStripedExampleCODE } from '@/examples/table/striped/page';
 import { CODE as TableWithCaptionExampleCODE } from '@/examples/table/with-caption/page';
@@ -28,7 +28,12 @@ export default function TablePage() {
   const footerTableIframeRef = useRef<HTMLIFrameElement>(null);
   const captionTableIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    basicTableIframeRef,
+    stripedTableIframeRef,
+    footerTableIframeRef,
+    captionTableIframeRef
+  );
 
   return (
     <DocsLayout>

@@ -9,7 +9,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as HorizontalCode } from '@/examples/button-group/horizontal/page';
 import { CODE as BUTTON_GROUP_CODE } from '@/examples/button-group/page';
 import { CODE as VariantsCode } from '@/examples/button-group/variants/page';
@@ -21,7 +21,12 @@ export default function ButtonGroupPage() {
   const verticalIframeRef = useRef<HTMLIFrameElement>(null);
   const variantsIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    buttonGroupIframeRef,
+    horizontalIframeRef,
+    verticalIframeRef,
+    variantsIframeRef
+  );
 
   return (
     <DocsLayout>

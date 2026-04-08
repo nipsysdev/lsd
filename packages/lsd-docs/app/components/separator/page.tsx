@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as HorizontalCode } from '@/examples/separator/horizontal/page';
 import { CODE as VerticalCode } from '@/examples/separator/vertical/page';
 import { CODE as WithTextCode } from '@/examples/separator/with-text/page';
@@ -26,7 +26,7 @@ export default function SeparatorPage() {
   const verticalIframeRef = useRef<HTMLIFrameElement>(null);
   const withTextIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(horizontalIframeRef, verticalIframeRef, withTextIframeRef);
 
   return (
     <DocsLayout>

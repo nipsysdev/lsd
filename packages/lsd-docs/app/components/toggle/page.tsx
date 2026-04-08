@@ -16,7 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as ToggleBasicCODE } from '@/examples/toggle/basic/page';
 import { CODE as TogglePressedCODE } from '@/examples/toggle/pressed/page';
 import { CODE as ToggleSizesCODE } from '@/examples/toggle/sizes/page';
@@ -28,7 +28,12 @@ export default function TogglePage() {
   const toggleWithTextIframeRef = useRef<HTMLIFrameElement>(null);
   const toggleSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(
+    toggleBasicIframeRef,
+    togglePressedIframeRef,
+    toggleWithTextIframeRef,
+    toggleSizesIframeRef
+  );
 
   return (
     <DocsLayout>

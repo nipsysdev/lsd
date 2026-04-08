@@ -9,7 +9,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as SwitchBasicCODE } from '@/examples/switch/basic/page';
 import { CODE as SwitchControlledCODE } from '@/examples/switch/controlled/page';
 import { CODE as SwitchSizesCODE } from '@/examples/switch/sizes/page';
@@ -19,7 +19,7 @@ export default function SwitchPage() {
   const switchControlledIframeRef = useRef<HTMLIFrameElement>(null);
   const switchSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(switchBasicIframeRef, switchControlledIframeRef, switchSizesIframeRef);
 
   return (
     <DocsLayout>

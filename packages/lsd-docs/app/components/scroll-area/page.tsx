@@ -9,7 +9,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BasicCode } from '@/examples/scroll-area/basic/page';
 import { CODE as BothCode } from '@/examples/scroll-area/both/page';
 import { CODE as HorizontalCode } from '@/examples/scroll-area/horizontal/page';
@@ -19,7 +19,7 @@ export default function ScrollAreaPage() {
   const horizontalIframeRef = useRef<HTMLIFrameElement>(null);
   const bothIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(basicIframeRef, horizontalIframeRef, bothIframeRef);
 
   return (
     <DocsLayout>

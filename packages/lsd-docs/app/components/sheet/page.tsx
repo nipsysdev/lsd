@@ -9,7 +9,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BasicCode } from '@/examples/sheet/basic/page';
 import { CODE as LeftCode } from '@/examples/sheet/left-side/page';
 
@@ -17,7 +17,7 @@ export default function SheetPage() {
   const basicIframeRef = useRef<HTMLIFrameElement>(null);
   const leftIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(basicIframeRef, leftIframeRef);
 
   return (
     <DocsLayout>

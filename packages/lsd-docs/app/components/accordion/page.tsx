@@ -20,7 +20,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as AccordionMultipleCODE } from '@/examples/accordion/multiple/page';
 import { CODE as AccordionSingleCODE } from '@/examples/accordion/single/page';
 
@@ -28,7 +28,7 @@ export default function AccordionPage() {
   const accordionSingleIframeRef = useRef<HTMLIFrameElement>(null);
   const accordionMultipleIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes();
+  useSendThemeToIframes(accordionSingleIframeRef, accordionMultipleIframeRef);
 
   return (
     <DocsLayout>
