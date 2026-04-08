@@ -31,7 +31,7 @@ describe('Typography', () => {
     render(<Typography variant="display1">Display 1</Typography>);
     const element = screen.getByText('Display 1');
     expect(element).toHaveClass('lsd:text-[5.5rem]');
-    expect(element).toHaveClass('lsd:font-normal');
+    expect(element).toHaveClass('lsd:font-bold');
     expect(element).toHaveClass('lsd:leading-[6rem]');
   });
 
