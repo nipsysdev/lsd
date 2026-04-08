@@ -71,7 +71,7 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/alert/all-variants" title="All Variants" />
+              <IframeExample size="lg" src="/examples/alert/all-variants" title="All Variants" />
               <CodeExample code={AllVariantsCode} />
             </CardContent>
           </Card>
