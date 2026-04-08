@@ -25,7 +25,7 @@ export default function SocialUIPreview() {
 
         <div className="flex flex-col justify-between py-(--lsd-spacing-smallest)">
           <Typography variant="h5" className="font-bold">
-            Xav {'<nipsys>'}
+            Xav {'<nipsys.eth>'}
           </Typography>
 
           <div className="flex flex-col gap-y-(--lsd-spacing-smaller)">
