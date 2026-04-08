@@ -559,10 +559,10 @@ describe('TableHead', () => {
     );
     const th = queryByDataSlot(container, 'table-head');
     expect(th).toHaveClass('lsd:h-10');
-    expect(th).toHaveClass('lsd:px-[var(--lsd-spacing-small)]');
+    expect(th).toHaveClass('lsd:px-(--lsd-spacing-small)');
     expect(th).toHaveClass('lsd:text-left');
     expect(th).toHaveClass('lsd:align-middle');
-    expect(th).toHaveClass('lsd:font-medium');
+    expect(th).toHaveClass('lsd:font-bold');
     expect(th).toHaveClass('lsd:whitespace-nowrap');
     expect(th).toHaveClass('lsd:text-lsd-text-primary');
   });
