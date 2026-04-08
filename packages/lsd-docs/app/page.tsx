@@ -80,8 +80,8 @@ export default function Home() {
           <CardAction>
             <ToggleGroup
               type="single"
-              defaultValue="work"
-              onValueChange={value => setActivePreview(value as Preview)}
+              value={activePreview}
+              onValueChange={value => setActivePreview((value as Preview) || activePreview)}
             >
               <ToggleGroupItem value="work">Work UI</ToggleGroupItem>
               <ToggleGroupItem value="social">Social UI</ToggleGroupItem>
