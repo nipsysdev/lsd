@@ -100,6 +100,7 @@ export const navItems: NavGroup[] = [
         icon: TableIcon,
         subItems: [
           { title: 'Accordion', url: '/components/accordion' },
+          { title: 'Avatar', url: '/components/avatar' },
           { title: 'Badge', url: '/components/badge' },
           { title: 'Skeleton', url: '/components/skeleton' },
           { title: 'Table', url: '/components/table' },
