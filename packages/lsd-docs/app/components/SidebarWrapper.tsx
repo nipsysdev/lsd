@@ -2,7 +2,6 @@ import {
   ScrollArea,
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -16,7 +15,7 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
 } from '@nipsys/shadcn-lsd';
-import { GithubLogoIcon, PillIcon } from '@phosphor-icons/react';
+import { PillIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 import type React from 'react';
 import { navItems } from '../config/navigation';
@@ -101,23 +100,6 @@ export default function SidebarWrapper({ currentPath, children }: SidebarWrapper
             ))}
           </ScrollArea>
         </SidebarContent>
-
-        <SidebarFooter>
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild>
-                <Link
-                  href="https://github.com/nipsysdev/shadcn-lsd"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GithubLogoIcon weight="duotone" />
-                  <span>GitHub</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          </SidebarMenu>
-        </SidebarFooter>
       </Sidebar>
       <SidebarInset className="overflow-hidden">{children}</SidebarInset>
     </SidebarProvider>

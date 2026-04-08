@@ -1,7 +1,8 @@
 'use client';
 
 import { Button, SidebarTrigger } from '@nipsys/shadcn-lsd';
-import { MagnifyingGlassIcon } from '@phosphor-icons/react';
+import { GithubLogoIcon, MagnifyingGlassIcon } from '@phosphor-icons/react';
+import Link from 'next/link';
 import { FontToggle } from './docs/FontToggle';
 import { Search } from './docs/Search';
 import { ThemeAccentToggle, ThemeToggle } from './docs/ThemeToggle';
@@ -18,11 +19,11 @@ export default function Header({ className }: HeaderProps) {
           <SidebarTrigger />
         </div>
 
-        <div className="flex items-center gap-(--lsd-spacing-large)">
+        <div className="flex items-center gap-(--lsd-spacing-larger)">
           <Button
             variant="outlined"
             size="sm"
-            className="flex gap-(--lsd-spacing-smaller) mr-(--lsd-spacing-largest) "
+            className="hidden! md:flex! gap-(--lsd-spacing-smaller) min-w-60 justify-start!"
             onClick={() =>
               document.dispatchEvent(
                 new KeyboardEvent('keydown', {
@@ -34,12 +35,22 @@ export default function Header({ className }: HeaderProps) {
             }
           >
             <MagnifyingGlassIcon weight="duotone" />
-            <span className="mr-(--lsd-spacing-largest)">Search documentation...</span>
+            <span className="mr-(--lsd-spacing-largest)">Search...</span>
           </Button>
 
           <ThemeToggle />
           <ThemeAccentToggle />
           <FontToggle />
+          <Button variant="link" size="sm" asChild>
+            <Link
+              href="https://github.com/nipsysdev/shadcn-lsd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubLogoIcon weight="duotone" className="mr-(--lsd-spacing-smaller) size-5" />
+              <span>GitHub</span>
+            </Link>
+          </Button>
         </div>
       </div>
       <Search />
