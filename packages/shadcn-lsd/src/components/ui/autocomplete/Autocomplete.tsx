@@ -114,10 +114,10 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                 currentSize.inputContainer,
                 variant === 'outlined'
                   ? disabled
-                    ? 'lsd:border lsd:border-lsd-text-secondary'
+                    ? 'lsd:border lsd:border-lsd-border'
                     : 'lsd:border lsd:border-lsd-border'
                   : disabled
-                    ? 'lsd:border lsd:border-transparent lsd:border-b-lsd-text-secondary'
+                    ? 'lsd:border lsd:border-transparent lsd:border-b-lsd-border'
                     : 'lsd:border lsd:border-transparent lsd:border-b-lsd-border',
                 disabled ? 'lsd:cursor-not-allowed' : 'lsd:cursor-pointer'
               )}
@@ -135,9 +135,10 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                   currentSize.input,
                   disabled
                     ? 'lsd:text-lsd-text-secondary lsd:cursor-not-allowed'
-                    : 'lsd:text-lsd-text-primary',
-                  error && 'lsd:line-through',
-                  'lsd:placeholder:text-lsd-text-primary lsd:placeholder:opacity-30'
+                    : error
+                      ? 'lsd:text-lsd-destructive'
+                      : 'lsd:text-lsd-text-primary',
+                  'lsd:placeholder:lsd-text-secondary'
                 )}
               />
               {icon && (

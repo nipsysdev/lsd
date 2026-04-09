@@ -55,7 +55,7 @@ describe('Autocomplete', () => {
   it('applies error state', () => {
     render(<Autocomplete options={mockOptions} error />);
     const input = screen.getByRole('textbox');
-    expect(input).toHaveClass('lsd:line-through');
+    expect(input).toHaveClass('lsd:text-lsd-destructive');
   });
 
   it('applies medium size classes by default', () => {

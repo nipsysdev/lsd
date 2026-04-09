@@ -32,7 +32,11 @@ export function AutocompleteContent({
 }: AutocompleteContentProps) {
   return (
     <PopoverContent
-      className={cn('lsd:w-full lsd:p-0', 'lsd:bg-lsd-surface lsd:border-lsd-border')}
+      className={cn(
+        'lsd:p-0',
+        'lsd:bg-lsd-surface lsd:border-lsd-border',
+        'lsd:data-[side=top]:border-b-0 lsd:data-[side=bottom]:border-t-0'
+      )}
       align="start"
       sideOffset={0}
     >
@@ -60,11 +64,13 @@ export function AutocompleteContent({
                   value={option.value}
                   keywords={[option.label]}
                   onSelect={() => onSelect(option.value)}
-                  className="lsd:hover:underline lsd:focus:underline lsd:cursor-pointer lsd:data-[selected=true]:underline"
+                  className="lsd:text-lsd-text-primary lsd:hover:underline lsd:focus:underline lsd:cursor-pointer lsd:data-[selected=true]:underline"
                 >
                   <span className="lsd:block lsd:overflow-hidden lsd:whitespace-nowrap lsd:text-ellipsis">
                     {matchedPart}
-                    <span className="lsd:opacity-50 lsd:whitespace-pre">{remainingPart}</span>
+                    <span className="lsd:text-lsd-text-primary lsd:whitespace-pre">
+                      {remainingPart}
+                    </span>
                   </span>
                 </CommandItem>
               );
