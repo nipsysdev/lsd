@@ -27,7 +27,7 @@ export function DropdownMenuItem({
         // Base layout
         'lsd:relative lsd:flex lsd:cursor-default lsd:items-center',
         // Spacing and sizing
-        'lsd:gap-[var(--lsd-spacing-smaller)] lsd:rounded-sm lsd:px-2 lsd:py-1.5',
+        'lsd:gap-(--lsd-spacing-smaller) lsd:rounded-none lsd:px-2 lsd:py-1.5',
         // Text
         'lsd:text-sm lsd:outline-none lsd:select-none',
         // Focus/hover states
@@ -38,7 +38,7 @@ export function DropdownMenuItem({
         'data-[inset]:lsd:pl-8',
         // Destructive variant
         variant === 'destructive' && [
-          'lsd:text-[var(--lsd-destructive-text)]',
+          'lsd:text-lsd-destructive-text',
           'focus:lsd:bg-[var(--lsd-destructive)]/10 focus:lsd:text-[var(--lsd-destructive-text)]',
           'dark:focus:lsd:bg-[var(--lsd-destructive)]/20',
         ],

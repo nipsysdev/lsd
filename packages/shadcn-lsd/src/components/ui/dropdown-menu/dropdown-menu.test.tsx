@@ -136,10 +136,10 @@ describe('DropdownMenuContent', () => {
     );
     const content = document.querySelector('[data-slot="dropdown-menu-content"]');
     expect(content).toHaveClass('lsd:z-50');
-    expect(content).toHaveClass('lsd:min-w-[8rem]');
-    expect(content).toHaveClass('lsd:rounded-md');
+    expect(content).toHaveClass('lsd:min-w-32');
+    expect(content).toHaveClass('lsd:rounded-none');
     expect(content).toHaveClass('lsd:border');
-    expect(content).toHaveClass('lsd:bg-[var(--lsd-surface)]');
+    expect(content).toHaveClass('lsd:bg-lsd-surface');
     expect(content).toHaveClass('lsd:p-1');
   });
 
@@ -226,7 +226,7 @@ describe('DropdownMenuItem', () => {
     expect(item).toHaveClass('lsd:flex');
     expect(item).toHaveClass('lsd:cursor-default');
     expect(item).toHaveClass('lsd:items-center');
-    expect(item).toHaveClass('lsd:rounded-sm');
+    expect(item).toHaveClass('lsd:rounded-none');
     expect(item).toHaveClass('lsd:px-2');
     expect(item).toHaveClass('lsd:py-1.5');
     expect(item).toHaveClass('lsd:text-sm');
@@ -258,7 +258,7 @@ describe('DropdownMenuItem', () => {
     );
     const item = screen.getByText('Delete');
     expect(item).toHaveAttribute('data-variant', 'destructive');
-    expect(item).toHaveClass('lsd:text-[var(--lsd-destructive-text)]');
+    expect(item).toHaveClass('lsd:text-lsd-destructive-text');
   });
 
   it('applies inset prop correctly', () => {
@@ -400,7 +400,7 @@ describe('DropdownMenuCheckboxItem', () => {
     expect(item).toHaveClass('lsd:flex');
     expect(item).toHaveClass('lsd:cursor-default');
     expect(item).toHaveClass('lsd:items-center');
-    expect(item).toHaveClass('lsd:rounded-sm');
+    expect(item).toHaveClass('lsd:rounded-none');
     expect(item).toHaveClass('lsd:py-1.5');
     expect(item).toHaveClass('lsd:pr-2');
     expect(item).toHaveClass('lsd:pl-8');
@@ -1167,7 +1167,7 @@ describe('DropdownMenuSubTrigger', () => {
     expect(trigger).toHaveClass('lsd:flex');
     expect(trigger).toHaveClass('lsd:cursor-default');
     expect(trigger).toHaveClass('lsd:items-center');
-    expect(trigger).toHaveClass('lsd:rounded-sm');
+    expect(trigger).toHaveClass('lsd:rounded-none');
     expect(trigger).toHaveClass('lsd:px-2');
     expect(trigger).toHaveClass('lsd:py-1.5');
     expect(trigger).toHaveClass('lsd:text-sm');

@@ -1,4 +1,4 @@
-import { Check } from '@phosphor-icons/react';
+import { CheckIcon } from '@phosphor-icons/react';
 import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
@@ -24,7 +24,7 @@ export function DropdownMenuCheckboxItem({
         // Base layout
         'lsd:relative lsd:flex lsd:cursor-default lsd:items-center',
         // Spacing (left padding for checkbox)
-        'lsd:rounded-sm lsd:py-1.5 lsd:pr-2 lsd:pl-8',
+        'lsd:rounded-none lsd:py-1.5 lsd:pr-2 lsd:pl-8',
         // Text
         'lsd:text-sm lsd:outline-none lsd:select-none',
         // Focus state
@@ -40,7 +40,7 @@ export function DropdownMenuCheckboxItem({
     >
       <span className="lsd:pointer-events-none lsd:absolute lsd:left-2 lsd:flex lsd:size-3.5 lsd:items-center lsd:justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <Check className="lsd:size-4" />
+          <CheckIcon className="lsd:size-4" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}

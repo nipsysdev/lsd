@@ -27,7 +27,7 @@ export type TypographyVariant =
   | 'label1'
   | 'label2';
 
-export const typographyVariants = cva('', {
+export const typographyVariants = cva('lsd:font-inherit', {
   variants: {
     variant: {
       // Display variants

@@ -109,7 +109,7 @@ export function SidebarTrigger({ className, onClick, ...props }: SidebarTriggerP
       }}
       {...props}
     >
-      <SidebarSimpleIcon className="lsd:size-full" weight="duotone" />
+      <SidebarSimpleIcon className="lsd:size-4/5" weight="duotone" />
       <span className="lsd:sr-only">Toggle Sidebar</span>
     </Button>
   );

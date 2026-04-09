@@ -26,7 +26,7 @@ export function DropdownMenuSubTrigger({
         // Base layout
         'lsd:flex lsd:cursor-default lsd:items-center',
         // Spacing and sizing
-        'lsd:gap-[var(--lsd-spacing-smaller)] lsd:rounded-sm lsd:px-2 lsd:py-1.5',
+        'lsd:gap-(--lsd-spacing-smaller) lsd:rounded-none lsd:px-2 lsd:py-1.5',
         // Text
         'lsd:text-sm lsd:outline-none lsd:select-none',
         // Focus/hover states
