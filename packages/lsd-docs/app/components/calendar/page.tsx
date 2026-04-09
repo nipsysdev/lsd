@@ -76,23 +76,6 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Sizes">
-          <Typography variant="body1">
-            Calendar adapts to different container sizes with responsive design.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Responsive Size</CardTitle>
-              <CardDescription>Automatically adjusts to container width</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample size="md" src="/examples/calendar/basic" title="Calendar Size" />
-              <CodeExample code={BasicCode} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
         <PageSection title="Features">
           <Typography variant="body1">
             Additional features like form control, validation, and date constraints.

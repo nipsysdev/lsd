@@ -29,7 +29,6 @@ export function CalendarFormControlled() {
         mode="single"
         selected={date}
         onSelect={handleDateChange}
-        initialFocus
       />
     </div>
   );
@@ -54,7 +53,7 @@ export default function Page() {
           {date ? date.toLocaleDateString() : 'No date selected'}
         </p>
       </div>
-      <Calendar mode="single" selected={date} onSelect={handleDateChange} initialFocus />
+      <Calendar mode="single" selected={date} onSelect={handleDateChange} />
     </div>
   );
 }

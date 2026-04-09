@@ -29,7 +29,7 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
       data-range-end={isRangeEnd}
       data-range-middle={isRangeMiddle}
       className={cn(
-        'lsd:flex lsd:aspect-square lsd:size-auto lsd:w-full lsd:min-w-(--cell-size) lsd:flex-col lsd:gap-[var(--lsd-spacing-smallest)] lsd:leading-none lsd:font-normal',
+        'lsd:flex lsd:aspect-square lsd:size-auto lsd:w-full lsd:min-w-(--cell-size) lsd:flex-col lsd:gap-(--lsd-spacing-smallest) lsd:leading-none lsd:font-normal',
         'lsd:group-data-[focused=true]/day:lsd:relative lsd:group-data-[focused=true]/day:lsd:z-10',
         'lsd:group-data-[focused=true]/day:lsd:border-lsd-border lsd:group-data-[focused=true]/day:lsd:ring-[3px] lsd:group-data-[focused=true]/day:lsd:ring-lsd-text-primary/50',
         isRangeStart &&
@@ -37,7 +37,7 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
         isRangeEnd &&
           'lsd:rounded-md lsd:rounded-r-md lsd:bg-lsd-primary lsd:text-lsd-primary-foreground',
         isRangeMiddle && 'lsd:rounded-none lsd:bg-lsd-surface lsd:text-lsd-text-primary',
-        isSelected && 'lsd:bg-lsd-primary lsd:text-lsd-primary-foreground',
+        isSelected && 'lsd:border lsd:border-lsd-border',
         'dark:lsd:hover:lsd:text-lsd-text-primary',
         '[&>span]:lsd:opacity-70 [&>span]:lsd:lsd-typography-label1',
         defaultClassNames.day,

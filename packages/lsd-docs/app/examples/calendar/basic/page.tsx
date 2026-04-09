@@ -15,7 +15,7 @@ export function CalendarBasic() {
       mode="single"
       selected={date}
       onSelect={setDate}
-      className="rounded-md border"
+      className="border"
     />
   );
 }
@@ -24,7 +24,5 @@ export function CalendarBasic() {
 export default function Page() {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
-  return (
-    <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
-  );
+  return <Calendar mode="single" selected={date} onSelect={setDate} className="border" />;
 }

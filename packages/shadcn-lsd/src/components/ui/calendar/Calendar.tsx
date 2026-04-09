@@ -39,7 +39,7 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        'lsd:group/calendar lsd:bg-lsd-surface lsd:p-[var(--lsd-spacing-base)] lsd:[--cell-size:--spacing(8)] [[data-slot=card-content]_&]:lsd:bg-transparent [[data-slot=popover-content]_&]:lsd:bg-transparent',
+        'lsd:group/calendar lsd:bg-lsd-surface lsd:p-(--lsd-spacing-base) lsd:[--cell-size:--spacing(8)] [[data-slot=card-content]_&]:lsd:bg-transparent [[data-slot=popover-content]_&]:lsd:bg-transparent',
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className
@@ -50,13 +50,13 @@ function Calendar({
         ...formatters,
       }}
       classNames={{
-        root: cn('lsd:w-fit', defaultClassNames.root),
+        root: cn('lsd:size-fit', defaultClassNames.root),
         months: cn(
           'lsd:relative lsd:flex lsd:flex-col lsd:gap-[var(--lsd-spacing-base)] md:lsd:flex-row',
           defaultClassNames.months
         ),
         month: cn(
-          'lsd:flex lsd:w-full lsd:flex-col lsd:gap-[var(--lsd-spacing-base)]',
+          'lsd:flex lsd:w-full lsd:flex-col lsd:gap-[var(--lsd-spacing-base)] lsd:text-center',
           defaultClassNames.month
         ),
         nav: cn(
@@ -65,23 +65,26 @@ function Calendar({
         ),
         button_previous: cn(
           buttonVariants({ variant: buttonVariant }),
-          'lsd:size-(--cell-size) lsd:p-0 lsd:select-none lsd:aria-disabled:lsd:opacity-50',
+          'lsd:size-6 lsd:p-0 lsd:select-none lsd:aria-disabled:lsd:opacity-50',
           defaultClassNames.button_previous
         ),
         button_next: cn(
           buttonVariants({ variant: buttonVariant }),
-          'lsd:size-(--cell-size) lsd:p-0 lsd:select-none lsd:aria-disabled:lsd:opacity-50',
+          'lsd:size-6 lsd:p-0 lsd:select-none lsd:aria-disabled:lsd:opacity-50',
           defaultClassNames.button_next
         ),
         table: 'lsd:w-full lsd:border-collapse',
         weekdays: cn('lsd:flex', defaultClassNames.weekdays),
         weekday: cn(
-          'lsd:flex-1 lsd:rounded-md lsd:font-normal lsd:text-lsd-text-secondary lsd:select-none lsd:lsd-typography-label1',
+          'lsd:flex-1 lsd:rounded-md lsd:font-normal lsd:text-lsd-text-secondary lsd:text-center lsd:select-none lsd:lsd-typography-label1',
           defaultClassNames.weekday
         ),
-        week: cn('lsd:mt-[var(--lsd-spacing-smaller)] lsd:flex lsd:w-full', defaultClassNames.week),
+        week: cn(
+          'lsd:mt-[var(--lsd-spacing-smaller)] lsd:flex lsd:w-full lsd:text-center',
+          defaultClassNames.week
+        ),
         day: cn(
-          'lsd:group/day lsd:relative lsd:aspect-square lsd:h-full lsd:w-full lsd:p-0 lsd:text-center lsd:select-none [&:last-child[data-selected=true]_button]:lsd:rounded-r-md',
+          'lsd:group/day lsd:relative lsd:aspect-square lsd:h-full lsd:w-full lsd:text-center lsd:p-0 lsd:text-center lsd:select-none [&:last-child[data-selected=true]_button]:lsd:rounded-r-md',
           props.showWeekNumber
             ? '[&:nth-child(2)[data-selected=true]_button]:lsd:rounded-l-md'
             : '[&:first-child[data-selected=true]_button]:lsd:rounded-l-md',
