@@ -195,9 +195,14 @@
 }
 
 @layer utilities {
+  html {
+    font-family: monospace;
+  }
+
   .font-serif {
     &,
     body {
+      font-family: serif;
       --lsd-font-family: serif;
     }
   }
@@ -205,6 +210,7 @@
   .font-sans {
     &,
     body {
+      font-family: sans-serif;
       --lsd-font-family: sans-serif;
     }
   }
@@ -212,12 +218,9 @@
   .font-mono {
     &,
     body {
+      font-family: monospace;
       --lsd-font-family: monospace;
     }
-  }
-
-  html {
-    font-family: var(--lsd-font-family);
   }
 }
 

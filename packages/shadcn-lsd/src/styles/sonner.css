@@ -15,7 +15,7 @@
   --info-bg: var(--lsd-surface) !important;
   --info-border: var(--lsd-info) !important;
   --info-text: var(--lsd-info-text) !important;
-  font-family: var(--lsd-font-family, system-ui, -apple-system, sans-serif) !important;
+  font-family: var(--lsd-font-family) !important;
 }
 
 [data-sonner-toaster] {
