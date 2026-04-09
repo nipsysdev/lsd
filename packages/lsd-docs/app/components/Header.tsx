@@ -48,7 +48,7 @@ export default function Header({ className }: HeaderProps) {
               rel="noopener noreferrer"
             >
               <GithubLogoIcon weight="duotone" className="mr-(--lsd-spacing-smaller) size-5" />
-              <span>GitHub</span>
+              <span>Source</span>
             </Link>
           </Button>
         </div>

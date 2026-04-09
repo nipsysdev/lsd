@@ -1,13 +1,14 @@
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
   ToggleGroup,
   ToggleGroupItem,
 } from '@nipsys/shadcn-lsd';
-import { MoonIcon, SunIcon } from '@phosphor-icons/react';
+import { CaretDownIcon, MoonIcon, SunIcon } from '@phosphor-icons/react';
 import { useCallback, useEffect, useState } from 'react';
 import { type Theme, Themes } from '@/config/themes';
 
@@ -46,12 +47,13 @@ export function ThemeToggle() {
       value={mode}
       onValueChange={handleModeChange}
       aria-label="Theme toggle"
+      size="sm"
     >
       <ToggleGroupItem value="light" aria-label="Light theme">
-        <SunIcon className="h-4 w-4" weight="duotone" />
+        <SunIcon className="size-4" weight="duotone" />
       </ToggleGroupItem>
       <ToggleGroupItem value="dark" aria-label="Dark theme">
-        <MoonIcon className="h-4 w-4" weight="duotone" />
+        <MoonIcon className="size-4" weight="duotone" />
       </ToggleGroupItem>
     </ToggleGroup>
   );
@@ -83,17 +85,26 @@ export function ThemeAccentToggle() {
   }, [toggleAccentTheme]);
 
   return (
-    <Select value={theme} onValueChange={toggleAccentTheme}>
-      <SelectTrigger className="w-[140px]">
-        <SelectValue placeholder="Select theme" />
-      </SelectTrigger>
-      <SelectContent>
-        {Themes.map(t => (
-          <SelectItem key={t} value={t}>
-            {t.charAt(0).toUpperCase() + t.slice(1)}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="outlined"
+          size="sm"
+          className="flex items-center justify-between gap-(--lsd-spacing-smaller)"
+        >
+          Theme
+          <CaretDownIcon weight="duotone" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuRadioGroup value={theme} onValueChange={toggleAccentTheme}>
+          {Themes.map(t => (
+            <DropdownMenuRadioItem key={t} value={t}>
+              {t.charAt(0).toUpperCase() + t.slice(1)}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

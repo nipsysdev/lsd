@@ -1,4 +1,12 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@nipsys/shadcn-lsd';
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@nipsys/shadcn-lsd';
+import { CaretDownIcon } from '@phosphor-icons/react';
 import { useCallback, useEffect, useState } from 'react';
 import { type Font, Fonts } from '@/config/fonts';
 
@@ -29,17 +37,26 @@ export function FontToggle() {
   }, [handleFontChange]);
 
   return (
-    <Select value={font} onValueChange={handleFontChange}>
-      <SelectTrigger className="w-[140px]">
-        <SelectValue placeholder="Select font" />
-      </SelectTrigger>
-      <SelectContent>
-        {Fonts.map(f => (
-          <SelectItem key={f} value={f}>
-            {f.charAt(0).toUpperCase() + f.slice(1)}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="outlined"
+          size="sm"
+          className="flex items-center justify-between gap-(--lsd-spacing-smaller)"
+        >
+          Font
+          <CaretDownIcon weight="duotone" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuRadioGroup value={font} onValueChange={handleFontChange}>
+          {Fonts.map(f => (
+            <DropdownMenuRadioItem key={f} value={f}>
+              {f.charAt(0).toUpperCase() + f.slice(1)}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
