@@ -16,7 +16,7 @@ export function Example() {
             <span className="w-full border-t"></span>
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-(--lsd-color-background) px-(--lsd-spacing-base)">
+            <span className="bg-(--lsd-surface) px-(--lsd-spacing-base)">
               <Typography variant="label2">Or</Typography>
             </span>
           </div>
@@ -41,7 +41,7 @@ export function Example() {
             <span className="w-full border-t" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-(--lsd-color-background) px-(--lsd-spacing-base)">
+            <span className="bg-(--lsd-surface) px-(--lsd-spacing-base)">
               <Typography variant="label2">Or</Typography>
             </span>
           </div>
