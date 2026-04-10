@@ -104,7 +104,7 @@ export function CustomExample() {
         Demonstrates rich content, custom styling, and promise-based toasts.
       </Typography>
 
-      <div className="space-y-(--lsd-spacing-lg)">
+      <div className="space-y-(--lsd-spacing-large)">
         <div>
           <Typography variant="label1">Rich Content Toast with Custom Styling</Typography>
           <Typography

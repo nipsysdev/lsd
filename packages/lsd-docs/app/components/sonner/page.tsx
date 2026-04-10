@@ -128,7 +128,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastCustomIframeRef}
-                size="md"
+                size="lg"
                 src="/examples/sonner/custom"
                 title="Custom Toast Example"
               />
@@ -144,7 +144,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastPositionIframeRef}
-                size="md"
+                size="lg"
                 src="/examples/sonner/position"
                 title="Toast Position Example"
               />
@@ -160,7 +160,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastTypesIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/sonner/toast-types"
                 title="Toast Types Example"
               />
@@ -176,7 +176,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastDurationIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/sonner/duration"
                 title="Toast Duration Example"
               />
@@ -192,7 +192,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastPositionsIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/sonner/positions"
                 title="Toast Positions Example"
               />
@@ -208,7 +208,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastActionsIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/sonner/actions"
                 title="Toast Actions Example"
               />
@@ -224,7 +224,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastPersistentIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/sonner/persistent"
                 title="Toast Persistent Example"
               />
@@ -240,7 +240,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastPromiseIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/sonner/promise"
                 title="Toast Promise Example"
               />
@@ -256,7 +256,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toastRichIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/sonner/rich"
                 title="Toast Rich Example"
               />

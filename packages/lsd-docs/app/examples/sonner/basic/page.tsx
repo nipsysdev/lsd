@@ -12,7 +12,6 @@ export function Example() {
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Toaster />
 
-      <Typography variant="label1">Success Toast</Typography>
       <Button 
         variant="outlined" 
         onClick={() => toast.success('Operation completed successfully!')}
@@ -20,7 +19,6 @@ export function Example() {
         Show Success Toast
       </Button>
 
-      <Typography variant="label1">Error Toast</Typography>
       <Button 
         variant="outlined" 
         onClick={() => toast.error('Something went wrong. Please try again.')}
@@ -28,7 +26,6 @@ export function Example() {
         Show Error Toast
       </Button>
 
-      <Typography variant="label1">Warning Toast</Typography>
       <Button 
         variant="outlined" 
         onClick={() => toast.warning('Please review your input before proceeding.')}
@@ -36,7 +33,6 @@ export function Example() {
         Show Warning Toast
       </Button>
 
-      <Typography variant="label1">Info Toast</Typography>
       <Button 
         variant="outlined" 
         onClick={() => toast.info('A new feature is now available!')}
@@ -57,43 +53,31 @@ export function BasicExample() {
         Demonstrates success, error, warning, and info toast notifications.
       </Typography>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-lg)">
-        <div className="space-y-(--lsd-spacing-base)">
-          <Typography variant="label1">Success Toast</Typography>
-          <Button
-            variant="outlined"
-            onClick={() => toast.success('Operation completed successfully!')}
-          >
-            Show Success Toast
-          </Button>
-        </div>
+      <div className="flex flex-col gap-y-(--lsd-spacing-small)">
+        <Button
+          variant="outlined"
+          onClick={() => toast.success('Operation completed successfully!')}
+        >
+          Show Success Toast
+        </Button>
 
-        <div className="space-y-(--lsd-spacing-base)">
-          <Typography variant="label1">Error Toast</Typography>
-          <Button
-            variant="outlined"
-            onClick={() => toast.error('Something went wrong. Please try again.')}
-          >
-            Show Error Toast
-          </Button>
-        </div>
+        <Button
+          variant="outlined"
+          onClick={() => toast.error('Something went wrong. Please try again.')}
+        >
+          Show Error Toast
+        </Button>
 
-        <div className="space-y-(--lsd-spacing-base)">
-          <Typography variant="label1">Warning Toast</Typography>
-          <Button
-            variant="outlined"
-            onClick={() => toast.warning('Please review your input before proceeding.')}
-          >
-            Show Warning Toast
-          </Button>
-        </div>
+        <Button
+          variant="outlined"
+          onClick={() => toast.warning('Please review your input before proceeding.')}
+        >
+          Show Warning Toast
+        </Button>
 
-        <div className="space-y-(--lsd-spacing-base)">
-          <Typography variant="label1">Info Toast</Typography>
-          <Button variant="outlined" onClick={() => toast.info('A new feature is now available!')}>
-            Show Info Toast
-          </Button>
-        </div>
+        <Button variant="outlined" onClick={() => toast.info('A new feature is now available!')}>
+          Show Info Toast
+        </Button>
       </div>
 
       <Toaster />

@@ -65,7 +65,7 @@ export function PositionExample() {
         Demonstrates different toast positioning options on the screen.
       </Typography>
 
-      <div className="space-y-(--lsd-spacing-lg)">
+      <div className="space-y-(--lsd-spacing-large)">
         <div>
           <Typography variant="label1">Top Positions</Typography>
           <Typography
