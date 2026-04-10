@@ -77,34 +77,6 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Features">
-          <Typography variant="body1">
-            Additional features like icons and structured content with titles and descriptions.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Basic Usage</CardTitle>
-              <CardDescription>Simple alert with title and description</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample size="md" src="/examples/alert/basic" title="Basic" />
-              <CodeExample code={BasicCode} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>With Icon</CardTitle>
-              <CardDescription>Add an icon for additional visual context</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample size="md" src="/examples/alert/with-icon" title="With Icon" />
-              <CodeExample code={WithIconCode} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
         <PageSection title="API Reference">
           <Typography variant="body1">All available props for the Alert components.</Typography>
 
