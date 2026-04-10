@@ -74,7 +74,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={progressBasicIframeRef}
-                size="md"
+                size="lg"
                 src="/examples/progress/basic"
                 title="Progress Basic Example"
               />
@@ -98,7 +98,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
-                size="md"
+                size="sm"
                 src="/examples/progress/indeterminate"
                 title="Indeterminate Progress"
               />
@@ -112,7 +112,7 @@ export default function MyComponent() {
               <CardDescription>Pause/resume control for indeterminate progress</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/progress/paused" title="Paused Progress" />
+              <IframeExample size="sm" src="/examples/progress/paused" title="Paused Progress" />
               <CodeExample code={PAUSED_CODE} />
             </CardContent>
           </Card>
