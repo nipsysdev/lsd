@@ -9,6 +9,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@nipsys/shadcn-lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `
 \`\`\`tsx
@@ -58,6 +59,8 @@ export function DropdownMenuShortcuts() {
 `;
 
 export default function Page() {
+  useSendThemeToIframes();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

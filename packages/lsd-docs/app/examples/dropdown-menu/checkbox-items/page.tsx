@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `\`\`\`tsx
 import { useState } from 'react';
@@ -64,6 +65,8 @@ export function DropdownMenuCheckboxItems() {
 `;
 
 export default function Page() {
+  useSendThemeToIframes();
+
   const [showBookmarks, setShowBookmarks] = useState(true);
   const [showUrls, setShowUrls] = useState(false);
   const [askPrivate, setAskPrivate] = useState(false);

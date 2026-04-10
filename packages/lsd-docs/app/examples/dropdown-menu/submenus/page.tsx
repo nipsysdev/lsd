@@ -12,6 +12,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@nipsys/shadcn-lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `\`\`\`tsx
 import {
@@ -62,6 +63,8 @@ export function DropdownMenuSubmenus() {
 `;
 
 export default function Page() {
+  useSendThemeToIframes();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

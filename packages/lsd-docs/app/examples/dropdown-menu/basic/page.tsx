@@ -9,6 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@nipsys/shadcn-lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `
 import {
@@ -41,6 +42,8 @@ export function DropdownMenuBasic() {
 `;
 
 export default function Page() {
+  useSendThemeToIframes();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

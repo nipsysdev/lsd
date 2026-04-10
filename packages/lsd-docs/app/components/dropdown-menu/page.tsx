@@ -1,5 +1,13 @@
 'use client';
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Typography,
+} from '@nipsys/shadcn-lsd';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -23,301 +31,362 @@ export default function DropdownMenuPage() {
 
       <PageContent>
         <PageSection title="About Dropdown Menu">
-          <div className="space-y-4">
-            <p className="lsd:text-lsd-text-secondary">
-              The Dropdown Menu component is built on Radix UI and follows accessibility patterns.
-              It provides a rich set of features including:
-            </p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>Keyboard navigation (arrow keys, Tab, Enter, Escape)</li>
-              <li>Submenu support with unlimited nesting</li>
-              <li>Checkbox items for boolean selections</li>
-              <li>Radio group items for exclusive selection</li>
-              <li>Shortcuts display for keyboard commands</li>
-              <li>Inset option for aligned labels</li>
-              <li>Destructive variant for dangerous actions</li>
-            </ul>
-          </div>
+          <Typography variant="body1" className="block">
+            The Dropdown Menu component is built on Radix UI and follows accessibility patterns. It
+            provides a rich set of features including keyboard navigation, submenu support, checkbox
+            items, radio group items, shortcuts display, inset option for aligned labels, and
+            destructive variant for dangerous actions.
+          </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <p className="lsd:text-lsd-text-secondary">
+          <Typography variant="body1">
             The Dropdown Menu component is included in @nipsys/shadcn-lsd. No additional
             installation steps are required.
-          </p>
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <CodeExample
+                useAccordion={false}
+                code={`import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  Button,
+} from '@nipsys/shadcn-lsd';`}
+              />
+            </CardContent>
+          </Card>
         </PageSection>
 
-        <PageSection title="Basic Usage">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Here's a simple dropdown menu with basic items:
-          </p>
-          <IframeExample size="md" src="/examples/dropdown-menu/basic" title="Basic" />
-          <CodeExample code={BasicCode} />
+        <PageSection title="Usage">
+          <Typography variant="body1">Here's a simple dropdown menu with basic items:</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Basic</CardTitle>
+              <CardDescription>Simple dropdown menu with basic items</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="md"
+                src="/examples/dropdown-menu/basic"
+                title="Basic Dropdown Menu"
+              />
+              <CodeExample code={BasicCode} />
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="Shortcuts">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Display keyboard shortcuts for menu items:
-          </p>
-          <IframeExample size="md" src="/examples/dropdown-menu/shortcuts" title="Shortcuts" />
-          <CodeExample code={ShortcutsCode} />
+          <Typography variant="body1">Display keyboard shortcuts for menu items:</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Shortcuts</CardTitle>
+              <CardDescription>Menu items with keyboard shortcut hints</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="md"
+                src="/examples/dropdown-menu/shortcuts"
+                title="Dropdown Menu with Shortcuts"
+              />
+              <CodeExample code={ShortcutsCode} />
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="Submenus">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
+          <Typography variant="body1">
             Create nested dropdown menus for hierarchical actions:
-          </p>
-          <IframeExample size="md" src="/examples/dropdown-menu/submenus" title="Submenus" />
-          <CodeExample code={SubmenusCode} />
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Nested Menus</CardTitle>
+              <CardDescription>Dropdown menu with submenus</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="md"
+                src="/examples/dropdown-menu/submenus"
+                title="Dropdown Menu with Submenus"
+              />
+              <CodeExample code={SubmenusCode} />
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="Checkbox Items">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Use checkbox items for boolean toggles:
-          </p>
-          <IframeExample
-            size="md"
-            src="/examples/dropdown-menu/checkbox-items"
-            title="Checkbox Items"
-          />
-          <CodeExample code={CheckboxCode} />
+          <Typography variant="body1">Use checkbox items for boolean toggles:</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Checkbox Items</CardTitle>
+              <CardDescription>Menu items with checkboxes for multi-select</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="md"
+                src="/examples/dropdown-menu/checkbox-items"
+                title="Dropdown Menu with Checkbox Items"
+              />
+              <CodeExample code={CheckboxCode} />
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="Radio Group Items">
-          <p className="mb-4 lsd:text-lsd-text-secondary">
-            Use radio group items for exclusive selection:
-          </p>
-          <IframeExample size="md" src="/examples/dropdown-menu/radio-items" title="Radio Items" />
-          <CodeExample code={RadioCode} />
+          <Typography variant="body1">Use radio group items for exclusive selection:</Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Radio Items</CardTitle>
+              <CardDescription>Menu items with radio buttons for single-select</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                size="md"
+                src="/examples/dropdown-menu/radio-items"
+                title="Dropdown Menu with Radio Items"
+              />
+              <CodeExample code={RadioCode} />
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <div className="space-y-6">
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenu</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">The root dropdown menu component.</p>
-              <p className="text-sm lsd:text-lsd-text-secondary">
-                Extends DropdownMenuPrimitive.Root from @radix-ui/react-dropdown-menu.
-              </p>
-            </div>
+          <Typography variant="body1">
+            All available components and props for the Dropdown Menu.
+          </Typography>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuTrigger</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                The button or element that opens the dropdown menu.
-              </p>
-              <p className="text-sm lsd:text-lsd-text-secondary">
-                Extends DropdownMenuPrimitive.Trigger.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenu</CardTitle>
+                <CardDescription>The root dropdown menu component</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Extends:</strong> DropdownMenuPrimitive.Root from
+                  @radix-ui/react-dropdown-menu
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuContent</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                The container for dropdown menu items. Handles positioning and animations.
-              </p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">sideOffset</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">number</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuTrigger</CardTitle>
+                <CardDescription>The button that opens the dropdown menu</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Extends:</strong> DropdownMenuPrimitive.Trigger
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuItem</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                A selectable item in the dropdown menu.
-              </p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">inset</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">boolean</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">false</td>
-                  </tr>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">variant</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">default | destructive</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">default</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuContent</CardTitle>
+                <CardDescription>The container for dropdown menu items</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> DropdownMenuContentProps
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> sideOffset
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> sideOffset: 4
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuCheckboxItem</h3>
-              <p className="lsd:text-lsd-text-secondary">
-                A dropdown menu item with checkbox indicating selection state. Shows a checkmark
-                when checked.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuItem</CardTitle>
+                <CardDescription>A selectable item in the dropdown menu</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> DropdownMenuItemProps
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> inset, variant
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Default:</strong> inset: false, variant: 'default'
+                </Typography>
+                <Typography variant="body2" className="block">
+                  variant options: default, destructive
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuGroup</h3>
-              <p className="lsd:text-lsd-text-secondary">
-                Groups menu items together without adding visual separators.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuCheckboxItem</CardTitle>
+                <CardDescription>A dropdown menu item with checkbox</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  Shows a checkmark when checked. Extends DropdownMenuPrimitive.CheckboxItem.
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuRadioGroup</h3>
-              <p className="lsd:text-lsd-text-secondary">
-                Groups radio button items together for exclusive selection.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuGroup</CardTitle>
+                <CardDescription>Groups menu items together</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  Groups menu items together without adding visual separators.
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuRadioItem</h3>
-              <p className="lsd:text-lsd-text-secondary">
-                A radio button item for exclusive selection within a DropdownMenuRadioGroup.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuRadioGroup</CardTitle>
+                <CardDescription>Groups radio button items together</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  Groups radio button items together for exclusive selection.
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuLabel</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">
-                A non-interactive label for organizing dropdown menu content.
-              </p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">inset</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">boolean</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">false</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuRadioItem</CardTitle>
+                <CardDescription>A radio button item for exclusive selection</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  A radio button item for exclusive selection within a DropdownMenuRadioGroup.
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuSeparator</h3>
-              <p className="lsd:text-lsd-text-secondary">
-                A visual divider between dropdown menu sections.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuLabel</CardTitle>
+                <CardDescription>A non-interactive label for organizing content</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> DropdownMenuLabelProps
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Options:</strong> inset
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuShortcut</h3>
-              <p className="lsd:text-lsd-text-secondary">
-                Displays keyboard shortcuts for menu items. Aligned to the right.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuSeparator</CardTitle>
+                <CardDescription>A visual divider between sections</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  A visual divider between dropdown menu sections.
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuSub</h3>
-              <p className="lsd:text-lsd-text-secondary">
-                A submenu container for nested dropdown menus.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuShortcut</CardTitle>
+                <CardDescription>Displays keyboard shortcuts</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  Displays keyboard shortcuts for menu items. Aligned to the right.
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuSubTrigger</h3>
-              <p className="mb-2 lsd:text-lsd-text-secondary">A menu item that opens a submenu.</p>
-              <table className="w-full text-left lsd:border-collapse">
-                <thead>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <th className="lsd:py-2 lsd:px-3">Prop</th>
-                    <th className="lsd:py-2 lsd:px-3">Type</th>
-                    <th className="lsd:py-2 lsd:px-3">Default</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="lsd:border-b lsd:border-[var(--lsd-border)]">
-                    <td className="lsd:py-2 lsd:px-3 lsd:font-mono lsd:text-sm">inset</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">boolean</td>
-                    <td className="lsd:py-2 lsd:px-3 lsd:text-sm">false</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuSub</CardTitle>
+                <CardDescription>A submenu container</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  A submenu container for nested dropdown menus.
+                </Typography>
+              </CardContent>
+            </Card>
 
-            <div>
-              <h3 className="lsd:text-xl lsd:font-medium mb-2">DropdownMenuSubContent</h3>
-              <p className="lsd:text-lsd-text-secondary">
-                The container for submenu items. Similar to DropdownMenuContent but without portal.
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuSubTrigger</CardTitle>
+                <CardDescription>A menu item that opens a submenu</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> DropdownMenuSubTriggerProps
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Options:</strong> inset
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>DropdownMenuSubContent</CardTitle>
+                <CardDescription>The container for submenu items</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block">
+                  The container for submenu items. Similar to DropdownMenuContent but without
+                  portal.
+                </Typography>
+              </CardContent>
+            </Card>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
-          <div className="space-y-4">
-            <p className="mb-4 lsd:text-lsd-text-secondary">
-              The Dropdown Menu component follows the WAI-ARIA combobox pattern and is keyboard
-              accessible by default:
-            </p>
-            <ul className="list-disc list-inside space-y-2 lsd:text-lsd-text-secondary">
-              <li>
-                <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                  ArrowDown
-                </kbd>{' '}
-                /{' '}
-                <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                  ArrowUp
-                </kbd>{' '}
-                - Navigate items
-              </li>
-              <li>
-                <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                  ArrowRight
-                </kbd>{' '}
-                - Open submenu
-              </li>
-              <li>
-                <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                  ArrowLeft
-                </kbd>{' '}
-                - Close submenu
-              </li>
-              <li>
-                <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                  Enter
-                </kbd>{' '}
-                /{' '}
-                <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                  Space
-                </kbd>{' '}
-                - Activate item
-              </li>
-              <li>
-                <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                  Escape
-                </kbd>{' '}
-                - Close menu
-              </li>
-              <li>
-                <kbd className="lsd:px-2 lsd:py-1 lsd:bg-[var(--lsd-surface)] lsd:border lsd:border-[var(--lsd-border)] lsd:rounded lsd:text-sm">
-                  Tab
-                </kbd>{' '}
-                - Move focus to next element
-              </li>
-            </ul>
-          </div>
+          <Typography variant="body1">
+            The Dropdown Menu component follows the WAI-ARIA combobox pattern and is keyboard
+            accessible by default:
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>ArrowDown</strong> / <strong>ArrowUp</strong> - Navigate items
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>ArrowRight</strong> - Open submenu
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>ArrowLeft</strong> - Close submenu
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Enter</strong> / <strong>Space</strong> - Activate item
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • <strong>Escape</strong> - Close menu
+              </Typography>
+              <Typography variant="body2" className="block">
+                • <strong>Tab</strong> - Move focus to next element
+              </Typography>
+            </CardContent>
+          </Card>
         </PageSection>
 
         <PageNavigation
