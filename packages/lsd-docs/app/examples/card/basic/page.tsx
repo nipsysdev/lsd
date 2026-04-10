@@ -83,7 +83,7 @@ export function CardBasicExample() {
   useSendThemeToIframes();
 
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full max-w-md h-fit">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>
@@ -96,7 +96,7 @@ export function CardBasicExample() {
                 <DotsThreeIcon weight="bold" />
               </Button>
             </PopoverTrigger>
-            <PopoverContent align="end" size="sm" className="p-0">
+            <PopoverContent align="end" size="sm" className="p-0 w-fit">
               <ButtonGroup orientation="vertical">
                 <Button variant="outlined" size="sm" className="justify-start">
                   Edit

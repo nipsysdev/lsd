@@ -10,13 +10,12 @@ export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Horizontal ScrollArea with ScrollBar</Typography>
-      <ScrollArea className="w-full whitespace-nowrap rounded-md border p-(--lsd-spacing-base)">
+      <ScrollArea className="w-full whitespace-nowrap rounded-md border p-(--lsd-spacing-smaller)">
         <div className="flex w-max space-x-(--lsd-spacing-base)">
           {[...Array(15)].map((_, i) => (
-            <div key={i} className="flex flex-col items-center gap-(--lsd-spacing-smaller)">
-              <div className="size-(--lsd-spacing-5x) rounded-lg bg-(--lsd-color-surface-alt)"></div>
-              <Typography variant="body2">Card {i + 1}</Typography>
-            </div>
+            <Typography key={i} variant="body2">
+              Item {i + 1}
+            </Typography>
           ))}
         </div>
         <ScrollBar orientation="horizontal" />
@@ -30,9 +29,9 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base)">
+    <div className="flex flex-col gap-(--lsd-spacing-base) overflow-hidden">
       <Typography variant="label1">Horizontal ScrollArea with ScrollBar</Typography>
-      <ScrollArea className="flex-auto whitespace-nowrap border p-(--lsd-spacing-base)">
+      <ScrollArea className="flex-auto whitespace-nowrap border p-(--lsd-spacing-smaller)">
         <div className="flex gap-x-(--lsd-spacing-base)">
           {[...Array(15)].map((_, i) => (
             <Typography key={i} variant="body2">

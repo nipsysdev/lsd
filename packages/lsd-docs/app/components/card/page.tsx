@@ -104,7 +104,7 @@ export default function CardPage() {
             <CardContent>
               <IframeExample
                 ref={cardIframeRef}
-                size="md"
+                size="lg"
                 src="/examples/card/basic"
                 title="Card Basic Example"
               />

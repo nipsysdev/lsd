@@ -72,7 +72,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={basicIframeRef}
-                size="lg"
+                size="md"
                 src="/examples/scroll-area/basic"
                 title="Basic ScrollArea"
               />
@@ -92,7 +92,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={horizontalIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/scroll-area/horizontal"
                 title="Horizontal ScrollArea"
               />
@@ -112,7 +112,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={bothIframeRef}
-                size="lg"
+                size="sm"
                 src="/examples/scroll-area/both"
                 title="Both Orientations"
               />
