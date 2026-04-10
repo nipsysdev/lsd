@@ -16,11 +16,10 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { CODE as BasicCode } from '@/examples/slider/basic/page';
-import { CODE as ControlledCode } from '@/examples/slider/controlled/page';
 import { CODE as DisabledCode } from '@/examples/slider/disabled/page';
 import { CODE as MultipleCode } from '@/examples/slider/multiple/page';
 import { CODE as RangeCode } from '@/examples/slider/range/page';
-import { CODE as VerticalCode } from '@/examples/slider/vertical/page';
+import { CODE as SizesCode } from '@/examples/slider/sizes/page';
 
 export default function SliderPage() {
   return (
@@ -36,8 +35,8 @@ export default function SliderPage() {
             The Slider component is built on Radix UI and provides a smooth, intuitive way for users
             to select values from a continuous range. It supports single value selection, range
             selection with two thumbs for min/max, multiple thumbs for advanced use cases,
-            horizontal and vertical orientations, controlled and uncontrolled modes, disabled state
-            support, custom step increments, and LSD theme integration for consistent styling.
+            horizontal controlled and uncontrolled modes, disabled state support, custom step
+            increments, and LSD theme integration for consistent styling.
           </Typography>
         </PageSection>
 
@@ -72,7 +71,7 @@ export default function MyComponent() {
               <CardDescription>A simple slider with a single value</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/slider/basic" title="Basic" />
+              <IframeExample size="sm" src="/examples/slider/basic" title="Basic" />
               <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
@@ -83,7 +82,7 @@ export default function MyComponent() {
               <CardDescription>Use an array with two values for a range slider</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/slider/range" title="Range" />
+              <IframeExample size="sm" src="/examples/slider/range" title="Range" />
               <CodeExample code={RangeCode} />
             </CardContent>
           </Card>
@@ -96,57 +95,31 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/slider/multiple" title="Multiple" />
+              <IframeExample size="sm" src="/examples/slider/multiple" title="Multiple" />
               <CodeExample code={MultipleCode} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Vertical Orientation</CardTitle>
-              <CardDescription>Use orientation="vertical" for a vertical slider</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample size="md" src="/examples/slider/vertical" title="Vertical" />
-              <CodeExample code={VerticalCode} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Sizes">
           <Typography variant="body1">
-            Slider adapts to different container sizes with responsive design.
+            Slider comes in three sizes to accommodate different use cases and accessibility needs.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Responsive Size</CardTitle>
-              <CardDescription>Automatically adjusts to container width</CardDescription>
+              <CardTitle>Size Variants</CardTitle>
+              <CardDescription>Choose from small, medium, or large sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/slider/basic" title="Slider Size" />
-              <CodeExample code={BasicCode} />
+              <IframeExample size="md" src="/examples/slider/sizes" title="Slider Sizes" />
+              <CodeExample code={SizesCode} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Features">
-          <Typography variant="body1">
-            Additional features like controlled mode and disabled state.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Controlled Component</CardTitle>
-              <CardDescription>
-                Use the value and onValueChange props for controlled sliders
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample size="md" src="/examples/slider/controlled" title="Controlled" />
-              <CodeExample code={ControlledCode} />
-            </CardContent>
-          </Card>
+          <Typography variant="body1">Additional features like disabled state.</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
@@ -154,7 +127,7 @@ export default function MyComponent() {
               <CardDescription>Use the disabled prop to disable the slider</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/slider/disabled" title="Disabled" />
+              <IframeExample size="sm" src="/examples/slider/disabled" title="Disabled" />
               <CodeExample code={DisabledCode} />
             </CardContent>
           </Card>
@@ -268,6 +241,27 @@ export default function MyComponent() {
                 </Typography>
                 <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
                   Controls the granularity of value changes
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>size</CardTitle>
+                <CardDescription>Visual size of the slider</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> 'sm' | 'md' | 'lg'
+                </Typography>
+                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Options:</strong> sm, md, lg
+                </Typography>
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> 'md'
+                </Typography>
+                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
+                  Controls the visual size of the track and thumb
                 </Typography>
               </CardContent>
             </Card>

@@ -1,54 +1,52 @@
 'use client';
 
-import { Slider } from '@nipsys/shadcn-lsd';
+import { Slider, Typography } from '@nipsys/shadcn-lsd';
+import { useState } from 'react';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export default function Page() {
+export const CODE = `import * as React from 'react';
+import { useState } from 'react';
+import { Slider, Typography } from '@nipsys/shadcn-lsd';
+
+export function Example() {
+  const [value, setValue] = useState([33, 66]);
+
   return (
-    <div className="flex flex-col items-center justify-center p-8">
-      <div className="w-full max-w-md space-y-6">
-        <div className="lsd:bg-lsd-base-surface lsd:rounded-lg lsd:p-6">
-          <div className="lsd:text-[0.875rem] lsd:leading-[1.5rem] lsd:font-medium lsd:text-lsd-text-primary lsd:mb-4 lsd:block">
-            Price Range
-          </div>
-          <Slider defaultValue={[33, 66]} max={100} step={1} />
-          <div className="lsd:flex lsd:justify-between lsd:mt-2">
-            <span className="lsd:text-[0.75rem] lsd:leading-[1.25rem] lsd:text-lsd-text-secondary">
-              Min: 33
-            </span>
-            <span className="lsd:text-[0.75rem] lsd:leading-[1.25rem] lsd:text-lsd-text-secondary">
-              Max: 66
-            </span>
-          </div>
-        </div>
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
+      <Typography variant="body2">Price Range</Typography>
+      <Slider value={value} onValueChange={setValue} max={100} step={1} className="w-80" />
+      <div className="flex justify-between">
+        <Typography variant="label1" className="text-secondary">
+          Min: {value[0]}
+        </Typography>
+        <Typography variant="label1" className="text-secondary">
+          Max: {value[1]}
+        </Typography>
+      </div>
+    </div>
+  );
+}`;
+
+export function SliderRangeExample() {
+  useSendThemeToIframes();
+  const [value, setValue] = useState([33, 66]);
+
+  return (
+    <div className="flex flex-col gap-(--lsd-spacing-base)">
+      <Typography variant="body2">Price Range</Typography>
+      <Slider value={value} onValueChange={setValue} max={100} step={1} className="w-80" />
+      <div className="flex gap-x-(--lsd-spacing-base)">
+        <Typography variant="label1" className="text-secondary">
+          Min: {value[0]}
+        </Typography>
+        <Typography variant="label1" className="text-secondary">
+          Max: {value[1]}
+        </Typography>
       </div>
     </div>
   );
 }
 
-export const CODE = `\`use client\`;
-
-import { Slider } from 'https://cdn.jsdelivr.net/npm/@nipsys/shadcn-lsd@latest/+esm';
-
 export default function Page() {
-  return (
-    <div className="flex flex-col items-center justify-center p-8">
-      <div className="w-full max-w-md space-y-6">
-        <div className="lsd:bg-lsd-base-surface lsd:rounded-lg lsd:p-6">
-          <div className="lsd:text-[0.875rem] lsd:leading-[1.5rem] lsd:font-medium lsd:text-lsd-text-primary lsd:mb-4 lsd:block">
-            Price Range
-          </div>
-          <Slider defaultValue={[33, 66]} max={100} step={1} />
-          <div className="lsd:flex lsd:justify-between lsd:mt-2">
-            <span className="lsd:text-[0.75rem] lsd:leading-[1.25rem] lsd:text-lsd-text-secondary">
-              Min: 33
-            </span>
-            <span className="lsd:text-[0.75rem] lsd:leading-[1.25rem] lsd:text-lsd-text-secondary">
-              Max: 66
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <SliderRangeExample />;
 }
-`;
