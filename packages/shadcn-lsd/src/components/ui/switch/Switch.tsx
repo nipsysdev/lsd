@@ -9,9 +9,9 @@ const switchVariants = cva(
   {
     variants: {
       size: {
-        sm: 'lsd:h-[var(--lsd-spacing-base)] lsd:w-[var(--lsd-spacing-largest)]',
-        md: 'lsd:h-[var(--lsd-spacing-large)] lsd:w-9',
-        lg: 'lsd:h-[var(--lsd-spacing-larger)] lsd:w-12',
+        sm: 'lsd:h-3.5 lsd:w-7',
+        md: 'lsd:h-4.5 lsd:w-9',
+        lg: 'lsd:h-6 lsd:w-12',
       },
     },
     defaultVariants: {
@@ -25,9 +25,9 @@ const thumbVariants = cva(
   {
     variants: {
       size: {
-        sm: 'lsd:size-[var(--lsd-spacing-small)] lsd:data-[state=checked]:translate-x-[calc(100%-2px)]',
-        md: 'lsd:size-[var(--lsd-spacing-large)] lsd:data-[state=checked]:translate-x-[calc(100%-2px)]',
-        lg: 'lsd:size-[var(--lsd-spacing-larger)] lsd:data-[state=checked]:translate-x-[calc(100%-2px)]',
+        sm: 'lsd:size-3.5 lsd:data-[state=checked]:translate-x-[calc(100%+2px)]',
+        md: 'lsd:size-4.5 lsd:data-[state=checked]:translate-x-[calc(100%-2px)]',
+        lg: 'lsd:size-6 lsd:data-[state=checked]:translate-x-[calc(100%-2px)]',
       },
     },
     defaultVariants: {
