@@ -22,7 +22,7 @@ export function BadgeSizesExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-wrap items-center gap-(--lsd-spacing-base)">
+    <div className="flex flex-wrap items-center gap-(--lsd-spacing-base) h-fit">
       <Badge size="sm">Small</Badge>
       <Badge size="md">Medium</Badge>
       <Badge size="lg">Large</Badge>

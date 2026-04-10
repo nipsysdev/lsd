@@ -14,9 +14,6 @@ export function Example() {
       <Badge variant="success">Success</Badge>
       <Badge variant="warning">Warning</Badge>
       <Badge variant="info">Info</Badge>
-      <Badge variant="dot" size="sm" />
-      <Badge variant="dot" size="md" />
-      <Badge variant="dot" size="lg" />
     </div>
   );
 }`;
@@ -32,9 +29,6 @@ export function BadgeVariantsExample() {
       <Badge variant="success">Success</Badge>
       <Badge variant="warning">Warning</Badge>
       <Badge variant="info">Info</Badge>
-      <Badge variant="dot" size="sm" />
-      <Badge variant="dot" size="md" />
-      <Badge variant="dot" size="lg" />
     </div>
   );
 }
