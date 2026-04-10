@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@nipsys/shadcn-lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `
 import {
@@ -17,7 +18,6 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
   NavigationMenuLink,
-  Button,
 } from '@nipsys/shadcn-lsd';
 
 export function NavigationMenuBasic() {
@@ -33,7 +33,7 @@ export function NavigationMenuBasic() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/about">About</NavigationMenuLink>
+          <NavigationMenuLink href="#">About</NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
@@ -50,6 +50,8 @@ export function NavigationMenuBasic() {
 `;
 
 export default function Page() {
+  useSendThemeToIframes();
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -62,7 +64,7 @@ export default function Page() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/about">About</NavigationMenuLink>
+          <NavigationMenuLink href="#">About</NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>

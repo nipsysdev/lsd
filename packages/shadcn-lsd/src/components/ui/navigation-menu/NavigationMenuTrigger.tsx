@@ -29,7 +29,7 @@ export function NavigationMenuTrigger({
     >
       {children}{' '}
       <CaretDownIcon
-        className="lsd:relative lsd:top-[1px] lsd:ml-1 lsd:size-3 lsd:transition lsd:duration-300 group-data-[state=open]:lsd:rotate-180"
+        className="lsd:relative lsd:ml-(--lsd-spacing-smallest) lsd:size-3 lsd:transition lsd:duration-300 group-data-[state=open]:lsd:rotate-180"
         aria-hidden="true"
       />
     </NavigationMenuPrimitive.Trigger>

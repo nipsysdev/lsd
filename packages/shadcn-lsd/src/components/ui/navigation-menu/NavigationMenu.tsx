@@ -9,11 +9,12 @@ export type NavigationMenuProps = React.ComponentProps<typeof NavigationMenuPrim
 /**
  * NavigationMenu - A navigation menu component for displaying a hierarchical list of links.
  * Supports viewport mode for mobile/desktop responsive behavior and submenus.
+ * @default viewport false - Non-viewport mode provides better positioning control
  */
 export function NavigationMenu({
   className,
   children,
-  viewport = true,
+  viewport = false,
   ...props
 }: NavigationMenuProps) {
   return (
