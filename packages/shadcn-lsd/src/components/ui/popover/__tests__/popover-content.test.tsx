@@ -25,6 +25,7 @@ describe('PopoverContent', () => {
     expect(content).toHaveClass('lsd:text-lsd-text-primary');
     expect(content).toHaveClass('lsd:z-50');
     expect(content).toHaveClass('lsd:w-(--radix-popper-anchor-width)');
+    expect(content).toHaveClass('lsd:min-w-fit');
     expect(content).toHaveClass('lsd:border');
     expect(content).toHaveClass('lsd:border-lsd-border');
     expect(content).toHaveClass('lsd:p-(--lsd-spacing-base)');
