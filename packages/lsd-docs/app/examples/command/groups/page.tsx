@@ -35,7 +35,6 @@ export function Example() {
         <CommandSeparator />
         <CommandGroup heading="Settings">
           <CommandItem>Profile</CommandItem>
-          <CommandItem>Billing</CommandItem>
           <CommandItem>Settings</CommandItem>
         </CommandGroup>
       </CommandList>
@@ -59,7 +58,6 @@ export function CommandGroupsExample() {
         <CommandSeparator />
         <CommandGroup heading="Settings">
           <CommandItem>Profile</CommandItem>
-          <CommandItem>Billing</CommandItem>
           <CommandItem>Settings</CommandItem>
         </CommandGroup>
       </CommandList>

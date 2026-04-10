@@ -122,7 +122,7 @@ export default function CommandPage() {
             <CardContent>
               <IframeExample
                 ref={commandBasicIframeRef}
-                size="md"
+                size="sm"
                 src="/examples/command/basic"
                 title="Command Basic Example"
               />

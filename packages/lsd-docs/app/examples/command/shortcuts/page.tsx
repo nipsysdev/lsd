@@ -50,10 +50,6 @@ export function Example() {
             <CommandShortcut>⌘P</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            <span>Billing</span>
-            <CommandShortcut>⌘B</CommandShortcut>
-          </CommandItem>
-          <CommandItem>
             <span>Settings</span>
             <CommandShortcut>⌘S</CommandShortcut>
           </CommandItem>
@@ -90,10 +86,6 @@ export function CommandShortcutsExample() {
           <CommandItem>
             <span>Profile</span>
             <CommandShortcut>⌘P</CommandShortcut>
-          </CommandItem>
-          <CommandItem>
-            <span>Billing</span>
-            <CommandShortcut>⌘B</CommandShortcut>
           </CommandItem>
           <CommandItem>
             <span>Settings</span>
