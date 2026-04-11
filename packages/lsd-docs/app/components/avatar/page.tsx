@@ -287,8 +287,8 @@ export default function MyComponent() {
             href: '/components/accordion',
           }}
           next={{
-            title: 'Skeleton',
-            href: '/components/skeleton',
+            title: 'Badge',
+            href: '/components/badge',
           }}
         />
       </PageContent>

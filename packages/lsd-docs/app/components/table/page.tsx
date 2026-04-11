@@ -404,7 +404,7 @@ export default function TablePage() {
         </PageSection>
 
         <PageNavigation
-          previous={{ title: 'Skeleton', href: '/components/skeleton' }}
+          previous={{ title: 'Badge', href: '/components/badge' }}
           next={{ title: 'Toggle', href: '/components/toggle' }}
         />
       </PageContent>

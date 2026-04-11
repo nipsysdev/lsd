@@ -68,7 +68,7 @@ export default function MyComponent() {
               <CardDescription>Basic badge styles for general use</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample src="/examples/badge/basic" size="md" title="Badge Basic Example" />
+              <IframeExample src="/examples/badge/basic" size="sm" title="Badge Basic Example" />
               <CodeExample code={BadgeBasicCODE} />
             </CardContent>
           </Card>
@@ -83,7 +83,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 src="/examples/badge/variants"
-                size="md"
+                size="sm"
                 title="Badge Variants Example"
               />
               <CodeExample code={BadgeVariantsCODE} />
@@ -96,7 +96,7 @@ export default function MyComponent() {
               <CardDescription>Minimal circular indicator for status display</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample src="/examples/badge/dots" size="md" title="Badge Dots Example" />
+              <IframeExample src="/examples/badge/dots" size="sm" title="Badge Dots Example" />
               <CodeExample code={BadgeDotsCODE} />
             </CardContent>
           </Card>
@@ -113,7 +113,7 @@ export default function MyComponent() {
               <CardDescription>Small, medium, and large badge sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample src="/examples/badge/sizes" size="md" title="Badge Sizes Example" />
+              <IframeExample src="/examples/badge/sizes" size="sm" title="Badge Sizes Example" />
               <CodeExample code={BadgeSizesCODE} />
             </CardContent>
           </Card>
@@ -132,7 +132,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 src="/examples/badge/interactive"
-                size="md"
+                size="sm"
                 title="Badge Interactive Example"
               />
               <CodeExample code={BadgeInteractiveCODE} />
@@ -147,7 +147,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 src="/examples/badge/dismissible"
-                size="md"
+                size="sm"
                 title="Badge Dismissible Example"
               />
               <CodeExample code={BadgeDismissibleCODE} />
@@ -162,21 +162,10 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 src="/examples/badge/features"
-                size="md"
+                size="sm"
                 title="Badge Features Example"
               />
               <CodeExample code={BadgeFeaturesCODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Dot Indicators</CardTitle>
-              <CardDescription>Use dot prop for circular status indicators</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample src="/examples/badge/dots" size="md" title="Badge Dots Example" />
-              <CodeExample code={BadgeDotsCODE} />
             </CardContent>
           </Card>
         </PageSection>
@@ -422,12 +411,12 @@ export default function MyComponent() {
 
         <PageNavigation
           previous={{
-            title: 'Accordion',
-            href: '/components/accordion',
+            title: 'Avatar',
+            href: '/components/avatar',
           }}
           next={{
-            title: 'Skeleton',
-            href: '/components/skeleton',
+            title: 'Table',
+            href: '/components/table',
           }}
         />
       </PageContent>

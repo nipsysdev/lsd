@@ -102,7 +102,6 @@ export const navItems: NavGroup[] = [
           { title: 'Accordion', url: '/components/accordion' },
           { title: 'Avatar', url: '/components/avatar' },
           { title: 'Badge', url: '/components/badge' },
-          { title: 'Skeleton', url: '/components/skeleton' },
           { title: 'Table', url: '/components/table' },
           { title: 'Toggle', url: '/components/toggle' },
           { title: 'Toggle Group', url: '/components/toggle-group' },
