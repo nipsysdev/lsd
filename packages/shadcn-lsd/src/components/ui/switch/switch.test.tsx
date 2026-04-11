@@ -17,7 +17,7 @@ describe('Switch', () => {
     render(<Switch />);
     const switchElement = screen.getByRole('switch');
     expect(switchElement).toHaveClass('lsd:inline-flex');
-    expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-large)]');
+    expect(switchElement).toHaveClass('lsd:h-4.5');
     expect(switchElement).toHaveClass('lsd:w-9');
     expect(switchElement).toHaveClass('lsd:rounded-full');
     expect(switchElement).toHaveClass('lsd:transition-all');
@@ -46,7 +46,7 @@ describe('Switch', () => {
     render(<Switch />);
     const thumb = screen.getByRole('switch').children[0];
     expect(thumb).toHaveClass('lsd:bg-lsd-surface');
-    expect(thumb).toHaveClass('lsd:size-[var(--lsd-spacing-large)]');
+    expect(thumb).toHaveClass('lsd:size-4.5');
     expect(thumb).toHaveClass('lsd:rounded-full');
     expect(thumb).toHaveClass('lsd:transition-transform');
   });
@@ -95,34 +95,34 @@ describe('Switch', () => {
   it('renders with small size', () => {
     render(<Switch size="sm" />);
     const switchElement = screen.getByRole('switch');
-    expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-base)]');
-    expect(switchElement).toHaveClass('lsd:w-[var(--lsd-spacing-largest)]');
+    expect(switchElement).toHaveClass('lsd:h-3.5');
+    expect(switchElement).toHaveClass('lsd:w-7');
     const thumb = switchElement.children[0];
-    expect(thumb).toHaveClass('lsd:size-[var(--lsd-spacing-small)]');
+    expect(thumb).toHaveClass('lsd:size-3.5');
   });
 
   it('renders with medium size (default)', () => {
     render(<Switch size="md" />);
     const switchElement = screen.getByRole('switch');
-    expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-large)]');
+    expect(switchElement).toHaveClass('lsd:h-4.5');
     expect(switchElement).toHaveClass('lsd:w-9');
     const thumb = switchElement.children[0];
-    expect(thumb).toHaveClass('lsd:size-[var(--lsd-spacing-large)]');
+    expect(thumb).toHaveClass('lsd:size-4.5');
   });
 
   it('renders with large size', () => {
     render(<Switch size="lg" />);
     const switchElement = screen.getByRole('switch');
-    expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-larger)]');
+    expect(switchElement).toHaveClass('lsd:h-6');
     expect(switchElement).toHaveClass('lsd:w-12');
     const thumb = switchElement.children[0];
-    expect(thumb).toHaveClass('lsd:size-[var(--lsd-spacing-larger)]');
+    expect(thumb).toHaveClass('lsd:size-6');
   });
 
   it('applies thumb translate classes for checked state with small size', () => {
     render(<Switch size="sm" checked />);
     const thumb = screen.getByRole('switch').children[0];
-    expect(thumb).toHaveClass('lsd:data-[state=checked]:translate-x-[calc(100%-2px)]');
+    expect(thumb).toHaveClass('lsd:data-[state=checked]:translate-x-[calc(100%+2px)]');
   });
 
   it('applies thumb translate classes for checked state with large size', () => {
@@ -147,61 +147,61 @@ describe('Switch', () => {
     it('applies small size classes correctly', () => {
       render(<Switch size="sm" />);
       const switchElement = screen.getByRole('switch');
-      expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-base)]');
-      expect(switchElement).toHaveClass('lsd:w-[var(--lsd-spacing-largest)]');
+      expect(switchElement).toHaveClass('lsd:h-3.5');
+      expect(switchElement).toHaveClass('lsd:w-7');
     });
 
     it('applies small size thumb classes correctly', () => {
       render(<Switch size="sm" />);
       const thumb = screen.getByRole('switch').children[0];
-      expect(thumb).toHaveClass('lsd:size-[var(--lsd-spacing-small)]');
+      expect(thumb).toHaveClass('lsd:size-3.5');
     });
 
     it('applies medium size classes correctly', () => {
       render(<Switch size="md" />);
       const switchElement = screen.getByRole('switch');
-      expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-large)]');
+      expect(switchElement).toHaveClass('lsd:h-4.5');
       expect(switchElement).toHaveClass('lsd:w-9');
     });
 
     it('applies medium size thumb classes correctly', () => {
       render(<Switch size="md" />);
       const thumb = screen.getByRole('switch').children[0];
-      expect(thumb).toHaveClass('lsd:size-[var(--lsd-spacing-large)]');
+      expect(thumb).toHaveClass('lsd:size-4.5');
     });
 
     it('applies large size classes correctly', () => {
       render(<Switch size="lg" />);
       const switchElement = screen.getByRole('switch');
-      expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-larger)]');
+      expect(switchElement).toHaveClass('lsd:h-6');
       expect(switchElement).toHaveClass('lsd:w-12');
     });
 
     it('applies large size thumb classes correctly', () => {
       render(<Switch size="lg" />);
       const thumb = screen.getByRole('switch').children[0];
-      expect(thumb).toHaveClass('lsd:size-[var(--lsd-spacing-larger)]');
+      expect(thumb).toHaveClass('lsd:size-6');
     });
 
     it('defaults to medium size when no size prop is provided', () => {
       render(<Switch />);
       const switchElement = screen.getByRole('switch');
-      expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-large)]');
+      expect(switchElement).toHaveClass('lsd:h-4.5');
       expect(switchElement).toHaveClass('lsd:w-9');
     });
 
     it('applies small size with checked state', () => {
       render(<Switch size="sm" checked />);
       const switchElement = screen.getByRole('switch');
-      expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-base)]');
-      expect(switchElement).toHaveClass('lsd:w-[var(--lsd-spacing-largest)]');
+      expect(switchElement).toHaveClass('lsd:h-3.5');
+      expect(switchElement).toHaveClass('lsd:w-7');
       expect(switchElement).toHaveClass('lsd:data-[state=checked]:bg-lsd-primary');
     });
 
     it('applies large size with disabled state', () => {
       render(<Switch size="lg" disabled />);
       const switchElement = screen.getByRole('switch');
-      expect(switchElement).toHaveClass('lsd:h-[var(--lsd-spacing-larger)]');
+      expect(switchElement).toHaveClass('lsd:h-6');
       expect(switchElement).toHaveClass('lsd:w-12');
       expect(switchElement).toBeDisabled();
     });

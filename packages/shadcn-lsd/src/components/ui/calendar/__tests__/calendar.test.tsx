@@ -31,7 +31,7 @@ describe('Calendar', () => {
     it('applies LSD padding token with CSS variable', () => {
       const { container } = render(<Calendar />);
       const root = container.querySelector('[data-slot="calendar"]') as HTMLElement;
-      expect(root).toHaveClass('lsd:p-[var(--lsd-spacing-base)]');
+      expect(root).toHaveClass('lsd:p-(--lsd-spacing-base)');
     });
 
     it('applies LSD group class', () => {
@@ -228,7 +228,7 @@ describe('Calendar', () => {
     it('uses LSD spacing tokens with CSS variables for padding', () => {
       const { container } = render(<Calendar />);
       const root = container.querySelector('[data-slot="calendar"]') as HTMLElement;
-      expect(root).toHaveClass('lsd:p-[var(--lsd-spacing-base)]');
+      expect(root).toHaveClass('lsd:p-(--lsd-spacing-base)');
     });
 
     it('uses LSD group class', () => {

@@ -147,9 +147,9 @@ describe('NavigationMenuList', () => {
     expect(list).toHaveClass('lsd:flex');
     expect(list).toHaveClass('lsd:flex-1');
     expect(list).toHaveClass('lsd:list-none');
-    expect(list).toHaveClass('lsd:items-center');
-    expect(list).toHaveClass('lsd:justify-center');
-    expect(list).toHaveClass('lsd:gap-[var(--lsd-spacing-1)]');
+    expect(list).toHaveClass('lsd:items-start');
+    expect(list).toHaveClass('lsd:justify-start');
+    expect(list).toHaveClass('lsd:gap-(--lsd-spacing-1)');
   });
 
   it('merges custom className with component classes', () => {
@@ -338,8 +338,7 @@ describe('NavigationMenuTrigger', () => {
     );
     const icon = document.querySelector('svg');
     expect(icon).toHaveClass('lsd:relative');
-    expect(icon).toHaveClass('lsd:top-[1px]');
-    expect(icon).toHaveClass('lsd:ml-1');
+    expect(icon).toHaveClass('lsd:ml-(--lsd-spacing-smallest)');
     expect(icon).toHaveClass('lsd:size-3');
     expect(icon).toHaveClass('lsd:transition');
     expect(icon).toHaveClass('lsd:duration-300');
