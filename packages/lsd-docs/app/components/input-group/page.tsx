@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,6 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as InputGroupAlignmentCODE } from '@/examples/input-group/alignment/page';
 import { CODE as InputGroupBasicCODE } from '@/examples/input-group/basic/page';
 import { CODE as InputGroupDisabledCODE } from '@/examples/input-group/disabled/page';
@@ -22,6 +24,19 @@ import { CODE as InputGroupSizesCODE } from '@/examples/input-group/sizes/page';
 import { CODE as InputGroupWithIconsCODE } from '@/examples/input-group/with-icons/page';
 
 export default function InputGroupPage() {
+  const inputGroupAlignmentIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputGroupSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputGroupBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputGroupWithIconsIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputGroupDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    inputGroupAlignmentIframeRef,
+    inputGroupSizesIframeRef,
+    inputGroupBasicIframeRef,
+    inputGroupWithIconsIframeRef,
+    inputGroupDisabledIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -82,6 +97,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={inputGroupAlignmentIframeRef}
                 size="sm"
                 src="/examples/input-group/alignment"
                 title="InputGroup Alignment Example"
@@ -105,6 +121,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={inputGroupSizesIframeRef}
                 size="md"
                 src="/examples/input-group/sizes"
                 title="InputGroup Sizes Example"
@@ -127,6 +144,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={inputGroupBasicIframeRef}
                 size="sm"
                 src="/examples/input-group/basic"
                 title="InputGroup Basic Example"
@@ -142,6 +160,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={inputGroupWithIconsIframeRef}
                 size="lg"
                 src="/examples/input-group/with-icons"
                 title="InputGroup With Icons Example"
@@ -157,6 +176,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={inputGroupDisabledIframeRef}
                 size="md"
                 src="/examples/input-group/disabled"
                 title="InputGroup Disabled Example"
