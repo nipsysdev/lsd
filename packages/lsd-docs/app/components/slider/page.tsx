@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,6 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BasicCode } from '@/examples/slider/basic/page';
 import { CODE as DisabledCode } from '@/examples/slider/disabled/page';
 import { CODE as MultipleCode } from '@/examples/slider/multiple/page';
@@ -22,6 +24,19 @@ import { CODE as RangeCode } from '@/examples/slider/range/page';
 import { CODE as SizesCode } from '@/examples/slider/sizes/page';
 
 export default function SliderPage() {
+  const sliderBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const sliderRangeIframeRef = useRef<HTMLIFrameElement>(null);
+  const sliderMultipleIframeRef = useRef<HTMLIFrameElement>(null);
+  const sliderSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const sliderDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    sliderBasicIframeRef,
+    sliderRangeIframeRef,
+    sliderMultipleIframeRef,
+    sliderSizesIframeRef,
+    sliderDisabledIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -71,7 +86,12 @@ export default function MyComponent() {
               <CardDescription>A simple slider with a single value</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/slider/basic" title="Basic" />
+              <IframeExample
+                ref={sliderBasicIframeRef}
+                size="sm"
+                src="/examples/slider/basic"
+                title="Basic"
+              />
               <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
@@ -82,7 +102,12 @@ export default function MyComponent() {
               <CardDescription>Use an array with two values for a range slider</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/slider/range" title="Range" />
+              <IframeExample
+                ref={sliderRangeIframeRef}
+                size="sm"
+                src="/examples/slider/range"
+                title="Range"
+              />
               <CodeExample code={RangeCode} />
             </CardContent>
           </Card>
@@ -95,7 +120,12 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/slider/multiple" title="Multiple" />
+              <IframeExample
+                ref={sliderMultipleIframeRef}
+                size="sm"
+                src="/examples/slider/multiple"
+                title="Multiple"
+              />
               <CodeExample code={MultipleCode} />
             </CardContent>
           </Card>
@@ -112,7 +142,12 @@ export default function MyComponent() {
               <CardDescription>Choose from small, medium, or large sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/slider/sizes" title="Slider Sizes" />
+              <IframeExample
+                ref={sliderSizesIframeRef}
+                size="md"
+                src="/examples/slider/sizes"
+                title="Slider Sizes"
+              />
               <CodeExample code={SizesCode} />
             </CardContent>
           </Card>
@@ -127,7 +162,12 @@ export default function MyComponent() {
               <CardDescription>Use the disabled prop to disable the slider</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/slider/disabled" title="Disabled" />
+              <IframeExample
+                ref={sliderDisabledIframeRef}
+                size="sm"
+                src="/examples/slider/disabled"
+                title="Disabled"
+              />
               <CodeExample code={DisabledCode} />
             </CardContent>
           </Card>
