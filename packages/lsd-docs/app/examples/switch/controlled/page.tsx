@@ -1,0 +1,37 @@
+'use client';
+
+import { Switch, Typography } from '@nipsys/shadcn-lsd';
+import { useState } from 'react';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+
+export const CODE = `import { Switch, Typography } from '@nipsys/shadcn-lsd';
+import { useState } from 'react';
+
+export function Example() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div className="flex items-center gap-(--lsd-spacing-base)">
+      <Switch checked={checked} onCheckedChange={setChecked} />
+      <Typography variant="body2">
+        Notifications: {checked ? 'Enabled' : 'Disabled'}
+      </Typography>
+    </div>
+  );
+}`;
+
+export function SwitchControlledExample() {
+  useSendThemeToIframes();
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div className="flex gap-(--lsd-spacing-base)">
+      <Switch checked={checked} onCheckedChange={setChecked} />
+      <Typography variant="body2">Notifications: {checked ? 'Enabled' : 'Disabled'}</Typography>
+    </div>
+  );
+}
+
+export default function Controlled() {
+  return <SwitchControlledExample />;
+}
