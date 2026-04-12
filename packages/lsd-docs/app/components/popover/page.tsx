@@ -165,7 +165,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={sideOffsetPopoverIframeRef}
-                size="sm"
+                size="md"
                 src="/examples/popover/side-offset"
                 title="Side Offset Popover Example"
               />
