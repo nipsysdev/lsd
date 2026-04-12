@@ -7,106 +7,100 @@ export const CODE = `import { Button, Tooltip, TooltipContent, TooltipProvider, 
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base)">
-      <Typography variant="label1">Different Positions</Typography>
-      <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outlined">Top</Button>
-            </TooltipTrigger>
-            <TooltipContent side="top">
-              <Typography variant="body2">Tooltip on top</Typography>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+    <div className="flex flex-wrap gap-(--lsd-spacing-base) size-full items-center justify-center">
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outlined">Top</Button>
+          </TooltipTrigger>
+          <TooltipContent side="top">
+            <Typography variant="body2">Tooltip on top</Typography>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outlined">Bottom</Button>
-            </TooltipTrigger>
-            <TooltipContent side="bottom">
-              <Typography variant="body2">Tooltip on bottom</Typography>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outlined">Bottom</Button>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            <Typography variant="body2">Tooltip on bottom</Typography>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outlined">Left</Button>
-            </TooltipTrigger>
-            <TooltipContent side="left">
-              <Typography variant="body2">Tooltip on left</Typography>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outlined">Left</Button>
+          </TooltipTrigger>
+          <TooltipContent side="left">
+            <Typography variant="body2">Tooltip on left</Typography>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outlined">Right</Button>
-            </TooltipTrigger>
-            <TooltipContent side="right">
-              <Typography variant="body2">Tooltip on right</Typography>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </div>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outlined">Right</Button>
+          </TooltipTrigger>
+          <TooltipContent side="right">
+            <Typography variant="body2">Tooltip on right</Typography>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </div>
   );
 }`;
 
 export function TooltipPositionsExample() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base)">
-      <Typography variant="label1">Different Positions</Typography>
-      <div className="flex flex-wrap gap-(--lsd-spacing-base)">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outlined">Top</Button>
-            </TooltipTrigger>
-            <TooltipContent side="top">
-              <Typography variant="body2">Tooltip on top</Typography>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+    <div className="flex flex-wrap gap-(--lsd-spacing-base) size-full items-center justify-center">
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outlined">Top</Button>
+          </TooltipTrigger>
+          <TooltipContent side="top">
+            <Typography variant="body2">Tooltip on top</Typography>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outlined">Bottom</Button>
-            </TooltipTrigger>
-            <TooltipContent side="bottom">
-              <Typography variant="body2">Tooltip on bottom</Typography>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outlined">Bottom</Button>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            <Typography variant="body2">Tooltip on bottom</Typography>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outlined">Left</Button>
-            </TooltipTrigger>
-            <TooltipContent side="left">
-              <Typography variant="body2">Tooltip on left</Typography>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outlined">Left</Button>
+          </TooltipTrigger>
+          <TooltipContent side="left">
+            <Typography variant="body2">Tooltip on left</Typography>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="outlined">Right</Button>
-            </TooltipTrigger>
-            <TooltipContent side="right">
-              <Typography variant="body2">Tooltip on right</Typography>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </div>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outlined">Right</Button>
+          </TooltipTrigger>
+          <TooltipContent side="right">
+            <Typography variant="body2">Tooltip on right</Typography>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </div>
   );
 }
