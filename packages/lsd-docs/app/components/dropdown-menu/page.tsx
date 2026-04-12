@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,6 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BasicCode } from '@/examples/dropdown-menu/basic/page';
 import { CODE as CheckboxCode } from '@/examples/dropdown-menu/checkbox-items/page';
 import { CODE as RadioCode } from '@/examples/dropdown-menu/radio-items/page';
@@ -22,6 +24,19 @@ import { CODE as ShortcutsCode } from '@/examples/dropdown-menu/shortcuts/page';
 import { CODE as SubmenusCode } from '@/examples/dropdown-menu/submenus/page';
 
 export default function DropdownMenuPage() {
+  const dropdownBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const dropdownShortcutsIframeRef = useRef<HTMLIFrameElement>(null);
+  const dropdownSubmenusIframeRef = useRef<HTMLIFrameElement>(null);
+  const dropdownCheckboxIframeRef = useRef<HTMLIFrameElement>(null);
+  const dropdownRadioIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    dropdownBasicIframeRef,
+    dropdownShortcutsIframeRef,
+    dropdownSubmenusIframeRef,
+    dropdownCheckboxIframeRef,
+    dropdownRadioIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -73,6 +88,7 @@ export default function DropdownMenuPage() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={dropdownBasicIframeRef}
                 size="md"
                 src="/examples/dropdown-menu/basic"
                 title="Basic Dropdown Menu"
@@ -92,6 +108,7 @@ export default function DropdownMenuPage() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={dropdownShortcutsIframeRef}
                 size="md"
                 src="/examples/dropdown-menu/shortcuts"
                 title="Dropdown Menu with Shortcuts"
@@ -113,6 +130,7 @@ export default function DropdownMenuPage() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={dropdownSubmenusIframeRef}
                 size="md"
                 src="/examples/dropdown-menu/submenus"
                 title="Dropdown Menu with Submenus"
@@ -132,6 +150,7 @@ export default function DropdownMenuPage() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={dropdownCheckboxIframeRef}
                 size="md"
                 src="/examples/dropdown-menu/checkbox-items"
                 title="Dropdown Menu with Checkbox Items"
@@ -151,6 +170,7 @@ export default function DropdownMenuPage() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={dropdownRadioIframeRef}
                 size="md"
                 src="/examples/dropdown-menu/radio-items"
                 title="Dropdown Menu with Radio Items"
