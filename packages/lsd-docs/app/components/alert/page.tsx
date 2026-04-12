@@ -16,8 +16,6 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { CODE as AllVariantsCode } from '@/examples/alert/all-variants/page';
-import { CODE as BasicCode } from '@/examples/alert/basic/page';
-import { CODE as WithIconCode } from '@/examples/alert/with-icon/page';
 
 export default function AlertPage() {
   return (

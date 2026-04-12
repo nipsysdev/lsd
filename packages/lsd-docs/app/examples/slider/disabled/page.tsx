@@ -1,6 +1,5 @@
 'use client';
 import { Slider, Typography } from '@nipsys/shadcn-lsd';
-import * as React from 'react';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
