@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,9 +16,13 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as AllVariantsCode } from '@/examples/alert/all-variants/page';
 
 export default function AlertPage() {
+  const alertVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(alertVariantsIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -69,7 +74,12 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="lg" src="/examples/alert/all-variants" title="All Variants" />
+              <IframeExample
+                ref={alertVariantsIframeRef}
+                size="lg"
+                src="/examples/alert/all-variants"
+                title="All Variants"
+              />
               <CodeExample code={AllVariantsCode} />
             </CardContent>
           </Card>
