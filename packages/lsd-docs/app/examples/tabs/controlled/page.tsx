@@ -2,6 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
@@ -38,6 +39,7 @@ export function Example() {
 }`;
 
 export function TabsControlledExample() {
+  useSendThemeToIframes();
   const [value, setValue] = useState('tab1');
 
   return (

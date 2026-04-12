@@ -1,6 +1,7 @@
 'use client';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
 
@@ -34,6 +35,8 @@ export function Example() {
 }`;
 
 export function TabsBasicExample() {
+  useSendThemeToIframes();
+
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Tabs defaultValue="account">
