@@ -16,6 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as ProgressBasicCODE } from '@/examples/progress/basic/page';
 import { CODE as COLORS_CODE } from '@/examples/progress/colors/page';
 import { CODE as INDETERMINATE_CODE } from '@/examples/progress/indeterminate/page';
@@ -24,6 +25,18 @@ import { CODE as SIZES_CODE } from '@/examples/progress/sizes/page';
 
 export default function ProgressPage() {
   const progressBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const progressIndeterminateIframeRef = useRef<HTMLIFrameElement>(null);
+  const progressPausedIframeRef = useRef<HTMLIFrameElement>(null);
+  const progressColorsIframeRef = useRef<HTMLIFrameElement>(null);
+  const progressSizesIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    progressBasicIframeRef,
+    progressIndeterminateIframeRef,
+    progressPausedIframeRef,
+    progressColorsIframeRef,
+    progressSizesIframeRef
+  );
 
   return (
     <DocsLayout>
@@ -98,6 +111,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={progressIndeterminateIframeRef}
                 size="sm"
                 src="/examples/progress/indeterminate"
                 title="Indeterminate Progress"
@@ -112,7 +126,12 @@ export default function MyComponent() {
               <CardDescription>Pause/resume control for indeterminate progress</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/progress/paused" title="Paused Progress" />
+              <IframeExample
+                ref={progressPausedIframeRef}
+                size="sm"
+                src="/examples/progress/paused"
+                title="Paused Progress"
+              />
               <CodeExample code={PAUSED_CODE} />
             </CardContent>
           </Card>
@@ -123,7 +142,12 @@ export default function MyComponent() {
               <CardDescription>Semantic color variants for different states</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/progress/colors" title="Progress Colors" />
+              <IframeExample
+                ref={progressColorsIframeRef}
+                size="md"
+                src="/examples/progress/colors"
+                title="Progress Colors"
+              />
               <CodeExample code={COLORS_CODE} />
             </CardContent>
           </Card>
@@ -134,7 +158,12 @@ export default function MyComponent() {
               <CardDescription>Small, medium, and large progress bars</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/progress/sizes" title="Progress Sizes" />
+              <IframeExample
+                ref={progressSizesIframeRef}
+                size="md"
+                src="/examples/progress/sizes"
+                title="Progress Sizes"
+              />
               <CodeExample code={SIZES_CODE} />
             </CardContent>
           </Card>
