@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,11 +16,21 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BASIC_CODE } from '@/examples/checkbox/basic/page';
 import { CODE as CONTROLLED_CODE } from '@/examples/checkbox/controlled/page';
 import { CODE as WITH_LABEL_CODE } from '@/examples/checkbox/with-label/page';
 
 export default function CheckboxPage() {
+  const checkboxBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const checkboxControlledIframeRef = useRef<HTMLIFrameElement>(null);
+  const checkboxWithLabelIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    checkboxBasicIframeRef,
+    checkboxControlledIframeRef,
+    checkboxWithLabelIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -65,7 +76,12 @@ export default function MyComponent() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/checkbox/basic" title="Basic Checkbox" />
+              <IframeExample
+                ref={checkboxBasicIframeRef}
+                size="md"
+                src="/examples/checkbox/basic"
+                title="Basic Checkbox"
+              />
               <CodeExample code={BASIC_CODE} />
             </CardContent>
           </Card>
@@ -79,6 +95,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={checkboxControlledIframeRef}
                 size="md"
                 src="/examples/checkbox/controlled"
                 title="Controlled Checkbox"
@@ -96,6 +113,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={checkboxWithLabelIframeRef}
                 size="md"
                 src="/examples/checkbox/with-label"
                 title="Checkbox with Label"
