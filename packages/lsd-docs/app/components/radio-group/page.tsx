@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,10 +16,15 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BasicCode } from '@/examples/radio-group/basic/page';
 import { CODE as DisabledCode } from '@/examples/radio-group/disabled/page';
 
 export default function RadioGroupPage() {
+  const radioGroupBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const radioGroupDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(radioGroupBasicIframeRef, radioGroupDisabledIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -75,7 +81,12 @@ export default function MyComponent() {
               <CardDescription>Radio group with associated Label components</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/radio-group/basic" title="Basic" />
+              <IframeExample
+                ref={radioGroupBasicIframeRef}
+                size="md"
+                src="/examples/radio-group/basic"
+                title="Basic"
+              />
               <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
@@ -86,7 +97,12 @@ export default function MyComponent() {
               <CardDescription>Radio group with disabled items</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/radio-group/disabled" title="Disabled" />
+              <IframeExample
+                ref={radioGroupDisabledIframeRef}
+                size="md"
+                src="/examples/radio-group/disabled"
+                title="Disabled"
+              />
               <CodeExample code={DisabledCode} />
             </CardContent>
           </Card>
