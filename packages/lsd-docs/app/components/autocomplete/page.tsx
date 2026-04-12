@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,6 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BASIC_CODE } from '@/examples/autocomplete/basic/page';
 import { CODE as CLEARABLE_CODE } from '@/examples/autocomplete/clearable/page';
 import { CODE as DISABLED_CODE } from '@/examples/autocomplete/disabled/page';
@@ -24,6 +26,23 @@ import { CODE as SIZES_CODE } from '@/examples/autocomplete/sizes/page';
 import { CODE as VARIANTS_CODE } from '@/examples/autocomplete/variants/page';
 
 export default function AutocompletePage() {
+  const autocompleteBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteIconIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteClearableIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteErrorIframeRef = useRef<HTMLIFrameElement>(null);
+  const autocompleteDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    autocompleteBasicIframeRef,
+    autocompleteVariantsIframeRef,
+    autocompleteSizesIframeRef,
+    autocompleteIconIframeRef,
+    autocompleteClearableIframeRef,
+    autocompleteErrorIframeRef,
+    autocompleteDisabledIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -77,6 +96,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={autocompleteBasicIframeRef}
                 size="md"
                 src="/examples/autocomplete/basic"
                 title="Autocomplete Basic Example"
@@ -98,6 +118,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={autocompleteVariantsIframeRef}
                 size="md"
                 src="/examples/autocomplete/variants"
                 title="Autocomplete Variants Example"
@@ -119,6 +140,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={autocompleteSizesIframeRef}
                 size="md"
                 src="/examples/autocomplete/sizes"
                 title="Autocomplete Sizes Example"
@@ -141,6 +163,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={autocompleteIconIframeRef}
                 size="md"
                 src="/examples/autocomplete/icon"
                 title="Autocomplete with Icon"
@@ -156,6 +179,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={autocompleteClearableIframeRef}
                 size="md"
                 src="/examples/autocomplete/clearable"
                 title="Clearable Autocomplete"
@@ -171,6 +195,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={autocompleteErrorIframeRef}
                 size="md"
                 src="/examples/autocomplete/error"
                 title="Error Autocomplete"
@@ -186,6 +211,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={autocompleteDisabledIframeRef}
                 size="md"
                 src="/examples/autocomplete/disabled"
                 title="Disabled Autocomplete"
