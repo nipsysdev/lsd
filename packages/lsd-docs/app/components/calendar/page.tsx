@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,11 +16,18 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BasicCode } from '@/examples/calendar/basic/page';
 import { CODE as FormControlledCode } from '@/examples/calendar/form-controlled/page';
 import { CODE as WithValidationCode } from '@/examples/calendar/with-validation/page';
 
 export default function CalendarPage() {
+  const calendarBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const calendarFormIframeRef = useRef<HTMLIFrameElement>(null);
+  const calendarValidationIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(calendarBasicIframeRef, calendarFormIframeRef, calendarValidationIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
@@ -70,7 +78,12 @@ export default function MyComponent() {
               <CardDescription>Single, multiple, and range selection</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/calendar/basic" title="Basic Calendar" />
+              <IframeExample
+                ref={calendarBasicIframeRef}
+                size="md"
+                src="/examples/calendar/basic"
+                title="Basic Calendar"
+              />
               <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
@@ -90,6 +103,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={calendarFormIframeRef}
                 size="md"
                 src="/examples/calendar/form-controlled"
                 title="Form Controlled"
@@ -107,6 +121,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={calendarValidationIframeRef}
                 size="md"
                 src="/examples/calendar/with-validation"
                 title="With Validation"
