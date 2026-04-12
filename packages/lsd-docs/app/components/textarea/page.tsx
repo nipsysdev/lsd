@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,11 +16,21 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as TextareaBasicCODE } from '@/examples/textarea/basic/page';
 import { CODE as TextareaCharacterCountCODE } from '@/examples/textarea/character-count/page';
 import { CODE as TextareaStatesCODE } from '@/examples/textarea/states/page';
 
 export default function TextareaPage() {
+  const textareaBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const textareaStatesIframeRef = useRef<HTMLIFrameElement>(null);
+  const textareaCharacterCountIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    textareaBasicIframeRef,
+    textareaStatesIframeRef,
+    textareaCharacterCountIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -67,6 +78,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={textareaBasicIframeRef}
                 size="md"
                 src="/examples/textarea/basic"
                 title="Textarea Basic Example"
@@ -82,6 +94,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={textareaStatesIframeRef}
                 size="md"
                 src="/examples/textarea/states"
                 title="Textarea States Example"
@@ -97,6 +110,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={textareaCharacterCountIframeRef}
                 size="md"
                 src="/examples/textarea/character-count"
                 title="Textarea Character Count Example"
