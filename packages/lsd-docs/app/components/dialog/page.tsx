@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,9 +16,13 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as DialogBasicExampleCODE } from '@/examples/dialog/basic/page';
 
 export default function DialogPage() {
+  const dialogBasicIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(dialogBasicIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -100,7 +105,12 @@ export default function DialogPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="lg" src="/examples/dialog/basic" title="Dialog Basic Example" />
+              <IframeExample
+                ref={dialogBasicIframeRef}
+                size="lg"
+                src="/examples/dialog/basic"
+                title="Dialog Basic Example"
+              />
               <CodeExample code={DialogBasicExampleCODE} />
             </CardContent>
           </Card>
