@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,12 +16,24 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BASIC_CODE } from '@/examples/field/basic/page';
 import { CODE as ERROR_CODE } from '@/examples/field/error/page';
 import { CODE as HORIZONTAL_CODE } from '@/examples/field/horizontal/page';
 import { CODE as LEGEND_DESCRIPTION_CODE } from '@/examples/field/legend-description/page';
 
 export default function FieldPage() {
+  const fieldBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const fieldHorizontalIframeRef = useRef<HTMLIFrameElement>(null);
+  const fieldLegendDescriptionIframeRef = useRef<HTMLIFrameElement>(null);
+  const fieldErrorIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    fieldBasicIframeRef,
+    fieldHorizontalIframeRef,
+    fieldLegendDescriptionIframeRef,
+    fieldErrorIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -83,7 +96,12 @@ export default function MyComponent() {
               <CardDescription>Simple vertical form with name and email fields</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/field/basic" title="Basic Field" />
+              <IframeExample
+                ref={fieldBasicIframeRef}
+                size="md"
+                src="/examples/field/basic"
+                title="Basic Field"
+              />
               <CodeExample code={BASIC_CODE} />
             </CardContent>
           </Card>
@@ -101,7 +119,12 @@ export default function MyComponent() {
               <CardDescription>Horizontal field layout with checkboxes</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/field/horizontal" title="Horizontal Field" />
+              <IframeExample
+                ref={fieldHorizontalIframeRef}
+                size="md"
+                src="/examples/field/horizontal"
+                title="Horizontal Field"
+              />
               <CodeExample code={HORIZONTAL_CODE} />
             </CardContent>
           </Card>
@@ -120,6 +143,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={fieldLegendDescriptionIframeRef}
                 size="lg"
                 src="/examples/field/legend-description"
                 title="Legend and Description"
@@ -141,7 +165,12 @@ export default function MyComponent() {
               <CardDescription>Error handling examples with FieldError component</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/field/error" title="Field Error" />
+              <IframeExample
+                ref={fieldErrorIframeRef}
+                size="md"
+                src="/examples/field/error"
+                title="Field Error"
+              />
               <CodeExample code={ERROR_CODE} />
             </CardContent>
           </Card>
