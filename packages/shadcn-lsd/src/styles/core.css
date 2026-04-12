@@ -90,10 +90,10 @@
   --lsd-surface: #ffffff;
   --lsd-destructive: #da0000;
   --lsd-destructive-text: #c92d2d;
-  --lsd-success: #17b021;
+  --lsd-success: #15803d;
   --lsd-success-text: #1c9618;
-  --lsd-warning: #f59e0b;
-  --lsd-warning-text: #c8ae00;
+  --lsd-warning: #b45309;
+  --lsd-warning-text: #854d0e;
   --lsd-info: #2563eb;
   --lsd-info-text: #2563eb;
 
@@ -142,12 +142,12 @@
   --lsd-icon-primary: #ffffff;
   --lsd-icon-secondary: #000000;
   --lsd-surface: #000000;
-  --lsd-destructive: #da1010;
-  --lsd-destructive-text: #ff4545;
-  --lsd-success: #10ad1b;
+  --lsd-destructive: #e5484d;
+  --lsd-destructive-text: #f27a7a;
+  --lsd-success: #22c55e;
   --lsd-success-text: #30c82a;
-  --lsd-warning: #f59e0b;
-  --lsd-warning-text: #ffe226;
+  --lsd-warning: #d97706;
+  --lsd-warning-text: #f59e0b;
   --lsd-info: #2563eb;
   --lsd-info-text: #2563eb;
 
