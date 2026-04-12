@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,10 +16,15 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as AvatarBasicCODE } from '@/examples/avatar/basic/page';
 import { CODE as AvatarSizesCODE } from '@/examples/avatar/sizes/page';
 
 export default function AvatarPage() {
+  const avatarBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const avatarSizesIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(avatarBasicIframeRef, avatarSizesIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -73,7 +79,12 @@ export default function MyComponent() {
               <CardDescription>Avatar with image and fallback text</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/avatar/basic" title="Avatar Basic Example" />
+              <IframeExample
+                ref={avatarBasicIframeRef}
+                size="md"
+                src="/examples/avatar/basic"
+                title="Avatar Basic Example"
+              />
               <CodeExample code={AvatarBasicCODE} />
             </CardContent>
           </Card>
@@ -90,7 +101,12 @@ export default function MyComponent() {
               <CardDescription>Small, default, and large avatar sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/avatar/sizes" title="Avatar Sizes Example" />
+              <IframeExample
+                ref={avatarSizesIframeRef}
+                size="md"
+                src="/examples/avatar/sizes"
+                title="Avatar Sizes Example"
+              />
               <CodeExample code={AvatarSizesCODE} />
             </CardContent>
           </Card>
