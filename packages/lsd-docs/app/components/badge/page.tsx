@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,6 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BadgeBasicCODE } from '@/examples/badge/basic/page';
 import { CODE as BadgeDismissibleCODE } from '@/examples/badge/dismissible/page';
 import { CODE as BadgeDotsCODE } from '@/examples/badge/dots/page';
@@ -24,6 +26,23 @@ import { CODE as BadgeSizesCODE } from '@/examples/badge/sizes/page';
 import { CODE as BadgeVariantsCODE } from '@/examples/badge/variants/page';
 
 export default function BadgePage() {
+  const badgeBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const badgeVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const badgeDotsIframeRef = useRef<HTMLIFrameElement>(null);
+  const badgeSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const badgeInteractiveIframeRef = useRef<HTMLIFrameElement>(null);
+  const badgeDismissibleIframeRef = useRef<HTMLIFrameElement>(null);
+  const badgeFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    badgeBasicIframeRef,
+    badgeVariantsIframeRef,
+    badgeDotsIframeRef,
+    badgeSizesIframeRef,
+    badgeInteractiveIframeRef,
+    badgeDismissibleIframeRef,
+    badgeFeaturesIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -68,7 +87,12 @@ export default function MyComponent() {
               <CardDescription>Basic badge styles for general use</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample src="/examples/badge/basic" size="sm" title="Badge Basic Example" />
+              <IframeExample
+                ref={badgeBasicIframeRef}
+                src="/examples/badge/basic"
+                size="sm"
+                title="Badge Basic Example"
+              />
               <CodeExample code={BadgeBasicCODE} />
             </CardContent>
           </Card>
@@ -82,6 +106,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={badgeVariantsIframeRef}
                 src="/examples/badge/variants"
                 size="sm"
                 title="Badge Variants Example"
@@ -96,7 +121,12 @@ export default function MyComponent() {
               <CardDescription>Minimal circular indicator for status display</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample src="/examples/badge/dots" size="sm" title="Badge Dots Example" />
+              <IframeExample
+                ref={badgeDotsIframeRef}
+                src="/examples/badge/dots"
+                size="sm"
+                title="Badge Dots Example"
+              />
               <CodeExample code={BadgeDotsCODE} />
             </CardContent>
           </Card>
@@ -113,7 +143,12 @@ export default function MyComponent() {
               <CardDescription>Small, medium, and large badge sizes</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample src="/examples/badge/sizes" size="sm" title="Badge Sizes Example" />
+              <IframeExample
+                ref={badgeSizesIframeRef}
+                src="/examples/badge/sizes"
+                size="sm"
+                title="Badge Sizes Example"
+              />
               <CodeExample code={BadgeSizesCODE} />
             </CardContent>
           </Card>
@@ -131,6 +166,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={badgeInteractiveIframeRef}
                 src="/examples/badge/interactive"
                 size="sm"
                 title="Badge Interactive Example"
@@ -146,6 +182,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={badgeDismissibleIframeRef}
                 src="/examples/badge/dismissible"
                 size="sm"
                 title="Badge Dismissible Example"
@@ -161,6 +198,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={badgeFeaturesIframeRef}
                 src="/examples/badge/features"
                 size="sm"
                 title="Badge Features Example"
