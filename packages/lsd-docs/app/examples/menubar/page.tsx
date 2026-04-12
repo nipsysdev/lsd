@@ -7,6 +7,7 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from '@nipsys/shadcn-lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   Menubar,
@@ -59,6 +60,8 @@ export function Example() {
 }`;
 
 export function MenubarExample() {
+  useSendThemeToIframes();
+
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Menubar>

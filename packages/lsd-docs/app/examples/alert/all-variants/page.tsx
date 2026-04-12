@@ -1,6 +1,7 @@
 'use client';
 
 import { Alert, AlertDescription, AlertTitle } from '@nipsys/shadcn-lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `
 import { Alert, AlertDescription, AlertTitle } from '@nipsys/shadcn-lsd';
@@ -48,6 +49,8 @@ export function AlertAllVariants() {
 `;
 
 export default function Page() {
+  useSendThemeToIframes();
+
   return (
     <div className="flex flex-col gap-4">
       <Alert variant="default">
