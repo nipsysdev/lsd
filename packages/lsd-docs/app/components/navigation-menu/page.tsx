@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,10 +16,15 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as BasicCode } from '@/examples/navigation-menu/basic/page';
 import { CODE as PositioningCode } from '@/examples/navigation-menu/positioning-collapsible/page';
 
 export default function NavigationMenuPage() {
+  const navigationMenuBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const navigationMenuPositioningIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(navigationMenuBasicIframeRef, navigationMenuPositioningIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -85,7 +91,12 @@ export default function NavigationMenuPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="sm" src="/examples/navigation-menu/basic" title="Basic" />
+              <IframeExample
+                ref={navigationMenuBasicIframeRef}
+                size="sm"
+                src="/examples/navigation-menu/basic"
+                title="Basic"
+              />
               <CodeExample code={BasicCode} />
             </CardContent>
           </Card>
@@ -103,6 +114,7 @@ export default function NavigationMenuPage() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={navigationMenuPositioningIframeRef}
                 size="sm"
                 src="/examples/navigation-menu/positioning-collapsible"
                 title="Positioning with Collapsible"
