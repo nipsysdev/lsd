@@ -19,12 +19,10 @@ import { CODE as ButtonSizesCODE } from '@/examples/button/sizes/page';
 import { CODE as ButtonVariantsCODE } from '@/examples/button/variants/page';
 
 export default function ButtonPage() {
-  const _buttonBasicIframeRef = useRef<HTMLIFrameElement>(null);
   const buttonVariantsIframeRef = useRef<HTMLIFrameElement>(null);
   const buttonSizesIframeRef = useRef<HTMLIFrameElement>(null);
   const buttonIconsIframeRef = useRef<HTMLIFrameElement>(null);
   const buttonLoadingIframeRef = useRef<HTMLIFrameElement>(null);
-  const _buttonGroupsIframeRef = useRef<HTMLIFrameElement>(null);
   const buttonFullWidthIframeRef = useRef<HTMLIFrameElement>(null);
   const buttonDisabledIframeRef = useRef<HTMLIFrameElement>(null);
   const buttonAsChildIframeRef = useRef<HTMLIFrameElement>(null);
