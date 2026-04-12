@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,9 +16,13 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as AlertDialogBasicExampleCODE } from '@/examples/alert-dialog/basic/page';
 
 export default function AlertDialogPage() {
+  const alertDialogBasicIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(alertDialogBasicIframeRef);
   return (
     <DocsLayout>
       <PageHeader
@@ -105,6 +110,7 @@ export default function AlertDialogPage() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={alertDialogBasicIframeRef}
                 size="md"
                 src="/examples/alert-dialog/basic"
                 title="Alert Dialog Basic Example"
