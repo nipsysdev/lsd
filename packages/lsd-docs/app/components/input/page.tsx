@@ -8,6 +8,7 @@ import {
   CardTitle,
   Typography,
 } from '@nipsys/shadcn-lsd';
+import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -15,6 +16,7 @@ import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import { CODE as InputDisabledCODE } from '@/examples/input/disabled/page';
 import { CODE as InputErrorCODE } from '@/examples/input/error/page';
 import { CODE as InputLabelCODE } from '@/examples/input/label/page';
@@ -24,6 +26,23 @@ import { CODE as InputTypesCODE } from '@/examples/input/types/page';
 import { CODE as InputVariantsCODE } from '@/examples/input/variants/page';
 
 export default function InputPage() {
+  const inputVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputLabelIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputSupportingTextIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputErrorIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputTypesIframeRef = useRef<HTMLIFrameElement>(null);
+  const inputDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+
+  useSendThemeToIframes(
+    inputVariantsIframeRef,
+    inputSizesIframeRef,
+    inputLabelIframeRef,
+    inputSupportingTextIframeRef,
+    inputErrorIframeRef,
+    inputTypesIframeRef,
+    inputDisabledIframeRef
+  );
   return (
     <DocsLayout>
       <PageHeader
@@ -68,6 +87,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={inputVariantsIframeRef}
                 size="md"
                 src="/examples/input/variants"
                 title="Input Variants Example"
@@ -88,7 +108,12 @@ export default function MyComponent() {
               <CardDescription>From extra small to extra large</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="lg" src="/examples/input/sizes" title="Input Sizes Example" />
+              <IframeExample
+                ref={inputSizesIframeRef}
+                size="lg"
+                src="/examples/input/sizes"
+                title="Input Sizes Example"
+              />
               <CodeExample code={InputSizesCODE} />
             </CardContent>
           </Card>
@@ -106,7 +131,12 @@ export default function MyComponent() {
               <CardDescription>Add a label to provide context for the input</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/input/label" title="Input Label Example" />
+              <IframeExample
+                ref={inputLabelIframeRef}
+                size="md"
+                src="/examples/input/label"
+                title="Input Label Example"
+              />
               <CodeExample code={InputLabelCODE} />
             </CardContent>
           </Card>
@@ -120,6 +150,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={inputSupportingTextIframeRef}
                 size="md"
                 src="/examples/input/supporting-text"
                 title="Input Supporting Text Example"
@@ -134,7 +165,12 @@ export default function MyComponent() {
               <CardDescription>Show error state with destructive styling</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="md" src="/examples/input/error" title="Input Error Example" />
+              <IframeExample
+                ref={inputErrorIframeRef}
+                size="md"
+                src="/examples/input/error"
+                title="Input Error Example"
+              />
               <CodeExample code={InputErrorCODE} />
             </CardContent>
           </Card>
@@ -145,7 +181,12 @@ export default function MyComponent() {
               <CardDescription>Support for various HTML input types</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample size="lg" src="/examples/input/types" title="Input Types Example" />
+              <IframeExample
+                ref={inputTypesIframeRef}
+                size="lg"
+                src="/examples/input/types"
+                title="Input Types Example"
+              />
               <CodeExample code={InputTypesCODE} />
             </CardContent>
           </Card>
@@ -157,6 +198,7 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <IframeExample
+                ref={inputDisabledIframeRef}
                 size="sm"
                 src="/examples/input/disabled"
                 title="Input Disabled Example"
