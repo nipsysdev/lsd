@@ -2,6 +2,7 @@
 
 import { Calendar } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `
 import { Calendar } from '@nipsys/shadcn-lsd';
@@ -36,6 +37,7 @@ export function CalendarFormControlled() {
 `;
 
 export default function Page() {
+  useSendThemeToIframes();
   const [date, setDate] = useState<Date>(new Date());
 
   const handleDateChange = (selectedDate: Date | undefined) => {

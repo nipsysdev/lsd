@@ -2,6 +2,7 @@
 
 import { Calendar } from '@nipsys/shadcn-lsd';
 import { useState } from 'react';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `
 import { Calendar } from '@nipsys/shadcn-lsd';
@@ -39,6 +40,7 @@ export function CalendarWithValidation() {
 `;
 
 export default function Page() {
+  useSendThemeToIframes();
   const [date, setDate] = useState<Date | undefined>();
 
   const isWeekend = (date: Date) => {
