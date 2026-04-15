@@ -7,7 +7,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
@@ -17,7 +17,7 @@ export const CODE = `import {
   NavigationMenuTrigger,
   NavigationMenuContent,
   NavigationMenuLink,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (
