@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardContent, Typography } from '@nipsys/shadcn-lsd';
+import { Card, CardContent, Typography } from '@nipsys/lsd';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
