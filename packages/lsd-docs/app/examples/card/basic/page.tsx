@@ -13,7 +13,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { DotsThreeIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
@@ -30,7 +30,7 @@ export const CODE = `import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { DotsThreeIcon } from '@phosphor-icons/react';
 
 export function Example() {
