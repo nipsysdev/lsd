@@ -9,7 +9,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
@@ -25,7 +25,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   Button,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function DropdownMenuRadioItems() {
   const [position, setPosition] = useState('bottom');

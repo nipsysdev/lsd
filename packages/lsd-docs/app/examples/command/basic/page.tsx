@@ -1,9 +1,9 @@
 'use client';
 
-import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from '@nipsys/shadcn-lsd';
+import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from '@nipsys/lsd';
 
 export function Example() {
   return (
