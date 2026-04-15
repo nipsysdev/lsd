@@ -43,7 +43,7 @@ export default function Home() {
         <Typography variant="h3">Substance over Spectacle.</Typography>
 
         <Typography variant="h5">
-          The Logos Design System. Built on top of Radix UI and shadcn/ui.
+          The Logos Design System. Built on top of Radix UI with shadcn/ui.
           <br />
           Light and dark modes, themable, fully extensible.
         </Typography>
