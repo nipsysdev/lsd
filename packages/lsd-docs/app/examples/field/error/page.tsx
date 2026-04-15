@@ -12,7 +12,7 @@ import {
   FieldGroup,
   FieldLabel,
   Input,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 
 export default function FieldErrorExample() {
@@ -66,7 +66,7 @@ export const CODE = `import {
   FieldGroup,
   FieldLabel,
   Input,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 
 export default function FieldErrorExample() {

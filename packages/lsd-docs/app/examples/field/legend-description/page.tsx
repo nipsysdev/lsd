@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Field,
-  FieldDescription,
-  FieldLabel,
-  FieldLegend,
-  FieldSet,
-  Input,
-} from '@nipsys/shadcn-lsd';
+import { Field, FieldDescription, FieldLabel, FieldLegend, FieldSet, Input } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
@@ -17,7 +10,7 @@ export const CODE = `import {
   FieldLegend,
   FieldSet,
   Input,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

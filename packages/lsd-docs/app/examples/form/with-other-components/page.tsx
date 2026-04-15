@@ -20,10 +20,10 @@ import {
   SelectValue,
   Switch,
   useForm,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Switch, Checkbox, useForm } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Switch, Checkbox, useForm } from '@nipsys/lsd';
 
 export function FormWithOtherComponentsExample() {
   const form = useForm({
