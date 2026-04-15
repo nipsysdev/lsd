@@ -11,7 +11,19 @@ export function CommandGroup({
     <CommandPrimitive.Group
       data-slot="command-group"
       className={cn(
-        'lsd:text-lsd-text-primary lsd:**:[[cmdk-group-heading]]:text-lsd-text-secondary lsd:overflow-hidden lsd:p-(--lsd-spacing-smallest) lsd:**:[[cmdk-group-heading]]:px-(--lsd-spacing-smaller) lsd:**:[[cmdk-group-heading]]:py-(--lsd-spacing-smaller) lsd:**:[[cmdk-group-heading]]:text-xs lsd:**:[[cmdk-group-heading]]:font-medium',
+        // Colors & Backgrounds
+        'lsd:text-lsd-text-primary',
+        // Pseudo-selectors & ARIA - Colors
+        'lsd:**:[[cmdk-group-heading]]:text-lsd-text-secondary',
+        // Overflow
+        'lsd:overflow-hidden',
+        // Spacing
+        'lsd:p-(--lsd-spacing-smallest)',
+        'lsd:**:[[cmdk-group-heading]]:px-(--lsd-spacing-smaller)',
+        'lsd:**:[[cmdk-group-heading]]:py-(--lsd-spacing-smaller)',
+        // Pseudo-selectors & ARIA - Typography
+        'lsd:**:[[cmdk-group-heading]]:text-xs',
+        'lsd:**:[[cmdk-group-heading]]:font-medium',
         className
       )}
       {...props}

@@ -8,7 +8,17 @@ export function Command({ className, ...props }: React.ComponentProps<typeof Com
     <CommandPrimitive
       data-slot="command"
       className={cn(
-        'lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:flex lsd:h-full lsd:w-full lsd:flex-col lsd:overflow-hidden',
+        // Layout & Positioning
+        'lsd:flex',
+        'lsd:flex-col',
+        // Sizing
+        'lsd:h-full',
+        'lsd:w-full',
+        // Colors & Backgrounds
+        'lsd:bg-lsd-surface',
+        'lsd:text-lsd-text-primary',
+        // Overflow
+        'lsd:overflow-hidden',
         className
       )}
       {...props}

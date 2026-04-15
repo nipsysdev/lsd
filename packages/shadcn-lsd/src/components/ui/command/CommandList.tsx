@@ -12,7 +12,12 @@ export function CommandList({
     <ScrollArea className="lsd:max-h-[300px]">
       <CommandPrimitive.List
         data-slot="command-list"
-        className={cn('lsd:scroll-py-(--lsd-spacing-smallest) lsd:overflow-x-hidden', className)}
+        className={cn(
+          // Overflow
+          'lsd:scroll-py-(--lsd-spacing-smallest)',
+          'lsd:overflow-x-hidden',
+          className
+        )}
         {...props}
       />
     </ScrollArea>

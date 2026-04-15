@@ -10,7 +10,15 @@ export function CommandSeparator({
   return (
     <CommandPrimitive.Separator
       data-slot="command-separator"
-      className={cn('lsd:bg-lsd-border lsd:-mx-(--lsd-spacing-smallest) lsd:h-px', className)}
+      className={cn(
+        // Colors & Backgrounds
+        'lsd:bg-lsd-border',
+        // Sizing
+        'lsd:h-px',
+        // Spacing
+        'lsd:-mx-(--lsd-spacing-smallest)',
+        className
+      )}
       {...props}
     />
   );
