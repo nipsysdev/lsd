@@ -1,10 +1,10 @@
 'use client';
 
-import { Button } from '@nipsys/shadcn-lsd';
+import { Button } from '@nipsys/lsd';
 import { ArrowRightIcon, CheckIcon, DownloadIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button } from '@nipsys/lsd';
 import { ArrowRightIcon, CheckIcon, DownloadIcon } from '@phosphor-icons/react';
 
 export function Example() {
