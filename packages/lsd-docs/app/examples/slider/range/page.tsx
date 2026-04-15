@@ -1,12 +1,12 @@
 'use client';
 
-import { Slider, Typography } from '@nipsys/shadcn-lsd';
+import { Slider, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import * as React from 'react';
 import { useState } from 'react';
-import { Slider, Typography } from '@nipsys/shadcn-lsd';
+import { Slider, Typography } from '@nipsys/lsd';
 
 export function Example() {
   const [value, setValue] = useState([33, 66]);
