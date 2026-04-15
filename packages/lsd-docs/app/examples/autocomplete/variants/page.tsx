@@ -1,6 +1,6 @@
 'use client';
 
-import { Autocomplete } from '@nipsys/shadcn-lsd';
+import { Autocomplete } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 const options = [
@@ -9,7 +9,7 @@ const options = [
   { value: '3', label: 'Option 3' },
 ];
 
-export const CODE = `import { Autocomplete } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Autocomplete } from '@nipsys/lsd';
 
 const options = [
   { value: '1', label: 'Option 1' },

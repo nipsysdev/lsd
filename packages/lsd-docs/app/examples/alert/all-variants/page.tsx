@@ -1,10 +1,10 @@
 'use client';
 
-import { Alert, AlertDescription, AlertTitle } from '@nipsys/shadcn-lsd';
+import { Alert, AlertDescription, AlertTitle } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `
-import { Alert, AlertDescription, AlertTitle } from '@nipsys/shadcn-lsd';
+import { Alert, AlertDescription, AlertTitle } from '@nipsys/lsd';
 
 export function AlertAllVariants() {
   return (
