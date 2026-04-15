@@ -14,7 +14,36 @@ function AlertDialogContent({
       <AlertDialogPrimitive.Content
         data-slot="alert-dialog-content"
         className={cn(
-          'lsd:bg-lsd-surface lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:fixed lsd:top-[50%] lsd:left-[50%] lsd:z-50 lsd:grid lsd:w-full lsd:max-w-[calc(100%-2rem)] lsd:translate-x-[-50%] lsd:translate-y-[-50%] lsd:gap-(--lsd-spacing-base) lsd:border lsd:border-lsd-border lsd:p-(--lsd-spacing-larger) lsd:shadow-lg lsd:duration-200 lsd:sm:max-w-lg',
+          // Colors & Backgrounds
+          'lsd:bg-lsd-surface',
+          // Layout & Positioning
+          'lsd:fixed',
+          'lsd:top-[50%]',
+          'lsd:left-[50%]',
+          'lsd:z-50',
+          'lsd:grid',
+          // Sizing
+          'lsd:w-full',
+          'lsd:max-w-[calc(100%-2rem)]',
+          'lsd:sm:max-w-lg',
+          // Spacing
+          'lsd:gap-(--lsd-spacing-base)',
+          'lsd:p-(--lsd-spacing-larger)',
+          // Borders, Shapes & Effects
+          'lsd:border',
+          'lsd:border-lsd-border',
+          'lsd:shadow-lg',
+          // Transitions & Animations
+          'lsd:duration-200',
+          'lsd:data-[state=open]:animate-in',
+          'lsd:data-[state=closed]:animate-out',
+          'lsd:data-[state=closed]:fade-out-0',
+          'lsd:data-[state=open]:fade-in-0',
+          'lsd:data-[state=closed]:zoom-out-95',
+          'lsd:data-[state=open]:zoom-in-95',
+          // Other Utility Classes
+          'lsd:translate-x-[-50%]',
+          'lsd:translate-y-[-50%]',
           className
         )}
         {...props}

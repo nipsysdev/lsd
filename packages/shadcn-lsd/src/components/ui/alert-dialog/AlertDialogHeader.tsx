@@ -7,7 +7,14 @@ function AlertDialogHeader({ className, ...props }: React.ComponentProps<'div'>)
     <div
       data-slot="alert-dialog-header"
       className={cn(
-        'lsd:flex lsd:flex-col lsd:gap-(--lsd-spacing-smaller) lsd:text-center lsd:sm:text-left',
+        // Layout & Positioning
+        'lsd:flex',
+        'lsd:flex-col',
+        // Spacing
+        'lsd:gap-(--lsd-spacing-smaller)',
+        // Typography
+        'lsd:text-center',
+        'lsd:sm:text-left',
         className
       )}
       {...props}
