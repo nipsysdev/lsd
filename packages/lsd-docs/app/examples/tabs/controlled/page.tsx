@@ -1,11 +1,11 @@
 'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
+import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
+import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/lsd';
 
 export function Example() {
   const [value, setValue] = useState('tab1');

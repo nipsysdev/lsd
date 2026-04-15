@@ -1,10 +1,10 @@
 'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
+import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/lsd';
 import { ChartLineUpIcon, GearIcon, HouseIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/lsd';
 import { ChartLineUpIcon, GearIcon, HouseIcon } from '@phosphor-icons/react';
 
 export function Example() {
