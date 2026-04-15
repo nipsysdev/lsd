@@ -1,11 +1,11 @@
 'use client';
 
-import { Badge } from '@nipsys/shadcn-lsd';
+import { Badge } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import { useState } from 'react';
-import { Badge } from '@nipsys/shadcn-lsd';
+import { Badge } from '@nipsys/lsd';
 
 export function Example() {
   const [badges, setBadges] = useState([

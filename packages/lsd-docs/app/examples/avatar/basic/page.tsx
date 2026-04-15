@@ -1,13 +1,13 @@
 'use client';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@nipsys/shadcn-lsd';
+import { Avatar, AvatarFallback, AvatarImage } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (
