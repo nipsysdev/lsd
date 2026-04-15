@@ -1,6 +1,6 @@
 'use client';
 
-import { TooltipProvider as BaseTooltipProvider } from '@nipsys/shadcn-lsd';
+import { TooltipProvider as BaseTooltipProvider } from '@nipsys/lsd';
 import type * as React from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
