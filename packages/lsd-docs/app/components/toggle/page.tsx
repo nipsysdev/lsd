@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -57,7 +50,7 @@ export default function TogglePage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Toggle } from '@nipsys/shadcn-lsd';
+                code={`import { Toggle } from '@nipsys/lsd';
 
 export default function MyComponent() {
   return <Toggle aria-label="Toggle bold">Bold</Toggle>;

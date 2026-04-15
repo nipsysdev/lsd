@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -54,7 +47,7 @@ export default function TextareaPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Textarea } from '@nipsys/shadcn-lsd'
+                code={`import { Textarea } from '@nipsys/lsd'
 
 export default function MyComponent() {
   return <Textarea placeholder="Enter your message..." />

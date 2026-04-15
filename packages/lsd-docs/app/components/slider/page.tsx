@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -57,15 +50,15 @@ export default function SliderPage() {
 
         <PageSection title="Installation">
           <Typography variant="body1">
-            The Slider component is included in @nipsys/shadcn-lsd. No additional installation steps
-            are required.
+            The Slider component is included in @nipsys/lsd. No additional installation steps are
+            required.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Slider } from '@nipsys/shadcn-lsd'
+                code={`import { Slider } from '@nipsys/lsd'
 
 export default function MyComponent() {
   return <Slider />

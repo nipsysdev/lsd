@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -78,7 +71,7 @@ export default function SonnerPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Toaster } from '@nipsys/shadcn-lsd'
+                code={`import { Toaster } from '@nipsys/lsd'
 import { toast } from 'sonner'
 
 export default function MyComponent() {
