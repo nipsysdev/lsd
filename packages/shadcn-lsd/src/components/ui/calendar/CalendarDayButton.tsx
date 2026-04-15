@@ -29,17 +29,44 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
       data-range-end={isRangeEnd}
       data-range-middle={isRangeMiddle}
       className={cn(
-        'lsd:flex lsd:aspect-square lsd:size-auto lsd:w-full lsd:min-w-(--cell-size) lsd:flex-col lsd:gap-(--lsd-spacing-smallest) lsd:leading-none lsd:font-normal',
-        'lsd:group-data-[focused=true]/day:lsd:relative lsd:group-data-[focused=true]/day:lsd:z-10',
-        'lsd:group-data-[focused=true]/day:lsd:border-lsd-border lsd:group-data-[focused=true]/day:lsd:ring-[3px] lsd:group-data-[focused=true]/day:lsd:ring-lsd-text-primary/50',
-        isRangeStart &&
-          'lsd:rounded-md lsd:rounded-l-md lsd:bg-lsd-primary lsd:text-lsd-primary-foreground',
-        isRangeEnd &&
-          'lsd:rounded-md lsd:rounded-r-md lsd:bg-lsd-primary lsd:text-lsd-primary-foreground',
-        isRangeMiddle && 'lsd:rounded-none lsd:bg-lsd-surface lsd:text-lsd-text-primary',
-        isSelected && 'lsd:border lsd:border-lsd-border',
+        // Layout & Positioning
+        'lsd:flex',
+        'lsd:flex-col',
+        // Sizing
+        'lsd:aspect-square',
+        'lsd:size-auto',
+        'lsd:w-full',
+        'lsd:min-w-(--cell-size)',
+        // Spacing
+        'lsd:gap-(--lsd-spacing-smallest)',
+        // Typography
+        'lsd:leading-none',
+        'lsd:font-normal',
+        // Pseudo-selectors & ARIA
+        'lsd:group-data-[focused=true]/day:lsd:relative',
+        'lsd:group-data-[focused=true]/day:lsd:z-10',
+        'lsd:group-data-[focused=true]/day:lsd:border-lsd-border',
+        'lsd:group-data-[focused=true]/day:lsd:ring-[3px]',
+        'lsd:group-data-[focused=true]/day:lsd:ring-lsd-text-primary/50',
+        // Borders, Shapes & Effects (conditional)
+        isRangeStart && cn('lsd:rounded-md', 'lsd:rounded-l-md'),
+        // Colors & Backgrounds (conditional)
+        isRangeStart && cn('lsd:bg-lsd-primary', 'lsd:text-lsd-primary-foreground'),
+        // Borders, Shapes & Effects (conditional)
+        isRangeEnd && cn('lsd:rounded-md', 'lsd:rounded-r-md'),
+        // Colors & Backgrounds (conditional)
+        isRangeEnd && cn('lsd:bg-lsd-primary', 'lsd:text-lsd-primary-foreground'),
+        // Borders, Shapes & Effects (conditional)
+        isRangeMiddle && cn('lsd:rounded-none'),
+        // Colors & Backgrounds (conditional)
+        isRangeMiddle && cn('lsd:bg-lsd-surface', 'lsd:text-lsd-text-primary'),
+        // Borders, Shapes & Effects (conditional)
+        isSelected && cn('lsd:border', 'lsd:border-lsd-border'),
+        // Dark Mode
         'dark:lsd:hover:lsd:text-lsd-text-primary',
-        '[&>span]:lsd:opacity-70 [&>span]:lsd:lsd-typography-label1',
+        // Pseudo-selectors & ARIA
+        '[&>span]:lsd:opacity-70',
+        '[&>span]:lsd:lsd-typography-label1',
         defaultClassNames.day,
         className
       )}

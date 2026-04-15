@@ -50,7 +50,22 @@ function Slider({
       min={min}
       max={max}
       className={cn(
-        'lsd:relative lsd:flex lsd:touch-none lsd:items-center lsd:select-none lsd:data-disabled:opacity-50 lsd:data-[orientation=vertical]:h-full lsd:data-[orientation=vertical]:min-h-(--lsd-spacing-largest) lsd:data-[orientation=vertical]:w-auto lsd:data-[orientation=vertical]:flex-col',
+        // Positioning
+        'lsd:relative',
+        // Layout & Positioning
+        'lsd:flex',
+        'lsd:items-center',
+        // Other Utility Classes - touch
+        'lsd:touch-none',
+        // Other Utility Classes - select
+        'lsd:select-none',
+        // Pseudo-selectors & ARIA - disabled
+        'lsd:data-disabled:opacity-50',
+        // Pseudo-selectors & ARIA - orientation vertical
+        'lsd:data-[orientation=vertical]:h-full',
+        'lsd:data-[orientation=vertical]:min-h-(--lsd-spacing-largest)',
+        'lsd:data-[orientation=vertical]:w-auto',
+        'lsd:data-[orientation=vertical]:flex-col',
         className
       )}
       {...props}
@@ -58,14 +73,33 @@ function Slider({
       <SliderPrimitive.Track
         data-slot="slider-track"
         className={cn(
-          'lsd:relative lsd:overflow-hidden lsd:bg-lsd-border/20 lsd:data-[orientation=horizontal]:w-full lsd:data-[orientation=horizontal]:lsd:grow lsd:data-[orientation=vertical]:h-full lsd:data-[orientation=vertical]:lsd:w-full',
+          // Positioning
+          'lsd:relative',
+          // Overflow
+          'lsd:overflow-hidden',
+          // Colors & Backgrounds
+          'lsd:bg-lsd-border/20',
+          // Pseudo-selectors & ARIA - orientation horizontal
+          'lsd:data-[orientation=horizontal]:w-full',
+          'lsd:data-[orientation=horizontal]:lsd:grow',
+          // Pseudo-selectors & ARIA - orientation vertical
+          'lsd:data-[orientation=vertical]:h-full',
+          'lsd:data-[orientation=vertical]:lsd:w-full',
+          // Dynamic track size
           sizeStyles.track
         )}
       >
         <SliderPrimitive.Range
           data-slot="slider-range"
           className={cn(
-            'lsd:absolute lsd:bg-lsd-primary lsd:data-[orientation=horizontal]:h-full lsd:data-[orientation=vertical]:w-full'
+            // Positioning
+            'lsd:absolute',
+            // Colors & Backgrounds
+            'lsd:bg-lsd-primary',
+            // Pseudo-selectors & ARIA - orientation horizontal
+            'lsd:data-[orientation=horizontal]:h-full',
+            // Pseudo-selectors & ARIA - orientation vertical
+            'lsd:data-[orientation=vertical]:w-full'
           )}
         />
       </SliderPrimitive.Track>
@@ -74,7 +108,33 @@ function Slider({
           data-slot="slider-thumb"
           key={`${sliderId}-thumb-${index}`}
           className={cn(
-            'lsd:block lsd:shrink-0 lsd:rounded-full lsd:border-2 lsd:border-lsd-primary lsd:bg-lsd-surface lsd:transition-all lsd:duration-200 lsd:ease-out focus-visible:lsd:outline-none focus-visible:lsd:ring-2 focus-visible:lsd:ring-lsd-primary focus-visible:lsd:ring-offset-2 hover:lsd:scale-110 active:lsd:scale-95 lsd:disabled:pointer-events-none lsd:disabled:opacity-50',
+            // Display
+            'lsd:block',
+            // Other Utility Classes - shrink
+            'lsd:shrink-0',
+            // Borders, Shapes & Effects
+            'lsd:rounded-full',
+            'lsd:border-2',
+            'lsd:border-lsd-primary',
+            // Colors & Backgrounds
+            'lsd:bg-lsd-surface',
+            // Transitions & Animations
+            'lsd:transition-all',
+            'lsd:duration-200',
+            'lsd:ease-out',
+            // Transform - hover
+            'hover:lsd:scale-110',
+            // Transform - active
+            'active:lsd:scale-95',
+            // Interactive States - focus visible
+            'focus-visible:lsd:outline-none',
+            'focus-visible:lsd:ring-2',
+            'focus-visible:lsd:ring-lsd-primary',
+            'focus-visible:lsd:ring-offset-2',
+            // Interactive States - disabled
+            'lsd:disabled:pointer-events-none',
+            'lsd:disabled:opacity-50',
+            // Dynamic thumb size
             sizeStyles.thumb
           )}
         />

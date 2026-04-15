@@ -19,7 +19,36 @@ function TooltipContent({
         data-slot="tooltip-content"
         sideOffset={sideOffset}
         className={cn(
-          'lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:animate-in lsd:fade-in-0 lsd:zoom-in-95 lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2 lsd:border lsd:border-lsd-border lsd:shadow-sm lsd:z-50 lsd:w-fit origin-(--radix-tooltip-content-transform-origin) lsd:p-(--lsd-spacing-smaller) lsd:text-xs lsd:text-balance',
+          // Colors & Backgrounds
+          'lsd:bg-lsd-surface',
+          'lsd:text-lsd-text-primary',
+          // Pseudo-selectors & ARIA - Animations
+          'lsd:animate-in',
+          'lsd:fade-in-0',
+          'lsd:zoom-in-95',
+          'lsd:data-[state=closed]:animate-out',
+          'lsd:data-[state=closed]:fade-out-0',
+          'lsd:data-[state=closed]:zoom-out-95',
+          'lsd:data-[side=bottom]:slide-in-from-top-2',
+          'lsd:data-[side=left]:slide-in-from-right-2',
+          'lsd:data-[side=right]:slide-in-from-left-2',
+          'lsd:data-[side=top]:slide-in-from-bottom-2',
+          // Borders, Shapes & Effects
+          'lsd:border',
+          'lsd:border-lsd-border',
+          'lsd:shadow-sm',
+          // Positioning
+          'lsd:z-50',
+          // Sizing
+          'lsd:w-fit',
+          // Transform
+          'origin-(--radix-tooltip-content-transform-origin)',
+          // Spacing
+          'lsd:p-(--lsd-spacing-smaller)',
+          // Typography Size
+          'lsd:text-xs',
+          // Typography
+          'lsd:text-balance',
           className
         )}
         {...props}

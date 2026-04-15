@@ -11,8 +11,42 @@ const Textarea = React.forwardRef<
       ref={ref}
       data-slot="textarea"
       className={cn(
-        'lsd:flex lsd:field-sizing-content lsd:min-h-16 lsd:w-full lsd:rounded-none lsd:border lsd:border-lsd-border lsd:bg-transparent lsd:px-(--lsd-spacing-base) lsd:py-(--lsd-spacing-base) lsd:text-base lsd:shadow-xs lsd:transition-[color,box-shadow] lsd:outline-none lsd:placeholder:text-lsd-text-secondary lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50 lsd:aria-invalid:border-lsd-destructive lsd:aria-invalid:ring-lsd-destructive/20 md:lsd:text-sm lsd:aria-invalid:ring-lsd-destructive/40',
-        'focus-visible:lsd:border-lsd-primary focus-visible:lsd:ring-[3px] focus-visible:lsd:ring-lsd-primary/50',
+        // Layout & Positioning
+        'lsd:flex',
+        // Sizing
+        'lsd:min-h-16',
+        'lsd:w-full',
+        // Sizing - field
+        'lsd:field-sizing-content',
+        // Borders, Shapes & Effects
+        'lsd:rounded-none',
+        'lsd:border',
+        'lsd:border-lsd-border',
+        'lsd:shadow-xs',
+        // Colors & Backgrounds
+        'lsd:bg-transparent',
+        // Spacing
+        'lsd:px-(--lsd-spacing-base)',
+        'lsd:py-(--lsd-spacing-base)',
+        // Typography Size
+        'lsd:text-base',
+        'md:lsd:text-sm',
+        // Transitions & Animations
+        'lsd:transition-[color,box-shadow]',
+        // Interactive States - Focus
+        'lsd:outline-none',
+        'focus-visible:lsd:border-lsd-primary',
+        'focus-visible:lsd:ring-[3px]',
+        'focus-visible:lsd:ring-lsd-primary/50',
+        // Pseudo-selectors & ARIA - placeholder
+        'lsd:placeholder:text-lsd-text-secondary',
+        // Interactive States - Disabled
+        'lsd:disabled:cursor-not-allowed',
+        'lsd:disabled:opacity-50',
+        // Pseudo-selectors & ARIA - invalid state
+        'lsd:aria-invalid:border-lsd-destructive',
+        'lsd:aria-invalid:ring-lsd-destructive/20',
+        'lsd:aria-invalid:ring-lsd-destructive/40',
         className
       )}
       {...props}
