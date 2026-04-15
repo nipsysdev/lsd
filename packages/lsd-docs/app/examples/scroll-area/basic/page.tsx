@@ -1,10 +1,10 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: Tolerate array index key for code examples */
 'use client';
 
-import { ScrollArea, Typography } from '@nipsys/shadcn-lsd';
+import { ScrollArea, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { ScrollArea, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { ScrollArea, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (
