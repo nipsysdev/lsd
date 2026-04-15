@@ -31,7 +31,7 @@ const FieldError = React.forwardRef<HTMLDivElement, FieldErrorProps>(
       return uniqueMessages.length === 1
         ? uniqueMessages[0]
         : uniqueMessages.map(message => (
-            <div key={message} className="lsd:mb-1 last:lsd:mb-0">
+            <div key={message} className="lsd:mb-(--lsd-spacing-smallest) last:lsd:mb-0">
               • {message}
             </div>
           ));
@@ -46,7 +46,15 @@ const FieldError = React.forwardRef<HTMLDivElement, FieldErrorProps>(
         ref={ref}
         data-slot="field-error"
         role="alert"
-        className={cn('lsd:text-sm lsd:font-normal lsd:text-lsd-destructive-text', className)}
+        className={cn(
+          // Typography Size
+          'lsd:text-sm',
+          // Typography Font
+          'lsd:font-normal',
+          // Colors & Backgrounds
+          'lsd:text-lsd-destructive-text',
+          className
+        )}
         {...props}
       >
         {errorBody}

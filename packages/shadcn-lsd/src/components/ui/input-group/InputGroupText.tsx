@@ -13,7 +13,17 @@ const InputGroupText = React.forwardRef<HTMLSpanElement, InputGroupTextProps>(
       <span
         ref={ref}
         className={cn(
-          "lsd:flex lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:text-lsd-text-secondary [&_svg]:lsd:pointer-events-none [&_svg:not([class*='size-'])]:lsd:size-4",
+          // Layout & Positioning
+          'lsd:flex',
+          'lsd:items-center',
+          // Spacing
+          'lsd:gap-(--lsd-spacing-smaller)',
+          // Colors & Backgrounds
+          'lsd:text-lsd-text-secondary',
+          // Pseudo-selectors & ARIA - SVG styling
+          '[&_svg]:lsd:pointer-events-none',
+          "[&_svg:not([class*='size-'])]:lsd:size-4",
+          // Dynamic text size classes
           getInputGroupTextSizeClasses(size),
           className
         )}

@@ -12,7 +12,16 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
         htmlFor={htmlFor}
         aria-label={!htmlFor ? props.children?.toString() : undefined}
         className={cn(
-          'lsd:text-[0.875rem] lsd:font-medium lsd:text-lsd-text-primary lsd:mb-(--lsd-spacing-smaller) lsd:block',
+          // Typography Size
+          'lsd:text-[0.875rem]',
+          // Typography Font
+          'lsd:font-medium',
+          // Colors & Backgrounds
+          'lsd:text-lsd-text-primary',
+          // Spacing
+          'lsd:mb-(--lsd-spacing-smaller)',
+          // Display
+          'lsd:block',
           className
         )}
         {...props}

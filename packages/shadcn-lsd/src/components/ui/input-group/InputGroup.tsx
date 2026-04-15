@@ -15,20 +15,43 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
           data-slot="input-group"
           role="group"
           className={cn(
-            'lsd:group/input-group lsd:relative lsd:flex lsd:w-full lsd:items-center lsd:rounded-none lsd:border lsd:border-lsd-border lsd:shadow-xs lsd:transition-[color,box-shadow] lsd:outline-none lsd:bg-lsd-surface',
+            // Pseudo-selectors & ARIA - Group
+            'lsd:group/input-group',
+            // Positioning
+            'lsd:relative',
+            // Layout & Positioning
+            'lsd:flex',
+            // Sizing
+            'lsd:w-full',
+            // Layout & Positioning - items
+            'lsd:items-center',
+            // Borders, Shapes & Effects
+            'lsd:rounded-none',
+            'lsd:border',
+            'lsd:border-lsd-border',
+            'lsd:shadow-xs',
+            // Transitions & Animations
+            'lsd:transition-[color,box-shadow]',
+            // Interactive States - Focus
+            'lsd:outline-none',
+            // Colors & Backgrounds
+            'lsd:bg-lsd-surface',
+            // Dynamic height classes
             getInputGroupHeightClasses(size),
-            'lsd:min-w-0 has-[>textarea]:lsd:h-auto',
-
-            // Variants based on alignment.
+            // Sizing - minimum width and textarea
+            'lsd:min-w-0',
+            'has-[>textarea]:lsd:h-auto',
+            // Pseudo-selectors & ARIA - alignment variants
             'has-[>[data-align=inline-start]]:[&>input]:lsd:pl-(--lsd-spacing-smaller)',
             'has-[>[data-align=inline-end]]:[&>input]:lsd:pr-(--lsd-spacing-smaller)',
-
-            // Focus state.
-            'has-[[data-slot=input-group-control]:focus-visible]:lsd:border-lsd-primary has-[[data-slot=input-group-control]:focus-visible]:lsd:ring-[3px] has-[[data-slot=input-group-control]:focus-visible]:lsd:ring-lsd-primary/50',
-
-            // Error state.
-            'has-[[data-slot][aria-invalid=true]]:lsd:border-lsd-destructive has-[[data-slot][aria-invalid=true]]:lsd:ring-lsd-destructive/20 has-[[data-slot][aria-invalid=true]]:lsd:ring-lsd-destructive/40',
-
+            // Pseudo-selectors & ARIA - focus state
+            'has-[[data-slot=input-group-control]:focus-visible]:lsd:border-lsd-primary',
+            'has-[[data-slot=input-group-control]:focus-visible]:lsd:ring-[3px]',
+            'has-[[data-slot=input-group-control]:focus-visible]:lsd:ring-lsd-primary/50',
+            // Pseudo-selectors & ARIA - error state
+            'has-[[data-slot][aria-invalid=true]]:lsd:border-lsd-destructive',
+            'has-[[data-slot][aria-invalid=true]]:lsd:ring-lsd-destructive/20',
+            'has-[[data-slot][aria-invalid=true]]:lsd:ring-lsd-destructive/40',
             className
           )}
           {...props}

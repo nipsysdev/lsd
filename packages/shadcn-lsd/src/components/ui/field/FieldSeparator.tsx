@@ -10,7 +10,13 @@ const FieldSeparator = React.forwardRef<HTMLHRElement, FieldSeparatorProps>(
         ref={ref}
         data-slot="field-separator"
         className={cn(
-          'lsd:border-0 lsd:border-t lsd:border-lsd-border lsd:my-(--lsd-spacing-base)',
+          // Borders
+          'lsd:border-0',
+          'lsd:border-t',
+          // Border Colors
+          'lsd:border-lsd-border',
+          // Spacing
+          'lsd:my-(--lsd-spacing-base)',
           className
         )}
         {...props}

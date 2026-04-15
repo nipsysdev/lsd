@@ -11,12 +11,23 @@ const Field = React.forwardRef<HTMLDivElement, FieldProps>(
         data-slot="field"
         data-orientation={orientation}
         className={cn(
+          // Box model
           'lsd:box-border',
-          orientation === 'vertical' && 'lsd:flex lsd:flex-col',
-          orientation === 'horizontal' &&
-            'lsd:flex lsd:flex-row-reverse lsd:items-start lsd:gap-(--lsd-spacing-base)',
-          orientation === 'responsive' &&
-            'lsd:flex lsd:flex-col md:lsd:flex-row-reverse md:lsd:items-start md:lsd:gap-(--lsd-spacing-base)',
+          // Layout & Positioning - vertical
+          orientation === 'vertical' && ['lsd:flex', 'lsd:flex-col'],
+          // Layout & Positioning - horizontal
+          orientation === 'horizontal' && ['lsd:flex', 'lsd:flex-row-reverse', 'lsd:items-start'],
+          // Spacing - horizontal
+          orientation === 'horizontal' && 'lsd:gap-(--lsd-spacing-base)',
+          // Layout & Positioning - responsive
+          orientation === 'responsive' && [
+            'lsd:flex',
+            'lsd:flex-col',
+            'md:lsd:flex-row-reverse',
+            'md:lsd:items-start',
+          ],
+          // Spacing - responsive
+          orientation === 'responsive' && 'md:lsd:gap-(--lsd-spacing-base)',
           className
         )}
         {...props}

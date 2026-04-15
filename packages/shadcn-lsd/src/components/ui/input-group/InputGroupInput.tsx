@@ -15,7 +15,16 @@ const InputGroupInput = React.forwardRef<HTMLInputElement, InputGroupInputProps>
         variant="ghost"
         size={size}
         className={cn(
-          'lsd:flex-1 lsd:rounded-none lsd:border-0 lsd:shadow-none lsd:focus-visible:ring-0 lsd:bg-transparent',
+          // Layout & Positioning
+          'lsd:flex-1',
+          // Borders, Shapes & Effects
+          'lsd:rounded-none',
+          'lsd:border-0',
+          'lsd:shadow-none',
+          // Interactive States - Focus
+          'lsd:focus-visible:ring-0',
+          // Colors & Backgrounds
+          'lsd:bg-transparent',
           className
         )}
         {...props}

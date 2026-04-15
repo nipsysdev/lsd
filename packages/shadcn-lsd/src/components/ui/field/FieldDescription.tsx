@@ -9,7 +9,13 @@ const FieldDescription = React.forwardRef<HTMLParagraphElement, FieldDescription
       <p
         ref={ref}
         data-slot="field-description"
-        className={cn('lsd:text-[0.875rem] lsd:text-lsd-text-secondary', className)}
+        className={cn(
+          // Typography Size
+          'lsd:text-[0.875rem]',
+          // Colors & Backgrounds
+          'lsd:text-lsd-text-secondary',
+          className
+        )}
         {...props}
       />
     );

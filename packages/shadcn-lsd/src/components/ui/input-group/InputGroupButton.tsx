@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { useInputGroup } from './context';
 import type { InputGroupButtonProps, InputGroupButtonSize, InputGroupButtonVariant } from './types';
 import { getInputGroupButtonSize, getInputGroupIconSize } from './utils';
@@ -28,7 +29,12 @@ const InputGroupButton = React.forwardRef<HTMLButtonElement, InputGroupButtonPro
         type={type}
         size={getButtonSize(finalSize as InputGroupButtonSize, variant)}
         variant={variant === 'text' ? 'ghost' : 'ghost-rounded'}
-        className="lsd:h-full! lsd:p-0!"
+        className={cn(
+          // Sizing - height
+          'lsd:h-full!',
+          // Spacing
+          'lsd:p-0!'
+        )}
         {...props}
       />
     );

@@ -16,7 +16,13 @@ function FormItem({ className, ...props }: React.ComponentProps<'div'>) {
     <FormItemContext.Provider value={{ id }}>
       <div
         data-slot="form-item"
-        className={cn('lsd:grid lsd:gap-(--lsd-spacing-base)', className)}
+        className={cn(
+          // Layout & Positioning
+          'lsd:grid',
+          // Spacing
+          'lsd:gap-(--lsd-spacing-base)',
+          className
+        )}
         {...props}
       />
     </FormItemContext.Provider>

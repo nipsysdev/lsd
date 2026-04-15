@@ -24,13 +24,25 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const finalId = id || inputId;
 
     return (
-      <div className={cn('lsd:flex lsd:flex-col lsd:box-border', className)}>
+      <div
+        className={cn(
+          // Layout & Positioning
+          'lsd:flex',
+          'lsd:flex-col',
+          // Box model
+          'lsd:box-border',
+          className
+        )}
+      >
         {label && (
           <label
             htmlFor={finalId}
             className={cn(
+              // Typography Font
               'lsd:font-medium',
+              // Dynamic size classes
               getLabelSizeClasses(size),
+              // Interactive States - Disabled
               disabled && 'lsd:text-lsd-text-secondary'
             )}
           >
@@ -39,12 +51,23 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         <div
           className={cn(
-            'lsd:flex lsd:items-center lsd:justify-between',
-            variant === 'outlined'
-              ? 'lsd:border lsd:border-lsd-border'
-              : variant !== 'ghost' && 'lsd:border lsd:border-transparent lsd:border-b-lsd-border',
+            // Layout & Positioning
+            'lsd:flex',
+            'lsd:items-center',
+            'lsd:justify-between',
+            // Borders - outlined variant
+            variant === 'outlined' && ['lsd:border', 'lsd:border-lsd-border'],
+            // Borders - other variants
+            variant !== 'ghost' &&
+              variant !== 'outlined' && [
+                'lsd:border',
+                'lsd:border-transparent',
+                'lsd:border-b-lsd-border',
+              ],
+            // Border Colors - error state
             error && !disabled && 'lsd:border-lsd-destructive',
-            disabled && 'lsd:opacity-34 lsd:cursor-not-allowed'
+            // Interactive States - Disabled
+            disabled && ['lsd:opacity-34', 'lsd:cursor-not-allowed']
           )}
         >
           <input
@@ -54,8 +77,38 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             disabled={disabled}
             data-slot="input"
             className={cn(
-              'file:lsd:text-lsd-text-primary placeholder:lsd:text-lsd-text-primary placeholder:lsd:opacity-30 selection:lsd:bg-lsd-primary selection:lsd:text-lsd-surface lsd:border-none lsd:outline-none lsd:bg-transparent lsd:text-lsd-text-primary lsd:w-full lsd:h-full file:lsd:inline-flex file:lsd:h-7 file:lsd:border-0 file:lsd:bg-transparent file:lsd:font-medium lsd:disabled:pointer-events-none lsd:disabled:cursor-not-allowed lsd:disabled:opacity-34',
-              'focus-visible:lsd:outline-none lsd:px-(--lsd-spacing-base)',
+              // Pseudo-selectors & ARIA - File colors
+              'file:lsd:text-lsd-text-primary',
+              // Pseudo-selectors & ARIA - Placeholder colors
+              'placeholder:lsd:text-lsd-text-primary',
+              'placeholder:lsd:opacity-30',
+              // Pseudo-selectors & ARIA - Selection colors
+              'selection:lsd:bg-lsd-primary',
+              'selection:lsd:text-lsd-surface',
+              // Borders
+              'lsd:border-none',
+              // Interactive States - Focus
+              'lsd:outline-none',
+              'focus-visible:lsd:outline-none',
+              // Colors & Backgrounds
+              'lsd:bg-transparent',
+              'lsd:text-lsd-text-primary',
+              // Sizing
+              'lsd:w-full',
+              'lsd:h-full',
+              // Pseudo-selectors & ARIA - File styling
+              'file:lsd:inline-flex',
+              'file:lsd:h-7',
+              'file:lsd:border-0',
+              'file:lsd:bg-transparent',
+              'file:lsd:font-medium',
+              // Interactive States - Disabled
+              'lsd:disabled:pointer-events-none',
+              'lsd:disabled:cursor-not-allowed',
+              'lsd:disabled:opacity-34',
+              // Spacing
+              'lsd:px-(--lsd-spacing-base)',
+              // Dynamic size classes
               getTextSizeClasses(size),
               getVerticalPaddingClasses(size)
             )}
@@ -63,7 +116,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           />
         </div>
         {supportingText && (
-          <div className="lsd:pt-(--lsd-spacing-smaller) lsd:w-fit">
+          <div
+            className={cn(
+              // Spacing
+              'lsd:pt-(--lsd-spacing-smaller)',
+              // Sizing
+              'lsd:w-fit'
+            )}
+          >
             <p
               className={cn(
                 'lsd:text-sm',

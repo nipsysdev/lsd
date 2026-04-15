@@ -18,7 +18,15 @@ function FormMessage({ className, ...props }: FormMessageProps) {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn('lsd:text-sm lsd:leading-[1.25rem] lsd:text-lsd-destructive-text', className)}
+      className={cn(
+        // Typography Size
+        'lsd:text-sm',
+        // Typography Line Height
+        'lsd:leading-[1.25rem]',
+        // Colors & Backgrounds
+        'lsd:text-lsd-destructive-text',
+        className
+      )}
       {...props}
     >
       {body}
