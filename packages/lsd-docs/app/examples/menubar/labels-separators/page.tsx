@@ -8,7 +8,7 @@ import {
   MenubarMenu,
   MenubarSeparator,
   MenubarTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
@@ -19,7 +19,7 @@ export const CODE = `import {
   MenubarItem,
   MenubarLabel,
   MenubarSeparator,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

@@ -10,7 +10,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
@@ -23,7 +23,7 @@ export const CODE = `import {
   MenubarSubTrigger,
   MenubarPortal,
   MenubarSubContent,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (
