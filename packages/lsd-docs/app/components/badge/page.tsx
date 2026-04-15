@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -66,7 +59,7 @@ export default function BadgePage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Badge } from '@nipsys/shadcn-lsd'
+                code={`import { Badge } from '@nipsys/lsd'
 
 export default function MyComponent() {
   return <Badge>New</Badge>

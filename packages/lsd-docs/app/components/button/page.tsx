@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -59,7 +59,7 @@ export default function ButtonPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Button } from '@nipsys/shadcn-lsd';
+                code={`import { Button } from '@nipsys/lsd';
 
 export default function MyComponent() {
   return <Button>Click me</Button>

@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -58,7 +58,7 @@ export default function AccordionPage() {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export default function MyComponent() {
   return (

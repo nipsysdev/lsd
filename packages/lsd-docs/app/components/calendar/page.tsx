@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -50,14 +43,14 @@ export default function CalendarPage() {
         <PageSection title="Installation">
           <Typography variant="body1">
             The Calendar component requires react-day-picker as a peer dependency. Install it along
-            with @nipsys/shadcn-lsd:
+            with @nipsys/lsd:
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Calendar } from '@nipsys/shadcn-lsd'
+                code={`import { Calendar } from '@nipsys/lsd'
 
 export default function MyComponent() {
   return <Calendar />
