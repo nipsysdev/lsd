@@ -10,7 +10,20 @@ function AlertDescription({ className, ...props }: AlertDescriptionProps) {
     <p
       data-slot="alert-description"
       className={cn(
-        'lsd:col-start-2 lsd:grid lsd:justify-items-start lsd:gap-1 lsd:text-sm lsd:leading-[1.25rem] lsd:text-lsd-text-secondary [&_p]:lsd:leading-relaxed',
+        // Layout & Positioning
+        'lsd:grid',
+        'lsd:justify-items-start',
+        'lsd:col-start-2',
+        // Spacing
+        'lsd:gap-(--lsd-spacing-smallest)',
+        // Typography
+        'lsd:text-sm',
+        'lsd:leading-5',
+        // Colors & Backgrounds
+        'lsd:text-lsd-text-secondary',
+        // Pseudo-selectors & ARIA
+        '[&_p]:lsd:leading-relaxed',
+        // Colors & Backgrounds (variants)
         'data-[variant=destructive]:lsd:text-lsd-destructive-text/90',
         'data-[variant=info]:lsd:text-lsd-info-text/90',
         'data-[variant=success]:lsd:text-lsd-success-text/90',

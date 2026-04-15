@@ -5,7 +5,7 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 const alertVariants = cva(
-  'lsd:relative lsd:grid lsd:w-full lsd:grid-cols-[0_1fr] lsd:items-start lsd:gap-y-0.5 lsd:border lsd:px-4 lsd:py-3 lsd:text-sm has-[>svg]:lsd:grid-cols-[calc(var(--lsd-spacing-base)*4)_1fr] has-[>svg]:lsd:gap-x-3 [&>svg]:lsd:size-4 [&>svg]:lsd:translate-y-0.5 [&>svg]:lsd:text-current',
+  'lsd:relative lsd:grid lsd:w-full lsd:grid-cols-[0_1fr] lsd:items-start lsd:gap-y-0.5 lsd:border lsd:px-(--lsd-spacing-base) lsd:py-(--lsd-spacing-small) lsd:text-sm has-[>svg]:lsd:grid-cols-[calc(var(--lsd-spacing-base)*4)_1fr] has-[>svg]:lsd:gap-x-(--lsd-spacing-small) [&>svg]:lsd:size-4 [&>svg]:lsd:translate-y-0.5 [&>svg]:lsd:text-current',
   {
     variants: {
       variant: {

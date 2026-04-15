@@ -30,7 +30,17 @@ function AccordionTrigger({ className, children, size = 'md', ...props }: Accord
         {children}
         <CaretDownIcon
           className={cn(
-            'lsd:text-lsd-icon-primary lsd:pointer-events-none lsd:shrink-0 lsd:translate-y-0.5 lsd:transition-transform lsd:duration-200',
+            // Transitions & Animations
+            'lsd:transition-transform',
+            'lsd:duration-200',
+            // Colors & Backgrounds
+            'lsd:text-lsd-icon-primary',
+            // Layout & Positioning
+            'lsd:shrink-0',
+            // Spacing
+            'lsd:translate-y-0.5',
+            // Interactive States
+            'lsd:pointer-events-none',
             getIconSize()
           )}
           weight="duotone"

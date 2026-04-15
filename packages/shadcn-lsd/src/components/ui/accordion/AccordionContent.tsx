@@ -12,11 +12,11 @@ function AccordionContent({ className, children, size = 'md', ...props }: Accord
   const getPaddingBottom = () => {
     switch (size) {
       case 'sm':
-        return 'lsd:pb-[var(--lsd-spacing-smaller)]';
+        return 'lsd:pb-(--lsd-spacing-smaller)';
       case 'lg':
-        return 'lsd:pb-[var(--lsd-spacing-larger)]';
+        return 'lsd:pb-(--lsd-spacing-larger)';
       default:
-        return 'lsd:pb-[var(--lsd-spacing-base)]';
+        return 'lsd:pb-(--lsd-spacing-base)';
     }
   };
 
