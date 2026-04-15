@@ -11,8 +11,8 @@ import {
   ToggleGroup,
   ToggleGroupItem,
   Typography,
-} from '@nipsys/shadcn-lsd';
-import { ArrowSquareOutIcon, HeartIcon } from '@phosphor-icons/react';
+} from '@nipsys/lsd';
+import { ArrowSquareOutIcon, HeartIcon, QuotesIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { useState } from 'react';
 import SocialUIPreview from './previews/social-ui';
@@ -61,9 +61,11 @@ export default function Home() {
       <Separator className="my-15" />
 
       <Typography variant="h5" className="font-bold mb-(--lsd-spacing-smaller)">
-        🙶Conventional design has lost its way: chrome over content, spectacle over substance. LSD
+        <QuotesIcon weight="duotone" className="inline pb-(--lsd-spacing-small) size-10" />
+        Conventional design has lost its way: chrome over content, spectacle over substance. LSD
         exists because design should serve the mission — never distract from it. We build for
-        clarity, accessibility, and resilience. The message matters more than the medium.🙷
+        clarity, accessibility, and resilience. The message matters more than the medium.
+        <QuotesIcon weight="duotone" className="inline pb-(--lsd-spacing-small) size-10" />
       </Typography>
       <div>
         <Button asChild variant="link" className="p-0! h-fit!">

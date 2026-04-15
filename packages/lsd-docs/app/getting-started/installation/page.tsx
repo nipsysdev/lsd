@@ -8,7 +8,7 @@ import {
   TabsList,
   TabsTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { PageContent } from '@/components/docs/PageContent';
@@ -43,16 +43,16 @@ export default function InstallationPage() {
               <TabsTrigger value="bun">bun</TabsTrigger>
             </TabsList>
             <TabsContent value="npm" className="p-(--lsd-spacing-large)">
-              <CodeExample useAccordion={false} code="npm add @nipsys/shadcn-lsd" />
+              <CodeExample useAccordion={false} code="npm add @nipsys/lsd" />
             </TabsContent>
             <TabsContent value="pnpm" className="p-(--lsd-spacing-large)">
-              <CodeExample useAccordion={false} code="pnpm add @nipsys/shadcn-lsd" />
+              <CodeExample useAccordion={false} code="pnpm add @nipsys/lsd" />
             </TabsContent>
             <TabsContent value="yarn" className="p-(--lsd-spacing-large)">
-              <CodeExample useAccordion={false} code="yarn add @nipsys/shadcn-lsd" />
+              <CodeExample useAccordion={false} code="yarn add @nipsys/lsd" />
             </TabsContent>
             <TabsContent value="bun" className="p-(--lsd-spacing-large)">
-              <CodeExample useAccordion={false} code="bun add @nipsys/shadcn-lsd" />
+              <CodeExample useAccordion={false} code="bun add @nipsys/lsd" />
             </TabsContent>
           </Tabs>
         </PageSection>
@@ -66,10 +66,10 @@ export default function InstallationPage() {
               <TabsTrigger value="js">in JS/TS</TabsTrigger>
             </TabsList>
             <TabsContent value="css">
-              <CodeExample useAccordion={false} code={`@import "@nipsys/shadcn-lsd/css";`} />
+              <CodeExample useAccordion={false} code={`@import "@nipsys/lsd/css";`} />
             </TabsContent>
             <TabsContent value="js">
-              <CodeExample useAccordion={false} code={`import '@nipsys/shadcn-lsd/css';`} />
+              <CodeExample useAccordion={false} code={`import '@nipsys/lsd/css';`} />
             </TabsContent>
           </Tabs>
         </PageSection>
@@ -83,7 +83,7 @@ export default function InstallationPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Button } from '@nipsys/shadcn-lsd'
+                code={`import { Button } from '@nipsys/lsd'
 
 export default function Home() {
   return (

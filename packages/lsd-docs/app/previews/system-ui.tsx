@@ -16,7 +16,7 @@ import {
   TableHeader,
   TableRow,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { WarningIcon } from '@phosphor-icons/react';
 import { useState } from 'react';
 
