@@ -4,7 +4,7 @@ Documentation site for the Logos Design System (LSD) component library. Built wi
 
 ## Overview
 
-This is the documentation site for the `@nipsys/shadcn-lsd` component library. It provides comprehensive documentation, examples, and usage guidelines for all available components.
+This is the documentation site for the `@nipsys/lsd` component library. It provides comprehensive documentation, examples, and usage guidelines for all available components.
 
 ## Getting Started
 
@@ -56,7 +56,7 @@ packages/lsd-docs/
 - **React 19** - UI library
 - **TypeScript** - Type safety
 - **Tailwind CSS 4** - Utility-first styling
-- **@nipsys/shadcn-lsd** - Component library
+- **@nipsys/lsd** - Component library
 
 ## Features
 

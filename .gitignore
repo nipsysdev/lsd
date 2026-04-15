@@ -59,4 +59,4 @@ plans
 # typescript
 *.tsbuildinfo
 
-docs/dev
+/docs
