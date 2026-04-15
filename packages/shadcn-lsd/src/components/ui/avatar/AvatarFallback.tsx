@@ -11,7 +11,21 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        'lsd:flex lsd:size-full lsd:items-center lsd:justify-center lsd:rounded-full lsd:bg-lsd-muted lsd:text-sm lsd:text-lsd-text-secondary lsd:group-data-[size=sm]/avatar:text-xs',
+        // Layout & Positioning
+        'lsd:flex',
+        'lsd:items-center',
+        'lsd:justify-center',
+        // Sizing
+        'lsd:size-full',
+        // Borders, Shapes & Effects
+        'lsd:rounded-full',
+        // Colors & Backgrounds
+        'lsd:bg-lsd-muted',
+        // Typography
+        'lsd:text-sm',
+        'lsd:text-lsd-text-secondary',
+        // Pseudo-selectors & ARIA
+        'lsd:group-data-[size=sm]/avatar:text-xs',
         className
       )}
       {...props}

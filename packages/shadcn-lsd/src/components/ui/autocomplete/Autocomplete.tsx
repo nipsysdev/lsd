@@ -93,13 +93,25 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
       : '';
 
     return (
-      <div {...props} className={cn('lsd:box-border', currentSize.container, className)}>
+      <div
+        {...props}
+        className={cn(
+          // Box Model
+          'lsd:box-border',
+          currentSize.container,
+          className
+        )}
+      >
         {label && (
           <label
             htmlFor={inputId}
             className={cn(
-              'lsd:block lsd:text-sm',
+              // Display
+              'lsd:block',
+              // Typography
+              'lsd:text-sm',
               currentSize.label,
+              // Colors & Backgrounds
               disabled ? 'lsd:text-lsd-text-secondary' : 'lsd:text-lsd-text-primary'
             )}
           >
@@ -110,8 +122,11 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
           <PopoverTrigger asChild>
             <div
               className={cn(
-                'lsd:flex lsd:justify-between',
+                // Layout & Positioning
+                'lsd:flex',
+                'lsd:justify-between',
                 currentSize.inputContainer,
+                // Borders, Shapes & Effects
                 variant === 'outlined'
                   ? disabled
                     ? 'lsd:border lsd:border-lsd-border'
@@ -119,6 +134,7 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                   : disabled
                     ? 'lsd:border lsd:border-transparent lsd:border-b-lsd-border'
                     : 'lsd:border lsd:border-transparent lsd:border-b-lsd-border',
+                // Interactive States
                 disabled ? 'lsd:cursor-not-allowed' : 'lsd:cursor-pointer'
               )}
             >
@@ -131,18 +147,39 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                 disabled={disabled}
                 readOnly
                 className={cn(
-                  'lsd:border-none lsd:outline-none lsd:bg-none lsd:w-full lsd:text-[14px]',
+                  // Borders, Shapes & Effects
+                  'lsd:border-none',
+                  'lsd:outline-none',
+                  // Colors & Backgrounds
+                  'lsd:bg-none',
+                  // Sizing
+                  'lsd:w-full',
+                  // Typography
+                  'lsd:text-[14px]',
                   currentSize.input,
+                  // Colors & Backgrounds
                   disabled
-                    ? 'lsd:text-lsd-text-secondary lsd:cursor-not-allowed'
+                    ? 'lsd:text-lsd-text-secondary'
                     : error
                       ? 'lsd:text-lsd-destructive'
                       : 'lsd:text-lsd-text-primary',
+                  // Interactive States
+                  disabled ? 'lsd:cursor-not-allowed' : '',
+                  // Typography
                   'lsd:placeholder:lsd-text-secondary'
                 )}
               />
               {icon && (
-                <div className={cn('lsd:flex lsd:items-center', currentSize.icon)}>{icon}</div>
+                <div
+                  className={cn(
+                    // Layout & Positioning
+                    'lsd:flex',
+                    'lsd:items-center',
+                    currentSize.icon
+                  )}
+                >
+                  {icon}
+                </div>
               )}
               {value && clearable && (
                 <button
@@ -150,14 +187,19 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                   onClick={onCancel}
                   disabled={disabled}
                   className={cn(
-                    'lsd:flex lsd:items-center',
+                    // Layout & Positioning
+                    'lsd:flex',
+                    'lsd:items-center',
                     currentSize.icon,
+                    // Interactive States
                     disabled ? 'lsd:cursor-not-allowed' : 'lsd:cursor-pointer'
                   )}
                 >
                   <XIcon
                     className={cn(
-                      'lsd:size-4',
+                      // Sizing
+                      'lsd:size-(--lsd-spacing-base)',
+                      // Colors & Backgrounds
                       disabled ? 'lsd:text-lsd-text-secondary' : 'lsd:text-lsd-icon-primary'
                     )}
                     weight="duotone"

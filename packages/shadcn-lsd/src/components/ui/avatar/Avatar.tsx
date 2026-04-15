@@ -15,7 +15,20 @@ function Avatar({ className, size = 'default', children, ...props }: AvatarProps
       data-slot="avatar"
       data-size={size}
       className={cn(
-        'group/avatar lsd:relative lsd:flex lsd:size-8 lsd:shrink-0 lsd:overflow-hidden lsd:rounded-full lsd:select-none lsd:data-[size=lg]:size-10 lsd:data-[size=sm]:size-6',
+        // Layout & Positioning
+        'group/avatar',
+        'lsd:relative',
+        'lsd:flex',
+        // Sizing
+        'lsd:size-8',
+        'lsd:data-[size=lg]:size-10',
+        'lsd:data-[size=sm]:size-6',
+        // Borders, Shapes & Effects
+        'lsd:shrink-0',
+        'lsd:overflow-hidden',
+        'lsd:rounded-full',
+        // Other Utility Classes
+        'lsd:select-none',
         className
       )}
       {...props}

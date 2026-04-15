@@ -33,18 +33,36 @@ export function AutocompleteContent({
   return (
     <PopoverContent
       className={cn(
+        // Spacing
         'lsd:p-0',
-        'lsd:bg-lsd-surface lsd:border-lsd-border',
-        'lsd:data-[side=top]:border-b-0 lsd:data-[side=bottom]:border-t-0'
+        // Colors & Backgrounds
+        'lsd:bg-lsd-surface',
+        'lsd:border-lsd-border',
+        // Borders, Shapes & Effects
+        'lsd:data-[side=top]:border-b-0',
+        'lsd:data-[side=bottom]:border-t-0'
       )}
       align="start"
       sideOffset={0}
     >
-      <Command className="lsd:rounded-none lsd:border-none lsd:shadow-none">
+      <Command
+        className={cn(
+          // Borders, Shapes & Effects
+          'lsd:rounded-none',
+          'lsd:border-none',
+          // Shadows
+          'lsd:shadow-none'
+        )}
+      >
         <CommandInput
           value={searchText}
           onValueChange={onSearchTextChange}
-          className="lsd:h-9 lsd:border-none"
+          className={cn(
+            // Sizing
+            'lsd:h-9',
+            // Borders, Shapes & Effects
+            'lsd:border-none'
+          )}
           placeholder={placeholder}
         />
         <CommandList>
@@ -64,11 +82,36 @@ export function AutocompleteContent({
                   value={option.value}
                   keywords={[option.label]}
                   onSelect={() => onSelect(option.value)}
-                  className="lsd:text-lsd-text-primary lsd:hover:underline lsd:focus:underline lsd:cursor-pointer lsd:data-[selected=true]:underline"
+                  className={cn(
+                    // Colors & Backgrounds
+                    'lsd:text-lsd-text-primary',
+                    // Interactive States
+                    'lsd:hover:underline',
+                    'lsd:focus:underline',
+                    'lsd:cursor-pointer',
+                    // Pseudo-selectors & ARIA
+                    'lsd:data-[selected=true]:underline'
+                  )}
                 >
-                  <span className="lsd:block lsd:overflow-hidden lsd:whitespace-nowrap lsd:text-ellipsis">
+                  <span
+                    className={cn(
+                      // Display
+                      'lsd:block',
+                      // Other Utility Classes
+                      'lsd:overflow-hidden',
+                      'lsd:whitespace-nowrap',
+                      'lsd:text-ellipsis'
+                    )}
+                  >
                     {matchedPart}
-                    <span className="lsd:text-lsd-text-primary lsd:whitespace-pre">
+                    <span
+                      className={cn(
+                        // Colors & Backgrounds
+                        'lsd:text-lsd-text-primary',
+                        // Other Utility Classes
+                        'lsd:whitespace-pre'
+                      )}
+                    >
                       {remainingPart}
                     </span>
                   </span>
