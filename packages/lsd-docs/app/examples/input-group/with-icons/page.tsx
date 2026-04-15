@@ -7,7 +7,7 @@ import {
   InputGroupInput,
   InputGroupText,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import {
   CheckIcon,
   EnvelopeIcon,
@@ -26,7 +26,7 @@ export const CODE = `import {
   InputGroupInput,
   InputGroupText,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import {
   MagnifyingGlassIcon,
   UserIcon,

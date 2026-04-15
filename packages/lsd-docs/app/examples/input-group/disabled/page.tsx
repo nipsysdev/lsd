@@ -7,7 +7,7 @@ import {
   InputGroupInput,
   InputGroupText,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { LockIcon, MagnifyingGlassIcon, UserIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
@@ -18,7 +18,7 @@ export const CODE = `import {
   InputGroupInput,
   InputGroupText,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { 
   MagnifyingGlassIcon, 
   UserIcon, 
