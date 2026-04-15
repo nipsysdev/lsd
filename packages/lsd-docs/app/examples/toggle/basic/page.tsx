@@ -1,9 +1,9 @@
 'use client';
 
-import { Toggle, Typography } from '@nipsys/shadcn-lsd';
+import { Toggle, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Toggle, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Toggle, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (
