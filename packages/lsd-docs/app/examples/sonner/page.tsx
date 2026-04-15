@@ -1,10 +1,10 @@
 'use client';
 
-import { Button, Typography } from '@nipsys/shadcn-lsd';
+import { Button, Typography } from '@nipsys/lsd';
 import { Toaster, toast } from 'sonner';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button, Typography } from '@nipsys/lsd';
 import { Toaster, toast } from 'sonner';
 
 export function Example() {

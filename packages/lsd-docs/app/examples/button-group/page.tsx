@@ -1,13 +1,13 @@
 'use client';
 
-import { Button, ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@nipsys/shadcn-lsd';
+import { Button, ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@nipsys/lsd';
 
 export const CODE = `import {
   Button,
   ButtonGroup,
   ButtonGroupSeparator,
   ButtonGroupText,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

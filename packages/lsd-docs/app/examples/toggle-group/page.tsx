@@ -1,9 +1,9 @@
 'use client';
 
-import { ToggleGroup, ToggleGroupItem } from '@nipsys/shadcn-lsd';
+import { ToggleGroup, ToggleGroupItem } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { ToggleGroup, ToggleGroupItem } from '@nipsys/shadcn-lsd';
+export const CODE = `import { ToggleGroup, ToggleGroupItem } from '@nipsys/lsd';
 
 export function Example() {
   return (

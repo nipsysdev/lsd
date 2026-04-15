@@ -1,12 +1,6 @@
 'use client';
 
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from '@nipsys/shadcn-lsd';
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const CODE = `import {
@@ -22,7 +16,7 @@ export const CODE = `import {
   MenubarSubTrigger,
   MenubarTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (
