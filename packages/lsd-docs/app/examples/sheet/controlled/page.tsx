@@ -8,11 +8,11 @@ import {
   SheetTitle,
   SheetTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 
 export function Example() {

@@ -19,7 +19,7 @@ import {
   SidebarRail,
   SidebarTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import {
   AtomIcon,
   ChartLineIcon,
@@ -52,7 +52,7 @@ export const CODE = `import {
   SidebarRail,
   SidebarTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import {
   AtomIcon,
   ChartLineIcon,

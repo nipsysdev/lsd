@@ -1,16 +1,9 @@
 'use client';
 
-import {
-  Button,
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@nipsys/shadcn-lsd';
+import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@nipsys/lsd';
 
 export function Example() {
   return (
