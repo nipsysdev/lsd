@@ -1,6 +1,6 @@
 'use client';
 
-import { ScrollArea } from '@nipsys/shadcn-lsd';
+import { ScrollArea } from '@nipsys/lsd';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Header from './Header';

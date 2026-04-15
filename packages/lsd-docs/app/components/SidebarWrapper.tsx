@@ -14,7 +14,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarProvider,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { PillIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 import type React from 'react';

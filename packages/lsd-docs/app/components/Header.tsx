@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, SidebarTrigger } from '@nipsys/shadcn-lsd';
+import { Button, SidebarTrigger } from '@nipsys/lsd';
 import { GithubLogoIcon, MagnifyingGlassIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { FontToggle } from './docs/FontToggle';
