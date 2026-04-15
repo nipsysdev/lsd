@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -67,7 +60,7 @@ export default function InputGroupPage() {
   InputGroupButton,
   InputGroupInput,
   InputGroupText,
-} from '@nipsys/shadcn-lsd'
+} from '@nipsys/lsd'
 
 export default function MyComponent() {
   return (

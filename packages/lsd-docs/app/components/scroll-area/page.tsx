@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -44,7 +44,7 @@ export default function ScrollAreaPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { ScrollArea, ScrollBar } from '@nipsys/shadcn-lsd';
+                code={`import { ScrollArea, ScrollBar } from '@nipsys/lsd';
 
 export default function MyComponent() {
   return (

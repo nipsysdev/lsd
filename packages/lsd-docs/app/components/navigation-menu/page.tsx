@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -66,15 +59,15 @@ export default function NavigationMenuPage() {
 
         <PageSection title="Installation">
           <Typography variant="body1">
-            The Navigation Menu component is included in @nipsys/shadcn-lsd. No additional
-            installation steps are required.
+            The Navigation Menu component is included in @nipsys/lsd. No additional installation
+            steps are required.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { NavigationMenu } from '@nipsys/shadcn-lsd'`}
+                code={`import { NavigationMenu } from '@nipsys/lsd'`}
               />
             </CardContent>
           </Card>

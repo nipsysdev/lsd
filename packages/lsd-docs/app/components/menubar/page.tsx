@@ -2,7 +2,7 @@
 
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -64,7 +64,7 @@ export default function MenubarPage() {
   MenubarTrigger,
   MenubarContent,
   MenubarItem,
-} from '@nipsys/shadcn-lsd'
+} from '@nipsys/lsd'
 
 export default function MyComponent() {
   return (

@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -63,7 +56,7 @@ export default function PopoverPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Popover, PopoverContent, PopoverTrigger, PopoverAnchor } from '@nipsys/shadcn-lsd';
+                code={`import { Popover, PopoverContent, PopoverTrigger, PopoverAnchor } from '@nipsys/lsd';
 import { useState } from 'react';
 
 export default function MyComponent() {

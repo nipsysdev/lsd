@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -52,7 +45,7 @@ export default function LabelPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Label, Input } from '@nipsys/shadcn-lsd'
+                code={`import { Label, Input } from '@nipsys/lsd'
 
 export default function MyComponent() {
   return (
