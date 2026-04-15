@@ -1,9 +1,9 @@
 'use client';
 
-import { Progress, Typography } from '@nipsys/shadcn-lsd';
+import { Progress, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Progress, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Progress, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (

@@ -1,10 +1,10 @@
 'use client';
 
-import { Button, Progress, Typography } from '@nipsys/shadcn-lsd';
+import { Button, Progress, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Progress, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button, Progress, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 
 export function Example() {

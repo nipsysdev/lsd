@@ -1,10 +1,10 @@
 'use client';
 
-import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/shadcn-lsd';
+import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/lsd';
 import { useState } from 'react';
 
 export function Example() {
