@@ -1,6 +1,6 @@
 'use client';
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@nipsys/shadcn-lsd';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@nipsys/lsd';
 import {
   AvocadoIcon,
   CarrotIcon,
@@ -16,7 +16,7 @@ export const CODE = `import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

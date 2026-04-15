@@ -7,11 +7,11 @@ import {
   SelectTrigger,
   SelectValue,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Typography } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 
 export function Example() {
