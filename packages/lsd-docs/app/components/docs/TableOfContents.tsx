@@ -1,7 +1,7 @@
 'use client';
 
 import { useStore } from '@nanostores/react';
-import { Typography } from '@nipsys/shadcn-lsd';
+import { Typography } from '@nipsys/lsd';
 import { $activeSection, scrollToSection, type TocItem } from '@/stores/toc-store';
 
 interface TableOfContentsProps {

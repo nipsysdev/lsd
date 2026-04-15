@@ -1,4 +1,4 @@
-import { Button } from '@nipsys/shadcn-lsd';
+import { Button } from '@nipsys/lsd';
 import { ArrowLeftIcon, ArrowRightIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 

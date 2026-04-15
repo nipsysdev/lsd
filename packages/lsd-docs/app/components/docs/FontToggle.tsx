@@ -5,7 +5,7 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { CaretDownIcon } from '@phosphor-icons/react';
 import { useCallback, useEffect, useState } from 'react';
 import { type Font, Fonts } from '@/config/fonts';

@@ -1,4 +1,4 @@
-import { Typography } from '@nipsys/shadcn-lsd';
+import { Typography } from '@nipsys/lsd';
 
 interface PageHeaderProps {
   title: string;

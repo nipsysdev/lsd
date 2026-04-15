@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
   Button,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { ClipboardIcon, CodeIcon } from '@phosphor-icons/react';
 import { toast } from 'sonner';
 

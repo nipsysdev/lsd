@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
   ToggleGroup,
   ToggleGroupItem,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { CaretDownIcon, MoonIcon, SunIcon } from '@phosphor-icons/react';
 import { useCallback, useEffect, useState } from 'react';
 import { type Theme, Themes } from '@/config/themes';
