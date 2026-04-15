@@ -8,7 +8,13 @@ const CardDescription = React.forwardRef<HTMLDivElement, React.ComponentProps<'d
       <div
         ref={ref}
         data-slot="card-description"
-        className={cn('lsd:text-lsd-text-secondary lsd:text-sm', className)}
+        className={cn(
+          // Colors & Backgrounds
+          'lsd:text-lsd-text-secondary',
+          // Typography
+          'lsd:text-sm',
+          className
+        )}
         {...props}
       />
     );

@@ -9,7 +9,13 @@ const CardAction = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>
         ref={ref}
         data-slot="card-action"
         className={cn(
-          'lsd:col-start-2 lsd:row-span-2 lsd:row-start-1 lsd:self-start lsd:justify-self-end',
+          // Grid
+          'lsd:col-start-2',
+          'lsd:row-span-2',
+          'lsd:row-start-1',
+          // Layout & Positioning
+          'lsd:self-start',
+          'lsd:justify-self-end',
           className
         )}
         {...props}

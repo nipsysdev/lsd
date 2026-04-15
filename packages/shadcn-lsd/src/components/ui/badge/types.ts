@@ -26,7 +26,7 @@ export const badgeVariants = cva(
       size: {
         sm: 'lsd:h-[var(--lsd-spacing-larger)] lsd:px-[var(--lsd-spacing-smaller)] lsd:py-[var(--lsd-spacing-smallest)] lsd:gap-[var(--lsd-spacing-smallest)] lsd:text-[0.75rem] [&>svg]:size-3',
         md: 'lsd:h-[var(--lsd-spacing-largest)] lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smallest)] lsd:gap-[var(--lsd-spacing-smaller)] lsd:text-[0.875rem] [&>svg]:size-3',
-        lg: 'lsd:h-8 lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smallest)] lsd:gap-[var(--lsd-spacing-smaller)] lsd:text-[1rem] [&>svg]:size-[14px]',
+        lg: 'lsd:h-[var(--lsd-spacing-largest)] lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smallest)] lsd:gap-[var(--lsd-spacing-smaller)] lsd:text-[1rem] [&>svg]:size-[14px]',
       },
     },
     defaultVariants: {

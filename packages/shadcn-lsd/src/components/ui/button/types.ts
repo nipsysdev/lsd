@@ -40,7 +40,7 @@ export const buttonVariants = cva(
       size: {
         sm: 'lsd:h-8 lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm',
         md: 'lsd:h-10 lsd:px-[var(--lsd-spacing-larger)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-base',
-        lg: 'lsd:h-12 lsd:px-8 lsd:py-[var(--lsd-spacing-small)] lsd:text-lg',
+        lg: 'lsd:h-12 lsd:px-[var(--lsd-spacing-largest)] lsd:py-[var(--lsd-spacing-small)] lsd:text-lg',
         'square-sm': 'lsd:w-8 lsd:h-8',
         'square-md': 'lsd:w-10 lsd:h-10',
         'square-lg': 'lsd:w-12 lsd:h-12',

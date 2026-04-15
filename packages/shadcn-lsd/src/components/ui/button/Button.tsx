@@ -54,10 +54,19 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         className={cn(
-          'lsd:text-foreground lsd:border lsd:hover:underline lsd:disabled:opacity-34 lsd:disabled:cursor-not-allowed lsd:disabled:no-underline',
+          // Colors & Backgrounds
+          'lsd:text-foreground',
+          // Borders, Shapes & Effects
+          'lsd:border',
+          isLinkVariant || isGhostVariant ? 'lsd:border-0' : '',
+          // Interactive States
+          'lsd:hover:underline',
+          'lsd:disabled:opacity-34',
+          'lsd:disabled:cursor-not-allowed',
+          'lsd:disabled:no-underline',
+          // Sizing
+          fullWidth ? 'lsd:w-full' : '',
           buttonVariants({ variant, size }),
-          fullWidth && 'lsd:w-full',
-          (isLinkVariant || isGhostVariant) && 'lsd:border-0',
           className
         )}
         ref={ref}
@@ -65,9 +74,27 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading ? (
-          <span className="lsd:flex lsd:items-center lsd:justify-center lsd:gap-(--lsd-spacing-smaller)">
+          <span
+            className={cn(
+              // Layout & Positioning
+              'lsd:flex',
+              'lsd:items-center',
+              'lsd:justify-center',
+              // Spacing
+              'lsd:gap-(--lsd-spacing-smaller)'
+            )}
+          >
             <LoadingSpinner size={size} />
-            {children && <span className="lsd:opacity-50">{children}</span>}
+            {children && (
+              <span
+                className={cn(
+                  // Opacity
+                  'lsd:opacity-50'
+                )}
+              >
+                {children}
+              </span>
+            )}
           </span>
         ) : (
           children

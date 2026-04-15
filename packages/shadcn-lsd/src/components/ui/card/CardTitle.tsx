@@ -8,7 +8,12 @@ const CardTitle = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>(
       <div
         ref={ref}
         data-slot="card-title"
-        className={cn('lsd:leading-none lsd:font-semibold', className)}
+        className={cn(
+          // Typography
+          'lsd:leading-none',
+          'lsd:font-semibold',
+          className
+        )}
         {...props}
       />
     );
