@@ -1,11 +1,11 @@
 'use client';
 
-import { Button, Input, Typography } from '@nipsys/shadcn-lsd';
+import { Button, Input, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { Toaster, toast } from 'sonner';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Typography, Input } from '@nipsys/shadcn-lsd';
+export const CODE = `import { Button, Typography, Input } from '@nipsys/lsd';
 import { Toaster, toast } from 'sonner';
 import { useState } from 'react';
 
