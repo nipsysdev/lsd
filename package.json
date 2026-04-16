@@ -1,12 +1,12 @@
 {
-  "name": "@nipsys/shadcn-lsd-monorepo",
+  "name": "@nipsys/lsd-monorepo",
   "version": "0.2.5",
   "private": true,
-  "description": "Monorepo for the shadcn-lsd component library and documentation",
-  "license": "GPL-3.0-or-later",
+  "description": "Monorepo for the @nipsys/lsd component library and documentation",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nipsysdev/shadcn-lsd.git"
+    "url": "git+https://github.com/nipsysdev/lsd.git"
   },
   "author": "Xavier Saliniere <bonjour@xaviers.sh>",
   "engines": {
@@ -14,13 +14,13 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "build": "pnpm --filter @nipsys/shadcn-lsd build",
+    "build": "pnpm --filter @nipsys/lsd build",
     "lint": "biome check .",
     "lint:fix": "biome check . --fix",
     "format": "biome format --write .",
-    "test": "pnpm --filter @nipsys/shadcn-lsd test",
-    "test:watch": "pnpm --filter @nipsys/shadcn-lsd test:watch",
-    "test:coverage": "pnpm --filter @nipsys/shadcn-lsd test:coverage",
+    "test": "pnpm --filter @nipsys/lsd test",
+    "test:watch": "pnpm --filter @nipsys/lsd test:watch",
+    "test:coverage": "pnpm --filter @nipsys/lsd test:coverage",
     "docs:dev": "pnpm --filter @nipsys/lsd-docs dev",
     "docs:build": "pnpm --filter @nipsys/lsd-docs build",
     "docs:preview": "pnpm --filter @nipsys/lsd-docs preview"
