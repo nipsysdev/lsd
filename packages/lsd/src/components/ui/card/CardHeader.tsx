@@ -2,6 +2,13 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * CardHeader - Container for card title, description, and optional action button.
+ *
+ * Wraps the card's heading elements with grid layout and bottom border. Supports optional CardAction for placement alongside title and description.
+ *
+ * @exportAs sub
+ */
 const CardHeader = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>(
   ({ className, ...props }, ref) => {
     return (

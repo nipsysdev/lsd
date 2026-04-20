@@ -1,3 +1,10 @@
+/**
+ * FieldGroup - Layout wrapper stacking multiple Fields.
+ *
+ * Groups multiple Field components with consistent spacing.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

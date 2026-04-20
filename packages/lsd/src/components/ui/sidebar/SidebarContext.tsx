@@ -19,6 +19,13 @@ export function useSidebar() {
   return context;
 }
 
+/**
+ * SidebarProvider - Context provider for sidebar state management.
+ *
+ * Manages sidebar open/closed state and provides toggle functionality to child components with keyboard shortcut support.
+ *
+ * @exportAs sub
+ */
 export function SidebarProvider({
   defaultOpen = true,
   open: openProp,

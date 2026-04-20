@@ -3,7 +3,15 @@
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-type AlertDescriptionProps = React.ComponentProps<'p'>;
+/**
+ * AlertDescription - Optional descriptive text for alert content.
+ *
+ * Displays the alert description with secondary text color and proper spacing.
+ *
+ * @exportAs sub
+ */
+
+export interface AlertDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
 function AlertDescription({ className, ...props }: AlertDescriptionProps) {
   return (
@@ -36,4 +44,3 @@ function AlertDescription({ className, ...props }: AlertDescriptionProps) {
 }
 
 export { AlertDescription };
-export type { AlertDescriptionProps };

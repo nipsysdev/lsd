@@ -9,6 +9,13 @@ type FormItemContextValue = {
 
 const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
 
+/**
+ * FormItem - Container for individual form fields.
+ *
+ * Provides unique IDs for form field components and applies consistent spacing.
+ *
+ * @exportAs sub
+ */
 function FormItem({ className, ...props }: React.ComponentProps<'div'>) {
   const id = React.useId();
 

@@ -10,12 +10,27 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as AlignmentPopoverCODE } from '@/examples/popover/alignment/page';
-import { CODE as BasicPopoverCODE } from '@/examples/popover/basic/page';
-import { CODE as ControlledPopoverCODE } from '@/examples/popover/controlled/page';
-import { CODE as MultiplePopoverCODE } from '@/examples/popover/multiple/page';
-import { CODE as PositioningPopoverCODE } from '@/examples/popover/positioning/page';
-import { CODE as SideOffsetPopoverCODE } from '@/examples/popover/side-offset/page';
+import {
+  CODE as AlignmentPopoverCODE,
+  SIZE as AlignmentPopoverSIZE,
+} from '@/examples/popover/alignment/page';
+import { CODE as BasicPopoverCODE, SIZE as BasicPopoverSIZE } from '@/examples/popover/basic/page';
+import {
+  CODE as ControlledPopoverCODE,
+  SIZE as ControlledPopoverSIZE,
+} from '@/examples/popover/controlled/page';
+import {
+  CODE as MultiplePopoverCODE,
+  SIZE as MultiplePopoverSIZE,
+} from '@/examples/popover/multiple/page';
+import {
+  CODE as PositioningPopoverCODE,
+  SIZE as PositioningPopoverSIZE,
+} from '@/examples/popover/positioning/page';
+import {
+  CODE as SideOffsetPopoverCODE,
+  SIZE as SideOffsetPopoverSIZE,
+} from '@/examples/popover/side-offset/page';
 
 export default function PopoverPage() {
   const basicPopoverIframeRef = useRef<HTMLIFrameElement>(null);
@@ -87,7 +102,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={basicPopoverIframeRef}
-                size="sm"
+                size={BasicPopoverSIZE}
                 src="/examples/popover/basic"
                 title="Basic Popover Example"
               />
@@ -103,7 +118,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={controlledPopoverIframeRef}
-                size="sm"
+                size={ControlledPopoverSIZE}
                 src="/examples/popover/controlled"
                 title="Controlled Popover Example"
               />
@@ -126,7 +141,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={positioningPopoverIframeRef}
-                size="md"
+                size={PositioningPopoverSIZE}
                 src="/examples/popover/positioning"
                 title="Positioning Popover Example"
               />
@@ -142,7 +157,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={alignmentPopoverIframeRef}
-                size="md"
+                size={AlignmentPopoverSIZE}
                 src="/examples/popover/alignment"
                 title="Alignment Popover Example"
               />
@@ -158,7 +173,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={sideOffsetPopoverIframeRef}
-                size="md"
+                size={SideOffsetPopoverSIZE}
                 src="/examples/popover/side-offset"
                 title="Side Offset Popover Example"
               />
@@ -180,7 +195,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={multiplePopoverIframeRef}
-                size="md"
+                size={MultiplePopoverSIZE}
                 src="/examples/popover/multiple"
                 title="Multiple Popovers Example"
               />

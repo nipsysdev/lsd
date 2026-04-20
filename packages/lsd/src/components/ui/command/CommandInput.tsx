@@ -3,6 +3,13 @@ import { Command as CommandPrimitive } from 'cmdk';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * CommandInput - Search input field for command palette.
+ *
+ * Displays a text input with a search icon for filtering command items.
+ *
+ * @exportAs sub
+ */
 export function CommandInput({
   className,
   ...props

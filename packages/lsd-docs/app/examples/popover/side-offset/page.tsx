@@ -38,6 +38,8 @@ export function Example() {
   );
 }`;
 
+export const SIZE = 'md';
+
 export function SideOffsetPopoverExample() {
   useSendThemeToIframes();
 

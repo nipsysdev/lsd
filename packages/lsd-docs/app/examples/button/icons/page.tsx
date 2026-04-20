@@ -4,6 +4,11 @@ import { Button } from '@nipsys/lsd';
 import { ArrowRightIcon, CheckIcon, DownloadIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'sm';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import { Button } from '@nipsys/lsd';
 import { ArrowRightIcon, CheckIcon, DownloadIcon } from '@phosphor-icons/react';
 

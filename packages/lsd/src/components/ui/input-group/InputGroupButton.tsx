@@ -1,3 +1,10 @@
+/**
+ * InputGroupButton - Button component positioned within an input group.
+ *
+ * Provides a button that fills the height of the input group container.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';

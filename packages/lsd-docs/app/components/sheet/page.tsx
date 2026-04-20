@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -10,277 +11,180 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as AllSidesCode } from '@/examples/sheet/all-sides/page';
-import { CODE as BasicCode } from '@/examples/sheet/basic/page';
-import { CODE as CloseButtonCode } from '@/examples/sheet/close-button/page';
-import { CODE as ControlledCode } from '@/examples/sheet/controlled/page';
+import {
+  CODE as SheetAllSidesCODE,
+  SIZE as SheetAllSidesSIZE,
+} from '@/examples/sheet/all-sides/page';
+import { CODE as SheetBasicCODE, SIZE as SheetBasicSIZE } from '@/examples/sheet/basic/page';
+import {
+  CODE as SheetCloseButtonCODE,
+  SIZE as SheetCloseButtonSIZE,
+} from '@/examples/sheet/close-button/page';
+import {
+  CODE as SheetControlledCODE,
+  SIZE as SheetControlledSIZE,
+} from '@/examples/sheet/controlled/page';
 
 export default function SheetPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const controlledIframeRef = useRef<HTMLIFrameElement>(null);
-  const allSidesIframeRef = useRef<HTMLIFrameElement>(null);
-  const closeButtonIframeRef = useRef<HTMLIFrameElement>(null);
+  const SheetAllSidesIframeRef = useRef<HTMLIFrameElement>(null);
+  const SheetBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const SheetCloseButtonIframeRef = useRef<HTMLIFrameElement>(null);
+  const SheetControlledIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    basicIframeRef,
-    controlledIframeRef,
-    allSidesIframeRef,
-    closeButtonIframeRef
+    SheetAllSidesIframeRef,
+    SheetBasicIframeRef,
+    SheetCloseButtonIframeRef,
+    SheetControlledIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
         title="Sheet"
-        description="Slide-over panel that slides in from any edge of the screen"
+        description="Displays a sliding panel with smooth animations and accessibility features."
       />
 
       <PageContent>
         <PageSection title="About Sheet">
           <Typography variant="body1" className="block">
-            Sheet displays content in an overlay that slides in from any edge of the screen. Use it
-            for contextual actions, forms, or displaying additional information without leaving the
-            current page.
+            A sliding panel component for displaying additional content or actions that appears over
+            the main interface. Supports positioning from top, bottom, left, or right sides with
+            smooth slide-in animations.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import the Sheet components from LSD:</Typography>
+          <Typography variant="body1">Import the Sheet component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@nipsys/lsd'
+                code={`import { Sheet } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button>Open Sheet</Button>
-      </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Title</SheetTitle>
-          <SheetDescription>Description</SheetDescription>
-        </SheetHeader>
-        <div>Content goes here</div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button variant="outlined">Cancel</Button>
-          </SheetClose>
-          <Button>Save</Button>
-        </SheetFooter>
-      </SheetContent>
-    </Sheet>
-  )
+  return <Sheet />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Usage">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Sheet can be controlled using open and onOpenChange props, or uncontrolled using
-            defaultOpen.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Sheet</CardTitle>
-              <CardDescription>Sheet with header, description and footer</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={basicIframeRef}
-                size="lg"
+                ref={SheetBasicIframeRef}
+                size={SheetBasicSIZE}
                 src="/examples/sheet/basic"
-                title="Basic Sheet Example"
+                title="Basic Example"
               />
-              <CodeExample code={BasicCode} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Controlled Sheet</CardTitle>
-              <CardDescription>Using open and onOpenChange to control the sheet</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={controlledIframeRef}
-                size="lg"
-                src="/examples/sheet/controlled"
-                title="Controlled Sheet Example"
-              />
-              <CodeExample code={ControlledCode} />
+              <CodeExample code={SheetBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Positioning">
+        <PageSection title="Variants">
           <Typography variant="body1">
-            Use the side prop to control which edge of the screen the sheet slides from.
+            Component variants for different visual styles and use cases.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>All Sides</CardTitle>
-              <CardDescription>Sheet can appear from top, right, bottom, or left</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={allSidesIframeRef}
-                size="lg"
+                ref={SheetAllSidesIframeRef}
+                size={SheetAllSidesSIZE}
                 src="/examples/sheet/all-sides"
-                title="All Sides Sheet Example"
+                title="All Sides Example"
               />
-              <CodeExample code={AllSidesCode} />
+              <CodeExample code={SheetAllSidesCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Features">
           <Typography variant="body1">
-            Additional features for customizing the sheet behavior and content.
+            Additional features and capabilities of the component.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Custom Close Actions</CardTitle>
-              <CardDescription>Using SheetClose for custom close buttons</CardDescription>
+              <CardTitle>Close Button</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={closeButtonIframeRef}
-                size="lg"
+                ref={SheetCloseButtonIframeRef}
+                size={SheetCloseButtonSIZE}
                 src="/examples/sheet/close-button"
-                title="Close Button Sheet Example"
+                title="Close Button Example"
               />
-              <CodeExample code={CloseButtonCode} />
+              <CodeExample code={SheetCloseButtonCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Controlled</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SheetControlledIframeRef}
+                size={SheetControlledSIZE}
+                src="/examples/sheet/controlled"
+                title="Controlled Example"
+              />
+              <CodeExample code={SheetControlledCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Composition">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {[
+                  'Sheet',
+                  '├── SheetTrigger',
+                  '└── SheetPortal',
+                  '    ├── SheetOverlay',
+                  '    ├── SheetContent',
+                  '    │   └── SheetClose',
+                  '    ├── SheetHeader',
+                  '    │   ├── SheetTitle',
+                  '    │   └── SheetDescription',
+                  '    └── SheetFooter',
+                ]}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Sheet components.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>Sheet.open</CardTitle>
-                <CardDescription>Whether the sheet is open</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>Sheet wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Controlled value - use with onOpenChange
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Sheet.defaultOpen</CardTitle>
-                <CardDescription>Initial open state for uncontrolled mode</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Uncontrolled value - sheet manages its own state
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Sheet.onOpenChange</CardTitle>
-                <CardDescription>Callback when open state changes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> (open: boolean) {'=>'} void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Called when sheet opens or closes
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>SheetContent.side</CardTitle>
-                <CardDescription>Which edge of the screen the sheet slides from</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'top' | 'right' | 'bottom' | 'left'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> top, right, bottom, left
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> right
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>SheetTrigger.asChild</CardTitle>
-                <CardDescription>Merge props with child element</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Makes the child element the trigger
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>SheetClose.asChild</CardTitle>
-                <CardDescription>Merge props with child element</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Makes the child element a close button
-                </Typography>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/sheet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI Sheet documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -288,67 +192,63 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Sheet component follows accessibility best practices built on Radix UI Dialog.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Sheet is fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the sheet trigger
+                • Tab - Navigate within the sheet
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Enter or Space</strong> - Open the sheet when focused on trigger
+                • Shift + Tab - Navigate to previous element
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Escape</strong> - Close the sheet and return focus to trigger
+                • Escape - Close the sheet
               </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Tab</strong> - Navigate within the sheet content when open
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus is trapped within the sheet when open
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Focus Management</CardTitle>
-              <CardDescription>Focus is properly managed when opening and closing</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • When the sheet opens, focus moves to the first focusable element inside
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Focus is trapped within the sheet while it is open
-              </Typography>
-              <Typography variant="body2" className="block">
-                • When the sheet closes, focus returns to the trigger element
-              </Typography>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Screen Reader Support</CardTitle>
+              <CardTitle>ARIA Attributes</CardTitle>
               <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Sheet uses role="dialog" for the content area
+                • role="dialog" - Identifies the content as a dialog
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • SheetTitle provides the accessible name for the dialog
+                • aria-modal="true" - Indicates modal behavior
               </Typography>
-              <Typography variant="body2" className="block">
-                • SheetDescription provides additional context for screen readers
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-labelledby - Links to the sheet title
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-describedby - Links to the sheet description
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus is automatically trapped inside the sheet when it opens and returns to the
+                trigger when closed.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
           previous={{
             title: 'Popover',

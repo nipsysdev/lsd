@@ -4,9 +4,21 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { type MenubarLabelVariants, menubarLabelVariants } from './types';
 
+/**
+ * Section label for grouped items.
+ *
+ * @exportAs sub
+ */
 export interface MenubarLabelProps
   extends React.ComponentProps<typeof MenubarPrimitive.Label>,
-    MenubarLabelVariants {}
+    MenubarLabelVariants {
+  /**
+   * Indent the label.
+   *
+   * Adds left margin for grouped sections.
+   */
+  inset?: boolean;
+}
 
 function MenubarLabel({ className, inset, ...props }: MenubarLabelProps) {
   return (

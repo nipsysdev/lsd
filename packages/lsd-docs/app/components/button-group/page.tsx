@@ -1,7 +1,8 @@
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -10,166 +11,260 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as HorizontalCode } from '@/examples/button-group/horizontal/page';
-import { CODE as BUTTON_GROUP_CODE } from '@/examples/button-group/page';
-import { CODE as VariantsCode } from '@/examples/button-group/variants/page';
-import { CODE as VerticalCode } from '@/examples/button-group/vertical/page';
+import {
+  CODE as ButtonGroupFilledButtonsCODE,
+  SIZE as ButtonGroupFilledButtonsSIZE,
+} from '@/examples/button-group/filled-buttons/page';
+import {
+  CODE as ButtonGroupHorizontalCODE,
+  SIZE as ButtonGroupHorizontalSIZE,
+} from '@/examples/button-group/horizontal/page';
+import {
+  CODE as ButtonGroupOutlinedButtonsCODE,
+  SIZE as ButtonGroupOutlinedButtonsSIZE,
+} from '@/examples/button-group/outlined-buttons/page';
+import {
+  CODE as ButtonGroupVerticalCODE,
+  SIZE as ButtonGroupVerticalSIZE,
+} from '@/examples/button-group/vertical/page';
 
 export default function ButtonGroupPage() {
-  const buttonGroupIframeRef = useRef<HTMLIFrameElement>(null);
-  const horizontalIframeRef = useRef<HTMLIFrameElement>(null);
-  const verticalIframeRef = useRef<HTMLIFrameElement>(null);
-  const variantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const ButtonGroupFilledButtonsIframeRef = useRef<HTMLIFrameElement>(null);
+  const ButtonGroupHorizontalIframeRef = useRef<HTMLIFrameElement>(null);
+  const ButtonGroupOutlinedButtonsIframeRef = useRef<HTMLIFrameElement>(null);
+  const ButtonGroupVerticalIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    buttonGroupIframeRef,
-    horizontalIframeRef,
-    verticalIframeRef,
-    variantsIframeRef
+    ButtonGroupFilledButtonsIframeRef,
+    ButtonGroupHorizontalIframeRef,
+    ButtonGroupOutlinedButtonsIframeRef,
+    ButtonGroupVerticalIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
-        title="ButtonGroup"
-        description="Groups related buttons and controls together with proper spacing and focus management"
+        title="Button-group"
+        description="Groups related buttons with connected borders and consistent spacing."
       />
 
       <PageContent>
         <PageSection title="About ButtonGroup">
-          <p className="block">
-            ButtonGroup organizes related buttons into groups with horizontal and vertical
-            orientations, separators, and text labels.
-          </p>
+          <Typography variant="body1" className="block">
+            Container for visually grouping related buttons with connected borders and consistent
+            spacing. Supports horizontal and vertical orientation layouts.
+          </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <p>Import the ButtonGroup components from LSD:</p>
+          <Typography variant="body1">Import the ButtonGroup component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-  Button,
-  ButtonGroup,
-} from '@nipsys/lsd'
+                code={`import { ButtonGroup } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <ButtonGroup>
-      <Button>Button 1</Button>
-      <Button>Button 2</Button>
-      <Button>Button 3</Button>
-    </ButtonGroup>
-  )
+  return <ButtonGroup />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Orientation">
-          <p>
-            ButtonGroup supports horizontal and vertical orientations for different layout needs.
-          </p>
+        <PageSection title="Usage">
+          <Typography variant="body1">
+            The simplest form of the component with default styling.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Horizontal Orientation</CardTitle>
-              <CardDescription>Buttons arranged in a row (default)</CardDescription>
+              <CardTitle>Horizontal</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={horizontalIframeRef}
-                size="md"
+                ref={ButtonGroupHorizontalIframeRef}
+                size={ButtonGroupHorizontalSIZE}
                 src="/examples/button-group/horizontal"
-                title="Horizontal Orientation"
+                title="Horizontal Example"
               />
-              <CodeExample code={HorizontalCode} />
+              <CodeExample code={ButtonGroupHorizontalCODE} />
             </CardContent>
           </Card>
+        </PageSection>
+
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Component variants for different visual styles and use cases.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Vertical Orientation</CardTitle>
-              <CardDescription>Buttons arranged in a column</CardDescription>
+              <CardTitle>Filled Buttons</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={verticalIframeRef}
-                size="md"
-                src="/examples/button-group/vertical"
-                title="Vertical Orientation"
+                ref={ButtonGroupFilledButtonsIframeRef}
+                size={ButtonGroupFilledButtonsSIZE}
+                src="/examples/button-group/filled-buttons"
+                title="Filled Buttons Example"
               />
-              <CodeExample code={VerticalCode} />
+              <CodeExample code={ButtonGroupFilledButtonsCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Outlined Buttons</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={ButtonGroupOutlinedButtonsIframeRef}
+                size={ButtonGroupOutlinedButtonsSIZE}
+                src="/examples/button-group/outlined-buttons"
+                title="Outlined Buttons Example"
+              />
+              <CodeExample code={ButtonGroupOutlinedButtonsCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Features">
-          <p>
-            Advanced features including separators, text labels, and integration with other
-            components.
-          </p>
+          <Typography variant="body1">
+            Additional features and capabilities of the component.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Button Group Example</CardTitle>
-              <CardDescription>Different button group configurations</CardDescription>
+              <CardTitle>Vertical</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={buttonGroupIframeRef}
-                size="md"
-                src="/examples/button-group"
-                title="Button Group Example"
+                ref={ButtonGroupVerticalIframeRef}
+                size={ButtonGroupVerticalSIZE}
+                src="/examples/button-group/vertical"
+                title="Vertical Example"
               />
-              <CodeExample code={BUTTON_GROUP_CODE} />
+              <CodeExample code={ButtonGroupVerticalCODE} />
             </CardContent>
           </Card>
+        </PageSection>
 
+        <PageSection title="Composition">
           <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>With Different Button Variants</CardTitle>
-              <CardDescription>Mix different button variants within the same group</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={variantsIframeRef}
-                size="md"
-                src="/examples/button-group/variants"
-                title="Variants Example"
-              />
-              <CodeExample code={VariantsCode} />
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {['ButtonGroup', '├── ButtonGroupText', '└── ButtonGroupSeparator']}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <p>All available props for the ButtonGroup components.</p>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              ButtonGroup
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>orientation</CardTitle>
+                  <CardDescription>
+                    Layout direction for the button group. Controls whether buttons are arranged
+                    horizontally or vertically.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>"horizontal" | "vertical"</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> horizontal, vertical
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>orientation</CardTitle>
-                <CardDescription>Orientation of the button group</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'horizontal' | 'vertical'
-                </p>
-                <p className="mb-(--lsd-spacing-smaller)">
-                  <strong>Default:</strong> 'horizontal'
-                </p>
-                <p className="mt-(--lsd-spacing-smaller)">
-                  Controls whether buttons are arranged in a row or column
-                </p>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              ButtonGroupText
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>asChild</CardTitle>
+                  <CardDescription>
+                    Merges attributes with child element instead of rendering as div. When true,
+                    renders as the child element instead of a wrapping div.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Default:</strong> false
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </PageSection>
 
+        <PageSection title="Accessibility">
+          <Typography variant="body1">
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Tab - Navigate through buttons in the group
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Arrow keys - Navigate through buttons when arranged
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • role="group" identifies the semantic grouping
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-label or aria-labelledby should describe the group purpose
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus moves through buttons sequentially. Focused button receives visible focus
+                indicator.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
         <PageNavigation
           previous={{
             title: 'Button',

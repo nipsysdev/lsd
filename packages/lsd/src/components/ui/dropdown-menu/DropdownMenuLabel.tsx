@@ -4,12 +4,16 @@ import { cn } from '@/lib/utils';
 
 export interface DropdownMenuLabelProps
   extends React.ComponentProps<typeof DropdownMenuPrimitive.Label> {
+  /**
+   * Adds extra left padding to align with menu items that have inset styling.
+   */
   inset?: boolean;
 }
 
 /**
- * DropdownMenuLabel - A non-interactive label for organizing dropdown menu content.
- * Can be inset to align with menu items that have padding.
+ * DropdownMenuLabel - Non-interactive label for organizing dropdown menu content.
+ *
+ * @exportAs sub
  */
 export function DropdownMenuLabel({ className, inset, ...props }: DropdownMenuLabelProps) {
   return (

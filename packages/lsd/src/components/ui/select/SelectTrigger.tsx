@@ -3,12 +3,33 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * SelectTrigger - Button that opens and closes the select dropdown.
+ *
+ * Displays the selected value and triggers the dropdown. Shows a chevron
+ * icon to indicate expandable content.
+ *
+ * @exportAs sub
+ */
 export function SelectTrigger({
+  /**
+   * Additional CSS classes to apply to the trigger.
+   */
   className,
+  /**
+   * The size of the trigger button.
+   *
+   * Controls the height and padding of the trigger.
+   */
   size = 'default',
   children,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
+  /**
+   * The size of the trigger button.
+   *
+   * Controls the height and padding of the trigger.
+   */
   size?: 'sm' | 'default';
 }) {
   return (

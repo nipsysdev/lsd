@@ -13,6 +13,13 @@ type FormFieldContextValue<
 
 const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue);
 
+/**
+ * FormField - Connects form fields to the form state.
+ *
+ * Wraps React Hook Form's Controller to bind form fields to the form context and validation.
+ *
+ * @exportAs sub
+ */
 const FormField = <
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,

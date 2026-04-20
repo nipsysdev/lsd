@@ -17,6 +17,13 @@ import {
   sidebarMenuButtonVariants,
 } from './types';
 
+/**
+ * SidebarMenu - Container for sidebar menu items.
+ *
+ * Ordered list of menu items displayed in the sidebar.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenu({ className, ...props }: SidebarMenuProps) {
   return (
     <ul
@@ -31,6 +38,13 @@ export function SidebarMenu({ className, ...props }: SidebarMenuProps) {
   );
 }
 
+/**
+ * SidebarMenuItem - Individual menu item wrapper.
+ *
+ * Container for a single menu item with optional button, action, badge, and submenu.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenuItem({ className, ...props }: SidebarMenuItemProps) {
   return (
     <li
@@ -42,6 +56,13 @@ export function SidebarMenuItem({ className, ...props }: SidebarMenuItemProps) {
   );
 }
 
+/**
+ * SidebarMenuButton - Interactive button for menu items.
+ *
+ * Button that displays icon and text with optional tooltip and active state styling.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenuButton({
   asChild = false,
   isActive = false,
@@ -88,6 +109,13 @@ export function SidebarMenuButton({
   );
 }
 
+/**
+ * SidebarMenuAction - Action button within menu item.
+ *
+ * Button that performs item-specific actions, automatically hidden when sidebar is collapsed to icon-only mode.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenuAction({
   className,
   asChild = false,
@@ -117,6 +145,13 @@ export function SidebarMenuAction({
   );
 }
 
+/**
+ * SidebarMenuBadge - Badge displayed on menu item.
+ *
+ * Displays status indicator or additional information, automatically hidden when sidebar is collapsed to icon-only mode.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenuBadge({ className, ...props }: SidebarMenuBadgeProps) {
   return (
     <div
@@ -136,6 +171,13 @@ export function SidebarMenuBadge({ className, ...props }: SidebarMenuBadgeProps)
   );
 }
 
+/**
+ * SidebarMenuSkeleton - Loading skeleton for menu items.
+ *
+ * Displays placeholder content while menu items are loading, with optional icon placeholder.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenuSkeleton({
   className,
   showIcon = false,
@@ -175,6 +217,13 @@ export function SidebarMenuSkeleton({
   );
 }
 
+/**
+ * SidebarMenuSub - Submenu container with nested items.
+ *
+ * Ordered list of nested menu items within a parent menu item, hidden when sidebar is collapsed to icon-only mode.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenuSub({ className, ...props }: SidebarMenuSubProps) {
   return (
     <ul
@@ -190,6 +239,13 @@ export function SidebarMenuSub({ className, ...props }: SidebarMenuSubProps) {
   );
 }
 
+/**
+ * SidebarMenuSubItem - Submenu item wrapper.
+ *
+ * Container for a single submenu item with nested button or link.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenuSubItem({ className, ...props }: SidebarMenuSubItemProps) {
   return (
     <li
@@ -201,6 +257,13 @@ export function SidebarMenuSubItem({ className, ...props }: SidebarMenuSubItemPr
   );
 }
 
+/**
+ * SidebarMenuSubButton - Submenu link or button.
+ *
+ * Link or button within a submenu item with optional size and active state styling.
+ *
+ * @exportAs sub
+ */
 export function SidebarMenuSubButton({
   asChild = false,
   size = 'md',

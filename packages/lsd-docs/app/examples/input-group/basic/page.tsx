@@ -9,6 +9,11 @@ import {
 } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'sm';
+
+/**
+ * @docSection usage
+ */
 export const CODE = `import {
   InputGroup,
   InputGroupAddon,

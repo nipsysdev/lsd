@@ -9,6 +9,8 @@ import {
 } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'sm';
+
 export const CODE = `import {
   Accordion,
   AccordionContent,

@@ -3,12 +3,17 @@
 import { Autocomplete } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
 const options = [
   { value: '1', label: 'Option 1' },
   { value: '2', label: 'Option 2' },
   { value: '3', label: 'Option 3' },
 ];
 
+/**
+ * @docSection feature
+ */
 export const CODE = `import { Autocomplete } from '@nipsys/lsd';
 
 const options = [

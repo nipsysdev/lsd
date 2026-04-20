@@ -13,6 +13,11 @@ import {
 } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'lg';
+
+/**
+ * @docSection usage
+ */
 export const CODE = `import { Button, Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Typography } from '@nipsys/lsd';
 
 export function Example() {

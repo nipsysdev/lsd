@@ -1,3 +1,10 @@
+/**
+ * InputGroupText - Text element for displaying labels or icons within input groups.
+ *
+ * Styled span that displays text with appropriate sizing and spacing within the input group context.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

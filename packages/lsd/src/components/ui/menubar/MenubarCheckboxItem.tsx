@@ -4,6 +4,11 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { menubarCheckboxItemVariants } from './types';
 
+/**
+ * Toggle item with checkbox state and check indicator.
+ *
+ * @exportAs sub
+ */
 export interface MenubarCheckboxItemProps
   extends React.ComponentProps<typeof MenubarPrimitive.CheckboxItem> {}
 

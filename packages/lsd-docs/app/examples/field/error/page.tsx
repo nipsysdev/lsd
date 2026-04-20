@@ -15,6 +15,12 @@ import {
 } from '@nipsys/lsd';
 import { useState } from 'react';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection state
+ */
+
 export default function FieldErrorExample() {
   const [errors, setErrors] = useState<string[]>([]);
 
@@ -57,6 +63,9 @@ export default function FieldErrorExample() {
   );
 }
 
+/**
+ * @docSection state
+ */
 export const CODE = `import {
   Button,
   Field,

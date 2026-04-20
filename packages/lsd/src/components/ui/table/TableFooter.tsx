@@ -2,6 +2,12 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * TableFooter - Groups the footer content in a table
+ *
+ * Wraps the row(s) containing table summary or totals.
+ * Styled with top border, muted background, and medium font weight.
+ */
 const TableFooter = React.forwardRef<HTMLTableSectionElement, React.ComponentProps<'tfoot'>>(
   ({ className, ...props }, ref) => {
     return (

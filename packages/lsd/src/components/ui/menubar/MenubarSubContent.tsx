@@ -4,6 +4,11 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { menubarSubContentVariants } from './types';
 
+/**
+ * Submenu content container.
+ *
+ * @exportAs sub
+ */
 export interface MenubarSubContentProps
   extends React.ComponentProps<typeof MenubarPrimitive.SubContent> {}
 

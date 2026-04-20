@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -10,114 +11,110 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as InputGroupAlignmentCODE } from '@/examples/input-group/alignment/page';
-import { CODE as InputGroupBasicCODE } from '@/examples/input-group/basic/page';
-import { CODE as InputGroupDisabledCODE } from '@/examples/input-group/disabled/page';
-import { CODE as InputGroupSizesCODE } from '@/examples/input-group/sizes/page';
-import { CODE as InputGroupWithIconsCODE } from '@/examples/input-group/with-icons/page';
+import {
+  CODE as InputGroupAlignmentCODE,
+  SIZE as InputGroupAlignmentSIZE,
+} from '@/examples/input-group/alignment/page';
+import {
+  CODE as InputGroupBasicCODE,
+  SIZE as InputGroupBasicSIZE,
+} from '@/examples/input-group/basic/page';
+import {
+  CODE as InputGroupDisabledCODE,
+  SIZE as InputGroupDisabledSIZE,
+} from '@/examples/input-group/disabled/page';
+import {
+  CODE as InputGroupSizesCODE,
+  SIZE as InputGroupSizesSIZE,
+} from '@/examples/input-group/sizes/page';
+import {
+  CODE as InputGroupWithIconsCODE,
+  SIZE as InputGroupWithIconsSIZE,
+} from '@/examples/input-group/with-icons/page';
 
 export default function InputGroupPage() {
-  const inputGroupAlignmentIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputGroupSizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputGroupBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputGroupWithIconsIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputGroupDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputGroupAlignmentIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputGroupBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputGroupDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputGroupSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputGroupWithIconsIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    inputGroupAlignmentIframeRef,
-    inputGroupSizesIframeRef,
-    inputGroupBasicIframeRef,
-    inputGroupWithIconsIframeRef,
-    inputGroupDisabledIframeRef
+    InputGroupAlignmentIframeRef,
+    InputGroupBasicIframeRef,
+    InputGroupDisabledIframeRef,
+    InputGroupSizesIframeRef,
+    InputGroupWithIconsIframeRef
   );
+
   return (
     <DocsLayout>
       <PageHeader
-        title="InputGroup"
-        description="A flexible component system for creating input groups with addons, buttons, and text elements"
+        title="Input-group"
+        description="Groups inputs with buttons and text addons for composed form controls."
       />
 
       <PageContent>
         <PageSection title="About InputGroup">
           <Typography variant="body1" className="block">
-            InputGroup is a comprehensive component system that allows you to create sophisticated
-            input layouts by combining inputs with addons, buttons, and text elements. It provides a
-            flexible way to build forms with prefixes, suffixes, action buttons, and various input
-            types while maintaining consistent spacing and alignment.
+            Combines input fields with buttons or text elements into a single visual group. Provides
+            size context to children and handles focus states and error styling across the group.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import all InputGroup components from LSD:</Typography>
+          <Typography variant="body1">Import the InputGroup component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButton,
-  InputGroupInput,
-  InputGroupText,
-} from '@nipsys/lsd'
+                code={`import { InputGroup } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <InputGroup>
-      <InputGroupAddon align="inline-start">
-        <InputGroupText>$</InputGroupText>
-      </InputGroupAddon>
-      <InputGroupInput placeholder="0.00" />
-    </InputGroup>
-  );
+  return <InputGroup />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Variants">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            InputGroupAddon provides two alignment options for positioning addons relative to the
-            input.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Alignment Options</CardTitle>
-              <CardDescription>Two alignment options for addon positioning</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputGroupAlignmentIframeRef}
-                size="sm"
-                src="/examples/input-group/alignment"
-                title="InputGroup Alignment Example"
+                ref={InputGroupBasicIframeRef}
+                size={InputGroupBasicSIZE}
+                src="/examples/input-group/basic"
+                title="Basic Example"
               />
-              <CodeExample code={InputGroupAlignmentCODE} />
+              <CodeExample code={InputGroupBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Sizes">
           <Typography variant="body1">
-            InputGroup supports three size variants that automatically scale all child components
-            including inputs, buttons, and text. The size is controlled at the InputGroup level and
-            inherited by all children.
+            Component sizes for different contexts and visual hierarchy.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>InputGroup Sizes</CardTitle>
-              <CardDescription>Three size variants for the entire InputGroup</CardDescription>
+              <CardTitle>Sizes</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputGroupSizesIframeRef}
-                size="md"
+                ref={InputGroupSizesIframeRef}
+                size={InputGroupSizesSIZE}
                 src="/examples/input-group/sizes"
-                title="InputGroup Sizes Example"
+                title="Sizes Example"
               />
               <CodeExample code={InputGroupSizesCODE} />
             </CardContent>
@@ -126,209 +123,209 @@ export default function MyComponent() {
 
         <PageSection title="Features">
           <Typography variant="body1">
-            Additional capabilities including basic usage patterns, icon integration, and disabled
-            states.
+            Additional features and capabilities of the component.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Usage</CardTitle>
-              <CardDescription>Fundamental InputGroup patterns</CardDescription>
+              <CardTitle>Alignment</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputGroupBasicIframeRef}
-                size="sm"
-                src="/examples/input-group/basic"
-                title="InputGroup Basic Example"
+                ref={InputGroupAlignmentIframeRef}
+                size={InputGroupAlignmentSIZE}
+                src="/examples/input-group/alignment"
+                title="Alignment Example"
               />
-              <CodeExample code={InputGroupBasicCODE} />
+              <CodeExample code={InputGroupAlignmentCODE} />
             </CardContent>
           </Card>
-
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Disabled</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={InputGroupDisabledIframeRef}
+                size={InputGroupDisabledSIZE}
+                src="/examples/input-group/disabled"
+                title="Disabled Example"
+              />
+              <CodeExample code={InputGroupDisabledCODE} />
+            </CardContent>
+          </Card>
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>With Icons</CardTitle>
-              <CardDescription>Enhance inputs with Phosphor icons</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputGroupWithIconsIframeRef}
-                size="lg"
+                ref={InputGroupWithIconsIframeRef}
+                size={InputGroupWithIconsSIZE}
                 src="/examples/input-group/with-icons"
-                title="InputGroup With Icons Example"
+                title="With Icons Example"
               />
               <CodeExample code={InputGroupWithIconsCODE} />
             </CardContent>
           </Card>
+        </PageSection>
 
+        <PageSection title="Composition">
           <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Disabled States</CardTitle>
-              <CardDescription>Disabled inputs and buttons with proper styling</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={inputGroupDisabledIframeRef}
-                size="md"
-                src="/examples/input-group/disabled"
-                title="InputGroup Disabled Example"
-              />
-              <CodeExample code={InputGroupDisabledCODE} />
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {[
+                  'InputGroup',
+                  '├── InputGroupInput',
+                  '├── InputGroupAddon',
+                  '├── InputGroupButton',
+                  '└── InputGroupText',
+                ]}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">
-            Complete prop documentation for all InputGroup components.
-          </Typography>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              InputGroup
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>size</CardTitle>
+                  <CardDescription>Size variant for the input group.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>InputGroupSize</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> sm, md, lg
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>InputGroup</CardTitle>
-                <CardDescription>Main container component</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> HTML div attributes
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>size:</strong> 'sm' | 'md' | 'lg'
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> 'md'
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Controls the size of the entire InputGroup and all child components. The size is
-                  automatically inherited by InputGroupInput, InputGroupButton, InputGroupText, and
-                  InputGroupAddon components.
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              InputGroupAddon
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>align</CardTitle>
+                  <CardDescription>Alignment of the addon element.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>InputGroupAddonAlign</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> inline-start, inline-end
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Default:</strong> 'inline-start'
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>InputGroupAddon</CardTitle>
-                <CardDescription>Container for addons and buttons</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> HTML div attributes
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>align:</strong> 'inline-start' | 'inline-end'
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> 'inline-start'
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Controls the positioning of the addon relative to the input. 'inline-start'
-                  positions the addon before the input, 'inline-end' positions it after the input.
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>InputGroupButton</CardTitle>
-                <CardDescription>Button component for input groups</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> HTML button attributes
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>variant:</strong> 'text' | 'icon'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>size:</strong> 'sm' | 'md' | 'lg'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>type:</strong> 'button' | 'submit' | 'reset'
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> variant='text', size=inherited from InputGroup,
-                  type='button'
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Button styled specifically for input groups. The 'text' variant renders as a ghost
-                  button, while 'icon' variant renders as a ghost-rounded button with square sizing.
-                  Size is inherited from the parent InputGroup but can be overridden.
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>InputGroupInput</CardTitle>
-                <CardDescription>Input field component</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> HTML input attributes (without size)
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Standard HTML input with size prop omitted to prevent conflicts. Supports all
-                  standard input attributes like placeholder, disabled, type, etc.
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>InputGroupText</CardTitle>
-                <CardDescription>Text display component</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> HTML span attributes
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Span element styled for displaying text within input groups. Perfect for prefixes,
-                  suffixes, and labels.
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              InputGroupButton
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>variant</CardTitle>
+                  <CardDescription>Visual style variant for button.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>InputGroupButtonVariant</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> text, icon
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Default:</strong> 'text'
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>size</CardTitle>
+                  <CardDescription>Size variant for button.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>InputGroupButtonSize</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> sm, md, lg
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>type</CardTitle>
+                  <CardDescription>Button type attribute.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>"button" | "submit" | "reset"</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> button, submit, reset
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Default:</strong> 'button'
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            InputGroup components follow accessibility best practices for screen readers and
-            keyboard navigation.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>
-                Full keyboard accessibility for all interactive elements
-              </CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the input or button
+                • Tab - Navigate through group items sequentially
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Enter</strong> - Submit form (when in a form)
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Space or Enter</strong> - Activate InputGroupButton
+                • Enter - Activate focused button within group
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -336,46 +333,37 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use <code>aria-label</code> for buttons without visible text (icon buttons)
+                • role="group" identifies the component as a grouping
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use <code>aria-describedby</code> to link inputs to supporting text
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Disabled elements automatically get <code>aria-disabled="true"</code>
-              </Typography>
-              <Typography variant="body2" className="block">
-                • InputGroupButton uses proper button semantics for screen readers
+                • aria-invalid indicates group error state
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                InputGroup components have visible focus states that follow the LSD design system's
-                focus indicators, ensuring keyboard users can always see which element has focus.
-                Inputs and buttons maintain distinct focus styles for clarity.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus is managed across elements within the group. Visual focus indicators appear
+                on the active element. Group borders change color on focus of any child element.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
+        <PageNavigation
+          previous={{
+            title: 'Input',
+            href: '/components/input',
+          }}
+          next={{
+            title: 'Label',
+            href: '/components/label',
+          }}
+        />
       </PageContent>
-
-      <PageNavigation
-        previous={{
-          title: 'Input',
-          href: '/components/input',
-        }}
-        next={{
-          title: 'Label',
-          href: '/components/label',
-        }}
-      />
     </DocsLayout>
   );
 }

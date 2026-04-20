@@ -3,6 +3,32 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * Checkbox - Interactive control for binary selection
+ *
+ * Displays a checkable box with checked, unchecked, and indeterminate states.
+ * Supports keyboard navigation and accessible form integration.
+ *
+ * @docSectionPageDescription
+ * Interactive checkbox control with checked, unchecked, and indeterminate states
+ *
+ * @docSectionAbout
+ * A checkbox control for binary selection that supports three states: checked, unchecked, and indeterminate. Built on Radix UI primitives for full keyboard accessibility and screen reader support. When used within forms, it includes proper form submission handling.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate to the checkbox
+ * • Space - Toggle between checked and unchecked states
+ *
+ * @docSectionAccessibilityAria
+ * • role="checkbox" is applied by the Radix primitive
+ * • aria-checked indicates current state (true, false, or mixed)
+ * • aria-invalid marks invalid state when applicable
+ * • aria-required indicates if the checkbox must be checked
+ * • aria-disabled indicates the checkbox cannot be interacted with
+ *
+ * @docSectionAccessibilityFocus
+ * Checkbox receives keyboard focus via Tab. Visible focus ring is applied when focused. Pressing Space toggles the checkbox state.
+ */
 function Checkbox({ className, ...props }: React.ComponentProps<typeof CheckboxPrimitive.Root>) {
   return (
     <CheckboxPrimitive.Root

@@ -1,12 +1,26 @@
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import type { AccordionItemProps } from './types';
 
-function AccordionItem({
-  className,
-  ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Item>) {
+/**
+ * AccordionItem - Represents a single collapsible accordion section
+ *
+ * The AccordionItem is a container that wraps an AccordionTrigger and its associated
+ * AccordionContent. Each item has a unique value prop that identifies it and is used
+ * to control which panel is open. Items are separated by borders for clear visual
+ * separation.
+ *
+ * @docSection.accessibility.aria
+ * • Proper heading structure for screen readers
+ * • Links trigger and content through shared value
+ *
+ * @docSection.features.value
+ * Each AccordionItem requires a unique value prop that identifies the item.
+ * This value is used to control which panels are open in the accordion and must
+ * be unique within a single accordion instance.
+ */
+function AccordionItem({ className, ...props }: AccordionItemProps) {
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
@@ -17,7 +31,8 @@ function AccordionItem({
         'lsd:border-lsd-border',
         className
       )}
-      {...props}
+      // biome-ignore lint/suspicious/noExplicitAny: Radix UI Item component has strict type requirements, passing through all props
+      {...(props as any)}
     />
   );
 }

@@ -3,6 +3,8 @@
 import { Toggle, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
 export const CODE = `import { Toggle, Typography } from '@nipsys/lsd';
 
 export function Example() {

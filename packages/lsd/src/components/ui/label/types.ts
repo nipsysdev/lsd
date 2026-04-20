@@ -25,6 +25,8 @@ export const labelVariants = cva(
 );
 
 export type LabelVariants = VariantProps<typeof labelVariants> & {
+  /** Visual variant of the label. */
   variant?: LabelVariant;
+  /** Size of the label text. */
   size?: SizeVariant;
 };

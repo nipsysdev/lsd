@@ -3,6 +3,8 @@
 import { Autocomplete } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
 const options = [
   { value: 'js', label: 'JavaScript' },
   { value: 'ts', label: 'TypeScript' },
@@ -12,6 +14,9 @@ const options = [
   { value: 'java', label: 'Java' },
 ];
 
+/**
+ * @docSection usage
+ */
 export const CODE = `import { Autocomplete } from '@nipsys/lsd';
 
 const options = [

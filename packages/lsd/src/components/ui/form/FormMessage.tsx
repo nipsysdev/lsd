@@ -4,8 +4,15 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { useFormField } from './useFormField';
 
-type FormMessageProps = React.ComponentProps<'p'>;
+export interface FormMessageProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
+/**
+ * FormMessage - Validation error message display.
+ *
+ * Displays validation error messages or custom content, automatically showing errors from form validation.
+ *
+ * @exportAs sub
+ */
 function FormMessage({ className, ...props }: FormMessageProps) {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message ?? '') : props.children;

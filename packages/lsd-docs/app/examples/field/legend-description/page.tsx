@@ -3,6 +3,11 @@
 import { Field, FieldDescription, FieldLabel, FieldLegend, FieldSet, Input } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'lg';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   Field,
   FieldDescription,

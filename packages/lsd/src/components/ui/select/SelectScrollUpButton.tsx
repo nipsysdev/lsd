@@ -3,7 +3,18 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * SelectScrollUpButton - Button for scrolling up in the dropdown.
+ *
+ * Appears when the dropdown content overflows the viewport. Provides
+ * visual affordance for scrolling up through options.
+ *
+ * @exportAs sub
+ */
 export function SelectScrollUpButton({
+  /**
+   * Additional CSS classes to apply to the scroll button.
+   */
   className,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.ScrollUpButton>) {

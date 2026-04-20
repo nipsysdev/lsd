@@ -4,6 +4,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/ls
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/lsd';
 

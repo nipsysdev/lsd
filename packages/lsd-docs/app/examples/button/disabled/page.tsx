@@ -3,6 +3,11 @@
 import { Button } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection state
+ */
 export const CODE = `import { Button } from '@nipsys/lsd';
 
 export function Example() {

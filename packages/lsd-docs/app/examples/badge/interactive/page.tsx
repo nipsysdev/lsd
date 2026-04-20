@@ -4,6 +4,8 @@ import { Badge } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'sm';
+
 export const CODE = `import { useState } from 'react';
 import { Badge } from '@nipsys/lsd';
 

@@ -1,11 +1,58 @@
 import * as React from 'react';
-import { type CustomComponents, DayPicker, getDefaultClassNames } from 'react-day-picker';
+import {
+  type CustomComponents,
+  DayPicker,
+  type DayPickerProps,
+  getDefaultClassNames,
+} from 'react-day-picker';
 import { type Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { CalendarDayButton } from './CalendarDayButton';
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
+/**
+ * Calendar - Date picker component built on react-day-picker
+ *
+ * A flexible calendar component for selecting single dates, multiple dates, or date ranges. Supports custom styling, disabled dates, localization, and various display modes.
+ *
+ * @docSectionPageDescription
+ * Interactive calendar for selecting single dates, multiple dates, or date ranges.
+ *
+ * @docSectionAbout
+ * A flexible calendar component built on react-day-picker that supports single, multiple, and range selection modes. Includes navigation buttons, disabled date constraints, localization support, and customizable styling through React DayPicker props.
+ *
+ * @docSectionComposition
+ * • Calendar - Main calendar component built on react-day-picker
+ *   • CalendarDayButton - Button component for individual calendar days with selection and range styling
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Arrow keys - Navigate between days
+ * • Page Up/Down - Navigate between months
+ * • Home/End - Navigate to first/last day of month
+ * • Enter or Space - Select a day
+ * • Tab - Navigate into/out of calendar
+ *
+ * @docSectionAccessibilityAria
+ * • role="grid" on the calendar container
+ * • role="gridcell" and aria-label on each day button
+ * • aria-selected indicates selected dates
+ * • aria-disabled indicates disabled dates
+ * • aria-describedby links to supporting text
+ *
+ * @docSectionAccessibilityFocus
+ * Arrow key navigation moves focus between grid cells. Tab focus moves into the calendar. Enter or Space activates the focused day.
+ *
+ * @exportAs root
+ */
+
+export type CalendarProps = DayPickerProps & {
+  /**
+   * Button variant for calendar navigation buttons.
+   */
   buttonVariant?: React.ComponentProps<typeof Button>['variant'];
+  /**
+   * Optional className for the calendar wrapper.
+   */
+  className?: string;
 };
 
 type CalendarRootProps = {
@@ -23,16 +70,18 @@ const CalendarRootMemo = React.memo(CalendarRoot) as React.ComponentType<
 
 const CalendarDayButtonComponent = CalendarDayButton;
 
-function Calendar({
-  className,
-  classNames,
-  showOutsideDays = true,
-  captionLayout = 'label',
-  buttonVariant = 'ghost',
-  formatters,
-  components,
-  ...props
-}: CalendarProps) {
+function Calendar({ buttonVariant = 'ghost', ...props }: CalendarProps) {
+  const {
+    className,
+    classNames,
+    showOutsideDays = true,
+    captionLayout = 'label',
+    formatters,
+    components,
+    showWeekNumber,
+    ...dayPickerProps
+  } = props;
+
   const defaultClassNames = getDefaultClassNames();
 
   return (
@@ -85,7 +134,7 @@ function Calendar({
         ),
         day: cn(
           'lsd:group/day lsd:relative lsd:aspect-square lsd:h-full lsd:w-full lsd:text-center lsd:p-0 lsd:text-center lsd:select-none [&:last-child[data-selected=true]_button]:lsd:rounded-r-md',
-          props.showWeekNumber
+          showWeekNumber
             ? '[&:nth-child(2)[data-selected=true]_button]:lsd:rounded-l-md'
             : '[&:first-child[data-selected=true]_button]:lsd:rounded-l-md',
           defaultClassNames.day
@@ -115,7 +164,7 @@ function Calendar({
           ...components,
         } as CustomComponents
       }
-      {...props}
+      {...dayPickerProps}
     />
   );
 }

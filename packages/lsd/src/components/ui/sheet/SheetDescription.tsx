@@ -3,6 +3,11 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * Optional accessible description for the sheet content.
+ *
+ * @exportAs sub
+ */
 export function SheetDescription({
   className,
   ...props

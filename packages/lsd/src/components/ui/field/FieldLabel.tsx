@@ -1,3 +1,10 @@
+/**
+ * FieldLabel - Label element associated with input.
+ *
+ * Displayed above or beside the control with appropriate styling.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

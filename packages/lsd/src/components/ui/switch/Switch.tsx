@@ -38,8 +38,42 @@ const thumbVariants = cva(
 
 export interface SwitchProps
   extends React.ComponentProps<typeof SwitchPrimitive.Root>,
-    VariantProps<typeof switchVariants> {}
+    VariantProps<typeof switchVariants> {
+  /**
+   * The size of the switch.
+   *
+   * Controls the visual size of the switch component.
+   */
+  size?: 'sm' | 'md' | 'lg';
+}
 
+/**
+ * Switch - Toggle control for binary states like on/off
+ *
+ * A control that allows the user to toggle between checked and not checked states.
+ * Supports controlled and uncontrolled modes with size variants.
+ *
+ * @docSectionPageDescription
+ * Toggle control for binary states with size variants.
+ *
+ * @docSectionAbout
+ * A control that allows the user to toggle between checked and not checked states. Supports controlled and uncontrolled modes with size variants (sm, md, lg). Includes proper accessibility attributes and keyboard navigation.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Space - Toggles the switch state
+ * • Enter - Toggles the switch state
+ *
+ * @docSectionAccessibilityAria
+ * • role="switch" is set on the root element
+ * • aria-checked indicates the current state (checked/unchecked)
+ * • aria-disabled is present when disabled
+ * • aria-readonly is present when the switch is read-only
+ * • aria-required indicates if the switch is required
+ * • aria-invalid is present when the switch has an error
+ *
+ * @docSectionAccessibilityFocus
+ * Component is focusable and receives focus when tabbed to. Focus visible state is shown with a ring indicator.
+ */
 function Switch({ className, size, ...props }: SwitchProps) {
   return (
     <SwitchPrimitive.Root

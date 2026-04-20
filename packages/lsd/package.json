@@ -5,7 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.5",
+  "version": "1.0.0",
   "type": "module",
   "module": "./dist/main.js",
   "exports": {
@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nipsysdev/shadcn-lsd.git"
+    "url": "git+https://github.com/nipsysdev/lsd.git"
   },
   "author": "Xavier Saliniere <bonjour@xaviers.sh>",
   "engines": {

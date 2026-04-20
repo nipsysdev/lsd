@@ -10,45 +10,55 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as BadgeBasicCODE } from '@/examples/badge/basic/page';
-import { CODE as BadgeDismissibleCODE } from '@/examples/badge/dismissible/page';
-import { CODE as BadgeDotsCODE } from '@/examples/badge/dots/page';
-import { CODE as BadgeFeaturesCODE } from '@/examples/badge/features/page';
-import { CODE as BadgeInteractiveCODE } from '@/examples/badge/interactive/page';
-import { CODE as BadgeSizesCODE } from '@/examples/badge/sizes/page';
-import { CODE as BadgeVariantsCODE } from '@/examples/badge/variants/page';
+import {
+  CODE as BADGE_DESTRUCTIVE_CODE,
+  SIZE as BADGE_DESTRUCTIVE_SIZE,
+} from '@/examples/badge/destructive/page';
+import { CODE as BADGE_FILLED_CODE, SIZE as BADGE_FILLED_SIZE } from '@/examples/badge/filled/page';
+import { CODE as BADGE_INFO_CODE, SIZE as BADGE_INFO_SIZE } from '@/examples/badge/info/page';
+import {
+  CODE as BADGE_OUTLINED_CODE,
+  SIZE as BADGE_OUTLINED_SIZE,
+} from '@/examples/badge/outlined/page';
+import {
+  CODE as BADGE_SUCCESS_CODE,
+  SIZE as BADGE_SUCCESS_SIZE,
+} from '@/examples/badge/success/page';
+import {
+  CODE as BADGE_WARNING_CODE,
+  SIZE as BADGE_WARNING_SIZE,
+} from '@/examples/badge/warning/page';
 
 export default function BadgePage() {
-  const badgeBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const badgeVariantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const badgeDotsIframeRef = useRef<HTMLIFrameElement>(null);
-  const badgeSizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const badgeInteractiveIframeRef = useRef<HTMLIFrameElement>(null);
-  const badgeDismissibleIframeRef = useRef<HTMLIFrameElement>(null);
-  const badgeFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
+  const badgeFilledRef = useRef<HTMLIFrameElement>(null);
+  const badgeOutlinedRef = useRef<HTMLIFrameElement>(null);
+  const badgeDestructiveRef = useRef<HTMLIFrameElement>(null);
+  const badgeSuccessRef = useRef<HTMLIFrameElement>(null);
+  const badgeWarningRef = useRef<HTMLIFrameElement>(null);
+  const badgeInfoRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    badgeBasicIframeRef,
-    badgeVariantsIframeRef,
-    badgeDotsIframeRef,
-    badgeSizesIframeRef,
-    badgeInteractiveIframeRef,
-    badgeDismissibleIframeRef,
-    badgeFeaturesIframeRef
+    badgeFilledRef,
+    badgeOutlinedRef,
+    badgeDestructiveRef,
+    badgeSuccessRef,
+    badgeWarningRef,
+    badgeInfoRef
   );
+
   return (
     <DocsLayout>
       <PageHeader
         title="Badge"
-        description="Small status indicators and labels for categorizing and highlighting information"
+        description="Displays status, tags, or metadata. Small label for categorizing content or displaying status information. Supports click interactions, dismissible badges, dot variants, and icon placement for visual emphasis."
       />
 
       <PageContent>
         <PageSection title="About Badge">
           <Typography variant="body1" className="block">
-            Badges are compact visual indicators used to display status, categories, or metadata.
-            They provide context and help users quickly identify different states or types of
-            content at a glance.
+            Displays status, tags, or metadata. Small label for categorizing content or displaying
+            status information. Supports click interactions, dismissible badges, dot variants, and
+            icon placement for visual emphasis.
           </Typography>
         </PageSection>
 
@@ -62,7 +72,7 @@ export default function BadgePage() {
                 code={`import { Badge } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return <Badge>New</Badge>
+  return <Badge />
 }`}
               />
             </CardContent>
@@ -71,227 +81,154 @@ export default function MyComponent() {
 
         <PageSection title="Variants">
           <Typography variant="body1">
-            Badges come in eight variants for different semantic meanings and visual styles.
+            Component variants for different visual styles and use cases.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Primary Variants</CardTitle>
-              <CardDescription>Basic badge styles for general use</CardDescription>
+              <CardTitle>Filled</CardTitle>
+              <CardDescription>Primary variant for emphasis</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                ref={badgeBasicIframeRef}
-                src="/examples/badge/basic"
-                size="sm"
-                title="Badge Basic Example"
-              />
-              <CodeExample code={BadgeBasicCODE} />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  ref={badgeFilledRef}
+                  src="/examples/badge/filled"
+                  title="Filled"
+                  size={BADGE_FILLED_SIZE}
+                />
+              </div>
+              <CodeExample code={BADGE_FILLED_CODE} />
             </CardContent>
           </Card>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Semantic Variants</CardTitle>
-              <CardDescription>
-                Color-coded badges for different states and meanings
-              </CardDescription>
+              <CardTitle>Outlined</CardTitle>
+              <CardDescription>Bordered variant for secondary emphasis</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                ref={badgeVariantsIframeRef}
-                src="/examples/badge/variants"
-                size="sm"
-                title="Badge Variants Example"
-              />
-              <CodeExample code={BadgeVariantsCODE} />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  ref={badgeOutlinedRef}
+                  src="/examples/badge/outlined"
+                  title="Outlined"
+                  size={BADGE_OUTLINED_SIZE}
+                />
+              </div>
+              <CodeExample code={BADGE_OUTLINED_CODE} />
             </CardContent>
           </Card>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Dot Variant</CardTitle>
-              <CardDescription>Minimal circular indicator for status display</CardDescription>
+              <CardTitle>Destructive</CardTitle>
+              <CardDescription>Variant for error states</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                ref={badgeDotsIframeRef}
-                src="/examples/badge/dots"
-                size="sm"
-                title="Badge Dots Example"
-              />
-              <CodeExample code={BadgeDotsCODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Sizes">
-          <Typography variant="body1">
-            Badges come in three sizes to fit different contexts and visual hierarchies.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>All Sizes</CardTitle>
-              <CardDescription>Small, medium, and large badge sizes</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={badgeSizesIframeRef}
-                src="/examples/badge/sizes"
-                size="sm"
-                title="Badge Sizes Example"
-              />
-              <CodeExample code={BadgeSizesCODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Features">
-          <Typography variant="body1">
-            Additional features like clickability, dismissibility, icon support, and dot indicators.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Clickable Badges</CardTitle>
-              <CardDescription>Badges that respond to click events</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={badgeInteractiveIframeRef}
-                src="/examples/badge/interactive"
-                size="sm"
-                title="Badge Interactive Example"
-              />
-              <CodeExample code={BadgeInteractiveCODE} />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  ref={badgeDestructiveRef}
+                  src="/examples/badge/destructive"
+                  title="Destructive"
+                  size={BADGE_DESTRUCTIVE_SIZE}
+                />
+              </div>
+              <CodeExample code={BADGE_DESTRUCTIVE_CODE} />
             </CardContent>
           </Card>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Dismissible Badges</CardTitle>
-              <CardDescription>Badges with close button for removal</CardDescription>
+              <CardTitle>Success</CardTitle>
+              <CardDescription>Variant for successful states</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                ref={badgeDismissibleIframeRef}
-                src="/examples/badge/dismissible"
-                size="sm"
-                title="Badge Dismissible Example"
-              />
-              <CodeExample code={BadgeDismissibleCODE} />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  ref={badgeSuccessRef}
+                  src="/examples/badge/success"
+                  title="Success"
+                  size={BADGE_SUCCESS_SIZE}
+                />
+              </div>
+              <CodeExample code={BADGE_SUCCESS_CODE} />
             </CardContent>
           </Card>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Icon Support</CardTitle>
-              <CardDescription>Add icons to badges for better visual communication</CardDescription>
+              <CardTitle>Warning</CardTitle>
+              <CardDescription>Variant for warning states</CardDescription>
             </CardHeader>
             <CardContent>
-              <IframeExample
-                ref={badgeFeaturesIframeRef}
-                src="/examples/badge/features"
-                size="sm"
-                title="Badge Features Example"
-              />
-              <CodeExample code={BadgeFeaturesCODE} />
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  ref={badgeWarningRef}
+                  src="/examples/badge/warning"
+                  title="Warning"
+                  size={BADGE_WARNING_SIZE}
+                />
+              </div>
+              <CodeExample code={BADGE_WARNING_CODE} />
+            </CardContent>
+          </Card>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Info</CardTitle>
+              <CardDescription>Variant for informational states</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-(--lsd-spacing-base)">
+                <IframeExample
+                  ref={badgeInfoRef}
+                  src="/examples/badge/info"
+                  title="Info"
+                  size={BADGE_INFO_SIZE}
+                />
+              </div>
+              <CodeExample code={BADGE_INFO_CODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Badge component.</Typography>
+          <Typography variant="body1">All available props for the component.</Typography>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>variant</CardTitle>
-                <CardDescription>The visual style of the badge</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> BadgeVariant
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> filled, outlined, destructive, success, warning, info,
-                  dot
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> filled
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>size</CardTitle>
-                <CardDescription>The size of the badge</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> SizeVariant
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> sm, md, lg
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> md
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
                 <CardTitle>asChild</CardTitle>
-                <CardDescription>Whether to merge props with child element</CardDescription>
+                <CardDescription>
+                  Render the child as the root element. Merges props with the first child element
+                  for custom rendering.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Type:</strong> boolean
                 </Typography>
                 <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Used for rendering badge as a different element
+                  <strong>Default:</strong> undefined
                 </Typography>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle>onDismiss</CardTitle>
-                <CardDescription>Callback when dismiss button is clicked</CardDescription>
+                <CardTitle>dot</CardTitle>
+                <CardDescription>
+                  Display as a dot without text. Renders a circular dot indicator instead of a text
+                  badge.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> () =&gt; void
+                  <strong>Type:</strong> boolean
                 </Typography>
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Shows a close button when provided
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>onClick</CardTitle>
-                <CardDescription>Callback when badge is clicked</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> () =&gt; void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Makes badge clickable and keyboard accessible
                 </Typography>
               </CardContent>
             </Card>
@@ -299,7 +236,10 @@ export default function MyComponent() {
             <Card>
               <CardHeader>
                 <CardTitle>icon</CardTitle>
-                <CardDescription>Icon to display in the badge</CardDescription>
+                <CardDescription>
+                  Icon to display alongside badge text. Renders the icon positioned left or right
+                  based on iconPosition.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
@@ -308,74 +248,62 @@ export default function MyComponent() {
                 <Typography variant="label1" className="block">
                   <strong>Default:</strong> undefined
                 </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Icon component to display alongside text
-                </Typography>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
                 <CardTitle>iconPosition</CardTitle>
-                <CardDescription>Position of the icon relative to text</CardDescription>
+                <CardDescription>
+                  Position of the icon relative to badge text. Controls whether icon appears before
+                  or after the text content.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'left' | 'right'
+                  <strong>Type:</strong> "left" | "right"
                 </Typography>
                 <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
                   <strong>Options:</strong> left, right
                 </Typography>
                 <Typography variant="label1" className="block">
-                  <strong>Default:</strong> left
+                  <strong>Default:</strong> undefined
                 </Typography>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle>dot</CardTitle>
-                <CardDescription>Display as a circular dot indicator</CardDescription>
+                <CardTitle>onClick</CardTitle>
+                <CardDescription>
+                  Callback when badge is clicked. Makes the badge interactive and adds button role
+                  behavior.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
+                  <strong>Type:</strong> () =&gt; void
                 </Typography>
                 <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Shows badge as a circular dot without text
+                  <strong>Default:</strong> undefined
                 </Typography>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle>className</CardTitle>
-                <CardDescription>Additional CSS classes to apply</CardDescription>
+                <CardTitle>onDismiss</CardTitle>
+                <CardDescription>
+                  Callback when dismiss button is clicked. Displays an X icon that triggers this
+                  callback when clicked.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong> string
+                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                  <strong>Type:</strong> () =&gt; void
                 </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Merges with existing badge classes
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>...props</CardTitle>
-                <CardDescription>Standard HTML span attributes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong> <code>React.ComponentProps&lt;'span'&gt;</code>
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  All standard HTML span attributes are supported
+                <Typography variant="label1" className="block">
+                  <strong>Default:</strong> undefined
                 </Typography>
               </CardContent>
             </Card>
@@ -384,28 +312,24 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Badge component follows accessibility best practices for screen readers and keyboard
+            The component follows accessibility best practices for screen readers and keyboard
             navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Clickable badges are fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the clickable badge
+                • Tab - Navigate to clickable badges
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Enter or Space</strong> - Activate the badge click handler
+                • Enter or Space - Activate clickable badge (when role="button")
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -413,41 +337,39 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Clickable badges automatically get <code>role="button"</code> and{' '}
-                <code>tabIndex="0"</code>
+                • role="button" when onClick is provided
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Dismiss buttons use <code>aria-label="Dismiss"</code> for clear identification
+                • aria-label="Dismiss" on dismiss button
               </Typography>
-              <Typography variant="body2" className="block">
-                • Use semantic variants (success, warning, error, info) to convey meaning through
-                color
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Badge text should be descriptive of the status or category
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Clickable badges have visible focus states that follow the LSD design system's focus
-                indicators, ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Clickable badges are focusable (tabIndex= 0 )
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus ring indicates keyboard focus on clickable badges
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
           previous={{
             title: 'Avatar',
             href: '/components/avatar',
           }}
           next={{
-            title: 'Table',
-            href: '/components/table',
+            title: 'Button',
+            href: '/components/button',
           }}
         />
       </PageContent>

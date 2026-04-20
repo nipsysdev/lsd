@@ -1,3 +1,10 @@
+/**
+ * FieldSeparator - Visual separator between sections.
+ *
+ * Horizontal rule with border styling for separating field groups.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

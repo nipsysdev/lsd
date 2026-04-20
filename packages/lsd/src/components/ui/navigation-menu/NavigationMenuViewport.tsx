@@ -2,13 +2,15 @@ import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-export type NavigationMenuViewportProps = React.ComponentProps<
-  typeof NavigationMenuPrimitive.Viewport
->;
+export interface NavigationMenuViewportProps
+  extends React.ComponentProps<typeof NavigationMenuPrimitive.Viewport> {}
 
 /**
  * NavigationMenuViewport - The viewport that contains navigation menu content in viewport mode.
- * Provides a container for dropdown content with proper positioning and animations.
+ *
+ * Provides a container for dropdown content with positioning and animations.
+ *
+ * @exportAs sub
  */
 export function NavigationMenuViewport({ className, ...props }: NavigationMenuViewportProps) {
   return (

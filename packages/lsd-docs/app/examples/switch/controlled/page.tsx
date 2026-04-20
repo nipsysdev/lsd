@@ -4,6 +4,12 @@ import { Switch, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
+
 export const CODE = `import { Switch, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 

@@ -2,13 +2,15 @@ import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-export type NavigationMenuIndicatorProps = React.ComponentProps<
-  typeof NavigationMenuPrimitive.Indicator
->;
+export interface NavigationMenuIndicatorProps
+  extends React.ComponentProps<typeof NavigationMenuPrimitive.Indicator> {}
 
 /**
- * NavigationMenuIndicator - visual indicator showing the active navigation menu item.
+ * NavigationMenuIndicator - Visual indicator showing the active navigation menu item.
+ *
  * Displays as a small triangle pointing to the active item.
+ *
+ * @exportAs sub
  */
 export function NavigationMenuIndicator({ className, ...props }: NavigationMenuIndicatorProps) {
   return (

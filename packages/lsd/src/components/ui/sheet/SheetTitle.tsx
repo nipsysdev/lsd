@@ -3,6 +3,11 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * Accessible title for the sheet content.
+ *
+ * @exportAs sub
+ */
 export function SheetTitle({
   className,
   ...props

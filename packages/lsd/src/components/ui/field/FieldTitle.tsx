@@ -1,3 +1,10 @@
+/**
+ * FieldTitle - Title for field groups.
+ *
+ * Provides a styled heading for field sections with medium font weight.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

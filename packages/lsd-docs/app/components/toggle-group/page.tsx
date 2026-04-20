@@ -10,9 +10,18 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as ToggleGroupMultipleCODE } from '@/examples/toggle-group/multiple/page';
-import { CODE as ToggleGroupSingleCODE } from '@/examples/toggle-group/single/page';
-import { CODE as ToggleGroupSizesCODE } from '@/examples/toggle-group/sizes/page';
+import {
+  CODE as ToggleGroupMultipleCODE,
+  SIZE as ToggleGroupMultipleSIZE,
+} from '@/examples/toggle-group/multiple/page';
+import {
+  CODE as ToggleGroupSingleCODE,
+  SIZE as ToggleGroupSingleSIZE,
+} from '@/examples/toggle-group/single/page';
+import {
+  CODE as ToggleGroupSizesCODE,
+  SIZE as ToggleGroupSizesSIZE,
+} from '@/examples/toggle-group/sizes/page';
 
 export default function ToggleGroupPage() {
   const toggleGroupSingleIframeRef = useRef<HTMLIFrameElement>(null);
@@ -76,7 +85,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleGroupSingleIframeRef}
-                size="md"
+                size={ToggleGroupSingleSIZE}
                 src="/examples/toggle-group/single"
                 title="ToggleGroup Single Example"
               />
@@ -98,7 +107,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleGroupMultipleIframeRef}
-                size="md"
+                size={ToggleGroupMultipleSIZE}
                 src="/examples/toggle-group/multiple"
                 title="ToggleGroup Multiple Example"
               />
@@ -120,7 +129,7 @@ export default function MyComponent() {
             <CardContent>
               <IframeExample
                 ref={toggleGroupSizesIframeRef}
-                size="md"
+                size={ToggleGroupSizesSIZE}
                 src="/examples/toggle-group/sizes"
                 title="ToggleGroup Sizes Example"
               />

@@ -2,6 +2,12 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * TableCell - Contains table data
+ *
+ * Displays individual data cells with consistent padding.
+ * Adjusts padding when containing checkbox elements for alignment.
+ */
 const TableCell = React.forwardRef<HTMLTableCellElement, React.ComponentProps<'td'>>(
   ({ className, ...props }, ref) => {
     return (

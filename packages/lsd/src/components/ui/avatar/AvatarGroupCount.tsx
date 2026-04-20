@@ -2,6 +2,12 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * AvatarGroupCount - Displays count of additional avatars.
+ *
+ * Shows the number of additional avatars not displayed.
+ * Provides visual count for large avatar groups.
+ */
 function AvatarGroupCount({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div

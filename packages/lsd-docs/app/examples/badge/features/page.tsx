@@ -4,6 +4,8 @@ import { Badge } from '@nipsys/lsd';
 import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'sm';
+
 export const CODE = `import { Badge } from '@nipsys/lsd';
 import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
 

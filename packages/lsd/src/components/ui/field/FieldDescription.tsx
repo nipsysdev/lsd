@@ -1,3 +1,10 @@
+/**
+ * FieldDescription - Helper text description for the field.
+ *
+ * Provides additional context or instructions below the label or input.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

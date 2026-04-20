@@ -1,3 +1,10 @@
+/**
+ * FieldSet - Semantic fieldset for grouping related fields.
+ *
+ * Uses native fieldset element with no default border or padding.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

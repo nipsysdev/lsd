@@ -4,6 +4,30 @@ import { cn } from '@/lib/utils';
 import type { InputProps } from './types';
 import { getLabelSizeClasses, getTextSizeClasses, getVerticalPaddingClasses } from './utils';
 
+/**
+ * Input - Styled text input wrapper
+ *
+ * Provides consistent label, supporting text, and error states with multiple border variants and sizes.
+ *
+ * @docSectionPageDescription
+ * Text input component with label and supporting text.
+ *
+ * @docSectionAbout
+ * A styled text input wrapper that provides consistent label, supporting text, and error states. Supports multiple border variants (underlined, outlined, ghost) and sizes for different form contexts.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate to the input
+ * • Shift + Tab - Navigate to previous element
+ * • Standard input keyboard shortcuts for editing (Arrow keys, Home, End, Delete, Backspace)
+ *
+ * @docSectionAccessibilityAria
+ * • aria-invalid - Marks input as having validation errors
+ * • aria-describedby - Links to supporting text or error message
+ * • aria-labelledby - Links to label element
+ *
+ * @docSectionAccessibilityFocus
+ * Focus is managed natively by browser. Visual focus indicators show when input is active. Error states have distinct focus indicators to provide clear feedback.
+ */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {

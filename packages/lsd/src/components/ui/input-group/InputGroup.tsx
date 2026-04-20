@@ -5,6 +5,37 @@ import { InputGroupProvider } from './context';
 import type { InputGroupProps } from './types';
 import { getInputGroupHeightClasses } from './utils';
 
+/**
+ * InputGroup - Groups inputs with buttons and text addons for composed form controls.
+ *
+ * Combines input fields with buttons or text elements into a single visual group. Provides size context to children and handles focus states and error styling across the group.
+ *
+ * @docSectionPageDescription
+ * Groups inputs with buttons and text addons for composed form controls.
+ *
+ * @docSectionAbout
+ * Combines input fields with buttons or text elements into a single visual group. Provides size context to children and handles focus states and error styling across the group.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate through group items sequentially
+ * • Enter - Activate focused button within group
+ *
+ * @docSectionAccessibilityAria
+ * • role="group" identifies the component as a grouping
+ * • aria-invalid indicates group error state
+ *
+ * @docSectionAccessibilityFocus
+ * Focus is managed across elements within the group. Visual focus indicators appear on the active element. Group borders change color on focus of any child element.
+ *
+ * @docSectionComposition
+ * • InputGroup - Root container for the input group
+ *   • InputGroupInput - Input field styled for use within an input group
+ *   • InputGroupAddon - Container for buttons, text, or other elements
+ *   • InputGroupButton - Button component positioned within the group
+ *   • InputGroupText - Text element for displaying labels or icons
+ *
+ * @exportAs root
+ */
 const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
   ({ className, size = 'md', children, ...props }, ref) => {
     return (

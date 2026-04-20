@@ -10,6 +10,59 @@ import { cn } from '@/lib/utils';
 import { useSidebar } from './SidebarContext';
 import { SIDEBAR_WIDTH_MOBILE, type SidebarProps } from './types';
 
+/**
+ * Sidebar - Collapsible navigation panel for app navigation
+ *
+ * Displays navigation items in a collapsible panel on the left or right side of the screen.
+ * Supports multiple variants (sidebar, floating, inset) and collapsible modes (offcanvas, icon, none) with mobile responsiveness using a sheet overlay.
+ *
+ * @docSectionPageDescription
+ * Collapsible navigation panel with multiple variants and mobile support.
+ *
+ * @docSectionAbout
+ * A collapsible navigation panel that displays navigation items on the left or right side of the screen. Supports sidebar, floating, and inset variants with offcanvas, icon-only, and no-collapse modes. On mobile, displays as a sheet overlay. Includes multiple sub-components for building complete sidebar layouts with headers, content, groups, menus, and footers.
+ *
+ * @docSectionComposition
+ * • Sidebar - Main container with responsive behavior and collapsible modes
+ *   • SidebarHeader - Header section for branding and navigation
+ *     • SidebarMenu - Container for menu items
+ *       • SidebarMenuItem - Individual menu item wrapper
+ *         • SidebarMenuButton - Button with icon, text, and optional tooltip
+ *         • SidebarMenuAction - Action button within menu item (hidden when icon-only)
+ *         • SidebarMenuBadge - Badge displayed on menu item (hidden when icon-only)
+ *         • SidebarMenuSub - Submenu container with nested items
+ *           • SidebarMenuSubItem - Submenu item wrapper
+ *             • SidebarMenuSubButton - Submenu link/button
+ *   • SidebarContent - Scrollable main content area
+ *     • SidebarGroup - Logical group of related menu items
+ *       • SidebarGroupLabel - Group label (hidden when icon-only)
+ *       • SidebarGroupAction - Action button for group (hidden when icon-only)
+ *       • SidebarGroupContent - Content container for menu items
+ *   • SidebarSeparator - Visual separator between sections
+ *   • SidebarInput - Search or filter input field
+ *   • SidebarFooter - Footer section with additional navigation
+ *   • SidebarRail - Toggle button rail (visible on desktop when sidebar collapsed)
+ * • SidebarInset - Main content area that adjusts for sidebar presence
+ * • SidebarTrigger - Button to toggle sidebar visibility
+ * • SidebarProvider - Context provider for sidebar state management
+ * • SidebarMenuSkeleton - Loading skeleton for menu items
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate through sidebar menu buttons
+ * • Arrow Up/Down - Move focus to previous/next menu button
+ * • B - Toggle sidebar (keyboard shortcut)
+ * • Escape - Close sidebar on mobile
+ *
+ * @docSectionAccessibilityAria
+ * • aria-label="Toggle Sidebar" on trigger and rail components
+ * • data-sidebar attributes identify component structure for styling and accessibility
+ * • role="navigation" implied through semantic structure
+ *
+ * @docSectionAccessibilityFocus
+ * Focus follows keyboard navigation through menu buttons in document order. Sidebar is hidden from focus when collapsed to icon-only mode (menu items remain visible). On mobile, focus moves to sheet when opened and trap is maintained until closed.
+ *
+ * @exportAs root
+ */
 export function Sidebar({
   side = 'left',
   variant = 'sidebar',

@@ -4,9 +4,21 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { type MenubarSubTriggerVariants, menubarSubTriggerVariants } from './types';
 
+/**
+ * Opens submenu with arrow indicator.
+ *
+ * @exportAs sub
+ */
 export interface MenubarSubTriggerProps
   extends React.ComponentProps<typeof MenubarPrimitive.SubTrigger>,
-    MenubarSubTriggerVariants {}
+    MenubarSubTriggerVariants {
+  /**
+   * Indent the trigger.
+   *
+   * Adds left margin for grouped items.
+   */
+  inset?: boolean;
+}
 
 function MenubarSubTrigger({ className, inset, children, ...props }: MenubarSubTriggerProps) {
   return (

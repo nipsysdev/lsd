@@ -14,6 +14,11 @@ import {
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'lg';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   Button,
   CommandDialog,

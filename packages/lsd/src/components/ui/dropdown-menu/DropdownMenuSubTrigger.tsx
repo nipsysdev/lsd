@@ -5,12 +5,16 @@ import { cn } from '@/lib/utils';
 
 export interface DropdownMenuSubTriggerProps
   extends React.ComponentProps<typeof DropdownMenuPrimitive.SubTrigger> {
+  /**
+   * Adds extra left padding to align with other inset items.
+   */
   inset?: boolean;
 }
 
 /**
- * DropdownMenuSubTrigger - A menu item that opens a submenu.
- * Shows a chevron icon to indicate it has nested content.
+ * DropdownMenuSubTrigger - Menu item that opens a submenu.
+ *
+ * @exportAs sub
  */
 export function DropdownMenuSubTrigger({
   className,

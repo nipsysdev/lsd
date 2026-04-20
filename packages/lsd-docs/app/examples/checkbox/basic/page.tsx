@@ -3,6 +3,11 @@
 import { Checkbox, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection usage
+ */
 export const CODE = `import { Checkbox, Typography } from '@nipsys/lsd';
 
 export function Example() {

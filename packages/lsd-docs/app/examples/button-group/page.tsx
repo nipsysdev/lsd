@@ -2,6 +2,8 @@
 
 import { Button, ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@nipsys/lsd';
 
+export const SIZE = 'md';
+
 export const CODE = `import {
   Button,
   ButtonGroup,

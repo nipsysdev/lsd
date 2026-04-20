@@ -19,6 +19,11 @@ import {
 } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'lg';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   InputGroup,
   InputGroupAddon,

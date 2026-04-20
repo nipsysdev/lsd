@@ -4,12 +4,68 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { type BadgeVariants, badgeVariants } from './types';
 
+/**
+ * Badge - Displays status, tags, or metadata.
+ *
+ * Small label for categorizing content or displaying status information.
+ * Supports click interactions, dismissible badges, dot variants, and
+ * icon placement for visual emphasis.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate to clickable badges
+ * • Enter or Space - Activate clickable badge (when role="button")
+ *
+ * @docSectionAccessibilityAria
+ * • role="button" when onClick is provided
+ * • aria-label="Dismiss" on dismiss button
+ * • Badge text should be descriptive of the status or category
+ *
+ * @docSectionAccessibilityFocus
+ * • Clickable badges are focusable (tabIndex={0})
+ * • Focus ring indicates keyboard focus on clickable badges
+ */
+
 export interface BadgeProps extends React.ComponentProps<'span'>, BadgeVariants {
+  /**
+   * Render the child as the root element.
+   *
+   * Merges props with the first child element for custom rendering.
+   */
   asChild?: boolean;
+
+  /**
+   * Callback when dismiss button is clicked.
+   *
+   * Displays an X icon that triggers this callback when clicked.
+   */
   onDismiss?: () => void;
+
+  /**
+   * Callback when badge is clicked.
+   *
+   * Makes the badge interactive and adds button role behavior.
+   */
   onClick?: () => void;
+
+  /**
+   * Icon to display alongside badge text.
+   *
+   * Renders the icon positioned left or right based on iconPosition.
+   */
   icon?: React.ReactNode;
+
+  /**
+   * Position of the icon relative to badge text.
+   *
+   * Controls whether icon appears before or after the text content.
+   */
   iconPosition?: 'left' | 'right';
+
+  /**
+   * Display as a dot without text.
+   *
+   * Renders a circular dot indicator instead of a text badge.
+   */
   dot?: boolean;
 }
 

@@ -3,13 +3,13 @@ import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-export type DropdownMenuRadioItemProps = React.ComponentProps<
-  typeof DropdownMenuPrimitive.RadioItem
->;
+export interface DropdownMenuRadioItemProps
+  extends React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem> {}
 
 /**
- * DropdownMenuRadioItem - A radio button item for exclusive selection within a group.
- * Shows a circle when selected.
+ * DropdownMenuRadioItem - Radio button item for exclusive selection within a group.
+ *
+ * @exportAs sub
  */
 export function DropdownMenuRadioItem({
   className,

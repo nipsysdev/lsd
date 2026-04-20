@@ -1,3 +1,10 @@
+/**
+ * InputGroupAddon - Container for buttons, text, or other elements within an input group.
+ *
+ * Displayed alongside input fields with appropriate styling and alignment, optionally clickable to focus the input.
+ *
+ * @exportAs sub
+ */
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 

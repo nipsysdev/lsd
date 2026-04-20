@@ -3,13 +3,13 @@ import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-export type DropdownMenuCheckboxItemProps = React.ComponentProps<
-  typeof DropdownMenuPrimitive.CheckboxItem
->;
+export interface DropdownMenuCheckboxItemProps
+  extends React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem> {}
 
 /**
- * DropdownMenuCheckboxItem - A dropdown menu item that can be checked/unchecked.
- * Shows a checkmark when checked and supports indeterminate state.
+ * DropdownMenuCheckboxItem - Menu item that can be checked/unchecked with checkmark indicator.
+ *
+ * @exportAs sub
  */
 export function DropdownMenuCheckboxItem({
   className,

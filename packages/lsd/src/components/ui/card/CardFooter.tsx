@@ -2,6 +2,13 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * CardFooter - Footer area with border and flex layout.
+ *
+ * Container for actions and metadata at the bottom of a card with top border and horizontal alignment.
+ *
+ * @exportAs sub
+ */
 const CardFooter = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>(
   ({ className, ...props }, ref) => {
     return (

@@ -4,13 +4,20 @@ import { cn } from '@/lib/utils';
 
 export interface DropdownMenuItemProps
   extends React.ComponentProps<typeof DropdownMenuPrimitive.Item> {
+  /**
+   * Adds extra left padding to align with other inset items.
+   */
   inset?: boolean;
+  /**
+   * Visual style of the menu item.
+   */
   variant?: 'default' | 'destructive';
 }
 
 /**
- * DropdownMenuItem - A selectable item in the dropdown menu.
- * Support normal and destructive variants with inset option.
+ * DropdownMenuItem - Selectable item in the dropdown menu with default and destructive variants.
+ *
+ * @exportAs sub
  */
 export function DropdownMenuItem({
   className,

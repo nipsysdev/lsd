@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -10,328 +11,491 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as SidebarBasicExampleCODE } from '@/examples/sidebar/basic/page';
+import { CODE as SidebarBasicCODE, SIZE as SidebarBasicSIZE } from '@/examples/sidebar/basic/page';
 
 export default function SidebarPage() {
-  const sidebarIframeRef = useRef<HTMLIFrameElement>(null);
+  const SidebarBasicIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes(sidebarIframeRef);
+  useSendThemeToIframes(SidebarBasicIframeRef);
 
   return (
     <DocsLayout>
       <PageHeader
         title="Sidebar"
-        description="A composable, themeable and customizable sidebar component for navigation and content organization."
+        description="Collapsible navigation panel with multiple variants and mobile support."
       />
 
       <PageContent>
         <PageSection title="About Sidebar">
           <Typography variant="body1" className="block">
-            The Sidebar component provides a flexible navigation structure that can be customized
-            with different variants, collapsible states, and content organization. It's designed to
-            work seamlessly with the LSD design system and supports responsive layouts.
+            A collapsible navigation panel that displays navigation items on the left or right side
+            of the screen. Supports sidebar, floating, and inset variants with offcanvas, icon-only,
+            and no-collapse modes. On mobile, displays as a sheet overlay. Includes multiple
+            sub-components for building complete sidebar layouts with headers, content, groups,
+            menus, and footers.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import the Sidebar components from LSD:</Typography>
+          <Typography variant="body1">Import the Sidebar component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarInset,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarProvider,
-  SidebarRail,
-  SidebarTrigger,
-} from '@nipsys/lsd'`}
+                code={`import { Sidebar } from '@nipsys/lsd'
+
+export default function MyComponent() {
+  return <Sidebar />
+}`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Structure">
-          <Typography variant="body1" className="mb-(--lsd-spacing-base)">
-            A Sidebar component is composed of the following parts:
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarProvider</strong> - Handles collapsible state
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>Sidebar</strong> - The sidebar container
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarHeader</strong> - Sticky header at the top of the sidebar
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarContent</strong> - Scrollable content area
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarGroup</strong> - Section within the sidebar
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarGroupLabel</strong> - Label for a group
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarGroupContent</strong> - Content within a group
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarMenu</strong> - Menu container
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarMenuItem</strong> - Individual menu item
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarMenuButton</strong> - Button for menu items
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarMenuBadge</strong> - Badge for menu items
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarMenuSub</strong> - Submenu container
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarMenuSubItem</strong> - Submenu item
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarMenuSubButton</strong> - Submenu button
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarFooter</strong> - Sticky footer at the bottom of the sidebar
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarInset</strong> - Wrapper for main content when using inset variant
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarRail</strong> - Rail for toggling the sidebar
-          </Typography>
-          <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-            • <strong>SidebarTrigger</strong> - Trigger button for the sidebar
-          </Typography>
-        </PageSection>
-
         <PageSection title="Usage">
           <Typography variant="body1">
-            Basic usage of the Sidebar component with collapsible functionality.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Demo</CardTitle>
-              <CardDescription>
-                A sidebar that collapses to icons on larger screens, demonstrating the full sidebar
-                structure with header, content groups, and footer.
-              </CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="border">
-                <IframeExample
-                  ref={sidebarIframeRef}
-                  size="lg"
-                  src="/examples/sidebar/basic"
-                  title="Sidebar Example"
-                />
-              </div>
-              <CodeExample code={SidebarBasicExampleCODE} />
+              <IframeExample
+                ref={SidebarBasicIframeRef}
+                size={SidebarBasicSIZE}
+                src="/examples/sidebar/basic"
+                title="Basic Example"
+              />
+              <CodeExample code={SidebarBasicCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Composition">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {[
+                  'Sidebar',
+                  '├── SidebarHeader',
+                  '│   └── SidebarMenu',
+                  '├── SidebarContent',
+                  '│   └── SidebarGroup',
+                  '├── SidebarSeparator',
+                  '├── SidebarInput',
+                  '├── SidebarFooter',
+                  '├── SidebarRail',
+                  '├── SidebarInset',
+                  '├── SidebarTrigger',
+                  '├── SidebarProvider',
+                  '└── SidebarMenuSkeleton',
+                ]}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1" className="mb-(--lsd-spacing-base)">
-            Sidebar component props and configuration options.
-          </Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>SidebarProvider</CardTitle>
-                <CardDescription>
-                  Provides the sidebar context to the Sidebar component
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentProps&lt;&apos;div&apos;&gt;
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>defaultOpen:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>open:</strong> boolean (controlled)
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>onOpenChange:</strong> (open: boolean) =&gt; void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> defaultOpen = true
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Sidebar</CardTitle>
-                <CardDescription>The main sidebar container</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentProps&lt;&apos;div&apos;&gt;
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>side:</strong> &apos;left&apos; | &apos;right&apos;
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>variant:</strong> &apos;sidebar&apos; | &apos;floating&apos; |
-                  &apos;inset&apos;
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>collapsible:</strong> &apos;offcanvas&apos; | &apos;icon&apos; |
-                  &apos;none&apos;
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> side=&apos;left&apos;, variant=&apos;sidebar&apos;,
-                  collapsible=&apos;offcanvas&apos;
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>useSidebar</CardTitle>
-                <CardDescription>Hook to control the sidebar</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Returns:</strong> SidebarContextProps
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>state:</strong> &apos;expanded&apos; | &apos;collapsed&apos;
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>open:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>setOpen:</strong> (open: boolean) =&gt; void
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>isMobile:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>toggleSidebar:</strong> () =&gt; void
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>SidebarMenuButton</CardTitle>
-                <CardDescription>Button for menu items</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentProps&lt;&apos;button&apos;&gt;
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>asChild:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>isActive:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>size:</strong> &apos;default&apos; | &apos;sm&apos; | &apos;lg&apos;
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> size=&apos;default&apos;
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              Sidebar
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>side</CardTitle>
+                  <CardDescription>
+                    Side of the screen where the sidebar appears. Determines whether sidebar is
+                    positioned on left or right side.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>"left" | "right"</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> left, right
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>variant</CardTitle>
+                  <CardDescription>
+                    Visual variant of the sidebar. Controls appearance: sidebar (default edge),
+                    floating (with border and shadow), or inset (with inset margins).
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>"sidebar" | "floating" | "inset"</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> sidebar, floating, inset
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>collapsible</CardTitle>
+                  <CardDescription>
+                    Collapsible behavior of the sidebar. Controls how sidebar collapses: offcanvas
+                    (slides out), icon (shows only icons), or none (no collapse).
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>"offcanvas" | "icon" | "none"</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> offcanvas, icon, none
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-        </PageSection>
 
-        <PageSection title="Collapsible Options">
-          <Typography variant="body1" className="mb-(--lsd-spacing-base)">
-            The Sidebar component supports three collapsible modes:
-          </Typography>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              SidebarProvider
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>defaultOpen</CardTitle>
+                  <CardDescription>
+                    Initial open state of the sidebar. Sets whether sidebar starts open or closed.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>open</CardTitle>
+                  <CardDescription>
+                    Controlled open state of the sidebar. Controls sidebar open state when used as
+                    controlled component.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>onOpenChange</CardTitle>
+                  <CardDescription>
+                    Callback when sidebar open state changes. Called when user toggles sidebar
+                    visibility.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>(open: boolean) =&gt; void</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>offcanvas</CardTitle>
-                <CardDescription>
-                  A collapsible sidebar that slides in from the left or right
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2">
-                  The sidebar slides in from the side when triggered, overlaying content.
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              SidebarMenuButton
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>asChild</CardTitle>
+                  <CardDescription>
+                    Render as child component instead of button. When true, merges props with the
+                    single child element.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>isActive</CardTitle>
+                  <CardDescription>
+                    Marks the menu button as active. Applies active styling to indicate current page
+                    or selection.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>tooltip</CardTitle>
+                  <CardDescription>
+                    Tooltip to display on hover when sidebar is collapsed. Content shown in tooltip
+                    or props to pass to TooltipContent.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong>{' '}
+                    <code>
+                      string | (TooltipContentProps &amp; React.RefAttributes&lt;HTMLDivElement&gt;
+                      &amp; &#123; container?: HTMLElement; &#125;)
+                    </code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> string
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>icon</CardTitle>
-                <CardDescription>A sidebar that collapses to icons</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2">
-                  The sidebar collapses to show only icons, maintaining navigation visibility.
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              SidebarGroupLabel
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>asChild</CardTitle>
+                  <CardDescription>
+                    Render as child component instead of div. When true, merges props with the
+                    single child element.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>none</CardTitle>
-                <CardDescription>A non-collapsible sidebar</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2">
-                  The sidebar is always visible and cannot be collapsed.
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              SidebarGroupAction
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>asChild</CardTitle>
+                  <CardDescription>
+                    Render as child component instead of button. When true, merges props with the
+                    single child element.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              SidebarMenuAction
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>asChild</CardTitle>
+                  <CardDescription>
+                    Render as child component instead of button. When true, merges props with the
+                    single child element.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>showOnHover</CardTitle>
+                  <CardDescription>
+                    Only show action button on hover. When true, action is hidden by default and
+                    visible on hover/focus.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              SidebarMenuSubButton
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>asChild</CardTitle>
+                  <CardDescription>
+                    Render as child component instead of link. When true, merges props with the
+                    single child element.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>size</CardTitle>
+                  <CardDescription>
+                    Size of the submenu button. Controls height and text size.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>"sm" | "md"</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> sm, md
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>isActive</CardTitle>
+                  <CardDescription>
+                    Marks the submenu button as active. Applies active styling to indicate current
+                    page or selection.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              SidebarMenuSkeleton
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>showIcon</CardTitle>
+                  <CardDescription>
+                    Show icon placeholder in skeleton. When true, includes an icon placeholder
+                    alongside the text skeleton.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Sidebar component follows accessibility best practices.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Sidebar is fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the sidebar
+                • Tab - Navigate through sidebar menu buttons
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Shift + Tab</strong> - Navigate to previous element
+                • Arrow Up/Down - Move focus to previous/next menu button
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Cmd/Ctrl + B</strong> - Toggle sidebar (desktop)
+                • B - Toggle sidebar (keyboard shortcut)
               </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Enter/Space</strong> - Activate menu items
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Escape - Close sidebar on mobile
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -339,34 +503,39 @@ export default function SidebarPage() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use <code>aria-label</code> for components without visible labels
+                • aria-label="Toggle Sidebar" on trigger and rail components
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use <code>aria-current</code> to indicate the active menu item
+                • data-sidebar attributes identify component structure for styling and accessibility
               </Typography>
-              <Typography variant="body2" className="block">
-                • Use <code>role="navigation"</code> for semantic meaning
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • role="navigation" implied through semantic structure
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2">
-                Components have visible focus states that follow the LSD design system's focus
-                indicators, ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus follows keyboard navigation through menu buttons in document order. Sidebar
+                is hidden from focus when collapsed to icon-only mode (menu items remain visible).
+                On mobile, focus moves to sheet when opened and trap is maintained until closed.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
-          previous={{ title: 'Menubar', href: '/components/menubar' }}
-          next={{ title: 'Tabs', href: '/components/tabs' }}
+          previous={{
+            title: 'Menubar',
+            href: '/components/menubar',
+          }}
+          next={{
+            title: 'Tabs',
+            href: '/components/tabs',
+          }}
         />
       </PageContent>
     </DocsLayout>

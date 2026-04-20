@@ -2,18 +2,50 @@ import * as React from 'react';
 import type { AutocompleteOption } from './types';
 import { AUTOCOMPLETE_DEBOUNCE_DELAY } from './types';
 
+/**
+ * Options for the useAutocompleteFetch hook.
+ */
 interface UseAutocompleteFetchOptions {
+  /**
+   * Async function to fetch options based on search text.
+   */
   onOptionsFetch?: (searchText: string) => Promise<AutocompleteOption[]>;
+  /**
+   * Current search text from the input.
+   */
   searchText: string;
+  /**
+   * Whether the dropdown is currently open.
+   */
   open: boolean;
+  /**
+   * External loading state override.
+   */
   externalIsLoading?: boolean;
 }
 
+/**
+ * Result from the useAutocompleteFetch hook.
+ */
 interface UseAutocompleteFetchResult {
+  /**
+   * Options fetched from the async function.
+   */
   asyncOptions: AutocompleteOption[];
+  /**
+   * Loading state of the async fetch operation.
+   */
   isLoading: boolean;
 }
 
+/**
+ * Hook for managing async autocomplete option fetching.
+ *
+ * Handles debounced fetching of options based on search text, manages loading
+ * state, and provides error handling. Only fetches when the dropdown is open
+ * to avoid unnecessary API calls. Debounces requests (300ms by default) to
+ * prevent excessive API calls during typing.
+ */
 export function useAutocompleteFetch({
   onOptionsFetch,
   searchText,

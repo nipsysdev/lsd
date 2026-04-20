@@ -1,3 +1,10 @@
+/**
+ * FieldError - Error message display for validation feedback.
+ *
+ * Renders error messages with role="alert" for screen readers.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

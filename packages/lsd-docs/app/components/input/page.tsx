@@ -10,44 +10,67 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as InputDisabledCODE } from '@/examples/input/disabled/page';
-import { CODE as InputErrorCODE } from '@/examples/input/error/page';
-import { CODE as InputLabelCODE } from '@/examples/input/label/page';
-import { CODE as InputSizesCODE } from '@/examples/input/sizes/page';
-import { CODE as InputSupportingTextCODE } from '@/examples/input/supporting-text/page';
-import { CODE as InputTypesCODE } from '@/examples/input/types/page';
-import { CODE as InputVariantsCODE } from '@/examples/input/variants/page';
+import { CODE as InputDefaultCODE, SIZE as InputDefaultSIZE } from '@/examples/input/default/page';
+import {
+  CODE as InputDisabledCODE,
+  SIZE as InputDisabledSIZE,
+} from '@/examples/input/disabled/page';
+import { CODE as InputErrorCODE, SIZE as InputErrorSIZE } from '@/examples/input/error/page';
+import { CODE as InputGhostCODE, SIZE as InputGhostSIZE } from '@/examples/input/ghost/page';
+import { CODE as InputLabelCODE, SIZE as InputLabelSIZE } from '@/examples/input/label/page';
+import {
+  CODE as InputOutlinedCODE,
+  SIZE as InputOutlinedSIZE,
+} from '@/examples/input/outlined/page';
+import { CODE as InputSizesCODE, SIZE as InputSizesSIZE } from '@/examples/input/sizes/page';
+import {
+  CODE as InputSupportingTextCODE,
+  SIZE as InputSupportingTextSIZE,
+} from '@/examples/input/supporting-text/page';
+import { CODE as InputTypesCODE, SIZE as InputTypesSIZE } from '@/examples/input/types/page';
+import {
+  CODE as InputUnderlinedCODE,
+  SIZE as InputUnderlinedSIZE,
+} from '@/examples/input/underlined/page';
 
 export default function InputPage() {
-  const inputVariantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputSizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputLabelIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputSupportingTextIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputErrorIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputTypesIframeRef = useRef<HTMLIFrameElement>(null);
-  const inputDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputDefaultIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputErrorIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputGhostIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputLabelIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputOutlinedIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputSupportingTextIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputTypesIframeRef = useRef<HTMLIFrameElement>(null);
+  const InputUnderlinedIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    inputVariantsIframeRef,
-    inputSizesIframeRef,
-    inputLabelIframeRef,
-    inputSupportingTextIframeRef,
-    inputErrorIframeRef,
-    inputTypesIframeRef,
-    inputDisabledIframeRef
+    InputDefaultIframeRef,
+    InputDisabledIframeRef,
+    InputErrorIframeRef,
+    InputGhostIframeRef,
+    InputLabelIframeRef,
+    InputOutlinedIframeRef,
+    InputSizesIframeRef,
+    InputSupportingTextIframeRef,
+    InputTypesIframeRef,
+    InputUnderlinedIframeRef
   );
+
   return (
     <DocsLayout>
       <PageHeader
         title="Input"
-        description="Text input component with multiple variants and sizes"
+        description="Text input component with label and supporting text."
       />
 
       <PageContent>
         <PageSection title="About Input">
           <Typography variant="body1" className="block">
-            Inputs are form elements that allow users to enter and edit text. They are the primary
-            way users provide data to your application, from simple text fields to complex forms.
+            A styled text input wrapper that provides consistent label, supporting text, and error
+            states. Supports multiple border variants (underlined, outlined, ghost) and sizes for
+            different form contexts.
           </Typography>
         </PageSection>
 
@@ -61,51 +84,98 @@ export default function InputPage() {
                 code={`import { Input } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return <Input placeholder="Enter text..." />
+  return <Input />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Variants">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Input comes in two visual variants for different design contexts.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Border Variants</CardTitle>
-              <CardDescription>Choose between outlined and underlined styles</CardDescription>
+              <CardTitle>Default</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputVariantsIframeRef}
-                size="md"
-                src="/examples/input/variants"
-                title="Input Variants Example"
+                ref={InputDefaultIframeRef}
+                size={InputDefaultSIZE}
+                src="/examples/input/default"
+                title="Default Example"
               />
-              <CodeExample code={InputVariantsCODE} />
+              <CodeExample code={InputDefaultCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Component variants for different visual styles and use cases.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Ghost</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={InputGhostIframeRef}
+                size={InputGhostSIZE}
+                src="/examples/input/ghost"
+                title="Ghost Example"
+              />
+              <CodeExample code={InputGhostCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Outlined</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={InputOutlinedIframeRef}
+                size={InputOutlinedSIZE}
+                src="/examples/input/outlined"
+                title="Outlined Example"
+              />
+              <CodeExample code={InputOutlinedCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Underlined</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={InputUnderlinedIframeRef}
+                size={InputUnderlinedSIZE}
+                src="/examples/input/underlined"
+                title="Underlined Example"
+              />
+              <CodeExample code={InputUnderlinedCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Sizes">
           <Typography variant="body1">
-            Inputs come in five sizes to fit different contexts and layouts.
+            Component sizes for different contexts and visual hierarchy.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>All Sizes</CardTitle>
-              <CardDescription>From extra small to extra large</CardDescription>
+              <CardTitle>Sizes</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputSizesIframeRef}
-                size="lg"
+                ref={InputSizesIframeRef}
+                size={InputSizesSIZE}
                 src="/examples/input/sizes"
-                title="Input Sizes Example"
+                title="Sizes Example"
               />
               <CodeExample code={InputSizesCODE} />
             </CardContent>
@@ -114,279 +184,187 @@ export default function MyComponent() {
 
         <PageSection title="Features">
           <Typography variant="body1">
-            Additional features like labels, supporting text, error states, and different input
-            types.
+            Additional features and capabilities of the component.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>With Label</CardTitle>
-              <CardDescription>Add a label to provide context for the input</CardDescription>
+              <CardTitle>Disabled</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputLabelIframeRef}
-                size="md"
-                src="/examples/input/label"
-                title="Input Label Example"
+                ref={InputDisabledIframeRef}
+                size={InputDisabledSIZE}
+                src="/examples/input/disabled"
+                title="Disabled Example"
               />
-              <CodeExample code={InputLabelCODE} />
+              <CodeExample code={InputDisabledCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>With Supporting Text</CardTitle>
-              <CardDescription>
-                Add helper text below the input for additional guidance
-              </CardDescription>
+              <CardTitle>Error</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputSupportingTextIframeRef}
-                size="md"
-                src="/examples/input/supporting-text"
-                title="Input Supporting Text Example"
-              />
-              <CodeExample code={InputSupportingTextCODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Error State</CardTitle>
-              <CardDescription>Show error state with destructive styling</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={inputErrorIframeRef}
-                size="md"
+                ref={InputErrorIframeRef}
+                size={InputErrorSIZE}
                 src="/examples/input/error"
-                title="Input Error Example"
+                title="Error Example"
               />
               <CodeExample code={InputErrorCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Input Types</CardTitle>
-              <CardDescription>Support for various HTML input types</CardDescription>
+              <CardTitle>Label</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputTypesIframeRef}
-                size="lg"
-                src="/examples/input/types"
-                title="Input Types Example"
+                ref={InputLabelIframeRef}
+                size={InputLabelSIZE}
+                src="/examples/input/label"
+                title="Label Example"
               />
-              <CodeExample code={InputTypesCODE} />
+              <CodeExample code={InputLabelCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Disabled State</CardTitle>
-              <CardDescription>Disabled input with reduced opacity</CardDescription>
+              <CardTitle>Supporting Text</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={inputDisabledIframeRef}
-                size="sm"
-                src="/examples/input/disabled"
-                title="Input Disabled Example"
+                ref={InputSupportingTextIframeRef}
+                size={InputSupportingTextSIZE}
+                src="/examples/input/supporting-text"
+                title="Supporting Text Example"
               />
-              <CodeExample code={InputDisabledCODE} />
+              <CodeExample code={InputSupportingTextCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Types</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={InputTypesIframeRef}
+                size={InputTypesSIZE}
+                src="/examples/input/types"
+                title="Types Example"
+              />
+              <CodeExample code={InputTypesCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Input component.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>variant</CardTitle>
-                <CardDescription>The visual style of the input border</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> BorderVariant
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> outlined, underlined
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> underlined
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>size</CardTitle>
-                <CardDescription>The size of the input</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> SizeVariant
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> xs, sm, md, lg, xl
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> md
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>label</CardTitle>
-                <CardDescription>Label text displayed above the input</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ReactNode
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Optional label for the input field
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>supportingText</CardTitle>
-                <CardDescription>Helper text displayed below the input</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ReactNode
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Additional context or guidance for the input
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>error</CardTitle>
-                <CardDescription>Show error state styling</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Changes border color to destructive and supporting text color
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>type</CardTitle>
-                <CardDescription>HTML input type attribute</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> text
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Supports all standard HTML input types
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>id</CardTitle>
-                <CardDescription>Custom ID for the input element</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> auto-generated
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  If not provided, a unique ID is automatically generated
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>className</CardTitle>
-                <CardDescription>Additional CSS classes to apply</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Merges with existing input classes
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>...props</CardTitle>
-                <CardDescription>Standard HTML input attributes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong>{' '}
-                  <code>React.InputHTMLAttributes&lt;HTMLInputElement&gt;</code>
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  All standard HTML input attributes are supported
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              Input
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>variant</CardTitle>
+                  <CardDescription>Border visual style variant.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>BorderVariant</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>size</CardTitle>
+                  <CardDescription>Input size variant.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>SizeVariant</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>label</CardTitle>
+                  <CardDescription>Label displayed above the input.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>React.ReactNode</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>supportingText</CardTitle>
+                  <CardDescription>
+                    Supporting text or error message displayed below the input.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>React.ReactNode</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>error</CardTitle>
+                  <CardDescription>Error state styling with red border.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Input component follows accessibility best practices.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Inputs are fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the input
+                • Tab - Navigate to the input
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+                • Shift + Tab - Navigate to previous element
               </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Enter</strong> - Submit form (when in a form)
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Standard input keyboard shortcuts for editing (Arrow keys, Home, End, Delete,
+                Backspace)
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -394,46 +372,40 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Labels are automatically associated with inputs using <code>htmlFor</code>
+                • aria-invalid - Marks input as having validation errors
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use <code>aria-invalid</code> when input has errors (automatically handled with
-                error prop)
+                • aria-describedby - Links to supporting text or error message
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use <code>aria-describedby</code> to link to supporting text
-              </Typography>
-              <Typography variant="body2" className="block">
-                • Use <code>aria-label</code> for inputs without visible labels
+                • aria-labelledby - Links to label element
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Inputs have visible focus states that follow the LSD design system's focus
-                indicators, ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus is managed natively by browser. Visual focus indicators show when input is
+                active. Error states have distinct focus indicators to provide clear feedback.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
+        <PageNavigation
+          previous={{
+            title: 'Checkbox',
+            href: '/components/checkbox',
+          }}
+          next={{
+            title: 'Input-group',
+            href: '/components/input-group',
+          }}
+        />
       </PageContent>
-
-      <PageNavigation
-        previous={{
-          title: 'Checkbox',
-          href: '/components/checkbox',
-        }}
-        next={{
-          title: 'Label',
-          href: '/components/label',
-        }}
-      />
     </DocsLayout>
   );
 }

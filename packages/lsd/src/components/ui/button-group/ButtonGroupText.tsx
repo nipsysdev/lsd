@@ -4,6 +4,27 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 import type { ButtonGroupTextProps } from './types';
 
+/**
+ * ButtonGroupText - Displays descriptive text or labels within button groups
+ *
+ * Text container styled to match button group aesthetics. Supports rendering as a div or merging with a child element using asChild.
+ *
+ * @docSectionPageDescription
+ * Text container that displays labels or descriptions within button groups.
+ *
+ * @docSectionAbout
+ * Displays descriptive text or labels within a button group. Styled to match button group aesthetics and supports rendering as a div or merging with a child element.
+ *
+ * @docSectionAccessibilityAria
+ * • Use aria-label if text describes group purpose
+ * • No specific role needed for descriptive text
+ *
+ * @docSectionAccessibilityFocus
+ * Non-interactive text element. Focus passes through to surrounding interactive elements.
+ *
+ * @exportAs sub
+ */
+
 const ButtonGroupText = React.forwardRef<HTMLDivElement, ButtonGroupTextProps>(
   ({ className, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'div';

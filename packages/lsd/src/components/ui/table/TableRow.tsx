@@ -2,6 +2,12 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * TableRow - Contains a single row of table cells
+ *
+ * Represents a row in the table with bottom border and hover state.
+ * Supports selected state via data-[state=selected] attribute.
+ */
 const TableRow = React.forwardRef<HTMLTableRowElement, React.ComponentProps<'tr'>>(
   ({ className, ...props }, ref) => {
     return (

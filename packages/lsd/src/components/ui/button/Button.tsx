@@ -2,11 +2,67 @@ import { CircleNotchIcon } from '@phosphor-icons/react';
 import { Slot } from '@radix-ui/react-slot';
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { type ButtonVariants, buttonVariants } from './types';
+import { buttonVariants } from './types';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariants {
+/**
+ * A clickable element with multiple visual variants and features.
+ *
+ * Displays interactive button controls with various styles. Supports loading states, disabled states, and flexible composition.
+ *
+ * @docSectionPageDescription
+ * Clickable element with customizable styles and features.
+ *
+ * @docSectionAbout
+ * Interactive button component with multiple visual variants including filled, outlined, and rounded styles. Supports loading states, disabled states, and flexible composition using Radix Slot.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate to the button
+ * • Enter or Space - Activate the button
+ * • Shift + Tab - Navigate to previous element
+ *
+ * @docSectionAccessibilityAria
+ * • disabled attribute managed for non-interactive states
+ * • aria-busy set to true during loading state
+ * • Proper role preservation with asChild composition
+ *
+ * @docSectionAccessibilityFocus
+ * Visible focus indicators follow the LSD design system. Focus is correctly managed when disabled or loading with proper focus restoration.
+ */
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * Visual style including background, border, and corner radius.
+   */
+  variant?:
+    | 'filled'
+    | 'outlined'
+    | 'filled-rounded'
+    | 'outlined-rounded'
+    | 'link'
+    | 'ghost'
+    | 'ghost-rounded'
+    | 'destructive'
+    | 'destructive-rounded'
+    | 'success'
+    | 'success-rounded';
+
+  /**
+   * Dimensions including height and padding.
+   */
+  size?: 'sm' | 'md' | 'lg' | 'square-sm' | 'square-md' | 'square-lg';
+
+  /**
+   * Merges props onto immediate child for composition.
+   */
   asChild?: boolean;
+
+  /**
+   * Shows spinner and disables during async operations.
+   */
   loading?: boolean;
+
+  /**
+   * Expands to fill container width.
+   */
   fullWidth?: boolean;
 }
 
@@ -32,6 +88,30 @@ const LoadingSpinner = ({ size }: { size?: string }) => {
   return <CircleNotchIcon className={`${getSpinnerSize()} lsd:animate-spin`} weight="duotone" />;
 };
 
+/**
+ * A clickable element with multiple visual variants and features.
+ *
+ * Displays interactive button controls with various styles. Supports loading states, disabled states, and flexible composition.
+ *
+ * @docSectionPageDescription
+ * Clickable element with customizable styles and features.
+ *
+ * @docSectionAbout
+ * Interactive button component with multiple visual variants including filled, outlined, and rounded styles. Supports loading states, disabled states, and flexible composition using Radix Slot.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate to the button
+ * • Enter or Space - Activate the button
+ * • Shift + Tab - Navigate to previous element
+ *
+ * @docSectionAccessibilityAria
+ * • disabled attribute managed for non-interactive states
+ * • aria-busy set to true during loading state
+ * • Proper role preservation with asChild composition
+ *
+ * @docSectionAccessibilityFocus
+ * Visible focus indicators follow the LSD design system. Focus is correctly managed when disabled or loading with proper focus restoration.
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {

@@ -23,43 +23,128 @@ export type SidebarContextProps = {
 };
 
 export interface SidebarProps extends React.ComponentProps<'div'> {
+  /**
+   * Side of the screen where the sidebar appears.
+   *
+   * Determines whether sidebar is positioned on left or right side.
+   */
   side?: 'left' | 'right';
+  /**
+   * Visual variant of the sidebar.
+   *
+   * Controls appearance: sidebar (default edge), floating (with border and shadow), or inset (with inset margins).
+   */
   variant?: 'sidebar' | 'floating' | 'inset';
+  /**
+   * Collapsible behavior of the sidebar.
+   *
+   * Controls how sidebar collapses: offcanvas (slides out), icon (shows only icons), or none (no collapse).
+   */
   collapsible?: 'offcanvas' | 'icon' | 'none';
 }
 
 export interface SidebarProviderProps extends React.ComponentProps<'div'> {
+  /**
+   * Initial open state of the sidebar.
+   *
+   * Sets whether sidebar starts open or closed.
+   */
   defaultOpen?: boolean;
+  /**
+   * Controlled open state of the sidebar.
+   *
+   * Controls sidebar open state when used as controlled component.
+   */
   open?: boolean;
+  /**
+   * Callback when sidebar open state changes.
+   *
+   * Called when user toggles sidebar visibility.
+   */
   onOpenChange?: (open: boolean) => void;
 }
 
 export interface SidebarMenuButtonProps extends React.ComponentProps<'button'> {
+  /**
+   * Render as child component instead of button.
+   *
+   * When true, merges props with the single child element.
+   */
   asChild?: boolean;
+  /**
+   * Marks the menu button as active.
+   *
+   * Applies active styling to indicate current page or selection.
+   */
   isActive?: boolean;
+  /**
+   * Tooltip to display on hover when sidebar is collapsed.
+   *
+   * Content shown in tooltip or props to pass to TooltipContent.
+   */
   tooltip?: string | React.ComponentProps<typeof TooltipContent>;
 }
 
 export interface SidebarGroupLabelProps extends React.ComponentProps<'div'> {
+  /**
+   * Render as child component instead of div.
+   *
+   * When true, merges props with the single child element.
+   */
   asChild?: boolean;
 }
 
 export interface SidebarGroupActionProps extends React.ComponentProps<'button'> {
+  /**
+   * Render as child component instead of button.
+   *
+   * When true, merges props with the single child element.
+   */
   asChild?: boolean;
 }
 
 export interface SidebarMenuActionProps extends React.ComponentProps<'button'> {
+  /**
+   * Render as child component instead of button.
+   *
+   * When true, merges props with the single child element.
+   */
   asChild?: boolean;
+  /**
+   * Only show action button on hover.
+   *
+   * When true, action is hidden by default and visible on hover/focus.
+   */
   showOnHover?: boolean;
 }
 
 export interface SidebarMenuSubButtonProps extends React.ComponentProps<'a'> {
+  /**
+   * Render as child component instead of link.
+   *
+   * When true, merges props with the single child element.
+   */
   asChild?: boolean;
+  /**
+   * Size of the submenu button.
+   *
+   * Controls height and text size.
+   */
   size?: 'sm' | 'md';
+  /**
+   * Marks the submenu button as active.
+   *
+   * Applies active styling to indicate current page or selection.
+   */
   isActive?: boolean;
 }
 
 export interface SidebarMenuSkeletonProps extends React.ComponentProps<'div'> {
+  /**
+   * Show icon placeholder in skeleton.
+   *
+   * When true, includes an icon placeholder alongside the text skeleton.
+   */
   showIcon?: boolean;
 }
 

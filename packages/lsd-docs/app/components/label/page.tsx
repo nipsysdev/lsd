@@ -10,31 +10,34 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as LabelBasicExampleCODE } from '@/examples/label/basic/page';
-import { CODE as LabelSizesExampleCODE } from '@/examples/label/sizes/page';
-import { CODE as LabelVariantsExampleCODE } from '@/examples/label/variants/page';
+import { CODE as LabelBasicCODE, SIZE as LabelBasicSIZE } from '@/examples/label/basic/page';
+import { CODE as LabelSizesCODE, SIZE as LabelSizesSIZE } from '@/examples/label/sizes/page';
+import {
+  CODE as LabelVariantsCODE,
+  SIZE as LabelVariantsSIZE,
+} from '@/examples/label/variants/page';
 
 export default function LabelPage() {
-  const labelBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const labelVariantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const labelSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const LabelBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const LabelSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const LabelVariantsIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes(labelBasicIframeRef, labelVariantsIframeRef, labelSizesIframeRef);
+  useSendThemeToIframes(LabelBasicIframeRef, LabelSizesIframeRef, LabelVariantsIframeRef);
 
   return (
     <DocsLayout>
       <PageHeader
         title="Label"
-        description="A form label component that provides context and accessibility for form inputs."
+        description="Accessible label for form controls with variants and sizes"
       />
 
       <PageContent>
         <PageSection title="About Label">
           <Typography variant="body1" className="block">
-            The Label component provides accessible labeling for form inputs and other interactive
-            elements. It automatically associates with form controls using the <code>htmlFor</code>{' '}
-            attribute, ensuring screen readers can properly describe the relationship between labels
-            and their associated controls.
+            Text label component that provides clear identification for form inputs and controls.
+            Built on Radix UI's Label primitive with support for default and secondary variants and
+            three size options. Automatically handles accessibility by associating with controls
+            through htmlFor or nested relationships.
           </Typography>
         </PageSection>
 
@@ -45,15 +48,10 @@ export default function LabelPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Label, Input } from '@nipsys/lsd'
+                code={`import { Label } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <div>
-      <Label htmlFor="email">Email</Label>
-      <Input id="email" type="email" />
-    </div>
-  )
+  return <Label />
 }`}
               />
             </CardContent>
@@ -62,155 +60,83 @@ export default function MyComponent() {
 
         <PageSection title="Usage">
           <Typography variant="body1">
-            Basic usage of the Label component with checkboxes.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Demo</CardTitle>
-              <CardDescription>Labels paired with checkboxes for form controls.</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={labelBasicIframeRef}
-                size="md"
+                ref={LabelBasicIframeRef}
+                size={LabelBasicSIZE}
                 src="/examples/label/basic"
-                title="Label Basic Example"
+                title="Basic Example"
               />
-              <CodeExample code={LabelBasicExampleCODE} />
+              <CodeExample code={LabelBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Variants">
           <Typography variant="body1">
-            Labels come in two visual variants for different design contexts.
+            Component variants for different visual styles and use cases.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Label Variants</CardTitle>
-              <CardDescription>Default and secondary label styles</CardDescription>
+              <CardTitle>Variants</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={labelVariantsIframeRef}
-                size="md"
+                ref={LabelVariantsIframeRef}
+                size={LabelVariantsSIZE}
                 src="/examples/label/variants"
-                title="Label Variants Example"
+                title="Variants Example"
               />
-              <CodeExample code={LabelVariantsExampleCODE} />
+              <CodeExample code={LabelVariantsCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Sizes">
           <Typography variant="body1">
-            Labels come in three sizes to fit different contexts and visual hierarchies.
+            Component sizes for different contexts and visual hierarchy.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>All Sizes</CardTitle>
-              <CardDescription>Small, medium, and large label sizes</CardDescription>
+              <CardTitle>Sizes</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={labelSizesIframeRef}
-                size="md"
+                ref={LabelSizesIframeRef}
+                size={LabelSizesSIZE}
                 src="/examples/label/sizes"
-                title="Label Sizes Example"
+                title="Sizes Example"
               />
-              <CodeExample code={LabelSizesExampleCODE} />
+              <CodeExample code={LabelSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Label component.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>variant</CardTitle>
-                <CardDescription>The visual style of the label</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>Label wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> LabelVariant
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> default, secondary
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> default
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>size</CardTitle>
-                <CardDescription>The size of the label</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> SizeVariant
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> sm, md, lg
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> md
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>htmlFor</CardTitle>
-                <CardDescription>Associates label with form element</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  ID of the form element this label is associated with
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>className</CardTitle>
-                <CardDescription>Additional CSS classes to apply</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Merges with existing label classes
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>...props</CardTitle>
-                <CardDescription>Standard HTML label attributes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong> <code>{`React.ComponentProps<'label'>`}</code>
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  All standard HTML label attributes are supported
-                </Typography>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/label"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI Label documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -218,64 +144,50 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Label component follows accessibility best practices for screen readers and keyboard
+            The component follows accessibility best practices for screen readers and keyboard
             navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Labels are fully keyboard accessible</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the associated form element
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Shift + Tab</strong> - Navigate to previous element
-              </Typography>
-              <Typography variant="body2" className="block">
-                Clicking on a label automatically focuses its associated form element
-              </Typography>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
-              <CardDescription>Proper ARIA support for screen readers</CardDescription>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Labels are automatically associated with inputs using <code>htmlFor</code>
+                • Uses native label element semantics for proper screen reader support
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Screen readers announce the label text when focusing the associated input
+                • htmlFor attribute creates explicit association with form controls
               </Typography>
-              <Typography variant="body2" className="block">
-                • Use <code>aria-label</code> or <code>aria-labelledby</code> for complex labeling
-                scenarios
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Wrapping controls creates implicit association
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
-              <CardDescription>Visual feedback for keyboard users</CardDescription>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Labels have visible focus states that follow the LSD design system's focus
-                indicators, ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Labels do not receive focus but clicking or tapping them moves focus to their
+                associated control. Screen readers announce label text when the associated control
+                receives focus.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
-          previous={{ title: 'Input', href: '/components/input' }}
-          next={{ title: 'Field', href: '/components/field' }}
+          previous={{
+            title: 'Input-group',
+            href: '/components/input-group',
+          }}
+          next={{
+            title: 'Field',
+            href: '/components/field',
+          }}
         />
       </PageContent>
     </DocsLayout>

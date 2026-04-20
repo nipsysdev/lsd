@@ -4,6 +4,13 @@ import type * as React from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 
+/**
+ * CommandList - Scrollable list container for command items.
+ *
+ * Wraps command items in a scrollable container with proper spacing.
+ *
+ * @exportAs sub
+ */
 export function CommandList({
   className,
   ...props

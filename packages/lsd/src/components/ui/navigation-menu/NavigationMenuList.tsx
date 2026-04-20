@@ -2,10 +2,15 @@ import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-export type NavigationMenuListProps = React.ComponentProps<typeof NavigationMenuPrimitive.List>;
+export interface NavigationMenuListProps
+  extends React.ComponentProps<typeof NavigationMenuPrimitive.List> {}
 
 /**
  * NavigationMenuList - Container for navigation menu items arranged in a horizontal list.
+ *
+ * Wraps menu items with flex layout and spacing.
+ *
+ * @exportAs sub
  */
 export function NavigationMenuList({ className, ...props }: NavigationMenuListProps) {
   return (

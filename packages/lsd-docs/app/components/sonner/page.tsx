@@ -10,397 +10,272 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as TOAST_ACTIONS_CODE } from '@/examples/sonner/actions/page';
-import { CODE as TOAST_BASIC_CODE } from '@/examples/sonner/basic/page';
-import { CODE as TOAST_CUSTOM_CODE } from '@/examples/sonner/custom/page';
-import { CODE as TOAST_DURATION_CODE } from '@/examples/sonner/duration/page';
-import { CODE as TOAST_PERSISTENT_CODE } from '@/examples/sonner/persistent/page';
-import { CODE as TOAST_POSITION_CODE } from '@/examples/sonner/position/page';
-import { CODE as TOAST_POSITIONS_CODE } from '@/examples/sonner/positions/page';
-import { CODE as TOAST_PROMISE_CODE } from '@/examples/sonner/promise/page';
-import { CODE as TOAST_RICH_CODE } from '@/examples/sonner/rich/page';
-import { CODE as TOAST_TYPES_CODE } from '@/examples/sonner/toast-types/page';
+import {
+  CODE as SonnerActionsCODE,
+  SIZE as SonnerActionsSIZE,
+} from '@/examples/sonner/actions/page';
+import {
+  CODE as SonnerDurationCODE,
+  SIZE as SonnerDurationSIZE,
+} from '@/examples/sonner/duration/page';
+import { CODE as SonnerErrorCODE, SIZE as SonnerErrorSIZE } from '@/examples/sonner/error/page';
+import { CODE as SonnerInfoCODE, SIZE as SonnerInfoSIZE } from '@/examples/sonner/info/page';
+import {
+  CODE as SonnerPersistentCODE,
+  SIZE as SonnerPersistentSIZE,
+} from '@/examples/sonner/persistent/page';
+import {
+  CODE as SonnerPositionSimpleCODE,
+  SIZE as SonnerPositionSimpleSIZE,
+} from '@/examples/sonner/position-simple/page';
+import {
+  CODE as SonnerPromiseSimpleCODE,
+  SIZE as SonnerPromiseSimpleSIZE,
+} from '@/examples/sonner/promise-simple/page';
+import {
+  CODE as SonnerRichContentCODE,
+  SIZE as SonnerRichContentSIZE,
+} from '@/examples/sonner/rich-content/page';
+import {
+  CODE as SonnerSuccessCODE,
+  SIZE as SonnerSuccessSIZE,
+} from '@/examples/sonner/success/page';
+import {
+  CODE as SonnerWarningCODE,
+  SIZE as SonnerWarningSIZE,
+} from '@/examples/sonner/warning/page';
 
 export default function SonnerPage() {
-  const toastBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastCustomIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastPositionIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastTypesIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastDurationIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastPositionsIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastActionsIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastPersistentIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastPromiseIframeRef = useRef<HTMLIFrameElement>(null);
-  const toastRichIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerActionsIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerDurationIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerErrorIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerInfoIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerPersistentIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerPositionSimpleIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerPromiseSimpleIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerRichContentIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerSuccessIframeRef = useRef<HTMLIFrameElement>(null);
+  const SonnerWarningIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    toastBasicIframeRef,
-    toastCustomIframeRef,
-    toastPositionIframeRef,
-    toastTypesIframeRef,
-    toastDurationIframeRef,
-    toastPositionsIframeRef,
-    toastActionsIframeRef,
-    toastPersistentIframeRef,
-    toastPromiseIframeRef,
-    toastRichIframeRef
+    SonnerActionsIframeRef,
+    SonnerDurationIframeRef,
+    SonnerErrorIframeRef,
+    SonnerInfoIframeRef,
+    SonnerPersistentIframeRef,
+    SonnerPositionSimpleIframeRef,
+    SonnerPromiseSimpleIframeRef,
+    SonnerRichContentIframeRef,
+    SonnerSuccessIframeRef,
+    SonnerWarningIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
         title="Sonner"
-        description="Toast notification component with multiple types and customizable options"
+        description="Toast notification container for displaying messages to users."
       />
 
       <PageContent>
         <PageSection title="About Sonner">
           <Typography variant="body1" className="block">
-            Sonner is a toast notification component that displays brief, non-intrusive messages to
-            users. It provides multiple toast types, customizable positioning, and rich color
-            options for different notification states.
+            A container component that displays toast notifications for user feedback and system
+            messages. Based on the sonner library, it provides pre-styled notifications that appear
+            temporarily on screen edges. The component automatically manages toast display,
+            positioning, and dismissal with smooth animations.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">
-            Import the Toaster component and toast function from LSD and sonner:
-          </Typography>
+          <Typography variant="body1">Import the Sonner component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Toaster } from '@nipsys/lsd'
-import { toast } from 'sonner'
+                code={`import { Sonner } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <>
-      <Toaster />
-      <Button onClick={() => toast('Hello world')}>
-        Show toast
-      </Button>
-    </>
-  )
+  return <Sonner />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Sonner Examples">
+        <PageSection title="Variants">
           <Typography variant="body1">
-            Various toast types, positions, and features including custom duration, actions,
-            promise-based toasts, and rich content.
+            Component variants for different visual styles and use cases.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Toasts</CardTitle>
-              <CardDescription>Success, error, warning, and info toasts</CardDescription>
+              <CardTitle>Error</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toastBasicIframeRef}
-                size="md"
-                src="/examples/sonner/basic"
-                title="Basic Toast Example"
+                ref={SonnerErrorIframeRef}
+                size={SonnerErrorSIZE}
+                src="/examples/sonner/error"
+                title="Error Example"
               />
-              <CodeExample code={TOAST_BASIC_CODE} />
+              <CodeExample code={SonnerErrorCODE} />
             </CardContent>
           </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Info</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SonnerInfoIframeRef}
+                size={SonnerInfoSIZE}
+                src="/examples/sonner/info"
+                title="Info Example"
+              />
+              <CodeExample code={SonnerInfoCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Success</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SonnerSuccessIframeRef}
+                size={SonnerSuccessSIZE}
+                src="/examples/sonner/success"
+                title="Success Example"
+              />
+              <CodeExample code={SonnerSuccessCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Warning</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SonnerWarningIframeRef}
+                size={SonnerWarningSIZE}
+                src="/examples/sonner/warning"
+                title="Warning Example"
+              />
+              <CodeExample code={SonnerWarningCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features and capabilities of the component.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Custom Toasts</CardTitle>
-              <CardDescription>
-                Rich content, custom icons, and promise-based toasts
-              </CardDescription>
+              <CardTitle>Actions</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toastCustomIframeRef}
-                size="lg"
-                src="/examples/sonner/custom"
-                title="Custom Toast Example"
-              />
-              <CodeExample code={TOAST_CUSTOM_CODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Toast Positions</CardTitle>
-              <CardDescription>Different toast positioning options</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={toastPositionIframeRef}
-                size="lg"
-                src="/examples/sonner/position"
-                title="Toast Position Example"
-              />
-              <CodeExample code={TOAST_POSITION_CODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Toast Types</CardTitle>
-              <CardDescription>Simple, success, error, warning, and info toasts</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={toastTypesIframeRef}
-                size="sm"
-                src="/examples/sonner/toast-types"
-                title="Toast Types Example"
-              />
-              <CodeExample code={TOAST_TYPES_CODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Custom Duration</CardTitle>
-              <CardDescription>Control how long toasts stay visible</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={toastDurationIframeRef}
-                size="sm"
-                src="/examples/sonner/duration"
-                title="Toast Duration Example"
-              />
-              <CodeExample code={TOAST_DURATION_CODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Positioned Toasts</CardTitle>
-              <CardDescription>Control toast positioning on screen</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={toastPositionsIframeRef}
-                size="sm"
-                src="/examples/sonner/positions"
-                title="Toast Positions Example"
-              />
-              <CodeExample code={TOAST_POSITIONS_CODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>With Actions</CardTitle>
-              <CardDescription>Add action buttons to toasts</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={toastActionsIframeRef}
-                size="sm"
+                ref={SonnerActionsIframeRef}
+                size={SonnerActionsSIZE}
                 src="/examples/sonner/actions"
-                title="Toast Actions Example"
+                title="Actions Example"
               />
-              <CodeExample code={TOAST_ACTIONS_CODE} />
+              <CodeExample code={SonnerActionsCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Persistent Toasts</CardTitle>
-              <CardDescription>Toasts that don't auto-dismiss</CardDescription>
+              <CardTitle>Duration</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toastPersistentIframeRef}
-                size="sm"
+                ref={SonnerDurationIframeRef}
+                size={SonnerDurationSIZE}
+                src="/examples/sonner/duration"
+                title="Duration Example"
+              />
+              <CodeExample code={SonnerDurationCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Persistent</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SonnerPersistentIframeRef}
+                size={SonnerPersistentSIZE}
                 src="/examples/sonner/persistent"
-                title="Toast Persistent Example"
+                title="Persistent Example"
               />
-              <CodeExample code={TOAST_PERSISTENT_CODE} />
+              <CodeExample code={SonnerPersistentCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Promise-based Toasts</CardTitle>
-              <CardDescription>Async loading states with automatic success/error</CardDescription>
+              <CardTitle>Position Simple</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toastPromiseIframeRef}
-                size="sm"
-                src="/examples/sonner/promise"
-                title="Toast Promise Example"
+                ref={SonnerPositionSimpleIframeRef}
+                size={SonnerPositionSimpleSIZE}
+                src="/examples/sonner/position-simple"
+                title="Position Simple Example"
               />
-              <CodeExample code={TOAST_PROMISE_CODE} />
+              <CodeExample code={SonnerPositionSimpleCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Rich Toasts</CardTitle>
-              <CardDescription>Custom JSX content in toasts</CardDescription>
+              <CardTitle>Promise Simple</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toastRichIframeRef}
-                size="sm"
-                src="/examples/sonner/rich"
-                title="Toast Rich Example"
+                ref={SonnerPromiseSimpleIframeRef}
+                size={SonnerPromiseSimpleSIZE}
+                src="/examples/sonner/promise-simple"
+                title="Promise Simple Example"
               />
-              <CodeExample code={TOAST_RICH_CODE} />
+              <CodeExample code={SonnerPromiseSimpleCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Rich Content</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SonnerRichContentIframeRef}
+                size={SonnerRichContentSIZE}
+                src="/examples/sonner/rich-content"
+                title="Rich Content Example"
+              />
+              <CodeExample code={SonnerRichContentCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Toaster component.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>theme</CardTitle>
-                <CardDescription>Theme for the toast notifications</CardDescription>
+                <CardTitle>Sonner Documentation</CardTitle>
+                <CardDescription>
+                  Sonner wraps the sonner library and extends all its props
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'light' | 'dark' | 'system'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> light, dark, system
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> system
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>position</CardTitle>
-                <CardDescription>Position of the toast container</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> ToasterPosition
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> top-left, top-center, top-right, bottom-left,
-                  bottom-center, bottom-right
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> bottom-right
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>expand</CardTitle>
-                <CardDescription>Whether to expand toasts on hover</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Expands toast to show full content on hover
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>duration</CardTitle>
-                <CardDescription>Default duration for all toasts</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> number
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> 4000
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Duration in milliseconds before toast auto-dismisses
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>richColors</CardTitle>
-                <CardDescription>Enable rich color backgrounds for toast types</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> true
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Applies colored backgrounds based on toast type
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>closeButton</CardTitle>
-                <CardDescription>Show close button on toasts</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Displays a close button on each toast
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>toastOptions</CardTitle>
-                <CardDescription>Default options for all toasts</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> ToastOptions
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Default configuration applied to all toasts
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>className</CardTitle>
-                <CardDescription>Additional CSS classes to apply</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Merges with existing toaster classes
-                </Typography>
+                <a
+                  href="https://sonner.emilkowal.ski/getting-started"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Sonner documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -408,30 +283,21 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Sonner component follows accessibility best practices.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Toasts are fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to toast actions
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Enter</strong> - Activate toast action button
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Escape</strong> - Dismiss toast (if dismissible)
+                • Escape - Dismiss all visible toasts
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -439,42 +305,38 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Toasts use <code>role="alert"</code> for important notifications
+                • Uses aria-live regions to announce toast messages to screen readers
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use <code>aria-live</code> for announcing toast messages
-              </Typography>
-              <Typography variant="body2" className="block">
-                • Action buttons are properly labeled for screen readers
+                • Uses appropriate ARIA roles (alert or status) based on toast type
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Toasts have visible focus states that follow the LSD design system's focus
-                indicators, ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Toasts do not receive keyboard focus as they are transient UI elements. Screen
+                readers automatically announce new toasts when they appear. Users can dismiss all
+                toasts with Escape regardless of current focus.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
+        <PageNavigation
+          previous={{
+            title: 'Progress',
+            href: '/components/progress',
+          }}
+          next={{
+            title: 'Card',
+            href: '/components/card',
+          }}
+        />
       </PageContent>
-
-      <PageNavigation
-        previous={{
-          title: 'Progress',
-          href: '/components/progress',
-        }}
-        next={{
-          title: 'Card',
-          href: '/components/card',
-        }}
-      />
     </DocsLayout>
   );
 }

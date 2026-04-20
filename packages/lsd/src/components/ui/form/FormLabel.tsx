@@ -6,6 +6,13 @@ import { Label } from '@/components/ui/label/Label';
 import { cn } from '@/lib/utils';
 import { useFormField } from './useFormField';
 
+/**
+ * FormLabel - Label for the form field.
+ *
+ * Displays the field label with automatic error state styling from form validation.
+ *
+ * @exportAs sub
+ */
 function FormLabel({ className, ...props }: React.ComponentProps<typeof LabelPrimitive.Root>) {
   const { error, formItemId } = useFormField();
 

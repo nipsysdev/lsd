@@ -3,6 +3,11 @@
 import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection variant
+ */
 export const CODE = `import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@nipsys/lsd';
 
 export function Example() {

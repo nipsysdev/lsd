@@ -10,6 +10,11 @@ import {
 } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   Menubar,
   MenubarMenu,
@@ -32,6 +37,14 @@ export function Example() {
           <MenubarItem shortcut="⌘P">Print</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem shortcut="⌘X">Cut</MenubarItem>
+          <MenubarItem shortcut="⌘C">Copy</MenubarItem>
+          <MenubarItem shortcut="⌘V">Paste</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
     </Menubar>
   );
 }
@@ -50,6 +63,14 @@ export function Example() {
           <MenubarItem shortcut="⌘S">Save</MenubarItem>
           <MenubarSeparator />
           <MenubarItem shortcut="⌘P">Print</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem shortcut="⌘X">Cut</MenubarItem>
+          <MenubarItem shortcut="⌘C">Copy</MenubarItem>
+          <MenubarItem shortcut="⌘V">Paste</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

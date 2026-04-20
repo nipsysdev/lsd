@@ -1,3 +1,10 @@
+/**
+ * FieldLegend - Legend for fieldset.
+ *
+ * Provides a caption for the fieldset with larger heading styling.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';

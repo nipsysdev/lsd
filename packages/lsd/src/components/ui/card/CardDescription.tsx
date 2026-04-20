@@ -2,6 +2,13 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * CardDescription - Secondary text for card description.
+ *
+ * Displays supporting text below the card title with muted color and smaller size.
+ *
+ * @exportAs sub
+ */
 const CardDescription = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>(
   ({ className, ...props }, ref) => {
     return (

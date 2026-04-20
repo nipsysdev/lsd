@@ -1,11 +1,41 @@
-/** biome-ignore-all lint/suspicious/noArrayIndexKey: We combine value index + slider ID */
 import { Slider as SliderPrimitive } from 'radix-ui';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * Slider - Input for selecting a value from a given range
+ *
+ * Displays a draggable thumb along a track for selecting values. Supports multiple thumbs for ranges and vertical orientation.
+ *
+ * @docSectionPageDescription
+ * Input for selecting a value from a given range via draggable thumbs.
+ *
+ * @docSectionAbout
+ * An input component for selecting values from a defined range using draggable thumbs. Supports single or multiple values, customizable sizes (sm, md, lg), and vertical orientation. Built on Radix UI primitives with consistent LSD styling and focus states.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate to slider thumb(s)
+ * • Arrow Left/Right - Decrease/increase value (horizontal)
+ * • Arrow Up/Down - Decrease/increase value (vertical)
+ * • Home - Jump to minimum value
+ * • End - Jump to maximum value
+ * • Page Up/Down - Jump by larger step increment
+ *
+ * @docSectionAccessibilityAria
+ * • role="slider" - Identifies element as slider
+ * • aria-valuenow - Current value of thumb
+ * • aria-valuemin - Minimum allowed value
+ * • aria-valuemax - Maximum allowed value
+ * • aria-orientation - Orientation (horizontal/vertical)
+ * • aria-label or aria-labelledby - Accessible label
+ *
+ * @docSectionAccessibilityFocus
+ * Thumb elements are focusable and receive keyboard focus. Focus moves between thumbs using Tab. Arrow keys adjust the focused thumb's value. Visual focus indicators ensure keyboard users can see which thumb has focus.
+ */
 export interface SliderProps
   extends Omit<React.ComponentProps<typeof SliderPrimitive.Root>, 'size'> {
+  /** Size variant for the slider. Determines track height and thumb size. */
   size?: 'sm' | 'md' | 'lg';
 }
 
@@ -106,6 +136,7 @@ function Slider({
       {Array.from({ length: _values.length }, (_, index) => (
         <SliderPrimitive.Thumb
           data-slot="slider-thumb"
+          // biome-ignore lint/suspicious/noArrayIndexKey: We combine value index + slider ID
           key={`${sliderId}-thumb-${index}`}
           className={cn(
             // Display

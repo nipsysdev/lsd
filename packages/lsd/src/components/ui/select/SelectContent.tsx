@@ -6,10 +6,34 @@ import { cn } from '@/lib/utils';
 import { SelectScrollDownButton } from './SelectScrollDownButton';
 import { SelectScrollUpButton } from './SelectScrollUpButton';
 
+/**
+ * SelectContent - Dropdown container that displays the list of options.
+ *
+ * Renders a scrollable dropdown with animations. Contains scroll buttons for
+ * navigating long lists and proper positioning relative to the trigger.
+ *
+ * @exportAs sub
+ */
 export function SelectContent({
+  /**
+   * Additional CSS classes to apply to the content.
+   */
   className,
+  /**
+   * The content to display in the dropdown.
+   */
   children,
+  /**
+   * Positioning strategy for the dropdown.
+   *
+   * Controls how the dropdown is positioned relative to the trigger.
+   */
   position = 'popper',
+  /**
+   * Alignment of the dropdown relative to the trigger.
+   *
+   * Controls the horizontal alignment of the dropdown.
+   */
   align = 'center',
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Content>) {

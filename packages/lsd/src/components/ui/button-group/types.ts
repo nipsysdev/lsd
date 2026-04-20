@@ -21,8 +21,20 @@ export type ButtonGroupVariants = VariantProps<typeof buttonGroupVariants>;
 
 export interface ButtonGroupProps
   extends Omit<React.ComponentProps<'fieldset'>, 'disabled'>,
-    ButtonGroupVariants {}
+    ButtonGroupVariants {
+  /**
+   * Layout direction for the button group.
+   *
+   * Controls whether buttons are arranged horizontally or vertically.
+   */
+  orientation?: 'horizontal' | 'vertical';
+}
 
 export interface ButtonGroupTextProps extends React.ComponentProps<'div'> {
+  /**
+   * Merges attributes with child element instead of rendering as div.
+   *
+   * When true, renders as the child element instead of a wrapping div.
+   */
   asChild?: boolean;
 }

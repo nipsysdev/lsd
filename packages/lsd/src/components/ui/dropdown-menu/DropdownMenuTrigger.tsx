@@ -1,11 +1,13 @@
 import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
 import type * as React from 'react';
 
-export type DropdownMenuTriggerProps = React.ComponentProps<typeof DropdownMenuPrimitive.Trigger>;
+export interface DropdownMenuTriggerProps
+  extends React.ComponentProps<typeof DropdownMenuPrimitive.Trigger> {}
 
 /**
- * DropdownMenuTrigger - The button or element that opens the dropdown menu.
- * Can be any element that accepts click events.
+ * DropdownMenuTrigger - Button or element that opens the dropdown menu when activated.
+ *
+ * @exportAs sub
  */
 export function DropdownMenuTrigger({ ...props }: DropdownMenuTriggerProps) {
   return <DropdownMenuPrimitive.Trigger data-slot="dropdown-menu-trigger" {...props} />;

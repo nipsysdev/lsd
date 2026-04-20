@@ -9,17 +9,55 @@ import { PopoverContent } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 import type { AutocompleteOption } from './types';
 
+/**
+ * Props for the AutocompleteContent component.
+ *
+ * Internal component used by Autocomplete to render the dropdown content.
+ */
 interface AutocompleteContentProps {
+  /**
+   * Current search text entered by the user.
+   */
   searchText: string;
+  /**
+   * Callback for updating the search text.
+   */
   onSearchTextChange: (text: string) => void;
+  /**
+   * Placeholder text for the search input.
+   */
   placeholder: string;
+  /**
+   * Text to display while options are loading.
+   */
   loadingText: string;
+  /**
+   * Text to display when no options are available.
+   */
   emptyText: string;
+  /**
+   * Whether async option fetching is in progress.
+   */
   isLoading: boolean;
+  /**
+   * Options to display in the dropdown.
+   */
   filteredOptions: AutocompleteOption[];
+  /**
+   * Callback fired when an option is selected.
+   */
   onSelect: (value: string) => void;
 }
 
+/**
+ * AutocompleteContent - Dropdown content for the autocomplete component
+ *
+ * Internal component that renders dropdown list with search input, loading state,
+ * empty state, and selectable options. Uses Radix Command for keyboard navigation
+ * and highlights matching portion of option labels based on search text.
+ *
+ * @exportAs sub
+ */
 export function AutocompleteContent({
   searchText,
   onSearchTextChange,

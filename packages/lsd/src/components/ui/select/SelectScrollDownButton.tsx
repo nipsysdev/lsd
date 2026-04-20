@@ -3,7 +3,18 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * SelectScrollDownButton - Button for scrolling down in the dropdown.
+ *
+ * Appears when the dropdown content overflows the viewport. Provides
+ * visual affordance for scrolling down through options.
+ *
+ * @exportAs sub
+ */
 export function SelectScrollDownButton({
+  /**
+   * Additional CSS classes to apply to the scroll button.
+   */
   className,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {

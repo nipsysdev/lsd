@@ -3,6 +3,11 @@
 import { Separator, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md' as const;
+
+/**
+ * @docSection variant
+ */
 export const CODE = `import { Separator, Typography } from '@nipsys/lsd';
 
 export function Example() {

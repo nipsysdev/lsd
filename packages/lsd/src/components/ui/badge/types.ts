@@ -37,6 +37,17 @@ export const badgeVariants = cva(
 );
 
 export type BadgeVariants = VariantProps<typeof badgeVariants> & {
+  /**
+   * Visual style of the badge.
+   *
+   * Controls the color and appearance to convey different meanings.
+   */
   variant?: BadgeVariant;
+
+  /**
+   * Size of the badge.
+   *
+   * Controls the overall dimensions and text size of the badge.
+   */
   size?: SizeVariant;
 };

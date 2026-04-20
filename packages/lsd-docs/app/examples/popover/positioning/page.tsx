@@ -47,6 +47,8 @@ export function Example() {
   );
 }`;
 
+export const SIZE = 'md';
+
 export function PositioningPopoverExample() {
   useSendThemeToIframes();
 

@@ -4,6 +4,11 @@ import { Slider, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection usage
+ */
 export const CODE = `import * as React from 'react';
 import { useState } from 'react';
 import { Slider, Typography } from '@nipsys/lsd';

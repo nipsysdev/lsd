@@ -33,6 +33,11 @@ import {
 import Link from 'next/link';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'lg';
+
+/**
+ * @docSection usage
+ */
 export const CODE = `import {
   Sidebar,
   SidebarContent,

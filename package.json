@@ -1,6 +1,6 @@
 {
   "name": "@nipsys/lsd-monorepo",
-  "version": "0.2.5",
+  "version": "1.0.0",
   "private": true,
   "description": "Monorepo for the @nipsys/lsd component library and documentation",
   "license": "MIT",
@@ -14,16 +14,18 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "build": "pnpm --filter @nipsys/lsd build",
+    "build": "pnpm --filter @nipsys/lsd build && pnpm --filter @nipsys/lsd-docs build",
     "lint": "biome check .",
     "lint:fix": "biome check . --fix",
     "format": "biome format --write .",
-    "test": "pnpm --filter @nipsys/lsd test",
-    "test:watch": "pnpm --filter @nipsys/lsd test:watch",
-    "test:coverage": "pnpm --filter @nipsys/lsd test:coverage",
+    "lsd:build": "pnpm --filter @nipsys/lsd build",
+    "lsd:test": "pnpm --filter @nipsys/lsd test",
+    "lsd:test:watch": "pnpm --filter @nipsys/lsd test:watch",
+    "lsd:test:coverage": "pnpm --filter @nipsys/lsd test:coverage",
     "docs:dev": "pnpm --filter @nipsys/lsd-docs dev",
     "docs:build": "pnpm --filter @nipsys/lsd-docs build",
-    "docs:preview": "pnpm --filter @nipsys/lsd-docs preview"
+    "docs:preview": "pnpm --filter @nipsys/lsd-docs preview",
+    "docs:generate": "pnpm --filter @nipsys/lsd-docs generate"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.14",

@@ -4,6 +4,11 @@ import { Textarea, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import { useState } from 'react';
 import { Textarea, Typography } from '@nipsys/lsd';
 

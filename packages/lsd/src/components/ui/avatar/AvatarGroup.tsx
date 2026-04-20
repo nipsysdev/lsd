@@ -2,6 +2,12 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * AvatarGroup - Displays group of stacked avatars.
+ *
+ * Groups multiple avatars with overlapping layout.
+ * Commonly used for showing team member lists.
+ */
 function AvatarGroup({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div

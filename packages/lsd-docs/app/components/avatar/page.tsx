@@ -10,73 +10,64 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as AvatarBasicCODE } from '@/examples/avatar/basic/page';
-import { CODE as AvatarSizesCODE } from '@/examples/avatar/sizes/page';
+import { CODE as AvatarBasicCODE, SIZE as AvatarBasicSIZE } from '@/examples/avatar/basic/page';
+import { CODE as AvatarSizesCODE, SIZE as AvatarSizesSIZE } from '@/examples/avatar/sizes/page';
 
 export default function AvatarPage() {
-  const avatarBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const avatarSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const AvatarBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const AvatarSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes(avatarBasicIframeRef, avatarSizesIframeRef);
+  useSendThemeToIframes(AvatarBasicIframeRef, AvatarSizesIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
         title="Avatar"
-        description="User profile image component with fallback support and group display capabilities"
+        description="Displays user images or initials with multiple size options."
       />
 
       <PageContent>
         <PageSection title="About Avatar">
           <Typography variant="body1" className="block">
-            Avatars are circular profile images that represent users or entities. They support image
-            display with automatic fallback to text or icons when images fail to load, making them
-            perfect for user profiles, comments, and team member displays.
+            Avatar represents user identity through images with fallback to initials or icons. It
+            supports multiple sizes (default, sm, lg) and integrates with avatar badges for
+            additional status indicators like online state or counts.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import Avatar components from LSD:</Typography>
+          <Typography variant="body1">Import the Avatar component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  AvatarBadge,
-  AvatarGroup,
-  AvatarGroupCount,
-} from '@nipsys/lsd';
+                code={`import { Avatar } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <Avatar>
-      <AvatarImage src="/avatar.jpg" alt="User" />
-      <AvatarFallback>JD</AvatarFallback>
-    </Avatar>
-  );
+  return <Avatar />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Usage">
-          <Typography variant="body1">Simple avatar with image and fallback support.</Typography>
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Component variants for different visual styles and use cases.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Avatar</CardTitle>
-              <CardDescription>Avatar with image and fallback text</CardDescription>
+              <CardTitle>Basic</CardTitle>
+              <CardDescription>Basic example</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={avatarBasicIframeRef}
-                size="md"
+                ref={AvatarBasicIframeRef}
+                size={AvatarBasicSIZE}
                 src="/examples/avatar/basic"
-                title="Avatar Basic Example"
+                title="Basic Example"
               />
               <CodeExample code={AvatarBasicCODE} />
             </CardContent>
@@ -85,20 +76,20 @@ export default function MyComponent() {
 
         <PageSection title="Sizes">
           <Typography variant="body1">
-            Avatars come in three sizes to fit different contexts and visual hierarchies.
+            Component sizes for different contexts and visual hierarchy.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>All Sizes</CardTitle>
-              <CardDescription>Small, default, and large avatar sizes</CardDescription>
+              <CardTitle>Sizes</CardTitle>
+              <CardDescription>Shows all available size options</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={avatarSizesIframeRef}
-                size="md"
+                ref={AvatarSizesIframeRef}
+                size={AvatarSizesSIZE}
                 src="/examples/avatar/sizes"
-                title="Avatar Sizes Example"
+                title="Sizes Example"
               />
               <CodeExample code={AvatarSizesCODE} />
             </CardContent>
@@ -106,126 +97,37 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for Avatar components.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>Avatar</CardTitle>
-                <CardDescription>Main avatar container component</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>Avatar wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong>{' '}
-                  <code>React.ComponentProps&lt;typeof AvatarPrimitive.Root&gt;</code>
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>size:</strong> AvatarSize
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> 'default' | 'sm' | 'lg'
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> 'default'
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Controls the size of the avatar
-                </Typography>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/avatar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI Avatar documentation →
+                </a>
               </CardContent>
             </Card>
-
             <Card>
               <CardHeader>
-                <CardTitle>AvatarImage</CardTitle>
-                <CardDescription>Image component for avatar</CardDescription>
+                <CardTitle>shadcn/ui Documentation</CardTitle>
+                <CardDescription>Additional styling and customization options</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong>{' '}
-                  <code>React.ComponentProps&lt;typeof AvatarPrimitive.Image&gt;</code>
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>src:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>alt:</strong> string
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Standard HTML img attributes supported
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>AvatarFallback</CardTitle>
-                <CardDescription>Fallback content when image fails to load</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong>{' '}
-                  <code>React.ComponentProps&lt;typeof AvatarPrimitive.Fallback&gt;</code>
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>children:</strong> React.ReactNode
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Content to display when image is unavailable
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>AvatarBadge</CardTitle>
-                <CardDescription>Status badge overlay for avatar</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> <code>React.ComponentProps&lt;\'span\'&gt;</code>
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>children:</strong> React.ReactNode
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Badge content positioned at bottom-right of avatar
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>AvatarGroup</CardTitle>
-                <CardDescription>Container for multiple avatars</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> <code>React.ComponentProps&lt;\'div\'&gt;</code>
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>children:</strong> React.ReactNode
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Stacks avatars horizontally with overlap
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>AvatarGroupCount</CardTitle>
-                <CardDescription>Count indicator for avatar groups</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> <code>React.ComponentProps&lt;\'div\'&gt;</code>
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>children:</strong> React.ReactNode
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Shows count of additional items in group
-                </Typography>
+                <a
+                  href="https://ui.shadcn.com/docs/components/avatar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View shadcn/ui Avatar documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -233,10 +135,21 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Avatar component follows accessibility best practices for screen readers and
-            keyboard navigation.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Not keyboard interactive (non-interactive image)
+              </Typography>
+            </CardContent>
+          </Card>
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -244,52 +157,28 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use descriptive <code>alt</code> text on AvatarImage for context
+                • Avatar images should have alt text describing the user
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • AvatarFallback provides accessible alternative content
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • AvatarBadge uses semantic HTML for status indicators
-              </Typography>
-              <Typography variant="body2" className="block">
-                • AvatarGroup maintains proper focus management for keyboard users
+                • Use AvatarFallback with initials for screen readers when no image
               </Typography>
             </CardContent>
           </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Interactive avatars are keyboard accessible</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to interactive avatars
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Enter or Space</strong> - Activate interactive avatar (when applicable)
-              </Typography>
-            </CardContent>
-          </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Interactive avatars have visible focus states that follow the LSD design system's
-                focus indicators, ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Not focusable by design as it's purely presentational
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • If avatar is interactive (e.g., link), wrap in interactive element
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
           previous={{
             title: 'Accordion',

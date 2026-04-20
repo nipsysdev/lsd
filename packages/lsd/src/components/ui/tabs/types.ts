@@ -63,13 +63,44 @@ export type TabsListVariants = VariantProps<typeof tabsListVariants>;
 export type TabsTriggerVariants = VariantProps<typeof tabsTriggerVariants>;
 
 export interface TabsProps extends React.ComponentProps<typeof TabsPrimitive.Root>, TabsVariants {
+  /**
+   * Adds border styling to tab content panels.
+   *
+   * When true, content panels display with border styling.
+   */
   bordered?: boolean;
+  /**
+   * Size of tabs and their contents.
+   *
+   * Controls the spacing and text size for tabs and content panels.
+   */
+  size?: 'sm' | 'md' | 'lg';
+  /**
+   * Whether tabs and content span full width.
+   *
+   * When true, tabs and content stretch to fill available width.
+   */
+  fullWidth?: boolean;
 }
 
 export interface TabsListProps
   extends React.ComponentProps<typeof TabsPrimitive.List>,
-    Omit<TabsListVariants, 'size'> {}
+    Omit<TabsListVariants, 'size'> {
+  /**
+   * Whether list spans full width.
+   *
+   * Overrides the fullWidth prop from the Tabs context.
+   */
+  fullWidth?: boolean;
+}
 
 export interface TabsTriggerProps
   extends React.ComponentProps<typeof TabsPrimitive.Trigger>,
-    Omit<TabsTriggerVariants, 'size'> {}
+    Omit<TabsTriggerVariants, 'size'> {
+  /**
+   * Whether trigger spans full width.
+   *
+   * Overrides the fullWidth prop from the Tabs context.
+   */
+  fullWidth?: boolean;
+}

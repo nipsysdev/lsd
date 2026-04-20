@@ -2,6 +2,12 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * TableHead - Contains a column or row header
+ *
+ * Defines column headers with bold text for readability.
+ * Adjusts padding when containing checkbox elements for alignment.
+ */
 const TableHead = React.forwardRef<HTMLTableCellElement, React.ComponentProps<'th'>>(
   ({ className, ...props }, ref) => {
     return (

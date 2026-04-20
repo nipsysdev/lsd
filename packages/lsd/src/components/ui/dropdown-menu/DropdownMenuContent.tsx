@@ -4,12 +4,16 @@ import { cn } from '@/lib/utils';
 
 export interface DropdownMenuContentProps
   extends React.ComponentProps<typeof DropdownMenuPrimitive.Content> {
+  /**
+   * Distance in pixels from the trigger element to the menu content.
+   */
   sideOffset?: number;
 }
 
 /**
- * DropdownMenuContent - The container for dropdown menu items.
- * Handles positioning, animations, and styling of the dropdown panel.
+ * DropdownMenuContent - Container for dropdown menu items with positioning and animations.
+ *
+ * @exportAs sub
  */
 export function DropdownMenuContent({
   className,

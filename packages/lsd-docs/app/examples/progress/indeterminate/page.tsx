@@ -3,6 +3,9 @@
 import { Progress, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+/**
+ * @docSection state
+ */
 export const CODE = `import { Progress, Typography } from '@nipsys/lsd';
 
 export function Example() {
@@ -17,6 +20,8 @@ export function Example() {
     </div>
   );
 }`;
+
+export const SIZE = 'sm';
 
 export function ProgressIndeterminateExample() {
   useSendThemeToIframes();

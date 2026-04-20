@@ -3,6 +3,12 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * AvatarImage - Displays the avatar image.
+ *
+ * Renders the image portion of an avatar.
+ * Only displays when the image has successfully loaded.
+ */
 function AvatarImage({ className, ...props }: React.ComponentProps<typeof AvatarPrimitive.Image>) {
   return (
     <AvatarPrimitive.Image

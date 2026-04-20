@@ -2,11 +2,15 @@ import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-export type NavigationMenuLinkProps = React.ComponentProps<typeof NavigationMenuPrimitive.Link>;
+export interface NavigationMenuLinkProps
+  extends React.ComponentProps<typeof NavigationMenuPrimitive.Link> {}
 
 /**
  * NavigationMenuLink - A hyperlink within the navigation menu.
+ *
  * Supports styling for active states and icon integration.
+ *
+ * @exportAs sub
  */
 export function NavigationMenuLink({ className, ...props }: NavigationMenuLinkProps) {
   return (

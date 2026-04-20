@@ -2,6 +2,12 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * AvatarBadge - Displays status or indicator badge.
+ *
+ * Small indicator positioned at bottom-right of avatar.
+ * Shows status indicators like online state or counts.
+ */
 function AvatarBadge({ className, ...props }: React.ComponentProps<'span'>) {
   return (
     <span

@@ -4,6 +4,11 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { menubarSeparatorVariants } from './types';
 
+/**
+ * Visual divider between sections.
+ *
+ * @exportAs sub
+ */
 export interface MenubarSeparatorProps
   extends React.ComponentProps<typeof MenubarPrimitive.Separator> {}
 

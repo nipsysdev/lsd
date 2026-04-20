@@ -3,6 +3,13 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * CommandSeparator - Visual divider between command groups or sections.
+ *
+ * Displays a horizontal line to visually separate command groups.
+ *
+ * @exportAs sub
+ */
 export function CommandSeparator({
   className,
   ...props

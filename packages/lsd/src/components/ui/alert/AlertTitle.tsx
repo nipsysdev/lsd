@@ -3,7 +3,15 @@
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-type AlertTitleProps = React.ComponentProps<'div'>;
+/**
+ * AlertTitle - Optional heading for alert content.
+ *
+ * Displays the alert title with medium font weight and single-line truncation.
+ *
+ * @exportAs sub
+ */
+
+export interface AlertTitleProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 function AlertTitle({ className, ...props }: AlertTitleProps) {
   return (
@@ -29,4 +37,3 @@ function AlertTitle({ className, ...props }: AlertTitleProps) {
 }
 
 export { AlertTitle };
-export type { AlertTitleProps };

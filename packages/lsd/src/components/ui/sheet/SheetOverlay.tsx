@@ -3,6 +3,11 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * Backdrop overlay that appears behind the sheet with fade animation.
+ *
+ * @exportAs sub
+ */
 export function SheetOverlay({
   className,
   ...props

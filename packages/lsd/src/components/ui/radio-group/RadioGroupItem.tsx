@@ -3,8 +3,16 @@ import { RadioGroup as RadioGroupPrimitive } from 'radix-ui';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-export type RadioGroupItemProps = React.ComponentProps<typeof RadioGroupPrimitive.Item>;
+export interface RadioGroupItemProps
+  extends React.ComponentProps<typeof RadioGroupPrimitive.Item> {}
 
+/**
+ * RadioGroupItem - Individual radio button that can be checked within a RadioGroup.
+ *
+ * Contains a visual indicator that appears when checked. Renders a hidden input element when used in forms.
+ *
+ * @exportAs sub
+ */
 function RadioGroupItem({ className, ...props }: RadioGroupItemProps) {
   return (
     <RadioGroupPrimitive.Item

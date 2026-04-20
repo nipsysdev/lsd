@@ -3,8 +3,22 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * SelectItem - Individual selectable option within the dropdown.
+ *
+ * Displays an option that users can select. Shows a checkmark indicator
+ * when selected and supports hover and focus states.
+ *
+ * @exportAs sub
+ */
 export function SelectItem({
+  /**
+   * Additional CSS classes to apply to the item.
+   */
   className,
+  /**
+   * The content to display for this option.
+   */
   children,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Item>) {

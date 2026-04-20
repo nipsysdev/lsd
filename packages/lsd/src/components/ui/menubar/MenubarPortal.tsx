@@ -1,6 +1,11 @@
 import { Menubar as MenubarPrimitive } from 'radix-ui';
 import type * as React from 'react';
 
+/**
+ * Renders content in a portal at document body level.
+ *
+ * @exportAs sub
+ */
 function MenubarPortal({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Portal>) {
   return <MenubarPrimitive.Portal data-slot="menubar-portal" {...props} />;
 }

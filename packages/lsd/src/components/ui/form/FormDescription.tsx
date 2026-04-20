@@ -4,8 +4,15 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { useFormField } from './useFormField';
 
-type FormDescriptionProps = React.ComponentProps<'p'>;
+export interface FormDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
+/**
+ * FormDescription - Additional helper text for the field.
+ *
+ * Displays contextual information or instructions below the form input.
+ *
+ * @exportAs sub
+ */
 function FormDescription({ className, ...props }: FormDescriptionProps) {
   const { formDescriptionId } = useFormField();
 

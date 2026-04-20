@@ -10,6 +10,13 @@ import { cn } from '@/lib/utils';
 
 import { Command } from './Command';
 
+/**
+ * CommandDialog - Dialog wrapper with built-in Command component.
+ *
+ * Pre-configured dialog that wraps the Command component with proper accessibility.
+ *
+ * @exportAs sub
+ */
 export function CommandDialog({
   title = 'Command Palette',
   description = 'Search for a command to run...',

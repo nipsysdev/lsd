@@ -4,6 +4,30 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 import type { ProgressProps } from './types';
 
+/**
+ * Progress - Displays completion progress of a task
+ *
+ * Visual progress indicator showing task completion as a filled bar.
+ * Supports determinate (percentage) and indeterminate (loading) states with color variants.
+ *
+ * @docSectionPageDescription
+ * Displays completion progress of a task with visual indicator.
+ *
+ * @docSectionAbout
+ * A visual progress indicator showing task completion as a filled bar. Supports determinate states with percentage values and indeterminate states for unknown duration. Includes optional labels and multiple color variants for different states.
+ *
+ * @docSectionAccessibilityKeyboard
+ * Progress is a non-interactive element and does not support keyboard navigation.
+ *
+ * @docSectionAccessibilityAria
+ * role="progressbar" is automatically applied to indicate progress
+ * aria-valuenow is automatically set to current value when determinate
+ * aria-valuemin is automatically set to 0
+ * aria-valuemax is automatically set to 100
+ *
+ * @docSectionAccessibilityFocus
+ * Progress indicators are not focusable as they are non-interactive display elements.
+ */
 const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root>, ProgressProps>(
   (
     {

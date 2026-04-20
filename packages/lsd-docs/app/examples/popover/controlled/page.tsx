@@ -27,6 +27,8 @@ export function Example() {
   );
 }`;
 
+export const SIZE = 'sm';
+
 export function ControlledPopoverExample() {
   useSendThemeToIframes();
   const [open, setOpen] = useState(false);

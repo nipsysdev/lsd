@@ -4,6 +4,11 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { menubarRadioItemVariants } from './types';
 
+/**
+ * Radio option with circle indicator.
+ *
+ * @exportAs sub
+ */
 export interface MenubarRadioItemProps
   extends React.ComponentProps<typeof MenubarPrimitive.RadioItem> {}
 

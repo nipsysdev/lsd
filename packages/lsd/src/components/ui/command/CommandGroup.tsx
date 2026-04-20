@@ -3,6 +3,13 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * CommandGroup - Groups related command items with an optional heading.
+ *
+ * Organizes related command items together with a heading label.
+ *
+ * @exportAs sub
+ */
 export function CommandGroup({
   className,
   ...props

@@ -15,6 +15,13 @@ import type {
   SidebarTriggerProps,
 } from './types';
 
+/**
+ * SidebarContent - Scrollable main content area of the sidebar.
+ *
+ * Container for the main scrollable content within the sidebar layout.
+ *
+ * @exportAs sub
+ */
 export function SidebarContent({ className, ...props }: SidebarContentProps) {
   return (
     <div
@@ -29,6 +36,13 @@ export function SidebarContent({ className, ...props }: SidebarContentProps) {
   );
 }
 
+/**
+ * SidebarHeader - Header section of the sidebar.
+ *
+ * Container for sidebar branding, logo, and top-level navigation.
+ *
+ * @exportAs sub
+ */
 export function SidebarHeader({ className, ...props }: SidebarHeaderProps) {
   return (
     <div
@@ -43,6 +57,13 @@ export function SidebarHeader({ className, ...props }: SidebarHeaderProps) {
   );
 }
 
+/**
+ * SidebarFooter - Footer section of the sidebar.
+ *
+ * Container for bottom navigation items and user actions.
+ *
+ * @exportAs sub
+ */
 export function SidebarFooter({ className, ...props }: SidebarFooterProps) {
   return (
     <div
@@ -57,6 +78,13 @@ export function SidebarFooter({ className, ...props }: SidebarFooterProps) {
   );
 }
 
+/**
+ * SidebarSeparator - Visual separator within the sidebar.
+ *
+ * Separator component that divides sections in the sidebar.
+ *
+ * @exportAs sub
+ */
 export function SidebarSeparator({ className, ...props }: SidebarSeparatorProps) {
   return (
     <Separator
@@ -68,6 +96,13 @@ export function SidebarSeparator({ className, ...props }: SidebarSeparatorProps)
   );
 }
 
+/**
+ * SidebarInput - Input field within the sidebar.
+ *
+ * Search or filter input for sidebar content.
+ *
+ * @exportAs sub
+ */
 export function SidebarInput({ className, ...props }: SidebarInputProps) {
   return (
     <Input
@@ -79,6 +114,13 @@ export function SidebarInput({ className, ...props }: SidebarInputProps) {
   );
 }
 
+/**
+ * SidebarInset - Main content area that adjusts for sidebar.
+ *
+ * Container for page content that adjusts layout based on sidebar state.
+ *
+ * @exportAs sub
+ */
 export function SidebarInset({ className, ...props }: SidebarInsetProps) {
   return (
     <main
@@ -93,6 +135,13 @@ export function SidebarInset({ className, ...props }: SidebarInsetProps) {
   );
 }
 
+/**
+ * SidebarTrigger - Button to toggle sidebar visibility.
+ *
+ * Triggers sidebar open/close action with icon toggle.
+ *
+ * @exportAs sub
+ */
 export function SidebarTrigger({ className, onClick, ...props }: SidebarTriggerProps) {
   const { toggleSidebar } = useSidebar();
 
@@ -115,6 +164,13 @@ export function SidebarTrigger({ className, onClick, ...props }: SidebarTriggerP
   );
 }
 
+/**
+ * SidebarRail - Toggle button rail for collapsed sidebar.
+ *
+ * Clickable rail along sidebar edge that toggles sidebar visibility when collapsed.
+ *
+ * @exportAs sub
+ */
 export function SidebarRail({ className, ...props }: SidebarRailProps) {
   const { toggleSidebar } = useSidebar();
 

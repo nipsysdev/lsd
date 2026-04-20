@@ -5,12 +5,20 @@ import { cn } from '@/lib/utils';
 import { SheetOverlay } from './SheetOverlay';
 import { SheetPortal } from './SheetPortal';
 
+/**
+ * Main content container with slide-in animation from specified side.
+ *
+ * @exportAs sub
+ */
 export function SheetContent({
   className,
   children,
   side = 'right',
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
+  /**
+   * The side from which the sheet slides in.
+   */
   side?: 'top' | 'right' | 'bottom' | 'left';
 }) {
   return (

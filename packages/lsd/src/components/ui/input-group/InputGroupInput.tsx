@@ -1,3 +1,10 @@
+/**
+ * InputGroupInput - Input field styled for use within an input group.
+ *
+ * Provides a ghost-style input with transparent background that fills the available space in the group.
+ *
+ * @exportAs sub
+ */
 import * as React from 'react';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';

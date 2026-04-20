@@ -3,6 +3,20 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * ScrollBar - Orientation-aware scrollbar component
+ *
+ * Displays draggable scrollbar thumb for navigation along vertical or horizontal axis.
+ * Includes visual feedback on hover and interaction.
+ *
+ * @docSectionPageDescription
+ * Orientation-aware scrollbar with drag support
+ *
+ * @docSectionAbout
+ * A sub-component of ScrollArea that displays a draggable scrollbar thumb. Supports both vertical (default) and horizontal orientations. The scrollbar appears on top of content and provides visual feedback during interaction.
+ *
+ * @exportAs sub
+ */
 function ScrollBar({
   className,
   orientation = 'vertical',

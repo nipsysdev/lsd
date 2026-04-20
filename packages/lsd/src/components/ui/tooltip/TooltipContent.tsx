@@ -4,6 +4,14 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { TooltipPortal } from './TooltipPortal';
 
+/**
+ * TooltipContent - Container for the tooltip's visible content.
+ *
+ * Renders the tooltip popup with animations and automatic positioning.
+ * Includes an arrow indicator and supports side offset adjustment.
+ *
+ * @exportAs sub
+ */
 function TooltipContent({
   className,
   sideOffset = 0,
@@ -11,6 +19,7 @@ function TooltipContent({
   container,
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Content> & {
+  /** Container element for the tooltip portal. */
   container?: HTMLElement | null;
 }) {
   return (

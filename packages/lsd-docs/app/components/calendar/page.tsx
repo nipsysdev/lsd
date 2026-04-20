@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -10,41 +11,48 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as BasicCode } from '@/examples/calendar/basic/page';
-import { CODE as FormControlledCode } from '@/examples/calendar/form-controlled/page';
-import { CODE as WithValidationCode } from '@/examples/calendar/with-validation/page';
+import {
+  CODE as CalendarBasicCODE,
+  SIZE as CalendarBasicSIZE,
+} from '@/examples/calendar/basic/page';
+import {
+  CODE as CalendarFormControlledCODE,
+  SIZE as CalendarFormControlledSIZE,
+} from '@/examples/calendar/form-controlled/page';
+import {
+  CODE as CalendarWithValidationCODE,
+  SIZE as CalendarWithValidationSIZE,
+} from '@/examples/calendar/with-validation/page';
 
 export default function CalendarPage() {
-  const calendarBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const calendarFormIframeRef = useRef<HTMLIFrameElement>(null);
-  const calendarValidationIframeRef = useRef<HTMLIFrameElement>(null);
+  const CalendarBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const CalendarFormControlledIframeRef = useRef<HTMLIFrameElement>(null);
+  const CalendarWithValidationIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes(calendarBasicIframeRef, calendarFormIframeRef, calendarValidationIframeRef);
+  useSendThemeToIframes(
+    CalendarBasicIframeRef,
+    CalendarFormControlledIframeRef,
+    CalendarWithValidationIframeRef
+  );
 
   return (
     <DocsLayout>
       <PageHeader
         title="Calendar"
-        description="A calendar component that displays and allows users to select dates, with support for single, multiple, and range selection modes."
+        description="Interactive calendar for selecting single dates, multiple dates, or date ranges."
       />
 
       <PageContent>
         <PageSection title="About Calendar">
           <Typography variant="body1" className="block">
-            The Calendar component is a comprehensive date picker built on top of react-day-picker,
-            providing a flexible and accessible interface for date selection. It features multiple
-            selection modes, month and year navigation, support for disabled dates and date range
-            validation, customizable styling with LSD design tokens, built-in accessibility
-            features, integration with forms and validation libraries, and responsive design with
-            mobile-friendly touch interactions.
+            A flexible calendar component built on react-day-picker that supports single, multiple,
+            and range selection modes. Includes navigation buttons, disabled date constraints,
+            localization support, and customizable styling through React DayPicker props.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">
-            The Calendar component requires react-day-picker as a peer dependency. Install it along
-            with @nipsys/lsd:
-          </Typography>
+          <Typography variant="body1">Import the Calendar component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
@@ -60,363 +68,167 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Variants">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Calendar supports multiple selection modes for different use cases.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Selection Modes</CardTitle>
-              <CardDescription>Single, multiple, and range selection</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={calendarBasicIframeRef}
-                size="md"
+                ref={CalendarBasicIframeRef}
+                size={CalendarBasicSIZE}
                 src="/examples/calendar/basic"
-                title="Basic Calendar"
+                title="Basic Example"
               />
-              <CodeExample code={BasicCode} />
+              <CodeExample code={CalendarBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Features">
           <Typography variant="body1">
-            Additional features like form control, validation, and date constraints.
+            Additional features and capabilities of the component.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Form Controlled</CardTitle>
-              <CardDescription>
-                Calendar component controlled by React state with form integration
-              </CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={calendarFormIframeRef}
-                size="md"
+                ref={CalendarFormControlledIframeRef}
+                size={CalendarFormControlledSIZE}
                 src="/examples/calendar/form-controlled"
-                title="Form Controlled"
+                title="Form Controlled Example"
               />
-              <CodeExample code={FormControlledCode} />
+              <CodeExample code={CalendarFormControlledCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>With Validation</CardTitle>
-              <CardDescription>
-                Calendar with disabled dates, date range constraints, and custom validation
-              </CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={calendarValidationIframeRef}
-                size="md"
+                ref={CalendarWithValidationIframeRef}
+                size={CalendarWithValidationSIZE}
                 src="/examples/calendar/with-validation"
-                title="With Validation"
+                title="With Validation Example"
               />
-              <CodeExample code={WithValidationCode} />
+              <CodeExample code={CalendarWithValidationCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Composition">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>{['Calendar', '└── CalendarDayButton']}</CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Calendar component.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>mode</CardTitle>
-                <CardDescription>The selection mode for the calendar</CardDescription>
+                <CardTitle>React DayPicker Documentation</CardTitle>
+                <CardDescription>
+                  Calendar is built on react-day-picker and extends all its props
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> single | multiple | range
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> single, multiple, range
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> single
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>selected</CardTitle>
-                <CardDescription>The currently selected date(s)</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> Date | Date[] | DateRange
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Controlled prop for selected date(s)
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>defaultMonth</CardTitle>
-                <CardDescription>The month to display initially</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> Date
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> today
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Sets the initial month shown in the calendar
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>disabled</CardTitle>
-                <CardDescription>Dates that should be disabled</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> Date[] | DateRange | Matcher
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Prevents selection of specified dates
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>fromMonth</CardTitle>
-                <CardDescription>Earliest selectable month</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> Date
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Prevents navigation before this month
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>toMonth</CardTitle>
-                <CardDescription>Latest selectable month</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> Date
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Prevents navigation after this month
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>showOutsideDays</CardTitle>
-                <CardDescription>Show days from previous/next months</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> true
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Displays days from adjacent months in the grid
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>captionLayout</CardTitle>
-                <CardDescription>Layout for the month/year caption</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> label | buttons
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> label, buttons
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> label
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Controls how month/year navigation is displayed
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>buttonVariant</CardTitle>
-                <CardDescription>Button variant for day cells</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> Button variant
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> ghost
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Applies LSD button variant to day cells
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>onSelect</CardTitle>
-                <CardDescription>Callback when a date is selected</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> (date) =&gt; void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Called when user selects a date
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>className</CardTitle>
-                <CardDescription>Additional CSS classes to apply</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Merges with existing calendar classes
-                </Typography>
+                <a
+                  href="https://daypicker.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View React DayPicker documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Additional Props</CardTitle>
-              <CardDescription>Extends react-day-picker DayPicker props</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Typography variant="body2" className="block">
-                The Calendar component extends all props from react-day-picker. See{' '}
-                <a
-                  href="https://daypicker.dev/"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  react-day-picker documentation
-                </a>{' '}
-                for complete reference.
-              </Typography>
-            </CardContent>
-          </Card>
         </PageSection>
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Calendar component follows WAI-ARIA accessibility best practices.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Full keyboard support for date selection</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Arrow keys:</strong> Navigate between days
+                • Arrow keys - Navigate between days
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Page Up / Page Down:</strong> Navigate months
+                • Page Up/Down - Navigate between months
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Home:</strong> Jump to first day of month
+                • Home/End - Navigate to first/last day of month
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>End:</strong> Jump to last day of month
+                • Enter or Space - Select a day
               </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Enter / Space:</strong> Select focused date
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Tab - Navigate into/out of calendar
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
-              <CardDescription>Proper ARIA roles and attributes for screen readers</CardDescription>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Screen reader friendly with proper ARIA roles (grid, row, gridcell)
+                • role="grid" on the calendar container
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Disabled states are properly announced to screen readers
+                • role="gridcell" and aria-label on each day button
               </Typography>
-              <Typography variant="body2" className="block">
-                • Semantic HTML structure for better accessibility
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-selected indicates selected dates
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-disabled indicates disabled dates
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-describedby links to supporting text
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Components have visible focus states that follow the LSD design system's focus
-                indicators, ensuring keyboard users can always see which element has focus. High
-                contrast colors using LSD design tokens ensure good visibility.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Arrow key navigation moves focus between grid cells. Tab focus moves into the
+                calendar. Enter or Space activates the focused day.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
-          previous={{ title: 'Button Group', href: '/components/button-group' }}
-          next={{ title: 'Checkbox', href: '/components/checkbox' }}
+          previous={{
+            title: 'Button-group',
+            href: '/components/button-group',
+          }}
+          next={{
+            title: 'Checkbox',
+            href: '/components/checkbox',
+          }}
         />
       </PageContent>
     </DocsLayout>

@@ -1,11 +1,12 @@
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
-export type DropdownMenuShortcutProps = React.ComponentProps<'span'>;
+export interface DropdownMenuShortcutProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
 /**
  * DropdownMenuShortcut - Displays keyboard shortcuts for menu items.
- * Aligned to the right of the menu item with subtle styling.
+ *
+ * @exportAs sub
  */
 export function DropdownMenuShortcut({ className, ...props }: DropdownMenuShortcutProps) {
   return (

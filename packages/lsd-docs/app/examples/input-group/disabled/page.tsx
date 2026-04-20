@@ -11,6 +11,11 @@ import {
 import { LockIcon, MagnifyingGlassIcon, UserIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection state
+ */
 export const CODE = `import {
   InputGroup,
   InputGroupAddon,

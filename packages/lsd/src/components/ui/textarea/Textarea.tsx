@@ -2,6 +2,28 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * Textarea - Multi-line text input for longer form content
+ *
+ * Styled textarea component with built-in focus states, error indicators,
+ * and disabled styling. Supports all standard HTML textarea attributes.
+ *
+ * @docSectionPageDescription
+ * Multi-line text input for collecting longer form content.
+ *
+ * @docSectionAbout
+ * A styled textarea component for multi-line text input. Includes built-in focus states, error indicators (via aria-invalid), and disabled styling. Supports all standard HTML textarea attributes for flexibility.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Tab - Navigate to/from the textarea
+ *
+ * @docSectionAccessibilityAria
+ * • aria-invalid indicates error state to assistive technologies
+ * • Use aria-label or aria-labelledby when no visible label exists
+ *
+ * @docSectionAccessibilityFocus
+ * Follows standard HTML textarea focus behavior. Focus indicators use the LSD design system's focus ring styling for visibility.
+ */
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,
   React.TextareaHTMLAttributes<HTMLTextAreaElement>

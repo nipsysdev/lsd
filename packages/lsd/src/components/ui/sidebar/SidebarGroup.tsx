@@ -7,6 +7,13 @@ import type {
   SidebarGroupProps,
 } from './types';
 
+/**
+ * SidebarGroup - Logical group of related menu items.
+ *
+ * Container that groups related menu items with optional label and action button.
+ *
+ * @exportAs sub
+ */
 export function SidebarGroup({ className, ...props }: SidebarGroupProps) {
   return (
     <div
@@ -21,6 +28,13 @@ export function SidebarGroup({ className, ...props }: SidebarGroupProps) {
   );
 }
 
+/**
+ * SidebarGroupLabel - Label for a sidebar group.
+ *
+ * Text label identifying the group, hidden when sidebar is collapsed to icon-only mode.
+ *
+ * @exportAs sub
+ */
 export function SidebarGroupLabel({
   className,
   asChild = false,
@@ -42,6 +56,13 @@ export function SidebarGroupLabel({
   );
 }
 
+/**
+ * SidebarGroupAction - Action button for a sidebar group.
+ *
+ * Button that performs group-related actions, hidden when sidebar is collapsed to icon-only mode.
+ *
+ * @exportAs sub
+ */
 export function SidebarGroupAction({
   className,
   asChild = false,
@@ -65,6 +86,13 @@ export function SidebarGroupAction({
   );
 }
 
+/**
+ * SidebarGroupContent - Content container for a sidebar group.
+ *
+ * Container that holds the menu items or other content within a group.
+ *
+ * @exportAs sub
+ */
 export function SidebarGroupContent({ className, ...props }: SidebarGroupContentProps) {
   return (
     <div

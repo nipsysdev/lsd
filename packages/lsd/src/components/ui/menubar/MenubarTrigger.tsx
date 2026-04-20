@@ -4,6 +4,11 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 import { menubarTriggerVariants } from './types';
 
+/**
+ * Button that opens the menu content.
+ *
+ * @exportAs sub
+ */
 export interface MenubarTriggerProps
   extends React.ComponentProps<typeof MenubarPrimitive.Trigger> {}
 

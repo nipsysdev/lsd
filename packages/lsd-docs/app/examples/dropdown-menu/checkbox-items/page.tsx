@@ -12,6 +12,11 @@ import {
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `\`\`\`tsx
 import { useState } from 'react';
 import { 

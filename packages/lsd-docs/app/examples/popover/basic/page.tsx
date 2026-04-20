@@ -20,6 +20,8 @@ export function Example() {
   );
 }`;
 
+export const SIZE = 'sm';
+
 export function BasicPopoverExample() {
   useSendThemeToIframes();
 

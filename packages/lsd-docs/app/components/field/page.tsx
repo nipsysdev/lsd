@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -10,407 +11,469 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as BASIC_CODE } from '@/examples/field/basic/page';
-import { CODE as ERROR_CODE } from '@/examples/field/error/page';
-import { CODE as HORIZONTAL_CODE } from '@/examples/field/horizontal/page';
-import { CODE as LEGEND_DESCRIPTION_CODE } from '@/examples/field/legend-description/page';
+import { CODE as FieldBasicCODE, SIZE as FieldBasicSIZE } from '@/examples/field/basic/page';
+import { CODE as FieldErrorCODE, SIZE as FieldErrorSIZE } from '@/examples/field/error/page';
+import {
+  CODE as FieldHorizontalCODE,
+  SIZE as FieldHorizontalSIZE,
+} from '@/examples/field/horizontal/page';
+import {
+  CODE as FieldLegendDescriptionCODE,
+  SIZE as FieldLegendDescriptionSIZE,
+} from '@/examples/field/legend-description/page';
 
 export default function FieldPage() {
-  const fieldBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const fieldHorizontalIframeRef = useRef<HTMLIFrameElement>(null);
-  const fieldLegendDescriptionIframeRef = useRef<HTMLIFrameElement>(null);
-  const fieldErrorIframeRef = useRef<HTMLIFrameElement>(null);
+  const FieldBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const FieldErrorIframeRef = useRef<HTMLIFrameElement>(null);
+  const FieldHorizontalIframeRef = useRef<HTMLIFrameElement>(null);
+  const FieldLegendDescriptionIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    fieldBasicIframeRef,
-    fieldHorizontalIframeRef,
-    fieldLegendDescriptionIframeRef,
-    fieldErrorIframeRef
+    FieldBasicIframeRef,
+    FieldErrorIframeRef,
+    FieldHorizontalIframeRef,
+    FieldLegendDescriptionIframeRef
   );
+
   return (
     <DocsLayout>
       <PageHeader
         title="Field"
-        description="A flexible composition system for building form field layouts with orientations and nested components"
+        description="Container for organizing form fields with labels and descriptions."
       />
 
       <PageContent>
         <PageSection title="About Field">
           <Typography variant="body1" className="block">
-            Field components provide a structured way to organise form elements with consistent
-            spacing and orientation. They include containers for grouping fields, semantic
-            fieldset/legend wrappers, and utilities for labels, descriptions, and separators.
+            A wrapper that provides consistent spacing and orientation for form field elements.
+            Supports vertical, horizontal, and responsive layouts for organizing labels, inputs, and
+            helper text.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import the Field components from LSD:</Typography>
+          <Typography variant="body1">Import the Field component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-   Field,
-   FieldGroup,
-   FieldSet,
-   FieldLegend,
-   FieldTitle,
-   FieldDescription,
-   FieldLabel,
-   FieldContent,
-   FieldError,
-   FieldSeparator,
- } from '@nipsys/lsd'
+                code={`import { Field } from '@nipsys/lsd'
 
 export default function MyComponent() {
-   return (
-     <FieldGroup>
-       <Field>
-         <FieldLabel htmlFor="field">Label</FieldLabel>
-         <Input id="field" />
-       </Field>
-     </FieldGroup>
-   );
- }`}
+  return <Field />
+}`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Usage">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Use Field components to create simple vertical form layouts.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Profile Form</CardTitle>
-              <CardDescription>Simple vertical form with name and email fields</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={fieldBasicIframeRef}
-                size="md"
+                ref={FieldBasicIframeRef}
+                size={FieldBasicSIZE}
                 src="/examples/field/basic"
-                title="Basic Field"
+                title="Basic Example"
               />
-              <CodeExample code={BASIC_CODE} />
+              <CodeExample code={FieldBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Horizontal Orientation">
+        <PageSection title="Variants">
           <Typography variant="body1">
-            Use the <code>orientation="horizontal"</code> prop to align fields with labels on the
-            right side of the control.
+            Component variants for different visual styles and use cases.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Email Notifications</CardTitle>
-              <CardDescription>Horizontal field layout with checkboxes</CardDescription>
+              <CardTitle>Horizontal</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={fieldHorizontalIframeRef}
-                size="md"
+                ref={FieldHorizontalIframeRef}
+                size={FieldHorizontalSIZE}
                 src="/examples/field/horizontal"
-                title="Horizontal Field"
+                title="Horizontal Example"
               />
-              <CodeExample code={HORIZONTAL_CODE} />
+              <CodeExample code={FieldHorizontalCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Legend and Description">
+        <PageSection title="Features">
           <Typography variant="body1">
-            Use <code>FieldSet</code>, <code>FieldLegend</code>, and <code>FieldDescription</code>{' '}
-            for semantically grouped form sections.
+            Additional features and capabilities of the component.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Payment Form</CardTitle>
-              <CardDescription>Grouped form sections with legends and descriptions</CardDescription>
+              <CardTitle>Error</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={fieldLegendDescriptionIframeRef}
-                size="lg"
-                src="/examples/field/legend-description"
-                title="Legend and Description"
-              />
-              <CodeExample code={LEGEND_DESCRIPTION_CODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Error Handling">
-          <Typography variant="body1">
-            Use <code>FieldError</code> to display validation errors with proper accessibility
-            support and deduplication.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Form With Validation</CardTitle>
-              <CardDescription>Error handling examples with FieldError component</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={fieldErrorIframeRef}
-                size="md"
+                ref={FieldErrorIframeRef}
+                size={FieldErrorSIZE}
                 src="/examples/field/error"
-                title="Field Error"
+                title="Error Example"
               />
-              <CodeExample code={ERROR_CODE} />
+              <CodeExample code={FieldErrorCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Legend Description</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={FieldLegendDescriptionIframeRef}
+                size={FieldLegendDescriptionSIZE}
+                src="/examples/field/legend-description"
+                title="Legend Description Example"
+              />
+              <CodeExample code={FieldLegendDescriptionCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Composition">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {[
+                  'Field',
+                  '├── FieldLabel',
+                  '├── FieldDescription',
+                  '├── FieldContent',
+                  '├── FieldError',
+                  '├── FieldSet',
+                  '│   └── FieldLegend',
+                  '├── FieldGroup',
+                  '├── FieldTitle',
+                  '└── FieldSeparator',
+                ]}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for Field components.</Typography>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              Field
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>orientation</CardTitle>
+                  <CardDescription>Layout orientation for the field elements.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>FieldOrientation</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> vertical, horizontal, responsive
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>Field</CardTitle>
-                <CardDescription>Main field container with orientation support</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>orientation:</strong> 'vertical' | 'horizontal' | 'responsive'
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Controls layout direction. Responsive defaults to vertical on mobile and
-                  horizontal on md breakpoint.
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldGroup
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>className</CardTitle>
+                  <CardDescription>Additional CSS class names.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldGroup</CardTitle>
-                <CardDescription>Container for vertical spacing</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Extends:</strong> HTMLDivElement
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Provides consistent vertical spacing between child fields using{' '}
-                  <code>--lsd-spacing-base</code>
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldSet
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>disabled</CardTitle>
+                  <CardDescription>Disables all form controls within the fieldset.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldSet</CardTitle>
-                <CardDescription>Semantic fieldset wrapper</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Extends:</strong> HTMLFieldSetElement
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Renders a fieldset element with no default border or padding, suitable for use
-                  with FieldLegend
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldLegend
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>className</CardTitle>
+                  <CardDescription>Additional CSS class names.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldLegend</CardTitle>
-                <CardDescription>Section heading for fieldsets</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Extends:</strong> HTMLLegendElement
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Renders at 1.5rem with medium font weight and bottom padding of{' '}
-                  <code>--lsd-spacing-base</code>
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldDescription
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>className</CardTitle>
+                  <CardDescription>Additional CSS class names.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldDescription</CardTitle>
-                <CardDescription>Helper text for fields</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Extends:</strong> HTMLParagraphElement
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Renders at 0.875rem with secondary text color and 1rem bottom margin
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldLabel
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>htmlFor</CardTitle>
+                  <CardDescription>
+                    ID of the form control this label is associated with.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldLabel</CardTitle>
-                <CardDescription>Label for form controls</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>htmlFor:</strong> string (optional)
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Renders at 0.875rem with medium font weight and block display. Accepts{' '}
-                  <code>htmlFor</code> to associate with input elements
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldContent
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>className</CardTitle>
+                  <CardDescription>Additional CSS class names.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldContent</CardTitle>
-                <CardDescription>Responsive wrapper for input content</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Extends:</strong> HTMLDivElement
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Provides a full-width container for input elements in horizontal layouts
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldSeparator
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>className</CardTitle>
+                  <CardDescription>Additional CSS class names.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldSeparator</CardTitle>
-                <CardDescription>Divider between sections</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Extends:</strong> HTMLHRElement
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Renders a horizontal rule with border color and 1rem top/bottom margin
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldError
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>children</CardTitle>
+                  <CardDescription>Custom error message content to display.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>React.ReactNode</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>errors</CardTitle>
+                  <CardDescription>
+                    Array of error messages or error objects to display.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>(string | ErrorItem)[]</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> string
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldTitle</CardTitle>
-                <CardDescription>Title for field sections</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Extends:</strong> HTMLDivElement
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Renders at 0.875rem with medium font weight, compact line height, and no semantic
-                  legend. Use as an alternative to FieldLegend for non-fieldset headings.
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>FieldError</CardTitle>
-                <CardDescription>Error message display</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>errors:</strong> Array&lt;string | ErrorItem&gt;
-                </Typography>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>children:</strong> React.ReactNode (optional)
-                </Typography>
-                <Typography variant="body2" className="block">
-                  Renders error messages from array or children, with deduplication and{' '}
-                  <code>role="alert"</code> for accessibility. Renders single message or bullet list
-                  for multiple errors.
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              FieldTitle
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>className</CardTitle>
+                  <CardDescription>Additional CSS class names.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            Field components follow accessibility best practices using semantic HTML elements.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Semantic Markup</CardTitle>
-              <CardDescription>Proper HTML elements for form accessibility</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>FieldSet</code> renders a native HTML fieldset element for grouping related
-                fields
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>FieldLegend</code> renders a native HTML legend element for fieldset labels
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>FieldLabel</code> renders a native HTML label element with support for{' '}
-                <code>htmlFor</code> attribute
-              </Typography>
-              <Typography variant="body2" className="block">
-                • Use <code>htmlFor</code> prop on FieldLabel to associate labels with inputs for
-                screen reader users
-              </Typography>
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Controls within fields are keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Field containers themselves do not have keyboard interaction. Focus management is
-                handled by the form controls (inputs, checkboxes, etc.) contained within them.
-                Ensure all form controls have proper focus states.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Tab - Navigate through form fields
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Shift + Tab - Navigate to previous form field
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
-              <CardDescription>Additional accessibility attributes supported</CardDescription>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>data-orientation</code> on Field indicates the layout direction
+                • role="group" is added to Field for grouping related controls
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>data-slot</code> attributes are added to all components for testing and
-                styling
+                • aria-label is set on FieldLabel when htmlFor is not provided
               </Typography>
-              <Typography variant="body2" className="block">
-                • Pass <code>aria-labelledby</code> and <code>aria-describedby</code> to form
-                controls for additional associations
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • role="alert" is used on FieldError for error announcements
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Field components follow standard HTML form semantics. Focus moves through form
+                controls in document order. FieldSet and FieldLegend keep related controls grouped
+                for keyboard navigation.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
+        <PageNavigation
+          previous={{
+            title: 'Label',
+            href: '/components/label',
+          }}
+          next={{
+            title: 'Form',
+            href: '/components/form',
+          }}
+        />
       </PageContent>
-
-      <PageNavigation
-        previous={{
-          title: 'Label',
-          href: '/components/label',
-        }}
-        next={{
-          title: 'Form',
-          href: '/components/form',
-        }}
-      />
     </DocsLayout>
   );
 }

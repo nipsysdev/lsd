@@ -3,6 +3,13 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * CommandItem - Selectable command item with selection state.
+ *
+ * A selectable item that can be focused and activated by keyboard or click.
+ *
+ * @exportAs sub
+ */
 export function CommandItem({
   className,
   onSelect,

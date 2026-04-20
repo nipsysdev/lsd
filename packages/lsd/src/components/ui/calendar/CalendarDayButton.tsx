@@ -3,6 +3,13 @@ import { type DayButton, getDefaultClassNames } from 'react-day-picker';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+/**
+ * CalendarDayButton - Button component for individual calendar days
+ *
+ * Renders buttons for each calendar day with support for selected states, range selection, and automatic focus management.
+ *
+ * @exportAs sub
+ */
 export interface CalendarDayButtonProps extends React.ComponentProps<typeof DayButton> {}
 
 function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayButtonProps) {

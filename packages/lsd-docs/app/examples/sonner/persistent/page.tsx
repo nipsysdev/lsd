@@ -1,18 +1,22 @@
+/**
+ * @docSection state
+ */
 'use client';
 
-import { Button, Typography } from '@nipsys/lsd';
+import { Button } from '@nipsys/lsd';
 import { Toaster, toast } from 'sonner';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Typography } from '@nipsys/lsd';
+export const SIZE = 'sm';
+
+export const CODE = `import { Button } from '@nipsys/lsd';
 import { Toaster, toast } from 'sonner';
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base)">
+    <>
       <Toaster />
 
-      <Typography variant="label1">Persistent Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
           variant="outlined"
@@ -28,7 +32,7 @@ export function Example() {
           Dismiss All Toasts
         </Button>
       </div>
-    </div>
+    </>
   );
 }`;
 
@@ -36,10 +40,9 @@ export function ToastPersistentExample() {
   useSendThemeToIframes();
 
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base)">
+    <>
       <Toaster />
 
-      <Typography variant="label1">Persistent Toasts</Typography>
       <div className="flex flex-wrap gap-(--lsd-spacing-base)">
         <Button
           variant="outlined"
@@ -55,7 +58,7 @@ export function ToastPersistentExample() {
           Dismiss All Toasts
         </Button>
       </div>
-    </div>
+    </>
   );
 }
 

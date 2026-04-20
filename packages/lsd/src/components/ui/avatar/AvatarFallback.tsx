@@ -3,6 +3,12 @@ import type * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * AvatarFallback - Displays fallback content.
+ *
+ * Shows initials or icon when image fails to load or during loading.
+ * Supports delayed rendering to prevent content flashing.
+ */
 function AvatarFallback({
   className,
   ...props
