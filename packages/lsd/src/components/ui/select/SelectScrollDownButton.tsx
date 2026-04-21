@@ -22,7 +22,17 @@ export function SelectScrollDownButton({
     <SelectPrimitive.ScrollDownButton
       data-slot="select-scroll-down-button"
       className={cn(
-        'lsd:flex lsd:cursor-default lsd:items-center lsd:justify-center lsd:py-(--lsd-spacing-smallest) lsd:text-lsd-icon-primary',
+        // Colors & Backgrounds
+        'lsd:text-lsd-icon-primary',
+        // Layout & Positioning
+        'lsd:flex',
+        // Alignment
+        'lsd:items-center',
+        'lsd:justify-center',
+        // Spacing
+        'lsd:py-(--lsd-spacing-smallest)',
+        // Interactive States
+        'lsd:cursor-default',
         className
       )}
       {...props}

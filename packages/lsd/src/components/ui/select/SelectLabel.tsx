@@ -22,7 +22,13 @@ export function SelectLabel({
     <SelectPrimitive.Label
       data-slot="select-label"
       className={cn(
-        'lsd:text-lsd-text-secondary lsd:px-(--lsd-spacing-smaller) lsd:py-(--lsd-spacing-smaller) lsd:text-xs',
+        // Typography Font
+        'lsd:text-xs',
+        // Colors & Backgrounds
+        'lsd:text-lsd-text-secondary',
+        // Spacing
+        'lsd:px-(--lsd-spacing-smaller)',
+        'lsd:py-(--lsd-spacing-smaller)',
         className
       )}
       {...props}

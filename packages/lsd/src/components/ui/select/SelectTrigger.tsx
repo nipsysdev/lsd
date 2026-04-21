@@ -37,7 +37,53 @@ export function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "lsd:cursor-pointer lsd:border-lsd-border lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:data-placeholder:text-lsd-text-secondary lsd:[&_svg:not([class*='text-'])]:text-lsd-icon-primary lsd:focus-visible:border-lsd-border aria-invalid:lsd:ring-lsd-destructive/20 dark:aria-invalid:lsd:ring-lsd-destructive/40 aria-invalid:lsd:border-lsd-destructive dark:lsd:bg-lsd-surface/30 dark:lsd:hover:bg-lsd-surface/50 lsd:flex lsd:w-fit lsd:items-center lsd:justify-between lsd:gap-(--lsd-spacing-smaller) lsd:border lsd:px-(--lsd-spacing-small) lsd:py-(--lsd-spacing-smaller) lsd:text-sm lsd:whitespace-nowrap lsd:transition-[color,border] lsd:outline-none lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50 lsd:data-[size=default]:h-9 lsd:data-[size=sm]:h-8 *:lsd:data-[slot=select-value]:line-clamp-1 *:lsd:data-[slot=select-value]:flex *:lsd:data-[slot=select-value]:items-center *:lsd:data-[slot=select-value]:gap-[var(--lsd-spacing-smaller)] lsd:[&_svg]:pointer-events-none lsd:[&_svg]:shrink-0 lsd:[&_svg:not([class*='size-'])]:size-(--lsd-spacing-base)",
+        // Colors & Backgrounds
+        'lsd:bg-lsd-surface',
+        'lsd:text-lsd-text-primary',
+        'dark:lsd:bg-lsd-surface/30',
+        'dark:lsd:hover:bg-lsd-surface/50',
+        // Colors & Backgrounds - Placeholder
+        'lsd:data-placeholder:text-lsd-text-secondary',
+        // Colors & Backgrounds - Error state
+        'aria-invalid:lsd:border-lsd-destructive',
+        'aria-invalid:lsd:ring-lsd-destructive/20',
+        'dark:aria-invalid:lsd:ring-lsd-destructive/40',
+        // Borders
+        'lsd:border',
+        'lsd:border-lsd-border',
+        'focus-visible:lsd:border-lsd-border',
+        // Layout & Positioning
+        'lsd:flex',
+        'lsd:w-fit',
+        'lsd:items-center',
+        'lsd:justify-between',
+        // Sizing
+        'lsd:text-sm',
+        'lsd:whitespace-nowrap',
+        // Sizing - Data attributes
+        'lsd:data-[size=default]:h-9',
+        'lsd:data-[size=sm]:h-8',
+        // Spacing
+        'lsd:px-(--lsd-spacing-small)',
+        'lsd:py-(--lsd-spacing-smaller)',
+        'lsd:gap-(--lsd-spacing-smaller)',
+        // Borders, Shapes & Effects
+        'lsd:outline-none',
+        'lsd:transition-[color,border]',
+        // Interactive States
+        'lsd:cursor-pointer',
+        'lsd:disabled:cursor-not-allowed',
+        'lsd:disabled:opacity-50',
+        // Pseudo-selectors & ARIA - SVG styling
+        "lsd:[&_svg:not([class*='text-'])]:text-lsd-icon-primary",
+        'lsd:[&_svg]:pointer-events-none',
+        'lsd:[&_svg]:shrink-0',
+        "lsd:[&_svg:not([class*='size-'])]:size-(--lsd-spacing-base)",
+        // Pseudo-selectors & ARIA - SelectValue styling
+        '*:lsd:data-[slot=select-value]:line-clamp-1',
+        '*:lsd:data-[slot=select-value]:flex',
+        '*:lsd:data-[slot=select-value]:items-center',
+        '*:lsd:data-[slot=select-value]:gap-[var(--lsd-spacing-smaller)]',
         className
       )}
       {...props}

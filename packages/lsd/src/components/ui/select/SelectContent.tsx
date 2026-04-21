@@ -42,10 +42,43 @@ export function SelectContent({
       <SelectPrimitive.Content
         data-slot="select-content"
         className={cn(
-          'lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:border-lsd-border lsd:data-[state=open]:animate-in lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:fade-out-0 lsd:data-[state=open]:fade-in-0 lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:zoom-in-95 lsd:data-[side=bottom]:slide-in-from-top-2 lsd:data-[side=left]:slide-in-from-right-2 lsd:data-[side=right]:slide-in-from-left-2 lsd:data-[side=top]:slide-in-from-bottom-2 lsd:relative lsd:z-50 lsd:max-h-(--radix-select-content-available-height) lsd:min-w-32 origin-(--radix-select-content-transform-origin) lsd:overflow-x-hidden lsd:overflow-y-auto lsd:border',
+          // Colors & Backgrounds
+          'lsd:bg-lsd-surface',
+          'lsd:text-lsd-text-primary',
+          // Borders
+          'lsd:border',
+          'lsd:border-lsd-border',
+          // Layout & Positioning
+          'lsd:relative',
+          'lsd:z-50',
+          // Sizing
+          'lsd:max-h-(--radix-select-content-available-height)',
+          'lsd:min-w-32',
           'w-(--radix-select-trigger-width)',
-          position === 'popper' &&
-            'lsd:data-[side=bottom]:translate-x-[-10px] lsd:data-[side=bottom]:translate-y-[-4px] lsd:data-[side=left]:-translate-x-1 lsd:data-[side=right]:translate-x-1 lsd:data-[side=top]:-translate-y-1',
+          // Spacing
+          'origin-(--radix-select-content-transform-origin)',
+          // Overflow
+          'lsd:overflow-x-hidden',
+          'lsd:overflow-y-auto',
+          // Animations - Open state
+          'lsd:data-[state=open]:animate-in',
+          'lsd:data-[state=open]:fade-in-0',
+          'lsd:data-[state=open]:zoom-in-95',
+          // Animations - Closed state
+          'lsd:data-[state=closed]:animate-out',
+          'lsd:data-[state=closed]:fade-out-0',
+          'lsd:data-[state=closed]:zoom-out-95',
+          // Animations - Slide based on side
+          'lsd:data-[side=bottom]:slide-in-from-top-2',
+          'lsd:data-[side=left]:slide-in-from-right-2',
+          'lsd:data-[side=right]:slide-in-from-left-2',
+          'lsd:data-[side=top]:slide-in-from-bottom-2',
+          // Positioning adjustments for popper
+          position === 'popper' && 'lsd:data-[side=bottom]:translate-x-[-10px]',
+          position === 'popper' && 'lsd:data-[side=bottom]:translate-y-[-4px]',
+          position === 'popper' && 'lsd:data-[side=left]:-translate-x-1',
+          position === 'popper' && 'lsd:data-[side=right]:translate-x-1',
+          position === 'popper' && 'lsd:data-[side=top]:-translate-y-1',
           className
         )}
         position={position}
@@ -55,9 +88,13 @@ export function SelectContent({
         <SelectScrollUpButton />
         <SelectPrimitive.Viewport
           className={cn(
+            // Spacing
             'lsd:p-(--lsd-spacing-smallest)',
-            position === 'popper' &&
-              'lsd:h-(--radix-select-trigger-height) lsd:w-full lsd:min-w-(--radix-select-trigger-width) lsd:scroll-my-(--lsd-spacing-smallest)'
+            // Sizing for popper position
+            position === 'popper' && 'lsd:h-(--radix-select-trigger-height)',
+            position === 'popper' && 'lsd:w-full',
+            position === 'popper' && 'lsd:min-w-(--radix-select-trigger-width)',
+            position === 'popper' && 'lsd:scroll-my-(--lsd-spacing-smallest)'
           )}
         >
           {children}

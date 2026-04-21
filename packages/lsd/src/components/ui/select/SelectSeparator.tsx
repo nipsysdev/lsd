@@ -22,7 +22,16 @@ export function SelectSeparator({
     <SelectPrimitive.Separator
       data-slot="select-separator"
       className={cn(
-        'lsd:bg-lsd-border lsd:pointer-events-none lsd:-mx-(--lsd-spacing-smallest) lsd:my-(--lsd-spacing-smallest) lsd:h-px',
+        // Colors & Backgrounds
+        'lsd:bg-lsd-border',
+        // Layout & Positioning
+        // Sizing
+        'lsd:h-px',
+        // Spacing
+        'lsd:-mx-(--lsd-spacing-smallest)',
+        'lsd:my-(--lsd-spacing-smallest)',
+        // Interactive States
+        'lsd:pointer-events-none',
         className
       )}
       {...props}
