@@ -15,10 +15,14 @@ export function DropdownMenuSeparator({ className, ...props }: DropdownMenuSepar
     <DropdownMenuPrimitive.Separator
       data-slot="dropdown-menu-separator"
       className={cn(
-        // Layout
-        'lsd:-mx-1 lsd:my-1 lsd:h-px',
-        // Border uses LSD border token
-        'lsd:bg-[var(--lsd-border)]',
+        // Colors & Backgrounds
+        'lsd:bg-lsd-border',
+        // Layout & Positioning
+        // Sizing
+        'lsd:h-px',
+        // Spacing
+        'lsd:-mx-1',
+        'lsd:my-1',
         className
       )}
       {...props}

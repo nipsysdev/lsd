@@ -50,7 +50,17 @@ function MenubarItem({
     >
       <span className="lsd:group-hover:underline lsd:group-focus:underline">{children}</span>
       {shortcut && (
-        <span className="lsd:text-lsd-text-secondary lsd:ml-auto lsd:text-xs lsd:tracking-widest">
+        <span
+          className={cn(
+            // Typography Font
+            'lsd:text-xs',
+            'lsd:tracking-widest',
+            // Colors & Backgrounds
+            'lsd:text-lsd-text-secondary',
+            // Spacing
+            'lsd:ml-auto'
+          )}
+        >
           {shortcut}
         </span>
       )}

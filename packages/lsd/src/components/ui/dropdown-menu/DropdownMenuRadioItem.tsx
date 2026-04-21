@@ -20,23 +20,55 @@ export function DropdownMenuRadioItem({
     <DropdownMenuPrimitive.RadioItem
       data-slot="dropdown-menu-radio-item"
       className={cn(
-        // Base layout
-        'lsd:relative lsd:flex lsd:cursor-default lsd:items-center',
-        // Spacing (left padding for radio)
-        'lsd:rounded-sm lsd:py-1.5 lsd:pr-2 lsd:pl-8',
-        // Text
-        'lsd:text-sm lsd:outline-none lsd:select-none',
-        // Focus state
-        'focus:lsd:bg-[var(--lsd-accent)] focus:lsd:text-[var(--lsd-accent-foreground)]',
-        // Disabled state
-        'data-[disabled]:lsd:pointer-events-none data-[disabled]:lsd:opacity-50',
-        // Icon styling
-        '[&_svg]:lsd:pointer-events-none [&_svg]:lsd:shrink-0 [&_svg:not([class*=size-])]:lsd:size-4',
+        // Layout & Positioning
+        'lsd:relative',
+        'lsd:flex',
+        // Alignment
+        'lsd:items-center',
+        // Sizing
+        'lsd:text-sm',
+        // Spacing
+        'lsd:py-1.5',
+        'lsd:pr-2',
+        'lsd:pl-8',
+        // Borders, Shapes & Effects
+        'lsd:rounded-sm',
+        'lsd:outline-none',
+        'lsd:select-none',
+        // Interactive States - Focus
+        'focus:lsd:bg-[var(--lsd-accent)]',
+        'focus:lsd:text-[var(--lsd-accent-foreground)]',
+        'lsd:hover:underline',
+        'lsd:focus:underline',
+        // Interactive States - Disabled
+        'data-[disabled]:lsd:pointer-events-none',
+        'data-[disabled]:lsd:opacity-50',
+        // Interactive States - Cursor
+        'lsd:cursor-pointer',
+        // Pseudo-selectors & ARIA - SVG styling
+        '[&_svg]:lsd:pointer-events-none',
+        '[&_svg]:lsd:shrink-0',
+        '[&_svg:not([class*=size-])]:lsd:size-4',
         className
       )}
       {...props}
     >
-      <span className="lsd:pointer-events-none lsd:absolute lsd:left-2 lsd:flex lsd:size-3.5 lsd:items-center lsd:justify-center">
+      <span
+        className={cn(
+          // Layout & Positioning
+          'lsd:absolute',
+          'lsd:flex',
+          // Sizing
+          'lsd:size-3.5',
+          // Spacing
+          'lsd:left-2',
+          // Alignment
+          'lsd:items-center',
+          'lsd:justify-center',
+          // Interactive States
+          'lsd:pointer-events-none'
+        )}
+      >
         <DropdownMenuPrimitive.ItemIndicator>
           <CircleIcon className="lsd:size-2.5 lsd:fill-current" weight="duotone" />
         </DropdownMenuPrimitive.ItemIndicator>

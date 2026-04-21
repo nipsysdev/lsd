@@ -21,11 +21,15 @@ export function DropdownMenuLabel({ className, inset, ...props }: DropdownMenuLa
       data-slot="dropdown-menu-label"
       data-inset={inset}
       className={cn(
+        // Typography Font
+        'lsd:font-medium',
+        'lsd:text-sm',
+        // Colors & Backgrounds
+        'lsd:text-lsd-text-primary',
         // Spacing
-        'lsd:px-2 lsd:py-1.5',
-        // Text styling
-        'lsd:text-sm lsd:font-medium lsd:text-lsd-text-primary',
-        // Inset variant
+        'lsd:px-2',
+        'lsd:py-1.5',
+        // Pseudo-selectors & ARIA - Inset variant
         'data-[inset]:lsd:pl-8',
         className
       )}
