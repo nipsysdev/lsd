@@ -25,9 +25,9 @@ export function CommandGroup({
         // Overflow
         'lsd:overflow-hidden',
         // Spacing
-        'lsd:p-(--lsd-spacing-smallest)',
+        'lsd:px-(--lsd-spacing-smallest) lsd:py-(--lsd-spacing-base)',
         'lsd:**:[[cmdk-group-heading]]:px-(--lsd-spacing-smaller)',
-        'lsd:**:[[cmdk-group-heading]]:py-(--lsd-spacing-smaller)',
+        'lsd:**:[[cmdk-group-heading]]:py-(--lsd-spacing-small)',
         // Pseudo-selectors & ARIA - Typography
         'lsd:**:[[cmdk-group-heading]]:text-xs',
         'lsd:**:[[cmdk-group-heading]]:font-medium',

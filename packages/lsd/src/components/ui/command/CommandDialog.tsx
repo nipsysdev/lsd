@@ -41,7 +41,7 @@ export function CommandDialog({
           // Overflow
           'lsd:overflow-hidden',
           // Spacing
-          'lsd:p-0',
+          'lsd:p-(--lsd-spacing-small)',
           className
         )}
         showCloseButton={showCloseButton}
