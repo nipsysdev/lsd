@@ -16,13 +16,47 @@ export function NavigationMenuViewport({ className, ...props }: NavigationMenuVi
   return (
     <div
       className={cn(
-        'lsd:absolute lsd:top-full lsd:left-0 lsd:isolate lsd:z-50 lsd:flex lsd:justify-center'
+        // Layout & Positioning
+        'lsd:absolute',
+        'lsd:flex',
+        // Spacing
+        'lsd:top-full',
+        'lsd:left-0',
+        // Alignment
+        'lsd:justify-center',
+        // Stacking
+        'lsd:isolate',
+        'lsd:z-50'
       )}
     >
       <NavigationMenuPrimitive.Viewport
         data-slot="navigation-menu-viewport"
         className={cn(
-          'lsd:origin-top-center lsd:relative lsd:mt-[1.5rem] lsd:h-[var(--radix-navigation-menu-viewport-height)] lsd:w-full lsd:overflow-hidden lsd:rounded-md lsd:border lsd:bg-[var(--lsd-popover)] lsd:text-[var(--lsd-popover-foreground)] lsd:shadow-md lsd:data-[state=closed]:animate-out lsd:data-[state=closed]:zoom-out-95 lsd:data-[state=open]:animate-in lsd:data-[state=open]:zoom-in-90 md:lsd:w-[var(--radix-navigation-menu-viewport-width)]',
+          // Colors & Backgrounds
+          'lsd:bg-(--lsd-popover)',
+          'lsd:text-(--lsd-popover-foreground)',
+          // Borders
+          'lsd:border',
+          // Layout & Positioning
+          'lsd:relative',
+          // Sizing
+          'lsd:h-(--radix-navigation-menu-viewport-height)',
+          'lsd:w-full',
+          'md:lsd:w-[var(--radix-navigation-menu-viewport-width)]',
+          // Spacing
+          'lsd:mt-(--lsd-spacing-larger)',
+          'lsd:origin-top-center',
+          // Borders, Shapes & Effects
+          'lsd:rounded-md',
+          'lsd:shadow-md',
+          // Overflow
+          'lsd:overflow-hidden',
+          // Animations - Open state
+          'lsd:data-[state=open]:animate-in',
+          'lsd:data-[state=open]:zoom-in-90',
+          // Animations - Closed state
+          'lsd:data-[state=closed]:animate-out',
+          'lsd:data-[state=closed]:zoom-out-95',
           className
         )}
         {...props}

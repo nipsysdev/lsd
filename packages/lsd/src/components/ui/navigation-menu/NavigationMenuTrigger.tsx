@@ -31,7 +31,19 @@ export function NavigationMenuTrigger({
     >
       {children}{' '}
       <CaretDownIcon
-        className="lsd:relative lsd:ml-(--lsd-spacing-smallest) lsd:size-3 lsd:transition lsd:duration-300 group-data-[state=open]:lsd:rotate-180"
+        className={cn(
+          // Layout & Positioning
+          'lsd:relative',
+          // Spacing
+          'lsd:ml-(--lsd-spacing-smallest)',
+          // Sizing
+          'lsd:size-3',
+          // Borders, Shapes & Effects
+          'lsd:transition',
+          'lsd:duration-300',
+          // Interactive States - Open state
+          'group-data-[state=open]:lsd:rotate-180'
+        )}
         aria-hidden="true"
       />
     </NavigationMenuPrimitive.Trigger>

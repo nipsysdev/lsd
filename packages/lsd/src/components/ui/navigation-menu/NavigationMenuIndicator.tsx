@@ -17,12 +17,46 @@ export function NavigationMenuIndicator({ className, ...props }: NavigationMenuI
     <NavigationMenuPrimitive.Indicator
       data-slot="navigation-menu-indicator"
       className={cn(
-        'lsd:top-full lsd:z-[1] lsd:flex lsd:h-1.5 lsd:items-end lsd:justify-center lsd:overflow-hidden lsd:data-[state=hidden]:animate-out lsd:data-[state=hidden]:fade-out lsd:data-[state=visible]:animate-in lsd:data-[state=visible]:fade-in',
+        // Layout & Positioning
+        'lsd:flex',
+        // Sizing
+        'lsd:h-1.5',
+        // Spacing
+        'lsd:top-full',
+        // Alignment
+        'lsd:items-end',
+        'lsd:justify-center',
+        // Stacking
+        'lsd:z-1',
+        // Overflow
+        'lsd:overflow-hidden',
+        // Animations - Hidden state
+        'lsd:data-[state=hidden]:animate-out',
+        'lsd:data-[state=hidden]:fade-out',
+        // Animations - Visible state
+        'lsd:data-[state=visible]:animate-in',
+        'lsd:data-[state=visible]:fade-in',
         className
       )}
       {...props}
     >
-      <div className="lsd:relative lsd:top-[60%] lsd:h-2 lsd:w-2 lsd:rotate-45 lsd:rounded-tl-sm lsd:bg-[var(--lsd-border)] lsd:shadow-md" />
+      <div
+        className={cn(
+          // Colors & Backgrounds
+          'lsd:bg-lsd-border',
+          // Layout & Positioning
+          'lsd:relative',
+          // Sizing
+          'lsd:h-2',
+          'lsd:w-2',
+          // Spacing
+          'lsd:top-[60%]',
+          // Borders, Shapes & Effects
+          'lsd:rotate-45',
+          'lsd:rounded-tl-sm',
+          'lsd:shadow-md'
+        )}
+      />
     </NavigationMenuPrimitive.Indicator>
   );
 }

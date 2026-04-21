@@ -17,7 +17,19 @@ export function NavigationMenuList({ className, ...props }: NavigationMenuListPr
     <NavigationMenuPrimitive.List
       data-slot="navigation-menu-list"
       className={cn(
-        'lsd:group lsd:flex lsd:flex-1 lsd:list-none lsd:items-start lsd:justify-start lsd:gap-(--lsd-spacing-1)',
+        // Layout & Positioning
+        'lsd:flex',
+        // Sizing
+        'lsd:flex-1',
+        // Lists
+        'lsd:list-none',
+        // Alignment
+        'lsd:items-start',
+        'lsd:justify-start',
+        // Spacing
+        'lsd:gap-(--lsd-spacing-1)',
+        // Groups
+        'lsd:group',
         className
       )}
       {...props}
