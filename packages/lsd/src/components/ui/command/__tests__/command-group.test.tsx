@@ -46,7 +46,8 @@ describe('CommandGroup', () => {
     const group = document.querySelector('[data-slot="command-group"]');
     expect(group).toHaveClass('lsd:text-lsd-text-primary');
     expect(group).toHaveClass('lsd:overflow-hidden');
-    expect(group).toHaveClass('lsd:p-(--lsd-spacing-smallest)');
+    expect(group).toHaveClass('lsd:px-(--lsd-spacing-smallest)');
+    expect(group).toHaveClass('lsd:py-(--lsd-spacing-base)');
   });
 
   it('merges custom className with component classes', () => {

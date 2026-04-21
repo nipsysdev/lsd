@@ -224,7 +224,7 @@ describe('DropdownMenuItem', () => {
     const item = screen.getByText('Item 1');
     expect(item).toHaveClass('lsd:relative');
     expect(item).toHaveClass('lsd:flex');
-    expect(item).toHaveClass('lsd:cursor-default');
+    expect(item).toHaveClass('lsd:cursor-pointer');
     expect(item).toHaveClass('lsd:items-center');
     expect(item).toHaveClass('lsd:rounded-none');
     expect(item).toHaveClass('lsd:px-2');
@@ -398,7 +398,7 @@ describe('DropdownMenuCheckboxItem', () => {
     const item = screen.getByText('Checkbox Item');
     expect(item).toHaveClass('lsd:relative');
     expect(item).toHaveClass('lsd:flex');
-    expect(item).toHaveClass('lsd:cursor-default');
+    expect(item).toHaveClass('lsd:cursor-pointer');
     expect(item).toHaveClass('lsd:items-center');
     expect(item).toHaveClass('lsd:rounded-none');
     expect(item).toHaveClass('lsd:py-1.5');
@@ -610,7 +610,7 @@ describe('DropdownMenuRadioItem', () => {
     const item = screen.getByText('Option 1');
     expect(item).toHaveClass('lsd:relative');
     expect(item).toHaveClass('lsd:flex');
-    expect(item).toHaveClass('lsd:cursor-default');
+    expect(item).toHaveClass('lsd:cursor-pointer');
     expect(item).toHaveClass('lsd:items-center');
     expect(item).toHaveClass('lsd:rounded-sm');
     expect(item).toHaveClass('lsd:py-1.5');
@@ -881,7 +881,7 @@ describe('DropdownMenuSeparator', () => {
     expect(separator).toHaveClass('lsd:-mx-1');
     expect(separator).toHaveClass('lsd:my-1');
     expect(separator).toHaveClass('lsd:h-px');
-    expect(separator).toHaveClass('lsd:bg-[var(--lsd-border)]');
+    expect(separator).toHaveClass('lsd:bg-lsd-border');
   });
 
   it('merges custom className with component classes', () => {
@@ -1165,7 +1165,7 @@ describe('DropdownMenuSubTrigger', () => {
     );
     const trigger = screen.getByText('Submenu');
     expect(trigger).toHaveClass('lsd:flex');
-    expect(trigger).toHaveClass('lsd:cursor-default');
+    expect(trigger).toHaveClass('lsd:cursor-pointer');
     expect(trigger).toHaveClass('lsd:items-center');
     expect(trigger).toHaveClass('lsd:rounded-none');
     expect(trigger).toHaveClass('lsd:px-2');
