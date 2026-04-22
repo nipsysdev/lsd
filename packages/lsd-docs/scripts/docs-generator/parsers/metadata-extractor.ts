@@ -707,9 +707,7 @@ function extractDefaultsFromParameter(
   // Check if parameter has a binding pattern (destructuring)
   const paramNode = param.compilerNode;
   const hasBindingPattern =
-    paramNode.name &&
-    (paramNode.name.kind === SyntaxKind.ObjectBindingPattern ||
-      paramNode.name.kind === SyntaxKind.ArrayBindingPattern);
+    paramNode.name && paramNode.name.kind === SyntaxKind.ObjectBindingPattern;
 
   if (!hasBindingPattern) {
     // Simple parameter without destructuring
@@ -734,27 +732,13 @@ function extractDefaultsFromParameter(
         } else if (bindingElement.name.kind === SyntaxKind.Identifier) {
           propName = bindingElement.name.text;
         } else {
+          // Safety check - should never be reached with valid TypeScript
           continue;
         }
 
         // Get the initializer (default value)
         if (bindingElement.initializer) {
           defaults.set(propName, bindingElement.initializer.getText());
-        }
-      }
-    }
-  } else if (paramNode.name.kind === SyntaxKind.ArrayBindingPattern) {
-    const bindingPattern = paramNode.name;
-    for (let i = 0; i < bindingPattern.elements.length; i++) {
-      const element = bindingPattern.elements[i];
-      if (element.kind === SyntaxKind.BindingElement) {
-        const bindingElement = element;
-        const accessTokenor = bindingElement.initializer;
-
-        if (accessTokenor) {
-          const propName =
-            bindingElement.name.kind === SyntaxKind.Identifier ? bindingElement.name.text : `_${i}`;
-          defaults.set(propName, accessTokenor.getText());
         }
       }
     }

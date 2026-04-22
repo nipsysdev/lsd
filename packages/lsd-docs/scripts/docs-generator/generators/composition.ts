@@ -141,7 +141,7 @@ function generateTreeVisualization(
     node.children.forEach((child, index) => {
       const isLastChild = index === node.children.length - 1;
 
-      let newParentPrefix: string;
+      let newParentPrefix = '';
       if (depth === 0) {
         // Root's children: they don't use parentPrefix, but they pass one to their children
         // based on whether this node is the last sibling
@@ -151,9 +151,6 @@ function generateTreeVisualization(
         // If this node is not last, its children need the vertical line
         // If this node is last, its children use spaces
         newParentPrefix = isLast ? '    ' : '│   ';
-      } else {
-        // Deeper levels extend parentPrefix based on whether this node is last
-        newParentPrefix = parentPrefix + (isLastChild ? '    ' : '│   ');
       }
 
       const childLines = generateTreeVisualization(child, depth + 1, isLastChild, newParentPrefix);
