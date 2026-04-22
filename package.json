@@ -25,7 +25,10 @@
     "docs:dev": "pnpm --filter @nipsys/lsd-docs dev",
     "docs:build": "pnpm --filter @nipsys/lsd-docs build",
     "docs:preview": "pnpm --filter @nipsys/lsd-docs preview",
-    "docs:generate": "pnpm --filter @nipsys/lsd-docs generate"
+    "docs:generate": "pnpm --filter @nipsys/lsd-docs generate",
+    "docs:test": "pnpm --filter @nipsys/lsd-docs test",
+    "docs:test:watch": "pnpm --filter @nipsys/lsd-docs test:watch",
+    "docs:test:coverage": "pnpm --filter @nipsys/lsd-docs test:coverage"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.14",
