@@ -1,23 +1,16 @@
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
-import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
-import { IframeExample } from '@/components/docs/IframeExample';
 import { PageContent } from '@/components/docs/PageContent';
 import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as AvatarBasicCODE, SIZE as AvatarBasicSIZE } from '@/examples/avatar/basic/page';
-import { CODE as AvatarSizesCODE, SIZE as AvatarSizesSIZE } from '@/examples/avatar/sizes/page';
 
 export default function AvatarPage() {
-  const AvatarBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const AvatarSizesIframeRef = useRef<HTMLIFrameElement>(null);
-
-  useSendThemeToIframes(AvatarBasicIframeRef, AvatarSizesIframeRef);
+  useSendThemeToIframes();
 
   return (
     <DocsLayout>
@@ -52,50 +45,6 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Variants">
-          <Typography variant="body1">
-            Component variants for different visual styles and use cases.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Basic</CardTitle>
-              <CardDescription>Basic example</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={AvatarBasicIframeRef}
-                size={AvatarBasicSIZE}
-                src="/examples/avatar/basic"
-                title="Basic Example"
-              />
-              <CodeExample code={AvatarBasicCODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Sizes">
-          <Typography variant="body1">
-            Component sizes for different contexts and visual hierarchy.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Sizes</CardTitle>
-              <CardDescription>Shows all available size options</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={AvatarSizesIframeRef}
-                size={AvatarSizesSIZE}
-                src="/examples/avatar/sizes"
-                title="Sizes Example"
-              />
-              <CodeExample code={AvatarSizesCODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
         <PageSection title="API Reference">
           <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
@@ -111,22 +60,6 @@ export default function MyComponent() {
                   className="text-primary hover:underline"
                 >
                   View Radix UI Avatar documentation →
-                </a>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>shadcn/ui Documentation</CardTitle>
-                <CardDescription>Additional styling and customization options</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <a
-                  href="https://ui.shadcn.com/docs/components/avatar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  View shadcn/ui Avatar documentation →
                 </a>
               </CardContent>
             </Card>

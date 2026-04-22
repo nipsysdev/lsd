@@ -25,7 +25,6 @@ import { CODE as AlertSuccessCODE, SIZE as AlertSuccessSIZE } from '@/examples/a
 import { CODE as AlertWarningCODE, SIZE as AlertWarningSIZE } from '@/examples/alert/warning/page';
 
 export default function AlertPage() {
-  const AlertBasicIframeRef = useRef<HTMLIFrameElement>(null);
   const AlertDefaultIframeRef = useRef<HTMLIFrameElement>(null);
   const AlertDescriptionOnlyIframeRef = useRef<HTMLIFrameElement>(null);
   const AlertDestructiveIframeRef = useRef<HTMLIFrameElement>(null);
@@ -34,7 +33,6 @@ export default function AlertPage() {
   const AlertWarningIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    AlertBasicIframeRef,
     AlertDefaultIframeRef,
     AlertDescriptionOnlyIframeRef,
     AlertDestructiveIframeRef,
