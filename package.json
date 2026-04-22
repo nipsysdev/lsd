@@ -15,6 +15,7 @@
   },
   "scripts": {
     "build": "pnpm --filter @nipsys/lsd build && pnpm --filter @nipsys/lsd-docs build",
+    "test": "pnpm --filter @nipsys/lsd test && pnpm --filter @nipsys/lsd-docs test",
     "lint": "biome check .",
     "lint:fix": "biome check . --fix",
     "format": "biome format --write .",
