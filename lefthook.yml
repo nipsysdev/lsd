@@ -19,3 +19,5 @@ pre-push:
       run: pnpm build
     test:
       run: pnpm test
+    e2e:
+      run: pnpm docs:test:e2e
