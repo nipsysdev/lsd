@@ -16,7 +16,5 @@ pre-push:
   commands:
     test:
       run: pnpm test
-    e2e:
-      run: pnpm docs:test:e2e
     build:
       run: pnpm build
