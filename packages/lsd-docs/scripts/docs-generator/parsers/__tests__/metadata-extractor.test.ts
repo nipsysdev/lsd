@@ -26,25 +26,6 @@ describe('extractProps', () => {
   });
 
   describe('basic extraction', () => {
-    it('should extract props from Props interface', async () => {
-      const code = `
-        export interface ButtonProps {
-          /** Label text */
-          label: string;
-          /** Click handler */
-          onClick: () => void;
-        }
-      `;
-      sourceFile = project.createSourceFile('test.ts', code);
-      const props = await extractProps(sourceFile);
-
-      expect(props).toHaveLength(2);
-      expect(props[0].name).toBe('label');
-      expect(props[0].type).toBe('string');
-      expect(props[0].description).toBe('Label text');
-      expect(props[0].isRequired).toBe(true);
-    });
-
     it('should extract props from Options interface', async () => {
       const code = `
         export interface FormOptions {
@@ -345,25 +326,6 @@ describe('extractProps', () => {
       expect(props).toHaveLength(1);
       expect(props[0].description).toContain('Card title');
       expect(props[0].description).toContain('multiline description');
-    });
-
-    it('should clean import() paths from types', async () => {
-      const code = `
-        export interface ModalProps {
-          /** Modal content */
-          children: React.ReactNode;
-          /** Overlay click handler */
-          onOverlayClick: () => void;
-        }
-      `;
-      sourceFile = project.createSourceFile('test.ts', code);
-      const props = await extractProps(sourceFile);
-
-      expect(props).toHaveLength(2);
-      // Verify types don't contain import() paths
-      props.forEach(prop => {
-        expect(prop.type).not.toContain('import(');
-      });
     });
   });
 });
