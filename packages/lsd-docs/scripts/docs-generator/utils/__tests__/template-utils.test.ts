@@ -231,7 +231,7 @@ Line 2
     });
 
     it('should escape in correct order', () => {
-      const input = 'C:\\Users\\test\\file.js `code` \\${var}';
+      const input = String.raw`C:\\Users\\test\\file.js \`code\` \${var}`;
       const result = escapeTemplate(input);
 
       expect(result).toContain('\\\\');
@@ -262,7 +262,7 @@ Line 2
     });
 
     it('should escape mixed content', () => {
-      const input = 'test`string\\${var}\\path';
+      const input = String.raw`test\`string\${var}\\path`;
       const result = escapeTemplate(input);
 
       expect(result).toContain('\\`');
