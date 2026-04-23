@@ -69,8 +69,8 @@ export default function Home() {
       </Typography>
       <div>
         <Button asChild variant="link" className="p-0! h-fit!">
-          <Link href="https://logos.co" target="_blank" rel="noopener noreferrer">
-            — Learn more about the philosophy at logos.co
+          <Link href="https://guide.logos.co" target="_blank" rel="noopener noreferrer">
+            — Learn more about the philosophy behind LSD
             <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
           </Link>
         </Button>
@@ -100,8 +100,12 @@ export default function Home() {
 
       <div className="grid grid-cols-2 grid-rows-2">
         <Button variant="link" className="w-fit" asChild>
-          <Link href="https://guide.logos.co/" target="_blank" rel="noopener noreferrer">
-            Logos Brand Guidelines
+          <Link
+            href="https://guide.logos.co/lsd/overview"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Original LSD Overview
             <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
           </Link>
         </Button>
@@ -109,12 +113,8 @@ export default function Home() {
         <Typography className="text-right">MIT License</Typography>
 
         <Button variant="link" className="w-fit" asChild>
-          <Link
-            href="https://guide.logos.co/lsd/overview"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Original LSD Overview
+          <Link href="https://logos.co/" target="_blank" rel="noopener noreferrer">
+            Learn more about the Logos movement
             <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
           </Link>
         </Button>
