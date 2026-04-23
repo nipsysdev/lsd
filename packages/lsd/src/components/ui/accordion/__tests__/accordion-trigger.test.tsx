@@ -108,4 +108,43 @@ describe('AccordionTrigger', () => {
     const chevron = trigger.querySelector('svg');
     expect(chevron).toBeInTheDocument();
   });
+
+  it('renders with small size and applies correct icon size', () => {
+    render(
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger size="sm">Item 1</AccordionTrigger>
+        </AccordionItem>
+      </Accordion>
+    );
+    const trigger = screen.getByRole('button', { name: 'Item 1' });
+    const chevron = trigger.querySelector('svg');
+    expect(chevron).toHaveClass('lsd:size-3');
+  });
+
+  it('renders with large size and applies correct icon size', () => {
+    render(
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger size="lg">Item 1</AccordionTrigger>
+        </AccordionItem>
+      </Accordion>
+    );
+    const trigger = screen.getByRole('button', { name: 'Item 1' });
+    const chevron = trigger.querySelector('svg');
+    expect(chevron).toHaveClass('lsd:size-5');
+  });
+
+  it('renders with medium (default) size and applies correct icon size', () => {
+    render(
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger size="md">Item 1</AccordionTrigger>
+        </AccordionItem>
+      </Accordion>
+    );
+    const trigger = screen.getByRole('button', { name: 'Item 1' });
+    const chevron = trigger.querySelector('svg');
+    expect(chevron).toHaveClass('lsd:size-4');
+  });
 });

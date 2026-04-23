@@ -105,4 +105,30 @@ describe('AccordionContent', () => {
     expect(innerDiv).toHaveClass('lsd:pt-0');
     expect(innerDiv).toHaveClass('lsd:pb-(--lsd-spacing-base)');
   });
+
+  it('applies small size padding classes', () => {
+    render(
+      <Accordion type="single" collapsible defaultValue="item-1">
+        <AccordionItem value="item-1">
+          <AccordionContent size="sm">Content 1</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+    const innerDiv = document.querySelector('[data-slot="accordion-content"] > div');
+    expect(innerDiv).toHaveClass('lsd:pt-0');
+    expect(innerDiv).toHaveClass('lsd:pb-(--lsd-spacing-smaller)');
+  });
+
+  it('applies large size padding classes', () => {
+    render(
+      <Accordion type="single" collapsible defaultValue="item-1">
+        <AccordionItem value="item-1">
+          <AccordionContent size="lg">Content 1</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+    const innerDiv = document.querySelector('[data-slot="accordion-content"] > div');
+    expect(innerDiv).toHaveClass('lsd:pt-0');
+    expect(innerDiv).toHaveClass('lsd:pb-(--lsd-spacing-larger)');
+  });
 });
