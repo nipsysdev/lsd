@@ -208,4 +208,16 @@ describe('Input', () => {
     expect(screen.queryByRole('textbox')).toBeInTheDocument();
     expect(screen.queryByText(/supporting/i)).not.toBeInTheDocument();
   });
+
+  it('applies disabled state to label', () => {
+    render(<Input label="Email" disabled />);
+    const label = screen.getByText('Email');
+    expect(label).toHaveClass('lsd:text-lsd-text-secondary');
+  });
+
+  it('applies disabled state to supporting text', () => {
+    render(<Input supportingText="Enter your email" disabled />);
+    const supportingText = screen.getByText('Enter your email');
+    expect(supportingText).toHaveClass('lsd:text-lsd-text-secondary');
+  });
 });

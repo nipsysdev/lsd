@@ -137,4 +137,74 @@ describe('Progress', () => {
     expect(style).toContain('paused');
     expect(style).not.toContain('transform');
   });
+
+  it('shows label at top position when showLabel is true', () => {
+    render(<Progress value={75} showLabel labelPosition="top" />);
+    const label = screen.getByText('75%');
+    expect(label).toBeInTheDocument();
+    expect(label).toHaveClass('lsd:mb-(--lsd-spacing-smallest)');
+    expect(label).toHaveClass('lsd:text-sm');
+    expect(label).toHaveClass('lsd:font-medium');
+    expect(label).toHaveClass('lsd:text-lsd-text-primary');
+    expect(label).toHaveClass('lsd:text-center');
+  });
+
+  it('shows label at bottom position when showLabel is true', () => {
+    render(<Progress value={50} showLabel labelPosition="bottom" />);
+    const label = screen.getByText('50%');
+    expect(label).toBeInTheDocument();
+    expect(label).toHaveClass('lsd:mt-(--lsd-spacing-smallest)');
+    expect(label).toHaveClass('lsd:text-sm');
+    expect(label).toHaveClass('lsd:font-medium');
+    expect(label).toHaveClass('lsd:text-lsd-text-primary');
+    expect(label).toHaveClass('lsd:text-center');
+  });
+
+  it('shows 0% label when value is undefined', () => {
+    render(<Progress showLabel labelPosition="top" />);
+    const label = screen.getByText('0%');
+    expect(label).toBeInTheDocument();
+  });
+
+  it('applies success variant color', () => {
+    render(<Progress variant="success" />);
+    const indicator = document.querySelector('[data-slot="progress-indicator"]');
+    expect(indicator).toHaveClass('lsd:bg-lsd-success');
+  });
+
+  it('applies warning variant color', () => {
+    render(<Progress variant="warning" />);
+    const indicator = document.querySelector('[data-slot="progress-indicator"]');
+    expect(indicator).toHaveClass('lsd:bg-lsd-warning');
+  });
+
+  it('applies destructive variant color', () => {
+    render(<Progress variant="destructive" />);
+    const indicator = document.querySelector('[data-slot="progress-indicator"]');
+    expect(indicator).toHaveClass('lsd:bg-lsd-destructive');
+  });
+
+  it('applies small size', () => {
+    render(<Progress size="sm" />);
+    const progress = screen.getByRole('progressbar');
+    expect(progress).toHaveClass('lsd:h-[var(--lsd-spacing-smaller)]');
+  });
+
+  it('applies large size', () => {
+    render(<Progress size="lg" />);
+    const progress = screen.getByRole('progressbar');
+    expect(progress).toHaveClass('lsd:h-[var(--lsd-spacing-base)]');
+  });
+
+  it('does not show label when showLabel is false', () => {
+    render(<Progress value={75} showLabel={false} />);
+    const label = screen.queryByText('75%');
+    expect(label).not.toBeInTheDocument();
+  });
+
+  it('does not show label when showLabel is not provided', () => {
+    render(<Progress value={75} />);
+    const label = screen.queryByText('75%');
+    expect(label).not.toBeInTheDocument();
+  });
 });

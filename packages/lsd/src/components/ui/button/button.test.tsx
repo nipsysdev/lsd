@@ -280,6 +280,72 @@ describe('Button', () => {
     const button = screen.getByRole('button');
     expect(button).toBeDisabled();
   });
+
+  it('renders as different element when asChild is true', () => {
+    render(
+      <Button asChild>
+        <a href="https://example.com">Link Button</a>
+      </Button>
+    );
+    const link = screen.getByRole('link');
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', 'https://example.com');
+    expect(link).toHaveTextContent('Link Button');
+  });
+
+  it('shows loading spinner with square-sm size', () => {
+    render(<Button size="square-sm" loading />);
+    const button = screen.getByRole('button');
+    const svg = button.querySelector('svg');
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveClass('lsd:w-[var(--lsd-spacing-small)]');
+    expect(svg).toHaveClass('lsd:h-[var(--lsd-spacing-small)]');
+  });
+
+  it('shows loading spinner with sm size', () => {
+    render(<Button size="sm" loading />);
+    const button = screen.getByRole('button');
+    const svg = button.querySelector('svg');
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveClass('lsd:w-[var(--lsd-spacing-base)]');
+    expect(svg).toHaveClass('lsd:h-[var(--lsd-spacing-base)]');
+  });
+
+  it('shows loading spinner with md size', () => {
+    render(<Button size="md" loading />);
+    const button = screen.getByRole('button');
+    const svg = button.querySelector('svg');
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveClass('lsd:w-[var(--lsd-spacing-large)]');
+    expect(svg).toHaveClass('lsd:h-[var(--lsd-spacing-large)]');
+  });
+
+  it('shows loading spinner with square-md size', () => {
+    render(<Button size="square-md" loading />);
+    const button = screen.getByRole('button');
+    const svg = button.querySelector('svg');
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveClass('lsd:w-[var(--lsd-spacing-large)]');
+    expect(svg).toHaveClass('lsd:h-[var(--lsd-spacing-large)]');
+  });
+
+  it('shows loading spinner with lg size', () => {
+    render(<Button size="lg" loading />);
+    const button = screen.getByRole('button');
+    const svg = button.querySelector('svg');
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveClass('lsd:w-[var(--lsd-spacing-larger)]');
+    expect(svg).toHaveClass('lsd:h-[var(--lsd-spacing-larger)]');
+  });
+
+  it('shows loading spinner with square-lg size', () => {
+    render(<Button size="square-lg" loading />);
+    const button = screen.getByRole('button');
+    const svg = button.querySelector('svg');
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveClass('lsd:w-[var(--lsd-spacing-larger)]');
+    expect(svg).toHaveClass('lsd:h-[var(--lsd-spacing-larger)]');
+  });
 });
 
 describe('buttonVariants', () => {

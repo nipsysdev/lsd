@@ -87,4 +87,30 @@ describe('TabsContent', () => {
     expect(screen.getByText('Custom content')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Action' })).toBeInTheDocument();
   });
+
+  it('applies border class when bordered prop is true', () => {
+    render(
+      <Tabs defaultValue="tab-1" bordered>
+        <TabsList>
+          <TabsTrigger value="tab-1">Tab 1</TabsTrigger>
+        </TabsList>
+        <TabsContent value="tab-1">Content 1</TabsContent>
+      </Tabs>
+    );
+    const content = document.querySelector('[data-slot="tabs-content"]');
+    expect(content).toHaveClass('lsd:border');
+  });
+
+  it('does not apply border class when bordered prop is false', () => {
+    render(
+      <Tabs defaultValue="tab-1" bordered={false}>
+        <TabsList>
+          <TabsTrigger value="tab-1">Tab 1</TabsTrigger>
+        </TabsList>
+        <TabsContent value="tab-1">Content 1</TabsContent>
+      </Tabs>
+    );
+    const content = document.querySelector('[data-slot="tabs-content"]');
+    expect(content).not.toHaveClass('lsd:border');
+  });
 });

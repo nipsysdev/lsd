@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import {
   Form,
@@ -135,6 +135,68 @@ describe('Form Components', () => {
       const inputId = input.getAttribute('id');
       expect(labelFor).toBe(inputId);
     });
+
+    it('applies destructive class when there is a validation error', async () => {
+      function TestComponent() {
+        const form = useForm({
+          defaultValues: { test: '' },
+          mode: 'onChange',
+        });
+        return (
+          <Form {...form}>
+            <FormField
+              name="test"
+              rules={{ required: 'This field is required' }}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel data-testid="form-label">Test Label</FormLabel>
+                  <FormControl>
+                    <input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </Form>
+        );
+      }
+      render(<TestComponent />);
+      const input = screen.getByRole('textbox') as HTMLInputElement;
+
+      // Type and then backspace to trigger onChange validation
+      input.focus();
+      await act(async () => {
+        fireEvent.change(input, { target: { value: 'a' } });
+        fireEvent.change(input, { target: { value: '' } });
+      });
+
+      const label = screen.getByTestId('form-label');
+      expect(label).toHaveClass('lsd:text-lsd-destructive-text');
+    });
+
+    it('does not apply destructive class when there is no error', () => {
+      function TestComponent() {
+        const form = useForm({ defaultValues: { test: '' } });
+        return (
+          <Form {...form}>
+            <FormField
+              name="test"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel data-testid="form-label">Test Label</FormLabel>
+                  <FormControl>
+                    <input {...field} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+          </Form>
+        );
+      }
+      render(<TestComponent />);
+      const label = screen.getByTestId('form-label');
+      expect(label).not.toHaveClass('lsd:text-lsd-destructive-text');
+    });
   });
 
   describe('FormControl', () => {
@@ -234,6 +296,46 @@ describe('Form Components', () => {
       const input = screen.getByRole('textbox');
       const ariaDescribedBy = input.getAttribute('aria-describedby');
       expect(ariaDescribedBy).toMatch(/.*-form-item-description$/);
+    });
+
+    it('sets aria-describedby with both description and message ids when there is an error', async () => {
+      function TestComponent() {
+        const form = useForm({
+          defaultValues: { test: '' },
+          mode: 'onChange',
+        });
+
+        return (
+          <Form {...form}>
+            <FormField
+              name="test"
+              rules={{ required: 'This field is required' }}
+              render={({ field }) => (
+                <FormItem>
+                  <FormDescription>Description</FormDescription>
+                  <FormControl>
+                    <input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </Form>
+        );
+      }
+
+      render(<TestComponent />);
+      const input = screen.getByRole('textbox') as HTMLInputElement;
+
+      // Type and then backspace to trigger onChange validation
+      input.focus();
+      await act(async () => {
+        fireEvent.change(input, { target: { value: 'a' } });
+        fireEvent.change(input, { target: { value: '' } });
+      });
+
+      const ariaDescribedBy = input.getAttribute('aria-describedby');
+      expect(ariaDescribedBy).toMatch(/.*-form-item-description.*-form-item-message$/);
     });
   });
 
@@ -341,6 +443,164 @@ describe('Form Components', () => {
       const { container } = render(<TestComponent />);
       expect(container.querySelector('[data-testid="message"]')).not.toBeInTheDocument();
     });
+
+    it('displays error message from form validation', async () => {
+      function TestComponent() {
+        const form = useForm({
+          defaultValues: { test: '' },
+          mode: 'onChange',
+        });
+        return (
+          <Form {...form}>
+            <FormField
+              name="test"
+              rules={{ required: 'This field is required' }}
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <input {...field} />
+                  </FormControl>
+                  <FormMessage data-testid="message" />
+                </FormItem>
+              )}
+            />
+          </Form>
+        );
+      }
+      render(<TestComponent />);
+      const input = screen.getByRole('textbox') as HTMLInputElement;
+      // Type and then clear to trigger onChange validation
+      input.focus();
+      await act(async () => {
+        fireEvent.change(input, { target: { value: 'a' } });
+        fireEvent.change(input, { target: { value: '' } });
+      });
+
+      const message = screen.getByTestId('message');
+      expect(message).toHaveTextContent('This field is required');
+    });
+
+    it('handles error object with empty message', async () => {
+      function TestComponent() {
+        const form = useForm({
+          defaultValues: { test: '' },
+          mode: 'onChange',
+        });
+        return (
+          <Form {...form}>
+            <FormField
+              name="test"
+              rules={{ validate: () => false }}
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <input {...field} />
+                  </FormControl>
+                  <FormMessage data-testid="message" />
+                </FormItem>
+              )}
+            />
+          </Form>
+        );
+      }
+      render(<TestComponent />);
+      const input = screen.getByRole('textbox') as HTMLInputElement;
+      // Type and then clear to trigger onChange validation
+      input.focus();
+      await act(async () => {
+        fireEvent.change(input, { target: { value: 'a' } });
+        fireEvent.change(input, { target: { value: '' } });
+      });
+
+      // When error.message is undefined/false, empty string is used
+      // and FormMessage does not render
+      const message = screen.queryByTestId('message');
+      expect(message).not.toBeInTheDocument();
+    });
+
+    it('does not render when error exists but has no message property', () => {
+      function TestComponent() {
+        const form = useForm({
+          defaultValues: { test: '' },
+          mode: 'onChange',
+        });
+
+        // Manually trigger an error without a message property
+        form.setError('test', { type: 'manual' } as any);
+
+        return (
+          <Form {...form}>
+            <FormField
+              name="test"
+              render={() => (
+                <FormItem>
+                  <FormMessage data-testid="message" />
+                </FormItem>
+              )}
+            />
+          </Form>
+        );
+      }
+      const { container } = render(<TestComponent />);
+      // FormMessage should not render because error has no message
+      expect(container.querySelector('[data-testid="message"]')).not.toBeInTheDocument();
+    });
+
+    it('renders custom className passed through props', () => {
+      function TestComponent() {
+        const form = useForm({ defaultValues: { test: '' } });
+        return (
+          <Form {...form}>
+            <FormField
+              name="test"
+              render={() => (
+                <FormItem>
+                  <FormMessage data-testid="message" className="custom-class">
+                    Custom message
+                  </FormMessage>
+                </FormItem>
+              )}
+            />
+          </Form>
+        );
+      }
+      render(<TestComponent />);
+      const message = screen.getByTestId('message');
+      expect(message).toHaveClass('custom-class');
+    });
+
+    it('sets correct id attribute matching formMessageId', () => {
+      function TestComponent() {
+        const form = useForm({ defaultValues: { test: '' } });
+
+        function ChildComponent() {
+          const { formMessageId } = useFormField();
+          return (
+            <div>
+              <div data-testid="field-message-id">{formMessageId}</div>
+              <FormMessage data-testid="message">Test message</FormMessage>
+            </div>
+          );
+        }
+
+        return (
+          <Form {...form}>
+            <FormField
+              name="test"
+              render={() => (
+                <FormItem>
+                  <ChildComponent />
+                </FormItem>
+              )}
+            />
+          </Form>
+        );
+      }
+      render(<TestComponent />);
+      const fieldMessageId = screen.getByTestId('field-message-id').textContent;
+      const message = screen.getByTestId('message');
+      expect(message).toHaveAttribute('id', fieldMessageId);
+    });
   });
 
   describe('FormField', () => {
@@ -423,6 +683,15 @@ describe('Form Components', () => {
       expect(screen.getByTestId('item-id')).toBeInTheDocument();
       expect(screen.getByTestId('desc-id')).toBeInTheDocument();
       expect(screen.getByTestId('msg-id')).toBeInTheDocument();
+    });
+
+    it('throws error when used outside FormField', () => {
+      function TestComponent() {
+        const { id } = useFormField();
+        return <div>{id}</div>;
+      }
+
+      expect(() => render(<TestComponent />)).toThrow();
     });
   });
 

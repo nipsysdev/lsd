@@ -78,4 +78,3 @@ function Alert({ className, variant, ...props }: AlertProps) {
 }
 
 export { Alert, alertVariants };
-export type { AlertProps };

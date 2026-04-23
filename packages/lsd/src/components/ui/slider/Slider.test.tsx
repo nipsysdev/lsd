@@ -73,4 +73,18 @@ describe('Slider', () => {
     const { container } = render(<Slider defaultValue={[50]} orientation="vertical" />);
     expect(container.firstChild).toHaveAttribute('data-orientation', 'vertical');
   });
+
+  it('renders default range when no value or defaultValue provided', () => {
+    const { container } = render(<Slider />);
+    const thumbs = container.querySelectorAll('[data-slot="slider-thumb"]');
+    // Should render two thumbs for [min, max] default range
+    expect(thumbs).toHaveLength(2);
+  });
+
+  it('renders default range with custom min and max', () => {
+    const { container } = render(<Slider min={10} max={90} />);
+    const thumbs = container.querySelectorAll('[data-slot="slider-thumb"]');
+    // Should render two thumbs for [min, max] default range
+    expect(thumbs).toHaveLength(2);
+  });
 });

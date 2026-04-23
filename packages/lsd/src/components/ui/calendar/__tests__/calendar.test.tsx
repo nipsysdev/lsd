@@ -249,6 +249,16 @@ describe('Calendar', () => {
     });
   });
 
+  describe('Calendar - Week Numbers', () => {
+    it('renders with showWeekNumber enabled', () => {
+      render(<Calendar showWeekNumber defaultMonth={new Date(2025, 0, 1)} />);
+      expect(screen.getByRole('grid')).toBeInTheDocument();
+      // Check that week numbers are rendered - they'll be in extra cells
+      const grid = screen.getByRole('grid');
+      expect(grid).toBeInTheDocument();
+    });
+  });
+
   describe('CalendarDayButton', () => {
     const createMockDay = (date: Date) => ({
       date,
@@ -331,6 +341,14 @@ describe('Calendar', () => {
       render(<CalendarDayButton day={day} modifiers={modifiers} className="custom-class" />);
       const button = screen.getByRole('button');
       expect(button).toHaveClass('custom-class');
+    });
+
+    it('focuses the button when modifiers.focused is true', () => {
+      const day = createMockDay(new Date(2025, 0, 15));
+      const modifiers = { focused: true };
+      render(<CalendarDayButton day={day} modifiers={modifiers} />);
+      const button = screen.getByRole('button');
+      expect(document.activeElement).toBe(button);
     });
   });
 

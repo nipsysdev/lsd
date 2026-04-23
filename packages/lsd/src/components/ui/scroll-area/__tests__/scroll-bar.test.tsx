@@ -1,6 +1,8 @@
+import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
 import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { ScrollArea } from '../index';
+import { ScrollBar } from '../ScrollBar';
 
 describe('ScrollBar', () => {
   it('renders without crashing when used within ScrollArea', () => {
@@ -61,5 +63,19 @@ describe('ScrollBar', () => {
     );
     // ScrollBar is rendered internally by ScrollArea
     expect(document.querySelector('[data-slot="scroll-area"]')).toBeInTheDocument();
+  });
+
+  it('renders with horizontal orientation prop', () => {
+    // Test that ScrollBar accepts and processes horizontal orientation
+    const TestComponent = () => (
+      <ScrollAreaPrimitive.Root>
+        <ScrollAreaPrimitive.Viewport>
+          <div>Content</div>
+        </ScrollAreaPrimitive.Viewport>
+        <ScrollBar orientation="horizontal" />
+      </ScrollAreaPrimitive.Root>
+    );
+
+    expect(() => render(<TestComponent />)).not.toThrow();
   });
 });

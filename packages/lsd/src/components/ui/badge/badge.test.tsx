@@ -199,6 +199,38 @@ describe('Badge', () => {
     expect(badge).toHaveClass('lsd:h-[var(--lsd-spacing-base)]');
   });
 
+  it('renders as dot when variant is dot', () => {
+    render(
+      <Badge variant="dot" data-testid="badge">
+        Dot
+      </Badge>
+    );
+    const badge = screen.getByTestId('badge');
+    expect(badge).toHaveClass('lsd:rounded-full');
+    expect(badge).toHaveClass('lsd:p-0');
+    expect(badge).toHaveClass('lsd:border-0');
+  });
+
+  it('does not render children when dot prop is true', () => {
+    render(
+      <Badge dot data-testid="badge">
+        Not Visible
+      </Badge>
+    );
+    const badge = screen.getByTestId('badge');
+    expect(badge).not.toHaveTextContent('Not Visible');
+  });
+
+  it('does not render children when variant is dot', () => {
+    render(
+      <Badge variant="dot" data-testid="badge">
+        Not Visible
+      </Badge>
+    );
+    const badge = screen.getByTestId('badge');
+    expect(badge).not.toHaveTextContent('Not Visible');
+  });
+
   it('handles dismiss event', () => {
     const handleDismiss = vi.fn();
     const handleClick = vi.fn();
@@ -210,6 +242,23 @@ describe('Badge', () => {
     const dismissButton = screen.getByLabelText('Dismiss');
     dismissButton.click();
     expect(handleDismiss).toHaveBeenCalledTimes(1);
+    expect(handleClick).not.toHaveBeenCalled();
+  });
+
+  it('handles Space key for clickable badge', () => {
+    const handleClick = vi.fn();
+    render(<Badge onClick={handleClick}>Clickable</Badge>);
+    const badge = screen.getByText('Clickable');
+    fireEvent.keyDown(badge, { key: ' ' });
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not handle keyboard events for non-clickable badge', () => {
+    const handleClick = vi.fn();
+    render(<Badge>Non-clickable</Badge>);
+    const badge = screen.getByText('Non-clickable');
+    fireEvent.keyDown(badge, { key: 'Enter' });
+    fireEvent.keyDown(badge, { key: ' ' });
     expect(handleClick).not.toHaveBeenCalled();
   });
 });

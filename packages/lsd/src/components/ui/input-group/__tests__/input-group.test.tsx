@@ -58,6 +58,110 @@ describe('InputGroupAddon', () => {
     const addon = document.querySelector('[data-slot="input-group-addon"]');
     expect(addon).toHaveAttribute('data-align', 'inline-end');
   });
+
+  it('focuses input when clicked without a button', () => {
+    render(
+      <InputGroup>
+        <InputGroupAddon>
+          <InputGroupText>$</InputGroupText>
+        </InputGroupAddon>
+        <InputGroupInput placeholder="Amount" />
+      </InputGroup>
+    );
+
+    const addon = document.querySelector('[data-slot="input-group-addon"]') as HTMLElement;
+    const input = screen.getByPlaceholderText('Amount') as HTMLInputElement;
+
+    // Input should not be focused initially
+    expect(document.activeElement).not.toBe(input);
+
+    // Click the addon
+    fireEvent.click(addon);
+
+    // Input should now be focused
+    expect(document.activeElement).toBe(input);
+  });
+
+  it('does not focus input when clicking a button inside the addon', () => {
+    const buttonClickHandler = vi.fn();
+
+    render(
+      <InputGroup>
+        <InputGroupAddon>
+          <InputGroupButton onClick={buttonClickHandler}>Submit</InputGroupButton>
+        </InputGroupAddon>
+        <InputGroupInput placeholder="Amount" />
+      </InputGroup>
+    );
+
+    const button = screen.getByRole('button') as HTMLButtonElement;
+    const input = screen.getByPlaceholderText('Amount') as HTMLInputElement;
+
+    // Click the button inside the addon
+    fireEvent.click(button);
+
+    // Button handler should be called
+    expect(buttonClickHandler).toHaveBeenCalledTimes(1);
+
+    // Input should not be focused (the early return prevented it)
+    expect(document.activeElement).not.toBe(input);
+  });
+
+  it('applies custom className', () => {
+    render(
+      <InputGroup>
+        <InputGroupAddon className="custom-addon-class">
+          <InputGroupText>$</InputGroupText>
+        </InputGroupAddon>
+      </InputGroup>
+    );
+
+    const addon = document.querySelector('[data-slot="input-group-addon"]');
+    expect(addon).toHaveClass('custom-addon-class');
+  });
+
+  it('renders with small size context', () => {
+    render(
+      <InputGroup size="sm">
+        <InputGroupAddon>
+          <InputGroupText>$</InputGroupText>
+        </InputGroupAddon>
+      </InputGroup>
+    );
+
+    const addon = document.querySelector('[data-slot="input-group-addon"]');
+    expect(addon).toBeInTheDocument();
+  });
+
+  it('renders with large size context', () => {
+    render(
+      <InputGroup size="lg">
+        <InputGroupAddon>
+          <InputGroupText>$</InputGroupText>
+        </InputGroupAddon>
+      </InputGroup>
+    );
+
+    const addon = document.querySelector('[data-slot="input-group-addon"]');
+    expect(addon).toBeInTheDocument();
+  });
+
+  it('handles click when no input is present', () => {
+    // This should not throw an error even though there's no input to focus
+    render(
+      <InputGroup>
+        <InputGroupAddon>
+          <InputGroupText>@</InputGroupText>
+        </InputGroupAddon>
+      </InputGroup>
+    );
+
+    const addon = document.querySelector('[data-slot="input-group-addon"]') as HTMLElement;
+
+    expect(() => {
+      fireEvent.click(addon);
+    }).not.toThrow();
+  });
 });
 
 describe('InputGroupButton', () => {

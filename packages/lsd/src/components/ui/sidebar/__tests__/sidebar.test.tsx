@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { useIsMobile } from '@/hooks/use-mobile';
 import {
   Sidebar,
   SidebarContent,
@@ -29,7 +30,7 @@ import {
 
 // Mock useIsMobile hook
 vi.mock('@/hooks/use-mobile', () => ({
-  useIsMobile: vi.fn(() => false),
+  useIsMobile: vi.fn(),
 }));
 
 // Helper function to query by data-slot
@@ -95,6 +96,7 @@ describe('SidebarProvider', () => {
 describe('Sidebar', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(false);
   });
 
   it('renders without crashing', () => {
@@ -177,11 +179,92 @@ describe('Sidebar', () => {
     expect(queryByDataSlot(container, 'sidebar-menu')).toBeInTheDocument();
     expect(queryByDataSlot(container, 'sidebar-footer')).toBeInTheDocument();
   });
+
+  it('renders with collapsible="none" prop', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar collapsible="none">
+          <div>Sidebar Content</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    const sidebar = queryByDataSlot(container, 'sidebar');
+    expect(sidebar).toBeInTheDocument();
+    expect(sidebar).toHaveClass('lsd:bg-sidebar');
+    expect(sidebar).toHaveClass('lsd:flex');
+    expect(sidebar).toHaveClass('lsd:h-full');
+    expect(screen.getByText('Sidebar Content')).toBeInTheDocument();
+  });
+
+  it('applies custom className when collapsible="none"', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar collapsible="none" className="custom-none-class">
+          <div>Sidebar Content</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    const sidebar = queryByDataSlot(container, 'sidebar');
+    expect(sidebar).toHaveClass('custom-none-class');
+  });
+
+  it('passes through additional props when collapsible="none"', () => {
+    render(
+      <SidebarProvider>
+        <Sidebar collapsible="none" data-testid="none-sidebar" data-custom="value">
+          <div>Sidebar Content</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(screen.getByTestId('none-sidebar')).toHaveAttribute('data-custom', 'value');
+  });
+});
+
+describe('Sidebar - Mobile View', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(true);
+  });
+
+  it('renders without crashing on mobile when isMobile is true', () => {
+    // This test verifies the mobile code path (line 92) is hit
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar>
+          <div>Mobile Sidebar Content</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(container.querySelector('[data-slot="sidebar-wrapper"]')).toBeInTheDocument();
+  });
+
+  it('renders with side="right" on mobile', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar side="right">
+          <div>Right Mobile Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(container.querySelector('[data-slot="sidebar-wrapper"]')).toBeInTheDocument();
+  });
+
+  it('renders with collapsible="icon" on mobile', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar collapsible="icon">
+          <div>Mobile Icon Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(container.querySelector('[data-slot="sidebar-wrapper"]')).toBeInTheDocument();
+  });
 });
 
 describe('SidebarTrigger', () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(false);
   });
 
   it('renders without crashing', () => {
@@ -220,6 +303,80 @@ describe('SidebarTrigger', () => {
       </SidebarProvider>
     );
     expect(screen.getByText('Toggle Sidebar')).toBeInTheDocument();
+  });
+
+  it('calls custom onClick handler when clicked', () => {
+    const customOnClick = vi.fn();
+    const { container } = render(
+      <SidebarProvider>
+        <SidebarTrigger onClick={customOnClick} />
+      </SidebarProvider>
+    );
+    const trigger = queryByDataSlot(container, 'sidebar-trigger');
+    (trigger as HTMLElement)?.click();
+    expect(customOnClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('toggles sidebar state when clicked', async () => {
+    const TestComponent = () => {
+      const { state } = useSidebar();
+      return (
+        <div>
+          <span data-testid="sidebar-state">{state}</span>
+          <SidebarTrigger />
+        </div>
+      );
+    };
+
+    const { container } = render(
+      <SidebarProvider defaultOpen={false}>
+        <TestComponent />
+      </SidebarProvider>
+    );
+
+    // Initial state should be collapsed
+    expect(screen.getByTestId('sidebar-state')).toHaveTextContent('collapsed');
+
+    const trigger = queryByDataSlot(container, 'sidebar-trigger');
+    (trigger as HTMLElement)?.click();
+
+    // State should now be expanded (proving toggleSidebar was called)
+    await waitFor(() => {
+      expect(screen.getByTestId('sidebar-state')).toHaveTextContent('expanded');
+    });
+  });
+
+  it('calls both custom onClick and toggles sidebar when clicked', async () => {
+    const customOnClick = vi.fn();
+
+    const TestComponent = () => {
+      const { state } = useSidebar();
+      return (
+        <div>
+          <span data-testid="sidebar-state">{state}</span>
+          <SidebarTrigger onClick={customOnClick} />
+        </div>
+      );
+    };
+
+    const { container } = render(
+      <SidebarProvider defaultOpen={false}>
+        <TestComponent />
+      </SidebarProvider>
+    );
+
+    // Initial state should be collapsed
+    expect(screen.getByTestId('sidebar-state')).toHaveTextContent('collapsed');
+
+    const trigger = queryByDataSlot(container, 'sidebar-trigger');
+    (trigger as HTMLElement)?.click();
+
+    // Custom onClick should be called (covers line 156)
+    expect(customOnClick).toHaveBeenCalledTimes(1);
+    // State should be expanded (proving toggleSidebar was called - covers line 157)
+    await waitFor(() => {
+      expect(screen.getByTestId('sidebar-state')).toHaveTextContent('expanded');
+    });
   });
 });
 
@@ -499,6 +656,11 @@ describe('SidebarMenuItem', () => {
 });
 
 describe('SidebarMenuButton', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(false);
+  });
+
   it('renders without crashing', () => {
     const { container } = render(
       <SidebarProvider>
@@ -546,6 +708,11 @@ describe('SidebarMenuButton', () => {
 });
 
 describe('SidebarMenuAction', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(false);
+  });
+
   it('renders without crashing', () => {
     const { container } = render(
       <SidebarProvider>
@@ -600,6 +767,11 @@ describe('SidebarMenuAction', () => {
 });
 
 describe('SidebarMenuBadge', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(false);
+  });
+
   it('renders without crashing', () => {
     const { container } = render(
       <SidebarProvider>
@@ -774,6 +946,180 @@ describe('SidebarMenuSubButton', () => {
   it('renders children', () => {
     render(<SidebarMenuSubButton>Sub Button Content</SidebarMenuSubButton>);
     expect(screen.getByText('Sub Button Content')).toBeInTheDocument();
+  });
+});
+
+describe('Sidebar - Variants and Sides', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(false);
+  });
+
+  it('renders with variant="floating" on desktop', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar variant="floating">
+          <div>Floating Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar')).toBeInTheDocument();
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-variant', 'floating');
+  });
+
+  it('renders with variant="inset" on desktop', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar variant="inset">
+          <div>Inset Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar')).toBeInTheDocument();
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-variant', 'inset');
+  });
+
+  it('renders with side="right" on desktop', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar side="right">
+          <div>Right Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar')).toBeInTheDocument();
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-side', 'right');
+  });
+
+  it('renders with variant="floating" and collapsible="icon" on desktop', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar variant="floating" collapsible="icon">
+          <div>Floating Icon Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar')).toBeInTheDocument();
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-variant', 'floating');
+  });
+
+  it('renders with variant="inset" and collapsible="icon" on desktop', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar variant="inset" collapsible="icon">
+          <div>Inset Icon Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar')).toBeInTheDocument();
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-variant', 'inset');
+  });
+
+  it('renders with side="right" and variant="floating" on desktop', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar variant="floating" side="right">
+          <div>Right Floating Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar')).toBeInTheDocument();
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-side', 'right');
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-variant', 'floating');
+  });
+
+  it('renders with side="right" and variant="inset" on desktop', () => {
+    const { container } = render(
+      <SidebarProvider>
+        <Sidebar variant="inset" side="right">
+          <div>Right Inset Sidebar</div>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar')).toBeInTheDocument();
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-side', 'right');
+    expect(queryByDataSlot(container, 'sidebar')).toHaveAttribute('data-variant', 'inset');
+  });
+});
+
+describe('SidebarMenu - Collapsed State', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(false);
+  });
+
+  it('renders with menu buttons when sidebar is collapsed', () => {
+    const { container } = render(
+      <SidebarProvider defaultOpen={false}>
+        <Sidebar>
+          <SidebarContent>
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton>
+                      <span>🔵</span>
+                      Menu Item
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar-menu')).toBeInTheDocument();
+  });
+
+  it('renders with menu badges when sidebar is collapsed', () => {
+    const { container } = render(
+      <SidebarProvider defaultOpen={false}>
+        <Sidebar>
+          <SidebarContent>
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton>
+                      <span>🔵</span>
+                      Menu Item
+                      <SidebarMenuBadge>5</SidebarMenuBadge>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar-menu')).toBeInTheDocument();
+  });
+
+  it('renders with menu actions when sidebar is expanded', () => {
+    const { container } = render(
+      <SidebarProvider defaultOpen={true}>
+        <Sidebar>
+          <SidebarContent>
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton>
+                      <span>🔵</span>
+                      Menu Item
+                    </SidebarMenuButton>
+                    <SidebarMenuAction>Action</SidebarMenuAction>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
+        </Sidebar>
+      </SidebarProvider>
+    );
+    expect(queryByDataSlot(container, 'sidebar-menu')).toBeInTheDocument();
   });
 });
 

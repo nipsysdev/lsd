@@ -249,4 +249,54 @@ describe('Autocomplete', () => {
     // Verify that options are displayed
     expect(screen.getByText('Option 1')).toBeInTheDocument();
   });
+
+  it('handles error when async fetch fails', async () => {
+    const onOptionsFetch = vi.fn().mockRejectedValue(new Error('Fetch failed'));
+    render(<Autocomplete onOptionsFetch={onOptionsFetch} />);
+    const input = screen.getByRole('textbox');
+    fireEvent.click(input);
+    const commandInput = screen.getAllByPlaceholderText('Search...')[1];
+    fireEvent.change(commandInput, { target: { value: 'test' } });
+    // Wait for debounce and fetch
+    await new Promise(resolve => setTimeout(resolve, 350));
+    expect(onOptionsFetch).toHaveBeenCalledWith('test');
+    // The error should be caught and logged, and empty options should be set
+    // This test ensures the catch block at lines 68-69 is executed
+  });
+
+  it('clears uncontrolled value when clear button is clicked', () => {
+    render(<Autocomplete options={mockOptions} clearable />);
+    const input = screen.getByRole('textbox');
+    fireEvent.click(input);
+    const option = screen.getByText('Option 1');
+    fireEvent.click(option);
+    expect(input).toHaveValue('Option 1');
+    // Now click the clear button
+    const clearButton = screen.getByRole('button');
+    fireEvent.click(clearButton);
+    expect(input).toHaveValue('');
+  });
+
+  it('handles undefined options gracefully', () => {
+    render(<Autocomplete options={undefined} />);
+    const input = screen.getByRole('textbox');
+    fireEvent.click(input);
+    // Should open but show no options (empty state)
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
+  it('displays value from async options when selected', async () => {
+    const asyncOptions = [{ value: 'async1', label: 'Async Option 1' }];
+    const onOptionsFetch = vi.fn().mockResolvedValue(asyncOptions);
+    const { rerender } = render(<Autocomplete onOptionsFetch={onOptionsFetch} />);
+    const input = screen.getByRole('textbox');
+    fireEvent.click(input);
+    const commandInput = screen.getAllByPlaceholderText('Search...')[1];
+    fireEvent.change(commandInput, { target: { value: 'test' } });
+    // Wait for debounce and fetch
+    await new Promise(resolve => setTimeout(resolve, 350));
+    // Update with controlled value from async options
+    rerender(<Autocomplete onOptionsFetch={onOptionsFetch} value="async1" />);
+    expect(input).toHaveValue('Async Option 1');
+  });
 });

@@ -136,4 +136,18 @@ describe('TabsList', () => {
     expect(list).toHaveAttribute('data-testid', 'test-list');
     expect(list).toHaveAttribute('id', 'list-1');
   });
+
+  it('applies border-b-0 class when bordered={true} on Tabs', () => {
+    render(
+      <Tabs defaultValue="tab-1" bordered>
+        <TabsList>
+          <TabsTrigger value="tab-1">Tab 1</TabsTrigger>
+          <TabsTrigger value="tab-2">Tab 2</TabsTrigger>
+        </TabsList>
+        <TabsContent value="tab-1">Content 1</TabsContent>
+      </Tabs>
+    );
+    const list = document.querySelector('[data-slot="tabs-list"]');
+    expect(list).toHaveClass('lsd:border-b-0');
+  });
 });

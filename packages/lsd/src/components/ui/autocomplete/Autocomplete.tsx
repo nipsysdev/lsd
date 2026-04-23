@@ -173,7 +173,6 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                 id={inputId}
                 value={displayValue}
                 placeholder={placeholder}
-                onChange={e => setSearchText(e.target.value)}
                 disabled={disabled}
                 readOnly
                 className={cn(
