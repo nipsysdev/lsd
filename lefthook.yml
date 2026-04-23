@@ -13,11 +13,10 @@ commit-msg:
       run: pnpm exec commitlint --edit {1}
 
 pre-push:
-  parallel: true
   commands:
-    build:
-      run: pnpm build
     test:
       run: pnpm test
     e2e:
       run: pnpm docs:test:e2e
+    build:
+      run: pnpm build
