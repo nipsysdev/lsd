@@ -68,15 +68,14 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Variants">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Component variants for different visual styles and use cases.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Basic</CardTitle>
-              <CardDescription>Basic example</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
@@ -88,10 +87,16 @@ export default function MyComponent() {
               <CodeExample code={TableBasicCODE} />
             </CardContent>
           </Card>
+        </PageSection>
+
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Component variants for different visual styles and use cases.
+          </Typography>
+
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Striped</CardTitle>
-              <CardDescription>Basic striped example</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
@@ -103,10 +108,16 @@ export default function MyComponent() {
               <CodeExample code={TableStripedCODE} />
             </CardContent>
           </Card>
+        </PageSection>
+
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features and capabilities of the component.
+          </Typography>
+
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>With Caption</CardTitle>
-              <CardDescription>Basic with caption example</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
@@ -121,7 +132,6 @@ export default function MyComponent() {
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>With Footer</CardTitle>
-              <CardDescription>Basic with footer example</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
@@ -145,17 +155,13 @@ export default function MyComponent() {
                   '│   └── TableHead',
                   '├── TableBody',
                   '│   └── TableRow',
-                  '│       └── TableCell',
+                  '└── TableCell',
                   '├── TableFooter',
                   '└── TableCaption',
                 ]}
               </CodeBlock>
             </CardContent>
           </Card>
-        </PageSection>
-
-        <PageSection title="API Reference">
-          <Typography variant="body1">API documentation coming soon.</Typography>
         </PageSection>
 
         <PageSection title="Accessibility">

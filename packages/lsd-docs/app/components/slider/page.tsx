@@ -186,6 +186,19 @@ export default function MyComponent() {
                   </Typography>
                 </CardContent>
               </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>'aria-label'</CardTitle>
+                  <CardDescription>
+                    Accessible label for screen readers. Required for accessibility.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </PageSection>
