@@ -80,7 +80,13 @@ export default defineConfig(({ mode }) => {
         libInjectCss(),
         addUseClientDirective(),
         dts({
-          exclude: ['src/index.tsx'],
+          exclude: [
+            'src/index.tsx',
+            '**/__tests__/**',
+            '**/*.test.ts',
+            '**/*.test.tsx',
+            '**/*.test.d.ts',
+          ],
           tsconfigPath: 'tsconfig.app.json',
         }),
       ],
@@ -93,13 +99,25 @@ export default defineConfig(({ mode }) => {
           external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
           // https://rollupjs.org/configuration-options/#input
           input: Object.fromEntries(
-            globSync([
-              'src/components/**/*.{ts,tsx}',
-              'src/**/*.ts',
-              'src/**/*.tsx',
-              'src/style.css',
-              'src/main.ts',
-            ]).map(file => {
+            globSync(
+              [
+                'src/components/**/*.{ts,tsx}',
+                'src/lib/**/*.{ts,tsx}',
+                'src/hooks/**/*.{ts,tsx}',
+                'src/styles/**/*.{ts,tsx,css}',
+                'src/main.ts',
+                'src/style.css',
+              ],
+              {
+                ignore: [
+                  '**/__tests__/**',
+                  '**/*.test.ts',
+                  '**/*.test.tsx',
+                  '**/*.test.js',
+                  '**/*.test.jsx',
+                ],
+              }
+            ).map(file => {
               // This remove `src/` as well as the file extension from each
               // file, so e.g. src/nested/foo.js becomes nested/foo
               const entryName = path.relative(
