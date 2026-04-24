@@ -34,7 +34,6 @@ import {
 export default function ProgressPage() {
   const ProgressBasicIframeRef = useRef<HTMLIFrameElement>(null);
   const ProgressColorsIframeRef = useRef<HTMLIFrameElement>(null);
-  const ProgressFeaturesIframeRef = useRef<HTMLIFrameElement>(null);
   const ProgressIndeterminateIframeRef = useRef<HTMLIFrameElement>(null);
   const ProgressPausedIframeRef = useRef<HTMLIFrameElement>(null);
   const ProgressSizesIframeRef = useRef<HTMLIFrameElement>(null);
@@ -42,7 +41,6 @@ export default function ProgressPage() {
   useSendThemeToIframes(
     ProgressBasicIframeRef,
     ProgressColorsIframeRef,
-    ProgressFeaturesIframeRef,
     ProgressIndeterminateIframeRef,
     ProgressPausedIframeRef,
     ProgressSizesIframeRef

@@ -158,10 +158,7 @@ export default function MyComponent() {
                   '└── SheetPortal',
                   '    ├── SheetOverlay',
                   '    ├── SheetContent',
-                  '    │   └── SheetClose',
                   '    ├── SheetHeader',
-                  '    │   ├── SheetTitle',
-                  '    │   └── SheetDescription',
                   '    └── SheetFooter',
                 ]}
               </CodeBlock>

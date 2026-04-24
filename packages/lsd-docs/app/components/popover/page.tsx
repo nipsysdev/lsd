@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -11,56 +12,57 @@ import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 import {
-  CODE as AlignmentPopoverCODE,
-  SIZE as AlignmentPopoverSIZE,
+  CODE as PopoverAlignmentCODE,
+  SIZE as PopoverAlignmentSIZE,
 } from '@/examples/popover/alignment/page';
-import { CODE as BasicPopoverCODE, SIZE as BasicPopoverSIZE } from '@/examples/popover/basic/page';
+import { CODE as PopoverBasicCODE, SIZE as PopoverBasicSIZE } from '@/examples/popover/basic/page';
 import {
-  CODE as ControlledPopoverCODE,
-  SIZE as ControlledPopoverSIZE,
+  CODE as PopoverControlledCODE,
+  SIZE as PopoverControlledSIZE,
 } from '@/examples/popover/controlled/page';
 import {
-  CODE as MultiplePopoverCODE,
-  SIZE as MultiplePopoverSIZE,
+  CODE as PopoverMultipleCODE,
+  SIZE as PopoverMultipleSIZE,
 } from '@/examples/popover/multiple/page';
 import {
-  CODE as PositioningPopoverCODE,
-  SIZE as PositioningPopoverSIZE,
+  CODE as PopoverPositioningCODE,
+  SIZE as PopoverPositioningSIZE,
 } from '@/examples/popover/positioning/page';
 import {
-  CODE as SideOffsetPopoverCODE,
-  SIZE as SideOffsetPopoverSIZE,
+  CODE as PopoverSideOffsetCODE,
+  SIZE as PopoverSideOffsetSIZE,
 } from '@/examples/popover/side-offset/page';
 
 export default function PopoverPage() {
-  const basicPopoverIframeRef = useRef<HTMLIFrameElement>(null);
-  const controlledPopoverIframeRef = useRef<HTMLIFrameElement>(null);
-  const positioningPopoverIframeRef = useRef<HTMLIFrameElement>(null);
-  const alignmentPopoverIframeRef = useRef<HTMLIFrameElement>(null);
-  const sideOffsetPopoverIframeRef = useRef<HTMLIFrameElement>(null);
-  const multiplePopoverIframeRef = useRef<HTMLIFrameElement>(null);
+  const PopoverAlignmentIframeRef = useRef<HTMLIFrameElement>(null);
+  const PopoverBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const PopoverControlledIframeRef = useRef<HTMLIFrameElement>(null);
+  const PopoverMultipleIframeRef = useRef<HTMLIFrameElement>(null);
+  const PopoverPositioningIframeRef = useRef<HTMLIFrameElement>(null);
+  const PopoverSideOffsetIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    basicPopoverIframeRef,
-    controlledPopoverIframeRef,
-    positioningPopoverIframeRef,
-    alignmentPopoverIframeRef,
-    sideOffsetPopoverIframeRef,
-    multiplePopoverIframeRef
+    PopoverAlignmentIframeRef,
+    PopoverBasicIframeRef,
+    PopoverControlledIframeRef,
+    PopoverMultipleIframeRef,
+    PopoverPositioningIframeRef,
+    PopoverSideOffsetIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
         title="Popover"
-        description="Floating element that displays content in a portal, triggered by user action"
+        description="Displays rich content in a floating overlay positioned relative to a trigger element."
       />
 
       <PageContent>
         <PageSection title="About Popover">
           <Typography variant="body1" className="block">
-            Popover displays rich content in a floating container that appears over other content.
-            It triggers on user action and supports controlled and uncontrolled states.
+            Container for displaying rich content, actions, or information in a floating overlay
+            that is positioned relative to a trigger element. Supports controlled and uncontrolled
+            states, with automatic positioning and collision detection for optimal placement.
           </Typography>
         </PageSection>
 
@@ -71,272 +73,140 @@ export default function PopoverPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Popover, PopoverContent, PopoverTrigger, PopoverAnchor } from '@nipsys/lsd';
-import { useState } from 'react';
+                code={`import { Popover } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger>Open</PopoverTrigger>
-      <PopoverContent>Content goes here</PopoverContent>
-    </Popover>
-  );
+  return <Popover />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Usage">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Popover can be controlled (using open and onOpenChange) or uncontrolled.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Popover</CardTitle>
-              <CardDescription>Simple popover with Trigger and Content</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={basicPopoverIframeRef}
-                size={BasicPopoverSIZE}
+                ref={PopoverBasicIframeRef}
+                size={PopoverBasicSIZE}
                 src="/examples/popover/basic"
-                title="Basic Popover Example"
+                title="Basic Example"
               />
-              <CodeExample code={BasicPopoverCODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Controlled Popover</CardTitle>
-              <CardDescription>Manage open state with useState</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={controlledPopoverIframeRef}
-                size={ControlledPopoverSIZE}
-                src="/examples/popover/controlled"
-                title="Controlled Popover Example"
-              />
-              <CodeExample code={ControlledPopoverCODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Positioning">
-          <Typography variant="body1">
-            Control where the popover appears relative to its trigger using side, align, and
-            sideOffset props.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Side Placement</CardTitle>
-              <CardDescription>Position the popover on different sides</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={positioningPopoverIframeRef}
-                size={PositioningPopoverSIZE}
-                src="/examples/popover/positioning"
-                title="Positioning Popover Example"
-              />
-              <CodeExample code={PositioningPopoverCODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Alignment</CardTitle>
-              <CardDescription>Adjust horizontal alignment on the selected side</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={alignmentPopoverIframeRef}
-                size={AlignmentPopoverSIZE}
-                src="/examples/popover/alignment"
-                title="Alignment Popover Example"
-              />
-              <CodeExample code={AlignmentPopoverCODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Side Offset</CardTitle>
-              <CardDescription>Adjust distance from the trigger element</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={sideOffsetPopoverIframeRef}
-                size={SideOffsetPopoverSIZE}
-                src="/examples/popover/side-offset"
-                title="Side Offset Popover Example"
-              />
-              <CodeExample code={SideOffsetPopoverCODE} />
+              <CodeExample code={PopoverBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Features">
           <Typography variant="body1">
-            Additional capabilities including multiple popovers and independent state management.
+            Additional features and capabilities of the component.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Multiple Popovers</CardTitle>
-              <CardDescription>Using multiple independent popovers</CardDescription>
+              <CardTitle>Alignment</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={multiplePopoverIframeRef}
-                size={MultiplePopoverSIZE}
-                src="/examples/popover/multiple"
-                title="Multiple Popovers Example"
+                ref={PopoverAlignmentIframeRef}
+                size={PopoverAlignmentSIZE}
+                src="/examples/popover/alignment"
+                title="Alignment Example"
               />
-              <CodeExample code={MultiplePopoverCODE} />
+              <CodeExample code={PopoverAlignmentCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Controlled</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={PopoverControlledIframeRef}
+                size={PopoverControlledSIZE}
+                src="/examples/popover/controlled"
+                title="Controlled Example"
+              />
+              <CodeExample code={PopoverControlledCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Multiple</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={PopoverMultipleIframeRef}
+                size={PopoverMultipleSIZE}
+                src="/examples/popover/multiple"
+                title="Multiple Example"
+              />
+              <CodeExample code={PopoverMultipleCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Positioning</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={PopoverPositioningIframeRef}
+                size={PopoverPositioningSIZE}
+                src="/examples/popover/positioning"
+                title="Positioning Example"
+              />
+              <CodeExample code={PopoverPositioningCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Side Offset</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={PopoverSideOffsetIframeRef}
+                size={PopoverSideOffsetSIZE}
+                src="/examples/popover/side-offset"
+                title="Side Offset Example"
+              />
+              <CodeExample code={PopoverSideOffsetCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Composition">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {['Popover', '├── PopoverTrigger', '├── PopoverContent', '└── PopoverAnchor']}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Popover components.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>Popover.open</CardTitle>
-                <CardDescription>Whether the popover is open</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>Popover wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Controlled value - use with onOpenChange
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Popover.defaultOpen</CardTitle>
-                <CardDescription>Initial open state</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Uncontrolled value
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Popover.onOpenChange</CardTitle>
-                <CardDescription>Callback when open state changes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> (open: boolean) ={'>'} void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Called when popover opens or closes
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>PopoverContent.align</CardTitle>
-                <CardDescription>Alignment position</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'start' | 'center' | 'end' | 'baseline'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> start, center, end, baseline
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> center
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Horizontal alignment relative to trigger
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>PopoverContent.side</CardTitle>
-                <CardDescription>Placement side</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'top' | 'right' | 'bottom' | 'left'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> top, right, bottom, left
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> bottom
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Which side the popover appears on
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>PopoverContent.sideOffset</CardTitle>
-                <CardDescription>Distance from trigger element</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> number
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> 4
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Distance in pixels from the trigger
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>PopoverTrigger.asChild</CardTitle>
-                <CardDescription>Merge props with child element</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Makes child the trigger button
-                </Typography>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/popover"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI Popover documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -344,30 +214,30 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Popover component follows accessibility best practices built on Radix UI.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Popover is fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the popover trigger
+                • Space or Enter - Toggle popover open/closed when trigger is focused
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Enter or Space</strong> - Open the popover when focused
+                • Tab - Move focus within popover content when open
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Escape</strong> - Close popover and return focus to trigger
+                • Shift + Tab - Move focus to previous element within popover
               </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Click outside</strong> - Close popover
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Escape - Close popover and return focus to trigger
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -375,35 +245,31 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Automatically hides popover from screen readers when closed
+                • role="dialog" is applied to the popover content
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Focus is properly managed when opening and closing
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Use <code>aria-label</code> on triggers without visible text
-              </Typography>
-              <Typography variant="body2" className="block">
-                • Content is announced when popover opens
+                • Follows Dialog WAI-ARIA design pattern
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Popover triggers have visible focus states that follow the LSD design system's focus
-                indicators, ensuring keyboard users can always see which element has focus. Focus
-                returns to the trigger when the popover is closed.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus moves to popover content when opened
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus returns to trigger when popover closes
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Outside click and Escape close the popover
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
           previous={{
             title: 'Dialog',
