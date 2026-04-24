@@ -187,10 +187,12 @@
 
 @layer base {
   * {
-    @apply lsd:border-border lsd:outline-ring/50;
+    border-color: var(--lsd-border);
+    outline-color: var(--lsd-text-primary);
   }
   body {
-    @apply lsd:bg-background lsd:text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 }
 
