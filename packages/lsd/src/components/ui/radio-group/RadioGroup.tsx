@@ -42,7 +42,7 @@ function RadioGroup({ className, ...props }: RadioGroupProps) {
   return (
     <RadioGroupPrimitive.Root
       data-slot="radio-group"
-      className={cn('lsd:grid lsd:gap-[var(--lsd-spacing-base)]', className)}
+      className={cn('lsd:grid lsd:gap-(--lsd-spacing-base)', className)}
       {...props}
     />
   );

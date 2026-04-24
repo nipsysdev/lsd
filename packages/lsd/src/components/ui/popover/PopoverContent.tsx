@@ -4,9 +4,21 @@ import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface PopoverContentProps extends React.ComponentProps<typeof PopoverPrimitive.Content> {
+  /**
+   * Size variant for the popover content.
+   *
+   * Controls the width and padding of the popover container.
+   */
   size?: 'sm' | 'md' | 'lg' | 'auto';
 }
 
+/**
+ * PopoverContent - Container for the popover's floating content.
+ *
+ * Automatically positioned relative to trigger with collision detection.
+ *
+ * @exportAs sub
+ */
 function PopoverContent({
   className,
   align = 'center',

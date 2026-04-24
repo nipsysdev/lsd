@@ -26,7 +26,7 @@ import { cn } from '@/lib/utils';
  * visual elements that do not capture keyboard focus or mouse events.
  */
 const Separator = React.forwardRef<
-  React.ElementRef<typeof SeparatorPrimitive.Root>,
+  React.ComponentRef<typeof SeparatorPrimitive.Root>,
   React.ComponentProps<typeof SeparatorPrimitive.Root>
 >(({ className, orientation = 'horizontal', decorative = true, ...props }, ref) => {
   return (

@@ -28,7 +28,7 @@ import type { ProgressProps } from './types';
  * @docSectionAccessibilityFocus
  * Progress indicators are not focusable as they are non-interactive display elements.
  */
-const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root>, ProgressProps>(
+const Progress = React.forwardRef<React.ComponentRef<typeof ProgressPrimitive.Root>, ProgressProps>(
   (
     {
       className,
