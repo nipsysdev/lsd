@@ -72,4 +72,7 @@ const FieldError = React.forwardRef<HTMLDivElement, FieldErrorProps>(
 
 FieldError.displayName = 'FieldError';
 
-export { FieldError };
+const FieldErrorWithMemo = React.memo(FieldError);
+FieldErrorWithMemo.displayName = 'FieldError';
+
+export { FieldErrorWithMemo as FieldError };

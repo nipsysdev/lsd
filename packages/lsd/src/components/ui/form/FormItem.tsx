@@ -36,5 +36,5 @@ function FormItem({ className, ...props }: React.ComponentProps<'div'>) {
   );
 }
 
-export { FormItem, FormItemContext };
 export type { FormItemContextValue };
+export { FormItem, FormItemContext };

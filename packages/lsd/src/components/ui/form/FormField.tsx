@@ -33,5 +33,5 @@ const FormField = <
   );
 };
 
-export { FormField, FormFieldContext };
 export type { FormFieldContextValue };
+export { FormField, FormFieldContext };
