@@ -1,8 +1,10 @@
 'use client';
 
-import { Autocomplete } from '@nipsys/shadcn-lsd';
+import { Autocomplete } from '@nipsys/lsd';
 import { TextAaIcon } from '@phosphor-icons/react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+
+export const SIZE = 'md';
 
 const options = [
   { value: '1', label: 'Option 1' },
@@ -10,7 +12,10 @@ const options = [
   { value: '3', label: 'Option 3' },
 ];
 
-export const CODE = `import { Autocomplete } from '@nipsys/shadcn-lsd';
+/**
+ * @docSection feature
+ */
+export const CODE = `import { Autocomplete } from '@nipsys/lsd';
 import { TextAaIcon } from '@phosphor-icons/react';
 
 const options = [

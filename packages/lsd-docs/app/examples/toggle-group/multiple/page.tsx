@@ -1,15 +1,20 @@
 'use client';
 
-import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/shadcn-lsd';
+import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
+export const CODE = `import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Multiple Selection</Typography>
-      <ToggleGroup type="multiple" defaultValue={['item-1', 'item-2']}>
+      <ToggleGroup type="multiple" defaultValue={['item-1', 'item-2']} groupLabel="Multiple selection options">
         <ToggleGroupItem value="item-1" aria-label="Toggle item 1">
           One
         </ToggleGroupItem>
@@ -30,7 +35,11 @@ export function ToggleGroupMultipleExample() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Multiple Selection</Typography>
-      <ToggleGroup type="multiple" defaultValue={['item-1', 'item-2']}>
+      <ToggleGroup
+        type="multiple"
+        defaultValue={['item-1', 'item-2']}
+        groupLabel="Multiple selection options"
+      >
         <ToggleGroupItem value="item-1" aria-label="Toggle item 1">
           One
         </ToggleGroupItem>

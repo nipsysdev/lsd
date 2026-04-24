@@ -1,14 +1,8 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -17,316 +11,121 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as BasicCode } from '@/examples/radio-group/basic/page';
-import { CODE as DisabledCode } from '@/examples/radio-group/disabled/page';
+import {
+  CODE as RadioGroupBasicCODE,
+  SIZE as RadioGroupBasicSIZE,
+} from '@/examples/radio-group/basic/page';
+import {
+  CODE as RadioGroupDisabledCODE,
+  SIZE as RadioGroupDisabledSIZE,
+} from '@/examples/radio-group/disabled/page';
 
 export default function RadioGroupPage() {
-  const radioGroupBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const radioGroupDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const RadioGroupBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const RadioGroupDisabledIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes(radioGroupBasicIframeRef, radioGroupDisabledIframeRef);
+  useSendThemeToIframes(RadioGroupBasicIframeRef, RadioGroupDisabledIframeRef);
+
   return (
     <DocsLayout>
       <PageHeader
-        title="Radio Group"
-        description="A radio group allows single selection from a set of mutually exclusive options"
+        title="Radio-group"
+        description="Set of checkable buttons where only one can be checked at a time."
       />
 
       <PageContent>
-        <PageSection title="About Radio Group">
+        <PageSection title="About RadioGroup">
           <Typography variant="body1" className="block">
-            The Radio Group component is built on Radix UI and follows accessibility patterns. It
-            provides a rich set of features including single selection from mutually exclusive
-            options, keyboard navigation, controlled and uncontrolled modes, disabled state support,
-            label association for accessibility, and custom styling integration.
+            A set of checkable buttons—radio buttons—where only one option can be selected at a
+            time. Includes RadioGroupItem for individual radio buttons with built-in styling and
+            focus indicators. The component adheres to the WAI-ARIA Radio Group design pattern and
+            uses roving tabindex to manage focus movement among items.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import the Radio Group component from LSD:</Typography>
+          <Typography variant="body1">Import the RadioGroup component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { RadioGroup, RadioGroupItem, Label } from '@nipsys/shadcn-lsd'
+                code={`import { RadioGroup } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <RadioGroup defaultValue="option1">
-      <div className="flex items-center gap-(--lsd-spacing-smaller)">
-        <RadioGroupItem value="option1" id="r1" />
-        <Label htmlFor="r1">Option 1</Label>
-      </div>
-      <div className="flex items-center gap-(--lsd-spacing-smaller)">
-        <RadioGroupItem value="option2" id="r2" />
-        <Label htmlFor="r2">Option 2</Label>
-      </div>
-    </RadioGroup>
-  )
+  return <RadioGroup />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Features">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Additional features like labels, disabled states, and orientation options.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Radio Group</CardTitle>
-              <CardDescription>Radio group with associated Label components</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={radioGroupBasicIframeRef}
-                size="md"
+                ref={RadioGroupBasicIframeRef}
+                size={RadioGroupBasicSIZE}
                 src="/examples/radio-group/basic"
-                title="Basic"
+                title="Basic Example"
               />
-              <CodeExample code={BasicCode} />
+              <CodeExample code={RadioGroupBasicCODE} />
             </CardContent>
           </Card>
+        </PageSection>
+
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features and capabilities of the component.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Disabled State</CardTitle>
-              <CardDescription>Radio group with disabled items</CardDescription>
+              <CardTitle>Disabled</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={radioGroupDisabledIframeRef}
-                size="md"
+                ref={RadioGroupDisabledIframeRef}
+                size={RadioGroupDisabledSIZE}
                 src="/examples/radio-group/disabled"
-                title="Disabled"
+                title="Disabled Example"
               />
-              <CodeExample code={DisabledCode} />
+              <CodeExample code={RadioGroupDisabledCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Composition">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>{['RadioGroup', '└── RadioGroupItem']}</CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">
-            All available props for the Radio Group components.
-          </Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>value</CardTitle>
-                <CardDescription>Controlled value of the radio group</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>RadioGroup wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Use this for controlled components
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>defaultValue</CardTitle>
-                <CardDescription>Initial value for uncontrolled mode</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Use this for uncontrolled components
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>onValueChange</CardTitle>
-                <CardDescription>Callback when value changes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> (value: string) =&gt; void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Called when a radio item is selected
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>disabled</CardTitle>
-                <CardDescription>Disable the entire radio group</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Prevents interaction with all radio items
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>name</CardTitle>
-                <CardDescription>Name attribute for form submission</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Used when radio group is part of a form
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>required</CardTitle>
-                <CardDescription>Mark radio group as required</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Adds required attribute for form validation
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>orientation</CardTitle>
-                <CardDescription>Layout direction of radio items</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'vertical' | 'horizontal'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> vertical, horizontal
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> vertical
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>loop</CardTitle>
-                <CardDescription>Enable keyboard navigation looping</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> true
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  When true, arrow keys wrap around to first/last item
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>value (RadioGroupItem)</CardTitle>
-                <CardDescription>Unique value for this radio item</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string (required)
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> -
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Must be unique within the radio group
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>id (RadioGroupItem)</CardTitle>
-                <CardDescription>Custom ID for the radio item</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> auto-generated
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  If not provided, a unique ID is automatically generated
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>disabled (RadioGroupItem)</CardTitle>
-                <CardDescription>Disable individual radio item</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Prevents interaction with this specific item
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>required (RadioGroupItem)</CardTitle>
-                <CardDescription>Mark radio item as required</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Adds required attribute for form validation
-                </Typography>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/radio-group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI RadioGroup documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -334,36 +133,30 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Radio Group component follows WAI-ARIA patterns and is fully accessible.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Radio groups are fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Focus on radio group
+                • Tab - Moves focus to the checked radio item or first radio item in the group
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>ArrowDown</strong> - Navigate to next item (vertical)
+                • Space - Checks the currently focused RadioGroupItem
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>ArrowUp</strong> - Navigate to previous item (vertical)
+                • ArrowDown/ArrowUp - Moves focus and checks next/previous RadioGroupItem
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>ArrowRight</strong> - Navigate to next item (horizontal)
-              </Typography>
-              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>ArrowLeft</strong> - Navigate to previous item (horizontal)
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Space</strong> / <strong>Enter</strong> - Select focused item
+                • ArrowRight/ArrowLeft - Moves focus and checks next/previous RadioGroupItem
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -371,44 +164,46 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>role="radiogroup"</code> on the container
+                • role="radiogroup" is set on RadioGroup
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>role="radio"</code> on each radio item
+                • role="radio" is set on each RadioGroupItem
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>aria-checked="true|false"</code> indicates selection state
+                • aria-checked indicates checked/unchecked state
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>aria-disabled="true|false"</code> indicates disabled state
+                • aria-disabled indicates disabled state
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <code>aria-required="true|false"</code> indicates required state
-              </Typography>
-              <Typography variant="body2" className="block">
-                • Use <code>Label</code> components with <code>htmlFor</code> for proper
-                associations
+                • Uses roving tabindex for focus management
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Components have visible focus states that follow the LSD design system's focus
-                indicators, ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus moves to the checked radio item or the first radio item when navigating to
+                the group. Arrow keys navigate between items, moving focus and checking the target
+                item. The component uses roving tabindex to ensure only one radio item is in the tab
+                sequence at a time.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
-          previous={{ title: 'Form', href: '/components/form' }}
-          next={{ title: 'Slider', href: '/components/slider' }}
+          previous={{
+            title: 'Form',
+            href: '/components/form',
+          }}
+          next={{
+            title: 'Slider',
+            href: '/components/slider',
+          }}
         />
       </PageContent>
     </DocsLayout>

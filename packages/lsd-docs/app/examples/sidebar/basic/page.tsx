@@ -19,7 +19,7 @@ import {
   SidebarRail,
   SidebarTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import {
   AtomIcon,
   ChartLineIcon,
@@ -33,6 +33,11 @@ import {
 import Link from 'next/link';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'lg';
+
+/**
+ * @docSection usage
+ */
 export const CODE = `import {
   Sidebar,
   SidebarContent,
@@ -52,7 +57,7 @@ export const CODE = `import {
   SidebarRail,
   SidebarTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import {
   AtomIcon,
   ChartLineIcon,

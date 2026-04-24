@@ -6,16 +6,21 @@ import {
   InputGroupButton,
   InputGroupInput,
   InputGroupText,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'sm';
+
+/**
+ * @docSection usage
+ */
 export const CODE = `import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
   InputGroupText,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

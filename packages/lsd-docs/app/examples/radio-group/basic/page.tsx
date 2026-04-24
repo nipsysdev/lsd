@@ -1,11 +1,14 @@
 'use client';
 
-import { Label, RadioGroup, RadioGroupItem, Typography } from '@nipsys/shadcn-lsd';
+import { Label, RadioGroup, RadioGroupItem, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+/**
+ * @docSection usage
+ */
 export const CODE = `
-import { RadioGroup, RadioGroupItem, Label, Typography } from '@nipsys/shadcn-lsd';
+import { RadioGroup, RadioGroupItem, Label, Typography } from '@nipsys/lsd';
 
 export function Example() {
   const [value, setValue] = useState('option1');
@@ -31,6 +34,8 @@ export function Example() {
   );
 }
 `;
+
+export const SIZE = 'md';
 
 export function RadioGroupBasicExample() {
   useSendThemeToIframes();

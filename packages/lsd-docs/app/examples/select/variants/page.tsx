@@ -9,10 +9,15 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   Select,
   SelectContent,
@@ -22,7 +27,7 @@ export const CODE = `import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 
 export function Example() {

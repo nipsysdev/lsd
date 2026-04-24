@@ -1,9 +1,14 @@
 'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
+import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
+export const CODE = `import { Tabs, TabsContent, TabsList, TabsTrigger, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (

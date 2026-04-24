@@ -12,7 +12,7 @@ import {
   Separator,
   Switch,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export default function SocialUIPreview() {
   return (

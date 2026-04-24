@@ -6,8 +6,10 @@ import {
   AccordionItem,
   AccordionTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+
+export const SIZE = 'sm';
 
 export const CODE = `import {
   Accordion,
@@ -15,7 +17,7 @@ export const CODE = `import {
   AccordionItem,
   AccordionTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

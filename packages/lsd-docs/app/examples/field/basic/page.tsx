@@ -1,9 +1,14 @@
 'use client';
 
-import { Field, FieldGroup, FieldLabel, Input, Typography } from '@nipsys/shadcn-lsd';
+import { Field, FieldGroup, FieldLabel, Input, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Field, FieldGroup, FieldLabel, Input, Typography } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection usage
+ */
+export const CODE = `import { Field, FieldGroup, FieldLabel, Input, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (

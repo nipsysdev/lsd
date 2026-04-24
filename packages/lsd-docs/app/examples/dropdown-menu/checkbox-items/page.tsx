@@ -8,10 +8,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `\`\`\`tsx
 import { useState } from 'react';
 import { 
@@ -22,7 +27,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   Button,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function DropdownMenuCheckboxItems() {
   const [showBookmarks, setShowBookmarks] = useState(true);

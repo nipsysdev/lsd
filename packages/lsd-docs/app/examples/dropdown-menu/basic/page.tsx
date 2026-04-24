@@ -8,9 +8,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection usage
+ */
 export const CODE = `
 import {
   DropdownMenu,
@@ -20,7 +25,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   Button,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function DropdownMenuBasic() {
   return (

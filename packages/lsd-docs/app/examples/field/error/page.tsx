@@ -12,10 +12,17 @@ import {
   FieldGroup,
   FieldLabel,
   Input,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 
-export default function FieldErrorExample() {
+export const SIZE = 'md';
+
+/**
+ * @docSection state
+ */
+
+function FieldErrorExample() {
   const [errors, setErrors] = useState<string[]>([]);
 
   const validateEmail = (email: string) => {
@@ -29,6 +36,8 @@ export default function FieldErrorExample() {
     }
     setErrors(newErrors);
   };
+
+  useSendThemeToIframes();
 
   return (
     <Card className="w-full max-w-md">
@@ -57,19 +66,24 @@ export default function FieldErrorExample() {
   );
 }
 
+export default function FieldErrorPage() {
+  return <FieldErrorExample />;
+}
+
+/**
+ * @docSection state
+ */
 export const CODE = `import {
-  Button,
   Field,
   FieldContent,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
   Input,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 
-export default function FieldErrorExample() {
+function FieldErrorExample() {
   const [errors, setErrors] = useState<string[]>([]);
 
   const validateEmail = (email: string) => {
@@ -101,4 +115,8 @@ export default function FieldErrorExample() {
       <FieldError className="mt-2">Static error message example</FieldError>
     </FieldGroup>
   );
+}
+
+export default function Example() {
+  return <FieldErrorExample />;
 }`;

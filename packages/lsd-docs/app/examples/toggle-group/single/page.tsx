@@ -1,15 +1,20 @@
 'use client';
 
-import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/shadcn-lsd';
+import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
+export const CODE = `import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Single Selection</Typography>
-      <ToggleGroup type="single" defaultValue="item-2">
+      <ToggleGroup type="single" defaultValue="item-2" groupLabel="Single selection options">
         <ToggleGroupItem value="item-1" aria-label="Item 1">
           One
         </ToggleGroupItem>
@@ -30,7 +35,7 @@ export function ToggleGroupSingleExample() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Single Selection</Typography>
-      <ToggleGroup type="single" defaultValue="item-2">
+      <ToggleGroup type="single" defaultValue="item-2" groupLabel="Single selection options">
         <ToggleGroupItem value="item-1" aria-label="Item 1">
           One
         </ToggleGroupItem>

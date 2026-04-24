@@ -1,9 +1,16 @@
 'use client';
 
-import { Input } from '@nipsys/shadcn-lsd';
+import { Input } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Input } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
+export const CODE = `import { Input } from '@nipsys/lsd';
+
+export const SIZE = 'md';
 
 export function Example() {
   return (

@@ -1,7 +1,8 @@
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -10,168 +11,204 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as BasicCode } from '@/examples/scroll-area/basic/page';
-import { CODE as BothCode } from '@/examples/scroll-area/both/page';
-import { CODE as HorizontalCode } from '@/examples/scroll-area/horizontal/page';
+import {
+  CODE as ScrollAreaBasicCODE,
+  SIZE as ScrollAreaBasicSIZE,
+} from '@/examples/scroll-area/basic/page';
+import {
+  CODE as ScrollAreaBothOrientationCODE,
+  SIZE as ScrollAreaBothOrientationSIZE,
+} from '@/examples/scroll-area/both-orientation/page';
+import {
+  CODE as ScrollAreaHorizontalCODE,
+  SIZE as ScrollAreaHorizontalSIZE,
+} from '@/examples/scroll-area/horizontal/page';
 
 export default function ScrollAreaPage() {
-  const basicIframeRef = useRef<HTMLIFrameElement>(null);
-  const horizontalIframeRef = useRef<HTMLIFrameElement>(null);
-  const bothIframeRef = useRef<HTMLIFrameElement>(null);
+  const ScrollAreaBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const ScrollAreaBothOrientationIframeRef = useRef<HTMLIFrameElement>(null);
+  const ScrollAreaHorizontalIframeRef = useRef<HTMLIFrameElement>(null);
 
-  useSendThemeToIframes(basicIframeRef, horizontalIframeRef, bothIframeRef);
+  useSendThemeToIframes(
+    ScrollAreaBasicIframeRef,
+    ScrollAreaBothOrientationIframeRef,
+    ScrollAreaHorizontalIframeRef
+  );
 
   return (
     <DocsLayout>
       <PageHeader
-        title="ScrollArea"
+        title="Scroll-area"
         description="Custom styled scrollable container with horizontal and vertical scrolling support"
       />
 
       <PageContent>
         <PageSection title="About ScrollArea">
-          <p className="block">
-            ScrollArea provides a cross-browser custom scrollbar for content that needs scrolling.
-            It supports both horizontal and vertical orientations with smooth, stylized scrollbars
-            that match your design system.
-          </p>
+          <Typography variant="body1" className="block">
+            A cross-browser custom scrollbar component that augments native scroll functionality.
+            The scrollbar sits on top of content without taking up layout space, preserving native
+            scrolling behavior and accessibility. Includes sub-components for building complete
+            scrollable layouts.
+          </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <p>Import the ScrollArea component from LSD:</p>
+          <Typography variant="body1">Import the ScrollArea component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { ScrollArea, ScrollBar } from '@nipsys/shadcn-lsd';
+                code={`import { ScrollArea } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <ScrollArea className="h-80 w-full">
-      <div>Your content here</div>
-    </ScrollArea>
-  );
+  return <ScrollArea />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Basic ScrollArea">
-          <p>
-            Vertical scrolling with custom scrollbar. The ScrollArea automatically shows the
-            scrollbar when content overflows.
-          </p>
+        <PageSection title="Usage">
+          <Typography variant="body1">
+            The simplest form of the component with default styling.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Vertical Scrolling</CardTitle>
-              <CardDescription>Basic vertical scrollable container</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={basicIframeRef}
-                size="md"
+                ref={ScrollAreaBasicIframeRef}
+                size={ScrollAreaBasicSIZE}
                 src="/examples/scroll-area/basic"
-                title="Basic ScrollArea"
+                title="Basic Example"
               />
-              <CodeExample code={BasicCode} />
+              <CodeExample code={ScrollAreaBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Horizontal ScrollArea">
-          <p>Horizontal scrolling with custom ScrollBar component for better UX.</p>
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features and capabilities of the component.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Horizontal Scrolling</CardTitle>
-              <CardDescription>Horizontal scrollable container with ScrollBar</CardDescription>
+              <CardTitle>Both Orientation</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={horizontalIframeRef}
-                size="sm"
+                ref={ScrollAreaBothOrientationIframeRef}
+                size={ScrollAreaBothOrientationSIZE}
+                src="/examples/scroll-area/both-orientation"
+                title="Both Orientation Example"
+              />
+              <CodeExample code={ScrollAreaBothOrientationCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Horizontal</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={ScrollAreaHorizontalIframeRef}
+                size={ScrollAreaHorizontalSIZE}
                 src="/examples/scroll-area/horizontal"
-                title="Horizontal ScrollArea"
+                title="Horizontal Example"
               />
-              <CodeExample code={HorizontalCode} />
+              <CodeExample code={ScrollAreaHorizontalCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Both Orientations">
-          <p>Bi-directional scrolling with both horizontal and vertical scrollbars.</p>
-
+        <PageSection title="Composition">
           <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Two-Way Scrolling</CardTitle>
-              <CardDescription>Scrollable container with both orientations</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={bothIframeRef}
-                size="sm"
-                src="/examples/scroll-area/both"
-                title="Both Orientations"
-              />
-              <CodeExample code={BothCode} />
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {[
+                  'ScrollArea',
+                  '├── ScrollBar',
+                  '│   └── ScrollAreaPrimitive.ScrollAreaThumb',
+                  '├── ScrollAreaPrimitive.Corner',
+                  '└── ScrollAreaPrimitive.Viewport',
+                ]}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <p>All available props for the ScrollArea component.</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>className</CardTitle>
-                <CardDescription>Additional CSS classes to apply</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>ScrollArea wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="block mb-2">
-                  <strong>Type:</strong> string
-                </p>
-                <p className="block">
-                  <strong>Default:</strong> undefined
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>children</CardTitle>
-                <CardDescription>Content to be scrolled</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-2">
-                  <strong>Type:</strong> React.ReactNode
-                </p>
-                <p className="block">
-                  <strong>Default:</strong> undefined
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>ScrollBar.orientation</CardTitle>
-                <CardDescription>Orientation of the scrollbar</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-2">
-                  <strong>Type:</strong> 'horizontal' | 'vertical'
-                </p>
-                <p className="block">
-                  <strong>Default:</strong> 'vertical'
-                </p>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/scroll-area"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI ScrollArea documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
         </PageSection>
 
+        <PageSection title="Accessibility">
+          <Typography variant="body1">
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Keyboard Navigation</CardTitle>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Arrow keys - Scroll through content (platform-dependent)
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Page Up/Down - Scroll by page (platform-dependent)
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Home/End - Scroll to top/bottom (platform-dependent)
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • No special ARIA attributes required. Component relies on native scroll semantics.
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Standard focus management for scrollable content. Focus follows native browser
+                behavior when navigating with keyboard.
+              </Typography>
+            </CardContent>
+          </Card>
+        </PageSection>
         <PageNavigation
           previous={{
             title: 'Card',

@@ -1,10 +1,13 @@
 'use client';
 
-import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/shadcn-lsd';
+import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/shadcn-lsd';
+/**
+ * @docSection feature
+ */
+export const CODE = `import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/lsd';
 import { useState } from 'react';
 
 export function Example() {
@@ -26,6 +29,8 @@ export function Example() {
     </div>
   );
 }`;
+
+export const SIZE = 'sm';
 
 export function ControlledPopoverExample() {
   useSendThemeToIframes();

@@ -1,9 +1,14 @@
 'use client';
 
-import { Checkbox, Field, FieldGroup, FieldLabel, Typography } from '@nipsys/shadcn-lsd';
+import { Checkbox, Field, FieldGroup, FieldLabel, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Checkbox, Field, FieldGroup, FieldLabel, Typography } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection variant
+ */
+export const CODE = `import { Checkbox, Field, FieldGroup, FieldLabel, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (

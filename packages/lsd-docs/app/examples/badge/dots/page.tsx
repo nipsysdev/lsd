@@ -1,11 +1,14 @@
 'use client';
 
-import { Badge } from '@nipsys/shadcn-lsd';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { Badge } from '@nipsys/lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 
-export const CODE = `import { Badge } from '@nipsys/shadcn-lsd';
+export const SIZE = 'sm';
 
-export function Example() {
+/** @docSection variant */
+export const CODE = `import { Badge } from '@nipsys/lsd';
+
+export function BadgeDotsExample() {
   return (
     <div className="flex flex-wrap gap-(--lsd-spacing-base) h-fit items-center">
       <Badge variant="dot" size="sm" />
@@ -13,7 +16,12 @@ export function Example() {
       <Badge variant="dot" size="lg" />
     </div>
   );
-}`;
+}
+
+export default function Example() {
+  return <BadgeDotsExample />;
+}
+`;
 
 export function BadgeDotsExample() {
   useSendThemeToIframes();
@@ -27,6 +35,6 @@ export function BadgeDotsExample() {
   );
 }
 
-export default function Dots() {
+export default function BadgeDotsPage() {
   return <BadgeDotsExample />;
 }

@@ -1,14 +1,8 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -17,451 +11,347 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as TABS_BASIC_CODE } from '@/examples/tabs/basic/page';
-import { CODE as TABS_BORDERED_CODE } from '@/examples/tabs/bordered/page';
-import { CODE as TABS_CONTROLLED_CODE } from '@/examples/tabs/controlled/page';
-import { CODE as TABS_DISABLED_CODE } from '@/examples/tabs/disabled/page';
-import { CODE as TABS_FULL_WIDTH_CODE } from '@/examples/tabs/full-width/page';
-import { CODE as TABS_SIZES_CODE } from '@/examples/tabs/sizes/page';
-import { CODE as TABS_WITH_ICONS_CODE } from '@/examples/tabs/with-icons/page';
+import { CODE as TabsBasicCODE, SIZE as TabsBasicSIZE } from '@/examples/tabs/basic/page';
+import { CODE as TabsBorderedCODE, SIZE as TabsBorderedSIZE } from '@/examples/tabs/bordered/page';
+import {
+  CODE as TabsControlledCODE,
+  SIZE as TabsControlledSIZE,
+} from '@/examples/tabs/controlled/page';
+import { CODE as TabsDisabledCODE, SIZE as TabsDisabledSIZE } from '@/examples/tabs/disabled/page';
+import {
+  CODE as TabsFullWidthCODE,
+  SIZE as TabsFullWidthSIZE,
+} from '@/examples/tabs/full-width/page';
+import { CODE as TabsSizesCODE, SIZE as TabsSizesSIZE } from '@/examples/tabs/sizes/page';
+import {
+  CODE as TabsWithIconsCODE,
+  SIZE as TabsWithIconsSIZE,
+} from '@/examples/tabs/with-icons/page';
 
 export default function TabsPage() {
-  const tabsBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const tabsControlledIframeRef = useRef<HTMLIFrameElement>(null);
-  const tabsSizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const tabsFullWidthIframeRef = useRef<HTMLIFrameElement>(null);
-  const tabsBorderedIframeRef = useRef<HTMLIFrameElement>(null);
-  const tabsWithIconsIframeRef = useRef<HTMLIFrameElement>(null);
-  const tabsDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const TabsBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const TabsBorderedIframeRef = useRef<HTMLIFrameElement>(null);
+  const TabsControlledIframeRef = useRef<HTMLIFrameElement>(null);
+  const TabsDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const TabsFullWidthIframeRef = useRef<HTMLIFrameElement>(null);
+  const TabsSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const TabsWithIconsIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    tabsBasicIframeRef,
-    tabsControlledIframeRef,
-    tabsSizesIframeRef,
-    tabsFullWidthIframeRef,
-    tabsBorderedIframeRef,
-    tabsWithIconsIframeRef,
-    tabsDisabledIframeRef
+    TabsBasicIframeRef,
+    TabsBorderedIframeRef,
+    TabsControlledIframeRef,
+    TabsDisabledIframeRef,
+    TabsFullWidthIframeRef,
+    TabsSizesIframeRef,
+    TabsWithIconsIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
         title="Tabs"
-        description="Organized content switcher with multiple sizes and layout options"
+        description="Displays content in separate panels that users can switch between"
       />
 
       <PageContent>
         <PageSection title="About Tabs">
           <Typography variant="body1" className="block">
-            Tabs are a set of layered sections of content, known as tab panels, that display one
-            panel at a time. They help organise content into separate views while keeping all
-            content accessible within the same context.
+            A set of layered sections of content displayed one at a time. Users navigate between
+            panels using interactive triggers, with one panel visible at any time. Supports
+            different sizes and full-width layout options.
           </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import the Tabs components from LSD:</Typography>
+          <Typography variant="body1">Import the Tabs component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-} from '@nipsys/shadcn-lsd'
+                code={`import { Tabs } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <Tabs defaultValue="tab1">
-      <TabsList>
-        <TabsTrigger value="tab1">Tab 1</TabsTrigger>
-        <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-      </TabsList>
-      <TabsContent value="tab1">Content 1</TabsContent>
-      <TabsContent value="tab2">Content 2</TabsContent>
-    </Tabs>
-  )
+  return <Tabs />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Sizes">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Tabs come in three sizes to fit different contexts and layouts.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>All Sizes</CardTitle>
-              <CardDescription>From small to large</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={tabsSizesIframeRef}
-                size="md"
-                src="/examples/tabs/sizes"
-                title="Tabs Sizes Example"
+                ref={TabsBasicIframeRef}
+                size={TabsBasicSIZE}
+                src="/examples/tabs/basic"
+                title="Basic Example"
               />
-              <CodeExample code={TABS_SIZES_CODE} />
+              <CodeExample code={TabsBasicCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Sizes">
+          <Typography variant="body1">
+            Component sizes for different contexts and visual hierarchy.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Sizes</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={TabsSizesIframeRef}
+                size={TabsSizesSIZE}
+                src="/examples/tabs/sizes"
+                title="Sizes Example"
+              />
+              <CodeExample code={TabsSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Features">
           <Typography variant="body1">
-            Additional features like full width, bordered content, icons, disabled states, and
-            controlled components.
+            Additional features and capabilities of the component.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Usage</CardTitle>
-              <CardDescription>Simple uncontrolled tabs with default value</CardDescription>
+              <CardTitle>Bordered</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={tabsBasicIframeRef}
-                size="md"
-                src="/examples/tabs/basic"
-                title="Tabs Basic Example"
+                ref={TabsBorderedIframeRef}
+                size={TabsBorderedSIZE}
+                src="/examples/tabs/bordered"
+                title="Bordered Example"
               />
-              <CodeExample code={TABS_BASIC_CODE} />
+              <CodeExample code={TabsBorderedCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Controlled Component</CardTitle>
-              <CardDescription>Control the active tab with state</CardDescription>
+              <CardTitle>Controlled</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={tabsControlledIframeRef}
-                size="md"
+                ref={TabsControlledIframeRef}
+                size={TabsControlledSIZE}
                 src="/examples/tabs/controlled"
-                title="Tabs Controlled Example"
+                title="Controlled Example"
               />
-              <CodeExample code={TABS_CONTROLLED_CODE} />
+              <CodeExample code={TabsControlledCODE} />
             </CardContent>
           </Card>
-
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Disabled</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={TabsDisabledIframeRef}
+                size={TabsDisabledSIZE}
+                src="/examples/tabs/disabled"
+                title="Disabled Example"
+              />
+              <CodeExample code={TabsDisabledCODE} />
+            </CardContent>
+          </Card>
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Full Width</CardTitle>
-              <CardDescription>Tabs that span the full width of their container</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={tabsFullWidthIframeRef}
-                size="md"
+                ref={TabsFullWidthIframeRef}
+                size={TabsFullWidthSIZE}
                 src="/examples/tabs/full-width"
-                title="Tabs Full Width Example"
+                title="Full Width Example"
               />
-              <CodeExample code={TABS_FULL_WIDTH_CODE} />
+              <CodeExample code={TabsFullWidthCODE} />
             </CardContent>
           </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Bordered Content</CardTitle>
-              <CardDescription>Add borders around tab content areas</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={tabsBorderedIframeRef}
-                size="md"
-                src="/examples/tabs/bordered"
-                title="Tabs Bordered Example"
-              />
-              <CodeExample code={TABS_BORDERED_CODE} />
-            </CardContent>
-          </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>With Icons</CardTitle>
-              <CardDescription>Add icons to tab triggers for visual context</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={tabsWithIconsIframeRef}
-                size="md"
+                ref={TabsWithIconsIframeRef}
+                size={TabsWithIconsSIZE}
                 src="/examples/tabs/with-icons"
-                title="Tabs With Icons Example"
+                title="With Icons Example"
               />
-              <CodeExample code={TABS_WITH_ICONS_CODE} />
+              <CodeExample code={TabsWithIconsCODE} />
             </CardContent>
           </Card>
+        </PageSection>
 
+        <PageSection title="Composition">
           <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Disabled Tabs</CardTitle>
-              <CardDescription>Disable individual tab triggers</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={tabsDisabledIframeRef}
-                size="md"
-                src="/examples/tabs/disabled"
-                title="Tabs Disabled Example"
-              />
-              <CodeExample code={TABS_DISABLED_CODE} />
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {['Tabs', '├── TabsList', '│   └── TabsTrigger', '└── TabsContent']}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Tabs components.</Typography>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              Tabs
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>bordered</CardTitle>
+                  <CardDescription>
+                    Adds border styling to tab content panels. When true, content panels display
+                    with border styling.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>size</CardTitle>
+                  <CardDescription>
+                    Size of tabs and their contents. Controls the spacing and text size for tabs and
+                    content panels.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>"sm" | "md" | "lg"</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> sm, md, lg
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>fullWidth</CardTitle>
+                  <CardDescription>
+                    Whether tabs and content span full width. When true, tabs and content stretch to
+                    fill available width.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>defaultValue</CardTitle>
-                <CardDescription>The initial active tab value</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  The value of the tab that should be active when the component first renders
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              TabsList
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>fullWidth</CardTitle>
+                  <CardDescription>
+                    Whether list spans full width. Overrides the fullWidth prop from the Tabs
+                    context.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>value</CardTitle>
-                <CardDescription>The currently active tab value (controlled)</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Use with onValueChange for controlled components
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>onValueChange</CardTitle>
-                <CardDescription>Callback when the active tab changes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> (value: string) =&gt; void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Called when a tab is clicked or activated
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>size</CardTitle>
-                <CardDescription>The size of the tabs</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'sm' | 'md' | 'lg'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> sm, md, lg
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> md
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>fullWidth</CardTitle>
-                <CardDescription>Make tabs span full width of container</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  When true, tab triggers will expand to fill available space
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>bordered</CardTitle>
-                <CardDescription>Add borders around tab content areas</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Adds visual separation between tab list and content
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>className</CardTitle>
-                <CardDescription>Additional CSS classes to apply</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Merges with existing tabs classes
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>...props</CardTitle>
-                <CardDescription>Standard Radix UI Tabs props</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong>{' '}
-                  <code>React.ComponentProps&lt;typeof TabsPrimitive.Root&gt;</code>
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  All standard Radix UI Tabs Root props are supported
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>TabsTrigger value</CardTitle>
-                <CardDescription>The unique identifier for the tab trigger</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Must match the value of the corresponding TabsContent
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>TabsTrigger disabled</CardTitle>
-                <CardDescription>Disable the tab trigger</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Prevents the tab from being activated
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>TabsContent value</CardTitle>
-                <CardDescription>The unique identifier for the tab content</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Must match the value of the corresponding TabsTrigger
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>TabsList className</CardTitle>
-                <CardDescription>Additional CSS classes for the list</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Merges with existing list classes
-                </Typography>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              TabsTrigger
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>fullWidth</CardTitle>
+                  <CardDescription>
+                    Whether trigger spans full width. Overrides the fullWidth prop from the Tabs
+                    context.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Tabs component follows accessibility best practices.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Tabs are fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the tabs list
+                • Tab - Navigate to tabs component or move focus to active content
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Arrow Left / Right</strong> - Navigate between tab triggers
+                • ArrowLeft/ArrowRight - Move focus to previous/next trigger (horizontal)
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Home</strong> - Navigate to the first tab trigger
+                • ArrowUp/ArrowDown - Move focus to previous/next trigger (vertical)
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>End</strong> - Navigate to the last tab trigger
+                • Home - Move focus to first trigger
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Enter / Space</strong> - Activate the focused tab trigger
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+                • End - Move focus to last trigger
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -469,48 +359,57 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Tab triggers have <code>role="tab"</code> and are properly labeled
+                • role="tablist" is added to TabsList
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Tab content has <code>role="tabpanel"</code> and is associated with its trigger
+                • role="tab" is added to each TabsTrigger
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Active tab is indicated with <code>aria-selected="true"</code>
+                • role="tabpanel" is added to each TabsContent
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Disabled tabs have <code>aria-disabled="true"</code>
+                • aria-selected indicates active state on triggers
               </Typography>
-              <Typography variant="body2" className="block">
-                • Use <code>aria-label</code> for tabs without visible text labels
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-controls links triggers to their content panels
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-labelledby links content panels to their triggers
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Tabs have visible focus states that follow the LSD design system's focus indicators,
-                ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus moves between triggers using arrow keys in the list orientation.
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • ArrowLeft/Right for horizontal orientation, ArrowUp/Down for vertical.
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Home/End jump to first/last trigger. When a trigger is focused, Tab moves
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • to the active content panel.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
+        <PageNavigation
+          previous={{
+            title: 'Sidebar',
+            href: '/components/sidebar',
+          }}
+          next={{
+            title: 'Alert',
+            href: '/components/alert',
+          }}
+        />
       </PageContent>
-
-      <PageNavigation
-        previous={{
-          title: 'Sidebar',
-          href: '/components/sidebar',
-        }}
-        next={{
-          title: 'Alert',
-          href: '/components/alert',
-        }}
-      />
     </DocsLayout>
   );
 }

@@ -1,9 +1,14 @@
 'use client';
 
-import { Button } from '@nipsys/shadcn-lsd';
+import { Button } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection state
+ */
+export const CODE = `import { Button } from '@nipsys/lsd';
 
 export function Example() {
   return (

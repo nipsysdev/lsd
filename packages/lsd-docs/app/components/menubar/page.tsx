@@ -1,9 +1,8 @@
-// First 95 lines of menubar page.tsx (keep) + new footer
-
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -12,321 +11,337 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as DestructiveCode } from '@/examples/menubar/destructive/page';
-import { CODE as InsetCode } from '@/examples/menubar/inset/page';
-import { CODE as LabelsCode } from '@/examples/menubar/labels-separators/page';
-import { CODE as MENUBAR_CODE } from '@/examples/menubar/page';
-import { CODE as ShortcutsCode } from '@/examples/menubar/shortcuts/page';
-import { CODE as SubmenusCode } from '@/examples/menubar/submenus/page';
+import { CODE as MenubarBasicCODE, SIZE as MenubarBasicSIZE } from '@/examples/menubar/basic/page';
+import {
+  CODE as MenubarCheckboxItemsCODE,
+  SIZE as MenubarCheckboxItemsSIZE,
+} from '@/examples/menubar/checkbox-items/page';
+import {
+  CODE as MenubarDestructiveCODE,
+  SIZE as MenubarDestructiveSIZE,
+} from '@/examples/menubar/destructive/page';
+import { CODE as MenubarInsetCODE, SIZE as MenubarInsetSIZE } from '@/examples/menubar/inset/page';
+import {
+  CODE as MenubarLabelsSeparatorsCODE,
+  SIZE as MenubarLabelsSeparatorsSIZE,
+} from '@/examples/menubar/labels-separators/page';
+import {
+  CODE as MenubarRadioItemsCODE,
+  SIZE as MenubarRadioItemsSIZE,
+} from '@/examples/menubar/radio-items/page';
+import {
+  CODE as MenubarShortcutsCODE,
+  SIZE as MenubarShortcutsSIZE,
+} from '@/examples/menubar/shortcuts/page';
+import {
+  CODE as MenubarSubmenusCODE,
+  SIZE as MenubarSubmenusSIZE,
+} from '@/examples/menubar/submenus/page';
 
 export default function MenubarPage() {
-  const menubarIframeRef = useRef<HTMLIFrameElement>(null);
-  const submenusIframeRef = useRef<HTMLIFrameElement>(null);
-  const destructiveIframeRef = useRef<HTMLIFrameElement>(null);
-  const labelsIframeRef = useRef<HTMLIFrameElement>(null);
-  const insetIframeRef = useRef<HTMLIFrameElement>(null);
-  const shortcutsIframeRef = useRef<HTMLIFrameElement>(null);
+  const MenubarBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const MenubarCheckboxItemsIframeRef = useRef<HTMLIFrameElement>(null);
+  const MenubarDestructiveIframeRef = useRef<HTMLIFrameElement>(null);
+  const MenubarInsetIframeRef = useRef<HTMLIFrameElement>(null);
+  const MenubarLabelsSeparatorsIframeRef = useRef<HTMLIFrameElement>(null);
+  const MenubarRadioItemsIframeRef = useRef<HTMLIFrameElement>(null);
+  const MenubarShortcutsIframeRef = useRef<HTMLIFrameElement>(null);
+  const MenubarSubmenusIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    menubarIframeRef,
-    submenusIframeRef,
-    destructiveIframeRef,
-    labelsIframeRef,
-    insetIframeRef,
-    shortcutsIframeRef
+    MenubarBasicIframeRef,
+    MenubarCheckboxItemsIframeRef,
+    MenubarDestructiveIframeRef,
+    MenubarInsetIframeRef,
+    MenubarLabelsSeparatorsIframeRef,
+    MenubarRadioItemsIframeRef,
+    MenubarShortcutsIframeRef,
+    MenubarSubmenusIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
         title="Menubar"
-        description="Dropdown menu bar component with keyboard navigation and submenu support"
+        description="Displays a persistent menu bar with dropdown menus for organizing commands and navigation."
       />
 
       <PageContent>
         <PageSection title="About Menubar">
-          <p className="block">
-            Menubars are horizontal navigation menus that display dropdown menus when triggered.
-            They provide a familiar pattern for organizing commands and actions in applications.
-          </p>
+          <Typography variant="body1" className="block">
+            A container for displaying menu items that can be expanded to show additional options.
+            Supports sub-menus, separators, labels, and various item types including standard items,
+            checkboxes, and radio groups.
+          </Typography>
         </PageSection>
 
         <PageSection title="Installation">
-          <p>Import the Menubar components from LSD:</p>
+          <Typography variant="body1">Import the Menubar component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-  Menubar,
-  MenubarMenu,
-  MenubarTrigger,
-  MenubarContent,
-  MenubarItem,
-} from '@nipsys/shadcn-lsd'
+                code={`import { Menubar } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <Menubar>
-      <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
-        <MenubarContent>
-          <MenubarItem>New</MenubarItem>
-          <MenubarItem>Open</MenubarItem>
-        </MenubarContent>
-      </MenubarMenu>
-    </Menubar>
-  )
+  return <Menubar />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Features">
-          <p>
-            Comprehensive features including submenus, destructive items, labels, separators, and
-            keyboard navigation.
-          </p>
+        <PageSection title="Usage">
+          <Typography variant="body1">
+            The simplest form of the component with default styling.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Menubar</CardTitle>
-              <CardDescription>Simple menubar with dropdown menus</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={menubarIframeRef}
-                size="md"
-                src="/examples/menubar"
-                title="Menubar Example"
+                ref={MenubarBasicIframeRef}
+                size={MenubarBasicSIZE}
+                src="/examples/menubar/basic"
+                title="Basic Example"
               />
-              <CodeExample code={MENUBAR_CODE} />
+              <CodeExample code={MenubarBasicCODE} />
             </CardContent>
           </Card>
+        </PageSection>
 
+        <PageSection title="Variants">
+          <Typography variant="body1">
+            Component variants for different visual styles and use cases.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Destructive</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={MenubarDestructiveIframeRef}
+                size={MenubarDestructiveSIZE}
+                src="/examples/menubar/destructive"
+                title="Destructive Example"
+              />
+              <CodeExample code={MenubarDestructiveCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features and capabilities of the component.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Checkbox Items</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={MenubarCheckboxItemsIframeRef}
+                size={MenubarCheckboxItemsSIZE}
+                src="/examples/menubar/checkbox-items"
+                title="Checkbox Items Example"
+              />
+              <CodeExample code={MenubarCheckboxItemsCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Inset</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={MenubarInsetIframeRef}
+                size={MenubarInsetSIZE}
+                src="/examples/menubar/inset"
+                title="Inset Example"
+              />
+              <CodeExample code={MenubarInsetCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Labels Separators</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={MenubarLabelsSeparatorsIframeRef}
+                size={MenubarLabelsSeparatorsSIZE}
+                src="/examples/menubar/labels-separators"
+                title="Labels Separators Example"
+              />
+              <CodeExample code={MenubarLabelsSeparatorsCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Radio Items</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={MenubarRadioItemsIframeRef}
+                size={MenubarRadioItemsSIZE}
+                src="/examples/menubar/radio-items"
+                title="Radio Items Example"
+              />
+              <CodeExample code={MenubarRadioItemsCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Shortcuts</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={MenubarShortcutsIframeRef}
+                size={MenubarShortcutsSIZE}
+                src="/examples/menubar/shortcuts"
+                title="Shortcuts Example"
+              />
+              <CodeExample code={MenubarShortcutsCODE} />
+            </CardContent>
+          </Card>
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Submenus</CardTitle>
-              <CardDescription>Nested menus for hierarchical organization</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={submenusIframeRef}
-                size="md"
+                ref={MenubarSubmenusIframeRef}
+                size={MenubarSubmenusSIZE}
                 src="/examples/menubar/submenus"
                 title="Submenus Example"
               />
-              <CodeExample code={SubmenusCode} />
+              <CodeExample code={MenubarSubmenusCODE} />
             </CardContent>
           </Card>
+        </PageSection>
 
+        <PageSection title="Composition">
           <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Destructive Items</CardTitle>
-              <CardDescription>Dangerous actions with destructive styling</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={destructiveIframeRef}
-                size="md"
-                src="/examples/menubar/destructive"
-                title="Destructive Items Example"
-              />
-              <CodeExample code={DestructiveCode} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Labels and Separators</CardTitle>
-              <CardDescription>Organize items with labels and visual separators</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={labelsIframeRef}
-                size="md"
-                src="/examples/menubar/labels-separators"
-                title="Labels and Separators Example"
-              />
-              <CodeExample code={LabelsCode} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Inset Items</CardTitle>
-              <CardDescription>Items with inset padding for visual hierarchy</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={insetIframeRef}
-                size="md"
-                src="/examples/menubar/inset"
-                title="Inset Items Example"
-              />
-              <CodeExample code={InsetCode} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Keyboard Shortcuts</CardTitle>
-              <CardDescription>Display keyboard shortcuts for quick access</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={shortcutsIframeRef}
-                size="md"
-                src="/examples/menubar/shortcuts"
-                title="Keyboard Shortcuts Example"
-              />
-              <CodeExample code={ShortcutsCode} />
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {['Menubar', '└── MenubarMenu', '    ├── MenubarTrigger', '    └── MenubarPortal']}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <p>All available props for the Menubar components.</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>Menubar</CardTitle>
-                <CardDescription>Root menubar container component</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>Menubar wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentType
-                </p>
-                <p className="mt-(--lsd-spacing-smaller)">Container for all menubar menus</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>MenubarMenu</CardTitle>
-                <CardDescription>Individual menu item in the menubar</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentType
-                </p>
-                <p className="mt-(--lsd-spacing-smaller)">Wraps a trigger and its content</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>MenubarTrigger</CardTitle>
-                <CardDescription>Button that opens the menu</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentType
-                </p>
-                <p className="mt-(--lsd-spacing-smaller)">Click to open the dropdown menu</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>MenubarContent</CardTitle>
-                <CardDescription>Dropdown menu content container</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentType
-                </p>
-                <p className="mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> align (start, center, end)
-                </p>
-                <p className="mb-(--lsd-spacing-smaller)">
-                  <strong>Default:</strong> start
-                </p>
-                <p className="mt-(--lsd-spacing-smaller)">Contains all menu items</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>MenubarItem</CardTitle>
-                <CardDescription>Individual menu item</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentType
-                </p>
-                <p className="mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> variant (default, destructive)
-                </p>
-                <p className="mb-(--lsd-spacing-smaller)">
-                  <strong>Default:</strong> default
-                </p>
-                <p className="mt-(--lsd-spacing-smaller)">Clickable action item</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>MenubarLabel</CardTitle>
-                <CardDescription>Non-interactive label text</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentType
-                </p>
-                <p className="mt-(--lsd-spacing-smaller)">Used to group related items</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>MenubarSeparator</CardTitle>
-                <CardDescription>Visual separator line</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> React.ComponentType
-                </p>
-                <p className="mt-(--lsd-spacing-smaller)">Divides menu items visually</p>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/menubar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI Menubar documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
-          <p>The Menubar component follows accessibility best practices.</p>
+          <Typography variant="body1">
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
+          </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Full keyboard support for all interactions</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the menubar
-              </p>
-              <p className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Arrow Keys</strong> - Navigate between menu items
-              </p>
-              <p className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Enter / Space</strong> - Select menu item
-              </p>
-              <p className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Escape</strong> - Close menu
-              </p>
-              <p className="block">
-                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
-              </p>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Tab - Navigate to menubar triggers
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Arrow Left/Right - Navigate between menu triggers
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Enter, Space, or Arrow Down - Open menu
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Arrow Up/Down - Navigate menu items
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Enter or Space - Select item
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Escape - Close menu
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Arrow Right - Open submenu from item
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Arrow Left - Return to parent menu
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>ARIA Attributes</CardTitle>
+              <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • role="menubar" identifies the container
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • role="menu" identifies dropdown content
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • role="menuitem" for standard items
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • role="menuitemcheckbox" for checkbox items
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • role="menuitemradio" for radio items
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-expanded indicates open/closed state
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-checked indicates checkbox/radio state
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-orientation="horizontal" on menubar
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus moves between triggers with arrow keys. When menu opens, focus moves to
+                first item. Focus is trapped in open menu. Focus returns to trigger when closing.
+              </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
           previous={{
-            title: 'Navigation Menu',
+            title: 'Navigation-menu',
             href: '/components/navigation-menu',
           }}
           next={{

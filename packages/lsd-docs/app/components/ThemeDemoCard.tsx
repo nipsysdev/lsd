@@ -19,7 +19,7 @@ import {
   Separator,
   Switch,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { UserIcon } from '@phosphor-icons/react';
 
 interface ThemeDemoCardProps {

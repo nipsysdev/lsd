@@ -11,10 +11,15 @@ import {
   FormMessage,
   Input,
   useForm,
-} from '@nipsys/shadcn-lsd';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+} from '@nipsys/lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 
-export const CODE = `import { Button, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, useForm } from '@nipsys/shadcn-lsd';
+export const SIZE = 'lg';
+
+/**
+ * @docSection feature
+ */
+export const CODE = `import { Button, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, useForm } from '@nipsys/lsd';
 
 export function FormValidationExample() {
   const form = useForm({

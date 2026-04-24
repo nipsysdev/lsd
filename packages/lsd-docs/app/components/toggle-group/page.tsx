@@ -1,14 +1,8 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -17,34 +11,48 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as ToggleGroupMultipleCODE } from '@/examples/toggle-group/multiple/page';
-import { CODE as ToggleGroupSingleCODE } from '@/examples/toggle-group/single/page';
-import { CODE as ToggleGroupSizesCODE } from '@/examples/toggle-group/sizes/page';
+import {
+  CODE as ToggleGroupBasicCODE,
+  SIZE as ToggleGroupBasicSIZE,
+} from '@/examples/toggle-group/basic/page';
+import {
+  CODE as ToggleGroupMultipleCODE,
+  SIZE as ToggleGroupMultipleSIZE,
+} from '@/examples/toggle-group/multiple/page';
+import {
+  CODE as ToggleGroupSingleCODE,
+  SIZE as ToggleGroupSingleSIZE,
+} from '@/examples/toggle-group/single/page';
+import {
+  CODE as ToggleGroupSizesCODE,
+  SIZE as ToggleGroupSizesSIZE,
+} from '@/examples/toggle-group/sizes/page';
 
 export default function ToggleGroupPage() {
-  const toggleGroupSingleIframeRef = useRef<HTMLIFrameElement>(null);
-  const toggleGroupMultipleIframeRef = useRef<HTMLIFrameElement>(null);
-  const toggleGroupSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const ToggleGroupBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const ToggleGroupMultipleIframeRef = useRef<HTMLIFrameElement>(null);
+  const ToggleGroupSingleIframeRef = useRef<HTMLIFrameElement>(null);
+  const ToggleGroupSizesIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    toggleGroupSingleIframeRef,
-    toggleGroupMultipleIframeRef,
-    toggleGroupSizesIframeRef
+    ToggleGroupBasicIframeRef,
+    ToggleGroupMultipleIframeRef,
+    ToggleGroupSingleIframeRef,
+    ToggleGroupSizesIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
-        title="ToggleGroup"
-        description="Group of toggle buttons that can be single or multiple selection"
+        title="Toggle-group"
+        description="Groups togglable buttons together for single or multiple selection"
       />
 
       <PageContent>
         <PageSection title="About ToggleGroup">
           <Typography variant="body1" className="block">
-            ToggleGroup groups multiple togglable buttons together. It supports single selection
-            (only one item can be active) or multiple selection (multiple items can be active at
-            once).
+            Groups togglable buttons in a visually connected way. Supports single selection (radio
+            behavior) or multiple selection (checkbox behavior).
           </Typography>
         </PageSection>
 
@@ -55,255 +63,208 @@ export default function ToggleGroupPage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { ToggleGroup, ToggleGroupItem } from '@nipsys/shadcn-lsd';
+                code={`import { ToggleGroup } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <ToggleGroup type="single" defaultValue="item-1">
-      <ToggleGroupItem value="item-1">Item 1</ToggleGroupItem>
-      <ToggleGroupItem value="item-2">Item 2</ToggleGroupItem>
-    </ToggleGroup>
-  );
+  return <ToggleGroup />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Single Selection">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Use type="single" to allow only one item selection.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Single Selection</CardTitle>
-              <CardDescription>Only one item can be active at a time</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toggleGroupSingleIframeRef}
-                size="md"
-                src="/examples/toggle-group/single"
-                title="ToggleGroup Single Example"
+                ref={ToggleGroupBasicIframeRef}
+                size={ToggleGroupBasicSIZE}
+                src="/examples/toggle-group/basic"
+                title="Basic Example"
               />
-              <CodeExample code={ToggleGroupSingleCODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="Multiple Selection">
-          <Typography variant="body1">
-            Use type="multiple" to allow multiple items to be selected.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Multiple Selection</CardTitle>
-              <CardDescription>Multiple items can be active at once</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={toggleGroupMultipleIframeRef}
-                size="md"
-                src="/examples/toggle-group/multiple"
-                title="ToggleGroup Multiple Example"
-              />
-              <CodeExample code={ToggleGroupMultipleCODE} />
+              <CodeExample code={ToggleGroupBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="Sizes">
           <Typography variant="body1">
-            ToggleGroup items come in two sizes to fit different contexts.
+            Component sizes for different contexts and visual hierarchy.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Small Size</CardTitle>
-              <CardDescription>Small size toggle group items</CardDescription>
+              <CardTitle>Sizes</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toggleGroupSizesIframeRef}
-                size="md"
+                ref={ToggleGroupSizesIframeRef}
+                size={ToggleGroupSizesSIZE}
                 src="/examples/toggle-group/sizes"
-                title="ToggleGroup Sizes Example"
+                title="Sizes Example"
               />
               <CodeExample code={ToggleGroupSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="API Reference">
+        <PageSection title="Features">
           <Typography variant="body1">
-            All available props for the ToggleGroup components.
+            Additional features and capabilities of the component.
           </Typography>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>ToggleGroup.type</CardTitle>
-                <CardDescription>Selection behavior</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> 'single' | 'multiple'
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> 'single'
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  'single' allows one item, 'multiple' allows multiple
-                </Typography>
-              </CardContent>
-            </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Multiple</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={ToggleGroupMultipleIframeRef}
+                size={ToggleGroupMultipleSIZE}
+                src="/examples/toggle-group/multiple"
+                title="Multiple Example"
+              />
+              <CodeExample code={ToggleGroupMultipleCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Single</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={ToggleGroupSingleIframeRef}
+                size={ToggleGroupSingleSIZE}
+                src="/examples/toggle-group/single"
+                title="Single Example"
+              />
+              <CodeExample code={ToggleGroupSingleCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>ToggleGroup.value</CardTitle>
-                <CardDescription>Controlled value</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> string | string[]
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  Value of the selected item(s) for controlled components
-                </Typography>
-              </CardContent>
-            </Card>
+        <PageSection title="Composition">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>{['ToggleGroup', '└── ToggleGroupItem']}</CodeBlock>
+            </CardContent>
+          </Card>
+        </PageSection>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>ToggleGroup.defaultValue</CardTitle>
-                <CardDescription>Initial value</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> string | string[]
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  Initial selection for uncontrolled components
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>ToggleGroupItem.value</CardTitle>
-                <CardDescription>Unique identifier for the item</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  Must be unique across all items in the group
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>ToggleGroup.disabled</CardTitle>
-                <CardDescription>Disable the entire group</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  Disables all items in the group
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>ToggleGroup.size</CardTitle>
-                <CardDescription>Size of the items</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> 'sm' | 'md'
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> 'md'
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  'sm' is smaller, 'md' is default size
-                </Typography>
-              </CardContent>
-            </Card>
+        <PageSection title="API Reference">
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              ToggleGroup
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>groupLabel</CardTitle>
+                  <CardDescription>Accessible label for the toggle group.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>size</CardTitle>
+                  <CardDescription>Size of the toggle items in the group.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>"sm" | "md"</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Options:</strong> sm, md
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </PageSection>
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The ToggleGroup component follows accessibility best practices built on Radix UI.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>ToggleGroup is fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block mb-2">
-                • Tab - Navigate into the group
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Tab - Moves focus to pressed item or first item in group
               </Typography>
-              <Typography variant="body2" className="block mb-2">
-                • Arrow Left/Right - Move between items
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Enter or Space - Activates/deactivates focused item
               </Typography>
-              <Typography variant="body2" className="block mb-2">
-                • Enter or Space - Select item
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • ArrowDown/Right - Moves focus to next item
               </Typography>
-              <Typography variant="body2" className="block">
-                • Shift + Tab - Navigate out of group
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • ArrowUp/Left - Moves focus to previous item
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Home - Moves focus to first item in group
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • End - Moves focus to last item in group
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
               <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block mb-2">
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • groupLabel prop provides required aria-label for screen readers
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                 • role="group" on the ToggleGroup container
               </Typography>
-              <Typography variant="body2" className="block mb-2">
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                 • aria-pressed on items is automatically managed
               </Typography>
-              <Typography variant="body2" className="block">
-                • Proper focus management within the group
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Uses roving tabindex to manage focus movement among items. Focused item receives
+                visible focus indicator.
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
           previous={{
             title: 'Toggle',
             href: '/components/toggle',
           }}
           next={{
-            title: 'Alert Dialog',
+            title: 'Alert-dialog',
             href: '/components/alert-dialog',
           }}
         />

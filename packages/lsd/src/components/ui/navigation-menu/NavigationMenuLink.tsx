@@ -1,0 +1,54 @@
+import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui';
+import type * as React from 'react';
+import { cn } from '@/lib/utils';
+
+export interface NavigationMenuLinkProps
+  extends React.ComponentProps<typeof NavigationMenuPrimitive.Link> {}
+
+/**
+ * NavigationMenuLink - A hyperlink within the navigation menu.
+ *
+ * Supports styling for active states and icon integration.
+ *
+ * @exportAs sub
+ */
+export function NavigationMenuLink({ className, ...props }: NavigationMenuLinkProps) {
+  return (
+    <NavigationMenuPrimitive.Link
+      data-slot="navigation-menu-link"
+      className={cn(
+        // Layout & Positioning
+        'lsd:flex',
+        'lsd:flex-col',
+        // Sizing
+        'lsd:text-[0.875rem]',
+        // Spacing
+        'lsd:gap-(--lsd-spacing-smallest)',
+        'lsd:p-(--lsd-spacing-base)',
+        // Borders, Shapes & Effects
+        'lsd:rounded-sm',
+        'lsd:transition-all',
+        'lsd:outline-none',
+        // Interactive States - Hover
+        'hover:lsd:bg-[var(--lsd-accent)]',
+        'hover:lsd:text-[var(--lsd-accent-foreground)]',
+        // Interactive States - Focus
+        'focus:lsd:bg-[var(--lsd-accent)]',
+        'focus:lsd:text-[var(--lsd-accent-foreground)]',
+        'focus-visible:lsd:ring-[3px]',
+        'focus-visible:lsd:ring-ring/50',
+        'focus-visible:lsd:outline-1',
+        // Interactive States - Active state
+        'data-[active=true]:lsd:bg-[var(--lsd-accent)]/50',
+        'data-[active=true]:lsd:text-[var(--lsd-accent-foreground)]',
+        'data-[active=true]:hover:lsd:bg-[var(--lsd-accent)]',
+        'data-[active=true]:focus:lsd:bg-[var(--lsd-accent)]',
+        // Pseudo-selectors & ARIA - SVG styling
+        "[&_svg:not([class*='size-']):lsd:size-4",
+        "[&_svg:not([class*='text-'):lsd:text-[var(--lsd-text-secondary)]",
+        className
+      )}
+      {...props}
+    />
+  );
+}

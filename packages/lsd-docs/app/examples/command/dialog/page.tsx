@@ -10,10 +10,15 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'lg';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   Button,
   CommandDialog,
@@ -24,7 +29,7 @@ export const CODE = `import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   const [open, setOpen] = useState(false);

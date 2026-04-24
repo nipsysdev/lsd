@@ -11,9 +11,14 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `\`\`\`tsx
 import {
   DropdownMenu,
@@ -26,7 +31,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   Button,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function DropdownMenuSubmenus() {
   return (

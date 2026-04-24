@@ -11,8 +11,8 @@ import {
   ToggleGroup,
   ToggleGroupItem,
   Typography,
-} from '@nipsys/shadcn-lsd';
-import { ArrowSquareOutIcon, HeartIcon } from '@phosphor-icons/react';
+} from '@nipsys/lsd';
+import { ArrowSquareOutIcon, HeartIcon, QuotesIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { useState } from 'react';
 import SocialUIPreview from './previews/social-ui';
@@ -43,7 +43,7 @@ export default function Home() {
         <Typography variant="h3">Substance over Spectacle.</Typography>
 
         <Typography variant="h5">
-          The Logos Design System. Built on top of Radix UI and shadcn/ui.
+          The Logos Design System. Built on top of Radix UI with shadcn/ui.
           <br />
           Light and dark modes, themable, fully extensible.
         </Typography>
@@ -61,14 +61,16 @@ export default function Home() {
       <Separator className="my-15" />
 
       <Typography variant="h5" className="font-bold mb-(--lsd-spacing-smaller)">
-        🙶Conventional design has lost its way: chrome over content, spectacle over substance. LSD
+        <QuotesIcon weight="duotone" className="inline pb-(--lsd-spacing-small) size-10" />
+        Conventional design has lost its way: chrome over content, spectacle over substance. LSD
         exists because design should serve the mission — never distract from it. We build for
-        clarity, accessibility, and resilience. The message matters more than the medium.🙷
+        clarity, accessibility, and resilience. The message matters more than the medium.
+        <QuotesIcon weight="duotone" className="inline pb-(--lsd-spacing-small) size-10" />
       </Typography>
       <div>
         <Button asChild variant="link" className="p-0! h-fit!">
-          <Link href="https://logos.co" target="_blank" rel="noopener noreferrer">
-            — Learn more about the philosophy at logos.co
+          <Link href="https://guide.logos.co" target="_blank" rel="noopener noreferrer">
+            — Learn more about the philosophy behind LSD
             <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
           </Link>
         </Button>
@@ -83,7 +85,9 @@ export default function Home() {
             <ToggleGroup
               type="single"
               value={activePreview}
-              onValueChange={value => setActivePreview((value as Preview) || activePreview)}
+              onValueChange={(value: string | undefined) =>
+                setActivePreview((value as Preview) || activePreview)
+              }
             >
               <ToggleGroupItem value="work">Work UI</ToggleGroupItem>
               <ToggleGroupItem value="social">Social UI</ToggleGroupItem>
@@ -98,8 +102,12 @@ export default function Home() {
 
       <div className="grid grid-cols-2 grid-rows-2">
         <Button variant="link" className="w-fit" asChild>
-          <Link href="https://guide.logos.co/" target="_blank" rel="noopener noreferrer">
-            Logos Brand Guidelines
+          <Link
+            href="https://guide.logos.co/lsd/overview"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Original LSD Overview
             <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
           </Link>
         </Button>
@@ -107,12 +115,8 @@ export default function Home() {
         <Typography className="text-right">MIT License</Typography>
 
         <Button variant="link" className="w-fit" asChild>
-          <Link
-            href="https://guide.logos.co/lsd/overview"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Original LSD Overview
+          <Link href="https://logos.co/" target="_blank" rel="noopener noreferrer">
+            Learn more about the Logos movement
             <ArrowSquareOutIcon className="ml-(--lsd-spacing-smaller) size-5" weight="duotone" />
           </Link>
         </Button>

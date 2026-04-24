@@ -11,10 +11,15 @@ import {
   FormMessage,
   Input,
   useForm,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, useForm } from '@nipsys/shadcn-lsd';
+export const SIZE = 'lg';
+
+/**
+ * @docSection usage
+ */
+export const CODE = `import { Button, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, Input, useForm } from '@nipsys/lsd';
 
 export function FormBasicExample() {
   const form = useForm({

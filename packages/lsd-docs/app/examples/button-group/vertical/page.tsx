@@ -1,13 +1,18 @@
 'use client';
 
-import { Button, ButtonGroup } from '@nipsys/shadcn-lsd';
+import { Button, ButtonGroup } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, ButtonGroup } from '@nipsys/shadcn-lsd';
+export const SIZE = 'sm';
+
+/**
+ * @docSection feature
+ */
+export const CODE = `import { Button, ButtonGroup } from '@nipsys/lsd';
 
 export function Example() {
   return (
-    <ButtonGroup orientation="vertical">
+    <ButtonGroup orientation="vertical" groupLabel="Alignment options">
       <Button>Top</Button>
       <Button>Middle</Button>
       <Button>Bottom</Button>
@@ -20,7 +25,7 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <ButtonGroup orientation="vertical">
+    <ButtonGroup orientation="vertical" groupLabel="Alignment options">
       <Button>Top</Button>
       <Button>Middle</Button>
       <Button>Bottom</Button>

@@ -1,10 +1,15 @@
 'use client';
 
-import { Button, Tooltip, TooltipContent, TooltipTrigger, Typography } from '@nipsys/shadcn-lsd';
+import { Button, Tooltip, TooltipContent, TooltipTrigger, Typography } from '@nipsys/lsd';
 import { InfoIcon } from '@phosphor-icons/react';
 import { TooltipProvider } from './TooltipProvider';
 
-export const CODE = `import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, Typography } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
+export const CODE = `import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, Typography } from '@nipsys/lsd';
 import { InfoIcon } from '@phosphor-icons/react';
 
 export function Example() {

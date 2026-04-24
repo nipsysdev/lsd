@@ -1,6 +1,6 @@
 'use client';
 
-import { Typography } from '@nipsys/shadcn-lsd';
+import { Typography } from '@nipsys/lsd';
 import { type ReactNode, useEffect } from 'react';
 import { registerSection, unregisterSection } from '@/stores/toc-store';
 

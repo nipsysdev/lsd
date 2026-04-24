@@ -47,6 +47,7 @@ coverage
 *.pem
 ai_docs
 .kilocode
+.kilo
 *.tgz
 plans
 
@@ -59,4 +60,6 @@ plans
 # typescript
 *.tsbuildinfo
 
-docs/dev
+/docs
+playwright-report
+test-results

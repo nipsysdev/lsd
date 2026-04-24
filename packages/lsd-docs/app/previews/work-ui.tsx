@@ -17,7 +17,7 @@ import {
   SelectValue,
   Typography,
   useForm,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useState } from 'react';
 
 interface Item {

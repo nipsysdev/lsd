@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
@@ -17,36 +10,43 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as ToggleBasicCODE } from '@/examples/toggle/basic/page';
-import { CODE as TogglePressedCODE } from '@/examples/toggle/pressed/page';
-import { CODE as ToggleSizesCODE } from '@/examples/toggle/sizes/page';
-import { CODE as ToggleWithTextCODE } from '@/examples/toggle/with-text/page';
+import { CODE as ToggleBasicCODE, SIZE as ToggleBasicSIZE } from '@/examples/toggle/basic/page';
+import {
+  CODE as TogglePressedCODE,
+  SIZE as TogglePressedSIZE,
+} from '@/examples/toggle/pressed/page';
+import { CODE as ToggleSizesCODE, SIZE as ToggleSizesSIZE } from '@/examples/toggle/sizes/page';
+import {
+  CODE as ToggleWithTextCODE,
+  SIZE as ToggleWithTextSIZE,
+} from '@/examples/toggle/with-text/page';
 
 export default function TogglePage() {
-  const toggleBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const togglePressedIframeRef = useRef<HTMLIFrameElement>(null);
-  const toggleWithTextIframeRef = useRef<HTMLIFrameElement>(null);
-  const toggleSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const ToggleBasicIframeRef = useRef<HTMLIFrameElement>(null);
+  const TogglePressedIframeRef = useRef<HTMLIFrameElement>(null);
+  const ToggleSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const ToggleWithTextIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    toggleBasicIframeRef,
-    togglePressedIframeRef,
-    toggleWithTextIframeRef,
-    toggleSizesIframeRef
+    ToggleBasicIframeRef,
+    TogglePressedIframeRef,
+    ToggleSizesIframeRef,
+    ToggleWithTextIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
         title="Toggle"
-        description="Two-state button that can be either on or off, with visual feedback for the current state"
+        description="Button that switches between on and off states with visual feedback."
       />
 
       <PageContent>
         <PageSection title="About Toggle">
           <Typography variant="body1" className="block">
-            Toggle is a button-style switch that can be toggled between on and off states. It
-            provides visual feedback with different styles for the pressed and unpressed states.
+            A togglable button that switches between enabled and disabled states. Provides visual
+            feedback through styling changes to indicate the current state, making it ideal for
+            settings, filters, and options that can be toggled.
           </Typography>
         </PageSection>
 
@@ -57,74 +57,52 @@ export default function TogglePage() {
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import { Toggle } from '@nipsys/shadcn-lsd';
+                code={`import { Toggle } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return <Toggle aria-label="Toggle bold">Bold</Toggle>;
+  return <Toggle />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Basic Toggle">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Toggle can be controlled or uncontrolled and supports different sizes.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Toggle</CardTitle>
-              <CardDescription>Simple toggle button with icon-only children</CardDescription>
+              <CardTitle>Basic</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toggleBasicIframeRef}
-                size="md"
+                ref={ToggleBasicIframeRef}
+                size={ToggleBasicSIZE}
                 src="/examples/toggle/basic"
-                title="Toggle Basic Example"
+                title="Basic Example"
               />
               <CodeExample code={ToggleBasicCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Pressed State">
-          <Typography variant="body1">Control the toggle state with the pressed prop.</Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Pressed State</CardTitle>
-              <CardDescription>Toggle with some items pressed by default</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={togglePressedIframeRef}
-                size="md"
-                src="/examples/toggle/pressed"
-                title="Toggle Pressed Example"
-              />
-              <CodeExample code={TogglePressedCODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
-        <PageSection title="With Text Labels">
+        <PageSection title="Variants">
           <Typography variant="body1">
-            Toggles can include text content inside the button.
+            Component variants for different visual styles and use cases.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>With Text Labels</CardTitle>
-              <CardDescription>Toggle buttons with text labels</CardDescription>
+              <CardTitle>With Text</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toggleWithTextIframeRef}
-                size="md"
+                ref={ToggleWithTextIframeRef}
+                size={ToggleWithTextSIZE}
                 src="/examples/toggle/with-text"
-                title="Toggle With Text Example"
+                title="With Text Example"
               />
               <CodeExample code={ToggleWithTextCODE} />
             </CardContent>
@@ -133,117 +111,62 @@ export default function MyComponent() {
 
         <PageSection title="Sizes">
           <Typography variant="body1">
-            Toggle buttons come in two sizes to fit different contexts.
+            Component sizes for different contexts and visual hierarchy.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Small Size</CardTitle>
-              <CardDescription>Toggle buttons in small size</CardDescription>
+              <CardTitle>Sizes</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={toggleSizesIframeRef}
-                size="md"
+                ref={ToggleSizesIframeRef}
+                size={ToggleSizesSIZE}
                 src="/examples/toggle/sizes"
-                title="Toggle Sizes Example"
+                title="Sizes Example"
               />
               <CodeExample code={ToggleSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
+        <PageSection title="Features">
+          <Typography variant="body1">
+            Additional features and capabilities of the component.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Pressed</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={TogglePressedIframeRef}
+                size={TogglePressedSIZE}
+                src="/examples/toggle/pressed"
+                title="Pressed Example"
+              />
+              <CodeExample code={TogglePressedCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Toggle component.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>pressed</CardTitle>
-                <CardDescription>Whether the toggle is pressed</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>Toggle wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  Controls the pressed state for controlled components
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>defaultPressed</CardTitle>
-                <CardDescription>Initial pressed state</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  Initial state for uncontrolled components
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>onPressedChange</CardTitle>
-                <CardDescription>Callback when pressed state changes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> (pressed: boolean) =&gt; void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  Called when user toggles the button
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>disabled</CardTitle>
-                <CardDescription>Whether the toggle is disabled</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  Prevents user interaction and reduces opacity
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>size</CardTitle>
-                <CardDescription>Size of the toggle</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-2">
-                  <strong>Type:</strong> 'sm' | 'md'
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> 'md'
-                </Typography>
-                <Typography variant="body2" className="mt-2">
-                  'sm' is smaller, 'md' is default size
-                </Typography>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/toggle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI Toggle documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -251,50 +174,60 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Toggle component follows accessibility best practices built on Radix UI.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Toggle is fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block mb-2">
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                 • Tab - Navigate to the toggle
               </Typography>
-              <Typography variant="body2" className="block mb-2">
-                • <strong>Enter</strong> or <strong>Space</strong> - Toggle state
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Shift + Tab</strong> - Navigate to previous element
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Enter or Space - Toggle state
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
               <CardDescription>Proper ARIA attributes for screen readers</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block mb-2">
-                • aria-press is automatically managed (true/false)
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-pressed is automatically managed based on pressed state
               </Typography>
-              <Typography variant="body2" className="block">
-                • Use aria-label for icon-only toggles
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Use aria-label when toggle text is not descriptive
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Focus States</CardTitle>
+              <CardDescription>Visible focus indicators for keyboard users</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Visible focus ring indicates keyboard focus
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Keyboard users can see which toggle has focus
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
-
         <PageNavigation
           previous={{
             title: 'Table',
             href: '/components/table',
           }}
           next={{
-            title: 'Toggle Group',
+            title: 'Toggle-group',
             href: '/components/toggle-group',
           }}
         />

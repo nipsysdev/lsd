@@ -1,10 +1,13 @@
 'use client';
 
-import { Button, Progress, Typography } from '@nipsys/shadcn-lsd';
+import { Button, Progress, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Progress, Typography } from '@nipsys/shadcn-lsd';
+/**
+ * @docSection usage
+ */
+export const CODE = `import { Button, Progress, Typography } from '@nipsys/lsd';
 import { useState } from 'react';
 
 export function Example() {
@@ -45,6 +48,8 @@ export function Example() {
     </div>
   );
 }`;
+
+export const SIZE = 'lg';
 
 export function ProgressBasicExample() {
   useSendThemeToIframes();

@@ -7,9 +7,14 @@ import {
   MenubarMenu,
   MenubarSeparator,
   MenubarTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   Menubar,
   MenubarMenu,
@@ -17,7 +22,7 @@ export const CODE = `import {
   MenubarContent,
   MenubarItem,
   MenubarSeparator,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (
@@ -30,6 +35,13 @@ export function Example() {
           <MenubarSeparator />
           <MenubarItem inset>Settings</MenubarItem>
           <MenubarItem inset>Preferences</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Cut</MenubarItem>
+          <MenubarItem>Copy</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
@@ -50,6 +62,13 @@ export function Example() {
           <MenubarSeparator />
           <MenubarItem inset>Settings</MenubarItem>
           <MenubarItem inset>Preferences</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Cut</MenubarItem>
+          <MenubarItem>Copy</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

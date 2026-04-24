@@ -1,8 +1,12 @@
 'use client';
 
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@nipsys/shadcn-lsd';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@nipsys/lsd';
 
+export const SIZE = 'md';
+
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
+
+/** @docSection variant */
 export const CODE = `import {
   Table,
   TableBody,
@@ -10,7 +14,7 @@ export const CODE = `import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

@@ -1,7 +1,9 @@
 'use client';
 
-import { Autocomplete } from '@nipsys/shadcn-lsd';
+import { Autocomplete } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+
+export const SIZE = 'md';
 
 const options = [
   { value: 'js', label: 'JavaScript' },
@@ -12,7 +14,10 @@ const options = [
   { value: 'java', label: 'Java' },
 ];
 
-export const CODE = `import { Autocomplete } from '@nipsys/shadcn-lsd';
+/**
+ * @docSection usage
+ */
+export const CODE = `import { Autocomplete } from '@nipsys/lsd';
 
 const options = [
   { value: 'js', label: 'JavaScript' },

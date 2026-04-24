@@ -1,13 +1,19 @@
 'use client';
 
-import { Button, ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@nipsys/shadcn-lsd';
+import { Button, ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@nipsys/lsd';
+import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   Button,
   ButtonGroup,
   ButtonGroupSeparator,
   ButtonGroupText,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (
@@ -39,6 +45,8 @@ export function Example() {
 }`;
 
 export function ButtonGroupExample() {
+  useSendThemeToIframes();
+
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <ButtonGroup>

@@ -7,7 +7,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import type { IconProps } from '@phosphor-icons/react';
 import Fuse from 'fuse.js';
 import { useRouter } from 'next/navigation';

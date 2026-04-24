@@ -1,0 +1,43 @@
+import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
+import * as React from 'react';
+import { toggleVariants } from '@/components/ui/toggle';
+import { cn } from '@/lib/utils';
+import { ToggleGroupContext } from './context';
+import type { ToggleGroupVariants } from './types';
+
+/**
+ * ToggleGroupItem - Individual toggle button within the group
+ *
+ * Displays as an interactive button that can be toggled on or off. Styled
+ * to connect visually with adjacent items in the group.
+ *
+ * @exportAs sub
+ */
+const ToggleGroupItem = React.forwardRef<
+  React.ComponentRef<typeof ToggleGroupPrimitive.Item>,
+  React.ComponentProps<typeof ToggleGroupPrimitive.Item> &
+    ToggleGroupVariants & { size?: 'sm' | 'md' }
+>(({ className, children, size, ...props }, ref) => {
+  const context = React.useContext(ToggleGroupContext);
+
+  return (
+    <ToggleGroupPrimitive.Item
+      ref={ref}
+      data-slot="toggle-group-item"
+      data-size={context.size || size}
+      className={cn(
+        toggleVariants({
+          size: context.size || size,
+        }),
+        'lsd:min-w-fit lsd:flex-1 lsd:shrink-0 lsd:rounded-none lsd:shadow-none focus:lsd:z-10 focus-visible:lsd:z-10 lsd:border-l-0 lsd:first:border-l lsd:cursor-pointer lsd:disabled:cursor-not-allowed',
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </ToggleGroupPrimitive.Item>
+  );
+});
+ToggleGroupItem.displayName = 'ToggleGroupItem';
+
+export { ToggleGroupItem };

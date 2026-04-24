@@ -10,9 +10,14 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection feature
+ */
 export const CODE = `import {
   Menubar,
   MenubarMenu,
@@ -23,7 +28,7 @@ export const CODE = `import {
   MenubarSubTrigger,
   MenubarPortal,
   MenubarSubContent,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (
@@ -44,6 +49,21 @@ export function Example() {
             </MenubarPortal>
           </MenubarSub>
           <MenubarItem>Print</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Cut</MenubarItem>
+          <MenubarItem>Copy</MenubarItem>
+          <MenubarItem>Paste</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>View</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Zoom In</MenubarItem>
+          <MenubarItem>Zoom Out</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
@@ -72,6 +92,21 @@ export function Example() {
             </MenubarPortal>
           </MenubarSub>
           <MenubarItem>Print</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Cut</MenubarItem>
+          <MenubarItem>Copy</MenubarItem>
+          <MenubarItem>Paste</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>View</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Zoom In</MenubarItem>
+          <MenubarItem>Zoom Out</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

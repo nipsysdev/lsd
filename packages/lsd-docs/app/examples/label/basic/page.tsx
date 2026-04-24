@@ -1,9 +1,14 @@
 'use client';
 
-import { Checkbox, Label } from '@nipsys/shadcn-lsd';
+import { Checkbox, Label } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Checkbox, Label } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md';
+
+/**
+ * @docSection usage
+ */
+export const CODE = `import { Checkbox, Label } from '@nipsys/lsd';
 
 export function Example() {
   return (

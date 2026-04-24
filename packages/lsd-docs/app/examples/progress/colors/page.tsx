@@ -1,9 +1,12 @@
 'use client';
 
-import { Progress, Typography } from '@nipsys/shadcn-lsd';
+import { Progress, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Progress, Typography } from '@nipsys/shadcn-lsd';
+/**
+ * @docSection variant
+ */
+export const CODE = `import { Progress, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (
@@ -18,6 +21,8 @@ export function Example() {
     </div>
   );
 }`;
+
+export const SIZE = 'md';
 
 export function ProgressColorsExample() {
   useSendThemeToIframes();

@@ -1,9 +1,12 @@
 'use client';
 
-import { Badge } from '@nipsys/shadcn-lsd';
+import { Badge } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Badge } from '@nipsys/shadcn-lsd';
+export const SIZE = 'sm';
+
+/** @docSection usage */
+export const CODE = `import { Badge } from '@nipsys/lsd';
 
 export function Example() {
   return (

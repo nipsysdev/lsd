@@ -1,6 +1,6 @@
 'use client';
 
-import { Typography } from '@nipsys/shadcn-lsd';
+import { Typography } from '@nipsys/lsd';
 import { useEffect, useRef, useState } from 'react';
 
 interface ColorValueProps {

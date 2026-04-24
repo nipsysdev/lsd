@@ -10,9 +10,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/** @docSection usage */
 export const CODE = `import {
   Button,
   Dialog,
@@ -23,7 +26,7 @@ export const CODE = `import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

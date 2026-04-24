@@ -1,218 +1,185 @@
-# @nipsys/shadcn-lsd
+# @nipsys/lsd - Substance over Spectacle
 
-[![license](https://img.shields.io/npm/l/@nipsys/shadcn-lsd.svg)](https://github.com/nipsysdev/shadcn-lsd/blob/main/LICENSE)
-[![React](https://img.shields.io/npm/dependency-version/@nipsys/shadcn-lsd/peer/react.svg)](https://react.dev)
+Minimalist, accessible UI components following the [Logos Design System](https://guide.logos.co/). Built for React 19+ on top of Radix UI using shadcn/ui.
 
-A React component library implementing the Logos Design System (LSD). Built with Radix UI primitives and Tailwind CSS, following the shadcn/ui patterns.
+This component library follows the guidelines defined by the original Logos Design System, prioritising accessibility and content readability over aesthetics.
 
-## Installation
+## Documentation
+Visit [lsd.nipsys.dev](https://lsd.nipsys.dev) to view the complete documentation and live examples.
+
+## Get Started with LSD
+
+Install the latest version of `nipsys/lsd`
 
 ```bash
-pnpm add @nipsys/shadcn-lsd
+npm add @nipsys/lsd
 ```
 
-## Usage
-
-### Import Components
-
-```tsx
-import { Dialog, DialogTrigger, DialogContent, Button } from "@nipsys/shadcn-lsd";
-```
-
-### CSS Import
-
-```tsx
-import '@nipsys/shadcn-lsd/css';
-```
-
-Or in a CSS stylesheet:
+Import the LSD styles, either in CSS or JS/TS:
 
 ```css
-@import "@nipsys/shadcn-lsd/css";
+@import "@nipsys/lsd/css";
 ```
 
-### Example
+```ts
+import '@nipsys/lsd/css'
+```
+
+Components are now ready to be used:
 
 ```tsx
-import { Dialog, DialogTrigger, DialogContent, Button } from "@nipsys/shadcn-lsd";
+import { Button, Card, CardContent, CardHeader, CardTitle } from '@nipsys/lsd'
 
 function App() {
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button>Open</Button>
-      </DialogTrigger>
-      <DialogContent>
-        <p>Dialog content here</p>
-      </DialogContent>
-    </Dialog>
-  );
-}
-
-export default App;
-```
-
-### Theming
-
-The library supports light and dark themes out of the box. Add the `dark` class to your root element to enable dark mode:
-
-```html
-<html class="dark">
-  <!-- your app -->
-</html>
-```
-
-### Theme Variants
-
-A teal theme variant is also available:
-
-```html
-<html class="theme-teal">
-  <!-- light teal theme -->
-</html>
-
-<html class="dark theme-teal">
-  <!-- dark teal theme -->
-</html>
-```
-
-### CSS Variables
-
-The design system uses CSS custom properties that you can override:
-
-```css
-:root {
-  /* Core colors */
-  --lsd-primary: #000000;
-  --lsd-primary-foreground: #ffffff;
-  --lsd-text-primary: #000000;
-  --lsd-text-secondary: #808080;
-  --lsd-border: #000000;
-  --lsd-surface: #ffffff;
-
-  /* Icon colors */
-  --lsd-icon-primary: #000000;
-  --lsd-icon-secondary: #ffffff;
-
-  /* Semantic colors */
-  --lsd-destructive: #b91c1c;
-  --lsd-destructive-text: #cb3939;
-  --lsd-success: #15803d;
-  --lsd-success-text: #168440;
-  --lsd-warning: #f59e0b;
-  --lsd-warning-text: #d68b09;
-  --lsd-info: #2563eb;
-  --lsd-info-text: #2563eb;
+    <Card>
+      <CardHeader>
+        <CardTitle>Card with a button</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button>Click me</Button>
+      </CardContent>
+    </Card>
+  )
 }
 ```
 
-## Components
+## What's Inside
 
-| Component | Description |
-|-----------|-------------|
-| Accordion | Vertically stacked collapsible sections |
-| AlertDialog | Modal dialog for critical confirmations |
-| Autocomplete | Input with async suggestion fetching |
-| Badge | Small label for status or categorization |
-| Button | Interactive button with multiple variants |
-| ButtonGroup | Grouped buttons with optional separators |
-| Card | Container for related content |
-| Checkbox | Boolean input control |
-| Command | Command palette for keyboard navigation |
-| Dialog | Modal overlay for focused content |
-| Input | Text input field |
-| Label | Form field label |
-| Menubar | Horizontal menu bar with dropdown menus |
-| Popover | Floating content anchored to trigger |
-| Progress | Visual indicator of completion |
-| ScrollArea | Custom scrollbar container |
-| Select | Dropdown selection input |
-| Separator | Visual divider between sections |
-| Sheet | Slide-out panel overlay |
-| Sidebar | Navigation sidebar component |
-| Sonner | Toast notifications |
-| Switch | Toggle switch input |
-| Tabs | Tabbed content navigation |
-| Toggle | Two-state button |
-| ToggleGroup | Group of toggle buttons |
-| Typography | Text styling components |
+- **39 components** covering forms, navigation, data display, overlays, and more
+- **Radix UI primitives** for accessibility-first behavior
+- **5 accent themes** + light/dark modes
+- **Documentation with 185+ live examples**
+
+## Monorepo Structure
+
+This is a pnpm workspace monorepo containing two packages:
+
+- **`@nipsys/lsd`** - The component library
+- **`@nipsys/lsd-docs`** - Next.js documentation site
+
+## Project Structure
+
+```
+packages/
+├── lsd/                      # Component library
+│   ├── src/
+│   │   ├── components/ui/    # LSD Components
+│   │   ├── hooks/            # Custom hooks
+│   │   ├── lib/              # Utilities (cn(), types)
+│   │   └── styles/           # Design tokens (core.css, themes.css)
+│   └── package.json
+└── lsd-docs/                 # Documentation site
+    ├── app/
+    │   ├── components/       # Docs layout components
+    │   ├── examples/         # 185+ live examples
+    │   ├── design-tokens/    # Design system docs
+    │   └── getting-started/  # Installation, theming
+    ├── e2e/                  # Components behavior & accessibility end-to-end testing
+    └── scripts/
+        └── docs-generator/   # Automated TSDoc-based generator
+```
 
 ## Development
-
-### Prerequisites
-
-- Node.js >= 24.0.0
-- pnpm >= 10
 
 ### Setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/nipsysdev/shadcn-lsd.git
-cd shadcn-lsd
-
-# Install dependencies
 pnpm install
 ```
 
-### Scripts
+### Build
 
 ```bash
-# Build the library
+# Build both packages
 pnpm build
 
-# Run tests
+# Build component library only
+pnpm lsd:build
+
+# Build documentation site only
+pnpm docs:build
+```
+
+### Testing
+
+Note: E2E tests live inside the lsd-docs packages as they are run against the documentation examples pages.
+
+```bash
+# Run all tests
 pnpm test
 
-# Run tests in watch mode
-pnpm test:watch
+# LSD-only Unit tests with watch mode
+pnpm lsd:test:watch
 
-# Run tests with coverage
-pnpm test:coverage
+# E2E tests (Playwright)
+pnpm docs:test:e2e
 
-# Lint code
-pnpm lint
-
-# Format code
-pnpm format
-
-# Start documentation site (Next.js)
-pnpm docs:dev
-
-# Build documentation site
-pnpm docs:build
-
-# Preview documentation build
-pnpm docs:preview
+# Test with UI mode
+pnpm docs:test:e2e:ui
 ```
 
 ### Documentation Site
 
-The documentation site is built with Next.js 16 and uses static site generation. Run `pnpm docs:dev` to start the development server at `http://localhost:3000`.
+```bash
+# Start dev server
+pnpm docs:dev
 
-The documentation is automatically deployed to GitHub Pages via the `docs/` directory.
+# Build for production (static build)
+pnpm docs:build
 
-## Tech Stack
-
-- **React 19** - UI library
-- **TypeScript** - Type safety
-- **Tailwind CSS 4** - Utility-first styling
-- **Radix UI** - Accessible primitives
-- **Vite** - Build tooling
-- **Vitest** - Testing framework
-- **Next.js 16** - Documentation site framework
-
-## Peer Dependencies
-
-Make sure your project has these installed:
-
-```json
-{
-  "react": "^19.2.4",
-  "react-dom": "^19.2.4"
-}
+# Preview production build
+pnpm docs:preview
 ```
+
+### Linting & Formatting (powered by Biome)
+
+```bash
+# Check code
+pnpm lint
+
+# Auto-fix issues
+pnpm lint:fix
+
+# Format code
+pnpm format
+```
+
+## AI-generated documentation pages
+
+The documentation site uses an automated generator that extracts metadata from AI-generated TSDoc annotations in component source files, so manual modifications to documentation pages should be avoided.
+
+#### Prompt to generate TSDoc and documentation page using an AI agent
+Note: Your agent needs to be able to fetch webpages as it will be instructed to get component information from the Radix UI and shadcn/ui documentation sites.
+
+Prompt:
+
+```Re-generate the documentation page for the Button component while strictly following the instructions in tsdoc-page-generation.md```
+
+#### Manually regenerating a documentation page from TSDoc annotations
+
+```bash
+pnpm docs:generate button
+```
+
+#### Manually regenerating all documentation pages from TSDoc annotations
+
+```bash
+pnpm docs:generate --all
+```
+
+The generator parses:
+- Component props and their types
+- Variant and size configurations from CVA
+- Accessibility patterns (keyboard, ARIA, focus)
+- TSDoc custom tags for documentation sections
+
+See `tsdoc-page-generation.md` for complete documentation generation guidelines (intended for AI agents, but of course readable by humans too).
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines and code of conduct.
 
 ## License
 
-[GPL-3.0-or-later](LICENSE)
+MIT

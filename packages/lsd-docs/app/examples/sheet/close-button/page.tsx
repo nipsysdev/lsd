@@ -11,10 +11,15 @@ import {
   SheetTitle,
   SheetTrigger,
   Typography,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Button, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Typography } from '@nipsys/shadcn-lsd';
+export const SIZE = 'lg';
+
+/**
+ * @docSection feature
+ */
+export const CODE = `import { Button, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (

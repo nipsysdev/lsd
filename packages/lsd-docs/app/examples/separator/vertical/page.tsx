@@ -1,9 +1,14 @@
 'use client';
 
-import { Separator, Typography } from '@nipsys/shadcn-lsd';
+import { Separator, Typography } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const CODE = `import { Separator, Typography } from '@nipsys/shadcn-lsd';
+export const SIZE = 'md' as const;
+
+/**
+ * @docSection variant
+ */
+export const CODE = `import { Separator, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (

@@ -1,13 +1,16 @@
 'use client';
 
-import { Badge } from '@nipsys/shadcn-lsd';
+import { Badge } from '@nipsys/lsd';
 import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 
-export const CODE = `import { Badge } from '@nipsys/shadcn-lsd';
+export const SIZE = 'sm';
+
+/** @docSection feature */
+export const CODE = `import { Badge } from '@nipsys/lsd';
 import { CheckIcon, InfoIcon, WarningIcon } from '@phosphor-icons/react';
 
-export function Example() {
+function BadgeFeaturesExample() {
   return (
     <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       <Badge icon={<CheckIcon />} variant="success">
@@ -21,7 +24,12 @@ export function Example() {
       </Badge>
     </div>
   );
-}`;
+}
+
+export default function Example() {
+  return <BadgeFeaturesExample />;
+}
+`;
 
 export function BadgeFeaturesExample() {
   useSendThemeToIframes();
@@ -41,6 +49,6 @@ export function BadgeFeaturesExample() {
   );
 }
 
-export default function Features() {
+export default function BadgeFeaturesPage() {
   return <BadgeFeaturesExample />;
 }

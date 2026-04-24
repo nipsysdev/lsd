@@ -1,14 +1,8 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Typography,
-} from '@nipsys/shadcn-lsd';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -17,421 +11,237 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CODE as SelectBasicCODE } from '@/examples/select/basic/page';
-import { CODE as SelectBasicUsageCODE } from '@/examples/select/basic-usage/page';
-import { CODE as SelectControlledCODE } from '@/examples/select/controlled/page';
-import { CODE as SelectDisabledCODE } from '@/examples/select/disabled/page';
-import { CODE as SelectGroupedCODE } from '@/examples/select/grouped/page';
-import { CODE as SelectSizesCODE } from '@/examples/select/sizes/page';
-import { CODE as SelectVariantsCODE } from '@/examples/select/variants/page';
-import { CODE as SelectWithSeparatorCODE } from '@/examples/select/with-separator/page';
+import {
+  CODE as SelectBasicUsageCODE,
+  SIZE as SelectBasicUsageSIZE,
+} from '@/examples/select/basic-usage/page';
+import {
+  CODE as SelectControlledCODE,
+  SIZE as SelectControlledSIZE,
+} from '@/examples/select/controlled/page';
+import {
+  CODE as SelectDisabledCODE,
+  SIZE as SelectDisabledSIZE,
+} from '@/examples/select/disabled/page';
+import {
+  CODE as SelectGroupedCODE,
+  SIZE as SelectGroupedSIZE,
+} from '@/examples/select/grouped/page';
+import { CODE as SelectSizesCODE, SIZE as SelectSizesSIZE } from '@/examples/select/sizes/page';
+import {
+  CODE as SelectVariantsCODE,
+  SIZE as SelectVariantsSIZE,
+} from '@/examples/select/variants/page';
+import {
+  CODE as SelectWithSeparatorCODE,
+  SIZE as SelectWithSeparatorSIZE,
+} from '@/examples/select/with-separator/page';
 
 export default function SelectPage() {
-  const selectBasicIframeRef = useRef<HTMLIFrameElement>(null);
-  const selectVariantsIframeRef = useRef<HTMLIFrameElement>(null);
-  const selectSizesIframeRef = useRef<HTMLIFrameElement>(null);
-  const selectBasicUsageIframeRef = useRef<HTMLIFrameElement>(null);
-  const selectGroupedIframeRef = useRef<HTMLIFrameElement>(null);
-  const selectWithSeparatorIframeRef = useRef<HTMLIFrameElement>(null);
-  const selectDisabledIframeRef = useRef<HTMLIFrameElement>(null);
-  const selectControlledIframeRef = useRef<HTMLIFrameElement>(null);
+  const SelectBasicUsageIframeRef = useRef<HTMLIFrameElement>(null);
+  const SelectControlledIframeRef = useRef<HTMLIFrameElement>(null);
+  const SelectDisabledIframeRef = useRef<HTMLIFrameElement>(null);
+  const SelectGroupedIframeRef = useRef<HTMLIFrameElement>(null);
+  const SelectSizesIframeRef = useRef<HTMLIFrameElement>(null);
+  const SelectVariantsIframeRef = useRef<HTMLIFrameElement>(null);
+  const SelectWithSeparatorIframeRef = useRef<HTMLIFrameElement>(null);
 
   useSendThemeToIframes(
-    selectBasicIframeRef,
-    selectVariantsIframeRef,
-    selectSizesIframeRef,
-    selectBasicUsageIframeRef,
-    selectGroupedIframeRef,
-    selectWithSeparatorIframeRef,
-    selectDisabledIframeRef,
-    selectControlledIframeRef
+    SelectBasicUsageIframeRef,
+    SelectControlledIframeRef,
+    SelectDisabledIframeRef,
+    SelectGroupedIframeRef,
+    SelectSizesIframeRef,
+    SelectVariantsIframeRef,
+    SelectWithSeparatorIframeRef
   );
 
   return (
     <DocsLayout>
       <PageHeader
         title="Select"
-        description="Dropdown select component for choosing from a list of options"
+        description="Displays a list of options for users to choose from."
       />
 
       <PageContent>
         <PageSection title="About Select">
           <Typography variant="body1" className="block">
-            Select components allow users to choose a single option from a list of choices. They are
-            ideal for situations where space is limited or when you need to present many options in
-            an organized way.
+            A dropdown selection component that presents a list of options when triggered. Users can
+            select a single option from the list using mouse or keyboard navigation. The component
+            is built on Radix UI primitives and includes full keyboard accessibility support.
           </Typography>
-        </PageSection>
-
-        <PageSection title="Examples">
-          <Typography variant="body1">
-            Interactive examples showing different select configurations.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Basic Select</CardTitle>
-              <CardDescription>Simple select with items</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={selectBasicIframeRef}
-                size="md"
-                src="/examples/select/basic"
-                title="Select Basic Example"
-              />
-              <CodeExample code={SelectBasicCODE} />
-            </CardContent>
-          </Card>
         </PageSection>
 
         <PageSection title="Installation">
-          <Typography variant="body1">Import the Select components from LSD:</Typography>
+          <Typography variant="body1">Import the Select component from LSD:</Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardContent>
               <CodeExample
                 useAccordion={false}
-                code={`import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from '@nipsys/shadcn-lsd'
+                code={`import { Select } from '@nipsys/lsd'
 
 export default function MyComponent() {
-  return (
-    <Select>
-      <SelectTrigger>
-        <SelectValue placeholder="Choose an option" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="option1">Option 1</SelectItem>
-        <SelectItem value="option2">Option 2</SelectItem>
-        <SelectItem value="option3">Option 3</SelectItem>
-      </SelectContent>
-    </Select>
-  )
+  return <Select />
 }`}
               />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Sizes">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Select triggers come in two sizes to fit different contexts and layouts.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>All Sizes</CardTitle>
-              <CardDescription>Small and default sizes</CardDescription>
+              <CardTitle>Basic Usage</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={selectSizesIframeRef}
-                size="md"
+                ref={SelectBasicUsageIframeRef}
+                size={SelectBasicUsageSIZE}
+                src="/examples/select/basic-usage"
+                title="Basic Usage Example"
+              />
+              <CodeExample code={SelectBasicUsageCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Sizes">
+          <Typography variant="body1">
+            Component sizes for different contexts and visual hierarchy.
+          </Typography>
+
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Sizes</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SelectSizesIframeRef}
+                size={SelectSizesSIZE}
                 src="/examples/select/sizes"
-                title="Select Sizes Example"
+                title="Sizes Example"
               />
               <CodeExample code={SelectSizesCODE} />
             </CardContent>
           </Card>
         </PageSection>
 
-        <PageSection title="Variants">
-          <Typography variant="body1">
-            Advanced select examples including grouped items, separators, disabled items, and
-            controlled state.
-          </Typography>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Select Variants</CardTitle>
-              <CardDescription>Grouped items, separators, and controlled state</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={selectVariantsIframeRef}
-                size="md"
-                src="/examples/select/variants"
-                title="Select Variants Example"
-              />
-              <CodeExample code={SelectVariantsCODE} />
-            </CardContent>
-          </Card>
-        </PageSection>
-
         <PageSection title="Features">
           <Typography variant="body1">
-            Additional features like placeholders, grouped items, separators, disabled items, and
-            controlled/uncontrolled states.
+            Additional features and capabilities of the component.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Basic Usage</CardTitle>
-              <CardDescription>Simple select with placeholder</CardDescription>
+              <CardTitle>Controlled</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={selectBasicUsageIframeRef}
-                size="md"
-                src="/examples/select/basic-usage"
-                title="Select Basic Usage Example"
+                ref={SelectControlledIframeRef}
+                size={SelectControlledSIZE}
+                src="/examples/select/controlled"
+                title="Controlled Example"
               />
-              <CodeExample code={SelectBasicUsageCODE} />
+              <CodeExample code={SelectControlledCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Grouped Items</CardTitle>
-              <CardDescription>Organize items with labels and groups</CardDescription>
+              <CardTitle>Disabled</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={selectGroupedIframeRef}
-                size="md"
-                src="/examples/select/grouped"
-                title="Select Grouped Example"
-              />
-              <CodeExample code={SelectGroupedCODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>With Separator</CardTitle>
-              <CardDescription>Divide items with visual separators</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={selectWithSeparatorIframeRef}
-                size="md"
-                src="/examples/select/with-separator"
-                title="Select With Separator Example"
-              />
-              <CodeExample code={SelectWithSeparatorCODE} />
-            </CardContent>
-          </Card>
-
-          <Card className="mt-(--lsd-spacing-base)">
-            <CardHeader>
-              <CardTitle>Disabled Items</CardTitle>
-              <CardDescription>Disable specific options</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <IframeExample
-                ref={selectDisabledIframeRef}
-                size="md"
+                ref={SelectDisabledIframeRef}
+                size={SelectDisabledSIZE}
                 src="/examples/select/disabled"
-                title="Select Disabled Example"
+                title="Disabled Example"
               />
               <CodeExample code={SelectDisabledCODE} />
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
-              <CardTitle>Controlled Component</CardTitle>
-              <CardDescription>Manage value with state</CardDescription>
+              <CardTitle>Grouped</CardTitle>
             </CardHeader>
             <CardContent>
               <IframeExample
-                ref={selectControlledIframeRef}
-                size="md"
-                src="/examples/select/controlled"
-                title="Select Controlled Example"
+                ref={SelectGroupedIframeRef}
+                size={SelectGroupedSIZE}
+                src="/examples/select/grouped"
+                title="Grouped Example"
               />
-              <CodeExample code={SelectControlledCODE} />
+              <CodeExample code={SelectGroupedCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>Variants</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SelectVariantsIframeRef}
+                size={SelectVariantsSIZE}
+                src="/examples/select/variants"
+                title="Variants Example"
+              />
+              <CodeExample code={SelectVariantsCODE} />
+            </CardContent>
+          </Card>
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardHeader>
+              <CardTitle>With Separator</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <IframeExample
+                ref={SelectWithSeparatorIframeRef}
+                size={SelectWithSeparatorSIZE}
+                src="/examples/select/with-separator"
+                title="With Separator Example"
+              />
+              <CodeExample code={SelectWithSeparatorCODE} />
+            </CardContent>
+          </Card>
+        </PageSection>
+
+        <PageSection title="Composition">
+          <Card className="mt-(--lsd-spacing-base)">
+            <CardContent className="pt-(--lsd-spacing-base)">
+              <CodeBlock>
+                {[
+                  'Select',
+                  '├── SelectTrigger',
+                  '│   └── SelectValue',
+                  '└── SelectContent',
+                  '    ├── SelectScrollUpButton',
+                  '    ├── SelectViewport',
+                  '    └── SelectScrollDownButton',
+                ]}
+              </CodeBlock>
             </CardContent>
           </Card>
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">All available props for the Select components.</Typography>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
             <Card>
               <CardHeader>
-                <CardTitle>value</CardTitle>
-                <CardDescription>The controlled value of the select</CardDescription>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>Select wraps Radix UI primitives</CardDescription>
               </CardHeader>
               <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Use with onValueChange for controlled component
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>defaultValue</CardTitle>
-                <CardDescription>The default value of the select</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Use for uncontrolled component
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>onValueChange</CardTitle>
-                <CardDescription>Callback when value changes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> (value: string) =&gt; void
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Called when user selects an option
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>disabled</CardTitle>
-                <CardDescription>Disable the entire select</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Prevents user interaction
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>required</CardTitle>
-                <CardDescription>Mark select as required</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Adds required attribute for form validation
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>name</CardTitle>
-                <CardDescription>Name attribute for form submission</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Used when select is part of a form
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>size (SelectTrigger)</CardTitle>
-                <CardDescription>The size of the select trigger</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> 'sm' | 'default'
-                </Typography>
-                <Typography variant="label1" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Options:</strong> sm, default
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> default
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>placeholder (SelectValue)</CardTitle>
-                <CardDescription>Placeholder text when no value is selected</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Displayed when no option is selected
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>value (SelectItem)</CardTitle>
-                <CardDescription>The value of the select item</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> string
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> undefined
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Required prop for each SelectItem
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>disabled (SelectItem)</CardTitle>
-                <CardDescription>Disable individual select item</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                  <strong>Type:</strong> boolean
-                </Typography>
-                <Typography variant="label1" className="block">
-                  <strong>Default:</strong> false
-                </Typography>
-                <Typography variant="body2" className="mt-(--lsd-spacing-smaller)">
-                  Prevents selection of specific item
-                </Typography>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/select"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI Select documentation →
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -439,39 +249,36 @@ export default function MyComponent() {
 
         <PageSection title="Accessibility">
           <Typography variant="body1">
-            The Select component follows accessibility best practices.
+            The component follows accessibility best practices for screen readers and keyboard
+            navigation.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Keyboard Navigation</CardTitle>
-              <CardDescription>Select is fully keyboard accessible</CardDescription>
+              <CardDescription>Keyboard shortcuts and navigation</CardDescription>
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Tab</strong> - Navigate to the select trigger
+                • Tab - Navigate to/from the select component
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Shift + Tab</strong> - Navigate to previous focusable element
+                • Enter or Space - Open the select or select the highlighted option
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Enter / Space</strong> - Open the select dropdown
+                • Arrow Up/Down - Navigate between options
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Arrow Up / Down</strong> - Navigate through options
+                • Page Up/Page Down - Navigate through options faster
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Home / End</strong> - Jump to first or last option
+                • Home/End - Jump to first/last option
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • <strong>Escape</strong> - Close the dropdown
-              </Typography>
-              <Typography variant="body2" className="block">
-                • <strong>Enter</strong> - Select the focused option
+                • Escape - Close the select without making changes
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>ARIA Attributes</CardTitle>
@@ -479,48 +286,66 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Uses <code>aria-expanded</code> to indicate dropdown state
+                • role="listbox" is applied to SelectContent
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Uses <code>aria-haspopup</code> to indicate dropdown behavior
+                • role="option" is applied to each SelectItem
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Uses <code>aria-selected</code> to indicate selected option
+                • aria-expanded indicates open/closed state on trigger
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • Uses <code>aria-disabled</code> for disabled items
+                • aria-controls links trigger to content
               </Typography>
-              <Typography variant="body2" className="block">
-                • Uses <code>role="listbox"</code> for the dropdown content
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-selected indicates the currently selected item
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-activedescendant identifies the keyboard-focused option
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-label provides accessible labels when no visible label exists
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • aria-disabled indicates disabled items
               </Typography>
             </CardContent>
           </Card>
-
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Focus States</CardTitle>
               <CardDescription>Visible focus indicators for keyboard users</CardDescription>
             </CardHeader>
             <CardContent>
-              <Typography variant="body2" className="block">
-                Select components have visible focus states that follow the LSD design system's
-                focus indicators, ensuring keyboard users can always see which element has focus.
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus moves to the first option when dropdown opens
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus returns to trigger when option is selected
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Focus is trapped in dropdown when open
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Keyboard navigation manages highlighted option focus
+              </Typography>
+              <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                • Clicking outside closes dropdown and returns focus
               </Typography>
             </CardContent>
           </Card>
         </PageSection>
+        <PageNavigation
+          previous={{
+            title: 'Slider',
+            href: '/components/slider',
+          }}
+          next={{
+            title: 'Switch',
+            href: '/components/switch',
+          }}
+        />
       </PageContent>
-
-      <PageNavigation
-        previous={{
-          title: 'Slider',
-          href: '/components/slider',
-        }}
-        next={{
-          title: 'Switch',
-          href: '/components/switch',
-        }}
-      />
     </DocsLayout>
   );
 }

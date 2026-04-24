@@ -8,9 +8,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/** @docSection feature */
 export const CODE = `import {
   Table,
   TableBody,
@@ -19,7 +22,7 @@ export const CODE = `import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (

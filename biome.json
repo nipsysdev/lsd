@@ -7,7 +7,15 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!docs", "!**/dist", "!**/node_modules", "!**/.next", "!**/coverage"]
+    "includes": [
+      "**",
+      "!docs",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/coverage",
+      "!**/LICENSE"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -91,6 +99,21 @@
         "rules": {
           "correctness": {
             "noUnusedVariables": "warn"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "**/__tests__/**/*.ts",
+        "**/__tests__/**/*.tsx",
+        "**/*.test.ts",
+        "**/*.test.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "off"
           }
         }
       }

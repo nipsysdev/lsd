@@ -1,0 +1,32 @@
+import { Command as CommandPrimitive } from 'cmdk';
+import type * as React from 'react';
+
+import { cn } from '@/lib/utils';
+
+/**
+ * CommandSeparator - Visual divider between command groups or sections.
+ *
+ * Displays a horizontal line to visually separate command groups.
+ *
+ * @exportAs sub
+ */
+export function CommandSeparator({
+  className,
+  ...props
+}: React.ComponentProps<typeof CommandPrimitive.Separator>) {
+  return (
+    <CommandPrimitive.Separator
+      data-slot="command-separator"
+      className={cn(
+        // Colors & Backgrounds
+        'lsd:bg-lsd-border',
+        // Sizing
+        'lsd:h-px',
+        // Spacing
+        'lsd:-mx-(--lsd-spacing-smallest)',
+        className
+      )}
+      {...props}
+    />
+  );
+}

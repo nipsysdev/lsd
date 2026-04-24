@@ -1,0 +1,89 @@
+import * as SwitchPrimitive from '@radix-ui/react-switch';
+import { cva, type VariantProps } from 'class-variance-authority';
+import type * as React from 'react';
+
+import { cn } from '@/lib/utils';
+
+const switchVariants = cva(
+  'peer lsd:data-[state=checked]:bg-lsd-primary lsd:data-[state=unchecked]:bg-lsd-surface focus-visible:lsd:border-lsd-border focus-visible:lsd:ring-lsd-text/50 dark:lsd:data-[state=unchecked]:bg-lsd-surface/80 lsd:inline-flex lsd:shrink-0 lsd:items-center lsd:rounded-full lsd:border lsd:border-lsd-border lsd:shadow-xs lsd:transition-all lsd:outline-none focus-visible:lsd:ring-[3px] lsd:cursor-pointer lsd:disabled:cursor-not-allowed lsd:disabled:opacity-50',
+  {
+    variants: {
+      size: {
+        sm: 'lsd:h-3.5 lsd:w-7',
+        md: 'lsd:h-4.5 lsd:w-9',
+        lg: 'lsd:h-6 lsd:w-12',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
+    },
+  }
+);
+
+const thumbVariants = cva(
+  'lsd:bg-lsd-surface lsd:border lsd:border-lsd-border dark:lsd:data-[state=unchecked]:bg-lsd-text-primary dark:lsd:data-[state=checked]:bg-lsd-surface lsd:pointer-events-none lsd:block lsd:rounded-full lsd:ring-0 lsd:transition-transform',
+  {
+    variants: {
+      size: {
+        sm: 'lsd:size-3.5 lsd:data-[state=checked]:translate-x-[calc(100%+2px)]',
+        md: 'lsd:size-4.5 lsd:data-[state=checked]:translate-x-[calc(100%-2px)]',
+        lg: 'lsd:size-6 lsd:data-[state=checked]:translate-x-[calc(100%-2px)]',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
+    },
+  }
+);
+
+export interface SwitchProps
+  extends React.ComponentProps<typeof SwitchPrimitive.Root>,
+    VariantProps<typeof switchVariants> {
+  /**
+   * The size of the switch.
+   *
+   * Controls the visual size of the switch component.
+   */
+  size?: 'sm' | 'md' | 'lg';
+}
+
+/**
+ * Switch - Toggle control for binary states like on/off
+ *
+ * A control that allows the user to toggle between checked and not checked states.
+ * Supports controlled and uncontrolled modes with size variants.
+ *
+ * @docSectionPageDescription
+ * Toggle control for binary states with size variants.
+ *
+ * @docSectionAbout
+ * A control that allows the user to toggle between checked and not checked states. Supports controlled and uncontrolled modes with size variants (sm, md, lg). Includes proper accessibility attributes and keyboard navigation.
+ *
+ * @docSectionAccessibilityKeyboard
+ * • Space - Toggles the switch state
+ * • Enter - Toggles the switch state
+ *
+ * @docSectionAccessibilityAria
+ * • role="switch" is set on the root element
+ * • aria-checked indicates the current state (checked/unchecked)
+ * • aria-disabled is present when disabled
+ * • aria-readonly is present when the switch is read-only
+ * • aria-required indicates if the switch is required
+ * • aria-invalid is present when the switch has an error
+ *
+ * @docSectionAccessibilityFocus
+ * Component is focusable and receives focus when tabbed to. Focus visible state is shown with a ring indicator.
+ */
+function Switch({ className, size, ...props }: SwitchProps) {
+  return (
+    <SwitchPrimitive.Root
+      data-slot="switch"
+      className={cn(switchVariants({ size }), className)}
+      {...props}
+    >
+      <SwitchPrimitive.Thumb data-slot="switch-thumb" className={thumbVariants({ size })} />
+    </SwitchPrimitive.Root>
+  );
+}
+
+export { Switch };

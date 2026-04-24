@@ -7,9 +7,14 @@ import {
   MenubarMenu,
   MenubarSeparator,
   MenubarTrigger,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+export const SIZE = 'md';
+
+/**
+ * @docSection variant
+ */
 export const CODE = `import {
   Menubar,
   MenubarMenu,
@@ -17,7 +22,7 @@ export const CODE = `import {
   MenubarContent,
   MenubarItem,
   MenubarSeparator,
-} from '@nipsys/shadcn-lsd';
+} from '@nipsys/lsd';
 
 export function Example() {
   return (
@@ -28,7 +33,15 @@ export function Example() {
           <MenubarItem>New</MenubarItem>
           <MenubarItem>Open</MenubarItem>
           <MenubarSeparator />
-          <MenubarItem variant="destructive">Delete</MenubarItem>
+          <MenubarItem variant="destructive">Exit</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Cut</MenubarItem>
+          <MenubarItem>Copy</MenubarItem>
+          <MenubarItem>Paste</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
@@ -47,7 +60,15 @@ export function Example() {
           <MenubarItem>New</MenubarItem>
           <MenubarItem>Open</MenubarItem>
           <MenubarSeparator />
-          <MenubarItem variant="destructive">Delete</MenubarItem>
+          <MenubarItem variant="destructive">Exit</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent>
+          <MenubarItem>Cut</MenubarItem>
+          <MenubarItem>Copy</MenubarItem>
+          <MenubarItem>Paste</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
