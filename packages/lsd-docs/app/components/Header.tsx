@@ -42,11 +42,7 @@ export default function Header({ className }: HeaderProps) {
           <ThemeAccentToggle />
           <FontToggle />
           <Button variant="link" size="sm" asChild>
-            <Link
-              href="https://github.com/nipsysdev/shadcn-lsd"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://github.com/nipsysdev/lsd" target="_blank" rel="noopener noreferrer">
               <GithubLogoIcon weight="duotone" className="mr-(--lsd-spacing-smaller) size-5" />
               <span>Source</span>
             </Link>

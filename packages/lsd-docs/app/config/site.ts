@@ -4,7 +4,7 @@ export const siteConfig = {
   description: 'LSD Component Library Documentation',
   url: 'https://lsd.nipsys.dev',
   version: '0.2.5',
-  github: 'https://github.com/nipsysdev/shadcn-lsd',
+  github: 'https://github.com/nipsysdev/lsd',
 } as const;
 
 export type SiteConfig = typeof siteConfig;

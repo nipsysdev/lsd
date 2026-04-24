@@ -85,7 +85,9 @@ export default function Home() {
             <ToggleGroup
               type="single"
               value={activePreview}
-              onValueChange={value => setActivePreview((value as Preview) || activePreview)}
+              onValueChange={(value: string | undefined) =>
+                setActivePreview((value as Preview) || activePreview)
+              }
             >
               <ToggleGroupItem value="work">Work UI</ToggleGroupItem>
               <ToggleGroupItem value="social">Social UI</ToggleGroupItem>
