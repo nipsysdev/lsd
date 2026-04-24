@@ -10,6 +10,7 @@ Minimalist, accessible UI components following the [Logos Design System](https:/
 [![Radix UI](https://img.shields.io/badge/radix%20ui-primitives-8b5cf6?logo=radixui&logoColor=white)](https://www.radix-ui.com)
 
 [![Biome](https://img.shields.io/badge/biome-2.x-60a5fa?logo=biome&logoColor=white)](https://biomejs.dev)
+[![Lefthook](https://img.shields.io/badge/lefthook-2.1.0-ff1e1e?logo=lefthook&logoColor=white)](https://lefthook.dev/)
 [![Playwright](https://img.shields.io/badge/playwright-e2e-2emerald?logo=playwright&logoColor=white)](https://playwright.dev)
 [![Vitest](https://img.shields.io/badge/vitest-unit-violet?logo=vitest&logoColor=white)](https://vitest.dev)
 
