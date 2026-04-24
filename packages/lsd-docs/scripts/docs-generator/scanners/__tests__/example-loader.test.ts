@@ -23,7 +23,7 @@ describe('Example Loader', () => {
   describe('loadExampleCode', () => {
     it('should load example code from a valid file', async () => {
       const content =
-        'export const CODE = `import { Button } from "@nipsys/shadcn-lsd";\n\nexport default function Example() {\n  return <Button>Click me</Button>;\n}`;';
+        'export const CODE = `import { Button } from "@nipsys/lsd";\n\nexport default function Example() {\n  return <Button>Click me</Button>;\n}`;';
 
       vi.mocked(fs.readFile).mockResolvedValue(content);
 
@@ -104,7 +104,7 @@ describe('Example Loader', () => {
 
     it('should extract multi-line code correctly', async () => {
       const content =
-        'export const CODE = `import { Button, Typography } from "@nipsys/shadcn-lsd";\n\nexport function Example() {\n  return (\n    <div>\n      <Typography variant="body1">\n        Hello World\n      </Typography>\n      <Button>Click</Button>\n    </div>\n  );\n}`;';
+        'export const CODE = `import { Button, Typography } from "@nipsys/lsd";\n\nexport function Example() {\n  return (\n    <div>\n      <Typography variant="body1">\n        Hello World\n      </Typography>\n      <Button>Click</Button>\n    </div>\n  );\n}`;';
 
       vi.mocked(fs.readFile).mockResolvedValue(content);
 
