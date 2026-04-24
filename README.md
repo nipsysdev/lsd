@@ -2,6 +2,17 @@
 
 Minimalist, accessible UI components following the [Logos Design System](https://guide.logos.co/). Built for React 19+ on top of Radix UI using shadcn/ui.
 
+[![npm version](https://img.shields.io/npm/v/@nipsys/lsd)](https://www.npmjs.com/package/@nipsys/lsd)
+[![MIT License](https://img.shields.io/npm/l/@nipsys/lsd)](LICENSE)
+
+[![React](https://img.shields.io/badge/react-19.2.4+-61dafb?logo=react&logoColor=white)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-4.1.18-06b6d4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Radix UI](https://img.shields.io/badge/radix%20ui-primitives-8b5cf6?logo=radixui&logoColor=white)](https://www.radix-ui.com)
+
+[![Biome](https://img.shields.io/badge/biome-2.x-60a5fa?logo=biome&logoColor=white)](https://biomejs.dev)
+[![Playwright](https://img.shields.io/badge/playwright-e2e-2emerald?logo=playwright&logoColor=white)](https://playwright.dev)
+[![Vitest](https://img.shields.io/badge/vitest-unit-violet?logo=vitest&logoColor=white)](https://vitest.dev)
+
 This component library follows the guidelines defined by the original Logos Design System, prioritising accessibility and content readability over aesthetics.
 
 ## Documentation
