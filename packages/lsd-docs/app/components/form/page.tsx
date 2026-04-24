@@ -129,10 +129,10 @@ export default function MyComponent() {
                   'Form',
                   '└── FormField',
                   '    └── FormItem',
-                  '    │   ├── FormLabel',
-                  '    │   ├── FormControl',
-                  '    │   ├── FormDescription',
-                  '        └── FormMessage',
+                  '├── FormLabel',
+                  '├── FormControl',
+                  '├── FormDescription',
+                  '└── FormMessage',
                 ]}
               </CodeBlock>
             </CardContent>
@@ -198,7 +198,7 @@ export default function MyComponent() {
             href: '/components/field',
           }}
           next={{
-            title: 'Radio-group',
+            title: 'Radio Group',
             href: '/components/radio-group',
           }}
         />

@@ -170,8 +170,7 @@ export default function MyComponent() {
                 <CardHeader>
                   <CardTitle>orientation</CardTitle>
                   <CardDescription>
-                    Layout direction for the button group. Controls whether buttons are arranged
-                    horizontally or vertically.
+                    Arrangement direction of buttons within the group.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -183,6 +182,19 @@ export default function MyComponent() {
                   </Typography>
                   <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
                     <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>groupLabel</CardTitle>
+                  <CardDescription>
+                    Accessible label for screen readers identifying the button group's purpose.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
                   </Typography>
                 </CardContent>
               </Card>
@@ -198,8 +210,7 @@ export default function MyComponent() {
                 <CardHeader>
                   <CardTitle>asChild</CardTitle>
                   <CardDescription>
-                    Merges attributes with child element instead of rendering as div. When true,
-                    renders as the child element instead of a wrapping div.
+                    Merges attributes with child element instead of rendering as container.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -245,10 +256,10 @@ export default function MyComponent() {
             </CardHeader>
             <CardContent>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • role="group" identifies the semantic grouping
+                • Uses &lt;fieldset&gt; element with &lt;legend&gt; for semantic grouping
               </Typography>
               <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
-                • aria-label or aria-labelledby should describe the group purpose
+                • groupLabel prop provides required accessible name for screen readers
               </Typography>
             </CardContent>
           </Card>

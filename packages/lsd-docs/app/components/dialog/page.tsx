@@ -21,14 +21,14 @@ export default function DialogPage() {
     <DocsLayout>
       <PageHeader
         title="Dialog"
-        description="Modal overlay for focused content display Container that displays content above the page with a backdrop overlay. Used for alerts, confirmations, and focused user interactions."
+        description="Modal overlay for displaying focused content above the page with a backdrop."
       />
 
       <PageContent>
         <PageSection title="About Dialog">
           <Typography variant="body1" className="block">
-            Modal overlay for focused content display Container that displays content above the page
-            with a backdrop overlay. Used for alerts, confirmations, and focused user interactions.
+            Container that displays content above the page with a backdrop overlay. Used for alerts,
+            confirmations, and focused user interactions requiring user attention.
           </Typography>
         </PageSection>
 
@@ -49,15 +49,14 @@ export default function MyComponent() {
           </Card>
         </PageSection>
 
-        <PageSection title="Variants">
+        <PageSection title="Usage">
           <Typography variant="body1">
-            Component variants for different visual styles and use cases.
+            The simplest form of the component with default styling.
           </Typography>
 
           <Card className="mt-(--lsd-spacing-base)">
             <CardHeader>
               <CardTitle>Basic</CardTitle>
-              <CardDescription>Basic example</CardDescription>
             </CardHeader>
             <CardContent>
               <IframeExample
@@ -72,10 +71,24 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <Typography variant="body1">
-            There are no documented props for this component. Props are documented via TSDoc in
-            Props interfaces within the component or types.ts files.
-          </Typography>
+          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
+            <Card>
+              <CardHeader>
+                <CardTitle>Radix UI Documentation</CardTitle>
+                <CardDescription>Dialog wraps Radix UI primitives</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <a
+                  href="https://www.radix-ui.com/primitives/docs/components/dialog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View Radix UI Dialog documentation →
+                </a>
+              </CardContent>
+            </Card>
+          </div>
         </PageSection>
 
         <PageSection title="Accessibility">
@@ -147,12 +160,12 @@ export default function MyComponent() {
         </PageSection>
         <PageNavigation
           previous={{
-            title: 'Command',
-            href: '/components/command',
+            title: 'Alert-dialog',
+            href: '/components/alert-dialog',
           }}
           next={{
-            title: 'Dropdown-menu',
-            href: '/components/dropdown-menu',
+            title: 'Popover',
+            href: '/components/popover',
           }}
         />
       </PageContent>
