@@ -5,6 +5,7 @@ import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const SIZE = 'md';
 
+/** @docSection size */
 export const CODE = `import { Toggle, Typography } from '@nipsys/lsd';
 
 export function Example() {

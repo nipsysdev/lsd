@@ -5,13 +5,16 @@ import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const SIZE = 'md';
 
+/**
+ * @docSection size
+ */
 export const CODE = `import { ToggleGroup, ToggleGroupItem, Typography } from '@nipsys/lsd';
 
 export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Small Size</Typography>
-      <ToggleGroup type="multiple" size="sm">
+      <ToggleGroup type="multiple" size="sm" groupLabel="Size selection options">
         <ToggleGroupItem value="1" aria-label="Toggle 1">
           1
         </ToggleGroupItem>
@@ -32,7 +35,7 @@ export function ToggleGroupSizesExample() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="label1">Small Size</Typography>
-      <ToggleGroup type="multiple" size="sm">
+      <ToggleGroup type="multiple" size="sm" groupLabel="Size selection options">
         <ToggleGroupItem value="1" aria-label="Toggle 1">
           1
         </ToggleGroupItem>
