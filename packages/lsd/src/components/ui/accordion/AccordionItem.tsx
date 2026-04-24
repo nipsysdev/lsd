@@ -31,8 +31,7 @@ function AccordionItem({ className, ...props }: AccordionItemProps) {
         'lsd:border-lsd-border',
         className
       )}
-      // biome-ignore lint/suspicious/noExplicitAny: Radix UI Item component has strict type requirements, passing through all props
-      {...(props as any)}
+      {...props}
     />
   );
 }

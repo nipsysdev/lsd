@@ -1,6 +1,87 @@
+import type * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { cva, type VariantProps } from 'class-variance-authority';
 import type * as React from 'react';
 import type { SizeVariant } from '@/lib/types';
+
+type PrimitiveDivProps = React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>;
+
+interface AccordionSingleProps {
+  /**
+   * Selection behavior - 'single' allows only one item open
+   * Only one panel can be open at a time
+   */
+  type: 'single';
+  /**
+   * Value of the open item for controlled components (single mode)
+   */
+  value?: string;
+  /**
+   * Default value of the open item for uncontrolled components (single mode)
+   */
+  defaultValue?: string;
+  /**
+   * Allow closing all items when type is 'single'
+   * When true, users can click an open panel to close it, leaving no panels open
+   * When false, at least one panel must remain open at all times
+   */
+  collapsible?: boolean;
+  /**
+   * Orientation of the accordion
+   * - vertical: Items are stacked vertically (default)
+   * - horizontal: Items are arranged horizontally
+   */
+  orientation?: 'vertical' | 'horizontal';
+  /**
+   * Disable the accordion
+   * When true, all accordion triggers are disabled and cannot be interacted with
+   */
+  disabled?: boolean;
+  /**
+   * Callback function called when the active panel changes (single mode)
+   * @param value - The new value of the active panel
+   */
+  onValueChange?: (value: string) => void;
+  /**
+   * The language read direction
+   */
+  dir?: 'ltr' | 'rtl';
+}
+
+interface AccordionMultipleProps {
+  /**
+   * Selection behavior - 'multiple' allows multiple items open
+   * Multiple panels can be open simultaneously
+   */
+  type: 'multiple';
+  /**
+   * Value of the open items for controlled components (multiple mode)
+   */
+  value?: string[];
+  /**
+   * Default value of the open items for uncontrolled components (multiple mode)
+   */
+  defaultValue?: string[];
+  /**
+   * Orientation of the accordion
+   * - vertical: Items are stacked vertically (default)
+   * - horizontal: Items are arranged horizontally
+   */
+  orientation?: 'vertical' | 'horizontal';
+  /**
+   * Disable the accordion
+   * When true, all accordion triggers are disabled and cannot be interacted with
+   */
+  disabled?: boolean;
+  /**
+   * Callback function called when the active panels change (multiple mode)
+   * @param value - The new value of the active panels
+   */
+  onValueChange?: (value: string[]) => void;
+  /**
+   * The language read direction
+   */
+  dir?: 'ltr' | 'rtl';
+}
 
 /**
  * Props for Accordion component
@@ -32,48 +113,9 @@ import type { SizeVariant } from '@/lib/types';
  * • Focus can be moved between triggers using arrow keys
  * • Focus rings visible on all interactive elements
  */
-export interface AccordionProps extends React.ComponentProps<'div'> {
-  /**
-   * Selection behavior - 'single' allows only one item open, 'multiple' allows multiple
-   * - single: Only one panel can be open at a time
-   * - multiple: Multiple panels can be open simultaneously
-   */
-  type: 'single' | 'multiple';
-  /**
-   * Allow closing all items when type is 'single'
-   * When true, users can click an open panel to close it, leaving no panels open
-   * When false, at least one panel must remain open at all times
-   */
-  collapsible?: boolean;
-  /**
-   * Value of the open item(s) for controlled components
-   * For type='single': string (the value of the open item)
-   * For type='multiple': string[] (array of open item values)
-   */
-  value?: string | string[];
-  /**
-   * Default value of the open item(s) for uncontrolled components
-   * For type='single': string (the value of the open item)
-   * For type='multiple': string[] (array of open item values)
-   */
-  defaultValue?: string | string[];
-  /**
-   * Orientation of the accordion
-   * - vertical: Items are stacked vertically (default)
-   * - horizontal: Items are arranged horizontally
-   */
-  orientation?: 'vertical' | 'horizontal';
-  /**
-   * Disable the accordion
-   * When true, all accordion triggers are disabled and cannot be interacted with
-   */
-  disabled?: boolean;
-  /**
-   * Callback function called when the active panel changes
-   * @param value - The new value of the active panel(s)
-   */
-  onValueChange?: (value: string | string[]) => void;
-}
+export type AccordionProps = PrimitiveDivProps & (AccordionSingleProps | AccordionMultipleProps);
+
+export type { AccordionMultipleProps, AccordionSingleProps };
 
 /**
  * Props for AccordionItem component
@@ -90,7 +132,8 @@ export interface AccordionProps extends React.ComponentProps<'div'> {
  * This value is used to control which panels are open in the accordion and must
  * be unique within a single accordion instance.
  */
-export interface AccordionItemProps extends React.ComponentProps<'div'> {
+export interface AccordionItemProps
+  extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {
   /**
    * Unique identifier for the item
    * This value must be unique across all items in the same accordion instance

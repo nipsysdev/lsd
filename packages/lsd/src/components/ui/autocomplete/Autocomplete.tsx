@@ -215,6 +215,7 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                   type="button"
                   onClick={onCancel}
                   disabled={disabled}
+                  {...(!disabled && { 'aria-label': 'Clear selection' })}
                   className={cn(
                     // Layout & Positioning
                     'lsd:flex',

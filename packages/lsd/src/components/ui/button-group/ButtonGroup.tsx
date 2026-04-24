@@ -25,8 +25,8 @@ import { buttonGroupVariants } from './types';
  * • Arrow keys - Navigate through buttons when arranged
  *
  * @docSectionAccessibilityAria
- * • role="group" identifies the semantic grouping
- * • aria-label or aria-labelledby should describe the group purpose
+ * • Uses <fieldset> element with <legend> for semantic grouping
+ * • groupLabel prop provides required accessible name for screen readers
  *
  * @docSectionAccessibilityFocus
  * Focus moves through buttons sequentially. Focused button receives visible focus indicator.
@@ -35,7 +35,7 @@ import { buttonGroupVariants } from './types';
  */
 
 const ButtonGroup = React.forwardRef<HTMLFieldSetElement, ButtonGroupProps>(
-  ({ className, orientation, ...props }, ref) => {
+  ({ className, orientation, groupLabel, children, ...props }, ref) => {
     return (
       <fieldset
         ref={ref}
@@ -43,7 +43,10 @@ const ButtonGroup = React.forwardRef<HTMLFieldSetElement, ButtonGroupProps>(
         data-orientation={orientation}
         className={cn(buttonGroupVariants({ orientation }), className)}
         {...props}
-      />
+      >
+        {groupLabel && <legend className="lsd:sr-only">{groupLabel}</legend>}
+        {children}
+      </fieldset>
     );
   }
 );

@@ -1,6 +1,6 @@
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import type * as React from 'react';
-
+import { getAccordionPaddingBottom } from '@/lib/size-utils';
 import { cn } from '@/lib/utils';
 import { type AccordionVariants, accordionContentVariants } from './types';
 
@@ -43,24 +43,13 @@ export interface AccordionContentProps
 }
 
 function AccordionContent({ className, children, size = 'md', ...props }: AccordionContentProps) {
-  const getPaddingBottom = () => {
-    switch (size) {
-      case 'sm':
-        return 'lsd:pb-(--lsd-spacing-smaller)';
-      case 'lg':
-        return 'lsd:pb-(--lsd-spacing-larger)';
-      default:
-        return 'lsd:pb-(--lsd-spacing-base)';
-    }
-  };
-
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
       className={cn(accordionContentVariants({ size }))}
       {...props}
     >
-      <div className={cn('lsd:pt-0', getPaddingBottom(), className)}>{children}</div>
+      <div className={cn('lsd:pt-0', getAccordionPaddingBottom(size), className)}>{children}</div>
     </AccordionPrimitive.Content>
   );
 }

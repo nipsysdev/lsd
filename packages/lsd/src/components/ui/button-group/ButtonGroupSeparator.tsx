@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils';
  */
 
 const ButtonGroupSeparator = React.forwardRef<
-  React.ElementRef<typeof Separator>,
+  React.ComponentRef<typeof Separator>,
   React.ComponentProps<typeof Separator>
 >(({ className, orientation = 'vertical', ...props }, ref) => {
   return (

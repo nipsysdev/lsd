@@ -38,8 +38,7 @@ import type { AccordionProps } from './types';
  * state in single mode.
  */
 function Accordion(props: AccordionProps) {
-  // biome-ignore lint/suspicious/noExplicitAny: Radix UI Root component has different types for single/multiple mode, so we need to pass through all props
-  return <AccordionPrimitive.Root data-slot="accordion" {...(props as any)} />;
+  return <AccordionPrimitive.Root data-slot="accordion" {...props} />;
 }
 
 export { Accordion };

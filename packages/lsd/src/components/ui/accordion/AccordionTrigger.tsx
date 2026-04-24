@@ -1,6 +1,7 @@
 import { CaretDownIcon } from '@phosphor-icons/react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import type * as React from 'react';
+import { getAccordionIconSize } from '@/lib/size-utils';
 import { cn } from '@/lib/utils';
 import { type AccordionVariants, accordionTriggerVariants } from './types';
 
@@ -51,17 +52,6 @@ export interface AccordionTriggerProps
 }
 
 function AccordionTrigger({ className, children, size = 'md', ...props }: AccordionTriggerProps) {
-  const getIconSize = () => {
-    switch (size) {
-      case 'sm':
-        return 'lsd:size-3';
-      case 'lg':
-        return 'lsd:size-5';
-      default:
-        return 'lsd:size-4';
-    }
-  };
-
   return (
     <AccordionPrimitive.Header className="lsd:flex">
       <AccordionPrimitive.Trigger
@@ -83,7 +73,7 @@ function AccordionTrigger({ className, children, size = 'md', ...props }: Accord
             'lsd:translate-y-0.5',
             // Interactive States
             'lsd:pointer-events-none',
-            getIconSize()
+            getAccordionIconSize(size)
           )}
           weight="duotone"
         />

@@ -66,11 +66,15 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 function Alert({ className, variant, ...props }: AlertProps) {
+  const ariaLive = variant === 'destructive' ? 'assertive' : 'polite';
+
   return (
     <div
       data-slot="alert"
       data-variant={variant}
       role="alert"
+      aria-live={ariaLive}
+      aria-atomic="true"
       className={cn(alertVariants({ variant }), className)}
       {...props}
     />

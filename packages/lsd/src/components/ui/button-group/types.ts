@@ -23,18 +23,18 @@ export interface ButtonGroupProps
   extends Omit<React.ComponentProps<'fieldset'>, 'disabled'>,
     ButtonGroupVariants {
   /**
-   * Layout direction for the button group.
-   *
-   * Controls whether buttons are arranged horizontally or vertically.
+   * Arrangement direction of buttons within the group.
    */
   orientation?: 'horizontal' | 'vertical';
+  /**
+   * Accessible label for screen readers identifying the button group's purpose.
+   */
+  groupLabel?: string;
 }
 
 export interface ButtonGroupTextProps extends React.ComponentProps<'div'> {
   /**
-   * Merges attributes with child element instead of rendering as div.
-   *
-   * When true, renders as the child element instead of a wrapping div.
+   * Merges attributes with child element instead of rendering as container.
    */
   asChild?: boolean;
 }

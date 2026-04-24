@@ -1,6 +1,7 @@
 import { XIcon } from '@phosphor-icons/react';
 import { Slot } from '@radix-ui/react-slot';
 import type * as React from 'react';
+import { getDotSizeClasses } from '@/lib/size-utils';
 import { cn } from '@/lib/utils';
 import { type BadgeVariants, badgeVariants } from './types';
 
@@ -10,6 +11,14 @@ import { type BadgeVariants, badgeVariants } from './types';
  * Small label for categorizing content or displaying status information.
  * Supports click interactions, dismissible badges, dot variants, and
  * icon placement for visual emphasis.
+ *
+ * @docSectionPageDescription
+ * Displays status, tags, or metadata with optional interactions and dismissibility.
+ *
+ * @docSectionAbout
+ * Small label component for categorizing content or displaying status information.
+ * Supports clickable badges, dismissible badges with an X button, dot variants for compact indicators,
+ * and icon placement for visual emphasis.
  *
  * @docSectionAccessibilityKeyboard
  * • Tab - Navigate to clickable badges
@@ -98,22 +107,7 @@ function Badge({
     onDismiss?.();
   };
 
-  // Get dot size based on size prop
-  const getDotSize = () => {
-    const md = 'lsd:w-[var(--lsd-spacing-small)] lsd:h-[var(--lsd-spacing-small)]';
-    switch (size) {
-      case 'sm':
-        return 'lsd:w-[var(--lsd-spacing-smaller)] lsd:h-[var(--lsd-spacing-smaller)]';
-      case 'md':
-        return md;
-      case 'lg':
-        return 'lsd:w-[var(--lsd-spacing-base)] lsd:h-[var(--lsd-spacing-base)]';
-      default:
-        return md;
-    }
-  };
-
-  const dotClasses = isDot ? getDotSize() : '';
+  const dotClasses = isDot ? getDotSizeClasses(size) : '';
 
   return (
     <Comp
