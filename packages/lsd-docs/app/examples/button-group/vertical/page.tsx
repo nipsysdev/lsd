@@ -12,7 +12,7 @@ export const CODE = `import { Button, ButtonGroup } from '@nipsys/lsd';
 
 export function Example() {
   return (
-    <ButtonGroup orientation="vertical">
+    <ButtonGroup orientation="vertical" groupLabel="Alignment options">
       <Button>Top</Button>
       <Button>Middle</Button>
       <Button>Bottom</Button>
@@ -25,7 +25,7 @@ export function Example() {
   useSendThemeToIframes();
 
   return (
-    <ButtonGroup orientation="vertical">
+    <ButtonGroup orientation="vertical" groupLabel="Alignment options">
       <Button>Top</Button>
       <Button>Middle</Button>
       <Button>Bottom</Button>

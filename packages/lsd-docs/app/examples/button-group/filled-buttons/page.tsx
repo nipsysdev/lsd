@@ -12,7 +12,7 @@ export const CODE = `import { Button, ButtonGroup } from '@nipsys/lsd'
 
 export function Example() {
   return (
-    <ButtonGroup>
+    <ButtonGroup groupLabel="Document actions">
       <Button variant="filled">Edit</Button>
       <Button variant="filled">View</Button>
       <Button variant="filled">Delete</Button>
@@ -24,7 +24,7 @@ export function ButtonGroupFilledButtonsExample() {
   useSendThemeToIframes();
 
   return (
-    <ButtonGroup>
+    <ButtonGroup groupLabel="Document actions">
       <Button variant="filled">Edit</Button>
       <Button variant="filled">View</Button>
       <Button variant="filled">Delete</Button>

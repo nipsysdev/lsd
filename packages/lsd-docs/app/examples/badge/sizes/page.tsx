@@ -1,10 +1,11 @@
 'use client';
 
 import { Badge } from '@nipsys/lsd';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 
 export const SIZE = 'sm';
 
+/** @docSection size */
 export const CODE = `import { Badge } from '@nipsys/lsd';
 
 export function Example() {
@@ -18,7 +19,8 @@ export function Example() {
       <Badge variant="dot" size="lg" />
     </div>
   );
-}`;
+}
+`;
 
 export function BadgeSizesExample() {
   useSendThemeToIframes();

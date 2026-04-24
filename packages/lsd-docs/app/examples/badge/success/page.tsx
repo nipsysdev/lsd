@@ -5,7 +5,8 @@ import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
 export const SIZE = 'sm';
 
-export const CODE = `import { Badge } from '@nipsys/lsd'
+/** @docSection variant */
+export const CODE = `import { Badge } from '@nipsys/lsd';
 
 export function Example() {
   return (

@@ -2,14 +2,15 @@
 
 import { Badge } from '@nipsys/lsd';
 import { useState } from 'react';
-import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
+import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
 
 export const SIZE = 'sm';
 
+/** @docSection feature */
 export const CODE = `import { useState } from 'react';
 import { Badge } from '@nipsys/lsd';
 
-export function Example() {
+function BadgeDismissibleExample() {
   const [badges, setBadges] = useState([
     { id: 1, text: 'Dismissible 1' },
     { id: 2, text: 'Dismissible 2' },
@@ -23,20 +24,19 @@ export function Example() {
   return (
     <div className="flex flex-wrap gap-(--lsd-spacing-base)">
       {badges.map(badge => (
-        <Badge 
-          key={badge.id}
-          variant="filled"
-          onDismiss={() => handleDismiss(badge.id)}
-        >
+        <Badge key={badge.id} variant="filled" onDismiss={() => handleDismiss(badge.id)}>
           {badge.text}
         </Badge>
       ))}
-      {badges.length === 0 && (
-        <span>All badges dismissed</span>
-      )}
+      {badges.length === 0 && <span>All badges dismissed</span>}
     </div>
   );
-}`;
+}
+
+export default function Example() {
+  return <BadgeDismissibleExample />;
+}
+`;
 
 export function BadgeDismissibleExample() {
   const [badges, setBadges] = useState([
@@ -63,6 +63,6 @@ export function BadgeDismissibleExample() {
   );
 }
 
-export default function Dismissible() {
+export default function BadgeDismissiblePage() {
   return <BadgeDismissibleExample />;
 }

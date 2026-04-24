@@ -12,7 +12,7 @@ export const CODE = `import { Button, ButtonGroup } from '@nipsys/lsd'
 
 export function Example() {
   return (
-    <ButtonGroup>
+    <ButtonGroup groupLabel="Time period options">
       <Button variant="outlined">Week</Button>
       <Button variant="outlined">Month</Button>
       <Button variant="outlined">Year</Button>
@@ -24,7 +24,7 @@ export function ButtonGroupOutlinedButtonsExample() {
   useSendThemeToIframes();
 
   return (
-    <ButtonGroup>
+    <ButtonGroup groupLabel="Time period options">
       <Button variant="outlined">Week</Button>
       <Button variant="outlined">Month</Button>
       <Button variant="outlined">Year</Button>
