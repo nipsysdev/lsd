@@ -39,76 +39,75 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-   test:
-     runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
 
-     steps:
-       - name: Checkout Code
-         uses: actions/checkout@v6
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
 
-       - name: Set up Node.js and pnpm using mise
-         uses: jdx/mise-action@v3
+      - name: Set up Node.js and pnpm using mise
+        uses: jdx/mise-action@v3
 
-       - name: Get pnpm store directory
-         id: pnpm-cache
-         shell: bash
-         run: |
-           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-       - name: Setup pnpm cache
-         uses: actions/cache@v4
-         with:
-           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-           restore-keys: |
-             ${{ runner.os }}-pnpm-store-
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-       - name: Install dependencies
-         run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-       - name: Test
-         run: pnpm test
+      - name: Test
+        run: pnpm test
 
   e2e:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-     steps:
-       - name: Checkout Code
-         uses: actions/checkout@v6
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
 
-       - name: Set up Node.js and pnpm using mise
-         uses: jdx/mise-action@v3
+      - name: Set up Node.js and pnpm using mise
+        uses: jdx/mise-action@v3
 
-       - name: Get pnpm store directory
-         id: pnpm-cache
-         shell: bash
-         run: |
-           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-       - name: Setup pnpm cache
-         uses: actions/cache@v4
-         with:
-           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-           restore-keys: |
-             ${{ runner.os }}-pnpm-store-
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-       - name: Install dependencies
-         run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-       - name: Install Playwright Browsers
-         run: pnpm --filter @nipsys/lsd-docs exec playwright install --with-deps chromium
+      - name: Install Playwright Browsers
+        run: pnpm --filter @nipsys/lsd-docs exec playwright install --with-deps chromium
 
-       - name: Run E2E tests
-         run: pnpm docs:test:e2e
+      - name: Run E2E tests
+        run: pnpm docs:test:e2e
 
-       - name: Upload test results
-         if: always()
-         uses: actions/upload-artifact@v4
-         with:
-           name: playwright-report
-           path: packages/lsd-docs/playwright-report/
-         
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: packages/lsd-docs/playwright-report/
 
   build:
     runs-on: ubuntu-latest
