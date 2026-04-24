@@ -28,4 +28,7 @@ const CardContent = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>
 );
 CardContent.displayName = 'CardContent';
 
-export { CardContent };
+const CardContentWithMemo = React.memo(CardContent);
+CardContentWithMemo.displayName = 'CardContent';
+
+export { CardContentWithMemo as CardContent };

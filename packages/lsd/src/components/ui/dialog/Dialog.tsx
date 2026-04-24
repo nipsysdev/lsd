@@ -7,6 +7,13 @@ import type * as React from 'react';
  * Container that displays content above the page with a backdrop overlay.
  * Used for alerts, confirmations, and focused user interactions.
  *
+ * @docSectionPageDescription
+ * Modal overlay for displaying focused content above the page with a backdrop.
+ *
+ * @docSectionAbout
+ * Container that displays content above the page with a backdrop overlay.
+ * Used for alerts, confirmations, and focused user interactions requiring user attention.
+ *
  * @docSectionAccessibilityKeyboard
  * • Escape - Close the dialog
  * • Tab - Move focus between focusable elements within the dialog

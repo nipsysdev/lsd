@@ -1,10 +1,10 @@
 import { CaretRightIcon } from '@phosphor-icons/react';
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import { SubTrigger as DropdownMenuSubTriggerPrimitive } from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface DropdownMenuSubTriggerProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.SubTrigger> {
+  extends React.ComponentProps<typeof DropdownMenuSubTriggerPrimitive> {
   /**
    * Adds extra left padding to align with other inset items.
    */
@@ -23,7 +23,7 @@ export function DropdownMenuSubTrigger({
   ...props
 }: DropdownMenuSubTriggerProps) {
   return (
-    <DropdownMenuPrimitive.SubTrigger
+    <DropdownMenuSubTriggerPrimitive
       data-slot="dropdown-menu-sub-trigger"
       data-inset={inset}
       className={cn(
@@ -64,6 +64,6 @@ export function DropdownMenuSubTrigger({
     >
       {children}
       <CaretRightIcon className="lsd:ml-auto lsd:size-4" />
-    </DropdownMenuPrimitive.SubTrigger>
+    </DropdownMenuSubTriggerPrimitive>
   );
 }

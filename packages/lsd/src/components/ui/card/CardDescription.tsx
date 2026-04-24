@@ -29,4 +29,7 @@ const CardDescription = React.forwardRef<HTMLDivElement, React.ComponentProps<'d
 );
 CardDescription.displayName = 'CardDescription';
 
-export { CardDescription };
+const CardDescriptionWithMemo = React.memo(CardDescription);
+CardDescriptionWithMemo.displayName = 'CardDescription';
+
+export { CardDescriptionWithMemo as CardDescription };

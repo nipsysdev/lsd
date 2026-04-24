@@ -1,8 +1,7 @@
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import { Root as DropdownMenuPrimitive } from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 
-export interface DropdownMenuProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.Root> {}
+export interface DropdownMenuProps extends React.ComponentProps<typeof DropdownMenuPrimitive> {}
 
 /**
  * DropdownMenu - Displays a menu of actions or options triggered by a button.
@@ -56,5 +55,5 @@ export interface DropdownMenuProps
  * @exportAs root
  */
 export function DropdownMenu({ ...props }: DropdownMenuProps) {
-  return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
+  return <DropdownMenuPrimitive data-slot="dropdown-menu" {...props} />;
 }

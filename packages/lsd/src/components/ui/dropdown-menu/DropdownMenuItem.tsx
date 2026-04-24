@@ -1,9 +1,9 @@
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import { Item as DropdownMenuItemPrimitive } from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface DropdownMenuItemProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.Item> {
+  extends React.ComponentProps<typeof DropdownMenuItemPrimitive> {
   /**
    * Adds extra left padding to align with other inset items.
    */
@@ -26,7 +26,7 @@ export function DropdownMenuItem({
   ...props
 }: DropdownMenuItemProps) {
   return (
-    <DropdownMenuPrimitive.Item
+    <DropdownMenuItemPrimitive
       data-slot="dropdown-menu-item"
       data-inset={inset}
       data-variant={variant}

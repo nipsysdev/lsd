@@ -1,18 +1,13 @@
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import { Separator as DropdownMenuSeparatorPrimitive } from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface DropdownMenuSeparatorProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.Separator> {}
+  extends React.ComponentProps<typeof DropdownMenuSeparatorPrimitive> {}
 
-/**
- * DropdownMenuSeparator - Visual divider between dropdown menu sections.
- *
- * @exportAs sub
- */
 export function DropdownMenuSeparator({ className, ...props }: DropdownMenuSeparatorProps) {
   return (
-    <DropdownMenuPrimitive.Separator
+    <DropdownMenuSeparatorPrimitive
       data-slot="dropdown-menu-separator"
       className={cn(
         // Colors & Backgrounds

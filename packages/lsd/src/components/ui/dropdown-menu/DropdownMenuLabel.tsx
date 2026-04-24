@@ -1,9 +1,9 @@
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import { Label as DropdownMenuLabelPrimitive } from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface DropdownMenuLabelProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.Label> {
+  extends React.ComponentProps<typeof DropdownMenuLabelPrimitive> {
   /**
    * Adds extra left padding to align with menu items that have inset styling.
    */
@@ -17,7 +17,7 @@ export interface DropdownMenuLabelProps
  */
 export function DropdownMenuLabel({ className, inset, ...props }: DropdownMenuLabelProps) {
   return (
-    <DropdownMenuPrimitive.Label
+    <DropdownMenuLabelPrimitive
       data-slot="dropdown-menu-label"
       data-inset={inset}
       className={cn(

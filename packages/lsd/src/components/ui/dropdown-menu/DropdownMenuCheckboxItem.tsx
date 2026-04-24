@@ -1,10 +1,13 @@
 import { CheckIcon } from '@phosphor-icons/react';
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import {
+  CheckboxItem as DropdownMenuCheckboxItemPrimitive,
+  ItemIndicator as DropdownMenuItemIndicatorPrimitive,
+} from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface DropdownMenuCheckboxItemProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem> {}
+  extends React.ComponentProps<typeof DropdownMenuCheckboxItemPrimitive> {}
 
 /**
  * DropdownMenuCheckboxItem - Menu item that can be checked/unchecked with checkmark indicator.
@@ -18,7 +21,7 @@ export function DropdownMenuCheckboxItem({
   ...props
 }: DropdownMenuCheckboxItemProps) {
   return (
-    <DropdownMenuPrimitive.CheckboxItem
+    <DropdownMenuCheckboxItemPrimitive
       data-slot="dropdown-menu-checkbox-item"
       className={cn(
         // Layout & Positioning
@@ -71,11 +74,11 @@ export function DropdownMenuCheckboxItem({
           'lsd:pointer-events-none'
         )}
       >
-        <DropdownMenuPrimitive.ItemIndicator>
+        <DropdownMenuItemIndicatorPrimitive>
           <CheckIcon className="lsd:size-4" />
-        </DropdownMenuPrimitive.ItemIndicator>
+        </DropdownMenuItemIndicatorPrimitive>
       </span>
       {children}
-    </DropdownMenuPrimitive.CheckboxItem>
+    </DropdownMenuCheckboxItemPrimitive>
   );
 }

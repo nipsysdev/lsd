@@ -1,14 +1,9 @@
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import { Group as DropdownMenuGroupPrimitive } from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 
 export interface DropdownMenuGroupProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.Group> {}
+  extends React.ComponentProps<typeof DropdownMenuGroupPrimitive> {}
 
-/**
- * DropdownMenuGroup - Groups menu items together.
- *
- * @exportAs sub
- */
 export function DropdownMenuGroup({ ...props }: DropdownMenuGroupProps) {
-  return <DropdownMenuPrimitive.Group data-slot="dropdown-menu-group" {...props} />;
+  return <DropdownMenuGroupPrimitive data-slot="dropdown-menu-group" {...props} />;
 }

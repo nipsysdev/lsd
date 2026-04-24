@@ -1,10 +1,13 @@
 import { CircleIcon } from '@phosphor-icons/react';
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import {
+  ItemIndicator as DropdownMenuItemIndicatorPrimitive,
+  RadioItem as DropdownMenuRadioItemPrimitive,
+} from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface DropdownMenuRadioItemProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem> {}
+  extends React.ComponentProps<typeof DropdownMenuRadioItemPrimitive> {}
 
 /**
  * DropdownMenuRadioItem - Radio button item for exclusive selection within a group.
@@ -17,7 +20,7 @@ export function DropdownMenuRadioItem({
   ...props
 }: DropdownMenuRadioItemProps) {
   return (
-    <DropdownMenuPrimitive.RadioItem
+    <DropdownMenuRadioItemPrimitive
       data-slot="dropdown-menu-radio-item"
       className={cn(
         // Layout & Positioning
@@ -69,11 +72,11 @@ export function DropdownMenuRadioItem({
           'lsd:pointer-events-none'
         )}
       >
-        <DropdownMenuPrimitive.ItemIndicator>
+        <DropdownMenuItemIndicatorPrimitive>
           <CircleIcon className="lsd:size-2.5 lsd:fill-current" weight="duotone" />
-        </DropdownMenuPrimitive.ItemIndicator>
+        </DropdownMenuItemIndicatorPrimitive>
       </span>
       {children}
-    </DropdownMenuPrimitive.RadioItem>
+    </DropdownMenuRadioItemPrimitive>
   );
 }

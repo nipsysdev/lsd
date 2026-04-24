@@ -1,9 +1,12 @@
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import {
+  Content as DropdownMenuContentPrimitive,
+  Portal as DropdownMenuPortalPrimitive,
+} from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface DropdownMenuContentProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.Content> {
+  extends React.ComponentProps<typeof DropdownMenuContentPrimitive> {
   /**
    * Distance in pixels from the trigger element to the menu content.
    */
@@ -21,8 +24,8 @@ export function DropdownMenuContent({
   ...props
 }: DropdownMenuContentProps) {
   return (
-    <DropdownMenuPrimitive.Portal>
-      <DropdownMenuPrimitive.Content
+    <DropdownMenuPortalPrimitive>
+      <DropdownMenuContentPrimitive
         data-slot="dropdown-menu-content"
         sideOffset={sideOffset}
         className={cn(
@@ -62,6 +65,6 @@ export function DropdownMenuContent({
         )}
         {...props}
       />
-    </DropdownMenuPrimitive.Portal>
+    </DropdownMenuPortalPrimitive>
   );
 }

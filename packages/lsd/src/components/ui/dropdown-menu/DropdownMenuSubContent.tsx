@@ -1,18 +1,13 @@
-import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui';
+import { SubContent as DropdownMenuSubContentPrimitive } from '@radix-ui/react-dropdown-menu';
 import type * as React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface DropdownMenuSubContentProps
-  extends React.ComponentProps<typeof DropdownMenuPrimitive.SubContent> {}
+  extends React.ComponentProps<typeof DropdownMenuSubContentPrimitive> {}
 
-/**
- * DropdownMenuSubContent - Container for submenu items.
- *
- * @exportAs sub
- */
 export function DropdownMenuSubContent({ className, ...props }: DropdownMenuSubContentProps) {
   return (
-    <DropdownMenuPrimitive.SubContent
+    <DropdownMenuSubContentPrimitive
       data-slot="dropdown-menu-sub-content"
       className={cn(
         // Colors & Backgrounds

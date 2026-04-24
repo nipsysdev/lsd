@@ -41,4 +41,7 @@ const CardHeader = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>
 );
 CardHeader.displayName = 'CardHeader';
 
-export { CardHeader };
+const CardHeaderWithMemo = React.memo(CardHeader);
+CardHeaderWithMemo.displayName = 'CardHeader';
+
+export { CardHeaderWithMemo as CardHeader };
