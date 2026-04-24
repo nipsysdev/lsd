@@ -1,0 +1,29 @@
+# Test files and directories
+__tests__/
+*.test.js
+*.test.ts
+*.test.tsx
+*.test.d.ts
+coverage/
+
+# Source code (use dist/ instead)
+src/
+
+# Build and config files
+tsconfig.json
+tsconfig.*.json
+vite.config.ts
+vitest.config.ts
+tsdoc.json
+components.json
+lefthook.yml
+
+# Development files
+.git/
+.gitignore
+node_modules/
+
+# Misc development files
+.*ignore
+.editorconfig
+.*rc.*
