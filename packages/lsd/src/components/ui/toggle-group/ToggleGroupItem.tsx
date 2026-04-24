@@ -5,9 +5,18 @@ import { cn } from '@/lib/utils';
 import { ToggleGroupContext } from './context';
 import type { ToggleGroupVariants } from './types';
 
+/**
+ * ToggleGroupItem - Individual toggle button within the group
+ *
+ * Displays as an interactive button that can be toggled on or off. Styled
+ * to connect visually with adjacent items in the group.
+ *
+ * @exportAs sub
+ */
 const ToggleGroupItem = React.forwardRef<
-  React.ElementRef<typeof ToggleGroupPrimitive.Item>,
-  React.ComponentProps<typeof ToggleGroupPrimitive.Item> & ToggleGroupVariants
+  React.ComponentRef<typeof ToggleGroupPrimitive.Item>,
+  React.ComponentProps<typeof ToggleGroupPrimitive.Item> &
+    ToggleGroupVariants & { size?: 'sm' | 'md' }
 >(({ className, children, size, ...props }, ref) => {
   const context = React.useContext(ToggleGroupContext);
 

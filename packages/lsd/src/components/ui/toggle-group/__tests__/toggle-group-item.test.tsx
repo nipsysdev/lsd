@@ -5,7 +5,7 @@ import { ToggleGroup, ToggleGroupItem } from '../index';
 describe('ToggleGroupItem', () => {
   it('renders as a radio button', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -14,7 +14,7 @@ describe('ToggleGroupItem', () => {
 
   it('applies base classes correctly', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -29,7 +29,7 @@ describe('ToggleGroupItem', () => {
 
   it('applies first item border classes', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
       </ToggleGroup>
@@ -41,7 +41,7 @@ describe('ToggleGroupItem', () => {
 
   it('applies non-first item border classes', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
       </ToggleGroup>
@@ -52,7 +52,7 @@ describe('ToggleGroupItem', () => {
 
   it('applies disabled state correctly', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a" disabled>
           A
         </ToggleGroupItem>
@@ -65,7 +65,7 @@ describe('ToggleGroupItem', () => {
 
   it('merges custom className with component classes', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a" className="custom-item-class">
           A
         </ToggleGroupItem>
@@ -77,7 +77,7 @@ describe('ToggleGroupItem', () => {
 
   it('passes through additional props', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a" data-testid="test-item" id="item-1">
           A
         </ToggleGroupItem>
@@ -91,7 +91,7 @@ describe('ToggleGroupItem', () => {
   it('forwards ref to underlying button element', () => {
     const ref = vi.fn();
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem ref={ref} value="a">
           A
         </ToggleGroupItem>
@@ -103,7 +103,7 @@ describe('ToggleGroupItem', () => {
 
   it('applies data-slot attribute', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -113,7 +113,7 @@ describe('ToggleGroupItem', () => {
 
   it('applies data-state attribute when selected', () => {
     render(
-      <ToggleGroup type="single" defaultValue="a">
+      <ToggleGroup type="single" groupLabel="Test options" defaultValue="a">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
       </ToggleGroup>
@@ -124,7 +124,7 @@ describe('ToggleGroupItem', () => {
 
   it('applies data-state attribute when not selected', () => {
     render(
-      <ToggleGroup type="single" defaultValue="a">
+      <ToggleGroup type="single" groupLabel="Test options" defaultValue="a">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
       </ToggleGroup>

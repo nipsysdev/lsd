@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
  *
  * Displays individual data cells with consistent padding.
  * Adjusts padding when containing checkbox elements for alignment.
+ *
+ * @exportAs sub
  */
 const TableCell = React.forwardRef<HTMLTableCellElement, React.ComponentProps<'td'>>(
   ({ className, ...props }, ref) => {

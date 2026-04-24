@@ -37,6 +37,8 @@ export interface SliderProps
   extends Omit<React.ComponentProps<typeof SliderPrimitive.Root>, 'size'> {
   /** Size variant for the slider. Determines track height and thumb size. */
   size?: 'sm' | 'md' | 'lg';
+  /** Accessible label for screen readers. Required for accessibility. */
+  'aria-label': string;
 }
 
 const sliderSizes = {
@@ -61,6 +63,7 @@ function Slider({
   min = 0,
   max = 100,
   size = 'md',
+  'aria-label': ariaLabel,
   ...props
 }: SliderProps) {
   const _values = React.useMemo(
@@ -79,6 +82,7 @@ function Slider({
       value={value}
       min={min}
       max={max}
+      aria-label={ariaLabel}
       className={cn(
         // Positioning
         'lsd:relative',

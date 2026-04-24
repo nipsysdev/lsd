@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
  *
  * Represents a row in the table with bottom border and hover state.
  * Supports selected state via data-[state=selected] attribute.
+ *
+ * @exportAs sub
  */
 const TableRow = React.forwardRef<HTMLTableRowElement, React.ComponentProps<'tr'>>(
   ({ className, ...props }, ref) => {

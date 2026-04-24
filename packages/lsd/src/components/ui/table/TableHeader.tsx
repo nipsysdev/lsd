@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
  *
  * Wraps the row(s) containing column headers (TableHead elements).
  * Adds bottom border to contained rows for visual separation.
+ *
+ * @exportAs sub
  */
 const TableHeader = React.forwardRef<HTMLTableSectionElement, React.ComponentProps<'thead'>>(
   ({ className, ...props }, ref) => {

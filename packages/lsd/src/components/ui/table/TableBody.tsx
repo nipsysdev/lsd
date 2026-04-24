@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
  *
  * Wraps the row(s) containing table data (TableCell elements).
  * Removes bottom border from the last contained row for clean layout.
+ *
+ * @exportAs sub
  */
 const TableBody = React.forwardRef<HTMLTableSectionElement, React.ComponentProps<'tbody'>>(
   ({ className, ...props }, ref) => {

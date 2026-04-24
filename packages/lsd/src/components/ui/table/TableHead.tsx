@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
  *
  * Defines column headers with bold text for readability.
  * Adjusts padding when containing checkbox elements for alignment.
+ *
+ * @exportAs sub
  */
 const TableHead = React.forwardRef<HTMLTableCellElement, React.ComponentProps<'th'>>(
   ({ className, ...props }, ref) => {

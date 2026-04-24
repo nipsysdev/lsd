@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
  *
  * Wraps the row(s) containing table summary or totals.
  * Styled with top border, muted background, and medium font weight.
+ *
+ * @exportAs sub
  */
 const TableFooter = React.forwardRef<HTMLTableSectionElement, React.ComponentProps<'tfoot'>>(
   ({ className, ...props }, ref) => {

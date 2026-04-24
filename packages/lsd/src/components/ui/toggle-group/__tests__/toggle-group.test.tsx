@@ -5,7 +5,7 @@ import { ToggleGroup, ToggleGroupItem } from '../index';
 describe('ToggleGroup', () => {
   it('renders without crashing', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
         <ToggleGroupItem value="c">C</ToggleGroupItem>
@@ -16,7 +16,7 @@ describe('ToggleGroup', () => {
 
   it('renders as a group role', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
       </ToggleGroup>
@@ -26,7 +26,7 @@ describe('ToggleGroup', () => {
 
   it('applies base classes correctly', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -38,7 +38,7 @@ describe('ToggleGroup', () => {
 
   it('applies medium size classes correctly', () => {
     render(
-      <ToggleGroup type="single" size="md">
+      <ToggleGroup type="single" groupLabel="Test options" size="md">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -49,7 +49,7 @@ describe('ToggleGroup', () => {
 
   it('applies small size classes correctly', () => {
     render(
-      <ToggleGroup type="single" size="sm">
+      <ToggleGroup type="single" groupLabel="Test options" size="sm">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -60,7 +60,7 @@ describe('ToggleGroup', () => {
 
   it('applies large size classes correctly', () => {
     render(
-      <ToggleGroup type="single" size="lg">
+      <ToggleGroup type="single" groupLabel="Test options" size="lg">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -71,7 +71,7 @@ describe('ToggleGroup', () => {
 
   it('uses default size when not specified', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -81,7 +81,7 @@ describe('ToggleGroup', () => {
 
   it('handles single selection', () => {
     render(
-      <ToggleGroup type="single" defaultValue="a">
+      <ToggleGroup type="single" groupLabel="Test options" defaultValue="a">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
         <ToggleGroupItem value="c">C</ToggleGroupItem>
@@ -93,7 +93,7 @@ describe('ToggleGroup', () => {
 
   it('handles multiple selection', () => {
     render(
-      <ToggleGroup type="multiple" defaultValue={['a', 'c']}>
+      <ToggleGroup type="multiple" groupLabel="Test options" defaultValue={['a', 'c']}>
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
         <ToggleGroupItem value="c">C</ToggleGroupItem>
@@ -110,7 +110,7 @@ describe('ToggleGroup', () => {
   it('handles click events', () => {
     const handleValueChange = vi.fn();
     render(
-      <ToggleGroup type="single" onValueChange={handleValueChange}>
+      <ToggleGroup type="single" groupLabel="Test options" onValueChange={handleValueChange}>
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
       </ToggleGroup>
@@ -121,7 +121,7 @@ describe('ToggleGroup', () => {
 
   it('applies disabled state correctly', () => {
     render(
-      <ToggleGroup type="single" disabled>
+      <ToggleGroup type="single" groupLabel="Test options" disabled>
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
       </ToggleGroup>
@@ -132,7 +132,7 @@ describe('ToggleGroup', () => {
 
   it('merges custom className with component classes', () => {
     render(
-      <ToggleGroup type="single" className="custom-group-class">
+      <ToggleGroup type="single" groupLabel="Test options" className="custom-group-class">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -142,7 +142,12 @@ describe('ToggleGroup', () => {
 
   it('passes through additional props', () => {
     render(
-      <ToggleGroup type="single" data-testid="test-toggle-group" id="toggle-group-1">
+      <ToggleGroup
+        type="single"
+        groupLabel="Test options"
+        data-testid="test-toggle-group"
+        id="toggle-group-1"
+      >
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -154,7 +159,7 @@ describe('ToggleGroup', () => {
   it('forwards ref to underlying root element', () => {
     const ref = vi.fn();
     render(
-      <ToggleGroup type="single" ref={ref}>
+      <ToggleGroup type="single" groupLabel="Test options" ref={ref}>
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
@@ -163,7 +168,7 @@ describe('ToggleGroup', () => {
 
   it('renders multiple items correctly', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
         <ToggleGroupItem value="b">B</ToggleGroupItem>
         <ToggleGroupItem value="c">C</ToggleGroupItem>
@@ -176,11 +181,21 @@ describe('ToggleGroup', () => {
 
   it('applies data-slot attribute', () => {
     render(
-      <ToggleGroup type="single">
+      <ToggleGroup type="single" groupLabel="Test options">
         <ToggleGroupItem value="a">A</ToggleGroupItem>
       </ToggleGroup>
     );
     const group = screen.getByRole('group');
     expect(group).toHaveAttribute('data-slot', 'toggle-group');
+  });
+
+  it('renders aria-label from groupLabel prop', () => {
+    render(
+      <ToggleGroup type="single" groupLabel="My toggle options">
+        <ToggleGroupItem value="a">A</ToggleGroupItem>
+      </ToggleGroup>
+    );
+    const group = screen.getByRole('group');
+    expect(group).toHaveAttribute('aria-label', 'My toggle options');
   });
 });

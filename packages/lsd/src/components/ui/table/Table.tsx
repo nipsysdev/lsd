@@ -35,6 +35,8 @@ import { cn } from '@/lib/utils';
  *
  * @docSectionAccessibilityFocus
  * Tables follow standard HTML semantics. Keyboard navigation depends on interactive elements within cells. Focus moves through tab navigable elements within table cells in document order.
+ *
+ * @exportAs root
  */
 const Table = React.forwardRef<HTMLTableElement, React.ComponentProps<'table'>>(
   ({ className, ...props }, ref) => {

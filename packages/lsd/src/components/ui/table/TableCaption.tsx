@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils';
  *
  * Displays a title or description above or below the table.
  * Styled with secondary text color and consistent spacing.
+ *
+ * @exportAs sub
  */
 const TableCaption = React.forwardRef<HTMLTableCaptionElement, React.ComponentProps<'caption'>>(
   ({ className, ...props }, ref) => {
