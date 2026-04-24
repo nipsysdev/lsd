@@ -63,6 +63,35 @@ function App() {
 - **5 accent themes** + light/dark modes
 - **Documentation with 185+ live examples**
 
+## Skills
+
+### Installation
+
+Install the skills appropriate to your needs:
+
+```bash
+# For users developing WITH LSD
+npx skills add nipsys-lsd
+
+# For contributors TO LSD monorepo
+npx skills add nipsys-lsd-contribute
+
+# Install both skills for full LSD development experience
+npx skills add nipsys-lsd nipsys-lsd-contribute
+```
+
+### Available Skills
+
+| Skill | Description | When to Use |
+|-------|-------------|-------------|
+| **nipsys-lsd** | Component usage patterns for LSD design system with 38+ components, spacing variables, theming, and composition | Building UI components with LSD in any React project |
+| **nipsys-lsd-contribute** | Monorepo maintenance workflows for LSD including docs generator, E2E testing, TSDoc annotations, and theme sync | Contributing to the LSD monorepo (packages/lsd and packages/lsd-docs) |
+
+### Skill Details
+
+- **nipsys-lsd** - [skills/nipsys-lsd/SKILL.md](./skills/nipsys-lsd/SKILL.md): Get guidance on component APIs, design tokens, spacing variables, theming, and composition patterns when building with LSD components.
+- **nipsys-lsd-contribute** - [skills/nipsys-lsd-contribute/SKILL.md](./skills/nipsys-lsd-contribute/SKILL.md): Learn workflows for contributing to the LSD monorepo, including running the docs generator, E2E testing, adding TSDoc annotations, and understanding the theme sync system.
+
 ## Monorepo Structure
 
 This is a pnpm workspace monorepo containing two packages:
@@ -157,26 +186,33 @@ pnpm lint:fix
 pnpm format
 ```
 
-## AI-generated documentation pages
+## Documentation pages
 
-The documentation site uses an automated generator that extracts metadata from AI-generated TSDoc annotations in component source files, so manual modifications to documentation pages should be avoided.
+The documentation site uses an automated generator that extracts metadata from TSDoc annotations in component source files, so manual modifications to documentation pages should be avoided.
 
-#### Prompt to generate TSDoc and documentation page using an AI agent
-Note: Your agent needs to be able to fetch webpages as it will be instructed to get component information from the Radix UI and shadcn/ui documentation sites.
+### Using the nipsys-lsd-contribute skill
 
-Prompt:
-
-```Re-generate the documentation page for the Button component while strictly following the instructions in tsdoc-page-generation.md```
-
-#### Manually regenerating a documentation page from TSDoc annotations
+For detailed guidance on regenerating documentation pages, use the **nipsys-lsd-contribute** skill:
 
 ```bash
-pnpm docs:generate button
+npx skills add nipsys-lsd-contribute
 ```
 
-#### Manually regenerating all documentation pages from TSDoc annotations
+The skill provides comprehensive instructions for:
+- Understanding the docs generator architecture
+- Adding TSDoc annotations to components
+- Creating example pages with proper CODE/SIZE exports
+- Testing documentation changes
+
+### CLI commands
+
+Regenerate documentation pages from TSDoc annotations:
 
 ```bash
+# Regenerate a specific component's documentation page
+pnpm docs:generate button
+
+# Regenerate all documentation pages
 pnpm docs:generate --all
 ```
 
@@ -185,8 +221,6 @@ The generator parses:
 - Variant and size configurations from CVA
 - Accessibility patterns (keyboard, ARIA, focus)
 - TSDoc custom tags for documentation sections
-
-See `tsdoc-page-generation.md` for complete documentation generation guidelines (intended for AI agents, but of course readable by humans too).
 
 ## Contributing
 
