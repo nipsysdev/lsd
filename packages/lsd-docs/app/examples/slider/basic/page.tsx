@@ -19,7 +19,7 @@ export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="body2">Volume</Typography>
-      <Slider value={value} onValueChange={setValue} max={100} step={1} className="w-80" />
+      <Slider value={value} onValueChange={setValue} max={100} step={1} aria-label="Volume" className="w-80" />
       <Typography variant="label1" className="text-secondary">
         Current value: {value[0]}
       </Typography>
@@ -34,7 +34,14 @@ export function SliderBasicExample() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="body2">Volume</Typography>
-      <Slider value={value} onValueChange={setValue} max={100} step={1} className="w-80" />
+      <Slider
+        value={value}
+        onValueChange={setValue}
+        max={100}
+        step={1}
+        aria-label="Volume"
+        className="w-80"
+      />
       <Typography variant="label1" className="text-secondary">
         Current value: {value[0]}
       </Typography>

@@ -3,6 +3,9 @@
 import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
+/**
+ * @docSection usage
+ */
 export const CODE = `import { Button, Popover, PopoverContent, PopoverTrigger } from '@nipsys/lsd';
 
 export function Example() {

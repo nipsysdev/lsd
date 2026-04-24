@@ -18,7 +18,7 @@ export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="body2">Disabled Volume</Typography>
-      <Slider value={value} onValueChange={setValue} max={100} step={1} disabled className="w-80" />
+      <Slider value={value} onValueChange={setValue} max={100} step={1} disabled aria-label="Disabled Volume" className="w-80" />
       <Typography variant="label1" className="text-secondary">
         This slider is disabled and cannot be interacted with.
       </Typography>
@@ -33,7 +33,15 @@ export function SliderDisabledExample() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="body2">Disabled Volume</Typography>
-      <Slider value={value} onValueChange={setValue} max={100} step={1} disabled className="w-80" />
+      <Slider
+        value={value}
+        onValueChange={setValue}
+        max={100}
+        step={1}
+        disabled
+        aria-label="Disabled Volume"
+        className="w-80"
+      />
       <Typography variant="label1" className="text-secondary">
         This slider is disabled and cannot be interacted with.
       </Typography>

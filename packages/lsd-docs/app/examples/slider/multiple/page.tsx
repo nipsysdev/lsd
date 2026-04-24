@@ -19,7 +19,7 @@ export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="body2">Budget Allocation</Typography>
-      <Slider value={value} onValueChange={setValue} max={100} step={1} className="w-80" />
+      <Slider value={value} onValueChange={setValue} max={100} step={1} aria-label="Budget Allocation" className="w-80" />
       <div className="flex justify--between">
         <Typography variant="label1" className="text-secondary">
           Low: {value[0]}
@@ -42,7 +42,14 @@ export function SliderMultipleExample() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
       <Typography variant="body2">Budget Allocation</Typography>
-      <Slider value={value} onValueChange={setValue} max={100} step={1} className="w-80" />
+      <Slider
+        value={value}
+        onValueChange={setValue}
+        max={100}
+        step={1}
+        aria-label="Budget Allocation"
+        className="w-80"
+      />
       <div className="flex justify-between">
         <Typography variant="label1" className="text-secondary">
           Low: {value[0]}
