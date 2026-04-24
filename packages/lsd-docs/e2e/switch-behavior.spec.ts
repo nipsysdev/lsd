@@ -39,8 +39,8 @@ test.describe('Switch Behavior', () => {
     await expect(fourthSwitch).toHaveAttribute('disabled');
     const fourthSwitchOriginalState = await fourthSwitch.getAttribute('aria-checked');
 
-    await thirdSwitch.click();
-    await fourthSwitch.click();
+    await thirdSwitch.click({ force: true });
+    await fourthSwitch.click({ force: true });
 
     await expect(thirdSwitch).toHaveAttribute('aria-checked', thirdSwitchOriginalState ?? '');
     await expect(fourthSwitch).toHaveAttribute('aria-checked', fourthSwitchOriginalState ?? '');
