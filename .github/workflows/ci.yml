@@ -251,6 +251,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build @nipsys/lsd
+        run: pnpm --filter @nipsys/lsd build
+
       - name: Get version from tag
         id: get_version
         run: |
