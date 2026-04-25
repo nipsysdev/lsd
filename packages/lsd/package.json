@@ -5,7 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "type": "module",
   "module": "./dist/main.js",
   "exports": {
@@ -13,7 +13,9 @@
     "./css": "./dist/assets/style.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "types": "./dist/main.d.ts",
   "license": "MIT",

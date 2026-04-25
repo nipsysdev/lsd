@@ -1,6 +1,6 @@
 {
   "name": "@nipsys/lsd-monorepo",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.2",
   "private": true,
   "description": "Monorepo for the @nipsys/lsd component library and documentation",
   "license": "MIT",
