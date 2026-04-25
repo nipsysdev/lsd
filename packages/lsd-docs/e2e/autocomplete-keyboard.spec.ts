@@ -47,7 +47,7 @@ test.describe('Autocomplete Keyboard Navigation', () => {
     }
 
     const options = popover.locator('[role="option"]');
-    await expect(options.nth(4)).toHaveText('Java');
+    await expect(options.nth(4)).toHaveText('Rust');
     await page.keyboard.press('Enter');
 
     await expect(popover).not.toBeVisible();

@@ -33,7 +33,7 @@ test.describe('Input Behavior', () => {
 
     const originalValue = await input.inputValue();
 
-    await input.fill('Should not work');
+    await input.type('Should not work', { timeout: 1000 });
 
     await expect(input).toHaveValue(originalValue);
   });

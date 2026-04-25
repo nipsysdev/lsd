@@ -31,10 +31,10 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
       variant="ghost"
       size="square-md"
       data-day={day.date.toLocaleDateString()}
-      data-selected-single={isSelected}
-      data-range-start={isRangeStart}
-      data-range-end={isRangeEnd}
-      data-range-middle={isRangeMiddle}
+      {...(isSelected && { 'data-selected-single': true })}
+      {...(isRangeStart && { 'data-range-start': true })}
+      {...(isRangeEnd && { 'data-range-end': true })}
+      {...(isRangeMiddle && { 'data-range-middle': true })}
       className={cn(
         // Layout & Positioning
         'lsd:flex',

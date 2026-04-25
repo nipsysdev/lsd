@@ -109,9 +109,13 @@ test.describe('Form Behavior', () => {
   test('validates password matching', async ({ page }) => {
     await page.goto('/examples/form/validation');
 
+    const usernameInput = page.locator('input[placeholder="johndoe"]');
+    const emailInput = page.locator('input[type="email"][placeholder*="john@example.com"]');
     const passwordInput = page.locator('input[type="password"]').nth(0);
     const confirmPasswordInput = page.locator('input[type="password"]').nth(1);
 
+    await usernameInput.fill('validusername');
+    await emailInput.fill('test@example.com');
     await passwordInput.fill('password123');
     await confirmPasswordInput.fill('different123');
 

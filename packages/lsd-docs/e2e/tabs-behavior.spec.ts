@@ -81,7 +81,7 @@ test.describe('Tabs Behavior', () => {
     await expect(triggers.nth(0)).toHaveAttribute('aria-selected', 'true');
     await expect(panels.nth(0)).toBeVisible();
 
-    await triggers.nth(2).click();
+    await triggers.nth(2).click({ force: true });
     await page.waitForTimeout(50);
 
     await expect(triggers.nth(0)).toHaveAttribute('aria-selected', 'true');

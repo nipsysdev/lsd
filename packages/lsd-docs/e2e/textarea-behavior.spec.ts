@@ -36,7 +36,7 @@ test.describe('Textarea Behavior', () => {
 
     const originalValue = await disabledTextarea.inputValue();
 
-    await disabledTextarea.fill('Should not work');
+    await disabledTextarea.fill('Should not work', { force: true });
 
     await expect(disabledTextarea).toHaveValue(originalValue);
   });

@@ -2,6 +2,18 @@
 
 Minimalist, accessible UI components following the [Logos Design System](https://guide.logos.co/). Built for React 19+ on top of Radix UI using shadcn/ui.
 
+[![npm version](https://img.shields.io/npm/v/@nipsys/lsd)](https://www.npmjs.com/package/@nipsys/lsd)
+[![MIT License](https://img.shields.io/npm/l/@nipsys/lsd)](LICENSE)
+
+[![React](https://img.shields.io/badge/react-19.2.4+-61dafb?logo=react&logoColor=white)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-4.1.18-06b6d4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Radix UI](https://img.shields.io/badge/radix%20ui-primitives-8b5cf6?logo=radixui&logoColor=white)](https://www.radix-ui.com)
+
+[![Biome](https://img.shields.io/badge/biome-2.x-60a5fa?logo=biome&logoColor=white)](https://biomejs.dev)
+[![Lefthook](https://img.shields.io/badge/lefthook-2.1.0-ff1e1e?logo=lefthook&logoColor=white)](https://lefthook.dev/)
+[![Playwright](https://img.shields.io/badge/playwright-e2e-2emerald?logo=playwright&logoColor=white)](https://playwright.dev)
+[![Vitest](https://img.shields.io/badge/vitest-unit-violet?logo=vitest&logoColor=white)](https://vitest.dev)
+
 This component library follows the guidelines defined by the original Logos Design System, prioritising accessibility and content readability over aesthetics.
 
 ## Documentation
@@ -50,6 +62,35 @@ function App() {
 - **Radix UI primitives** for accessibility-first behavior
 - **5 accent themes** + light/dark modes
 - **Documentation with 185+ live examples**
+
+## Skills
+
+### Installation
+
+Install the skills appropriate to your needs:
+
+```bash
+# For users developing WITH LSD
+npx skills add nipsys-lsd
+
+# For contributors TO LSD monorepo
+npx skills add nipsys-lsd-contribute
+
+# Install both skills for full LSD development experience
+npx skills add nipsys-lsd nipsys-lsd-contribute
+```
+
+### Available Skills
+
+| Skill | Description | When to Use |
+|-------|-------------|-------------|
+| **nipsys-lsd** | Component usage patterns for LSD design system with 38+ components, spacing variables, theming, and composition | Building UI components with LSD in any React project |
+| **nipsys-lsd-contribute** | Monorepo maintenance workflows for LSD including docs generator, E2E testing, TSDoc annotations, and theme sync | Contributing to the LSD monorepo (packages/lsd and packages/lsd-docs) |
+
+### Skill Details
+
+- **nipsys-lsd** - [skills/nipsys-lsd/SKILL.md](./skills/nipsys-lsd/SKILL.md): Get guidance on component APIs, design tokens, spacing variables, theming, and composition patterns when building with LSD components.
+- **nipsys-lsd-contribute** - [skills/nipsys-lsd-contribute/SKILL.md](./skills/nipsys-lsd-contribute/SKILL.md): Learn workflows for contributing to the LSD monorepo, including running the docs generator, E2E testing, adding TSDoc annotations, and understanding the theme sync system.
 
 ## Monorepo Structure
 
@@ -145,26 +186,33 @@ pnpm lint:fix
 pnpm format
 ```
 
-## AI-generated documentation pages
+## Documentation pages
 
-The documentation site uses an automated generator that extracts metadata from AI-generated TSDoc annotations in component source files, so manual modifications to documentation pages should be avoided.
+The documentation site uses an automated generator that extracts metadata from TSDoc annotations in component source files, so manual modifications to documentation pages should be avoided.
 
-#### Prompt to generate TSDoc and documentation page using an AI agent
-Note: Your agent needs to be able to fetch webpages as it will be instructed to get component information from the Radix UI and shadcn/ui documentation sites.
+### Using the nipsys-lsd-contribute skill
 
-Prompt:
-
-```Re-generate the documentation page for the Button component while strictly following the instructions in tsdoc-page-generation.md```
-
-#### Manually regenerating a documentation page from TSDoc annotations
+For detailed guidance on regenerating documentation pages, use the **nipsys-lsd-contribute** skill:
 
 ```bash
-pnpm docs:generate button
+npx skills add nipsys-lsd-contribute
 ```
 
-#### Manually regenerating all documentation pages from TSDoc annotations
+The skill provides comprehensive instructions for:
+- Understanding the docs generator architecture
+- Adding TSDoc annotations to components
+- Creating example pages with proper CODE/SIZE exports
+- Testing documentation changes
+
+### CLI commands
+
+Regenerate documentation pages from TSDoc annotations:
 
 ```bash
+# Regenerate a specific component's documentation page
+pnpm docs:generate button
+
+# Regenerate all documentation pages
 pnpm docs:generate --all
 ```
 
@@ -173,8 +221,6 @@ The generator parses:
 - Variant and size configurations from CVA
 - Accessibility patterns (keyboard, ARIA, focus)
 - TSDoc custom tags for documentation sections
-
-See `tsdoc-page-generation.md` for complete documentation generation guidelines (intended for AI agents, but of course readable by humans too).
 
 ## Contributing
 

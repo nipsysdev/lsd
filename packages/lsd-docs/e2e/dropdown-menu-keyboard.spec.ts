@@ -37,10 +37,11 @@ test.describe('DropdownMenu Keyboard Navigation', () => {
     const menu = page.locator('[role="menu"]');
 
     await trigger.click();
+    await expect(menu).toBeVisible();
 
-    await page.keyboard.press('ArrowDown');
-    await page.keyboard.press('ArrowDown');
-    await page.keyboard.press('ArrowUp');
+    await menu.press('ArrowDown');
+    await menu.press('ArrowDown');
+    await menu.press('ArrowUp');
 
     const firstItem = menu.locator('[role="menuitem"]').first();
     const isFocused = await firstItem.evaluate((el: HTMLElement) => document.activeElement === el);
