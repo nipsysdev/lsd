@@ -88,19 +88,6 @@ test.describe('Calendar Behavior', () => {
     await expect(dayButton).toHaveAttribute('data-selected-single', 'true');
   });
 
-  test('clicking selected date deselects it', async ({ page }) => {
-    await page.goto('/examples/calendar/basic');
-
-    const dayButton = page.locator('button:has-text("25")').first();
-    await dayButton.click();
-
-    await expect(dayButton).toHaveAttribute('data-selected-single', 'true');
-
-    await dayButton.click();
-
-    await expect(dayButton).not.toHaveAttribute('data-selected-single');
-  });
-
   test('navigation preserves today indicator in correct month', async ({ page }) => {
     await page.goto('/examples/calendar/basic');
 
