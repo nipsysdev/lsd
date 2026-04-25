@@ -3,7 +3,7 @@
 Minimalist, accessible UI components following the [Logos Design System](https://guide.logos.co/). Built for React 19+ on top of Radix UI using shadcn/ui.
 
 [![npm version](https://img.shields.io/npm/v/@nipsys/lsd)](https://www.npmjs.com/package/@nipsys/lsd)
-[![MIT License](https://img.shields.io/npm/l/@nipsys/lsd)](LICENSE)
+[![MIT License](https://img.shields.io/npm/l/%40nipsys%2Flsd)](https://github.com/nipsysdev/lsd/blob/main/LICENSE)
 
 [![React](https://img.shields.io/badge/react-19.2.4+-61dafb?logo=react&logoColor=white)](https://react.dev)
 [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-4.1.18-06b6d4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
