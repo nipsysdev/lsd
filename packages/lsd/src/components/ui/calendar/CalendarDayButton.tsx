@@ -30,7 +30,7 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
       ref={ref}
       variant="ghost"
       size="square-md"
-      data-day={day.date.toLocaleDateString()}
+      data-day={day.date.toISOString().split('T')[0]}
       {...(isSelected && { 'data-selected-single': true })}
       {...(isRangeStart && { 'data-range-start': true })}
       {...(isRangeEnd && { 'data-range-end': true })}

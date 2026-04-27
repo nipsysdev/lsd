@@ -284,7 +284,7 @@ describe('Calendar', () => {
       const modifiers = {};
       render(<CalendarDayButton day={day} modifiers={modifiers} />);
       const button = screen.getByRole('button');
-      expect(button).toHaveAttribute('data-day', '1/15/2025');
+      expect(button).toHaveAttribute('data-day', '2025-01-15');
     });
 
     it('applies range start data attribute', () => {
