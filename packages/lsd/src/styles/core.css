@@ -65,8 +65,7 @@
   --color-lsd-chart-5: #a855f7;
 }
 
-:root,
-.light {
+:root {
   --radius: 0.625rem;
 
   /* LSD spacing scale */
@@ -78,26 +77,7 @@
   --lsd-spacing-larger: 1.5rem;
   --lsd-spacing-largest: 1.75rem;
 
-  /* LSD Design Tokens - Light Theme */
-  --lsd-font-family: monospace;
-  --lsd-primary: #000000;
-  --lsd-primary-foreground: #ffffff;
-  --lsd-text-primary: #000000;
-  --lsd-text-secondary: #4a4a4a;
-  --lsd-border: #000000;
-  --lsd-icon-primary: #000000;
-  --lsd-icon-secondary: #ffffff;
-  --lsd-surface: #ffffff;
-  --lsd-destructive: #da0000;
-  --lsd-destructive-text: #c92d2d;
-  --lsd-success: #15803d;
-  --lsd-success-text: #1c9618;
-  --lsd-warning: #b45309;
-  --lsd-warning-text: #854d0e;
-  --lsd-info: #2563eb;
-  --lsd-info-text: #2563eb;
-
-  /* Shadcn variables using LSD values */
+  /* Shadcn variables using LSD values (always defined on :root) */
   --background: var(--lsd-surface);
   --foreground: var(--lsd-text-primary);
   --card: var(--lsd-surface);
@@ -131,8 +111,29 @@
   --sidebar-ring: var(--lsd-text-primary);
 }
 
-.dark {
-  /* LSD Design Tokens - Dark Theme */
+:root:not([data-theme]):not([data-theme*=""]) {
+  /* LSD Design Tokens - Light Theme (defaults only) */
+  --lsd-font-family: monospace;
+  --lsd-primary: #000000;
+  --lsd-primary-foreground: #ffffff;
+  --lsd-text-primary: #000000;
+  --lsd-text-secondary: #4a4a4a;
+  --lsd-border: #000000;
+  --lsd-icon-primary: #000000;
+  --lsd-icon-secondary: #ffffff;
+  --lsd-surface: #ffffff;
+  --lsd-destructive: #da0000;
+  --lsd-destructive-text: #c92d2d;
+  --lsd-success: #15803d;
+  --lsd-success-text: #1c9618;
+  --lsd-warning: #b45309;
+  --lsd-warning-text: #854d0e;
+  --lsd-info: #2563eb;
+  --lsd-info-text: #2563eb;
+}
+
+.dark:not([data-theme]):not([data-theme*=""]) {
+  /* LSD Design Tokens - Dark Theme (defaults only) */
   --lsd-font-family: monospace;
   --lsd-primary: #ffffff;
   --lsd-primary-foreground: #000000;
@@ -150,39 +151,6 @@
   --lsd-warning-text: #f59e0b;
   --lsd-info: #2563eb;
   --lsd-info-text: #2563eb;
-
-  /* Shadcn variables using LSD values */
-  --background: var(--lsd-surface);
-  --foreground: var(--lsd-text-primary);
-  --card: var(--lsd-surface);
-  --card-foreground: var(--lsd-text-primary);
-  --popover: var(--lsd-surface);
-  --popover-foreground: var(--lsd-text-primary);
-  --primary: var(--lsd-primary);
-  --primary-foreground: var(--lsd-primary-foreground);
-  --secondary: var(--lsd-surface);
-  --secondary-foreground: var(--lsd-text-secondary);
-  --muted: var(--lsd-surface);
-  --muted-foreground: var(--lsd-text-secondary);
-  --accent: var(--lsd-surface);
-  --accent-foreground: var(--lsd-text-secondary);
-  --destructive: var(--color-lsd-destructive);
-  --border: var(--lsd-border);
-  --input: var(--lsd-surface);
-  --ring: var(--lsd-text-primary);
-  --chart-1: var(--color-lsd-chart-1);
-  --chart-2: var(--color-lsd-chart-2);
-  --chart-3: var(--color-lsd-chart-3);
-  --chart-4: var(--color-lsd-chart-4);
-  --chart-5: var(--color-lsd-chart-5);
-  --sidebar: var(--lsd-surface);
-  --sidebar-foreground: var(--lsd-text-primary);
-  --sidebar-primary: var(--lsd-primary);
-  --sidebar-primary-foreground: var(--lsd-primary-foreground);
-  --sidebar-accent: var(--lsd-surface);
-  --sidebar-accent-foreground: var(--lsd-text-primary);
-  --sidebar-border: var(--lsd-border);
-  --sidebar-ring: var(--lsd-text-primary);
 }
 
 @layer base {
