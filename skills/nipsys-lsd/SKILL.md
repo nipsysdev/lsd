@@ -11,7 +11,7 @@ metadata:
 
 # LSD Component Library (@nipsys/lsd)
 
-LSD is a monochromatic, content-first component library built on Radix UI primitives with 41 components. High contrast, fully accessible, keyboard-navigable.
+LSD is a monochromatic, content-first component library built on Radix UI primitives with 39 components. High contrast, fully accessible, keyboard-navigable.
 
 ## Requirements
 - **Node.js:** 24+

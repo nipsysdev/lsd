@@ -114,11 +114,11 @@ import { Button } from '@nipsys/lsd'
 
 ### ButtonGroup
 ```tsx
-import { ButtonGroup, ButtonGroupButton } from '@nipsys/lsd'
+import { ButtonGroup, Button } from '@nipsys/lsd'
 
 <ButtonGroup>
-  <ButtonGroupButton variant="filled">Previous</ButtonGroupButton>
-  <ButtonGroupButton variant="outlined">Next</ButtonGroupButton>
+  <Button variant="filled">Previous</Button>
+  <Button variant="outlined">Next</Button>
 </ButtonGroup>
 ```
 
