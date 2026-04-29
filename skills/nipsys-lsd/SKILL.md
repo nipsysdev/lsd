@@ -1,6 +1,6 @@
 ---
 name: nipsys-lsd
-description: Use with @nipsys/lsd in React 19+ projects for UI component implementation, theming, and design system integration. Triggers on: "lsd component", "lsd design system", "logos design system", "@nipsys/lsd", component library patterns with spacing tokens (--lsd-spacing-*).
+description: Use when working with @nipsys/lsd in React 19+ projects for UI component implementation, theming, and design system integration. Provides comprehensive guidance for the LSD monochromatic component library including 39 accessible components with semantic styling, spacing tokens (--lsd-spacing-*), keyboard navigation patterns, and proper composition patterns. Ideal for developers building React applications.
 metadata:
   version: 1.0.0
   category: frontend
@@ -86,28 +86,15 @@ Import all required sub-components:
 ## Theme System
 
 ### Modes (Light/Dark)
-```html
-<!-- Light mode (default) -->
-<html class="light">
-
-<!-- Dark mode -->
-<html class="dark">
-
-<!-- Toggle via JS -->
-document.documentElement.classList.toggle('dark');
-```
+- Light mode (default): `&lt;html class=&quot;light&quot;&gt;`
+- Dark mode: `&lt;html class=&quot;dark&quot;&gt;`
 
 ### Accent Themes (5 built-in)
-```html
-<html data-theme="monochrome">  <!-- default -->
-<html data-theme="teal">
-<html data-theme="nord">
-<html data-theme="terracotta">
-<html data-theme="catppuccin">
-
-<!-- Set via JS -->
-document.documentElement.setAttribute('data-theme', 'teal');
-```
+- Monochrome (default): `&lt;html data-theme=&quot;monochrome&quot;&gt;`
+- Teal: `&lt;html data-theme=&quot;teal&quot;&gt;`
+- Nord: `&lt;html data-theme=&quot;nord&quot;&gt;`
+- Terracotta: `&lt;html data-theme=&quot;terracotta&quot;&gt;`
+- Catppuccin: `&lt;html data-theme=&quot;catppuccin&quot;&gt;`
 
 ### Custom Theme
 Use CSS variables. See [references/theme-variables.md](references/theme-variables.md) for complete variable list.
