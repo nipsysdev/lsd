@@ -41,6 +41,30 @@ export interface SidebarProps extends React.ComponentProps<'div'> {
    * Controls how sidebar collapses: offcanvas (slides out), icon (shows only icons), or none (no collapse).
    */
   collapsible?: 'offcanvas' | 'icon' | 'none';
+  /**
+   * Whether to show the sidebar trigger button.
+   *
+   * When true, displays the trigger button to toggle sidebar visibility.
+   */
+  showTrigger?: boolean;
+  /**
+   * Icon element for the sidebar trigger when expanded.
+   *
+   * Passed to SidebarTrigger's icon prop when sidebar is expanded.
+   */
+  triggerIconExpanded?: React.ReactNode;
+  /**
+   * Icon element for the sidebar trigger when collapsed.
+   *
+   * Passed to SidebarTrigger's icon prop when sidebar is collapsed.
+   */
+  triggerIconCollapsed?: React.ReactNode;
+  /**
+   * Class name for the sidebar trigger button.
+   *
+   * Applied to the SidebarTrigger component.
+   */
+  triggerClassName?: string;
 }
 
 export interface SidebarProviderProps extends React.ComponentProps<'div'> {
@@ -148,7 +172,32 @@ export interface SidebarMenuSkeletonProps extends React.ComponentProps<'div'> {
   showIcon?: boolean;
 }
 
-export interface SidebarTriggerProps extends React.ComponentProps<typeof Button> {}
+export interface SidebarTriggerProps extends React.ComponentProps<typeof Button> {
+  /**
+   * Icon element to display in the trigger button.
+   *
+   * Defaults to SidebarSimpleIcon with duotone weight.
+   */
+  icon?: React.ReactNode;
+  /**
+   * Accessible label text for the trigger button.
+   *
+   * Defaults to "Toggle Sidebar".
+   */
+  text?: string;
+  /**
+   * Class name applied to the icon element.
+   *
+   * Defaults to "lsd:size-4/5".
+   */
+  iconClassName?: string;
+  /**
+   * Class name applied to the text span element.
+   *
+   * Defaults to "lsd:sr-only".
+   */
+  textClassName?: string;
+}
 
 export interface SidebarRailProps extends React.ComponentProps<'button'> {}
 
