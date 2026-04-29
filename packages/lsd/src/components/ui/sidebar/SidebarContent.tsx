@@ -142,8 +142,18 @@ export function SidebarInset({ className, ...props }: SidebarInsetProps) {
  *
  * @exportAs sub
  */
-export function SidebarTrigger({ className, onClick, ...props }: SidebarTriggerProps) {
+export function SidebarTrigger({
+  className,
+  onClick,
+  icon,
+  text = 'Toggle Sidebar',
+  iconClassName = 'lsd:size-4/5',
+  textClassName = 'lsd:sr-only',
+  ...props
+}: SidebarTriggerProps) {
   const { toggleSidebar } = useSidebar();
+
+  const defaultIcon = <SidebarSimpleIcon className={iconClassName} weight="duotone" />;
 
   return (
     <Button
@@ -158,8 +168,8 @@ export function SidebarTrigger({ className, onClick, ...props }: SidebarTriggerP
       }}
       {...props}
     >
-      <SidebarSimpleIcon className="lsd:size-4/5" weight="duotone" />
-      <span className="lsd:sr-only">Toggle Sidebar</span>
+      {icon ?? defaultIcon}
+      <span className={textClassName}>{text}</span>
     </Button>
   );
 }
