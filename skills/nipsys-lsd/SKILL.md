@@ -132,12 +132,12 @@ Use CSS variables. See [references/theme-variables.md](references/theme-variable
 ## Quality Checklist
 
 Before completing tasks:
-□ Using LSD spacing variables (`--lsd-spacing-*`)
-□ Icons have "Icon" suffix (`CheckIcon`, not `Check`)
-□ Colors use semantic tokens (`--lsd-primary`, `--lsd-destructive`)
-□ All composition sub-components imported
-□ Accessibility verified (keyboard navigation)
-□ Theme tokens used for customization, not raw values
+- [ ] Using LSD spacing variables (`--lsd-spacing-*`)
+- [ ] Icons have "Icon" suffix (`CheckIcon`, not `Check`)
+- [ ] Colors use semantic tokens (`--lsd-primary`, `--lsd-destructive`)
+- [ ] All composition sub-components imported
+- [ ] Accessibility verified (keyboard navigation)
+- [ ] Theme tokens used for customization, not raw values
 
 ## References
 
