@@ -1,5 +1,5 @@
-@custom-variant dark (&:is(.dark *));
-@custom-variant light (&:is(.light *));
+@custom-variant dark (&:is(.dark));
+@custom-variant light (&:is(.light));
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -48,17 +48,13 @@
     border-color: var(--lsd-border);
     outline-color: var(--lsd-text-neutral);
   }
-  body {
-    background-color: var(--lsd-background);
-    color: var(--lsd-text-neutral);
+
+  html {
+    font-family: monospace;
   }
 }
 
 @layer utilities {
-  html {
-    font-family: monospace;
-  }
-
   .font-serif {
     &,
     body {
