@@ -17,10 +17,11 @@
     --lsd-text-warning: #854d0e;
     --lsd-info: #2563eb;
     --lsd-text-info: #2563eb;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 
-  &.dark,
-  .dark:not([data-theme]) {
+  &.dark {
     --lsd-primary: #ffffff;
     --lsd-primary-content: #000000;
     --lsd-text-neutral: #ffffff;
@@ -36,6 +37,8 @@
     --lsd-text-warning: #f59e0b;
     --lsd-info: #2563eb;
     --lsd-text-info: #2563eb;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 }
 
@@ -57,6 +60,8 @@
     --lsd-text-warning: #854d0e;
     --lsd-info: #2760c4;
     --lsd-text-info: #1e4d9e;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 
   &.dark {
@@ -75,6 +80,8 @@
     --lsd-text-warning: #f59e0b;
     --lsd-info: #3b82f6;
     --lsd-text-info: #60a5fa;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 }
 
@@ -96,6 +103,8 @@
     --lsd-text-warning: #7c5a12;
     --lsd-info: #2a6d86;
     --lsd-text-info: #215a6f;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 
   &.dark {
@@ -114,6 +123,8 @@
     --lsd-text-warning: #ebcb8b;
     --lsd-info: #81a1c1;
     --lsd-text-info: #9bb5cf;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 }
 
@@ -135,6 +146,8 @@
     --lsd-text-warning: #7d6310;
     --lsd-info: #30659e;
     --lsd-text-info: #285485;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 
   &.dark {
@@ -153,6 +166,8 @@
     --lsd-text-warning: #f0c860;
     --lsd-info: #6a9fd8;
     --lsd-text-info: #94bde6;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 }
 
@@ -174,6 +189,8 @@
     --lsd-text-warning: #8f6012;
     --lsd-info: #1e66f5;
     --lsd-text-info: #1853c8;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 
   &.dark {
@@ -192,5 +209,7 @@
     --lsd-text-warning: #f9e2af;
     --lsd-info: #89b4fa;
     --lsd-text-info: #89b4fa;
+    color: var(--lsd-text-neutral);
+    background-color: var(--lsd-background);
   }
 }
