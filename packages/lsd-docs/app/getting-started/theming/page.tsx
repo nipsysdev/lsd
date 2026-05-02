@@ -173,35 +173,40 @@ card.setAttribute('data-theme', 'nord');`}
                 code={`/* Light mode */
 [data-theme="nord"] {
   --lsd-primary: #5e81ac;
-  --lsd-text-primary: #2e3440;
+  --lsd-text-neutral: #2e3440;
   --lsd-text-secondary: #484c53;
-  --lsd-surface: #eceff4;
+  --lsd-background: #e6e8eb;
+  --lsd-foreground: #eceff4;
   --lsd-border: #4c566a;
   --lsd-destructive: #f43446;
-  --lsd-destructive-text: #cf2a3b;
+  --lsd-text-destructive: #cf2a3b;
   --lsd-success: #11b981;
-  --lsd-success-text: #0f9166;
+  --lsd-text-success: #0f9166;
   --lsd-warning: #e5b016;
-  --lsd-warning-text: #ca9c10;
+  --lsd-text-warning: #ca9c10;
   --lsd-info: #0ca2eb;
-  --lsd-info-text: #0b89c8;
+  --lsd-text-info: #0b89c8;
 }
 
 /* Dark mode */
-[data-theme="nord"].dark {
-  --lsd-primary: #94bff2;
-  --lsd-text-primary: #f2f5fc;
-  --lsd-text-secondary: #a8afbf;
-  --lsd-surface: #1a2532;
-  --lsd-border: #7c8bad;
-  --lsd-destructive: #f43446;
-  --lsd-destructive-text: #cf2a3b;
-  --lsd-success: #11b981;
-  --lsd-success-text: #0f9166;
-  --lsd-warning: #e5b016;
-  --lsd-warning-text: #ddae22;
-  --lsd-info: #0ca2eb;
-  --lsd-info-text: #0b89c8;
+[data-theme="nord"] {
+  &.dark,
+  .dark:not([data-theme]) {
+    --lsd-primary: #94bff2;
+    --lsd-text-neutral: #f2f5fc;
+    --lsd-text-secondary: #a8afbf;
+    --lsd-background: #26313d;
+    --lsd-foreground: #2e3440;
+    --lsd-border: #7c8bad;
+    --lsd-destructive: #f43446;
+    --lsd-text-destructive: #cf2a3b;
+    --lsd-success: #11b981;
+    --lsd-text-success: #0f9166;
+    --lsd-warning: #e5b016;
+    --lsd-text-warning: #ddae22;
+    --lsd-info: #0ca2eb;
+    --lsd-text-info: #0b89c8;
+  }
 }`}
               />
             </CardContent>

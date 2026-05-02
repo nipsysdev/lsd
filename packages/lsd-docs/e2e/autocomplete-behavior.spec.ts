@@ -110,7 +110,7 @@ test.describe('Autocomplete Behavior', () => {
     await page.goto('/examples/autocomplete/error');
 
     const displayInput = page.locator('input[readonly]');
-    await expect(displayInput).toHaveClass(/lsd:text-lsd-destructive/);
+    await expect(displayInput).toHaveClass(/lsd:text-lsd-text-destructive/);
   });
 
   test('label is displayed', async ({ page }) => {

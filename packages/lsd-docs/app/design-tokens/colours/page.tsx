@@ -54,13 +54,13 @@ export default function ColorsPage() {
               <CardContent className="pt-(--lsd-spacing-large)">
                 <div
                   className="h-24 mb-(--lsd-spacing-base)"
-                  style={{ backgroundColor: 'var(--lsd-primary-foreground)' }}
+                  style={{ backgroundColor: 'var(--lsd-primary-content)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
-                  Primary Foreground
+                  Primary Content
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
-                  --lsd-primary-foreground: <ColorValue variable="--lsd-primary-foreground" />
+                  --lsd-primary-content: <ColorValue variable="--lsd-primary-content" />
                 </Typography>
               </CardContent>
             </Card>
@@ -77,13 +77,13 @@ export default function ColorsPage() {
               <CardContent className="pt-(--lsd-spacing-large)">
                 <div
                   className="h-24 mb-(--lsd-spacing-base)"
-                  style={{ backgroundColor: 'var(--lsd-text-primary)' }}
+                  style={{ backgroundColor: 'var(--lsd-text-neutral)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
                   Text Primary
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
-                  --lsd-text-primary: <ColorValue variable="--lsd-text-primary" />
+                  --lsd-text-neutral: <ColorValue variable="--lsd-text-neutral" />
                 </Typography>
               </CardContent>
             </Card>
@@ -115,13 +115,28 @@ export default function ColorsPage() {
               <CardContent className="pt-(--lsd-spacing-large)">
                 <div
                   className="h-24 mb-(--lsd-spacing-base) border"
-                  style={{ backgroundColor: 'var(--lsd-surface)' }}
+                  style={{ backgroundColor: 'var(--lsd-background)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
                   Surface
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
-                  --lsd-surface: <ColorValue variable="--lsd-surface" />
+                  --lsd-background: <ColorValue variable="--lsd-background" />
+                </Typography>
+              </CardContent>
+            </Card>
+
+            <Card className="min-w-fit max-w-[250px]">
+              <CardContent className="pt-(--lsd-spacing-large)">
+                <div
+                  className="h-24 mb-(--lsd-spacing-base) border"
+                  style={{ backgroundColor: 'var(--lsd-foreground)' }}
+                />
+                <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
+                  Surface Secondary
+                </Typography>
+                <Typography variant="label1" className="text-nowrap">
+                  --lsd-foreground: <ColorValue variable="--lsd-foreground" />
                 </Typography>
               </CardContent>
             </Card>
@@ -141,6 +156,12 @@ export default function ColorsPage() {
               </CardContent>
             </Card>
           </div>
+
+          <Typography variant="body1" className="mt-(--lsd-spacing-base)">
+            <strong>Surface</strong> is the primary background colour for the canvas or main content
+            area. <strong>Surface Secondary</strong> is used for elevated elements like cards,
+            modals, and overlays that appear above the primary surface.
+          </Typography>
         </PageSection>
 
         <PageSection title="Icon Colours">
@@ -148,37 +169,7 @@ export default function ColorsPage() {
             Icon colours maintain visual consistency across all interactive and decorative elements.
           </Typography>
 
-          <div className="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card className="min-w-fit max-w-[250px]">
-              <CardContent className="pt-(--lsd-spacing-large)">
-                <div
-                  className="h-24 mb-(--lsd-spacing-base)"
-                  style={{ backgroundColor: 'var(--lsd-icon-primary)' }}
-                />
-                <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
-                  Icon Primary
-                </Typography>
-                <Typography variant="label1" className="text-nowrap">
-                  --lsd-icon-primary: <ColorValue variable="--lsd-icon-primary" />
-                </Typography>
-              </CardContent>
-            </Card>
-
-            <Card className="min-w-fit max-w-[250px]">
-              <CardContent className="pt-(--lsd-spacing-large)">
-                <div
-                  className="h-24 mb-(--lsd-spacing-base)"
-                  style={{ backgroundColor: 'var(--lsd-icon-secondary)' }}
-                />
-                <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
-                  Icon Secondary
-                </Typography>
-                <Typography variant="label1" className="text-nowrap">
-                  --lsd-icon-secondary: <ColorValue variable="--lsd-icon-secondary" />
-                </Typography>
-              </CardContent>
-            </Card>
-          </div>
+          <div className="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)" />
         </PageSection>
 
         <PageSection title="Semantic Colours">
@@ -260,13 +251,13 @@ export default function ColorsPage() {
               <CardContent className="pt-(--lsd-spacing-large)">
                 <div
                   className="h-24 mb-(--lsd-spacing-base)"
-                  style={{ backgroundColor: 'var(--lsd-success-text)' }}
+                  style={{ backgroundColor: 'var(--lsd-text-success)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
                   Success Text
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
-                  --lsd-success-text: <ColorValue variable="--lsd-success-text" />
+                  --lsd-text-success: <ColorValue variable="--lsd-text-success" />
                 </Typography>
               </CardContent>
             </Card>
@@ -275,13 +266,13 @@ export default function ColorsPage() {
               <CardContent className="pt-(--lsd-spacing-large)">
                 <div
                   className="h-24 mb-(--lsd-spacing-base)"
-                  style={{ backgroundColor: 'var(--lsd-destructive-text)' }}
+                  style={{ backgroundColor: 'var(--lsd-text-destructive)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
                   Destructive Text
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
-                  --lsd-destructive-text: <ColorValue variable="--lsd-destructive-text" />
+                  --lsd-text-destructive: <ColorValue variable="--lsd-text-destructive" />
                 </Typography>
               </CardContent>
             </Card>
@@ -290,13 +281,13 @@ export default function ColorsPage() {
               <CardContent className="pt-(--lsd-spacing-large)">
                 <div
                   className="h-24 mb-(--lsd-spacing-base)"
-                  style={{ backgroundColor: 'var(--lsd-warning-text)' }}
+                  style={{ backgroundColor: 'var(--lsd-text-warning)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
                   Warning Text
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
-                  --lsd-warning-text: <ColorValue variable="--lsd-warning-text" />
+                  --lsd-text-warning: <ColorValue variable="--lsd-text-warning" />
                 </Typography>
               </CardContent>
             </Card>
@@ -305,13 +296,13 @@ export default function ColorsPage() {
               <CardContent className="pt-(--lsd-spacing-large)">
                 <div
                   className="h-24 mb-(--lsd-spacing-base)"
-                  style={{ backgroundColor: 'var(--lsd-info-text)' }}
+                  style={{ backgroundColor: 'var(--lsd-text-info)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
                   Info Text
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
-                  --lsd-info-text: <ColorValue variable="--lsd-info-text" />
+                  --lsd-text-info: <ColorValue variable="--lsd-text-info" />
                 </Typography>
               </CardContent>
             </Card>

@@ -16,11 +16,11 @@ export function Example() {
       <div className="flex flex-col items-center gap-(--lsd-spacing-smaller)">
         <Typography variant="body2">Item 1</Typography>
       </div>
-      <Separator orientation="vertical" className="h-(--lsd-spacing-5x)" />
+      <Separator orientation="vertical" />
       <div className="flex flex-col items-center gap-(--lsd-spacing-smaller)">
         <Typography variant="body2">Item 2</Typography>
       </div>
-      <Separator orientation="vertical" className="h-(--lsd-spacing-5x)" />
+      <Separator orientation="vertical" />
       <div className="flex flex-col items-center gap-(--lsd-spacing-smaller)">
         <Typography variant="body2">Item 3</Typography>
       </div>
@@ -37,11 +37,11 @@ export function Example() {
       <div className="flex flex-col items-center gap-(--lsd-spacing-smaller)">
         <Typography variant="body2">Item 1</Typography>
       </div>
-      <Separator orientation="vertical" className="h-(--lsd-spacing-5x)" />
+      <Separator orientation="vertical" />
       <div className="flex flex-col items-center gap-(--lsd-spacing-smaller)">
         <Typography variant="body2">Item 2</Typography>
       </div>
-      <Separator orientation="vertical" className="h-(--lsd-spacing-5x)" />
+      <Separator orientation="vertical" />
       <div className="flex flex-col items-center gap-(--lsd-spacing-smaller)">
         <Typography variant="body2">Item 3</Typography>
       </div>

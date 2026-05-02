@@ -13,8 +13,8 @@ export const CODE = `import { ScrollArea, ScrollBar, Typography } from '@nipsys/
 
 export function Example() {
   return (
-    <div className="flex flex-col gap-(--lsd-spacing-base)">
-      <ScrollArea className="h-(--lsd-spacing-8x) w-full rounded-md border p-(--lsd-spacing-base)">
+    <div className="flex flex-col gap-(--lsd-spacing-base) overflow-hidden">
+      <ScrollArea className="flex-auto h-full border p-(--lsd-spacing-base) overflow-hidden">
         <div className="flex flex-col gap-(--lsd-spacing-base)">
           {[...Array(10)].map((_, row) => (
             <div key={row} className="flex gap-(--lsd-spacing-base)">

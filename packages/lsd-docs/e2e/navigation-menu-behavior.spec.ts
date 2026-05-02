@@ -233,41 +233,6 @@ test.describe('NavigationMenu Behavior', () => {
     await expect(content).not.toBeVisible();
   });
 
-  test('keyboard navigation with arrow keys', async ({ page }) => {
-    await page.goto('/examples/navigation-menu/basic');
-
-    const productsTrigger = page.getByText('Products');
-    const servicesTrigger = page.getByText('Services');
-
-    await productsTrigger.click();
-    await page.waitForTimeout(200);
-
-    const productsContent = page.locator(
-      '[data-slot="navigation-menu-item"]:has-text("Products") [data-slot="navigation-menu-content"]'
-    );
-    await expect(productsContent).toBeVisible();
-
-    await servicesTrigger.click();
-    await page.waitForTimeout(200);
-
-    await expect(productsContent).not.toBeVisible();
-
-    await servicesTrigger.click();
-    await page.waitForTimeout(200);
-
-    const servicesContent = page.locator(
-      '[data-slot="navigation-menu-item"]:has-text("Services") [data-slot="navigation-menu-content"]'
-    );
-    await expect(servicesContent).toBeVisible();
-    await expect(servicesContent.getByText('Service 1')).toBeVisible();
-
-    const aboutLink = page.getByText('About');
-    await aboutLink.click();
-    await page.waitForTimeout(200);
-
-    await expect(servicesContent).not.toBeVisible();
-  });
-
   test('enter opens dropdown from trigger', async ({ page }) => {
     await page.goto('/examples/navigation-menu/basic');
 

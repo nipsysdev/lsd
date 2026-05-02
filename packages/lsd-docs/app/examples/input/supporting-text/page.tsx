@@ -3,7 +3,7 @@
 import { Input } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const SIZE = 'md';
+export const SIZE = 'sm';
 
 /**
  * @docSection feature
