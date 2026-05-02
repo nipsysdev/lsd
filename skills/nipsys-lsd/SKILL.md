@@ -18,6 +18,18 @@ LSD is a monochromatic, content-first component library built on Radix UI primit
 - **React:** 19+
 - **Tailwind CSS:** v4
 
+## Installation
+
+Install the package:
+```bash
+npm install @nipsys/lsd
+```
+
+Add to your CSS:
+```css
+@import '@nipsys/lsd/styles';
+```
+
 ## Quick Discovery
 ```bash
 # Verify installation
@@ -34,6 +46,8 @@ Use LSD spacing variables ONLY:
 - ✅ `className="mt-(--lsd-spacing-base)"`
 - ❌ `className="mt-4"`
 
+> **Note:** The `mt-(--lsd-spacing-base)` syntax is Tailwind v4's CSS variable interpolation - it outputs `margin-top: var(--lsd-spacing-base)`.
+
 ### Icons → [references/icons.md](references/icons.md)
 All icons MUST use "Icon" suffix:
 - ✅ `import { CheckIcon } from '@phosphor-icons/react'`
@@ -42,6 +56,7 @@ All icons MUST use "Icon" suffix:
 ### Styling → [references/colors.md](references/colors.md)
 Use semantic color tokens:
 - ✅ `var(--lsd-primary)`, `var(--lsd-destructive)`
+- ✅ `var(--lsd-background)` (primary), `var(--lsd-foreground)` (secondary/overlay)
 - ❌ `#0066ff`, `#ff0000` (raw hex values)
 
 ### Composition → [references/composition.md](references/composition.md)
@@ -50,10 +65,9 @@ Import all required sub-components:
 
 ## Component Selection Matrix
 
+### Forms & Input
 | Need | Use |
 |------|-----|
-| Primary action | Button with variant="filled" |
-| Destructive action | Button with variant="destructive" |
 | Form input | Input or Textarea |
 | Form with validation | Field + Field components |
 | Single-line text | Input |
@@ -63,25 +77,47 @@ Import all required sub-components:
 | 2-5 option toggle | ToggleGroup |
 | Radio buttons | RadioGroup |
 | Checkbox | Checkbox |
+
+### Buttons & Actions
+| Need | Use |
+|------|-----|
+| Primary action | Button with variant="filled" |
+| Destructive action | Button with variant="destructive" |
+
+### Navigation
+| Need | Use |
+|------|-----|
+| Tabs | Tabs |
+| Navigation menu | NavigationMenu |
+| Menu bar | Menubar |
+| Sidebar | Sidebar (15+ sub-components) |
+
+### Overlays & Dialogs
+| Need | Use |
+|------|-----|
 | Modal dialog | Dialog (with sub-components) |
 | Confirmation dialog | AlertDialog |
 | Slide-over panel | Sheet |
 | Tooltip | Tooltip |
 | Dropdown menu | DropdownMenu (12 sub-components) |
 | Command palette | Command (cmdk-based) |
-| Tabs | Tabs |
-| Navigation menu | NavigationMenu |
-| Menu bar | Menubar |
-| Alert message | Alert (3 variants) |
-| Badge/status | Badge (7 variants) |
+
+### Data Display
+| Need | Use |
+|------|-----|
 | Card | Card (7 sub-components) |
 | Avatar | Avatar (6 sub-components) |
 | Table | Table (8 sub-components) |
-| Progress | Progress (indeterminate mode) |
-| Toast notifications | Sonner + Toaster |
+| Badge/status | Badge (7 variants) |
 | Calendar | Calendar |
 | Typography | Typography (18 variants) |
-| Sidebar | Sidebar (15+ sub-components) |
+
+### Feedback
+| Need | Use |
+|------|-----|
+| Alert message | Alert (3 variants) |
+| Progress | Progress (indeterminate mode) |
+| Toast notifications | Sonner + Toaster |
 
 ## Theme System
 
@@ -107,13 +143,39 @@ Use CSS variables. See [references/theme-variables.md](references/theme-variable
 4. **Implement** - Use LSD spacing variables, semantic colors
 5. **Verify accessibility** - Keyboard navigation works (`Tab`, `Escape`)
 
+## Quick Start Example
+
+```tsx
+// 1. Import the component
+import { Button } from '@nipsys/lsd';
+import { CheckIcon } from '@phosphor-icons/react';
+
+// 2. Use with proper spacing and semantic styling
+export function SubmitButton() {
+  return (
+    <Button 
+      variant="filled" 
+      className="mt-(--lsd-spacing-base)"
+    >
+      <CheckIcon className="mr-(--lsd-spacing-xs)" />
+      Submit
+    </Button>
+  );
+}
+```
+
+**Key points:**
+- Icon component has `Icon` suffix (`CheckIcon`, not `Check`)
+- Spacing uses LSD variable with Tailwind v4 syntax
+- Variant uses semantic naming (`filled`, `destructive`, `outline`)
+
 ## Common Pitfalls
 
 | Mistake | Why Wrong | Correct Approach |
 |---------|-----------|------------------|
 | `className="mt-4"` | Tailwind numbers not LSD spacing | `className="mt-(--lsd-spacing-base)"` |
 | `import { X } from '@phosphor-icons/react'` | Missing Icon suffix | `import { XIcon } from '@phosphor-icons/react'` |
-| `style={{ backgroundColor: '#0066ff' }}` | Raw colors, not semantic | `style={{ backgroundColor: 'var(--lsd-surface)' }}` |
+| `style={{ backgroundColor: '#0066ff' }}` | Raw colors, not semantic | `style={{ backgroundColor: 'var(--lsd-background)' }}` |
 | `<Dialog>_dialog content_</Dialog>` | Missing sub-components | `<Dialog><DialogTrigger>Open</DialogTrigger><DialogContent>...</DialogContent></Dialog>` |
 
 ## Quality Checklist
