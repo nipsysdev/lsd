@@ -39,14 +39,14 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default: 'lsd:bg-lsd-surface lsd:text-lsd-text-primary lsd:border-lsd-border',
+        default: 'lsd:border-lsd-border',
         destructive:
-          'lsd:bg-lsd-surface lsd:text-lsd-destructive-text lsd:border-lsd-destructive [&>svg]:lsd:text-current data-[variant=destructive]>*:data-[slot=alert-description]:lsd:text-lsd-destructive-text',
-        info: 'lsd:bg-lsd-surface lsd:text-lsd-info-text lsd:border-lsd-info [&>svg]:lsd:text-current data-[variant=info]>*:data-[slot=alert-description]:lsd:text-lsd-info-text',
+          'lsd:text-lsd-text-destructive lsd:border-lsd-destructive [&>svg]:lsd:text-current data-[variant=destructive]>*:data-[slot=alert-description]:lsd:text-lsd-text-destructive',
+        info: 'lsd:text-lsd-text-info lsd:border-lsd-info [&>svg]:lsd:text-current data-[variant=info]>*:data-[slot=alert-description]:lsd:text-lsd-text-info',
         success:
-          'lsd:bg-lsd-surface lsd:text-lsd-success-text lsd:border-lsd-success [&>svg]:lsd:text-current data-[variant=success]>*:data-[slot=alert-description]:lsd:text-lsd-success-text',
+          'lsd:text-lsd-text-success lsd:border-lsd-success [&>svg]:lsd:text-current data-[variant=success]>*:data-[slot=alert-description]:lsd:text-lsd-text-success',
         warning:
-          'lsd:bg-lsd-surface lsd:text-lsd-warning-text lsd:border-lsd-warning [&>svg]:lsd:text-current data-[variant=warning]>*:data-[slot=alert-description]:lsd:text-lsd-warning-text',
+          'lsd:text-lsd-text-warning lsd:border-lsd-warning [&>svg]:lsd:text-current data-[variant=warning]>*:data-[slot=alert-description]:lsd:text-lsd-text-warning',
       },
     },
     defaultVariants: {

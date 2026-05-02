@@ -33,8 +33,7 @@ export function NavigationMenuViewport({ className, ...props }: NavigationMenuVi
         data-slot="navigation-menu-viewport"
         className={cn(
           // Colors & Backgrounds
-          'lsd:bg-(--lsd-popover)',
-          'lsd:text-(--lsd-popover-foreground)',
+          'lsd:bg-lsd-foreground',
           // Borders
           'lsd:border',
           // Layout & Positioning

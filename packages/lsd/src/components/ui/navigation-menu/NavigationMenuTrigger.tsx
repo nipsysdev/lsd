@@ -8,7 +8,7 @@ export interface NavigationMenuTriggerProps
   extends React.ComponentProps<typeof NavigationMenuPrimitive.Trigger> {}
 
 export const navigationMenuTriggerStyle = cva(
-  'lsd:group lsd:inline-flex lsd:h-[2.25rem] lsd:w-max lsd:items-center lsd:justify-center lsd:rounded-md lsd:bg-[var(--lsd-background)] lsd:px-4 lsd:py-2 lsd:text-[0.875rem] lsd:font-medium lsd:transition-[color,box-shadow] lsd:outline-none hover:lsd:bg-[var(--lsd-accent)] hover:lsd:text-[var(--lsd-accent-foreground)] focus:lsd:bg-[var(--lsd-accent)] focus:lsd:text-[var(--lsd-accent-foreground)] focus-visible:lsd:ring-[3px] focus-visible:lsd:ring-ring/50 focus-visible:lsd:outline-1 disabled:lsd:pointer-events-none disabled:lsd:opacity-50 data-[state=open]:lsd:bg-[var(--lsd-accent)]/50 data-[state=open]:lsd:text-[var(--lsd-accent-foreground)] data-[state=open]:hover:lsd:bg-[var(--lsd-accent)] data-[state=open]:focus:lsd:bg-[var(--lsd-accent)]'
+  'lsd:group lsd:inline-flex lsd:h-9 lsd:w-max lsd:items-center lsd:justify-center lsd:cursor-pointer lsd:px-(--lsd-spacing-base) lsd:py-(--lsd-spacing-smaller) lsd:border lsd:text-sm lsd:transition-[color,box-shadow] lsd:outline-none disabled:lsd:pointer-events-none disabled:lsd:opacity-50'
 );
 
 /**
@@ -31,18 +31,19 @@ export function NavigationMenuTrigger({
     >
       {children}{' '}
       <CaretDownIcon
+        weight="duotone"
         className={cn(
           // Layout & Positioning
           'lsd:relative',
           // Spacing
-          'lsd:ml-(--lsd-spacing-smallest)',
+          'lsd:ml-(--lsd-spacing-smaller)',
           // Sizing
           'lsd:size-3',
           // Borders, Shapes & Effects
           'lsd:transition',
           'lsd:duration-300',
           // Interactive States - Open state
-          'group-data-[state=open]:lsd:rotate-180'
+          'lsd:hover:underline lsd:focus:underline'
         )}
         aria-hidden="true"
       />

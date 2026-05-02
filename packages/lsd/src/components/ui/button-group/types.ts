@@ -5,10 +5,8 @@ export const buttonGroupVariants = cva(
   {
     variants: {
       orientation: {
-        horizontal:
-          'lsd:[&>*:not(:first-child)]:rounded-l-none lsd:[&>*:not(:first-child)]:border-l-0 lsd:[&>*:not(:last-child)]:rounded-r-none',
-        vertical:
-          'lsd:flex-col lsd:[&>*:not(:first-child)]:rounded-t-none lsd:[&>*:not(:first-child)]:border-t-0 lsd:[&>*:not(:last-child)]:rounded-b-none',
+        horizontal: 'lsd:[&>button:not(:first-of-type)]:border-l-0',
+        vertical: 'lsd:flex-col lsd:[&>button:not(:first-of-type)]:border-t-0',
       },
     },
     defaultVariants: {

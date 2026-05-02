@@ -49,7 +49,6 @@ describe('Menubar', () => {
     expect(menubar).toHaveClass('lsd:items-center');
     expect(menubar).toHaveClass('lsd:gap-[var(--lsd-spacing-smallest)]');
     expect(menubar).toHaveClass('lsd:border');
-    expect(menubar).toHaveClass('lsd:bg-lsd-surface');
   });
 
   it('merges custom className with component classes', () => {

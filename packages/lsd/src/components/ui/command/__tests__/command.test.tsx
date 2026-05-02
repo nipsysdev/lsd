@@ -46,8 +46,7 @@ describe('Command', () => {
       </Command>
     );
     const command = document.querySelector('[data-slot="command"]');
-    expect(command).toHaveClass('lsd:bg-lsd-surface');
-    expect(command).toHaveClass('lsd:text-lsd-text-primary');
+    expect(command).toHaveClass('lsd:bg-lsd-foreground');
     expect(command).toHaveClass('lsd:flex');
     expect(command).toHaveClass('lsd:h-full');
     expect(command).toHaveClass('lsd:w-full');

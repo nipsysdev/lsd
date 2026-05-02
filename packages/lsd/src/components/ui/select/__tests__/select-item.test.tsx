@@ -48,6 +48,7 @@ describe('SelectItem', () => {
     expect(item).toHaveClass('lsd:w-full');
     expect(item).toHaveClass('lsd:cursor-pointer');
     expect(item).toHaveClass('lsd:relative');
+    expect(item).toHaveClass('lsd:focus:bg-lsd-foreground');
   });
 
   it('merges custom className with component classes', () => {

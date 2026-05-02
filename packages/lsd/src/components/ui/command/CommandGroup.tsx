@@ -18,8 +18,6 @@ export function CommandGroup({
     <CommandPrimitive.Group
       data-slot="command-group"
       className={cn(
-        // Colors & Backgrounds
-        'lsd:text-lsd-text-primary',
         // Pseudo-selectors & ARIA - Colors
         'lsd:**:[[cmdk-group-heading]]:text-lsd-text-secondary',
         // Overflow

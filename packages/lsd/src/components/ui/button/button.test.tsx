@@ -16,21 +16,21 @@ describe('Button', () => {
   it('applies filled variant classes correctly', () => {
     render(<Button variant="filled">Filled</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('lsd:bg-primary');
-    expect(button).toHaveClass('lsd:text-primary-foreground');
+    expect(button).toHaveClass('lsd:bg-lsd-primary');
+    expect(button).toHaveClass('lsd:text-lsd-primary-content');
   });
 
   it('applies outlined variant classes correctly', () => {
     render(<Button variant="outlined">Outlined</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-transparent');
-    expect(button).toHaveClass('lsd:text-foreground');
   });
 
   it('applies filled-rounded variant classes correctly', () => {
     render(<Button variant="filled-rounded">Icon</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('lsd:bg-primary');
+    expect(button).toHaveClass('lsd:bg-lsd-primary');
+    expect(button).toHaveClass('lsd:text-lsd-primary-content');
     expect(button).toHaveClass('lsd:rounded-full');
   });
 
@@ -45,68 +45,56 @@ describe('Button', () => {
     render(<Button variant="link">Link</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-transparent');
-    expect(button).toHaveClass('lsd:text-foreground');
     expect(button).toHaveClass('lsd:border-0');
-    expect(button).toHaveClass('lsd:hover:underline');
   });
 
   it('applies ghost variant classes correctly', () => {
     render(<Button variant="ghost">Ghost</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-transparent');
-    expect(button).toHaveClass('lsd:text-foreground');
     expect(button).toHaveClass('lsd:border-0');
-    expect(button).toHaveClass('lsd:hover:bg-accent');
-    expect(button).toHaveClass('lsd:hover:text-accent-foreground');
   });
 
   it('applies ghost-rounded variant classes correctly', () => {
     render(<Button variant="ghost-rounded">Icon</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-transparent');
-    expect(button).toHaveClass('lsd:text-foreground');
     expect(button).toHaveClass('lsd:border-0');
     expect(button).toHaveClass('lsd:rounded-full');
-    expect(button).toHaveClass('lsd:hover:bg-accent');
-    expect(button).toHaveClass('lsd:hover:text-accent-foreground');
   });
 
   it('applies destructive variant classes correctly', () => {
     render(<Button variant="destructive">Delete</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-lsd-destructive');
-    expect(button).toHaveClass('lsd:text-white');
+    expect(button).toHaveClass('lsd:text-lsd-primary-content');
     expect(button).toHaveClass('lsd:border-lsd-destructive');
-    expect(button).toHaveClass('lsd:hover:bg-lsd-destructive/90');
   });
 
   it('applies destructive-rounded variant classes correctly', () => {
     render(<Button variant="destructive-rounded">Delete</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-lsd-destructive');
-    expect(button).toHaveClass('lsd:text-white');
+    expect(button).toHaveClass('lsd:text-lsd-primary-content');
     expect(button).toHaveClass('lsd:border-lsd-destructive');
     expect(button).toHaveClass('lsd:rounded-full');
-    expect(button).toHaveClass('lsd:hover:bg-lsd-destructive/90');
   });
 
   it('applies success variant classes correctly', () => {
     render(<Button variant="success">Save</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-lsd-success');
-    expect(button).toHaveClass('lsd:text-white');
+    expect(button).toHaveClass('lsd:text-lsd-primary-content');
     expect(button).toHaveClass('lsd:border-lsd-success');
-    expect(button).toHaveClass('lsd:hover:bg-lsd-success/90');
   });
 
   it('applies success-rounded variant classes correctly', () => {
     render(<Button variant="success-rounded">Save</Button>);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('lsd:bg-lsd-success');
-    expect(button).toHaveClass('lsd:text-white');
+    expect(button).toHaveClass('lsd:text-lsd-primary-content');
     expect(button).toHaveClass('lsd:border-lsd-success');
     expect(button).toHaveClass('lsd:rounded-full');
-    expect(button).toHaveClass('lsd:hover:bg-lsd-success/90');
   });
 
   it('applies medium size classes correctly', () => {
@@ -167,7 +155,7 @@ describe('Button', () => {
   it('uses default variant when not specified', () => {
     render(<Button>Default</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('lsd:bg-primary');
+    expect(button).toHaveClass('lsd:bg-lsd-primary');
   });
 
   it('uses default size when not specified', () => {
@@ -211,10 +199,7 @@ describe('Button', () => {
     expect(button).toHaveClass('lsd:items-center');
     expect(button).toHaveClass('lsd:justify-center');
     expect(button).toHaveClass('lsd:border');
-    expect(button).toHaveClass('lsd:transition-colors');
     expect(button).toHaveClass('lsd:cursor-pointer');
-    expect(button).toHaveClass('lsd:text-primary-foreground');
-    expect(button).toHaveClass('lsd:hover:underline');
   });
 
   it('passes through additional props', () => {
@@ -350,17 +335,17 @@ describe('Button', () => {
 
 describe('buttonVariants', () => {
   it('returns correct classes for filled variant', () => {
-    expect(buttonVariants({ variant: 'filled' })).toContain('lsd:bg-primary');
-    expect(buttonVariants({ variant: 'filled' })).toContain('lsd:text-primary-foreground');
+    expect(buttonVariants({ variant: 'filled' })).toContain('lsd:bg-lsd-primary');
+    expect(buttonVariants({ variant: 'filled' })).toContain('lsd:text-lsd-primary-content');
   });
 
   it('returns correct classes for outlined variant', () => {
     expect(buttonVariants({ variant: 'outlined' })).toContain('lsd:bg-transparent');
-    expect(buttonVariants({ variant: 'outlined' })).toContain('lsd:text-foreground');
   });
 
   it('returns correct classes for filled-rounded variant', () => {
-    expect(buttonVariants({ variant: 'filled-rounded' })).toContain('lsd:bg-primary');
+    expect(buttonVariants({ variant: 'filled-rounded' })).toContain('lsd:bg-lsd-primary');
+    expect(buttonVariants({ variant: 'filled-rounded' })).toContain('lsd:text-lsd-primary-content');
     expect(buttonVariants({ variant: 'filled-rounded' })).toContain('lsd:rounded-full');
   });
 
@@ -371,56 +356,44 @@ describe('buttonVariants', () => {
 
   it('returns correct classes for link variant', () => {
     expect(buttonVariants({ variant: 'link' })).toContain('lsd:bg-transparent');
-    expect(buttonVariants({ variant: 'link' })).toContain('lsd:text-foreground');
     expect(buttonVariants({ variant: 'link' })).toContain('lsd:border-0');
-    expect(buttonVariants({ variant: 'link' })).toContain('lsd:underline');
   });
 
   it('returns correct classes for ghost variant', () => {
     expect(buttonVariants({ variant: 'ghost' })).toContain('lsd:bg-transparent');
-    expect(buttonVariants({ variant: 'ghost' })).toContain('lsd:text-foreground');
     expect(buttonVariants({ variant: 'ghost' })).toContain('lsd:border-0');
-    expect(buttonVariants({ variant: 'ghost' })).toContain('lsd:hover:bg-accent');
-    expect(buttonVariants({ variant: 'ghost' })).toContain('lsd:hover:text-accent-foreground');
   });
 
   it('returns correct classes for ghost-rounded variant', () => {
     expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:bg-transparent');
-    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:text-foreground');
     expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:border-0');
     expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:rounded-full');
-    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain('lsd:hover:bg-accent');
-    expect(buttonVariants({ variant: 'ghost-rounded' })).toContain(
-      'lsd:hover:text-accent-foreground'
-    );
   });
 
   it('returns correct classes for destructive variant', () => {
     expect(buttonVariants({ variant: 'destructive' })).toContain('lsd:bg-lsd-destructive');
-    expect(buttonVariants({ variant: 'destructive' })).toContain('lsd:text-white');
-    expect(buttonVariants({ variant: 'destructive' })).toContain('lsd:hover:bg-lsd-destructive/90');
+    expect(buttonVariants({ variant: 'destructive' })).toContain('lsd:text-lsd-primary-content');
   });
 
   it('returns correct classes for destructive-rounded variant', () => {
     expect(buttonVariants({ variant: 'destructive-rounded' })).toContain('lsd:bg-lsd-destructive');
-    expect(buttonVariants({ variant: 'destructive-rounded' })).toContain('lsd:text-white');
-    expect(buttonVariants({ variant: 'destructive-rounded' })).toContain('lsd:rounded-full');
     expect(buttonVariants({ variant: 'destructive-rounded' })).toContain(
-      'lsd:hover:bg-lsd-destructive/90'
+      'lsd:text-lsd-primary-content'
     );
+    expect(buttonVariants({ variant: 'destructive-rounded' })).toContain('lsd:rounded-full');
   });
 
   it('returns correct classes for success variant', () => {
     expect(buttonVariants({ variant: 'success' })).toContain('lsd:bg-lsd-success');
-    expect(buttonVariants({ variant: 'success' })).toContain('lsd:text-white');
-    expect(buttonVariants({ variant: 'success' })).toContain('lsd:hover:bg-lsd-success/90');
+    expect(buttonVariants({ variant: 'success' })).toContain('lsd:text-lsd-primary-content');
   });
 
   it('returns correct classes for success-rounded variant', () => {
     expect(buttonVariants({ variant: 'success-rounded' })).toContain('lsd:bg-lsd-success');
-    expect(buttonVariants({ variant: 'success-rounded' })).toContain('lsd:text-white');
+    expect(buttonVariants({ variant: 'success-rounded' })).toContain(
+      'lsd:text-lsd-primary-content'
+    );
     expect(buttonVariants({ variant: 'success-rounded' })).toContain('lsd:rounded-full');
-    expect(buttonVariants({ variant: 'success-rounded' })).toContain('lsd:hover:bg-lsd-success/90');
   });
 
   it('returns correct classes for medium size', () => {
@@ -465,7 +438,7 @@ describe('buttonVariants', () => {
   });
 
   it('uses default variant when not specified', () => {
-    expect(buttonVariants({})).toContain('lsd:bg-primary');
+    expect(buttonVariants({})).toContain('lsd:bg-lsd-primary');
   });
 
   it('uses default size when not specified', () => {

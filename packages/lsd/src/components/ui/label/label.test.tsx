@@ -21,7 +21,7 @@ describe('Label', () => {
   it('applies default variant classes correctly', () => {
     render(<Label variant="default">Label</Label>);
     const label = screen.getByText('Label');
-    expect(label).toHaveClass('lsd:text-lsd-text-primary');
+    expect(label).toHaveClass('lsd:text-lsd-text-neutral');
   });
 
   it('applies secondary variant classes correctly', () => {
@@ -54,7 +54,7 @@ describe('Label', () => {
   it('uses default variant when not specified', () => {
     render(<Label>Label</Label>);
     const label = screen.getByText('Label');
-    expect(label).toHaveClass('lsd:text-lsd-text-primary');
+    expect(label).toHaveClass('lsd:text-lsd-text-neutral');
   });
 
   it('uses default size when not specified', () => {
@@ -103,7 +103,7 @@ describe('Label', () => {
 
 describe('labelVariants', () => {
   it('returns correct classes for default variant', () => {
-    expect(labelVariants({ variant: 'default' })).toContain('lsd:text-lsd-text-primary');
+    expect(labelVariants({ variant: 'default' })).toContain('lsd:text-lsd-text-neutral');
   });
 
   it('returns correct classes for secondary variant', () => {
@@ -126,7 +126,7 @@ describe('labelVariants', () => {
   });
 
   it('uses default variant when not specified', () => {
-    expect(labelVariants({})).toContain('lsd:text-lsd-text-primary');
+    expect(labelVariants({})).toContain('lsd:text-lsd-text-neutral');
   });
 
   it('uses default size when not specified', () => {

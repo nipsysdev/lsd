@@ -60,12 +60,12 @@ export const typographyVariants = cva('lsd:font-inherit', {
       label2: 'lsd:text-[0.75rem] lsd:leading-[1rem]',
     },
     color: {
-      primary: 'lsd:text-lsd-text-primary',
+      primary: 'lsd:text-lsd-text-neutral',
       secondary: 'lsd:text-lsd-text-secondary',
-      destructive: 'lsd:text-lsd-destructive-text',
-      success: 'lsd:text-lsd-success-text',
-      warning: 'lsd:text-lsd-warning-text',
-      info: 'lsd:text-lsd-info-text',
+      destructive: 'lsd:text-lsd-text-destructive',
+      success: 'lsd:text-lsd-text-success',
+      warning: 'lsd:text-lsd-text-warning',
+      info: 'lsd:text-lsd-text-info',
     },
   },
   defaultVariants: {

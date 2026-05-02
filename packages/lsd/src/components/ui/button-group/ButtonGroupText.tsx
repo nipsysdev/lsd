@@ -33,7 +33,7 @@ const ButtonGroupText = React.forwardRef<HTMLDivElement, ButtonGroupTextProps>(
       <Comp
         ref={ref}
         className={cn(
-          "lsd:bg-secondary lsd:flex lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:rounded-md lsd:border lsd:px-(--lsd-spacing-base) lsd:text-sm lsd:font-medium lsd:shadow-xs lsd:[&_svg]:pointer-events-none lsd:[&_svg:not([class*='size-'])]:size-4 lsd:disabled:cursor-not-allowed",
+          "lsd:bg-lsd-foreground lsd:flex lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:rounded-md lsd:border lsd:px-(--lsd-spacing-base) lsd:text-sm lsd:font-medium lsd:shadow-xs lsd:[&_svg]:pointer-events-none lsd:[&_svg:not([class*='size-'])]:size-4 lsd:disabled:cursor-not-allowed",
           className
         )}
         {...props}

@@ -251,7 +251,7 @@ describe('Slider', () => {
     it('applies background color to thumb', () => {
       render(<Slider aria-label="Test slider" />);
       const thumb = document.querySelector('[data-slot="slider-thumb"]');
-      expect(thumb).toHaveClass('lsd:bg-lsd-surface');
+      expect(thumb).toHaveClass('lsd:bg-lsd-background');
     });
 
     it('applies transition classes to thumb', () => {

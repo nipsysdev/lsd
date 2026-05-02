@@ -22,8 +22,6 @@ export function SelectScrollDownButton({
     <SelectPrimitive.ScrollDownButton
       data-slot="select-scroll-down-button"
       className={cn(
-        // Colors & Backgrounds
-        'lsd:text-lsd-icon-primary',
         // Layout & Positioning
         'lsd:flex',
         // Alignment

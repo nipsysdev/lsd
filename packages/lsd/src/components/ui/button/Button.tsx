@@ -135,12 +135,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         className={cn(
           // Colors & Backgrounds
-          'lsd:text-foreground',
           // Borders, Shapes & Effects
           'lsd:border',
           isLinkVariant || isGhostVariant ? 'lsd:border-0' : '',
           // Interactive States
-          'lsd:hover:underline',
           'lsd:disabled:opacity-34',
           'lsd:disabled:cursor-not-allowed',
           'lsd:disabled:no-underline',

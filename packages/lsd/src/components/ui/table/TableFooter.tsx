@@ -17,7 +17,7 @@ const TableFooter = React.forwardRef<HTMLTableSectionElement, React.ComponentPro
         ref={ref}
         data-slot="table-footer"
         className={cn(
-          'lsd:border-t lsd:bg-muted/50 lsd:font-medium lsd:[&>tr]:last:border-b-0',
+          'lsd:border-t lsd:bg-lsd-foreground/50 lsd:font-medium lsd:[&>tr]:last:border-b-0',
           className
         )}
         {...props}

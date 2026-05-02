@@ -79,7 +79,7 @@ const Progress = React.forwardRef<React.ComponentRef<typeof ProgressPrimitive.Ro
     return (
       <div className="lsd:w-full">
         {showLabel && labelText && labelPosition === 'top' && (
-          <div className="lsd:mb-(--lsd-spacing-smallest) lsd:text-sm lsd:font-medium lsd:text-lsd-text-primary lsd:text-center">
+          <div className="lsd:mb-(--lsd-spacing-smallest) lsd:text-sm lsd:font-medium lsd:text-center">
             {labelText}
           </div>
         )}
@@ -87,7 +87,7 @@ const Progress = React.forwardRef<React.ComponentRef<typeof ProgressPrimitive.Ro
           ref={ref}
           data-slot="progress"
           className={cn(
-            'lsd:relative lsd:w-full lsd:overflow-hidden lsd:rounded-none lsd:bg-lsd-surface lsd:border lsd:border-lsd-border',
+            'lsd:relative lsd:w-full lsd:overflow-hidden lsd:rounded-none lsd:border lsd:border-lsd-border',
             sizeClasses[size],
             className
           )}
@@ -107,7 +107,7 @@ const Progress = React.forwardRef<React.ComponentRef<typeof ProgressPrimitive.Ro
           />
         </ProgressPrimitive.Root>
         {showLabel && labelText && labelPosition === 'bottom' && (
-          <div className="lsd:mt-(--lsd-spacing-smallest) lsd:text-sm lsd:font-medium lsd:text-lsd-text-primary lsd:text-center">
+          <div className="lsd:mt-(--lsd-spacing-smallest) lsd:text-sm lsd:font-medium lsd:text-center">
             {labelText}
           </div>
         )}

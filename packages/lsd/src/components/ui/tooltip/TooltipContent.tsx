@@ -29,8 +29,7 @@ function TooltipContent({
         sideOffset={sideOffset}
         className={cn(
           // Colors & Backgrounds
-          'lsd:bg-lsd-surface',
-          'lsd:text-lsd-text-primary',
+          'lsd:bg-lsd-foreground',
           // Pseudo-selectors & ARIA - Animations
           'lsd:animate-in',
           'lsd:fade-in-0',

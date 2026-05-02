@@ -48,8 +48,6 @@ export function CommandDialog({
       >
         <Command
           className={cn(
-            // Pseudo-selectors & ARIA - Colors
-            'lsd:**:[[cmdk-group-heading]]:text-lsd-text-primary',
             // Pseudo-selectors & ARIA - Spacing
             'lsd:**:[[cmdk-group-heading]]:px-(--lsd-spacing-smaller)',
             'lsd:**:[[cmdk-group]]:px-(--lsd-spacing-smaller)',

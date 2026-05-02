@@ -28,8 +28,8 @@ const InputGroupText = React.forwardRef<HTMLSpanElement, InputGroupTextProps>(
           // Colors & Backgrounds
           'lsd:text-lsd-text-secondary',
           // Pseudo-selectors & ARIA - SVG styling
-          '[&_svg]:lsd:pointer-events-none',
-          "[&_svg:not([class*='size-'])]:lsd:size-4",
+          'lsd:[&_svg]:pointer-events-none',
+          "lsd:[&_svg:not([class*='size-'])]:size-4",
           // Dynamic text size classes
           getInputGroupTextSizeClasses(size),
           className

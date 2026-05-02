@@ -133,7 +133,8 @@ describe('Sidebar', () => {
     const sidebar = queryByDataSlot(container, 'sidebar');
     expect(sidebar).toHaveClass('lsd:group');
     expect(sidebar).toHaveClass('lsd:peer');
-    expect(sidebar).toHaveClass('lsd:text-sidebar-foreground');
+    expect(sidebar).toHaveClass('lsd:hidden');
+    expect(sidebar).toHaveClass('lsd:md:block');
   });
 
   it('renders children', () => {
@@ -190,7 +191,7 @@ describe('Sidebar', () => {
     );
     const sidebar = queryByDataSlot(container, 'sidebar');
     expect(sidebar).toBeInTheDocument();
-    expect(sidebar).toHaveClass('lsd:bg-sidebar');
+    expect(sidebar).toHaveClass('lsd:bg-lsd-background');
     expect(sidebar).toHaveClass('lsd:flex');
     expect(sidebar).toHaveClass('lsd:h-full');
     expect(screen.getByText('Sidebar Content')).toBeInTheDocument();
@@ -549,7 +550,7 @@ describe('SidebarSeparator', () => {
   it('applies default classes', () => {
     const { container } = render(<SidebarSeparator />);
     const separator = queryByDataSlot(container, 'sidebar-separator');
-    expect(separator).toHaveClass('lsd:bg-sidebar-border');
+    expect(separator).toHaveClass('lsd:bg-lsd-border');
     expect(separator).toHaveClass('lsd:mx-(--lsd-spacing-smaller)');
     expect(separator).toHaveClass('lsd:w-auto');
   });
@@ -571,7 +572,7 @@ describe('SidebarGroupLabel', () => {
   it('applies default classes', () => {
     const { container } = render(<SidebarGroupLabel>Label</SidebarGroupLabel>);
     const label = queryByDataSlot(container, 'sidebar-group-label');
-    expect(label).toHaveClass('lsd:text-sidebar-foreground/70');
+    expect(label).toHaveClass('lsd:text-lsd-text-neutral/70');
     expect(label).toHaveClass('lsd:flex');
     expect(label).toHaveClass('lsd:h-8');
   });
@@ -598,7 +599,6 @@ describe('SidebarGroupAction', () => {
   it('applies default classes', () => {
     const { container } = render(<SidebarGroupAction>Action</SidebarGroupAction>);
     const action = queryByDataSlot(container, 'sidebar-group-action');
-    expect(action).toHaveClass('lsd:text-sidebar-foreground');
     expect(action).toHaveClass('lsd:absolute');
     expect(action).toHaveClass('lsd:top-(--lsd-spacing-base)');
     expect(action).toHaveClass('lsd:right-(--lsd-spacing-small)');
@@ -759,7 +759,6 @@ describe('SidebarMenuAction', () => {
       </SidebarProvider>
     );
     const action = queryByDataSlot(container, 'sidebar-menu-action');
-    expect(action).toHaveClass('lsd:text-sidebar-foreground');
     expect(action).toHaveClass('lsd:absolute');
     expect(action).toHaveClass('lsd:top-(--lsd-spacing-smaller)');
     expect(action).toHaveClass('lsd:right-(--lsd-spacing-smallest)');
@@ -818,7 +817,6 @@ describe('SidebarMenuBadge', () => {
       </SidebarProvider>
     );
     const badge = queryByDataSlot(container, 'sidebar-menu-badge');
-    expect(badge).toHaveClass('lsd:text-sidebar-foreground');
     expect(badge).toHaveClass('lsd:pointer-events-none');
     expect(badge).toHaveClass('lsd:absolute');
     expect(badge).toHaveClass('lsd:right-(--lsd-spacing-smallest)');
@@ -938,9 +936,9 @@ describe('SidebarMenuSubButton', () => {
   it('applies default classes', () => {
     const { container } = render(<SidebarMenuSubButton>SubButton</SidebarMenuSubButton>);
     const subButton = queryByDataSlot(container, 'sidebar-menu-sub-button');
-    expect(subButton).toHaveClass('lsd:text-sidebar-foreground');
     expect(subButton).toHaveClass('lsd:flex');
     expect(subButton).toHaveClass('lsd:h-(--lsd-spacing-largest)');
+    expect(subButton).toHaveClass('lsd:text-sm');
   });
 
   it('renders children', () => {

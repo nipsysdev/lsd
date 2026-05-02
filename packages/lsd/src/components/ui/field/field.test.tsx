@@ -176,7 +176,6 @@ describe('FieldLegend', () => {
     render(<FieldLegend>Legend Text</FieldLegend>);
     const legend = screen.getByText('Legend Text');
     expect(legend).toHaveClass('lsd:text-[1.5rem]');
-    expect(legend).toHaveClass('lsd:text-lsd-text-primary');
     expect(legend).toHaveClass('lsd:font-medium');
   });
 
@@ -262,7 +261,6 @@ describe('FieldLabel', () => {
     const label = screen.getByText('Label Text');
     expect(label).toHaveClass('lsd:text-[0.875rem]');
     expect(label).toHaveClass('lsd:font-medium');
-    expect(label).toHaveClass('lsd:text-lsd-text-primary');
     expect(label).toHaveClass('lsd:mb-(--lsd-spacing-smaller)');
     expect(label).toHaveClass('lsd:block');
   });
@@ -448,7 +446,7 @@ describe('FieldError', () => {
     const error = screen.getByText('Error message');
     expect(error).toHaveClass('lsd:text-sm');
     expect(error).toHaveClass('lsd:font-normal');
-    expect(error).toHaveClass('lsd:text-lsd-destructive-text');
+    expect(error).toHaveClass('lsd:text-lsd-text-destructive');
   });
 
   it('applies role="alert" for accessibility', () => {

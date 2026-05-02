@@ -36,9 +36,9 @@ function Checkbox({ className, ...props }: React.ComponentProps<typeof CheckboxP
       className={cn(
         // Colors & Backgrounds
         'lsd:border-lsd-border',
-        'dark:lsd:bg-lsd-surface/30',
+        'dark:lsd:bg-lsd-background/30',
         'lsd:data-[state=checked]:bg-lsd-primary',
-        'lsd:data-[state=checked]:text-lsd-surface',
+        'lsd:data-[state=checked]:text-lsd-primary-content',
         'lsd:data-[state=checked]:border-lsd-primary',
         // Sizing
         'lsd:size-(--lsd-spacing-large)',
@@ -53,7 +53,7 @@ function Checkbox({ className, ...props }: React.ComponentProps<typeof CheckboxP
         // Interactive States
         'lsd:cursor-pointer',
         'focus-visible:lsd:border-lsd-border',
-        'focus-visible:lsd:ring-lsd-text/50',
+        'focus-visible:lsd:ring-lsd-text-neutral/50',
         'focus-visible:lsd:ring-[3px]',
         'lsd:outline-none',
         'lsd:disabled:cursor-not-allowed',

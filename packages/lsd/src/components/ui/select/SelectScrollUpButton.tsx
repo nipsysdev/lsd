@@ -22,8 +22,6 @@ export function SelectScrollUpButton({
     <SelectPrimitive.ScrollUpButton
       data-slot="select-scroll-up-button"
       className={cn(
-        // Colors & Backgrounds
-        'lsd:text-lsd-icon-primary',
         // Layout & Positioning
         'lsd:flex',
         // Alignment

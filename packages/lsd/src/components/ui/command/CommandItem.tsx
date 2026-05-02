@@ -23,9 +23,7 @@ export function CommandItem({
       data-slot="command-item"
       className={cn(
         // Pseudo-selectors & ARIA - Colors
-        'lsd:data-[selected=true]:bg-lsd-surface',
-        'lsd:data-[selected=true]:text-lsd-text-primary',
-        "lsd:[&_svg:not([class*='text-'])]:text-lsd-text-primary",
+        'lsd:data-[selected=true]:underline',
         // Layout & Positioning
         'lsd:relative',
         'lsd:flex',

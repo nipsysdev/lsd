@@ -137,7 +137,7 @@ function Badge({
           {onDismiss && (
             <button
               type="button"
-              className="lsd:flex lsd:items-center lsd:justify-center lsd:rounded-full lsd:hover:bg-black/10 lsd:dark:hover:bg-white/10 lsd:transition-colors lsd:cursor-pointer lsd:border-0 lsd:p-0 lsd:bg-transparent"
+              className="lsd:flex lsd:items-center lsd:justify-center lsd:cursor-pointer"
               onClick={handleDismiss}
               aria-label="Dismiss"
             >

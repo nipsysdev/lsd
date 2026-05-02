@@ -357,7 +357,7 @@ describe('TableFooter', () => {
     );
     const tfoot = queryByDataSlot(container, 'table-footer');
     expect(tfoot).toHaveClass('lsd:border-t');
-    expect(tfoot).toHaveClass('lsd:bg-muted/50');
+    expect(tfoot).toHaveClass('lsd:bg-lsd-foreground/50');
     expect(tfoot).toHaveClass('lsd:font-medium');
     expect(tfoot).toHaveClass('lsd:[&>tr]:last:border-b-0');
   });
@@ -459,8 +459,8 @@ describe('TableRow', () => {
     const tr = queryByDataSlot(container, 'table-row');
     expect(tr).toHaveClass('lsd:border-b');
     expect(tr).toHaveClass('lsd:transition-colors');
-    expect(tr).toHaveClass('lsd:hover:bg-muted/50');
-    expect(tr).toHaveClass('lsd:data-[state=selected]:bg-muted');
+    expect(tr).toHaveClass('lsd:hover:bg-lsd-foreground/50');
+    expect(tr).toHaveClass('lsd:data-[state=selected]:bg-lsd-foreground');
   });
 
   it('passes through additional props', () => {
@@ -564,7 +564,8 @@ describe('TableHead', () => {
     expect(th).toHaveClass('lsd:align-middle');
     expect(th).toHaveClass('lsd:font-bold');
     expect(th).toHaveClass('lsd:whitespace-nowrap');
-    expect(th).toHaveClass('lsd:text-lsd-text-primary');
+    expect(th).toHaveClass('lsd:[&:has([role=checkbox])]:pr-0');
+    expect(th).toHaveClass('lsd:*:[[role=checkbox]]:translate-y-[2px]');
   });
 
   it('passes through additional props', () => {

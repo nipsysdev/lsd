@@ -135,12 +135,15 @@ describe('DropdownMenuContent', () => {
       </DropdownMenu>
     );
     const content = document.querySelector('[data-slot="dropdown-menu-content"]');
+    expect(content).toHaveClass('lsd:bg-lsd-foreground');
+    expect(content).toHaveClass('lsd:border');
     expect(content).toHaveClass('lsd:z-50');
+    expect(content).toHaveClass('lsd:max-h-(--radix-dropdown-menu-content-available-height)');
     expect(content).toHaveClass('lsd:min-w-32');
     expect(content).toHaveClass('lsd:rounded-none');
-    expect(content).toHaveClass('lsd:border');
-    expect(content).toHaveClass('lsd:bg-lsd-surface');
-    expect(content).toHaveClass('lsd:p-(--lsd-spacing-smaller)');
+    expect(content).toHaveClass('lsd:shadow-md');
+    expect(content).toHaveClass('lsd:overflow-x-hidden');
+    expect(content).toHaveClass('lsd:overflow-y-auto');
   });
 
   it('merges custom className with component classes', () => {
@@ -258,7 +261,7 @@ describe('DropdownMenuItem', () => {
     );
     const item = screen.getByText('Delete');
     expect(item).toHaveAttribute('data-variant', 'destructive');
-    expect(item).toHaveClass('lsd:text-lsd-destructive-text');
+    expect(item).toHaveClass('lsd:text-lsd-text-destructive');
   });
 
   it('applies inset prop correctly', () => {
@@ -780,7 +783,6 @@ describe('DropdownMenuLabel', () => {
     expect(label).toHaveClass('lsd:py-1.5');
     expect(label).toHaveClass('lsd:text-sm');
     expect(label).toHaveClass('lsd:font-medium');
-    expect(label).toHaveClass('lsd:text-lsd-text-primary');
   });
 
   it('applies inset prop correctly', () => {

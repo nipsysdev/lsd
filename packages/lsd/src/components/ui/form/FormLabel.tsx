@@ -20,7 +20,7 @@ function FormLabel({ className, ...props }: React.ComponentProps<typeof LabelPri
     <Label
       data-slot="form-label"
       data-error={!!error}
-      className={cn(error ? 'lsd:text-lsd-destructive-text' : '', className)}
+      className={cn(error ? 'lsd:text-lsd-text-destructive' : '', className)}
       htmlFor={formItemId}
       {...props}
     />

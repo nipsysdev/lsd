@@ -16,7 +16,7 @@ describe('ButtonGroupText', () => {
   it('applies default classes', () => {
     render(<ButtonGroupText>Text</ButtonGroupText>);
     const text = screen.getByText('Text');
-    expect(text).toHaveClass('lsd:bg-secondary');
+    expect(text).toHaveClass('lsd:bg-lsd-foreground');
     expect(text).toHaveClass('lsd:flex');
     expect(text).toHaveClass('lsd:items-center');
     expect(text).toHaveClass('lsd:gap-(--lsd-spacing-smaller)');

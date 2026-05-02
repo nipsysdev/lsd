@@ -40,8 +40,6 @@ export function DropdownMenuCheckboxItem({
         'lsd:outline-none',
         'lsd:select-none',
         // Interactive States - Focus
-        'focus:lsd:bg-[var(--lsd-accent)]',
-        'focus:lsd:text-[var(--lsd-accent-foreground)]',
         'lsd:hover:underline',
         'lsd:focus:underline',
         // Interactive States - Disabled

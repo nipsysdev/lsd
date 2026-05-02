@@ -65,8 +65,6 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
             'lsd:transition-[color,box-shadow]',
             // Interactive States - Focus
             'lsd:outline-none',
-            // Colors & Backgrounds
-            'lsd:bg-lsd-surface',
             // Dynamic height classes
             getInputGroupHeightClasses(size),
             // Sizing - minimum width and textarea

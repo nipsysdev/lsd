@@ -42,8 +42,7 @@ const Card = React.forwardRef<HTMLDivElement, React.ComponentProps<'div'>>(
         data-slot="card"
         className={cn(
           // Colors & Backgrounds
-          'lsd:bg-lsd-surface',
-          'lsd:text-lsd-text-primary',
+          'lsd:bg-lsd-foreground',
           // Layout & Positioning
           'lsd:flex',
           'lsd:flex-col',

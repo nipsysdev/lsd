@@ -27,7 +27,7 @@ export function NavigationMenuList({ className, ...props }: NavigationMenuListPr
         'lsd:items-start',
         'lsd:justify-start',
         // Spacing
-        'lsd:gap-(--lsd-spacing-1)',
+        'lsd:gap-(--lsd-spacing-largest)',
         // Groups
         'lsd:group',
         className

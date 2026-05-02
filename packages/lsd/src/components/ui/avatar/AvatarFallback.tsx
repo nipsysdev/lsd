@@ -26,7 +26,7 @@ function AvatarFallback({
         // Borders, Shapes & Effects
         'lsd:rounded-full',
         // Colors & Backgrounds
-        'lsd:bg-lsd-muted',
+        'lsd:bg-lsd-foreground',
         // Typography
         'lsd:text-sm',
         'lsd:text-lsd-text-secondary',

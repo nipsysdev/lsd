@@ -32,7 +32,7 @@ export function DropdownMenuItem({
       data-variant={variant}
       className={cn(
         // Colors & Backgrounds - Destructive variant
-        variant === 'destructive' && 'lsd:text-lsd-destructive-text',
+        variant === 'destructive' && 'lsd:text-lsd-text-destructive',
         // Layout & Positioning
         'lsd:relative',
         'lsd:flex',
@@ -49,8 +49,6 @@ export function DropdownMenuItem({
         'lsd:outline-none',
         'lsd:select-none',
         // Interactive States - Focus/Hover
-        'focus:lsd:bg-[var(--lsd-accent)]',
-        'focus:lsd:text-[var(--lsd-accent-foreground)]',
         'lsd:hover:underline',
         'lsd:focus:underline',
         // Interactive States - Disabled
@@ -58,7 +56,7 @@ export function DropdownMenuItem({
         'data-[disabled]:lsd:opacity-50',
         // Interactive States - Destructive variant focus
         variant === 'destructive' && 'focus:lsd:bg-[var(--lsd-destructive)]/10',
-        variant === 'destructive' && 'focus:lsd:text-[var(--lsd-destructive-text)]',
+        variant === 'destructive' && 'focus:lsd:text-[var(--lsd-text-destructive)]',
         variant === 'destructive' && 'dark:focus:lsd:bg-[var(--lsd-destructive)]/20',
         // Interactive States - Cursor
         'lsd:cursor-pointer',
@@ -71,7 +69,7 @@ export function DropdownMenuItem({
         '[&_svg:not([class*=text-])]:lsd:text-[var(--lsd-text-secondary)]',
         // Pseudo-selectors & ARIA - Destructive variant SVG
         variant === 'destructive' &&
-          '[&[data-variant=destructive]]:[&_svg]:lsd:text-[var(--lsd-destructive-text)]',
+          '[&[data-variant=destructive]]:[&_svg]:lsd:text-[var(--lsd-text-destructive)]',
         className
       )}
       {...props}

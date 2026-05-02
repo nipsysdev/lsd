@@ -44,10 +44,11 @@ describe('SelectContent', () => {
       </Select>
     );
     const content = document.querySelector('[data-slot="select-content"]');
-    expect(content).toHaveClass('lsd:bg-lsd-surface');
-    expect(content).toHaveClass('lsd:text-lsd-text-primary');
+    expect(content).toHaveClass('lsd:bg-lsd-foreground');
     expect(content).toHaveClass('lsd:border');
     expect(content).toHaveClass('lsd:border-lsd-border');
+    expect(content).toHaveClass('lsd:relative');
+    expect(content).toHaveClass('lsd:z-50');
   });
 
   it('applies animation classes', () => {

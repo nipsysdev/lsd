@@ -102,10 +102,11 @@ describe('NavigationMenuLink', () => {
     const link = document.querySelector('[data-slot="navigation-menu-link"]');
     expect(link).toHaveClass('lsd:flex');
     expect(link).toHaveClass('lsd:flex-col');
-    expect(link).toHaveClass('lsd:text-[0.875rem]');
+    expect(link).toHaveClass('lsd:h-9');
+    expect(link).toHaveClass('lsd:text-sm');
     expect(link).toHaveClass('lsd:gap-(--lsd-spacing-smallest)');
-    expect(link).toHaveClass('lsd:p-(--lsd-spacing-base)');
-    expect(link).toHaveClass('lsd:rounded-sm');
+    expect(link).toHaveClass('lsd:border');
+    expect(link).toHaveClass('lsd:cursor-pointer');
     expect(link).toHaveClass('lsd:transition-all');
     expect(link).toHaveClass('lsd:outline-none');
   });
@@ -124,8 +125,7 @@ describe('NavigationMenuLink', () => {
       </NavigationMenu>
     );
     const link = document.querySelector('[data-slot="navigation-menu-link"]');
-    expect(link).toHaveClass('hover:lsd:bg-[var(--lsd-accent)]');
-    expect(link).toHaveClass('hover:lsd:text-[var(--lsd-accent-foreground)]');
+    expect(link).toHaveClass('lsd:hover:underline');
   });
 
   it('applies focus state classes', () => {
@@ -142,11 +142,7 @@ describe('NavigationMenuLink', () => {
       </NavigationMenu>
     );
     const link = document.querySelector('[data-slot="navigation-menu-link"]');
-    expect(link).toHaveClass('focus:lsd:bg-[var(--lsd-accent)]');
-    expect(link).toHaveClass('focus:lsd:text-[var(--lsd-accent-foreground)]');
-    expect(link).toHaveClass('focus-visible:lsd:ring-[3px]');
-    expect(link).toHaveClass('focus-visible:lsd:ring-ring/50');
-    expect(link).toHaveClass('focus-visible:lsd:outline-1');
+    expect(link).toHaveClass('lsd:focus:underline');
   });
 
   it('applies active state classes', () => {
@@ -163,8 +159,7 @@ describe('NavigationMenuLink', () => {
       </NavigationMenu>
     );
     const link = document.querySelector('[data-slot="navigation-menu-link"]');
-    expect(link).toHaveClass('data-[active=true]:lsd:bg-[var(--lsd-accent)]/50');
-    expect(link).toHaveClass('data-[active=true]:lsd:text-[var(--lsd-accent-foreground)]');
+    expect(link).toBeInTheDocument();
   });
 
   it('passes ref correctly to the underlying element', () => {

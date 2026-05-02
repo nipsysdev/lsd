@@ -229,13 +229,12 @@ export interface SidebarMenuBadgeProps extends React.ComponentProps<'div'> {}
 
 // Variants
 export const sidebarMenuButtonVariants = cva(
-  'peer/menu-button lsd:flex lsd:w-full lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:p-(--lsd-spacing-smaller) lsd:text-left lsd:text-sm lsd:outline-hidden ring-sidebar-ring lsd:transition-[width,height,padding] lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground lsd:focus-visible:ring-2 lsd:active:bg-sidebar-accent lsd:active:text-sidebar-accent-foreground lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:bg-sidebar-accent lsd:data-[active=true]:font-medium lsd:data-[active=true]:text-sidebar-accent-foreground lsd:data-[state=open]:hover:bg-sidebar-accent lsd:data-[state=open]:hover:text-sidebar-accent-foreground lsd:group-data-[collapsible=icon]:size-8! lsd:group-data-[collapsible=icon]:p-(--lsd-spacing-smaller)! lsd:[&>span:last-child]:truncate lsd:[&>svg]:size-(--lsd-spacing-base) lsd:[&>svg]:shrink-0 lsd:hover:underline lsd:focus:underline',
+  'peer/menu-button lsd:flex lsd:w-full lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:p-(--lsd-spacing-smaller) lsd:text-left lsd:text-sm lsd:outline-hidden ring-sidebar-ring lsd:transition-[width,height,padding] lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:font-medium lsd:group-data-[collapsible=icon]:size-8! lsd:group-data-[collapsible=icon]:p-(--lsd-spacing-smaller)! lsd:[&>span:last-child]:truncate lsd:[&>svg]:size-(--lsd-spacing-base) lsd:[&>svg]:shrink-0 lsd:hover:underline lsd:focus:underline',
   {
     variants: {
       variant: {
-        default: 'lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground',
-        outline:
-          'lsd:bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))] lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground lsd:hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
+        default: '',
+        outline: 'lsd:border',
       },
       size: {
         default: 'lsd:h-8 lsd:text-sm',

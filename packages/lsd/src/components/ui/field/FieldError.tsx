@@ -59,7 +59,7 @@ const FieldError = React.forwardRef<HTMLDivElement, FieldErrorProps>(
           // Typography Font
           'lsd:font-normal',
           // Colors & Backgrounds
-          'lsd:text-lsd-destructive-text',
+          'lsd:text-lsd-text-destructive',
           className
         )}
         {...props}

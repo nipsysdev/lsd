@@ -129,7 +129,7 @@ export function SidebarMenuAction({
       data-slot="sidebar-menu-action"
       data-sidebar="menu-action"
       className={cn(
-        'lsd:text-sidebar-foreground ring-sidebar-ring lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground peer-hover/menu-button:text-sidebar-accent-foreground lsd:absolute lsd:top-(--lsd-spacing-smaller) lsd:right-(--lsd-spacing-smallest) lsd:flex lsd:aspect-square lsd:w-(--lsd-spacing-large) lsd:items-center lsd:justify-center lsd:rounded-md lsd:p-0 lsd:outline-hidden lsd:transition-transform lsd:focus-visible:ring-2 lsd:[&>svg]:size-(--lsd-spacing-base) lsd:[&>svg]:shrink-0',
+        'ring-sidebar-ring lsd:absolute lsd:top-(--lsd-spacing-smaller) lsd:right-(--lsd-spacing-smallest) lsd:flex lsd:aspect-square lsd:w-(--lsd-spacing-large) lsd:items-center lsd:justify-center lsd:rounded-md lsd:p-0 lsd:outline-hidden lsd:transition-transform lsd:focus-visible:ring-2 lsd:[&>svg]:size-(--lsd-spacing-base) lsd:[&>svg]:shrink-0',
         // Increases the hit area of the button on mobile.
         'after:lsd:absolute after:lsd:-inset-[var(--lsd-spacing-smaller)] md:after:lsd:hidden',
         'lsd:peer-data-[size=sm]/menu-button:top-(--lsd-spacing-smallest)',
@@ -137,7 +137,7 @@ export function SidebarMenuAction({
         'lsd:peer-data-[size=lg]/menu-button:top-(--lsd-spacing-small)',
         'lsd:group-data-[collapsible=icon]:hidden',
         showOnHover &&
-          'peer-data-[active=true]/menu-button:text-sidebar-accent-foreground group-focus-within/menu-item:lsd:opacity-100 group-hover/menu-item:lsd:opacity-100 lsd:data-[state=open]:opacity-100 lsd:md:opacity-0',
+          'group-focus-within/menu-item:lsd:opacity-100 group-hover/menu-item:lsd:opacity-100 lsd:data-[state=open]:opacity-100 lsd:md:opacity-0',
         className
       )}
       {...props}
@@ -158,8 +158,7 @@ export function SidebarMenuBadge({ className, ...props }: SidebarMenuBadgeProps)
       data-slot="sidebar-menu-badge"
       data-sidebar="menu-badge"
       className={cn(
-        'lsd:text-sidebar-foreground lsd:pointer-events-none lsd:absolute lsd:right-(--lsd-spacing-smallest) lsd:flex lsd:h-(--lsd-spacing-large) lsd:min-w-(--lsd-spacing-large) lsd:items-center lsd:justify-center lsd:rounded-md lsd:px-(--lsd-spacing-smallest) lsd:text-xs lsd:font-medium lsd:tabular-nums lsd:select-none',
-        'peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[active=true]/menu-button:text-sidebar-accent-foreground',
+        'lsd:pointer-events-none lsd:absolute lsd:right-(--lsd-spacing-smallest) lsd:flex lsd:h-(--lsd-spacing-large) lsd:min-w-(--lsd-spacing-large) lsd:items-center lsd:justify-center lsd:rounded-md lsd:px-(--lsd-spacing-smallest) lsd:text-xs lsd:font-medium lsd:tabular-nums lsd:select-none',
         'lsd:peer-data-[size=sm]/menu-button:top-(--lsd-spacing-smallest)',
         'lsd:peer-data-[size=default]/menu-button:top-(--lsd-spacing-smaller)',
         'lsd:peer-data-[size=lg]/menu-button:top-(--lsd-spacing-small)',
@@ -193,19 +192,16 @@ export function SidebarMenuSkeleton({
       data-slot="sidebar-menu-skeleton"
       data-sidebar="menu-skeleton"
       className={cn(
-        'lsd:flex lsd:h-8 lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:rounded-md lsd:px-(--lsd-spacing-smaller)',
+        'lsd:flex lsd:h-8 lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:px-(--lsd-spacing-smaller)',
         className
       )}
       {...props}
     >
       {showIcon && (
-        <div
-          className="lsd:size-(--lsd-spacing-base) lsd:rounded-md lsd:bg-sidebar-accent"
-          data-sidebar="menu-skeleton-icon"
-        />
+        <div className="lsd:size-(--lsd-spacing-base)" data-sidebar="menu-skeleton-icon" />
       )}
       <div
-        className="lsd:h-(--lsd-spacing-base) lsd:flex-1 lsd:rounded-md lsd:bg-sidebar-accent"
+        className="lsd:h-(--lsd-spacing-base) lsd:flex-1"
         data-sidebar="menu-skeleton-text"
         style={
           {
@@ -280,7 +276,7 @@ export function SidebarMenuSubButton({
       data-size={size}
       data-active={isActive}
       className={cn(
-        'lsd:text-sidebar-foreground ring-sidebar-ring lsd:hover:bg-sidebar-accent lsd:hover:text-sidebar-accent-foreground lsd:active:bg-sidebar-accent lsd:active:text-sidebar-accent-foreground lsd:[&>svg]:text-sidebar-accent-foreground lsd:flex lsd:h-(--lsd-spacing-largest) lsd:min-w-0 lsd:-translate-x-px lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:px-(--lsd-spacing-smaller) lsd:outline-hidden lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:bg-sidebar-accent lsd:data-[active=true]:text-sidebar-accent-foreground lsd:hover:underline lsd:focus:underline',
+        'ring-sidebar-ring lsd:flex lsd:h-(--lsd-spacing-largest) lsd:min-w-0 lsd:-translate-x-px lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:px-(--lsd-spacing-smaller) lsd:outline-hidden lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:hover:underline lsd:focus:underline',
         size === 'sm' && 'lsd:text-xs',
         size === 'md' && 'lsd:text-sm',
         'lsd:group-data-[collapsible=icon]:hidden',

@@ -33,7 +33,7 @@ describe('Switch', () => {
   it('applies unchecked state classes correctly', () => {
     render(<Switch />);
     const switchElement = screen.getByRole('switch');
-    expect(switchElement).toHaveClass('lsd:data-[state=unchecked]:bg-lsd-surface');
+    expect(switchElement).toHaveClass('lsd:data-[state=unchecked]:bg-transparent');
   });
 
   it('has a thumb element', () => {
@@ -45,7 +45,7 @@ describe('Switch', () => {
   it('applies thumb classes correctly', () => {
     render(<Switch />);
     const thumb = screen.getByRole('switch').children[0];
-    expect(thumb).toHaveClass('lsd:bg-lsd-surface');
+    expect(thumb).toHaveClass('lsd:bg-lsd-background');
     expect(thumb).toHaveClass('lsd:size-4.5');
     expect(thumb).toHaveClass('lsd:rounded-full');
     expect(thumb).toHaveClass('lsd:transition-transform');

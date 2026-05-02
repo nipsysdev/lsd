@@ -22,12 +22,6 @@ describe('Calendar', () => {
       expect(root).toBeInTheDocument();
     });
 
-    it('applies LSD background token', () => {
-      const { container } = render(<Calendar />);
-      const root = container.querySelector('[data-slot="calendar"]') as HTMLElement;
-      expect(root).toHaveClass('lsd:bg-lsd-surface');
-    });
-
     it('applies LSD padding token with CSS variable', () => {
       const { container } = render(<Calendar />);
       const root = container.querySelector('[data-slot="calendar"]') as HTMLElement;
@@ -219,12 +213,6 @@ describe('Calendar', () => {
   });
 
   describe('LSD Tokens Integration', () => {
-    it('uses LSD background token', () => {
-      const { container } = render(<Calendar />);
-      const root = container.querySelector('[data-slot="calendar"]') as HTMLElement;
-      expect(root).toHaveClass('lsd:bg-lsd-surface');
-    });
-
     it('uses LSD spacing tokens with CSS variables for padding', () => {
       const { container } = render(<Calendar />);
       const root = container.querySelector('[data-slot="calendar"]') as HTMLElement;

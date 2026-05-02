@@ -142,7 +142,7 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
               'lsd:text-sm',
               currentSize.label,
               // Colors & Backgrounds
-              disabled ? 'lsd:text-lsd-text-secondary' : 'lsd:text-lsd-text-primary'
+              disabled && 'lsd:text-lsd-text-secondary'
             )}
           >
             {label}
@@ -159,11 +159,11 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                 // Borders, Shapes & Effects
                 variant === 'outlined'
                   ? disabled
-                    ? 'lsd:border lsd:border-lsd-border'
-                    : 'lsd:border lsd:border-lsd-border'
+                    ? 'lsd:border lsd:border-lsd-border/30'
+                    : `lsd:border ${error ? 'lsd:border-lsd-destructive' : 'lsd:border-lsd-border'}`
                   : disabled
-                    ? 'lsd:border lsd:border-transparent lsd:border-b-lsd-border'
-                    : 'lsd:border lsd:border-transparent lsd:border-b-lsd-border',
+                    ? 'lsd:border lsd:border-transparent lsd:border-b-lsd-border/30'
+                    : `lsd:border lsd:border-transparent ${error ? 'lsd:border-b-lsd-destructive' : 'lsd:border-b-lsd-border'}`,
                 // Interactive States
                 disabled ? 'lsd:cursor-not-allowed' : 'lsd:cursor-pointer'
               )}
@@ -189,9 +189,7 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                   // Colors & Backgrounds
                   disabled
                     ? 'lsd:text-lsd-text-secondary'
-                    : error
-                      ? 'lsd:text-lsd-destructive'
-                      : 'lsd:text-lsd-text-primary',
+                    : error && 'lsd:text-lsd-text-destructive',
                   // Interactive States
                   disabled ? 'lsd:cursor-not-allowed' : '',
                   // Typography
@@ -230,7 +228,7 @@ const Autocomplete = React.forwardRef<HTMLInputElement, AutocompleteProps>(
                       // Sizing
                       'lsd:size-(--lsd-spacing-base)',
                       // Colors & Backgrounds
-                      disabled ? 'lsd:text-lsd-text-secondary' : 'lsd:text-lsd-icon-primary'
+                      disabled && 'lsd:text-lsd-text-secondary'
                     )}
                     weight="duotone"
                   />

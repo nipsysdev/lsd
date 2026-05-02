@@ -19,7 +19,7 @@ export const tabsVariants = cva('', {
   },
 });
 
-export const tabsListVariants = cva('lsd:bg-lsd-surface lsd:border-b lsd:flex lsd:flex-row', {
+export const tabsListVariants = cva('lsd:border-b lsd:flex lsd:flex-row', {
   variants: {
     size: {
       sm: 'lsd:h-8',
@@ -38,7 +38,7 @@ export const tabsListVariants = cva('lsd:bg-lsd-surface lsd:border-b lsd:flex ls
 });
 
 export const tabsTriggerVariants = cva(
-  'lsd:text-lsd-text-primary lsd:cursor-pointer lsd:border lsd:border-transparent lsd:border-b-0 lsd:hover:underline lsd:data-[state=active]:border-lsd-border lsd:data-[state=active]:bg-lsd-surface lsd:data-[state=active]:font-medium lsd:disabled:opacity-34 lsd:disabled:pointer-events-none lsd:flex lsd:items-center lsd:justify-center lsd:whitespace-nowrap lsd:transition-colors',
+  'lsd:cursor-pointer lsd:border lsd:border-transparent lsd:border-b-0 lsd:hover:underline lsd:data-[state=active]:border-lsd-border lsd:data-[state=active]:font-medium lsd:data-[state=active]:bg-lsd-foreground lsd:disabled:opacity-34 lsd:disabled:pointer-events-none lsd:flex lsd:items-center lsd:justify-center lsd:whitespace-nowrap lsd:transition-colors',
   {
     variants: {
       size: {

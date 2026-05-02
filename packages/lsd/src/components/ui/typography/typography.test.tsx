@@ -24,7 +24,7 @@ describe('Typography', () => {
   it('uses default color (primary) when not specified', () => {
     render(<Typography>Text</Typography>);
     const element = screen.getByText('Text');
-    expect(element).toHaveClass('lsd:text-lsd-text-primary');
+    expect(element).toHaveClass('lsd:text-lsd-text-neutral');
   });
 
   it('applies display1 variant classes correctly', () => {
@@ -172,7 +172,7 @@ describe('Typography', () => {
   it('applies primary color classes correctly', () => {
     render(<Typography color="primary">Primary</Typography>);
     const element = screen.getByText('Primary');
-    expect(element).toHaveClass('lsd:text-lsd-text-primary');
+    expect(element).toHaveClass('lsd:text-lsd-text-neutral');
   });
 
   it('applies secondary color classes correctly', () => {
@@ -184,25 +184,25 @@ describe('Typography', () => {
   it('applies destructive color classes correctly', () => {
     render(<Typography color="destructive">Destructive</Typography>);
     const element = screen.getByText('Destructive');
-    expect(element).toHaveClass('lsd:text-lsd-destructive-text');
+    expect(element).toHaveClass('lsd:text-lsd-text-destructive');
   });
 
   it('applies success color classes correctly', () => {
     render(<Typography color="success">Success</Typography>);
     const element = screen.getByText('Success');
-    expect(element).toHaveClass('lsd:text-lsd-success-text');
+    expect(element).toHaveClass('lsd:text-lsd-text-success');
   });
 
   it('applies warning color classes correctly', () => {
     render(<Typography color="warning">Warning</Typography>);
     const element = screen.getByText('Warning');
-    expect(element).toHaveClass('lsd:text-lsd-warning-text');
+    expect(element).toHaveClass('lsd:text-lsd-text-warning');
   });
 
   it('applies info color classes correctly', () => {
     render(<Typography color="info">Info</Typography>);
     const element = screen.getByText('Info');
-    expect(element).toHaveClass('lsd:text-lsd-info-text');
+    expect(element).toHaveClass('lsd:text-lsd-text-info');
   });
 
   it('merges custom className with component classes', () => {
@@ -257,7 +257,7 @@ describe('typographyVariants', () => {
   });
 
   it('returns correct classes for primary color', () => {
-    expect(typographyVariants({ color: 'primary' })).toContain('lsd:text-lsd-text-primary');
+    expect(typographyVariants({ color: 'primary' })).toContain('lsd:text-lsd-text-neutral');
   });
 
   it('returns correct classes for secondary color', () => {
@@ -265,19 +265,19 @@ describe('typographyVariants', () => {
   });
 
   it('returns correct classes for destructive color', () => {
-    expect(typographyVariants({ color: 'destructive' })).toContain('lsd:text-lsd-destructive-text');
+    expect(typographyVariants({ color: 'destructive' })).toContain('lsd:text-lsd-text-destructive');
   });
 
   it('returns correct classes for success color', () => {
-    expect(typographyVariants({ color: 'success' })).toContain('lsd:text-lsd-success-text');
+    expect(typographyVariants({ color: 'success' })).toContain('lsd:text-lsd-text-success');
   });
 
   it('returns correct classes for warning color', () => {
-    expect(typographyVariants({ color: 'warning' })).toContain('lsd:text-lsd-warning-text');
+    expect(typographyVariants({ color: 'warning' })).toContain('lsd:text-lsd-text-warning');
   });
 
   it('returns correct classes for info color', () => {
-    expect(typographyVariants({ color: 'info' })).toContain('lsd:text-lsd-info-text');
+    expect(typographyVariants({ color: 'info' })).toContain('lsd:text-lsd-text-info');
   });
 
   it('uses default variant when not specified', () => {
@@ -285,7 +285,7 @@ describe('typographyVariants', () => {
   });
 
   it('uses default color when not specified', () => {
-    expect(typographyVariants({})).toContain('lsd:text-lsd-text-primary');
+    expect(typographyVariants({})).toContain('lsd:text-lsd-text-neutral');
   });
 
   it('combines variant and color correctly', () => {

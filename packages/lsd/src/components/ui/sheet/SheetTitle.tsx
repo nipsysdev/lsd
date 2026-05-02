@@ -15,7 +15,7 @@ export function SheetTitle({
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
-      className={cn('lsd:text-foreground lsd:font-semibold', className)}
+      className={cn('lsd:font-semibold', className)}
       {...props}
     />
   );

@@ -42,13 +42,8 @@ export function DropdownMenuSubTrigger({
         'lsd:outline-none',
         'lsd:select-none',
         // Interactive States - Focus/Hover
-        'focus:lsd:bg-[var(--lsd-accent)]',
-        'focus:lsd:text-[var(--lsd-accent-foreground)]',
         'lsd:hover:underline',
         'lsd:focus:underline',
-        // Interactive States - Open state
-        'data-[state=open]:lsd:bg-[var(--lsd-accent)]',
-        'data-[state=open]:lsd:text-[var(--lsd-accent-foreground)]',
         // Interactive States - Cursor
         'lsd:cursor-pointer',
         // Pseudo-selectors & ARIA - Inset variant

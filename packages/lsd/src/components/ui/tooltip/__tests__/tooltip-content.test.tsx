@@ -38,8 +38,7 @@ describe('TooltipContent', () => {
       </Tooltip>
     );
     const content = document.querySelector('[data-slot="tooltip-content"]');
-    expect(content).toHaveClass('lsd:bg-lsd-surface');
-    expect(content).toHaveClass('lsd:text-lsd-text-primary');
+    expect(content).toHaveClass('lsd:bg-lsd-foreground');
     expect(content).toHaveClass('lsd:animate-in');
     expect(content).toHaveClass('lsd:fade-in-0');
     expect(content).toHaveClass('lsd:zoom-in-95');
@@ -50,6 +49,7 @@ describe('TooltipContent', () => {
     expect(content).toHaveClass('lsd:w-fit');
     expect(content).toHaveClass('lsd:p-(--lsd-spacing-smaller)');
     expect(content).toHaveClass('lsd:text-xs');
+    expect(content).toHaveClass('lsd:text-balance');
   });
 
   it('applies animation classes for closed state', () => {
