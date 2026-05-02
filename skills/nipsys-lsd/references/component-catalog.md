@@ -1,6 +1,6 @@
 # LSD Component Catalog
 
-Quick reference for all 41 components in the @nipsys/lsd library.
+Quick reference for all 39 components in the @nipsys/lsd library.
 
 ## External Dependencies
 - **cmdk** - Command component

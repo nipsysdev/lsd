@@ -331,8 +331,8 @@ import { Label } from '@nipsys/lsd'
 
 ### Sonner (Toasts)/Form Validation
 ```tsx
-import { toast } from '@nipsys/lsd/ui/toast'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@nipsys/lsd/ui/form'
+import { toast } from 'sonner'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@nipsys/lsd'
 
 toast.success("Changes saved successfully")
 toast.error("Failed to save changes")
