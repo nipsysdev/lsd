@@ -33,7 +33,8 @@ LSD uses CSS custom properties (CSS variables) for theming. All colors must use 
 
 | Token | Light | Dark |
 |-------|-------|------|
-| `--lsd-background` | #ffffff | #000000 |
+| `--lsd-background` | #ffffff | #0a0a0a |
+| `--lsd-foreground` | #f8f8f8 | #191919 |
 | `--lsd-border` | #000000 | #ffffff |
 
 ### Semantic Colors
@@ -44,6 +45,15 @@ LSD uses CSS custom properties (CSS variables) for theming. All colors must use 
 | `--lsd-success` | #15803d | #22c55e |
 | `--lsd-warning` | #b45309 | #d97706 |
 | `--lsd-info` | #2563eb | #2563eb |
+
+### Text Semantic Colors
+
+| Token | Light | Dark |
+|-------|-------|------|
+| `--lsd-text-destructive` | #c92d2d | #f27a7a |
+| `--lsd-text-success` | #1c9618 | #30c82a |
+| `--lsd-text-warning` | #854d0e | #f59e0b |
+| `--lsd-text-info` | #2563eb | #2563eb |
 
 ## Usage Examples (JSX)
 

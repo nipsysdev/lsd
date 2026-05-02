@@ -60,6 +60,7 @@ Accent themes are set via the `data-theme` attribute on any HTML element. Child 
 Full color token list available in [colors.md](./colors.md):
 - Primary: `--lsd-primary`, `--lsd-primary-content`
 - Text: `--lsd-text-neutral`, `--lsd-text-secondary`
+- Text Semantic: `--lsd-text-destructive`, `--lsd-text-success`, `--lsd-text-warning`, `--lsd-text-info`
 - Background/Border: `--lsd-background`, `--lsd-foreground`, `--lsd-border`
 - Semantic: `--lsd-destructive`, `--lsd-success`, `--lsd-warning`, `--lsd-info`
 
