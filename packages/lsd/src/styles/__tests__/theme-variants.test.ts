@@ -110,7 +110,7 @@ function parseMonochromeTheme(css: string): ThemeVariables {
   const darkVars: Record<string, string> = {};
 
   const lightMatch = content.match(/&,\s*&\.light\s*\{([^}]+)\}/s);
-  const darkMatch = content.match(/&\.dark,\s*\.dark[^}]*\{([^}]+)\}/s);
+  const darkMatch = content.match(/&\.dark\s*\{([^}]+)\}/s);
 
   if (lightMatch) {
     Object.assign(lightVars, extractVariables(lightMatch[1]));
