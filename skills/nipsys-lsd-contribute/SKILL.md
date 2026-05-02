@@ -1,6 +1,6 @@
 ---
 name: nipsys-lsd-contribute
-description: Use when contributing to the LSD monorepo. Provides comprehensive workflows for automated documentation generation from TSDoc annotations, writing E2E tests with Playwright using role-based selectors, creating documentation examples with theme synchronization, and managing monorepo-specific development tasks. Ideal for component maintainers, documentation authors, testers, and contributors working with packages/lsd (38+ components) and packages/lsd-docs (Next.js documentation site).
+description: Use when contributing to the LSD monorepo. Provides comprehensive workflows for automated documentation generation from TSDoc annotations, writing E2E tests with Playwright using role-based selectors, creating documentation examples with theme synchronization, and managing monorepo-specific development tasks. Ideal for component maintainers, documentation authors, testers, and contributors working with packages/lsd (40+ components) and packages/lsd-docs (Next.js documentation site).
 ---
 
 # LSD Contribution Guide
@@ -10,10 +10,24 @@ Guide for contributing to the LSD monorepo, covering documentation generation, t
 ## Overview
 
 The LSD monorepo contains:
-- **packages/lsd/** - 38+ UI components with Radix UI primitives
+- **packages/lsd/** - 40+ UI components with Radix UI primitives
 - **packages/lsd-docs/** - Next.js documentation site with live examples
 - Automated documentation generation from TSDoc annotations
 - Playwright E2E tests with role-based selectors
+
+## Development Setup
+
+Clone and set up the monorepo:
+```bash
+git clone https://github.com/nipsysdev/lsd
+cd lsd
+pnpm install
+pnpm dev  # Starts both packages/lsd and packages/lsd-docs
+```
+
+Project structure:
+- `packages/lsd/` - Component library
+- `packages/lsd-docs/` - Documentation site (Next.js)
 
 ## When to Use This Skill
 
@@ -63,14 +77,17 @@ DO NOT use this skill for:
 - Theme formats: light/dark (.dark class), accent (data-theme), font (font-* classes)
 - Handles lazy-loaded iframes via load listeners
 
+> **Parent vs Example:** Parent pages pass iframe refs to send theme; example pages call with no arguments to receive.
+
 ## Workflow
 
 ### Adding Documentation for a Component
 
 1. **Annotate component** in packages/lsd/src/components/ui/{component}/
-   - Add required TSDoc tags: @docSectionPageDescription, @docSectionAbout
-   - Add @docSectionComposition if has sub-components
-   - Add accessibility tags if needed
+    - Add required TSDoc tags: @docSectionPageDescription, @docSectionAbout
+    - Add @docSectionComposition if has sub-components
+    - Add accessibility tags if needed
+    - Validate before generating: check annotations compile without errors
 
 2. **Create examples** in packages/lsd-docs/app/examples/{component}/
    - Follow example structure with SIZE, CODE, and useSendThemeToIframes()
@@ -89,10 +106,12 @@ DO NOT use this skill for:
 ### Writing E2E Tests
 
 1. **Read component source** to understand DOM structure and patterns
-2. **Identify example page** to test (/examples/{component}/{variant})
+2. **Verify example exists** at `/examples/{component}/{variant}` before writing tests
 3. **Use semantic roles** for stable selectors
 4. **Test observable behavior** not implementation details
 5. **Wait for animations** when testing dialogs/dropdowns
+
+> **Why example pages?** Example pages render components directly without iframe complexity, making tests more stable and debuggable.
 
 ### Running Tests
 
@@ -107,14 +126,6 @@ pnpm test autocomplete.spec.ts
 pnpm test autocomplete.spec.ts --grep "basic interaction"
 ```
 
-### Writing E2E Tests
-
-1. **Read component source** to understand DOM structure and patterns
-2. **Identify example page** to test (/examples/{component}/{variant})
-3. **Use semantic roles** for stable selectors
-4. **Test observable behavior** not implementation details
-5. **Wait for animations** when testing dialogs/dropdowns
-
 ## Troubleshooting
 
 | Issue | Solution |
@@ -126,6 +137,13 @@ pnpm test autocomplete.spec.ts --grep "basic interaction"
 | E2E test: dialog not opening | Click readonly input, not search input inside dialog |
 | E2E test: focus assertions failing | Add wait for focus to settle (100-200ms) |
 | Console: [useSendThemeToIframes] errors | Check iframe refs are passed correctly to parent hook |
+
+## Contribution Process
+
+1. Create branch: `feat/component-name` or `fix/issue-description`
+2. Make changes following workflows above
+3. Run tests: `pnpm test` and `pnpm test:e2e`
+4. Submit PR with description of changes
 
 ## Quick Reference
 
