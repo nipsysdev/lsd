@@ -8,9 +8,9 @@ LSD uses CSS custom properties (CSS variables) for theming. All colors must use 
 
 | Category | Tokens | Purpose |
 |----------|--------|---------|
-| **Primary** | `--lsd-primary`, `--lsd-primary-foreground` | Brand color & contrast text |
-| **Text** | `--lsd-text-primary`, `--lsd-text-secondary` | Body and muted text |
-| **Surface/Border** | `--lsd-surface`, `--lsd-border` | Backgrounds and separators |
+| **Primary** | `--lsd-primary`, `--lsd-primary-content` | Brand color & contrast text |
+| **Text** | `--lsd-text-neutral`, `--lsd-text-secondary` | Body and muted text |
+| **Surface/Border** | `--lsd-background`, `--lsd-border` | Backgrounds and separators |
 | **Semantic** | `--lsd-destructive`, `--lsd-success`, `--lsd-warning`, `--lsd-info` | Status and actions |
 
 ## Token Values
@@ -20,20 +20,20 @@ LSD uses CSS custom properties (CSS variables) for theming. All colors must use 
 | Token | Light | Dark |
 |-------|-------|------|
 | `--lsd-primary` | #000000 | #ffffff |
-| `--lsd-primary-foreground` | #ffffff | #000000 |
+| `--lsd-primary-content` | #ffffff | #000000 |
 
 ### Text Colors
 
 | Token | Light | Dark |
 |-------|-------|------|
-| `--lsd-text-primary` | #000000 | #ffffff |
+| `--lsd-text-neutral` | #000000 | #ffffff |
 | `--lsd-text-secondary` | #4a4a4a | #d2d2d2 |
 
 ### Surface & Border
 
 | Token | Light | Dark |
 |-------|-------|------|
-| `--lsd-surface` | #ffffff | #000000 |
+| `--lsd-background` | #ffffff | #000000 |
 | `--lsd-border` | #000000 | #ffffff |
 
 ### Semantic Colors
@@ -51,12 +51,12 @@ LSD uses CSS custom properties (CSS variables) for theming. All colors must use 
 import { cn } from '@/lib/utils';
 
 // Button with token colors
-<button className="bg-(--lsd-primary) text-(--lsd-primary-foreground)">
+<button className="bg-(--lsd-primary) text-(--lsd-primary-content)">
   Primary Button
 </button>
 
 // Text variants
-<p className="text-(--lsd-text-primary)">Primary text</p>
+<p className="text-(--lsd-text-neutral)">Primary text</p>
 <p className="text-(--lsd-text-secondary)">Secondary text</p>
 
 // Semantic buttons
@@ -66,12 +66,12 @@ import { cn } from '@/lib/utils';
 <button className="bg-(--lsd-info)">Info</button>
 
 // Card with surface and border
-<div className="bg-(--lsd-surface) border border-(--lsd-border)">
+<div className="bg-(--lsd-background) border border-(--lsd-border)">
   Card content
 </div>
 
 // With utility helper
-<div className={cn('p-(--lsd-spacing-base)', 'bg-(--lsd-surface)', 'border-(--lsd-border)')}>
+<div className={cn('p-(--lsd-spacing-base)', 'bg-(--lsd-background)', 'border-(--lsd-border)')}>
   Responsive card
 </div>
 ```
@@ -102,7 +102,7 @@ Override specific tokens in your component or global CSS:
 /* Global override */
 :root[data-theme="custom"] {
   --lsd-primary: #6366f1;
-  --lsd-primary-foreground: #ffffff;
+  --lsd-primary-content: #ffffff;
 }
 ```
 

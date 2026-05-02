@@ -58,10 +58,9 @@ Accent themes are set via the `data-theme` attribute on any HTML element. Child 
 
 ### Color Variables
 Full color token list available in [colors.md](./colors.md):
-- Primary: `--lsd-primary`, `--lsd-primary-foreground`
-- Text: `--lsd-text-primary`, `--lsd-text-secondary`
-- Surface/Border: `--lsd-surface`, `--lsd-border`
-- Icon: `--lsd-icon-primary`, `--lsd-icon-secondary`
+- Primary: `--lsd-primary`, `--lsd-primary-content`
+- Text: `--lsd-text-neutral`, `--lsd-text-secondary`
+- Background/Border: `--lsd-background`, `--lsd-foreground`, `--lsd-border`
 - Semantic: `--lsd-destructive`, `--lsd-success`, `--lsd-warning`, `--lsd-info`
 
 ### Spacing Variables
@@ -74,13 +73,13 @@ Create a custom accent theme by defining CSS variables scoped to a specific `dat
 ```css
 :root[data-theme="mytheme"] {
   --lsd-primary: #6366f1;
-  --lsd-primary-foreground: #ffffff;
+  --lsd-primary-content: #ffffff;
   --lsd-border: #818cf8;
 }
 
 [data-theme="mytheme"] .dark {
   --lsd-primary: #818cf8;
-  --lsd-primary-foreground: #000000;
+  --lsd-primary-content: #000000;
   --lsd-border: #6366f1;
 }
 ```
