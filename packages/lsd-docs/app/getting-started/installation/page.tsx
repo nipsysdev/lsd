@@ -21,7 +21,7 @@ export default function InstallationPage() {
     <DocsLayout>
       <PageHeader
         title="Installation"
-        description="Start building with LSD. Installation guide for adding the Logos Design System to your project."
+        description="Start building with @nipsys/lsd. Installation guide for adding LSD to your project."
       />
 
       <PageContent>
@@ -34,7 +34,7 @@ export default function InstallationPage() {
         </PageSection>
 
         <PageSection title="Install the package">
-          <Typography variant="body1">Install LSD using your preferred package manager:</Typography>
+          <Typography variant="body1">Use your preferred package manager:</Typography>
           <Tabs defaultValue="npm" className="mt-(--lsd-spacing-base)" fullWidth bordered>
             <TabsList>
               <TabsTrigger value="npm">npm</TabsTrigger>
@@ -58,7 +58,7 @@ export default function InstallationPage() {
         </PageSection>
 
         <PageSection title="Import the styles">
-          <Typography variant="body1">Import the LSD styles, either in CSS or JS/TS:</Typography>
+          <Typography variant="body1">Import the styles, either in CSS or JS/TS:</Typography>
 
           <Tabs defaultValue="css" className="mt-(--lsd-spacing-base)" fullWidth bordered>
             <TabsList>
