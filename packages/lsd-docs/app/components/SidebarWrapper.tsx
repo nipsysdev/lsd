@@ -28,7 +28,7 @@ interface SidebarWrapperProps {
 export default function SidebarWrapper({ currentPath, children }: SidebarWrapperProps) {
   return (
     <SidebarProvider>
-      <Sidebar>
+      <Sidebar triggerStyle={{ top: '10px' }}>
         <SidebarHeader>
           <SidebarMenu>
             <SidebarMenuItem>
