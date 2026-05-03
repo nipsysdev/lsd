@@ -164,6 +164,74 @@ export default function MyComponent() {
                   </Typography>
                 </CardContent>
               </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>showTrigger</CardTitle>
+                  <CardDescription>
+                    Whether to show the sidebar trigger button. When true, displays the trigger
+                    button to toggle sidebar visibility.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>triggerIconExpanded</CardTitle>
+                  <CardDescription>
+                    Icon element for the sidebar trigger when expanded. Passed to SidebarTrigger's
+                    icon prop when sidebar is expanded.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>React.ReactNode</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>triggerIconCollapsed</CardTitle>
+                  <CardDescription>
+                    Icon element for the sidebar trigger when collapsed. Passed to SidebarTrigger's
+                    icon prop when sidebar is collapsed.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>React.ReactNode</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>triggerClassName</CardTitle>
+                  <CardDescription>
+                    Class name for the sidebar trigger button. Applied to the SidebarTrigger
+                    component.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
@@ -460,6 +528,79 @@ export default function MyComponent() {
                 <CardContent>
                   <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
                     <strong>Type:</strong> <code>boolean</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              SidebarTrigger
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>icon</CardTitle>
+                  <CardDescription>
+                    Icon element to display in the trigger button. Defaults to SidebarSimpleIcon
+                    with duotone weight.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>React.ReactNode</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>text</CardTitle>
+                  <CardDescription>
+                    Accessible label text for the trigger button. Defaults to "Toggle Sidebar".
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>iconClassName</CardTitle>
+                  <CardDescription>
+                    Class name applied to the icon element. Defaults to "lsd:size-4/5".
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>textClassName</CardTitle>
+                  <CardDescription>
+                    Class name applied to the text span element. Defaults to "lsd:sr-only".
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>string</code>
                   </Typography>
                   <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
                     <strong>Optional</strong>

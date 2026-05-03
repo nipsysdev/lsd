@@ -1,3 +1,4 @@
+import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react';
 import type * as React from 'react';
 import {
   Sheet,
@@ -7,6 +8,7 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { SidebarTrigger } from './SidebarContent';
 import { useSidebar } from './SidebarContext';
 import { SIDEBAR_WIDTH_MOBILE, type SidebarProps } from './types';
 
@@ -67,11 +69,23 @@ export function Sidebar({
   side = 'left',
   variant = 'sidebar',
   collapsible = 'offcanvas',
+  showTrigger = true,
+  triggerIconExpanded,
+  triggerIconCollapsed,
+  triggerClassName,
   className,
   children,
   ...props
 }: SidebarProps) {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
+
+  const defaultTriggerIconExpanded = <CaretLeftIcon className="lsd:size-4/5" weight="duotone" />;
+  const defaultTriggerIconCollapsed = <CaretRightIcon className="lsd:size-4/5" weight="duotone" />;
+
+  const triggerIcon =
+    state === 'expanded'
+      ? (triggerIconExpanded ?? defaultTriggerIconExpanded)
+      : (triggerIconCollapsed ?? defaultTriggerIconCollapsed);
 
   if (collapsible === 'none') {
     return (
@@ -115,7 +129,7 @@ export function Sidebar({
 
   return (
     <div
-      className="lsd:group lsd:peer lsd:text-sidebar-foreground lsd:hidden lsd:md:block"
+      className="lsd:group lsd:peer lsd:text-sidebar-foreground lsd:hidden lsd:md:block lsd:relative"
       data-state={state}
       data-collapsible={state === 'collapsed' ? collapsible : ''}
       data-variant={variant}
@@ -134,13 +148,22 @@ export function Sidebar({
             : 'lsd:group-data-[collapsible=icon]:w-(--sidebar-width-icon)'
         )}
       />
+      {showTrigger && (
+        <SidebarTrigger
+          className={
+            triggerClassName ??
+            'lsd:absolute lsd:top-2 lsd:-right-8 lsd:bg-lsd-surface lsd:z-1 lsd:border lsd:border-l-0 lsd:border-lsd-border'
+          }
+          icon={triggerIcon}
+        />
+      )}
       <div
         data-slot="sidebar-container"
         className={cn(
           'lsd:fixed lsd:inset-y-0 lsd:z-10 lsd:hidden lsd:h-svh lsd:w-(--sidebar-width) lsd:transition-[left,right,width] lsd:duration-200 lsd:ease-linear lsd:md:flex',
           side === 'left'
-            ? 'lsd:left-0 lsd:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
-            : 'lsd:right-0 lsd:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
+            ? 'lsd:left-0 lsd:group-data-[collapsible=offcanvas]:-left-(--sidebar-width)'
+            : 'lsd:right-0 lsd:group-data-[collapsible=offcanvas]:-right-(--sidebar-width)',
           // Adjust the padding for floating and inset variants.
           variant === 'floating' || variant === 'inset'
             ? 'lsd:p-(--lsd-spacing-smaller) lsd:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]'

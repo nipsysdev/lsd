@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, SidebarTrigger } from '@nipsys/lsd';
+import { Button, SidebarTrigger, useSidebar } from '@nipsys/lsd';
 import { GithubLogoIcon, MagnifyingGlassIcon } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { FontToggle } from './docs/FontToggle';
@@ -12,12 +12,14 @@ interface HeaderProps {
 }
 
 export default function Header({ className }: HeaderProps) {
+  const { isMobile } = useSidebar();
+
   return (
     <header className={`w-full border-b ${className || ''}`}>
-      <div className="flex items-center justify-between py-(--lsd-spacing-small) px-(--lsd-spacing-base)">
-        <div className="flex items-center gap-(--lsd-spacing-base)">
-          <SidebarTrigger />
-        </div>
+      <div
+        className={`flex items-center ${isMobile ? 'justify-between' : 'justify-end'} py-(--lsd-spacing-small) px-(--lsd-spacing-base)`}
+      >
+        {isMobile && <SidebarTrigger />}
 
         <div className="flex items-center gap-(--lsd-spacing-larger)">
           <Button

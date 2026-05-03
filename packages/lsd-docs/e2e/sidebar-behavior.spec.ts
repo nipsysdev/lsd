@@ -34,7 +34,7 @@ test.describe('Sidebar Behavior', () => {
     await page.goto('/examples/sidebar/basic');
 
     const _sidebar = page.locator('[data-slot="sidebar"]');
-    const trigger = page.locator('[data-sidebar="trigger"]');
+    const trigger = page.locator('[data-sidebar="trigger"]').first();
 
     const rail = page.locator('[data-sidebar="rail"]');
     await expect(rail).toBeVisible();
