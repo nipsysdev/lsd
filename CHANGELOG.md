@@ -29,10 +29,8 @@ If you have custom themes or override theme variables, you'll need to update the
 
 ### Features
 
-- **New Monochrome Theme**: Added a pure monochrome accent theme for minimal design needs
 - **Improved Theme System**: Redesigned CSS custom properties for better semantic clarity and consistency
 - **Enhanced Theming Architecture**: Better support for nested light/dark variants with accent theme inheritance
-- **Expanded Theme Options**: 5 accent themes available (Monochrome, Teal, Nord, Terracotta, Catppuccin)
 
 ### Improvements
 
