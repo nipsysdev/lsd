@@ -129,7 +129,7 @@ export function Sidebar({
 
   return (
     <div
-      className="lsd:group lsd:peer lsd:hidden lsd:md:block"
+      className="lsd:group lsd:peer lsd:relative lsd:hidden lsd:md:block"
       data-state={state}
       data-collapsible={state === 'collapsed' ? collapsible : ''}
       data-variant={variant}
