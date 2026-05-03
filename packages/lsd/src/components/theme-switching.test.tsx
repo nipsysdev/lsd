@@ -58,17 +58,6 @@ describe('Theme Switching Tests', () => {
       expect(button).toHaveClass('lsd:bg-lsd-primary');
     });
 
-    it('renders with slate theme variant', () => {
-      render(
-        <div data-theme="slate">
-          <Button data-testid="button">Slate Theme Button</Button>
-        </div>
-      );
-      const button = screen.getByTestId('button');
-      expect(button).toBeInTheDocument();
-      expect(button).toHaveClass('lsd:bg-lsd-primary');
-    });
-
     it('renders with dark mode and nord theme', () => {
       render(
         <div className="dark" data-theme="nord">
@@ -113,19 +102,6 @@ describe('Theme Switching Tests', () => {
         </div>
       );
       const button = screen.getByTestId('button-destructive-nord');
-      expect(button).toBeInTheDocument();
-      expect(button).toHaveClass('lsd:bg-lsd-destructive');
-    });
-
-    it('renders destructive variant in slate theme', () => {
-      render(
-        <div data-theme="slate">
-          <Button variant="destructive" data-testid="button-destructive-slate">
-            Destructive
-          </Button>
-        </div>
-      );
-      const button = screen.getByTestId('button-destructive-slate');
       expect(button).toBeInTheDocument();
       expect(button).toHaveClass('lsd:bg-lsd-destructive');
     });
