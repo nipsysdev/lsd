@@ -65,6 +65,14 @@ export interface SidebarProps extends React.ComponentProps<'div'> {
    * Applied to the SidebarTrigger component.
    */
   triggerClassName?: string;
+  /**
+   * Inline styles for the sidebar trigger button.
+   *
+   * Applied to the SidebarTrigger component. Use for positional overrides like `top`
+   * since prefixed Tailwind classes (lsd:top-2) cannot be overridden with unprefixed
+   * classes due to how tailwind-merge handles prefixes.
+   */
+  triggerStyle?: React.CSSProperties;
 }
 
 export interface SidebarProviderProps extends React.ComponentProps<'div'> {
