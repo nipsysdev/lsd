@@ -17,18 +17,6 @@ export default function TypographyPage() {
       />
 
       <PageContent>
-        <PageSection title="About Typography">
-          <Typography variant="body1">
-            Typography is how we speak to users. LSD's system prioritises readability,
-            accessibility, and the hierarchy of ideas over trends.
-          </Typography>
-
-          <Typography variant="body1" className="mt-(--lsd-spacing-base)">
-            The content comes first — everything else serves it. Our scale is designed for
-            real‑world reading across devices and conditions.
-          </Typography>
-        </PageSection>
-
         <PageSection title="Font Families">
           <Typography variant="body1">
             LSD offers three font family stacks for different use cases. Choose what serves your
@@ -249,8 +237,8 @@ function MyComponent() {
 
       <PageNavigation
         previous={{
-          title: 'Colours',
-          href: '/design-tokens/colours',
+          title: 'Colors',
+          href: '/design-tokens/colors',
         }}
         next={{
           title: 'Spacing',
