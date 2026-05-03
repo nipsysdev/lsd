@@ -73,6 +73,7 @@ export function Sidebar({
   triggerIconExpanded,
   triggerIconCollapsed,
   triggerClassName,
+  triggerStyle,
   className,
   children,
   ...props
@@ -150,10 +151,11 @@ export function Sidebar({
       />
       {showTrigger && (
         <SidebarTrigger
-          className={
-            triggerClassName ??
-            'lsd:absolute lsd:top-2 lsd:-right-8 lsd:bg-lsd-background lsd:z-1 lsd:border lsd:border-l-0 lsd:border-lsd-border'
-          }
+          className={cn(
+            'lsd:absolute lsd:top-2 lsd:-right-8 lsd:bg-lsd-background lsd:z-1 lsd:border lsd:border-l-0 lsd:border-lsd-border',
+            triggerClassName
+          )}
+          style={triggerStyle}
           icon={triggerIcon}
         />
       )}
