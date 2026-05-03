@@ -74,7 +74,7 @@ export function AutocompleteContent({
         // Spacing
         'lsd:p-0',
         // Colors & Backgrounds
-        'lsd:bg-lsd-surface',
+        'lsd:bg-foreground',
         'lsd:border-lsd-border',
         // Borders, Shapes & Effects
         'lsd:data-[side=top]:border-b-0',
@@ -121,8 +121,6 @@ export function AutocompleteContent({
                   keywords={[option.label]}
                   onSelect={() => onSelect(option.value)}
                   className={cn(
-                    // Colors & Backgrounds
-                    'lsd:text-lsd-text-primary',
                     // Interactive States
                     'lsd:hover:underline',
                     'lsd:focus:underline',
@@ -144,8 +142,6 @@ export function AutocompleteContent({
                     {matchedPart}
                     <span
                       className={cn(
-                        // Colors & Backgrounds
-                        'lsd:text-lsd-text-primary',
                         // Other Utility Classes
                         'lsd:whitespace-pre'
                       )}

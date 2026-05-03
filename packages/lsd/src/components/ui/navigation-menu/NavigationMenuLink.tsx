@@ -21,31 +21,20 @@ export function NavigationMenuLink({ className, ...props }: NavigationMenuLinkPr
         'lsd:flex',
         'lsd:flex-col',
         // Sizing
-        'lsd:text-[0.875rem]',
+        'lsd:h-9',
+        'lsd:text-sm',
         // Spacing
         'lsd:gap-(--lsd-spacing-smallest)',
-        'lsd:p-(--lsd-spacing-base)',
+        'lsd:px-(--lsd-spacing-base) lsd:py-(--lsd-spacing-smaller)',
         // Borders, Shapes & Effects
-        'lsd:rounded-sm',
+        'lsd:border',
+        'lsd:cursor-pointer',
         'lsd:transition-all',
         'lsd:outline-none',
-        // Interactive States - Hover
-        'hover:lsd:bg-[var(--lsd-accent)]',
-        'hover:lsd:text-[var(--lsd-accent-foreground)]',
-        // Interactive States - Focus
-        'focus:lsd:bg-[var(--lsd-accent)]',
-        'focus:lsd:text-[var(--lsd-accent-foreground)]',
-        'focus-visible:lsd:ring-[3px]',
-        'focus-visible:lsd:ring-ring/50',
-        'focus-visible:lsd:outline-1',
-        // Interactive States - Active state
-        'data-[active=true]:lsd:bg-[var(--lsd-accent)]/50',
-        'data-[active=true]:lsd:text-[var(--lsd-accent-foreground)]',
-        'data-[active=true]:hover:lsd:bg-[var(--lsd-accent)]',
-        'data-[active=true]:focus:lsd:bg-[var(--lsd-accent)]',
         // Pseudo-selectors & ARIA - SVG styling
-        "[&_svg:not([class*='size-']):lsd:size-4",
-        "[&_svg:not([class*='text-'):lsd:text-[var(--lsd-text-secondary)]",
+        'lsd:hover:underline lsd:focus:underline',
+        "lsd:[&_svg:not([class*='size-']):size-4",
+        "lsd:[&_svg:not([class*='text-'):text-[var(--lsd-text-secondary)]",
         className
       )}
       {...props}

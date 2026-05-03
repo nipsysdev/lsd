@@ -26,7 +26,7 @@ describe('Checkbox', () => {
     render(<Checkbox checked />);
     const checkbox = screen.getByRole('checkbox');
     expect(checkbox).toHaveClass('lsd:data-[state=checked]:bg-lsd-primary');
-    expect(checkbox).toHaveClass('lsd:data-[state=checked]:text-lsd-surface');
+    expect(checkbox).toHaveClass('lsd:data-[state=checked]:text-lsd-primary-content');
     expect(checkbox).toHaveClass('lsd:data-[state=checked]:border-lsd-primary');
   });
 

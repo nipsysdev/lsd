@@ -21,8 +21,7 @@ describe('PopoverContent', () => {
       </Popover>
     );
     const content = document.querySelector('[data-slot="popover-content"]');
-    expect(content).toHaveClass('lsd:bg-lsd-surface');
-    expect(content).toHaveClass('lsd:text-lsd-text-primary');
+    expect(content).toHaveClass('lsd:bg-lsd-foreground');
     expect(content).toHaveClass('lsd:z-50');
     expect(content).toHaveClass('lsd:w-(--radix-popper-anchor-width)');
     expect(content).toHaveClass('lsd:min-w-fit');
@@ -30,6 +29,7 @@ describe('PopoverContent', () => {
     expect(content).toHaveClass('lsd:border-lsd-border');
     expect(content).toHaveClass('lsd:p-(--lsd-spacing-base)');
     expect(content).toHaveClass('lsd:shadow-md');
+    expect(content).toHaveClass('lsd:outline-hidden');
   });
 
   it('applies animation classes', () => {

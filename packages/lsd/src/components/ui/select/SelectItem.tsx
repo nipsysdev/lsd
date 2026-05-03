@@ -27,8 +27,7 @@ export function SelectItem({
       data-slot="select-item"
       className={cn(
         // Colors & Backgrounds
-        'lsd:focus:bg-lsd-surface',
-        'lsd:focus:text-lsd-text-primary',
+        'lsd:focus:bg-lsd-foreground',
         // Layout & Positioning
         'lsd:relative',
         'lsd:flex',
@@ -51,7 +50,6 @@ export function SelectItem({
         'lsd:data-disabled:pointer-events-none',
         'lsd:data-disabled:opacity-50',
         // Pseudo-selectors & ARIA - SVG styling
-        "lsd:[&_svg:not([class*='text-'])]:text-lsd-icon-primary",
         'lsd:[&_svg]:pointer-events-none',
         'lsd:[&_svg]:shrink-0',
         "lsd:[&_svg:not([class*='size-'])]:size-(--lsd-spacing-base)",
@@ -78,7 +76,7 @@ export function SelectItem({
         )}
       >
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon className="lsd:size-4 lsd:text-lsd-icon-primary" />
+          <CheckIcon className="lsd:size-4" />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>

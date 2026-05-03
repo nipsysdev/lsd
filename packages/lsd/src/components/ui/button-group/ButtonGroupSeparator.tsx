@@ -33,7 +33,7 @@ const ButtonGroupSeparator = React.forwardRef<
       orientation={orientation}
       className={cn(
         // Colors & Backgrounds
-        'lsd:bg-border',
+        'lsd:bg-lsd-border',
         // Layout & Positioning
         'lsd:relative',
         'lsd:self-stretch',

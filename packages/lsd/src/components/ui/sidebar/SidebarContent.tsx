@@ -90,7 +90,7 @@ export function SidebarSeparator({ className, ...props }: SidebarSeparatorProps)
     <Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn('lsd:bg-sidebar-border lsd:mx-(--lsd-spacing-smaller) lsd:w-auto', className)}
+      className={cn('lsd:bg-lsd-border lsd:mx-(--lsd-spacing-smaller) lsd:w-auto', className)}
       {...props}
     />
   );
@@ -147,13 +147,15 @@ export function SidebarTrigger({
   onClick,
   icon,
   text = 'Toggle Sidebar',
-  iconClassName = 'lsd:size-4/5',
-  textClassName = 'lsd:sr-only',
+  iconClassName,
+  textClassName,
   ...props
 }: SidebarTriggerProps) {
   const { toggleSidebar } = useSidebar();
 
-  const defaultIcon = <SidebarSimpleIcon className={iconClassName} weight="duotone" />;
+  const defaultIcon = (
+    <SidebarSimpleIcon className={cn('lsd:size-4/5', iconClassName)} weight="duotone" />
+  );
 
   return (
     <Button
@@ -169,7 +171,7 @@ export function SidebarTrigger({
       {...props}
     >
       {icon ?? defaultIcon}
-      <span className={textClassName}>{text}</span>
+      <span className={cn('lsd:sr-only', textClassName)}>{text}</span>
     </Button>
   );
 }
@@ -193,10 +195,10 @@ export function SidebarRail({ className, ...props }: SidebarRailProps) {
       onClick={toggleSidebar}
       title="Toggle Sidebar"
       className={cn(
-        'hover:after:bg-sidebar-border lsd:absolute lsd:inset-y-0 lsd:z-20 lsd:hidden lsd:w-(--lsd-spacing-base) lsd:-translate-x-1/2 lsd:transition-all lsd:ease-linear lsd:group-data-[side=left]:-right-(--lsd-spacing-base) lsd:group-data-[side=right]:left-0 after:lsd:absolute after:lsd:inset-y-0 after:lsd:left-1/2 after:lsd:w-[2px] lsd:sm:flex',
+        'hover:after:bg-lsd-border lsd:absolute lsd:inset-y-0 lsd:z-20 lsd:hidden lsd:w-(--lsd-spacing-base) lsd:-translate-x-1/2 lsd:transition-all lsd:ease-linear lsd:group-data-[side=left]:-right-(--lsd-spacing-base) lsd:group-data-[side=right]:left-0 after:lsd:absolute after:lsd:inset-y-0 after:lsd:left-1/2 after:lsd:w-[2px] lsd:sm:flex',
         'lsd:in-data-[side=left]:cursor-w-resize lsd:in-data-[side=right]:cursor-e-resize',
         'lsd:[[data-side=left][data-state=collapsed]_&]:cursor-e-resize lsd:[[data-side=right][data-state=collapsed]_&]:cursor-w-resize',
-        'hover:group-data-[collapsible=offcanvas]:bg-sidebar lsd:group-data-[collapsible=offcanvas]:translate-x-0 lsd:group-data-[collapsible=offcanvas]:after:left-full',
+        'hover:group-data-[collapsible=offcanvas]:bg-lsd-background lsd:group-data-[collapsible=offcanvas]:translate-x-0 lsd:group-data-[collapsible=offcanvas]:after:left-full',
         'lsd:[[data-side=left][data-collapsible=offcanvas]_&]:-right-(--lsd-spacing-smaller)',
         'lsd:[[data-side=right][data-collapsible=offcanvas]_&]:-left-(--lsd-spacing-smaller)',
         className

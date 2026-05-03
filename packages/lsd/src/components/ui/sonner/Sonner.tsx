@@ -33,21 +33,21 @@ const Toaster = ({ ...props }: ToasterProps) => {
       richColors
       style={
         {
-          '--normal-bg': 'var(--lsd-surface)',
-          '--normal-text': 'var(--lsd-text-primary)',
+          '--normal-bg': 'var(--lsd-foreground)',
+          '--normal-text': 'var(--lsd-text-neutral)',
           '--normal-border': 'var(--lsd-border)',
-          '--success-bg': 'var(--lsd-surface)',
+          '--success-bg': 'var(--lsd-foreground)',
           '--success-border': 'var(--lsd-success)',
-          '--success-text': 'var(--lsd-success-text)',
-          '--error-bg': 'var(--lsd-surface)',
+          '--success-text': 'var(--lsd-text-success)',
+          '--error-bg': 'var(--lsd-foreground)',
           '--error-border': 'var(--lsd-destructive)',
-          '--error-text': 'var(--lsd-destructive-text)',
-          '--warning-bg': 'var(--lsd-surface)',
+          '--error-text': 'var(--lsd-text-destructive)',
+          '--warning-bg': 'var(--lsd-foreground)',
           '--warning-border': 'var(--lsd-warning)',
-          '--warning-text': 'var(--lsd-warning-text)',
-          '--info-bg': 'var(--lsd-surface)',
+          '--warning-text': 'var(--lsd-text-warning)',
+          '--info-bg': 'var(--lsd-foreground)',
           '--info-border': 'var(--lsd-info)',
-          '--info-text': 'var(--lsd-info-text)',
+          '--info-text': 'var(--lsd-text-info)',
         } as React.CSSProperties
       }
       {...props}

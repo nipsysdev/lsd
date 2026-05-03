@@ -16,7 +16,7 @@ const FieldLegend = React.forwardRef<HTMLLegendElement, FieldLegendProps>(
       <legend
         ref={ref}
         data-slot="field-legend"
-        className={cn('lsd:text-[1.5rem] lsd:text-lsd-text-primary lsd:font-medium', className)}
+        className={cn('lsd:text-[1.5rem] lsd:font-medium', className)}
         {...props}
       />
     );

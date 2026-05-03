@@ -28,7 +28,7 @@ interface SidebarWrapperProps {
 export default function SidebarWrapper({ currentPath, children }: SidebarWrapperProps) {
   return (
     <SidebarProvider>
-      <Sidebar>
+      <Sidebar triggerStyle={{ top: '10px' }}>
         <SidebarHeader>
           <SidebarMenu>
             <SidebarMenuItem>
@@ -39,7 +39,7 @@ export default function SidebarWrapper({ currentPath, children }: SidebarWrapper
                   </div>
                   <div className="flex flex-col gap-(--lsd-spacing-smaller) leading-none">
                     <span className="font-semibold">@nipsys/lsd</span>
-                    <span className="text-xs">v1.0.1</span>
+                    <span className="text-xs">v1.1.0</span>
                   </div>
                 </Link>
               </SidebarMenuButton>

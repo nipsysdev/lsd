@@ -167,22 +167,21 @@ describe('Input', () => {
     expect(input).toHaveValue('test value');
   });
 
-  it('applies focus-visible classes', () => {
-    render(<Input />);
-    const input = screen.getByRole('textbox');
-    expect(input).toHaveClass('focus-visible:lsd:outline-none');
-    expect(input).toHaveClass('lsd:px-(--lsd-spacing-base)');
-  });
-
   it('applies base classes correctly', () => {
     render(<Input />);
     const input = screen.getByRole('textbox');
     expect(input).toHaveClass('lsd:border-none');
     expect(input).toHaveClass('lsd:outline-none');
     expect(input).toHaveClass('lsd:bg-transparent');
-    expect(input).toHaveClass('lsd:text-lsd-text-primary');
     expect(input).toHaveClass('lsd:w-full');
     expect(input).toHaveClass('lsd:h-full');
+    expect(input).toHaveClass('focus-visible:lsd:outline-none');
+    expect(input).toHaveClass('lsd:px-(--lsd-spacing-base)');
+    expect(input).toHaveClass('lsd:py-[var(--lsd-spacing-small)]');
+    expect(input).toHaveClass('lsd:text-base');
+    expect(input).toHaveClass('placeholder:lsd:opacity-30');
+    expect(input).toHaveClass('selection:lsd:bg-lsd-primary');
+    expect(input).toHaveClass('selection:lsd:text-lsd-primary-content');
   });
 
   it('applies label size classes correctly', () => {

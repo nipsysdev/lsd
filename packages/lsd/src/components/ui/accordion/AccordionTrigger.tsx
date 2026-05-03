@@ -65,8 +65,6 @@ function AccordionTrigger({ className, children, size = 'md', ...props }: Accord
             // Transitions & Animations
             'lsd:transition-transform',
             'lsd:duration-200',
-            // Colors & Backgrounds
-            'lsd:text-lsd-icon-primary',
             // Layout & Positioning
             'lsd:shrink-0',
             // Spacing

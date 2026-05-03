@@ -19,7 +19,8 @@ describe('SidebarGroupLabel', () => {
   it('applies default classes', () => {
     const { container } = render(<SidebarGroupLabel>Group Label</SidebarGroupLabel>);
     const label = container.querySelector('[data-slot="sidebar-group-label"]');
-    expect(label).toHaveClass('lsd:text-sidebar-foreground/70');
+    expect(label).toHaveClass('lsd:text-lsd-text-neutral/70');
+    expect(label).toHaveClass('ring-sidebar-ring');
     expect(label).toHaveClass('lsd:flex');
     expect(label).toHaveClass('lsd:h-8');
     expect(label).toHaveClass('lsd:shrink-0');

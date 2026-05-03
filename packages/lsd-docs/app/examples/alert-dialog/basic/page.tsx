@@ -14,7 +14,7 @@ import {
 } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const SIZE = 'md';
+export const SIZE = 'lg';
 
 export const CODE = `import {
   AlertDialog,

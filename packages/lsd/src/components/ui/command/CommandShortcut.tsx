@@ -14,8 +14,6 @@ export function CommandShortcut({ className, ...props }: React.ComponentProps<'s
     <span
       data-slot="command-shortcut"
       className={cn(
-        // Colors & Backgrounds
-        'lsd:text-lsd-text-primary',
         // Spacing
         'lsd:ml-auto',
         // Typography Size

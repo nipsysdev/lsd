@@ -23,13 +23,13 @@ export default function ThemingPage() {
     <DocsLayout>
       <PageHeader
         title="Theming"
-        description="Adapt the presentation to your purpose. Learn about themes in the Logos Design System."
+        description="Adapt the presentation to your purpose, learn how to use and create themes."
       />
 
       <PageContent>
         <PageSection title="Built-in Themes">
           <Typography variant="body1" className="block mb-(--lsd-spacing-small)">
-            LSD comes with a few built-in themes, each with light and dark variants.
+            @nipsys/lsd comes with a few built-in themes, each with light and dark variants.
           </Typography>
 
           <Typography variant="body1">
@@ -172,36 +172,43 @@ card.setAttribute('data-theme', 'nord');`}
                 useAccordion={false}
                 code={`/* Light mode */
 [data-theme="nord"] {
-  --lsd-primary: #5e81ac;
-  --lsd-text-primary: #2e3440;
-  --lsd-text-secondary: #484c53;
-  --lsd-surface: #eceff4;
-  --lsd-border: #4c566a;
-  --lsd-destructive: #f43446;
-  --lsd-destructive-text: #cf2a3b;
-  --lsd-success: #11b981;
-  --lsd-success-text: #0f9166;
-  --lsd-warning: #e5b016;
-  --lsd-warning-text: #ca9c10;
-  --lsd-info: #0ca2eb;
-  --lsd-info-text: #0b89c8;
+  --lsd-primary: #3b6898;
+  --lsd-primary-content: #e6e8eb;
+  --lsd-text-neutral: #2e3440;
+  --lsd-text-secondary: #4c566a;
+  --lsd-background: #e6e8eb;
+  --lsd-foreground: #eceff4;
+  --lsd-border: #8e98aa;
+  --lsd-destructive: #a3434d;
+  --lsd-text-destructive: #8c3841;
+  --lsd-success: #4a7040;
+  --lsd-text-success: #3c5f33;
+  --lsd-warning: #a16207;
+  --lsd-text-warning: #7c5a12;
+  --lsd-info: #2a6d86;
+  --lsd-text-info: #215a6f;
 }
 
 /* Dark mode */
-[data-theme="nord"].dark {
-  --lsd-primary: #94bff2;
-  --lsd-text-primary: #f2f5fc;
-  --lsd-text-secondary: #a8afbf;
-  --lsd-surface: #1a2532;
-  --lsd-border: #7c8bad;
-  --lsd-destructive: #f43446;
-  --lsd-destructive-text: #cf2a3b;
-  --lsd-success: #11b981;
-  --lsd-success-text: #0f9166;
-  --lsd-warning: #e5b016;
-  --lsd-warning-text: #ddae22;
-  --lsd-info: #0ca2eb;
-  --lsd-info-text: #0b89c8;
+[data-theme="nord"] {
+  &.dark,
+  .dark:not([data-theme]) {
+    --lsd-primary: #88c0d0;
+    --lsd-primary-content: #26313d;
+    --lsd-text-neutral: #eceff4;
+    --lsd-text-secondary: #8690a4;
+    --lsd-background: #26313d;
+    --lsd-foreground: #2e3440;
+    --lsd-border: #4c566a;
+    --lsd-destructive: #bf616a;
+    --lsd-text-destructive: #d4878e;
+    --lsd-success: #a3be8c;
+    --lsd-text-success: #b8ccaa;
+    --lsd-warning: #d08770;
+    --lsd-text-warning: #ebcb8b;
+    --lsd-info: #81a1c1;
+    --lsd-text-info: #9bb5cf;
+  }
 }`}
               />
             </CardContent>
@@ -215,8 +222,8 @@ card.setAttribute('data-theme', 'nord');`}
           href: '/getting-started/installation',
         }}
         next={{
-          title: 'Colours',
-          href: '/design-tokens/colours',
+          title: 'Colors',
+          href: '/design-tokens/colors',
         }}
       />
     </DocsLayout>

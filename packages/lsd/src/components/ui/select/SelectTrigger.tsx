@@ -37,11 +37,6 @@ export function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        // Colors & Backgrounds
-        'lsd:bg-lsd-surface',
-        'lsd:text-lsd-text-primary',
-        'dark:lsd:bg-lsd-surface/30',
-        'dark:lsd:hover:bg-lsd-surface/50',
         // Colors & Backgrounds - Placeholder
         'lsd:data-placeholder:text-lsd-text-secondary',
         // Colors & Backgrounds - Error state
@@ -75,9 +70,9 @@ export function SelectTrigger({
         'lsd:disabled:cursor-not-allowed',
         'lsd:disabled:opacity-50',
         // Pseudo-selectors & ARIA - SVG styling
-        "lsd:[&_svg:not([class*='text-'])]:text-lsd-icon-primary",
         'lsd:[&_svg]:pointer-events-none',
         'lsd:[&_svg]:shrink-0',
+        'lsd:[&_svg]:text-lsd-text-neutral',
         "lsd:[&_svg:not([class*='size-'])]:size-(--lsd-spacing-base)",
         // Pseudo-selectors & ARIA - SelectValue styling
         '*:lsd:data-[slot=select-value]:line-clamp-1',
@@ -90,7 +85,7 @@ export function SelectTrigger({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <CaretDownIcon className="lsd:size-4 lsd:text-lsd-icon-primary" weight="duotone" />
+        <CaretDownIcon className="lsd:size-4" weight="duotone" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );

@@ -14,7 +14,7 @@ export const CODE = `import { ScrollArea, Typography } from '@nipsys/lsd';
 export function Example() {
   return (
     <div className="flex flex-col gap-(--lsd-spacing-base)">
-      <ScrollArea className="h-(--lsd-spacing-10x) w-full rounded-md border p-(--lsd-spacing-smaller) overflow-hidden">
+      <ScrollArea className="flex-auto border p-(--lsd-spacing-smaller) overflow-hidden">
         <div className="flex flex-col gap-(--lsd-spacing-base)">
           {[...Array(20)].map((_, i) => (
             <Typography variant="body1">Item {i + 1}</Typography>

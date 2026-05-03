@@ -55,7 +55,7 @@ describe('Autocomplete', () => {
   it('applies error state', () => {
     render(<Autocomplete options={mockOptions} error />);
     const input = screen.getByRole('textbox');
-    expect(input).toHaveClass('lsd:text-lsd-destructive');
+    expect(input).toHaveClass('lsd:text-lsd-text-destructive');
   });
 
   it('applies medium size classes by default', () => {
@@ -248,6 +248,16 @@ describe('Autocomplete', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
     // Verify that options are displayed
     expect(screen.getByText('Option 1')).toBeInTheDocument();
+  });
+
+  it('applies correct background to autocomplete list', () => {
+    render(<Autocomplete options={mockOptions} />);
+    const input = screen.getByRole('textbox');
+    fireEvent.click(input);
+    const popover = screen.getByRole('dialog');
+    expect(popover).toBeInTheDocument();
+    // The popover content should have foreground background for overlay
+    expect(popover).toHaveClass('lsd:bg-foreground');
   });
 
   it('handles error when async fetch fails', async () => {

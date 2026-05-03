@@ -55,8 +55,8 @@ describe('Toaster', () => {
   it('applies custom CSS variables via style prop', () => {
     render(<Toaster />);
     const toaster = screen.getByTestId('sonner-toaster');
-    expect(toaster.style.getPropertyValue('--normal-bg')).toBe('var(--lsd-surface)');
-    expect(toaster.style.getPropertyValue('--normal-text')).toBe('var(--lsd-text-primary)');
+    expect(toaster.style.getPropertyValue('--normal-bg')).toBe('var(--lsd-foreground)');
+    expect(toaster.style.getPropertyValue('--normal-text')).toBe('var(--lsd-text-neutral)');
     expect(toaster.style.getPropertyValue('--normal-border')).toBe('var(--lsd-border)');
   });
 

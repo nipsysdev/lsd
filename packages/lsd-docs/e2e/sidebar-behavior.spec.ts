@@ -203,4 +203,62 @@ test.describe('Sidebar Behavior', () => {
     const chartIcon = dashboardLink.locator('svg');
     await expect(chartIcon).toBeVisible();
   });
+
+  test('mobile sidebar scrolling works correctly', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 667 });
+    await page.goto('/examples/sidebar/basic');
+
+    // Mobile sheet should be hidden initially
+    const mobileSheet = page.locator('[data-slot="sidebar"][data-mobile="true"]');
+    await expect(mobileSheet).not.toBeVisible();
+
+    // Open mobile menu
+    const trigger = page.locator('[data-sidebar="trigger"]').first();
+    await expect(trigger).toBeVisible();
+    await trigger.click();
+
+    // Mobile sheet should be visible after clicking trigger
+    await expect(mobileSheet).toBeVisible();
+
+    // Verify sidebar content area exists and is scrollable
+    const sidebarContent = page.locator('[data-sidebar="content"]');
+    await expect(sidebarContent).toBeVisible();
+
+    // Verify navigation items are present
+    const allProjectsLink = page.getByRole('link', { name: 'All Projects' });
+    await expect(allProjectsLink).toBeVisible();
+
+    const settingsLink = page.getByRole('link', { name: 'Settings' });
+    await expect(settingsLink).toBeVisible();
+
+    // Test that scrolling works by programmatically scrolling
+    const initialScrollTop = await sidebarContent.evaluate(el => el.scrollTop);
+
+    await sidebarContent.evaluate(el => {
+      el.scrollTop = 100;
+    });
+
+    const afterScrollTop = await sidebarContent.evaluate(el => el.scrollTop);
+    expect(afterScrollTop).toBeGreaterThanOrEqual(initialScrollTop);
+
+    // Scroll back to top
+    await sidebarContent.evaluate(el => {
+      el.scrollTop = 0;
+    });
+
+    const finalScrollTop = await sidebarContent.evaluate(el => el.scrollTop);
+    expect(finalScrollTop).toBe(0);
+
+    await sidebarContent.evaluate(el => {
+      el.scrollTop = el.scrollHeight;
+    });
+
+    await expect(settingsLink).toBeInViewport();
+
+    const favoritesLink = page.getByRole('link', { name: 'Favorites' });
+    await sidebarContent.evaluate(el => {
+      el.scrollTop = 50;
+    });
+    await expect(favoritesLink).toBeInViewport();
+  });
 });

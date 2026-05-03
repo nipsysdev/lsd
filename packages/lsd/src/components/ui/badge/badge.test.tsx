@@ -25,7 +25,7 @@ describe('Badge', () => {
     );
     const badge = screen.getByTestId('badge');
     expect(badge).toHaveClass('lsd:bg-lsd-primary');
-    expect(badge).toHaveClass('lsd:text-lsd-surface');
+    expect(badge).toHaveClass('lsd:text-lsd-primary-content');
   });
 
   it('applies outlined variant classes correctly', () => {
@@ -36,7 +36,6 @@ describe('Badge', () => {
     );
     const badge = screen.getByTestId('badge');
     expect(badge).toHaveClass('lsd:bg-transparent');
-    expect(badge).toHaveClass('lsd:text-lsd-text-primary');
   });
 
   it('applies medium size classes correctly', () => {
@@ -266,12 +265,11 @@ describe('Badge', () => {
 describe('badgeVariants', () => {
   it('returns correct classes for filled variant', () => {
     expect(badgeVariants({ variant: 'filled' })).toContain('lsd:bg-lsd-primary');
-    expect(badgeVariants({ variant: 'filled' })).toContain('lsd:text-lsd-surface');
+    expect(badgeVariants({ variant: 'filled' })).toContain('lsd:text-lsd-primary-content');
   });
 
   it('returns correct classes for outlined variant', () => {
     expect(badgeVariants({ variant: 'outlined' })).toContain('lsd:bg-transparent');
-    expect(badgeVariants({ variant: 'outlined' })).toContain('lsd:text-lsd-text-primary');
   });
 
   it('returns correct classes for medium size', () => {

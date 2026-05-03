@@ -73,6 +73,7 @@ export function Sidebar({
   triggerIconExpanded,
   triggerIconCollapsed,
   triggerClassName,
+  triggerStyle,
   className,
   children,
   ...props
@@ -92,7 +93,7 @@ export function Sidebar({
       <div
         data-slot="sidebar"
         className={cn(
-          'lsd:bg-sidebar lsd:text-sidebar-foreground lsd:flex lsd:h-full lsd:w-(--sidebar-width) lsd:flex-col',
+          'lsd:bg-lsd-background lsd:flex lsd:h-full lsd:w-(--sidebar-width) lsd:flex-col',
           className
         )}
         {...props}
@@ -109,7 +110,7 @@ export function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="lsd:bg-sidebar lsd:text-sidebar-foreground lsd:w-(--sidebar-width) lsd:p-0 lsd:[&>button]:hidden"
+          className="lsd:bg-lsd-background lsd:w-(--sidebar-width) lsd:p-0 lsd:[&>button]:hidden"
           style={
             {
               '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
@@ -129,7 +130,7 @@ export function Sidebar({
 
   return (
     <div
-      className="lsd:group lsd:peer lsd:text-sidebar-foreground lsd:hidden lsd:md:block lsd:relative"
+      className="lsd:group lsd:peer lsd:relative lsd:hidden lsd:md:block"
       data-state={state}
       data-collapsible={state === 'collapsed' ? collapsible : ''}
       data-variant={variant}
@@ -150,10 +151,11 @@ export function Sidebar({
       />
       {showTrigger && (
         <SidebarTrigger
-          className={
-            triggerClassName ??
-            'lsd:absolute lsd:top-2 lsd:-right-8 lsd:bg-lsd-surface lsd:z-1 lsd:border lsd:border-l-0 lsd:border-lsd-border'
-          }
+          className={cn(
+            'lsd:absolute lsd:top-2 lsd:-right-8 lsd:bg-lsd-background lsd:z-1 lsd:border lsd:border-l-0 lsd:border-lsd-border',
+            triggerClassName
+          )}
+          style={triggerStyle}
           icon={triggerIcon}
         />
       )}
@@ -175,7 +177,7 @@ export function Sidebar({
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="lsd:bg-sidebar lsd:group-data-[variant=floating]:border-sidebar-border lsd:flex lsd:h-full lsd:w-full lsd:flex-col lsd:group-data-[variant=floating]:rounded-lg lsd:group-data-[variant=floating]:border lsd:group-data-[variant=floating]:shadow-sm"
+          className="lsd:bg-lsd-background lsd:group-data-[variant=floating]:border-sidebar-border lsd:flex lsd:h-full lsd:w-full lsd:flex-col lsd:group-data-[variant=floating]:rounded-lg lsd:group-data-[variant=floating]:border lsd:group-data-[variant=floating]:shadow-sm"
         >
           {children}
         </div>

@@ -27,8 +27,8 @@ describe('Toggle', () => {
     expect(toggle).toHaveClass('lsd:border');
     expect(toggle).toHaveClass('lsd:transition-colors');
     expect(toggle).toHaveClass('lsd:bg-transparent');
-    expect(toggle).toHaveClass('lsd:text-lsd-text-primary');
     expect(toggle).toHaveClass('lsd:border-lsd-border');
+    expect(toggle).toHaveClass('lsd:hover:underline');
     expect(toggle).toHaveClass('lsd:cursor-pointer');
   });
 
@@ -71,7 +71,7 @@ describe('Toggle', () => {
     render(<Toggle defaultChecked />);
     const toggle = screen.getByRole('button');
     expect(toggle).toHaveClass('lsd:data-[state=on]:bg-lsd-primary');
-    expect(toggle).toHaveClass('lsd:data-[state=on]:text-lsd-surface');
+    expect(toggle).toHaveClass('lsd:data-[state=on]:text-lsd-primary-content');
   });
 
   it('handles click events', () => {
@@ -158,14 +158,14 @@ describe('toggleVariants', () => {
     expect(toggleVariants({})).toContain('lsd:border');
     expect(toggleVariants({})).toContain('lsd:transition-colors');
     expect(toggleVariants({})).toContain('lsd:bg-transparent');
-    expect(toggleVariants({})).toContain('lsd:text-lsd-text');
     expect(toggleVariants({})).toContain('lsd:border-lsd-border');
+    expect(toggleVariants({})).toContain('lsd:hover:underline');
     expect(toggleVariants({})).toContain('lsd:cursor-pointer');
   });
 
   it('includes checked state classes', () => {
     expect(toggleVariants({})).toContain('lsd:data-[state=on]:bg-lsd-primary');
-    expect(toggleVariants({})).toContain('lsd:data-[state=on]:text-lsd-surface');
+    expect(toggleVariants({})).toContain('lsd:data-[state=on]:text-lsd-primary-content');
   });
 
   it('includes disabled state classes', () => {

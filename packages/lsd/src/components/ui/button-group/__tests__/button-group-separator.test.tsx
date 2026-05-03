@@ -22,7 +22,7 @@ describe('ButtonGroupSeparator', () => {
   it('applies default classes', () => {
     const { container } = render(<ButtonGroupSeparator />);
     const separator = queryByDataSlot(container, 'button-group-separator');
-    expect(separator).toHaveClass('lsd:bg-border');
+    expect(separator).toHaveClass('lsd:bg-lsd-border');
     expect(separator).toHaveClass('lsd:relative');
     expect(separator).toHaveClass('lsd:m-0!');
     expect(separator).toHaveClass('lsd:self-stretch');

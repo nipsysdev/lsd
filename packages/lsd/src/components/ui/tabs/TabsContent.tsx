@@ -19,7 +19,7 @@ function TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPr
     <TabsPrimitive.Content
       data-slot="tabs-content"
       className={cn(
-        'lsd:outline-none lsd:px-(--lsd-spacing-larger) lsd:py-(--lsd-spacing-larger)',
+        'lsd:outline-none lsd:px-(--lsd-spacing-larger) lsd:py-(--lsd-spacing-larger) lsd:bg-lsd-foreground',
         bordered && 'lsd:border',
         className
       )}

@@ -11,8 +11,7 @@ export function DropdownMenuSubContent({ className, ...props }: DropdownMenuSubC
       data-slot="dropdown-menu-sub-content"
       className={cn(
         // Colors & Backgrounds
-        'lsd:bg-lsd-surface',
-        'lsd:text-lsd-text-primary',
+        'lsd:bg-lsd-foreground',
         // Borders
         'lsd:border',
         // Layout & Positioning

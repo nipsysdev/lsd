@@ -27,7 +27,7 @@ describe('Separator', () => {
   it('applies base classes correctly', () => {
     render(<Separator />);
     const separator = document.querySelector('[data-slot="separator"]');
-    expect(separator).toHaveClass('lsd:bg-border');
+    expect(separator).toHaveClass('lsd:bg-lsd-border');
     expect(separator).toHaveClass('lsd:shrink-0');
   });
 

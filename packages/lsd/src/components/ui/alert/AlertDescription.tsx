@@ -32,10 +32,10 @@ function AlertDescription({ className, ...props }: AlertDescriptionProps) {
         // Pseudo-selectors & ARIA
         '[&_p]:lsd:leading-relaxed',
         // Colors & Backgrounds (variants)
-        'data-[variant=destructive]:lsd:text-lsd-destructive-text/90',
-        'data-[variant=info]:lsd:text-lsd-info-text/90',
-        'data-[variant=success]:lsd:text-lsd-success-text/90',
-        'data-[variant=warning]:lsd:text-lsd-warning-text/90',
+        'data-[variant=destructive]:lsd:text-lsd-text-destructive/90',
+        'data-[variant=info]:lsd:text-lsd-text-info/90',
+        'data-[variant=success]:lsd:text-lsd-text-success/90',
+        'data-[variant=warning]:lsd:text-lsd-text-warning/90',
         className
       )}
       {...props}

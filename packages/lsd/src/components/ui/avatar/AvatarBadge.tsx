@@ -25,10 +25,10 @@ function AvatarBadge({ className, ...props }: React.ComponentProps<'span'>) {
         'lsd:rounded-full',
         // Colors & Backgrounds
         'lsd:bg-lsd-primary',
-        'lsd:text-lsd-surface',
+        'lsd:text-lsd-primary-content',
         // Ring
         'lsd:ring-2',
-        'lsd:ring-lsd-surface',
+        'lsd:ring-lsd-background',
         // Other Utility Classes
         'lsd:select-none',
         // Pseudo-selectors & ARIA

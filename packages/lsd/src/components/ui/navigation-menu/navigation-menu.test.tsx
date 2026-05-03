@@ -149,7 +149,7 @@ describe('NavigationMenuList', () => {
     expect(list).toHaveClass('lsd:list-none');
     expect(list).toHaveClass('lsd:items-start');
     expect(list).toHaveClass('lsd:justify-start');
-    expect(list).toHaveClass('lsd:gap-(--lsd-spacing-1)');
+    expect(list).toHaveClass('lsd:gap-(--lsd-spacing-largest)');
   });
 
   it('merges custom className with component classes', () => {
@@ -298,16 +298,14 @@ describe('NavigationMenuTrigger', () => {
     const trigger = screen.getByText('Trigger');
     expect(trigger).toHaveClass('lsd:group');
     expect(trigger).toHaveClass('lsd:inline-flex');
-    expect(trigger).toHaveClass('lsd:h-[2.25rem]');
+    expect(trigger).toHaveClass('lsd:h-9');
     expect(trigger).toHaveClass('lsd:w-max');
     expect(trigger).toHaveClass('lsd:items-center');
     expect(trigger).toHaveClass('lsd:justify-center');
-    expect(trigger).toHaveClass('lsd:rounded-md');
-    expect(trigger).toHaveClass('lsd:bg-[var(--lsd-background)]');
-    expect(trigger).toHaveClass('lsd:px-4');
-    expect(trigger).toHaveClass('lsd:py-2');
-    expect(trigger).toHaveClass('lsd:text-[0.875rem]');
-    expect(trigger).toHaveClass('lsd:font-medium');
+    expect(trigger).toHaveClass('lsd:px-(--lsd-spacing-base)');
+    expect(trigger).toHaveClass('lsd:py-(--lsd-spacing-smaller)');
+    expect(trigger).toHaveClass('lsd:text-sm');
+    expect(trigger).toHaveClass('lsd:border');
   });
 
   it('renders chevron icon', () => {
@@ -338,7 +336,7 @@ describe('NavigationMenuTrigger', () => {
     );
     const icon = document.querySelector('svg');
     expect(icon).toHaveClass('lsd:relative');
-    expect(icon).toHaveClass('lsd:ml-(--lsd-spacing-smallest)');
+    expect(icon).toHaveClass('lsd:ml-(--lsd-spacing-smaller)');
     expect(icon).toHaveClass('lsd:size-3');
     expect(icon).toHaveClass('lsd:transition');
     expect(icon).toHaveClass('lsd:duration-300');
@@ -506,8 +504,8 @@ describe('navigationMenuTriggerStyle', () => {
     const classes = navigationMenuTriggerStyle();
     expect(classes).toContain('lsd:group');
     expect(classes).toContain('lsd:inline-flex');
-    expect(classes).toContain('lsd:h-[2.25rem]');
-    expect(classes).toContain('lsd:text-[0.875rem]');
+    expect(classes).toContain('lsd:h-9');
+    expect(classes).toContain('lsd:text-sm');
   });
 });
 

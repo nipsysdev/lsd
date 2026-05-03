@@ -40,7 +40,6 @@ describe('SheetTitle', () => {
       </Sheet>
     );
     const title = screen.getByRole('heading', { name: 'Title' });
-    expect(title).toHaveClass('lsd:text-foreground');
     expect(title).toHaveClass('lsd:font-semibold');
   });
 

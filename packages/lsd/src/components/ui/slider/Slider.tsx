@@ -152,7 +152,7 @@ function Slider({
             'lsd:border-2',
             'lsd:border-lsd-primary',
             // Colors & Backgrounds
-            'lsd:bg-lsd-surface',
+            'lsd:bg-lsd-background',
             // Transitions & Animations
             'lsd:transition-all',
             'lsd:duration-200',

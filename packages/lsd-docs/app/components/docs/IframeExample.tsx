@@ -13,7 +13,7 @@ export const IframeExample = forwardRef<HTMLIFrameElement, IframeExampleProps>(
   ({ src, title, size = 'md', className, ...props }, ref) => {
     const heightClass = {
       sm: 'min-h-[128px]',
-      md: 'min-h-[256px]',
+      md: 'min-h-[280px]',
       lg: 'min-h-[450px]',
       xl: 'min-h-[600px]',
     }[size];

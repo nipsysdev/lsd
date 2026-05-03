@@ -171,7 +171,7 @@ describe('Form Components', () => {
       });
 
       const label = screen.getByTestId('form-label');
-      expect(label).toHaveClass('lsd:text-lsd-destructive-text');
+      expect(label).toHaveClass('lsd:text-lsd-text-destructive');
     });
 
     it('does not apply destructive class when there is no error', () => {
@@ -195,7 +195,7 @@ describe('Form Components', () => {
       }
       render(<TestComponent />);
       const label = screen.getByTestId('form-label');
-      expect(label).not.toHaveClass('lsd:text-lsd-destructive-text');
+      expect(label).not.toHaveClass('lsd:text-lsd-text-destructive');
     });
   });
 
@@ -421,7 +421,9 @@ describe('Form Components', () => {
       }
       render(<TestComponent />);
       const message = screen.getByTestId('message');
-      expect(message).toHaveClass('lsd:text-lsd-destructive-text');
+      expect(message).toHaveClass('lsd:text-sm');
+      expect(message).toHaveClass('lsd:leading-5');
+      expect(message).toHaveClass('lsd:text-lsd-text-destructive');
     });
 
     it('does not render when no error or children', () => {

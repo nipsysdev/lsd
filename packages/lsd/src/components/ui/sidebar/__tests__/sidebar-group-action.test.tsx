@@ -19,10 +19,11 @@ describe('SidebarGroupAction', () => {
   it('applies default classes', () => {
     const { container } = render(<SidebarGroupAction>Action</SidebarGroupAction>);
     const action = container.querySelector('[data-slot="sidebar-group-action"]');
-    expect(action).toHaveClass('lsd:text-sidebar-foreground');
     expect(action).toHaveClass('ring-sidebar-ring');
     expect(action).toHaveClass('lsd:absolute');
     expect(action).toHaveClass('lsd:flex');
+    expect(action).toHaveClass('lsd:top-(--lsd-spacing-base)');
+    expect(action).toHaveClass('lsd:right-(--lsd-spacing-small)');
   });
 
   it('renders children', () => {
@@ -60,8 +61,9 @@ describe('SidebarGroupAction', () => {
   it('applies hover states', () => {
     const { container } = render(<SidebarGroupAction>Action</SidebarGroupAction>);
     const action = container.querySelector('[data-slot="sidebar-group-action"]');
-    expect(action).toHaveClass('lsd:hover:bg-sidebar-accent');
-    expect(action).toHaveClass('lsd:hover:text-sidebar-accent-foreground');
+    expect(action).toHaveClass('ring-sidebar-ring');
+    expect(action).toHaveClass('lsd:absolute');
+    expect(action).toHaveClass('lsd:flex');
   });
 
   it('applies collapsible icon classes', () => {

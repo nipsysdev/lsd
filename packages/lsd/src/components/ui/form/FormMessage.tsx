@@ -29,9 +29,9 @@ function FormMessage({ className, ...props }: FormMessageProps) {
         // Typography Size
         'lsd:text-sm',
         // Typography Line Height
-        'lsd:leading-[1.25rem]',
+        'lsd:leading-5',
         // Colors & Backgrounds
-        'lsd:text-lsd-destructive-text',
+        'lsd:text-lsd-text-destructive',
         className
       )}
       {...props}

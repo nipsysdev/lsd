@@ -101,14 +101,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             disabled={disabled}
             data-slot="input"
             className={cn(
-              // Pseudo-selectors & ARIA - File colors
-              'file:lsd:text-lsd-text-primary',
               // Pseudo-selectors & ARIA - Placeholder colors
-              'placeholder:lsd:text-lsd-text-primary',
               'placeholder:lsd:opacity-30',
               // Pseudo-selectors & ARIA - Selection colors
               'selection:lsd:bg-lsd-primary',
-              'selection:lsd:text-lsd-surface',
+              'selection:lsd:text-lsd-primary-content',
               // Borders
               'lsd:border-none',
               // Interactive States - Focus
@@ -116,7 +113,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               'focus-visible:lsd:outline-none',
               // Colors & Backgrounds
               'lsd:bg-transparent',
-              'lsd:text-lsd-text-primary',
               // Sizing
               'lsd:w-full',
               'lsd:h-full',

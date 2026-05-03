@@ -31,18 +31,14 @@ describe('ButtonGroup', () => {
   it('applies horizontal orientation by default', () => {
     const { container } = render(<ButtonGroup />);
     const group = queryByDataSlot(container, 'button-group');
-    expect(group).toHaveClass('lsd:[&>*:not(:first-child)]:rounded-l-none');
-    expect(group).toHaveClass('lsd:[&>*:not(:first-child)]:border-l-0');
-    expect(group).toHaveClass('lsd:[&>*:not(:last-child)]:rounded-r-none');
+    expect(group).toHaveClass('lsd:[&>button:not(:first-of-type)]:border-l-0');
   });
 
   it('applies vertical orientation', () => {
     const { container } = render(<ButtonGroup orientation="vertical" />);
     const group = queryByDataSlot(container, 'button-group');
     expect(group).toHaveClass('lsd:flex-col');
-    expect(group).toHaveClass('lsd:[&>*:not(:first-child)]:rounded-t-none');
-    expect(group).toHaveClass('lsd:[&>*:not(:first-child)]:border-t-0');
-    expect(group).toHaveClass('lsd:[&>*:not(:last-child)]:rounded-b-none');
+    expect(group).toHaveClass('lsd:[&>button:not(:first-of-type)]:border-t-0');
   });
 
   it('passes through additional props', () => {
@@ -72,23 +68,19 @@ describe('buttonGroupVariants', () => {
   it('returns correct classes for horizontal orientation', () => {
     const classes = buttonGroupVariants({ orientation: 'horizontal' });
     expect(classes).toContain('lsd:flex');
-    expect(classes).toContain('lsd:[&>*:not(:first-child)]:rounded-l-none');
-    expect(classes).toContain('lsd:[&>*:not(:first-child)]:border-l-0');
-    expect(classes).toContain('lsd:[&>*:not(:last-child)]:rounded-r-none');
+    expect(classes).toContain('lsd:[&>button:not(:first-of-type)]:border-l-0');
   });
 
   it('returns correct classes for vertical orientation', () => {
     const classes = buttonGroupVariants({ orientation: 'vertical' });
     expect(classes).toContain('lsd:flex-col');
-    expect(classes).toContain('lsd:[&>*:not(:first-child)]:rounded-t-none');
-    expect(classes).toContain('lsd:[&>*:not(:first-child)]:border-t-0');
-    expect(classes).toContain('lsd:[&>*:not(:last-child)]:rounded-b-none');
+    expect(classes).toContain('lsd:[&>button:not(:first-of-type)]:border-t-0');
   });
 
   it('returns default classes when no orientation is provided', () => {
     const classes = buttonGroupVariants({});
     expect(classes).toContain('lsd:flex');
-    expect(classes).toContain('lsd:[&>*:not(:first-child)]:rounded-l-none');
+    expect(classes).toContain('lsd:[&>button:not(:first-of-type)]:border-l-0');
   });
 });
 

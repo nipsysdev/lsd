@@ -88,7 +88,7 @@ function Calendar({ buttonVariant = 'ghost', ...props }: CalendarProps) {
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        'lsd:group/calendar lsd:bg-lsd-surface lsd:p-(--lsd-spacing-base) lsd:[--cell-size:--spacing(8)] [[data-slot=card-content]_&]:lsd:bg-transparent [[data-slot=popover-content]_&]:lsd:bg-transparent',
+        'lsd:group/calendar lsd:p-(--lsd-spacing-base) lsd:[--cell-size:--spacing(8)]',
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className
@@ -140,15 +140,15 @@ function Calendar({ buttonVariant = 'ghost', ...props }: CalendarProps) {
           defaultClassNames.day
         ),
         range_start: cn(
-          'lsd:rounded-l-md lsd:bg-lsd-primary lsd:text-lsd-primary-foreground',
+          'lsd:rounded-l-md lsd:bg-lsd-primary lsd:text-lsd-primary-content',
           defaultClassNames.range_start
         ),
         range_middle: cn('lsd:rounded-none', defaultClassNames.range_middle),
         range_end: cn(
-          'lsd:rounded-r-md lsd:bg-lsd-primary lsd:text-lsd-primary-foreground',
+          'lsd:rounded-r-md lsd:bg-lsd-primary lsd:text-lsd-primary-content',
           defaultClassNames.range_end
         ),
-        today: cn('lsd:rounded-md lsd:bg-lsd-surface', defaultClassNames.today),
+        today: cn('lsd:border lsd:border-lsd-border/20', defaultClassNames.today),
         outside: cn(
           'lsd:text-lsd-text-secondary lsd:aria-selected:lsd:text-lsd-text-secondary',
           defaultClassNames.outside

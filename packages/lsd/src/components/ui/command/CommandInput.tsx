@@ -36,7 +36,7 @@ export function CommandInput({
         data-slot="command-input"
         className={cn(
           // Pseudo-selectors & ARIA - Colors (Placeholder)
-          'placeholder:lsd-text-lsd-text-secondary',
+          'lsd:placeholder:text-lsd-text-secondary',
           // Layout & Positioning
           'lsd:flex',
           // Sizing

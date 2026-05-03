@@ -21,7 +21,7 @@ function DialogContent({
         data-slot="dialog-content"
         className={cn(
           // Colors & Backgrounds
-          'lsd:bg-lsd-surface',
+          'lsd:bg-lsd-foreground',
           // Pseudo-selectors & ARIA - Animations
           'lsd:data-[state=open]:animate-in',
           'lsd:data-[state=closed]:animate-out',
@@ -66,8 +66,7 @@ function DialogContent({
               // Pseudo-selectors & ARIA - Focus
               'focus:lsd:outline-hidden',
               // Pseudo-selectors & ARIA - State
-              'lsd:data-[state=open]:bg-lsd-surface',
-              'lsd:data-[state=open]:text-lsd-text-primary',
+              'lsd:data-[state=open]:bg-lsd-foreground',
               // Positioning
               'lsd:absolute',
               'lsd:top-(--lsd-spacing-base)',

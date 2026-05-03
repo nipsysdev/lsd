@@ -23,7 +23,7 @@ import {
 } from '@nipsys/lsd';
 import { useSendThemeToIframes } from '@/components/docs/useSendThemeToIframes';
 
-export const SIZE = 'lg';
+export const SIZE = 'xl';
 
 /**
  * @docSection feature

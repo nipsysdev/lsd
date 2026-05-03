@@ -54,23 +54,21 @@ function CalendarDayButton({ className, day, modifiers, ...props }: CalendarDayB
         'lsd:group-data-[focused=true]/day:lsd:z-10',
         'lsd:group-data-[focused=true]/day:lsd:border-lsd-border',
         'lsd:group-data-[focused=true]/day:lsd:ring-[3px]',
-        'lsd:group-data-[focused=true]/day:lsd:ring-lsd-text-primary/50',
+        'lsd:group-data-[focused=true]/day:lsd:ring-lsd-text-neutral/50',
         // Borders, Shapes & Effects (conditional)
         isRangeStart && cn('lsd:rounded-md', 'lsd:rounded-l-md'),
         // Colors & Backgrounds (conditional)
-        isRangeStart && cn('lsd:bg-lsd-primary', 'lsd:text-lsd-primary-foreground'),
+        isRangeStart && cn('lsd:bg-lsd-primary', 'lsd:text-lsd-primary-content'),
         // Borders, Shapes & Effects (conditional)
         isRangeEnd && cn('lsd:rounded-md', 'lsd:rounded-r-md'),
         // Colors & Backgrounds (conditional)
-        isRangeEnd && cn('lsd:bg-lsd-primary', 'lsd:text-lsd-primary-foreground'),
+        isRangeEnd && cn('lsd:bg-lsd-primary', 'lsd:text-lsd-primary-content'),
         // Borders, Shapes & Effects (conditional)
-        isRangeMiddle && cn('lsd:rounded-none'),
+        isRangeMiddle && 'lsd:rounded-none',
         // Colors & Backgrounds (conditional)
-        isRangeMiddle && cn('lsd:bg-lsd-surface', 'lsd:text-lsd-text-primary'),
+        isRangeMiddle && 'lsd:bg-lsd-background',
         // Borders, Shapes & Effects (conditional)
         isSelected && cn('lsd:border', 'lsd:border-lsd-border'),
-        // Dark Mode
-        'dark:lsd:hover:lsd:text-lsd-text-primary',
         // Pseudo-selectors & ARIA
         '[&>span]:lsd:opacity-70',
         '[&>span]:lsd:lsd-typography-label1',

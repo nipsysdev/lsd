@@ -15,7 +15,7 @@ function AlertDialogContent({
         data-slot="alert-dialog-content"
         className={cn(
           // Colors & Backgrounds
-          'lsd:bg-lsd-surface',
+          'lsd:bg-lsd-foreground',
           // Layout & Positioning
           'lsd:fixed',
           'lsd:top-[50%]',

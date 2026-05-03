@@ -44,7 +44,6 @@ describe('CommandShortcut', () => {
       </Command>
     );
     const shortcut = document.querySelector('[data-slot="command-shortcut"]');
-    expect(shortcut).toHaveClass('lsd:text-lsd-text-primary');
     expect(shortcut).toHaveClass('lsd:ml-auto');
     expect(shortcut).toHaveClass('lsd:text-xs');
     expect(shortcut).toHaveClass('lsd:tracking-widest');

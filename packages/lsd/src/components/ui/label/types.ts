@@ -8,7 +8,7 @@ export const labelVariants = cva(
   {
     variants: {
       variant: {
-        default: 'lsd:text-lsd-text-primary',
+        default: 'lsd:text-lsd-text-neutral',
         secondary: 'lsd:text-lsd-text-secondary',
       },
       size: {

@@ -30,7 +30,6 @@ describe('SheetHeader', () => {
     expect(header).toHaveClass('lsd:flex');
     expect(header).toHaveClass('lsd:flex-col');
     expect(header).toHaveClass('lsd:gap-(--lsd-spacing-smaller)');
-    expect(header).toHaveClass('lsd:p-(--lsd-spacing-base)');
   });
 
   it('applies data-slot attribute', () => {

@@ -148,9 +148,6 @@ export interface AccordionItemProps
 
 export const accordionTriggerVariants = cva(
   [
-    // Colors & Backgrounds
-    'lsd:text-lsd-text-primary',
-    'lsd:bg-lsd-surface',
     // Layout & Positioning
     'lsd:flex',
     'lsd:flex-1',
@@ -169,7 +166,7 @@ export const accordionTriggerVariants = cva(
     'lsd:cursor-pointer',
     'lsd:hover:underline',
     'lsd:outline-none',
-    'focus-visible:lsd:ring-lsd-text/50',
+    'focus-visible:lsd:ring-lsd-text-neutral/50',
     'focus-visible:lsd:ring-[3px]',
     'focus-visible:lsd:border-lsd-border',
     'lsd:disabled:pointer-events-none',
@@ -209,9 +206,6 @@ export const accordionTriggerVariants = cva(
 
 export const accordionContentVariants = cva(
   [
-    // Colors & Backgrounds
-    'lsd:text-lsd-text-primary',
-    'lsd:bg-lsd-surface',
     // Transitions & Animations
     'lsd:data-[state=closed]:animate-accordion-up',
     'lsd:data-[state=open]:animate-accordion-down',

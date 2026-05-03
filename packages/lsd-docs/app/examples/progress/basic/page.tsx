@@ -25,7 +25,7 @@ export function Example() {
       <Typography variant="label1">Controlled Progress</Typography>
       <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
         <Progress value={progress} showLabel labelPosition="top" />
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-x-(--lsd-spacing-small)">
           <Button
             variant="outlined"
             size="sm"
@@ -67,7 +67,7 @@ export function ProgressBasicExample() {
       <Typography variant="label1">Controlled Progress</Typography>
       <div className="flex flex-col gap-(--lsd-spacing-base) mb-(--lsd-spacing-base)">
         <Progress value={progress} showLabel labelPosition="top" />
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-x-(--lsd-spacing-small)">
           <Button
             variant="outlined"
             size="sm"

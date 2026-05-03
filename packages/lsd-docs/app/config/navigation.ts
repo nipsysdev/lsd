@@ -32,7 +32,7 @@ export const navItems: NavGroup[] = [
   {
     title: 'Design Tokens',
     items: [
-      { title: 'Colours', url: '/design-tokens/colours', icon: PaletteIcon },
+      { title: 'Colors', url: '/design-tokens/colors', icon: PaletteIcon },
       {
         title: 'Typography',
         url: '/design-tokens/typography',

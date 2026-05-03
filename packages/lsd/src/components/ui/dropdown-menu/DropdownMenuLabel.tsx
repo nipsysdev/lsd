@@ -24,8 +24,6 @@ export function DropdownMenuLabel({ className, inset, ...props }: DropdownMenuLa
         // Typography Font
         'lsd:font-medium',
         'lsd:text-sm',
-        // Colors & Backgrounds
-        'lsd:text-lsd-text-primary',
         // Spacing
         'lsd:px-2',
         'lsd:py-1.5',

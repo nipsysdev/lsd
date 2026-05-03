@@ -1,20 +1,20 @@
 [data-sonner-toaster],
 [data-sonner-toaster][data-style="true"] {
-  --normal-bg: var(--lsd-surface) !important;
-  --normal-text: var(--lsd-text-primary) !important;
+  --normal-bg: var(--lsd-foreground) !important;
+  --normal-text: var(--lsd-text-neutral) !important;
   --normal-border: var(--lsd-border) !important;
-  --success-bg: var(--lsd-surface) !important;
+  --success-bg: var(--lsd-foreground) !important;
   --success-border: var(--lsd-success) !important;
-  --success-text: var(--lsd-success-text) !important;
-  --error-bg: var(--lsd-surface) !important;
+  --success-text: var(--lsd-text-success) !important;
+  --error-bg: var(--lsd-foreground) !important;
   --error-border: var(--lsd-destructive) !important;
-  --error-text: var(--lsd-destructive-text) !important;
-  --warning-bg: var(--lsd-surface) !important;
+  --error-text: var(--lsd-text-destructive) !important;
+  --warning-bg: var(--lsd-foreground) !important;
   --warning-border: var(--lsd-warning) !important;
-  --warning-text: var(--lsd-warning-text) !important;
-  --info-bg: var(--lsd-surface) !important;
+  --warning-text: var(--lsd-text-warning) !important;
+  --info-bg: var(--lsd-foreground) !important;
   --info-border: var(--lsd-info) !important;
-  --info-text: var(--lsd-info-text) !important;
+  --info-text: var(--lsd-text-info) !important;
   font-family: var(--lsd-font-family) !important;
 }
 
@@ -28,27 +28,27 @@
 }
 
 [data-sonner-toaster] [data-sonner-toast] {
-  color: var(--lsd-text-primary);
+  color: var(--lsd-text-neutral);
 }
 
 [data-sonner-toaster] [data-sonner-toast][data-type="success"] {
   border-color: var(--lsd-success);
-  color: var(--lsd-success-text);
+  color: var(--lsd-text-success);
 }
 
 [data-sonner-toaster] [data-sonner-toast][data-type="error"] {
   border-color: var(--lsd-destructive);
-  color: var(--lsd-destructive-text);
+  color: var(--lsd-text-destructive);
 }
 
 [data-sonner-toaster] [data-sonner-toast][data-type="warning"] {
   border-color: var(--lsd-warning);
-  color: var(--lsd-warning-text);
+  color: var(--lsd-text-warning);
 }
 
 [data-sonner-toaster] [data-sonner-toast][data-type="info"] {
   border-color: var(--lsd-info);
-  color: var(--lsd-info-text);
+  color: var(--lsd-text-info);
 }
 
 [data-sonner-toaster] [data-sonner-toast] button {

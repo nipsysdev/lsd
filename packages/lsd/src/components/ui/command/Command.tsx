@@ -56,8 +56,7 @@ export function Command({ className, ...props }: React.ComponentProps<typeof Com
         'lsd:h-full',
         'lsd:w-full',
         // Colors & Backgrounds
-        'lsd:bg-lsd-surface',
-        'lsd:text-lsd-text-primary',
+        'lsd:bg-lsd-foreground',
         // Overflow
         'lsd:overflow-hidden',
         className

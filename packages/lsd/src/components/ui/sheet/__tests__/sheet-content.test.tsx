@@ -27,7 +27,7 @@ describe('SheetContent', () => {
       </Sheet>
     );
     const content = document.querySelector('[data-slot="sheet-content"]');
-    expect(content).toHaveClass('lsd:bg-background');
+    expect(content).toHaveClass('lsd:bg-lsd-foreground');
     expect(content).toHaveClass('lsd:fixed');
     expect(content).toHaveClass('lsd:z-50');
     expect(content).toHaveClass('lsd:flex');

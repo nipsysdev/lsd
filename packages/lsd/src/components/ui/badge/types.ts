@@ -15,12 +15,13 @@ export const badgeVariants = cva(
   {
     variants: {
       variant: {
-        filled: 'lsd:bg-lsd-primary lsd:text-lsd-surface',
-        outlined: 'lsd:bg-transparent lsd:text-lsd-text-primary',
-        destructive: 'lsd:bg-lsd-destructive lsd:text-white lsd:border-lsd-destructive',
-        success: 'lsd:bg-lsd-success lsd:text-white lsd:border-lsd-success',
-        warning: 'lsd:bg-lsd-warning lsd:text-white lsd:border-lsd-warning',
-        info: 'lsd:bg-lsd-info lsd:text-white lsd:border-lsd-info',
+        filled: 'lsd:bg-lsd-primary lsd:text-lsd-primary-content',
+        outlined: 'lsd:bg-transparent',
+        destructive:
+          'lsd:bg-lsd-destructive lsd:text-lsd-primary-content lsd:border-lsd-destructive',
+        success: 'lsd:bg-lsd-success lsd:text-lsd-primary-content lsd:border-lsd-success',
+        warning: 'lsd:bg-lsd-warning lsd:text-lsd-primary-content lsd:border-lsd-warning',
+        info: 'lsd:bg-lsd-info lsd:text-lsd-primary-content lsd:border-lsd-info',
         dot: 'lsd:bg-lsd-primary lsd:rounded-full lsd:w-fit lsd:h-fit lsd:p-0 lsd:border-0',
       },
       size: {

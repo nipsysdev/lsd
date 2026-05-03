@@ -20,7 +20,6 @@ describe('Progress', () => {
     expect(progress).toHaveClass('lsd:w-full');
     expect(progress).toHaveClass('lsd:h-[var(--lsd-spacing-small)]');
     expect(progress).toHaveClass('lsd:overflow-hidden');
-    expect(progress).toHaveClass('lsd:bg-lsd-surface');
     expect(progress).toHaveClass('lsd:border');
     expect(progress).toHaveClass('lsd:border-lsd-border');
   });
@@ -145,7 +144,6 @@ describe('Progress', () => {
     expect(label).toHaveClass('lsd:mb-(--lsd-spacing-smallest)');
     expect(label).toHaveClass('lsd:text-sm');
     expect(label).toHaveClass('lsd:font-medium');
-    expect(label).toHaveClass('lsd:text-lsd-text-primary');
     expect(label).toHaveClass('lsd:text-center');
   });
 
@@ -156,7 +154,6 @@ describe('Progress', () => {
     expect(label).toHaveClass('lsd:mt-(--lsd-spacing-smallest)');
     expect(label).toHaveClass('lsd:text-sm');
     expect(label).toHaveClass('lsd:font-medium');
-    expect(label).toHaveClass('lsd:text-lsd-text-primary');
     expect(label).toHaveClass('lsd:text-center');
   });
 

@@ -15,27 +15,25 @@ export type ButtonVariant =
   | 'success-rounded';
 
 export const buttonVariants = cva(
-  'lsd:inline-flex lsd:items-center lsd:justify-center lsd:border lsd:transition-colors lsd:cursor-pointer',
+  'lsd:inline-flex lsd:items-center lsd:justify-center lsd:border lsd:cursor-pointer lsd:hover:underline',
   {
     variants: {
       variant: {
-        filled: 'lsd:bg-primary lsd:text-primary-foreground',
-        outlined: 'lsd:bg-transparent lsd:text-foreground',
-        'filled-rounded': 'lsd:bg-primary lsd:text-primary-foreground lsd:rounded-full',
-        'outlined-rounded': 'lsd:bg-transparent lsd:text-foreground lsd:rounded-full',
-        link: 'lsd:bg-transparent lsd:border-0 lsd:text-foreground lsd:underline',
-        ghost:
-          'lsd:bg-transparent lsd:text-foreground lsd:border-0 lsd:hover:bg-accent lsd:hover:text-accent-foreground',
-        'ghost-rounded':
-          'lsd:bg-transparent lsd:text-foreground lsd:border-0 lsd:rounded-full lsd:hover:bg-accent lsd:hover:text-accent-foreground',
+        filled: 'lsd:bg-lsd-primary lsd:text-lsd-primary-content',
+        outlined: 'lsd:bg-transparent',
+        'filled-rounded': 'lsd:bg-lsd-primary lsd:text-lsd-primary-content lsd:rounded-full',
+        'outlined-rounded': 'lsd:bg-transparent lsd:rounded-full',
+        link: 'lsd:bg-transparent lsd:border-0 lsd:underline',
+        ghost: 'lsd:bg-transparent lsd:border-0',
+        'ghost-rounded': 'lsd:bg-transparent lsd:border-0 lsd:rounded-full lsd:hover:border',
         destructive:
-          'lsd:bg-lsd-destructive lsd:text-white lsd:border-lsd-destructive lsd:hover:bg-lsd-destructive/90',
+          'lsd:bg-lsd-destructive lsd:text-lsd-primary-content lsd:border-lsd-destructive lsd:hover:bg-lsd-destructive/90',
         'destructive-rounded':
-          'lsd:bg-lsd-destructive lsd:text-white lsd:border-lsd-destructive lsd:rounded-full lsd:hover:bg-lsd-destructive/90',
+          'lsd:bg-lsd-destructive lsd:text-lsd-primary-content lsd:border-lsd-destructive lsd:rounded-full lsd:hover:bg-lsd-destructive/90',
         success:
-          'lsd:bg-lsd-success lsd:text-white lsd:border-lsd-success lsd:hover:bg-lsd-success/90',
+          'lsd:bg-lsd-success lsd:text-lsd-primary-content lsd:border-lsd-success lsd:hover:bg-lsd-success/90',
         'success-rounded':
-          'lsd:bg-lsd-success lsd:text-white lsd:border-lsd-success lsd:rounded-full lsd:hover:bg-lsd-success/90',
+          'lsd:bg-lsd-success lsd:text-lsd-primary-content lsd:border-lsd-success lsd:rounded-full lsd:hover:bg-lsd-success/90',
       },
       size: {
         sm: 'lsd:h-8 lsd:px-[var(--lsd-spacing-small)] lsd:py-[var(--lsd-spacing-smaller)] lsd:text-sm',

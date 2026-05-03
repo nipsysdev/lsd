@@ -23,8 +23,6 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
           'lsd:text-[0.875rem]',
           // Typography Font
           'lsd:font-medium',
-          // Colors & Backgrounds
-          'lsd:text-lsd-text-primary',
           // Spacing
           'lsd:mb-(--lsd-spacing-smaller)',
           // Display

@@ -43,8 +43,7 @@ export function SelectContent({
         data-slot="select-content"
         className={cn(
           // Colors & Backgrounds
-          'lsd:bg-lsd-surface',
-          'lsd:text-lsd-text-primary',
+          'lsd:bg-lsd-foreground',
           // Borders
           'lsd:border',
           'lsd:border-lsd-border',
