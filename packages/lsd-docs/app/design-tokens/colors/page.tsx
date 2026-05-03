@@ -12,23 +12,12 @@ export default function ColorsPage() {
   return (
     <DocsLayout>
       <PageHeader
-        title="Colours"
-        description="Explore the colour palette used throughout LSD components."
+        title="Colors"
+        description="Explore the color palette used throughout LSD components."
       />
 
       <PageContent>
-        <PageSection title="About the Colour Palette">
-          <Typography variant="body1" className="block">
-            Colours are tools for signalling, not branding. LSD's palette is chosen for maximum
-            contrast and accessibility across all conditions.
-          </Typography>
-
-          <Typography variant="body1" className="mt-(--lsd-spacing-base)">
-            High contrast isn't a design choice — it's a commitment to inclusivity.
-          </Typography>
-        </PageSection>
-
-        <PageSection title="Primary Colours">
+        <PageSection title="Primary Colors">
           <Typography variant="body1" className="block">
             Primary marks essential actions and focal points — where the user needs to look to move
             forward.
@@ -67,9 +56,10 @@ export default function ColorsPage() {
           </div>
         </PageSection>
 
-        <PageSection title="Text Colours">
+        <PageSection title="Text Colors">
           <Typography variant="body1" className="block">
-            Text colours for primary content and supporting information, optimized for readability.
+            Text colors for primary content and supporting information, optimized for readability.
+            These same colors are used for icons to maintain visual consistency.
           </Typography>
 
           <div className="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
@@ -80,7 +70,7 @@ export default function ColorsPage() {
                   style={{ backgroundColor: 'var(--lsd-text-neutral)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
-                  Text Primary
+                  Text Neutral
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
                   --lsd-text-neutral: <ColorValue variable="--lsd-text-neutral" />
@@ -105,9 +95,9 @@ export default function ColorsPage() {
           </div>
         </PageSection>
 
-        <PageSection title="Surface & Border Colours">
+        <PageSection title="Background & Border Colors">
           <Typography variant="body1" className="block">
-            Surface and border colours define structure and hierarchy across the interface.
+            Background and border colors define structure and hierarchy across the interface.
           </Typography>
 
           <div className="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
@@ -118,7 +108,7 @@ export default function ColorsPage() {
                   style={{ backgroundColor: 'var(--lsd-background)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
-                  Surface
+                  Background
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
                   --lsd-background: <ColorValue variable="--lsd-background" />
@@ -133,7 +123,7 @@ export default function ColorsPage() {
                   style={{ backgroundColor: 'var(--lsd-foreground)' }}
                 />
                 <Typography variant="h5" className="mb-(--lsd-spacing-smallest)">
-                  Surface Secondary
+                  Foreground
                 </Typography>
                 <Typography variant="label1" className="text-nowrap">
                   --lsd-foreground: <ColorValue variable="--lsd-foreground" />
@@ -156,25 +146,11 @@ export default function ColorsPage() {
               </CardContent>
             </Card>
           </div>
-
-          <Typography variant="body1" className="mt-(--lsd-spacing-base)">
-            <strong>Surface</strong> is the primary background colour for the canvas or main content
-            area. <strong>Surface Secondary</strong> is used for elevated elements like cards,
-            modals, and overlays that appear above the primary surface.
-          </Typography>
         </PageSection>
 
-        <PageSection title="Icon Colours">
+        <PageSection title="Semantic Colors">
           <Typography variant="body1" className="block">
-            Icon colours maintain visual consistency across all interactive and decorative elements.
-          </Typography>
-
-          <div className="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)" />
-        </PageSection>
-
-        <PageSection title="Semantic Colours">
-          <Typography variant="body1" className="block">
-            Semantic colours communicate state — success, warning, destructive actions, and
+            Semantic colors communicate state — success, warning, destructive actions, and
             information.
           </Typography>
 
@@ -241,9 +217,9 @@ export default function ColorsPage() {
           </div>
         </PageSection>
 
-        <PageSection title="Semantic Text Colours">
+        <PageSection title="Semantic Text Colors">
           <Typography variant="body1" className="block">
-            Text colours for semantic states.
+            Text colors for semantic states.
           </Typography>
 
           <div className="inline-grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
