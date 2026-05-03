@@ -147,13 +147,15 @@ export function SidebarTrigger({
   onClick,
   icon,
   text = 'Toggle Sidebar',
-  iconClassName = 'lsd:size-4/5',
-  textClassName = 'lsd:sr-only',
+  iconClassName,
+  textClassName,
   ...props
 }: SidebarTriggerProps) {
   const { toggleSidebar } = useSidebar();
 
-  const defaultIcon = <SidebarSimpleIcon className={iconClassName} weight="duotone" />;
+  const defaultIcon = (
+    <SidebarSimpleIcon className={cn('lsd:size-4/5', iconClassName)} weight="duotone" />
+  );
 
   return (
     <Button
@@ -169,7 +171,7 @@ export function SidebarTrigger({
       {...props}
     >
       {icon ?? defaultIcon}
-      <span className={textClassName}>{text}</span>
+      <span className={cn('lsd:sr-only', textClassName)}>{text}</span>
     </Button>
   );
 }
