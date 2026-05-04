@@ -67,8 +67,13 @@ export default function SidebarWrapper({ currentPath, children }: SidebarWrapper
                                 <SidebarMenuSubItem key={subItem.url}>
                                   <SidebarMenuSubButton
                                     asChild
+                                    isActive={
+                                      currentPath === subItem.url ||
+                                      currentPath === `${subItem.url}/`
+                                    }
                                     className={
-                                      currentPath === subItem.url
+                                      currentPath === subItem.url ||
+                                      currentPath === `${subItem.url}/`
                                         ? 'bg-accent text-accent-foreground'
                                         : ''
                                     }
@@ -82,8 +87,11 @@ export default function SidebarWrapper({ currentPath, children }: SidebarWrapper
                         ) : (
                           <SidebarMenuButton
                             asChild
+                            isActive={currentPath === item.url || currentPath === `${item.url}/`}
                             className={
-                              currentPath === item.url ? 'bg-accent text-accent-foreground' : ''
+                              currentPath === item.url || currentPath === `${item.url}/`
+                                ? 'bg-accent text-accent-foreground'
+                                : ''
                             }
                           >
                             <a href={item.url}>
