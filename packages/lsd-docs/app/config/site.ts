@@ -3,7 +3,7 @@ export const siteConfig = {
   title: 'LSD Documentation',
   description: 'LSD Component Library Documentation',
   url: 'https://lsd.nipsys.dev',
-  version: '0.2.5',
+  version: '1.1.1',
   github: 'https://github.com/nipsysdev/lsd',
 } as const;
 
