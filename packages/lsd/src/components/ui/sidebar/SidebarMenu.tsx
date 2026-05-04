@@ -276,7 +276,7 @@ export function SidebarMenuSubButton({
       data-size={size}
       data-active={isActive}
       className={cn(
-        'ring-sidebar-ring lsd:flex lsd:h-(--lsd-spacing-largest) lsd:min-w-0 lsd:-translate-x-px lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:px-(--lsd-spacing-smaller) lsd:outline-hidden lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:hover:underline lsd:focus:underline',
+        'ring-sidebar-ring lsd:flex lsd:h-(--lsd-spacing-largest) lsd:min-w-0 lsd:-translate-x-px lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:px-(--lsd-spacing-smaller) lsd:outline-hidden lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:underline lsd:hover:underline lsd:focus:underline',
         size === 'sm' && 'lsd:text-xs',
         size === 'md' && 'lsd:text-sm',
         'lsd:group-data-[collapsible=icon]:hidden',

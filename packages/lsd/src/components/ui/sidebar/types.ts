@@ -237,7 +237,7 @@ export interface SidebarMenuBadgeProps extends React.ComponentProps<'div'> {}
 
 // Variants
 export const sidebarMenuButtonVariants = cva(
-  'peer/menu-button lsd:flex lsd:w-full lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:p-(--lsd-spacing-smaller) lsd:text-left lsd:text-sm lsd:outline-hidden ring-sidebar-ring lsd:transition-[width,height,padding] lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:font-medium lsd:group-data-[collapsible=icon]:size-8! lsd:group-data-[collapsible=icon]:p-(--lsd-spacing-smaller)! lsd:[&>span:last-child]:truncate lsd:[&>svg]:size-(--lsd-spacing-base) lsd:[&>svg]:shrink-0 lsd:hover:underline lsd:focus:underline',
+  'peer/menu-button lsd:flex lsd:w-full lsd:items-center lsd:gap-(--lsd-spacing-smaller) lsd:overflow-hidden lsd:rounded-md lsd:p-(--lsd-spacing-smaller) lsd:text-left lsd:text-sm lsd:outline-hidden ring-sidebar-ring lsd:transition-[width,height,padding] lsd:focus-visible:ring-2 lsd:disabled:pointer-events-none lsd:disabled:opacity-50 lsd:group-has-data-[sidebar=menu-action]/menu-item:pr-8 aria-lsd:disabled:pointer-events-none aria-lsd:disabled:opacity-50 lsd:data-[active=true]:font-medium lsd:data-[active=true]:underline lsd:group-data-[collapsible=icon]:size-8! lsd:group-data-[collapsible=icon]:p-(--lsd-spacing-smaller)! lsd:[&>span:last-child]:truncate lsd:[&>svg]:size-(--lsd-spacing-base) lsd:[&>svg]:shrink-0 lsd:hover:underline lsd:focus:underline',
   {
     variants: {
       variant: {
