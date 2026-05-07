@@ -2,7 +2,7 @@
 name: nipsys-lsd
 description: Use when working with @nipsys/lsd in React 19+ projects for UI component implementation, theming, and design system integration. Provides comprehensive guidance for the LSD monochromatic component library including 39 accessible components with semantic styling, spacing tokens (--lsd-spacing-*), keyboard navigation patterns, and proper composition patterns. Ideal for developers building React applications.
 metadata:
-  version: 1.1.1
+  version: 1.1.2
   category: frontend
   sources:
     - https://github.com/nipsysdev/lsd
