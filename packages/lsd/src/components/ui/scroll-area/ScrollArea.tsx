@@ -5,6 +5,14 @@ import { cn } from '@/lib/utils';
 import { ScrollBar } from './ScrollBar';
 
 /**
+ * Props for the ScrollArea component
+ */
+export interface ScrollAreaProps extends React.ComponentProps<typeof ScrollAreaPrimitive.Root> {
+  /** Callback fired when the viewport scrolls */
+  onScroll?: React.UIEventHandler<HTMLDivElement>;
+}
+
+/**
  * ScrollArea - Custom styled scrollable container
  *
  * Provides cross-browser custom scrollbars that sit on top of content.
@@ -34,13 +42,11 @@ import { ScrollBar } from './ScrollBar';
  * @docSectionAccessibilityFocus
  * Standard focus management for scrollable content. Focus follows native browser behavior when navigating with keyboard.
  *
+ * @param onScroll - Callback fired when the viewport scrolls. Receives the scroll event with scrollTop accessible via event.currentTarget.scrollTop.
+ *
  * @exportAs root
  */
-function ScrollArea({
-  className,
-  children,
-  ...props
-}: React.ComponentProps<typeof ScrollAreaPrimitive.Root>) {
+function ScrollArea({ className, children, onScroll, ...props }: ScrollAreaProps) {
   return (
     <ScrollAreaPrimitive.Root
       data-slot="scroll-area"
@@ -50,6 +56,7 @@ function ScrollArea({
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
         className="focus-visible:lsd:ring-lsd-text-neutral/50 lsd:size-full lsd:rounded-[inherit] lsd:transition-[color,box-shadow] lsd:outline-none focus-visible:lsd:ring-[3px] focus-visible:lsd:outline-1"
+        onScroll={onScroll}
       >
         {children}
       </ScrollAreaPrimitive.Viewport>
