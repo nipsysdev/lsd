@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Typography } from '@nipsys/lsd';
 import { useRef } from 'react';
+import { CodeBlock } from '@/components/docs/CodeBlock';
 import { CodeExample } from '@/components/docs/CodeExample';
 import { DocsLayout } from '@/components/docs/DocsLayout';
 import { IframeExample } from '@/components/docs/IframeExample';
@@ -10,13 +11,18 @@ import { PageHeader } from '@/components/docs/PageHeader';
 import { PageNavigation } from '@/components/docs/PageNavigation';
 import { PageSection } from '@/components/docs/PageSection';
 import { useSendThemeToIframes } from '@/components/docs/useSendIframes';
-import { CodeBlock } from '@/components/docs/CodeBlock';
-import { CODE as ScrollAreaBasicCODE } from '@/examples/scroll-area/basic/page';
-import { SIZE as ScrollAreaBasicSIZE } from '@/examples/scroll-area/basic/page';
-import { CODE as ScrollAreaBothOrientationCODE } from '@/examples/scroll-area/both-orientation/page';
-import { SIZE as ScrollAreaBothOrientationSIZE } from '@/examples/scroll-area/both-orientation/page';
-import { CODE as ScrollAreaHorizontalCODE } from '@/examples/scroll-area/horizontal/page';
-import { SIZE as ScrollAreaHorizontalSIZE } from '@/examples/scroll-area/horizontal/page';
+import {
+  CODE as ScrollAreaBasicCODE,
+  SIZE as ScrollAreaBasicSIZE,
+} from '@/examples/scroll-area/basic/page';
+import {
+  CODE as ScrollAreaBothOrientationCODE,
+  SIZE as ScrollAreaBothOrientationSIZE,
+} from '@/examples/scroll-area/both-orientation/page';
+import {
+  CODE as ScrollAreaHorizontalCODE,
+  SIZE as ScrollAreaHorizontalSIZE,
+} from '@/examples/scroll-area/horizontal/page';
 
 export default function ScrollAreaPage() {
   const ScrollAreaBasicIframeRef = useRef<HTMLIFrameElement>(null);
