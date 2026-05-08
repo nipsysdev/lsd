@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] - 2026-05-08
+
+### Features
+- **ScrollArea**: Added `onScroll` prop for scroll event handling (enables infinite scroll, scroll position tracking, etc.)
+- **ScrollArea**: Exported `ScrollAreaProps` type for TypeScript consumers
+
+### Fixes
+- **Tooltip**: Removed unnecessary `TooltipPortal` export (handled internally by `TooltipContent`)
+
+---
+
 ## [1.1.2] - 2026-05-07
 
 ### Fixes
@@ -82,7 +93,8 @@ If you have custom themes or override theme variables, you'll need to update the
 
 ## Version Reference
 
-- **1.1.2** - Current release (missing exports fix)
+- **1.1.3** - Current release (ScrollArea onScroll prop, tooltip export cleanup)
+- **1.1.2** - Missing exports fix
 - **1.1.1** - Sidebar active state underline
 - **1.1.0** - Theming refactor
 - **1.0.0** - Initial release

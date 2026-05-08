@@ -142,23 +142,26 @@ export default function MyComponent() {
         </PageSection>
 
         <PageSection title="API Reference">
-          <div className="flex flex-col gap-(--lsd-spacing-base) mt-(--lsd-spacing-base)">
-            <Card>
-              <CardHeader>
-                <CardTitle>Radix UI Documentation</CardTitle>
-                <CardDescription>ScrollArea wraps Radix UI primitives</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <a
-                  href="https://www.radix-ui.com/primitives/docs/components/scroll-area"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  View Radix UI ScrollArea documentation →
-                </a>
-              </CardContent>
-            </Card>
+          <div className="mt-(--lsd-spacing-large)">
+            <Typography variant="h4" className="mb-(--lsd-spacing-base)">
+              ScrollArea
+            </Typography>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-(--lsd-spacing-base)">
+              <Card>
+                <CardHeader>
+                  <CardTitle>onScroll</CardTitle>
+                  <CardDescription>Callback fired when the viewport scrolls</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Typography variant="body2" className="block mb-(--lsd-spacing-smaller)">
+                    <strong>Type:</strong> <code>React.UIEventHandler&lt;HTMLDivElement&gt;</code>
+                  </Typography>
+                  <Typography variant="label1" className="block mt-(--lsd-spacing-smaller)">
+                    <strong>Optional</strong>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </PageSection>
 
